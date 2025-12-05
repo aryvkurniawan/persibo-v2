@@ -1,0 +1,152 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Beranda', href: '/' },
+  { label: 'Tim', href: '/tim' },
+  { label: 'Berita', href: '/tim/berita' },
+  { label: 'Drama Penalti Menit Akhir', href: '/tim/berita/drama-penalti-degradasi-liga-2' }
+];
+
+const publishedDate = '2025-02-28';
+const author = 'persibo.com';
+---
+
+<Layout 
+  title="Drama Penalti Menit Akhir: Kilas Balik Persibo Bojonegoro Terdegradasi ke Liga 3 - PERSIBO Bojonegoro (Unofficial)"
+  description="Kilas balik degradasi Persibo Bojonegoro dari Liga 2 ke Liga 3 Nusantara. Drama penalti di menit ke-90 saat melawan Persipura Jayapura menjadi momen kelabu yang mengubah nasib Laskar Angling Dharma. Website Unofficial."
+>
+  <div class="px-4 py-4 max-w-4xl mx-auto">
+    <Breadcrumb items={breadcrumbItems} />
+    
+    <!-- Back Button -->
+    <div class="mb-4">
+      <a href="/tim/berita" class="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors py-2 px-3 rounded-lg hover:bg-slate-800/50">
+        <span class="material-symbols-outlined text-xl">arrow_back</span>
+        <span class="text-sm font-medium">Kembali ke Berita</span>
+      </a>
+    </div>
+
+    <!-- Article Header -->
+    <article class="mb-8">
+      <div class="mb-6">
+        <div class="flex items-center gap-2 mb-4 flex-wrap">
+          <span class="text-xs font-medium text-primary bg-primary/20 px-3 py-1 rounded-full">Liga 2</span>
+          <span class="text-xs text-slate-400">28 Februari 2025</span>
+          <span class="text-xs text-slate-500">•</span>
+          <span class="text-xs text-slate-400">persibo.com</span>
+        </div>
+        
+        <h1 class="text-2xl md:text-3xl font-extrabold text-white mb-4 leading-tight">
+          Drama Penalti Menit Akhir: Kilas Balik Persibo Bojonegoro Terdegradasi ke Liga 3
+        </h1>
+        
+        <div class="flex items-center gap-3 text-sm text-slate-400">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-base">location_on</span>
+            <span>BOJONEGORO</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Image -->
+      <div class="mb-6 rounded-xl overflow-hidden">
+        <img 
+          src="/img/drama-pinalti.jpg" 
+          alt="Drama penalti menit akhir yang menentukan degradasi Persibo Bojonegoro dari Liga 2" 
+          class="w-full h-auto object-cover"
+        />
+        <p class="text-xs text-slate-500 mt-2 text-center">Foto: Momen dramatis penalti di menit ke-90 yang menentukan nasib Persibo Bojonegoro</p>
+      </div>
+
+      <!-- Article Content -->
+      <div class="prose prose-invert prose-slate max-w-none">
+        <div class="space-y-4 text-slate-300 leading-relaxed">
+          <p class="text-lg font-medium text-white">
+            <strong>BOJONEGORO, persibo.com</strong> – Perjalanan Laskar Angling Dharma harus menemui jalan terjal pada awal tahun ini. Sebelum kini berjuang keras di Liga 3 Nusantara musim 2025/2026, Persibo Bojonegoro harus menelan pil pahit terdegradasi dari kasta kedua sepak bola Indonesia, Liga 2.
+          </p>
+
+          <p>
+            Momen kelabu tersebut terjadi pada <strong class="text-white">28 Februari 2025</strong>, sebuah tanggal yang akan diingat sebagai titik balik evaluasi besar-besaran bagi tim. Dalam laga <em>playoff</em> degradasi yang berlangsung sengit, Persibo berhadapan dengan tim kuat asal Papua, <strong class="text-primary">Persipura Jayapura</strong>. Harapan untuk bertahan di Liga 2 musnah setelah pertandingan berakhir dengan skor tipis <strong class="text-white">1-2</strong> untuk kemenangan lawan.
+          </p>
+
+          <div class="bg-slate-800/50 border-l-4 border-primary rounded-lg p-4 my-6">
+            <p class="text-slate-200 italic">
+              "Nasib Persibo ditentukan secara dramatis pada penghujung laga. Ketika pertandingan tampaknya akan berakhir imbang, sebuah insiden di kotak terlarang memaksa wasit menunjuk titik putih."
+            </p>
+          </div>
+
+          <p>
+            Drama penalti di <strong class="text-white">menit ke-90</strong> inilah yang menjadi eksekusi terakhir, memastikan Persibo harus turun kasta ke Liga 3 Nusantara musim ini.
+          </p>
+
+          <p>
+            Namun, Laskar Angling Dharma menolak untuk menyerah. Semangat <strong class="text-primary">"Hujan turun, tapi langkah tak mundur"</strong> menjadi napas baru bagi skuad asuhan pelatih saat ini. Degradasi ini justru menjadi pecutan semangat bagi manajemen dan pemain untuk membangun ulang kekuatan tim.
+          </p>
+
+          <h2 class="text-xl font-bold text-white mt-8 mb-4">Kebangkitan di Liga 3 Nusantara</h2>
+
+          <p>
+            Kini, fokus Persibo sepenuhnya tertuju pada misi kebangkitan. Partisipasi di Liga 3 Nusantara bukan sekadar formalitas, melainkan langkah awal untuk merebut kembali kejayaan. Hal ini dibuktikan dengan raihan positif di laga-laga awal grup Liga 3 baru-baru ini, di mana Persibo berhasil mengamankan <strong class="text-primary">kemenangan perdana melawan Persikumtim United</strong>.
+          </p>
+
+          <p>
+            Manajemen menargetkan <strong class="text-white">promosi kembali ke Liga 2</strong> sebagai harga mati. Dengan dukungan penuh dari <em class="text-accent-teal">Boromania</em> dan masyarakat Bojonegoro, Laskar Angling Dharma siap mengubah sejarah kelam Februari lalu menjadi cerita sukses di akhir musim nanti.
+          </p>
+
+          <!-- Sources -->
+          <div class="border-t border-slate-700 pt-6 mt-8">
+            <h3 class="text-lg font-bold text-white mb-3">Sumber:</h3>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li>
+                <a href="https://www.instagram.com/persibo.bojonegoro/p/DLp1G6fvEIl/?hl=en" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary/80 underline">
+                  Instagram Resmi Persibo Bojonegoro
+                </a>
+              </li>
+              <li>
+                <a href="https://jatim.tribunnews.com/bola-jatim/526076/kalahkan-persikumtim-united-persibo-bojonegoro-raih-kemenangan-perdana-di-liga-nusantara" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary/80 underline">
+                  Tribun Jatim - Persibo Raih Kemenangan Perdana di Liga Nusantara
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Related Articles / Back to News -->
+    <div class="mt-8 pt-6 border-t border-slate-700">
+      <a href="/tim/berita" class="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium">
+        <span class="material-symbols-outlined">arrow_back</span>
+        <span>Kembali ke Daftar Berita</span>
+      </a>
+    </div>
+  </div>
+</Layout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Drama Penalti Menit Akhir: Kilas Balik Persibo Bojonegoro Terdegradasi ke Liga 3",
+  "image": `${Astro.site || Astro.url.origin}/img/drama-pinalti.jpg`,
+  "datePublished": publishedDate,
+  "dateModified": publishedDate,
+  "author": {
+    "@type": "Organization",
+    "name": author
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "PERSIBO Bojonegoro (Unofficial)",
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${Astro.site || Astro.url.origin}/logo.png`
+    }
+  },
+  "description": "Kilas balik degradasi Persibo Bojonegoro dari Liga 2 ke Liga 3 Nusantara. Drama penalti di menit ke-90 saat melawan Persipura Jayapura menjadi momen kelabu yang mengubah nasib Laskar Angling Dharma.",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${Astro.site || Astro.url.origin}/tim/berita/drama-penalti-degradasi-liga-2`
+  }
+})} />

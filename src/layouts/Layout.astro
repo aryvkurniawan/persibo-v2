@@ -1,0 +1,193 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  showBottomNav?: boolean;
+}
+
+const { title = 'PERSIBO Bojonegoro', description = 'Website Unofficial PERSIBO Bojonegoro - Liga Nusantara 2025-26', showBottomNav = true } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html class="dark" lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="PERSIBO Bojonegoro, Liga Nusantara, Sepak Bola Indonesia, Tim Sepak Bola Bojonegoro, Klasemen Liga Nusantara 2025-26" />
+    <meta name="author" content="PERSIBO Bojonegoro" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Indonesian" />
+    <meta name="revisit-after" content="7 days" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${Astro.site || Astro.url.origin}/logo.png`} />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:site_name" content="PERSIBO Bojonegoro" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={Astro.url.href} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${Astro.site || Astro.url.origin}/logo.png`} />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={Astro.url.href} />
+    
+    <!-- Structured Data - Organization -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "PERSIBO Bojonegoro",
+      "alternateName": "Laskar Angling Dharma",
+      "url": Astro.site || "https://persibo-bojonegoro.id",
+      "logo": `${Astro.site || Astro.url.origin}/logo.png`,
+      "description": "Website Unofficial PERSIBO Bojonegoro - Tim sepak bola profesional dari Bojonegoro, Jawa Timur. Informasi lengkap tentang tim, pemain, klasemen, dan jadwal pertandingan di Liga Nusantara 2025-26.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bojonegoro",
+        "addressRegion": "Jawa Timur",
+        "addressCountry": "ID"
+      },
+      "sameAs": [
+        "https://www.ileague.id/clubs/single/LIGA_NUSANTARA_2025-26/persibo_bojonegoro"
+      ]
+    })} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1300254481589524" crossorigin="anonymous"></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W843MTD8G4"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-W843MTD8G4');
+    </script>
+  </head>
+  <body class="bg-background-dark font-display min-h-screen">
+    <div class="relative flex h-auto min-h-screen w-full flex-col bg-background-dark group/design-root overflow-x-hidden">
+      <!-- Sticky Header -->
+      <header class="sticky top-0 z-20 flex items-center justify-between bg-background-dark/80 p-4 pb-2 backdrop-blur-sm">
+        <div class="flex size-12 shrink-0 items-center justify-start">
+          {currentPath !== '/' && (
+            <a href="/" class="text-white">
+              <span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+            </a>
+          )}
+        </div>
+        <h2 class="flex-1 text-center text-lg font-bold leading-tight tracking-[-0.015em] text-white font-lexend-extrabold">
+          <div class="flex items-center justify-center gap-2">
+            <img src="/logo.png" alt="Logo PERSIBO Bojonegoro - Website Unofficial" class="h-8 w-8 object-contain" />
+            <span>PERSIBO Bojonegoro</span>
+          </div>
+        </h2>
+        <div class="flex w-12 items-center justify-end">
+          <!-- Empty space for balance -->
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="flex-1 overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <slot />
+      </main>
+
+      <!-- Bottom Navigation -->
+      {showBottomNav && (
+        <nav class="fixed bottom-0 left-0 right-0 h-20 bg-background-dark/80 backdrop-blur-sm border-t border-slate-800 flex justify-around items-center z-10">
+          <a href="/" class={`flex flex-col items-center gap-1 ${currentPath === '/' ? 'text-primary' : 'text-slate-500'}`}>
+            <span class="material-symbols-outlined" style={currentPath === '/' ? "font-variation-settings: 'FILL' 1;" : ""}>home</span>
+            <p class="text-xs font-bold">Beranda</p>
+          </a>
+          <a href="/pertandingan" class={`flex flex-col items-center gap-1 ${currentPath === '/pertandingan' ? 'text-primary' : 'text-slate-500'}`}>
+            <span class="material-symbols-outlined">calendar_month</span>
+            <p class="text-xs">Jadwal</p>
+          </a>
+          <a href="/klasemen" class={`flex flex-col items-center gap-1 ${currentPath === '/klasemen' ? 'text-primary' : 'text-slate-500'}`}>
+            <span class="material-symbols-outlined">emoji_events</span>
+            <p class="text-xs">Klasemen</p>
+          </a>
+          <a href="/pemain" class={`flex flex-col items-center gap-1 ${currentPath.startsWith('/pemain') ? 'text-primary' : 'text-slate-500'}`}>
+            <span class="material-symbols-outlined">person</span>
+            <p class="text-xs">Pemain</p>
+          </a>
+          <a href="/tim" class={`flex flex-col items-center gap-1 ${currentPath.startsWith('/tim') ? 'text-primary' : 'text-slate-500'}`}>
+            <span class="material-symbols-outlined" style={currentPath.startsWith('/tim') ? "font-variation-settings: 'FILL' 1;" : ""}>groups</span>
+            <p class="text-xs font-bold">Tim</p>
+          </a>
+        </nav>
+      )}
+      
+      {showBottomNav && <div class="h-20"></div>}
+      
+      <!-- Scroll to Top Button -->
+      <button 
+        id="scroll-to-top"
+        class="fixed bottom-24 right-4 z-30 hidden w-12 h-12 rounded-full bg-primary text-white shadow-lg hover:bg-primary/90 transition-all opacity-0 pointer-events-none flex items-center justify-center"
+        aria-label="Scroll to top"
+      >
+        <span class="material-symbols-outlined text-2xl">arrow_upward</span>
+      </button>
+    </div>
+  </body>
+</html>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const scrollToTopBtn = document.getElementById('scroll-to-top');
+    if (!scrollToTopBtn) return;
+
+    function toggleScrollButton() {
+      if (window.scrollY > 300) {
+        scrollToTopBtn.classList.remove('hidden', 'opacity-0', 'pointer-events-none');
+        scrollToTopBtn.classList.add('opacity-100');
+      } else {
+        scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+        scrollToTopBtn.classList.remove('opacity-100');
+      }
+    }
+
+    window.addEventListener('scroll', toggleScrollButton);
+    
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+
+<style is:global>
+  body {
+    font-family: 'Lexend', sans-serif;
+    min-height: max(884px, 100dvh);
+  }
+  
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  
+  .font-lexend-extrabold {
+    font-family: 'Lexend', sans-serif;
+    font-weight: 800;
+  }
+  
+  .bg-gradient-nyeleh {
+    background: linear-gradient(135deg, #f97316, #6d28d9);
+  }
+</style>

@@ -1,0 +1,254 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Lineup from '../../components/Lineup.astro';
+import { loadFixtures, getMatchDetailSlug } from '../../utils/dataLoader';
+import { loadMatchDetails, getMatchDetailByUrl } from '../../utils/dataLoader';
+import { loadTeams, getTeamLogo } from '../../utils/dataLoader';
+import type { MatchDetail } from '../../types';
+
+export async function getStaticPaths() {
+  const fixtures = await loadFixtures();
+  const matchDetails = await loadMatchDetails();
+  
+  // Create paths for all completed fixtures
+  const paths = fixtures
+    .filter(f => f.status === 'COMPLETED')
+    .map(fixture => {
+      const matchDetail = fixture.match_url ? getMatchDetailByUrl(matchDetails, fixture.match_url) : null;
+      const slug = getMatchDetailSlug(fixture);
+      return {
+        params: { slug },
+        props: { 
+          fixture,
+          matchDetail: matchDetail || null
+        }
+      };
+    });
+  
+  return paths;
+}
+
+const { fixture, matchDetail } = Astro.props;
+const teams = await loadTeams();
+
+const isPersiboHome = fixture.home_team.toUpperCase().includes('PERSIBO');
+const isPersiboAway = fixture.away_team.toUpperCase().includes('PERSIBO');
+const [homeScore, awayScore] = fixture.score ? fixture.score.split(':') : ['', ''];
+const persiboScore = isPersiboHome ? homeScore : awayScore;
+const opponentScore = isPersiboHome ? awayScore : homeScore;
+const persiboWon = parseInt(homeScore) > parseInt(awayScore) ? isPersiboHome : (parseInt(awayScore) > parseInt(homeScore) ? isPersiboAway : false);
+const persiboLost = parseInt(homeScore) < parseInt(awayScore) ? isPersiboHome : (parseInt(awayScore) < parseInt(homeScore) ? isPersiboAway : false);
+const isDraw = homeScore === awayScore;
+
+const homeTeamLogo = isPersiboHome ? '/logo.png' : (getTeamLogo(teams, fixture.home_team) || null);
+const awayTeamLogo = isPersiboAway ? '/logo.png' : (getTeamLogo(teams, fixture.away_team) || null);
+
+const breadcrumbItems = [
+  { label: 'Beranda', href: '/' },
+  { label: 'Pertandingan', href: '/pertandingan' },
+  { label: 'Detail Pertandingan', href: `/pertandingan/${getMatchDetailSlug(fixture)}` }
+];
+---
+
+<Layout 
+  title={`${fixture.home_team} vs ${fixture.away_team} - Detail Pertandingan (Unofficial)`}
+  description={`Detail pertandingan ${fixture.home_team} vs ${fixture.away_team} di Liga Nusantara 2025-26. Skor ${fixture.score}, tanggal ${fixture.date}, venue ${fixture.venue}. Website Unofficial.`}
+>
+  <div class="px-4 py-4 max-w-6xl mx-auto">
+    <Breadcrumb items={breadcrumbItems} />
+    
+    <!-- Back Button -->
+    <div class="mb-4">
+      <a href="/pertandingan" class="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors py-2 px-3 rounded-lg hover:bg-slate-800/50">
+        <span class="material-symbols-outlined text-xl">arrow_back</span>
+        <span class="text-sm font-medium">Kembali ke Pertandingan</span>
+      </a>
+    </div>
+
+    <!-- Match Header -->
+    <div class="rounded-xl bg-slate-800/50 border border-slate-700 p-4 md:p-6 mb-6">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0 mb-4">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-slate-400 text-sm">calendar_month</span>
+          <span class="text-slate-300 text-xs sm:text-sm">{fixture.date}</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-slate-400 text-sm">location_on</span>
+          <span class="text-slate-300 text-xs sm:text-sm">{fixture.venue}</span>
+        </div>
+      </div>
+
+      <!-- Teams and Score -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 mb-4">
+        <!-- Home Team -->
+        <div class="flex-1 text-center w-full sm:w-auto">
+          {homeTeamLogo && (
+            <img src={homeTeamLogo} alt={fixture.home_team} class="h-12 w-12 sm:h-16 sm:w-16 object-contain mx-auto mb-2" />
+          )}
+          <h2 class={`text-sm sm:text-lg font-bold ${isPersiboHome ? 'text-white' : 'text-slate-300'} break-words`}>
+            {fixture.home_team}
+          </h2>
+          {isPersiboHome && (
+            <span class="text-xs text-primary mt-1 block">HOME</span>
+          )}
+        </div>
+
+        <!-- Score -->
+        <div class="flex flex-col items-center gap-2 min-w-[100px] sm:min-w-[120px]">
+          <div class={`text-2xl sm:text-4xl font-extrabold ${
+            persiboWon ? 'text-green-400' : 
+            persiboLost ? 'text-red-400' : 
+            'text-yellow-400'
+          }`}>
+            {homeScore} : {awayScore}
+          </div>
+          {persiboWon && (
+            <span class="text-xs font-bold text-green-400 bg-green-500/20 px-2 sm:px-3 py-1 rounded-full">MENANG</span>
+          )}
+          {persiboLost && (
+            <span class="text-xs font-bold text-red-400 bg-red-500/20 px-2 sm:px-3 py-1 rounded-full">KALAH</span>
+          )}
+          {isDraw && (
+            <span class="text-xs font-bold text-yellow-400 bg-yellow-500/20 px-2 sm:px-3 py-1 rounded-full">SERI</span>
+          )}
+        </div>
+
+        <!-- Away Team -->
+        <div class="flex-1 text-center w-full sm:w-auto">
+          {awayTeamLogo && (
+            <img src={awayTeamLogo} alt={fixture.away_team} class="h-12 w-12 sm:h-16 sm:w-16 object-contain mx-auto mb-2" />
+          )}
+          <h2 class={`text-sm sm:text-lg font-bold ${isPersiboAway ? 'text-white' : 'text-slate-300'} break-words`}>
+            {fixture.away_team}
+          </h2>
+          {isPersiboAway && (
+            <span class="text-xs text-primary mt-1 block">AWAY</span>
+          )}
+        </div>
+      </div>
+    </div>
+
+    <!-- Lineups -->
+    {matchDetail && matchDetail.lineups && (
+      <section class="mb-6">
+        <h2 class="text-xl font-bold text-white mb-4">Lineup</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Lineup 
+            lineup={matchDetail.lineups.home_team} 
+            teamName={fixture.home_team}
+            isHome={true}
+          />
+          <Lineup 
+            lineup={matchDetail.lineups.away_team} 
+            teamName={fixture.away_team}
+            isHome={false}
+          />
+        </div>
+      </section>
+    )}
+
+    <!-- Events Timeline -->
+    {matchDetail && matchDetail.events && matchDetail.events.length > 0 && (
+      <section class="mb-6">
+        <h2 class="text-xl font-bold text-white mb-4">Timeline Pertandingan</h2>
+        <div class="rounded-xl bg-slate-800/50 border border-slate-700 p-4">
+          <div class="space-y-3">
+            {matchDetail.events.map((event, index) => (
+              <div key={index} class="flex items-center gap-3 p-3 rounded-lg bg-slate-900/50">
+                <div class="flex-shrink-0 w-12 text-center">
+                  <span class="text-sm font-bold text-primary">{event.minute}'</span>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-2">
+                    {event.type === 'goal' && (
+                      <span class="material-symbols-outlined text-green-400 text-lg">sports_soccer</span>
+                    )}
+                    {event.type === 'yellow_card' && (
+                      <span class="material-symbols-outlined text-yellow-400 text-lg">warning</span>
+                    )}
+                    {event.type === 'red_card' && (
+                      <span class="material-symbols-outlined text-red-400 text-lg">block</span>
+                    )}
+                    {event.type === 'substitution' && (
+                      <span class="material-symbols-outlined text-blue-400 text-lg">swap_horiz</span>
+                    )}
+                    <span class="text-white text-sm font-medium">{event.player}</span>
+                    <span class="text-slate-400 text-xs">({event.team})</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Statistics -->
+    {matchDetail && matchDetail.statistics && Object.keys(matchDetail.statistics).length > 0 && (
+      <section class="mb-6">
+        <h2 class="text-xl font-bold text-white mb-4">Statistik Pertandingan</h2>
+        <div class="rounded-xl bg-slate-800/50 border border-slate-700 p-4">
+          <div class="space-y-2 text-sm text-slate-300">
+            {Object.entries(matchDetail.statistics).map(([key, value]) => (
+              <div class="flex items-center justify-between py-2 border-b border-slate-700 last:border-0">
+                <span class="text-slate-400">{key}</span>
+                <span class="text-white font-medium">{String(value)}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- No Match Detail Message -->
+    {!matchDetail && (
+      <div class="rounded-xl bg-slate-800/50 border border-slate-700 p-6 text-center">
+        <span class="material-symbols-outlined text-slate-400 text-4xl mb-3 block">info</span>
+        <p class="text-slate-300 mb-2">Detail pertandingan belum tersedia</p>
+        <p class="text-slate-500 text-sm">Lineup dan statistik akan ditampilkan jika data tersedia.</p>
+      </div>
+    )}
+
+    <!-- External Link -->
+    {fixture.match_url && (
+      <div class="mt-6 pt-6 border-t border-slate-700">
+        <a 
+          href={fixture.match_url} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium"
+        >
+          <span>Lihat Detail di iLeague.id</span>
+          <span class="material-symbols-outlined text-base">open_in_new</span>
+        </a>
+      </div>
+    )}
+  </div>
+</Layout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": `${fixture.home_team} vs ${fixture.away_team}`,
+  "startDate": fixture.date,
+  "location": {
+    "@type": "Place",
+    "name": fixture.venue
+  },
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": fixture.home_team
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": fixture.away_team
+  },
+  ...(fixture.score && {
+    "score": {
+      "@type": "SportsEvent",
+      "homeScore": parseInt(homeScore),
+      "awayScore": parseInt(awayScore)
+    }
+  })
+})} />

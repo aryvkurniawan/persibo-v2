@@ -1,0 +1,129 @@
+---
+import type { Fixture } from '../types';
+import { loadTeams, getTeamLogo, getMatchDetailSlug } from '../utils/dataLoader';
+
+interface Props {
+  match: Fixture;
+}
+
+const { match } = Astro.props;
+const teams = await loadTeams();
+
+const isPersiboHome = match.home_team.toUpperCase().includes('PERSIBO');
+const isPersiboAway = match.away_team.toUpperCase().includes('PERSIBO');
+const isCompleted = match.status === 'COMPLETED';
+const isScheduled = match.status === 'SCHEDULED';
+
+// Parse score
+const [homeScore, awayScore] = match.score ? match.score.split(':') : ['', ''];
+const persiboScore = isPersiboHome ? homeScore : awayScore;
+const opponentScore = isPersiboHome ? awayScore : homeScore;
+const persiboWon = isCompleted && ((isPersiboHome && parseInt(homeScore) > parseInt(awayScore)) || (isPersiboAway && parseInt(awayScore) > parseInt(homeScore)));
+const persiboLost = isCompleted && ((isPersiboHome && parseInt(homeScore) < parseInt(awayScore)) || (isPersiboAway && parseInt(awayScore) < parseInt(homeScore)));
+const isDraw = isCompleted && homeScore === awayScore;
+
+const homeTeam = match.home_team;
+const awayTeam = match.away_team;
+
+// Get team logos
+const homeTeamLogo = isPersiboHome ? '/logo.png' : (getTeamLogo(teams, homeTeam) || null);
+const awayTeamLogo = isPersiboAway ? '/logo.png' : (getTeamLogo(teams, awayTeam) || null);
+---
+
+<div class="rounded-xl bg-slate-800/50 p-4 shadow-lg">
+  <div class="flex items-center justify-between mb-3">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-slate-400 text-sm">calendar_month</span>
+      <span class="text-slate-400 text-sm font-medium">{match.date}</span>
+    </div>
+    {isCompleted && (
+      <span class={`px-2 py-1 rounded text-xs font-bold ${
+        persiboWon ? 'bg-green-500/20 text-green-400' : 
+        persiboLost ? 'bg-red-500/20 text-red-400' : 
+        'bg-yellow-500/20 text-yellow-400'
+      }`}>
+        {persiboWon ? 'MENANG' : persiboLost ? 'KALAH' : 'SERI'}
+      </span>
+    )}
+    {isScheduled && (
+      <span class="px-2 py-1 rounded text-xs font-bold bg-blue-500/20 text-blue-400">
+        JADWAL
+      </span>
+    )}
+  </div>
+
+  <div class="flex items-center justify-between gap-4 mb-3">
+    <!-- Home Team -->
+    <div class="flex-1 text-right">
+      <p class={`text-sm font-bold mb-1 ${
+        isPersiboHome ? 'text-white' : 'text-slate-300'
+      }`}>
+        {homeTeam}
+      </p>
+      {homeTeamLogo && (
+        <img src={homeTeamLogo} alt={`Logo ${homeTeam} - ${isCompleted ? `Hasil pertandingan ${homeScore}:${awayScore} vs ${awayTeam}` : `Jadwal pertandingan vs ${awayTeam}`} Liga Nusantara 2025-26`} class="h-8 w-8 object-contain mx-auto mt-1" />
+      )}
+    </div>
+
+    <!-- Score -->
+    <div class="flex flex-col items-center gap-1 min-w-[80px]">
+      {isCompleted ? (
+        <>
+          <div class="text-2xl font-bold text-white">
+            {homeScore} : {awayScore}
+          </div>
+          <div class={`text-xs font-bold ${
+            persiboWon ? 'text-green-400' : 
+            persiboLost ? 'text-red-400' : 
+            'text-yellow-400'
+          }`}>
+            {persiboWon ? '✓' : persiboLost ? '✗' : '='} PERSIBO {persiboScore}
+          </div>
+        </>
+      ) : (
+        <div class="text-lg font-bold text-slate-500">VS</div>
+      )}
+    </div>
+
+    <!-- Away Team -->
+    <div class="flex-1 text-left">
+      <p class={`text-sm font-bold mb-1 ${
+        isPersiboAway ? 'text-white' : 'text-slate-300'
+      }`}>
+        {awayTeam}
+      </p>
+      {awayTeamLogo && (
+        <img src={awayTeamLogo} alt={`Logo ${awayTeam} - ${isCompleted ? `Hasil pertandingan ${homeScore}:${awayScore} vs ${homeTeam}` : `Jadwal pertandingan vs ${homeTeam}`} Liga Nusantara 2025-26`} class="h-8 w-8 object-contain mx-auto mt-1" />
+      )}
+    </div>
+  </div>
+
+  <div class="flex items-center justify-between pt-3 border-t border-slate-700">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-slate-400 text-sm">location_on</span>
+      <span class="text-slate-400 text-xs">{match.venue}</span>
+    </div>
+    <div class="flex items-center gap-2">
+      {isCompleted && match.match_url && (
+        <a 
+          href={`/pertandingan/${getMatchDetailSlug(match)}`}
+          class="text-primary hover:text-primary/80 text-sm font-medium flex items-center gap-1 py-2 px-3 rounded-lg hover:bg-primary/10 transition-colors min-h-[44px]"
+        >
+          Detail
+          <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+      )}
+      {match.match_url && (
+        <a 
+          href={match.match_url} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="text-slate-400 hover:text-slate-300 text-sm font-medium flex items-center gap-1 py-2 px-3 rounded-lg hover:bg-slate-700/50 transition-colors min-h-[44px]"
+          title="Buka di iLeague.id"
+        >
+          <span class="material-symbols-outlined text-base">open_in_new</span>
+        </a>
+      )}
+    </div>
+  </div>
+</div>

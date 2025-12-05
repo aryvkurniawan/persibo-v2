@@ -1,0 +1,46 @@
+---
+import type { Player } from '../types';
+
+interface Props {
+  player: Player;
+}
+
+const { player } = Astro.props;
+const slug = player.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+---
+
+<div 
+  class="rounded-xl bg-slate-800/50 shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+  data-player-card
+  data-player-name={player.name}
+  data-player-position={player.position || ''}
+  data-player-age={player.age}
+>
+  {player.photo_url && (
+    <div class="w-full h-80 md:h-96 bg-cover bg-top bg-no-repeat" style={`background-image: url("${player.photo_url}"); background-position: center top;`}>
+      <div class="w-full h-full bg-gradient-to-t from-slate-800/80 to-transparent"></div>
+      <img src={player.photo_url} alt={`Foto ${player.name}, ${player.position} PERSIBO Bojonegoro dengan nomor punggung ${player.jersey_number}`} class="sr-only" />
+    </div>
+  )}
+  <div class="p-4">
+    <div class="flex items-center gap-4">
+      <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center ring-2 ring-primary/30 shrink-0">
+        <span class="text-2xl font-bold text-primary">{player.jersey_number}</span>
+      </div>
+      <div class="flex-1 min-w-0">
+        <h3 class="font-bold text-lg text-white truncate">{player.name}</h3>
+        <p class="text-sm text-slate-400">Usia: {player.age} tahun</p>
+        <p class="text-sm text-slate-400">{player.country}</p>
+        {player.position && (
+          <p class="text-xs text-accent-teal mt-1">{player.position}</p>
+        )}
+      </div>
+    </div>
+    <a 
+      href={`/pemain/${slug}`}
+      class="mt-4 block text-center bg-accent-teal/20 text-accent-teal py-3 rounded-lg hover:bg-accent-teal/30 transition-colors text-sm font-bold min-h-[44px] flex items-center justify-center"
+    >
+      Lihat Detail
+    </a>
+  </div>
+</div>

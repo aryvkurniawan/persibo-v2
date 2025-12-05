@@ -1,0 +1,288 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Beranda', href: '/' },
+  { label: 'Tim', href: '/tim' },
+  { label: 'Profil Tim', href: '/tim/profil' }
+];
+---
+
+<Layout 
+  title="Profil Tim PERSIBO Bojonegoro (Unofficial)"
+  description="Profil lengkap PERSIBO Bojonegoro: sejarah, visi misi, dan daftar prestasi tim sepak bola kebanggaan Bojonegoro. Website Unofficial."
+>
+  <div class="px-4 py-4">
+    <Breadcrumb items={breadcrumbItems} />
+    
+    <!-- Header -->
+    <div class="mb-6">
+      <div class="flex items-center gap-3 mb-4">
+        <a href="/tim" class="text-slate-400 hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-2xl">arrow_back</span>
+        </a>
+        <h1 class="text-2xl font-extrabold text-white">Profil Tim</h1>
+      </div>
+      <p class="text-slate-400 text-sm">Sejarah, visi misi, dan prestasi PERSIBO Bojonegoro</p>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="rounded-xl bg-gradient-to-br from-primary/20 via-accent-purple/20 to-accent-teal/20 p-6 mb-6 border border-primary/30">
+      <div class="flex items-center gap-4">
+        <img src="/logo.png" alt="Logo PERSIBO Bojonegoro - Laskar Angling Dharma" class="w-20 h-20 object-contain" />
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-1">PERSIBO Bojonegoro</h2>
+          <p class="text-slate-300">Laskar Angling Dharma</p>
+          <p class="text-slate-400 text-sm mt-1">Didirikan: 12 Maret 1949</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sejarah -->
+    <section class="mb-6">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+          <span class="material-symbols-outlined text-primary">history</span>
+        </div>
+        <h2 class="text-xl font-bold text-white">Sejarah</h2>
+      </div>
+      <div class="rounded-xl bg-slate-800/50 p-6 space-y-4">
+        <p class="text-slate-300 leading-relaxed">
+          Persibo Bojonegoro didirikan pada <strong class="text-white">12 Maret 1949</strong> atas prakarsa Raden Temenggung Sukardi yang saat itu menjabat sebagai Bupati Bojonegoro. Sempat mengalami masa vakum pada tahun 1960, klub ini bangkit kembali pada milenium baru (tahun 2000) dan mulai menanjaki piramida sepak bola nasional dari Divisi Dua.
+        </p>
+        <p class="text-slate-300 leading-relaxed">
+          Persibo dikenal dengan julukan <strong class="text-primary">Laskar Angling Dharma</strong> dan pernah mendapat reputasi sebagai <em class="text-accent-teal">"The Giant Killer"</em> setelah menumbangkan tim-tim besar seperti Arema, Persik, dan Pelita Jaya di ajang Copa Indonesia.
+        </p>
+        <div class="bg-slate-900/50 rounded-lg p-4 border-l-4 border-primary">
+          <p class="text-slate-300 leading-relaxed">
+            <strong class="text-white">Masa keemasan Persibo</strong> terjadi pada periode 2010–2012. Mereka menjuarai Divisi Utama 2009/2010, kemudian puncaknya menjuarai <strong class="text-primary">Piala Indonesia 2012</strong>. Prestasi ini membawa mereka mewakili Indonesia di ajang <strong class="text-accent-teal">AFC Cup 2013</strong>. Namun, setelah itu klub mengalami masa sulit akibat sanksi federasi dan degradasi hingga ke kasta terendah.
+          </p>
+        </div>
+        <div class="space-y-3 mt-4">
+          <h3 class="text-lg font-bold text-white">Perjalanan Terkini:</h3>
+          <div class="space-y-2">
+            <div class="flex items-start gap-3">
+              <div class="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+              <div>
+                <p class="text-slate-300"><strong class="text-white">2023/2024:</strong> Promosi ke Liga 2 setelah menjadi Runner-up Liga 3 Nasional.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+              <div>
+                <p class="text-slate-300"><strong class="text-white">2024/2025:</strong> Berlaga di Liga 2 dan sempat memimpin klasemen Grup 3 pada awal musim. Namun, performa menurun drastis di paruh kedua hingga akhirnya kalah 1-2 dari Persipura Jayapura di babak <em>play-off</em> degradasi pada Februari 2025.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-2 h-2 rounded-full bg-accent-teal mt-2 flex-shrink-0"></div>
+              <div>
+                <p class="text-slate-300"><strong class="text-white">2025/2026:</strong> Saat ini (Desember 2025), Persibo kembali berlaga di <strong class="text-accent-teal">Liga 3 (Liga Nusantara)</strong> dengan target segera promosi kembali.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visi dan Misi -->
+    <section class="mb-6">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-full bg-accent-teal/20 flex items-center justify-center">
+          <span class="material-symbols-outlined text-accent-teal">visibility</span>
+        </div>
+        <h2 class="text-xl font-bold text-white">Visi dan Misi</h2>
+      </div>
+      <div class="rounded-xl bg-slate-800/50 p-6 space-y-6">
+        <div>
+          <h3 class="text-lg font-bold text-primary mb-3 flex items-center gap-2">
+            <span class="material-symbols-outlined text-xl">target</span>
+            Visi
+          </h3>
+          <p class="text-slate-300 leading-relaxed pl-8">
+            Mengembalikan kejayaan Persibo sebagai klub profesional yang disegani di kasta tertinggi sepak bola Indonesia dan menjadi kebanggaan masyarakat Bojonegoro.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-accent-teal mb-3 flex items-center gap-2">
+            <span class="material-symbols-outlined text-xl">flag</span>
+            Misi
+          </h3>
+          <div class="space-y-3 pl-8">
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-accent-teal text-sm mt-1">check_circle</span>
+              <p class="text-slate-300"><strong class="text-white">Prestasi Instan:</strong> Target utama saat ini adalah segera kembali promosi ke Liga 2 musim depan.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-accent-teal text-sm mt-1">check_circle</span>
+              <p class="text-slate-300"><strong class="text-white">Manajemen Profesional:</strong> Mengelola klub dengan tata kelola yang transparan dan profesional, terlepas dari ketergantungan dana pemerintah secara langsung.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-accent-teal text-sm mt-1">check_circle</span>
+              <p class="text-slate-300"><strong class="text-white">Sinergi Lokal:</strong> Membangun kolaborasi erat antara manajemen, suporter (Boromania), dan pemerintah daerah untuk mendukung ekosistem sepak bola yang sehat.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prestasi -->
+    <section class="mb-6">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-full bg-accent-purple/20 flex items-center justify-center">
+          <span class="material-symbols-outlined text-accent-purple">emoji_events</span>
+        </div>
+        <h2 class="text-xl font-bold text-white">Daftar Prestasi</h2>
+      </div>
+      <div class="rounded-xl bg-slate-800/50 p-6 space-y-6">
+        <!-- Tingkat Nasional & Internasional -->
+        <div>
+          <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">public</span>
+            Tingkat Nasional & Internasional
+          </h3>
+          <div class="space-y-3">
+            <div class="bg-gradient-to-r from-primary/20 to-transparent rounded-lg p-4 border-l-4 border-primary">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-2xl">military_tech</span>
+                <div>
+                  <p class="text-white font-bold">Juara Piala Indonesia</p>
+                  <p class="text-slate-400 text-sm">2012 (Prestasi Tertinggi)</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-gradient-to-r from-accent-teal/20 to-transparent rounded-lg p-4 border-l-4 border-accent-teal">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-accent-teal text-2xl">star</span>
+                <div>
+                  <p class="text-white font-bold">Partisipasi AFC Cup</p>
+                  <p class="text-slate-400 text-sm">2013 (Mewakili Indonesia di level Asia)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tingkat Liga/Divisi -->
+        <div>
+          <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+            <span class="material-symbols-outlined text-accent-purple">sports_soccer</span>
+            Tingkat Liga/Divisi
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div class="bg-slate-900/50 rounded-lg p-4 border border-slate-700">
+              <p class="text-white font-bold mb-1">Juara Divisi Utama</p>
+              <p class="text-slate-400 text-sm">2009/2010 (Promosi ke ISL)</p>
+            </div>
+            <div class="bg-slate-900/50 rounded-lg p-4 border border-slate-700">
+              <p class="text-white font-bold mb-1">Juara Divisi Satu</p>
+              <p class="text-slate-400 text-sm">2007</p>
+            </div>
+            <div class="bg-slate-900/50 rounded-lg p-4 border border-slate-700">
+              <p class="text-white font-bold mb-1">Juara Divisi Dua</p>
+              <p class="text-slate-400 text-sm">2004</p>
+            </div>
+            <div class="bg-slate-900/50 rounded-lg p-4 border border-slate-700">
+              <p class="text-white font-bold mb-1">Juara Liga 3 Jawa Timur</p>
+              <p class="text-slate-400 text-sm">2023/2024</p>
+            </div>
+            <div class="bg-slate-900/50 rounded-lg p-4 border border-slate-700 md:col-span-2">
+              <p class="text-white font-bold mb-1">Runner-up Liga 3 Nasional</p>
+              <p class="text-slate-400 text-sm">2023/2024 (Promosi ke Liga 2)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="mb-6">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+          <span class="material-symbols-outlined text-primary">help</span>
+        </div>
+        <h2 class="text-xl font-bold text-white">Pertanyaan Umum (FAQ)</h2>
+      </div>
+      <div class="rounded-xl bg-slate-800/50 p-6 space-y-4">
+        <div class="border-b border-slate-700 pb-4 last:border-0 last:pb-0">
+          <h3 class="text-lg font-bold text-white mb-2">Kapan PERSIBO Bojonegoro didirikan?</h3>
+          <p class="text-slate-300 leading-relaxed">PERSIBO Bojonegoro didirikan pada <strong class="text-white">12 Maret 1949</strong> atas prakarsa Raden Temenggung Sukardi yang saat itu menjabat sebagai Bupati Bojonegoro.</p>
+        </div>
+        <div class="border-b border-slate-700 pb-4 last:border-0 last:pb-0">
+          <h3 class="text-lg font-bold text-white mb-2">Apa julukan PERSIBO Bojonegoro?</h3>
+          <p class="text-slate-300 leading-relaxed">PERSIBO Bojonegoro dikenal dengan julukan <strong class="text-primary">Laskar Angling Dharma</strong> dan pernah mendapat reputasi sebagai "The Giant Killer" setelah menumbangkan tim-tim besar di ajang Copa Indonesia.</p>
+        </div>
+        <div class="border-b border-slate-700 pb-4 last:border-0 last:pb-0">
+          <h3 class="text-lg font-bold text-white mb-2">Apa prestasi tertinggi PERSIBO Bojonegoro?</h3>
+          <p class="text-slate-300 leading-relaxed">Prestasi tertinggi PERSIBO Bojonegoro adalah <strong class="text-primary">Juara Piala Indonesia 2012</strong>, yang membawa mereka mewakili Indonesia di <strong class="text-accent-teal">AFC Cup 2013</strong>.</p>
+        </div>
+        <div class="border-b border-slate-700 pb-4 last:border-0 last:pb-0">
+          <h3 class="text-lg font-bold text-white mb-2">Di kompetisi apa PERSIBO Bojonegoro bermain saat ini?</h3>
+          <p class="text-slate-300 leading-relaxed">Saat ini (Desember 2025), PERSIBO Bojonegoro berlaga di <strong class="text-primary">Liga 3 (Liga Nusantara) 2025-26</strong> di Grup C dengan target promosi kembali ke Liga 2.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-white mb-2">Apakah website ini website resmi PERSIBO Bojonegoro?</h3>
+          <p class="text-slate-300 leading-relaxed">Tidak, website ini adalah <strong class="text-white">website unofficial</strong> yang dibuat oleh penggemar untuk menyediakan informasi tentang PERSIBO Bojonegoro. Website ini tidak berafiliasi dengan manajemen resmi klub.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "SportsTeam",
+  "name": "PERSIBO Bojonegoro",
+  "alternateName": "Laskar Angling Dharma",
+  "foundingDate": "1949-03-12",
+  "sport": "Soccer",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bojonegoro",
+    "addressRegion": "Jawa Timur",
+    "addressCountry": "ID"
+  },
+  "memberOf": {
+    "@type": "SportsOrganization",
+    "name": "Liga Nusantara"
+  }
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kapan PERSIBO Bojonegoro didirikan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PERSIBO Bojonegoro didirikan pada 12 Maret 1949 atas prakarsa Raden Temenggung Sukardi yang saat itu menjabat sebagai Bupati Bojonegoro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apa julukan PERSIBO Bojonegoro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PERSIBO Bojonegoro dikenal dengan julukan Laskar Angling Dharma dan pernah mendapat reputasi sebagai The Giant Killer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apa prestasi tertinggi PERSIBO Bojonegoro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Prestasi tertinggi PERSIBO Bojonegoro adalah Juara Piala Indonesia 2012, yang membawa mereka mewakili Indonesia di AFC Cup 2013."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Di kompetisi apa PERSIBO Bojonegoro bermain saat ini?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Saat ini (Desember 2025), PERSIBO Bojonegoro berlaga di Liga 3 (Liga Nusantara) 2025-26 di Grup C dengan target promosi kembali ke Liga 2."
+      }
+    }
+  ]
+})} />

@@ -1,0 +1,86 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PlayerDetail from '../../components/PlayerDetail.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { loadPlayerDetails, loadPlayers, getPlayerDetailWithPhoto } from '../../utils/dataLoader';
+import type { PlayerDetail as PlayerDetailType } from '../../types';
+
+export async function getStaticPaths() {
+  const playerDetails = await loadPlayerDetails();
+  const players = await loadPlayers();
+  
+  // Create player details for all players, merging with existing details
+  const allPlayerDetails: PlayerDetailType[] = players.map((player) => {
+    const existingDetail = playerDetails.find(pd => pd.name === player.name);
+    
+    if (existingDetail) {
+      return {
+        ...existingDetail,
+        photo_url: player.photo_url || existingDetail.photo_url,
+      };
+    }
+    
+    // Create minimal detail for players without full details
+    return {
+      name: player.name,
+      full_name: player.name,
+      detail_url: player.detail_url,
+      scraped_at: player.scraped_at,
+      club: player.team,
+      position: player.position || '',
+      age: player.age,
+      country: player.country,
+      photo_url: player.photo_url,
+      statistics: {
+        appearances: parseInt(player.appearances) || 0,
+        goals: 0,
+        yellow_cards: 0,
+        red_cards: 0,
+      },
+      club_history: [],
+      base_team: player.team,
+    };
+  });
+  
+  return allPlayerDetails.map((player) => {
+    const slug = player.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+    return {
+      params: { slug },
+      props: { player },
+    };
+  });
+}
+
+const { player } = Astro.props;
+const slug = player.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+
+const breadcrumbItems = [
+  { label: 'Beranda', href: '/' },
+  { label: 'Pemain', href: '/pemain' },
+  { label: player.full_name, href: `/pemain/${slug}` }
+];
+---
+
+<Layout 
+  title={`${player.full_name} - PERSIBO Bojonegoro (Unofficial)`}
+  description={`Profil lengkap ${player.full_name}, ${player.position} dari PERSIBO Bojonegoro. Usia ${player.age} tahun, ${player.country}. Statistik: ${player.statistics.appearances} main, ${player.statistics.goals} gol. Website Unofficial.`}
+>
+  <Breadcrumb items={breadcrumbItems} />
+  <PlayerDetail player={player} />
+</Layout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": player.full_name,
+  "jobTitle": player.position,
+  "affiliation": {
+    "@type": "SportsTeam",
+    "name": "PERSIBO Bojonegoro",
+    "sport": "Soccer"
+  },
+  "nationality": {
+    "@type": "Country",
+    "name": player.country
+  }
+})} />

@@ -1,0 +1,57 @@
+---
+import type { Standing } from '../types';
+import { loadTeams, getTeamLogo } from '../utils/dataLoader';
+
+interface Props {
+  standings: Standing[];
+  group: string;
+  highlightTeam?: string;
+}
+
+const { standings, group, highlightTeam = 'PERSIBO Bojonegoro' } = Astro.props;
+const groupStandings = standings.filter(s => s.group === group).sort((a, b) => a.position - b.position);
+const teams = await loadTeams();
+---
+
+<div class="overflow-hidden rounded-xl border border-primary/20 bg-black/30">
+  <div class="overflow-x-auto">
+    <table class="w-full min-w-[600px]">
+      <thead>
+        <tr class="border-b border-primary/20">
+          <th class="px-3 py-3 text-center text-xs font-semibold uppercase tracking-wider text-zinc-400" style="width: 40px;">#</th>
+          <th class="px-3 py-3 text-left text-xs font-semibold uppercase tracking-wider text-zinc-400" style="min-width: 150px;">Tim</th>
+          <th class="px-3 py-3 text-center text-xs font-semibold uppercase tracking-wider text-zinc-400" style="width: 50px;">Main</th>
+          <th class="px-3 py-3 text-center text-xs font-semibold uppercase tracking-wider text-zinc-400" style="width: 50px;">Menang</th>
+          <th class="px-3 py-3 text-center text-xs font-semibold uppercase tracking-wider text-zinc-400" style="width: 50px;">Seri</th>
+          <th class="px-3 py-3 text-center text-xs font-semibold uppercase tracking-wider text-zinc-400" style="width: 50px;">Kalah</th>
+          <th class="px-3 py-3 text-center text-xs font-semibold uppercase tracking-wider text-zinc-400" style="width: 70px;">Gol</th>
+          <th class="px-3 py-3 text-center text-xs font-bold uppercase tracking-wider text-zinc-400" style="width: 50px;">Poin</th>
+        </tr>
+      </thead>
+      <tbody>
+        {groupStandings.map((standing) => (
+          <tr class={`border-b border-primary/20 ${standing.club === highlightTeam ? 'bg-primary/20' : ''}`}>
+            <td class={`px-3 py-2 text-center text-sm font-bold ${standing.club === highlightTeam ? 'text-primary' : 'text-zinc-200'}`}>{standing.position}</td>
+            <td class={`px-3 py-2 text-sm font-bold ${standing.club === highlightTeam ? 'text-primary' : 'text-white'}`}>
+              <div class="flex items-center gap-2">
+                {(() => {
+                  const teamLogo = standing.club === highlightTeam ? '/logo.png' : (getTeamLogo(teams, standing.club) || null);
+                  return teamLogo ? (
+                    <img src={teamLogo} alt={`Logo ${standing.club} - Posisi ${standing.position} di klasemen Liga Nusantara 2025-26 Grup ${group}`} class="h-6 w-6 object-contain" />
+                  ) : null;
+                })()}
+                <span>{standing.club}</span>
+              </div>
+            </td>
+            <td class={`px-3 py-2 text-center text-sm ${standing.club === highlightTeam ? 'font-bold text-primary' : 'font-medium text-zinc-300'}`}>{standing.played}</td>
+            <td class={`px-3 py-2 text-center text-sm ${standing.club === highlightTeam ? 'font-bold text-primary' : 'font-medium text-zinc-300'}`}>{standing.won}</td>
+            <td class={`px-3 py-2 text-center text-sm ${standing.club === highlightTeam ? 'font-bold text-primary' : 'font-medium text-zinc-300'}`}>{typeof standing.drawn === 'number' ? standing.drawn : (typeof standing.drawn === 'string' && standing.drawn.startsWith('-') ? '0' : standing.drawn)}</td>
+            <td class={`px-3 py-2 text-center text-sm ${standing.club === highlightTeam ? 'font-bold text-primary' : 'font-medium text-zinc-300'}`}>{typeof standing.lost === 'number' ? standing.lost : (standing.lost || '0')}</td>
+            <td class={`px-3 py-2 text-center text-sm ${standing.club === highlightTeam ? 'font-bold text-primary' : 'font-medium text-zinc-300'}`}>{standing.goals_for}:{standing.goals_against}</td>
+            <td class={`px-3 py-2 text-center text-sm font-bold ${standing.club === highlightTeam ? 'text-primary' : 'text-white'}`}>{standing.points}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>

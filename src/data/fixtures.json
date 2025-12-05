@@ -1,0 +1,156 @@
+[
+  {
+    "date": "29 November 2025",
+    "home_team": "PERSIBO BOJONEGORO",
+    "away_team": "RANS NUSANTARA FC",
+    "score": "0:1",
+    "status": "COMPLETED",
+    "venue": "SRIWEDARI",
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "team": "PERSIBO Bojonegoro",
+    "scraped_at": "2025-12-05T14:34:00.879226"
+  },
+  {
+    "date": "4 Desember 2025",
+    "home_team": "PERSIKUTIM UNITED",
+    "away_team": "PERSIBO BOJONEGORO",
+    "score": "1:2",
+    "status": "COMPLETED",
+    "venue": "BANYUANYAR",
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "team": "PERSIBO Bojonegoro",
+    "scraped_at": "2025-12-05T14:34:00.880311"
+  },
+  {
+    "date": "7 Desember 2025",
+    "home_team": "PERSEWAR",
+    "away_team": "PERSIBO BOJONEGORO",
+    "score": "",
+    "status": "SCHEDULED",
+    "venue": "UNS",
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "team": "PERSIBO Bojonegoro",
+    "scraped_at": "2025-12-05T14:34:00.882050"
+  },
+  {
+    "date": "12 Desember 2025",
+    "home_team": "PERSIBO BOJONEGORO",
+    "away_team": "PERSIKA KARANGANYAR",
+    "score": "",
+    "status": "SCHEDULED",
+    "venue": "BANYUANYAR",
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "team": "PERSIBO Bojonegoro",
+    "scraped_at": "2025-12-05T14:34:00.882975"
+  },
+  {
+    "date": "16 Desember 2025",
+    "home_team": "SANG MAESTRO FC",
+    "away_team": "PERSIBO BOJONEGORO",
+    "score": "",
+    "status": "SCHEDULED",
+    "venue": "BANYUANYAR",
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "team": "PERSIBO Bojonegoro",
+    "scraped_at": "2025-12-05T14:34:00.884606"
+  },
+  {
+    "date": "20 Desember 2025",
+    "home_team": "RANS NUSANTARA FC",
+    "away_team": "PERSIBO BOJONEGORO",
+    "score": "",
+    "status": "SCHEDULED",
+    "venue": "BANYUANYAR",
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "team": "PERSIBO Bojonegoro",
+    "scraped_at": "2025-12-05T14:34:00.886959"
+  },
+  {
+    "date": "23 Desember 2025",
+    "home_team": "PERSIBO BOJONEGORO",
+    "away_team": "PERSIKUTIM UNITED",
+    "score": "",
+    "status": "SCHEDULED",
+    "venue": "UNS",
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "team": "PERSIBO Bojonegoro",
+    "scraped_at": "2025-12-05T14:34:00.889829"
+  },
+  {
+    "date": "27 Desember 2025",
+    "home_team": "PERSIBO BOJONEGORO",
+    "away_team": "PERSEWAR",
+    "score": "",
+    "status": "SCHEDULED",
+    "venue": "BANYUANYAR",
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "team": "PERSIBO Bojonegoro",
+    "scraped_at": "2025-12-05T14:34:00.892633"
+  },
+  {
+    "date": "30 Desember 2025",
+    "home_team": "PERSIKA KARANGANYAR",
+    "away_team": "PERSIBO BOJONEGORO",
+    "score": "",
+    "status": "SCHEDULED",
+    "venue": "UNS",
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "team": "PERSIBO Bojonegoro",
+    "scraped_at": "2025-12-05T14:34:00.894982"
+  },
+  {
+    "date": "3 Januari 2026",
+    "home_team": "PERSIBO BOJONEGORO",
+    "away_team": "SANG MAESTRO FC",
+    "score": "",
+    "status": "SCHEDULED",
+    "venue": "BANYUANYAR",
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "team": "PERSIBO Bojonegoro",
+    "scraped_at": "2025-12-05T14:34:00.897114"
+  },
+  {
+    "date": "7 Januari 2026",
+    "home_team": "PERSIBO BOJONEGORO",
+    "away_team": "RANS NUSANTARA FC",
+    "score": "",
+    "status": "SCHEDULED",
+    "venue": "UNS",
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "team": "PERSIBO Bojonegoro",
+    "scraped_at": "2025-12-05T14:34:00.899671"
+  },
+  {
+    "date": "11 Januari 2026",
+    "home_team": "PERSIKUTIM UNITED",
+    "away_team": "PERSIBO BOJONEGORO",
+    "score": "",
+    "status": "SCHEDULED",
+    "venue": "BANYUANYAR",
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "team": "PERSIBO Bojonegoro",
+    "scraped_at": "2025-12-05T14:34:00.903509"
+  },
+  {
+    "date": "15 Januari 2026",
+    "home_team": "PERSEWAR",
+    "away_team": "PERSIBO BOJONEGORO",
+    "score": "",
+    "status": "SCHEDULED",
+    "venue": "UNS",
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "team": "PERSIBO Bojonegoro",
+    "scraped_at": "2025-12-05T14:34:00.905329"
+  },
+  {
+    "date": "19 Januari 2026",
+    "home_team": "PERSIBO BOJONEGORO",
+    "away_team": "PERSIKA KARANGANYAR",
+    "score": "",
+    "status": "SCHEDULED",
+    "venue": "UNS",
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "team": "PERSIBO Bojonegoro",
+    "scraped_at": "2025-12-05T14:34:00.906916"
+  }
+]

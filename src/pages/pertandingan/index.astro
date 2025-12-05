@@ -1,0 +1,116 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import MatchCard from '../../components/MatchCard.astro';
+import { loadFixtures, getCompletedFixtures, getScheduledFixtures } from '../../utils/dataLoader';
+
+const allFixtures = await loadFixtures();
+const completedFixtures = getCompletedFixtures(allFixtures);
+const scheduledFixtures = getScheduledFixtures(allFixtures);
+---
+
+<Layout 
+  title="Jadwal & Hasil Pertandingan PERSIBO Bojonegoro (Unofficial)"
+  description="Jadwal pertandingan dan hasil pertandingan PERSIBO Bojonegoro di Liga Nusantara 2025-26. Informasi lengkap tentang fixture dan hasil match. Website Unofficial."
+>
+  <div class="px-4 py-4">
+    <!-- Intro Text -->
+    <section class="mb-6">
+      <div class="rounded-xl bg-slate-800/50 p-6 border border-slate-700">
+        <h1 class="text-2xl font-extrabold text-white mb-3">Jadwal & Hasil Pertandingan PERSIBO Bojonegoro</h1>
+        <div class="space-y-3 text-slate-300 leading-relaxed">
+          <p>
+            Ikuti perjalanan <strong class="text-white">PERSIBO Bojonegoro</strong> di <strong class="text-primary">Liga Nusantara 2025-26</strong>. Halaman ini menampilkan semua hasil pertandingan yang sudah selesai dan jadwal pertandingan yang akan datang.
+          </p>
+          <p>
+            Gunakan tab di bawah untuk beralih antara melihat hasil pertandingan yang sudah selesai atau jadwal pertandingan mendatang. Setiap pertandingan menampilkan informasi lengkap termasuk tanggal, lawan, skor, venue, dan link ke detail pertandingan.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab Switcher -->
+    {(completedFixtures.length > 0 || scheduledFixtures.length > 0) && (
+      <div class="mb-4">
+        <div class="flex gap-2 bg-slate-800/50 rounded-lg p-1">
+          <button 
+            id="tab-completed" 
+            class="flex-1 py-3 px-4 rounded-lg font-medium text-sm transition-all bg-primary text-white"
+          >
+            Hasil ({completedFixtures.length})
+          </button>
+          <button 
+            id="tab-scheduled" 
+            class="flex-1 py-3 px-4 rounded-lg font-medium text-sm transition-all text-slate-400 hover:text-white"
+          >
+            Jadwal ({scheduledFixtures.length})
+          </button>
+        </div>
+      </div>
+    )}
+
+    <!-- Hasil Pertandingan -->
+    {completedFixtures.length > 0 && (
+      <section id="section-completed" class="mb-6">
+        <div class="px-4 space-y-3">
+          {completedFixtures.map((match) => (
+            <MatchCard match={match} />
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Jadwal Pertandingan -->
+    {scheduledFixtures.length > 0 && (
+      <section id="section-scheduled" class="mb-6 hidden">
+        <div class="px-4 space-y-3">
+          {scheduledFixtures.map((match) => (
+            <MatchCard match={match} />
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Empty State -->
+    {allFixtures.length === 0 && (
+      <div class="px-4 py-8">
+        <div class="bg-slate-800/50 rounded-xl shadow-lg p-8 text-center">
+          <span class="material-symbols-outlined text-slate-400 text-6xl mb-4">calendar_month</span>
+          <p class="text-slate-300 mb-2 font-medium">Belum ada data pertandingan</p>
+          <p class="text-slate-500 text-sm">Data jadwal dan hasil pertandingan akan tersedia segera.</p>
+        </div>
+      </div>
+    )}
+  </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabCompleted = document.getElementById('tab-completed');
+    const tabScheduled = document.getElementById('tab-scheduled');
+    const sectionCompleted = document.getElementById('section-completed');
+    const sectionScheduled = document.getElementById('section-scheduled');
+
+    if (!tabCompleted || !tabScheduled) return;
+
+    function switchTab(showCompleted) {
+      if (showCompleted) {
+        tabCompleted.classList.add('bg-primary', 'text-white');
+        tabCompleted.classList.remove('text-slate-400');
+        tabScheduled.classList.remove('bg-primary', 'text-white');
+        tabScheduled.classList.add('text-slate-400');
+        if (sectionCompleted) sectionCompleted.classList.remove('hidden');
+        if (sectionScheduled) sectionScheduled.classList.add('hidden');
+      } else {
+        tabScheduled.classList.add('bg-primary', 'text-white');
+        tabScheduled.classList.remove('text-slate-400');
+        tabCompleted.classList.remove('bg-primary', 'text-white');
+        tabCompleted.classList.add('text-slate-400');
+        if (sectionScheduled) sectionScheduled.classList.remove('hidden');
+        if (sectionCompleted) sectionCompleted.classList.add('hidden');
+      }
+    }
+
+    tabCompleted.addEventListener('click', () => switchTab(true));
+    tabScheduled.addEventListener('click', () => switchTab(false));
+  });
+</script>
+</Layout>

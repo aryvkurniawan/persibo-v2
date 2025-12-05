@@ -1,0 +1,137 @@
+---
+import type { MatchDetailLineup, MatchDetailPlayer } from '../types';
+import { loadPlayers } from '../utils/dataLoader';
+
+interface Props {
+  lineup: MatchDetailLineup;
+  teamName: string;
+  isHome: boolean;
+}
+
+const { lineup, teamName, isHome } = Astro.props;
+const players = await loadPlayers();
+
+// Filter out invalid players (those with weird names or jersey numbers)
+const validStartingXI = lineup.starting_xi.filter(p => 
+  p.name && 
+  p.name.length < 100 && 
+  p.name.length > 2 &&
+  !p.name.match(/^\d+$/) && 
+  !p.name.match(/^\d+[A-Z]/) &&
+  p.jersey_number && 
+  p.jersey_number < 1000 &&
+  p.jersey_number > 0
+);
+
+const validSubstitutes = lineup.substitutes.filter(p => 
+  p.name && 
+  p.name.length < 100 && 
+  p.name.length > 2 &&
+  !p.name.match(/^\d+$/) && 
+  !p.name.match(/^\d+[A-Z]/) &&
+  p.jersey_number && 
+  p.jersey_number < 1000 &&
+  p.jersey_number > 0
+);
+
+// Group players by position
+const groupByPosition = (players: MatchDetailPlayer[]) => {
+  const grouped: Record<string, MatchDetailPlayer[]> = {};
+  players.forEach(player => {
+    const position = player.position || 'Lainnya';
+    if (!grouped[position]) {
+      grouped[position] = [];
+    }
+    grouped[position].push(player);
+  });
+  return grouped;
+};
+
+const startingXIGrouped = groupByPosition(validStartingXI);
+const positionOrder = ['Penjaga Gawang', 'Belakang', 'Gelandang', 'Penyerang', 'Lainnya'];
+---
+
+<div class="rounded-xl bg-slate-800/50 border border-slate-700 p-4">
+  <div class="flex items-center gap-2 mb-4">
+    <h3 class="text-lg font-bold text-white">{teamName}</h3>
+    {lineup.coach && (
+      <span class="text-xs text-slate-400">Pelatih: {lineup.coach}</span>
+    )}
+  </div>
+
+  <!-- Starting XI -->
+  <div class="mb-4">
+    <h4 class="text-sm font-bold text-slate-300 mb-3">Starting XI</h4>
+    <div class="space-y-3">
+      {positionOrder.map(position => {
+        const playersInPosition = startingXIGrouped[position] || [];
+        if (playersInPosition.length === 0) return null;
+        
+        return (
+          <div key={position}>
+            <p class="text-xs font-medium text-slate-400 mb-2">{position}</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+              {playersInPosition.map((player) => {
+                const playerData = players.find(p => 
+                  p.name.toLowerCase().includes(player.name.toLowerCase().split(' ')[0]) ||
+                  player.name.toLowerCase().includes(p.name.toLowerCase().split(' ')[0])
+                );
+                const slug = playerData ? playerData.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '') : null;
+                
+                return (
+                  <div class="flex items-center gap-2 p-2 rounded-lg bg-slate-900/50 hover:bg-slate-900/70 transition-colors">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                      <span class="text-xs font-bold text-primary">{player.jersey_number}</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      {slug ? (
+                        <a href={`/pemain/${slug}`} class="block text-sm text-white hover:text-primary transition-colors truncate">
+                          {player.name}
+                        </a>
+                      ) : (
+                        <span class="text-sm text-white truncate block">{player.name}</span>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+
+  <!-- Substitutes -->
+  {validSubstitutes.length > 0 && (
+    <div>
+      <h4 class="text-sm font-bold text-slate-300 mb-3">Substitutes</h4>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+        {validSubstitutes.map((player) => {
+          const playerData = players.find(p => 
+            p.name.toLowerCase().includes(player.name.toLowerCase().split(' ')[0]) ||
+            player.name.toLowerCase().includes(p.name.toLowerCase().split(' ')[0])
+          );
+          const slug = playerData ? playerData.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '') : null;
+          
+          return (
+            <div class="flex items-center gap-2 p-2 rounded-lg bg-slate-900/30 hover:bg-slate-900/50 transition-colors">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-slate-700/50 flex items-center justify-center">
+                <span class="text-xs font-bold text-slate-400">{player.jersey_number}</span>
+              </div>
+              <div class="flex-1 min-w-0">
+                {slug ? (
+                  <a href={`/pemain/${slug}`} class="block text-sm text-slate-300 hover:text-primary transition-colors truncate">
+                    {player.name}
+                  </a>
+                ) : (
+                  <span class="text-sm text-slate-300 truncate block">{player.name}</span>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  )}
+</div>

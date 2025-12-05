@@ -1,0 +1,1870 @@
+[
+    {
+      "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/Persibo_Bojonegoro/Rans_Nusantara",
+      "scraped_at": "2025-12-05T18:47:54.900919",
+      "date": "Sabtu, 29 November 2025",
+      "venue": "Sriwedari",
+      "home_team": "PERSIBO BOJONEGORO",
+      "away_team": "RANS NUSANTARA",
+      "score": "0:1",
+      "home_score": 0,
+      "away_score": 1,
+      "lineups": {
+        "home_team": {
+          "starting_xi": [
+            {
+              "name": "91478238812399102261321819151418799",
+              "jersey_number": 311,
+              "position": null
+            },
+            {
+              "name": "Penjaga GawangADRE ARIDO GEOVANI88BelakangJOKO SUPRIYANTO3OSCAR NOVANGGA99RIO PRATAMA VALENTINO26RIZKY DWI NUGRAHA ASYARI2GelandangFADIL14FAJAR IHSANUDIN23ICHLASUL AMAL ZARDAN AROBY10RANGGA DWI LESMANA12PenyerangRADIANSYAH78SAMSUL ARIFC9PenyerangBAYU NUGROHOCF92TEGAR ANDRIE SHEVANTONCB6FAHMI ARMA ARDIANSHYALB30MUCHAMAD ZEGGA NOVEMBRIANCF21MOHAMMAD FEBRYANSYAH REFYAN SANUSIGK83JOVAN JORDANTIAN SYAHWA MAULANALB22YOGA PRASETYARB33ANANDA DHEA BAGUS SAPUTRAAM15NUR IKHSANGK1M REVAN JONI NURIANTO",
+              "jersey_number": 7,
+              "position": null,
+              "substitution_minutes": [
+                90,
+                90,
+                90,
+                90,
+                90,
+                90,
+                23,
+                45,
+                64,
+                90,
+                90,
+                84,
+                45,
+                45,
+                45,
+                84
+              ]
+            },
+            {
+              "name": "ADRE ARIDO GEOVANI",
+              "jersey_number": 88,
+              "position": "Penjaga Gawang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "JOKO SUPRIYANTO",
+              "jersey_number": 3,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "OSCAR NOVANGGA",
+              "jersey_number": 99,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "RIO PRATAMA VALENTINO",
+              "jersey_number": 26,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "RIZKY DWI NUGRAHA ASYARI",
+              "jersey_number": 2,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "FADIL",
+              "jersey_number": 14,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "FAJAR IHSANUDIN",
+              "jersey_number": 23,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                23,
+                45
+              ]
+            },
+            {
+              "name": "ICHLASUL AMAL ZARDAN AROBY",
+              "jersey_number": 10,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                64,
+                90
+              ]
+            },
+            {
+              "name": "RANGGA DWI LESMANA",
+              "jersey_number": 12,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "RADIANSYAH",
+              "jersey_number": 78,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                84,
+                84
+              ]
+            },
+            {
+              "name": "SAMSUL ARIFC",
+              "jersey_number": 9,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                45,
+                45
+              ]
+            },
+            {
+              "name": "BAYU NUGROHO",
+              "jersey_number": 92,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                45,
+                45
+              ]
+            },
+            {
+              "name": "TEGAR ANDRIE SHEVANTON",
+              "jersey_number": 6,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                45,
+                45
+              ]
+            },
+            {
+              "name": "FAHMI ARMA ARDIANSHYA",
+              "jersey_number": 30,
+              "position": "Penyerang"
+            },
+            {
+              "name": "MUCHAMAD ZEGGA NOVEMBRIAN",
+              "jersey_number": 21,
+              "position": "Penyerang"
+            },
+            {
+              "name": "MOHAMMAD FEBRYANSYAH REFYAN SANUSI",
+              "jersey_number": 83,
+              "position": "Penyerang"
+            },
+            {
+              "name": "JOVAN JORDANTIAN SYAHWA MAULANA",
+              "jersey_number": 22,
+              "position": "Penyerang"
+            },
+            {
+              "name": "YOGA PRASETYA",
+              "jersey_number": 33,
+              "position": "Penyerang"
+            },
+            {
+              "name": "ANANDA DHEA BAGUS SAPUTRA",
+              "jersey_number": 15,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                84,
+                84
+              ]
+            },
+            {
+              "name": "NUR IKHSAN",
+              "jersey_number": 1,
+              "position": "Penyerang"
+            },
+            {
+              "name": "M REVAN JONI NURIANTO",
+              "jersey_number": 7,
+              "position": "Penyerang"
+            },
+            {
+              "name": "MUHAMMAD DAVIN PRASETIYO",
+              "jersey_number": 14,
+              "position": "Penjaga Gawang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "15ACHMAD DWI FIRMANSYAH'",
+              "jersey_number": 45,
+              "position": "Belakang",
+              "substitution_minutes": [
+                6,
+                45
+              ]
+            },
+            {
+              "name": "ADE M NUR SAIHITUA",
+              "jersey_number": 19,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "ALDI TRI NUGROHO",
+              "jersey_number": 18,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "BAYU AJI",
+              "jersey_number": 3,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "SILVIO ESCOBAR BENITEZ",
+              "jersey_number": 9,
+              "position": "Belakang",
+              "substitution_minutes": [
+                61,
+                61
+              ]
+            },
+            {
+              "name": "M ALWI FURQON",
+              "jersey_number": 8,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                81,
+                81
+              ]
+            },
+            {
+              "name": "ABDUL RAHMANC",
+              "jersey_number": 21,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "13MUHAMAD SULTAN AKBAR'",
+              "jersey_number": 90,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                26,
+                90
+              ]
+            },
+            {
+              "name": "RAYA SHEVA PRADANA",
+              "jersey_number": 79,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                45,
+                45
+              ]
+            },
+            {
+              "name": "RIFALDI BAWUO",
+              "jersey_number": 11,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                61,
+                61
+              ]
+            },
+            {
+              "name": "ADRE ARIDO GEOVANI",
+              "jersey_number": 88,
+              "position": "Penjaga Gawang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "JOKO SUPRIYANTO",
+              "jersey_number": 3,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "OSCAR NOVANGGA",
+              "jersey_number": 99,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "RIO PRATAMA VALENTINO",
+              "jersey_number": 26,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "RIZKY DWI NUGRAHA ASYARI",
+              "jersey_number": 2,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "FADIL",
+              "jersey_number": 14,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "FAJAR IHSANUDIN",
+              "jersey_number": 23,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                23,
+                45
+              ]
+            },
+            {
+              "name": "ICHLASUL AMAL ZARDAN AROBY",
+              "jersey_number": 10,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                64,
+                90
+              ]
+            },
+            {
+              "name": "RANGGA DWI LESMANA",
+              "jersey_number": 12,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "RADIANSYAH",
+              "jersey_number": 78,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                84,
+                84
+              ]
+            },
+            {
+              "name": "SAMSUL ARIFC",
+              "jersey_number": 9,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                45,
+                45
+              ]
+            },
+            {
+              "name": "BAYU NUGROHO",
+              "jersey_number": 92,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                45,
+                45
+              ]
+            },
+            {
+              "name": "TEGAR ANDRIE SHEVANTON",
+              "jersey_number": 6,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                45,
+                45
+              ]
+            },
+            {
+              "name": "FAHMI ARMA ARDIANSHYA",
+              "jersey_number": 30,
+              "position": "Penyerang"
+            },
+            {
+              "name": "MUCHAMAD ZEGGA NOVEMBRIAN",
+              "jersey_number": 21,
+              "position": "Penyerang"
+            },
+            {
+              "name": "MOHAMMAD FEBRYANSYAH REFYAN SANUSI",
+              "jersey_number": 83,
+              "position": "Penyerang"
+            },
+            {
+              "name": "JOVAN JORDANTIAN SYAHWA MAULANA",
+              "jersey_number": 22,
+              "position": "Penyerang"
+            },
+            {
+              "name": "YOGA PRASETYA",
+              "jersey_number": 33,
+              "position": "Penyerang"
+            },
+            {
+              "name": "ANANDA DHEA BAGUS SAPUTRA",
+              "jersey_number": 15,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                84,
+                84
+              ]
+            },
+            {
+              "name": "NUR IKHSAN",
+              "jersey_number": 1,
+              "position": "Penyerang"
+            },
+            {
+              "name": "M REVAN JONI NURIANTO",
+              "jersey_number": 7,
+              "position": "Penyerang"
+            },
+            {
+              "name": "MUHAMMAD DAVIN PRASETIYO",
+              "jersey_number": 14,
+              "position": "Penjaga Gawang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "15ACHMAD DWI FIRMANSYAH'",
+              "jersey_number": 45,
+              "position": "Belakang",
+              "substitution_minutes": [
+                6,
+                45
+              ]
+            },
+            {
+              "name": "ADE M NUR SAIHITUA",
+              "jersey_number": 19,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "ALDI TRI NUGROHO",
+              "jersey_number": 18,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "BAYU AJI",
+              "jersey_number": 3,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "SILVIO ESCOBAR BENITEZ",
+              "jersey_number": 9,
+              "position": "Belakang",
+              "substitution_minutes": [
+                61,
+                61
+              ]
+            },
+            {
+              "name": "M ALWI FURQON",
+              "jersey_number": 8,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                81,
+                81
+              ]
+            },
+            {
+              "name": "ABDUL RAHMANC",
+              "jersey_number": 21,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "13MUHAMAD SULTAN AKBAR'",
+              "jersey_number": 90,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                26,
+                90
+              ]
+            },
+            {
+              "name": "RAYA SHEVA PRADANA",
+              "jersey_number": 79,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                45,
+                45
+              ]
+            },
+            {
+              "name": "RIFALDI BAWUO",
+              "jersey_number": 11,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                61,
+                61
+              ]
+            }
+          ],
+          "substitutes": [
+            {
+              "name": "TONY SUCIPTO",
+              "jersey_number": 6,
+              "position": null
+            },
+            {
+              "name": "MUHAMMAD ALMAGHFIRU INZAGHI",
+              "jersey_number": 87,
+              "position": null
+            },
+            {
+              "name": "REFAN NADIEF ATALLAH",
+              "jersey_number": 16,
+              "position": null
+            },
+            {
+              "name": "DITEA DWI CAHYA",
+              "jersey_number": 29,
+              "position": null
+            },
+            {
+              "name": "RIO FERNANDO DWI ARDIANSYAH",
+              "jersey_number": 75,
+              "position": null
+            },
+            {
+              "name": "TONY SUCIPTO",
+              "jersey_number": 6,
+              "position": null
+            },
+            {
+              "name": "MUHAMMAD ALMAGHFIRU INZAGHI",
+              "jersey_number": 87,
+              "position": null
+            },
+            {
+              "name": "REFAN NADIEF ATALLAH",
+              "jersey_number": 16,
+              "position": null
+            },
+            {
+              "name": "DITEA DWI CAHYA",
+              "jersey_number": 29,
+              "position": null
+            },
+            {
+              "name": "RIO FERNANDO DWI ARDIANSYAH",
+              "jersey_number": 75,
+              "position": null
+            }
+          ],
+          "coach": ""
+        },
+        "away_team": {
+          "starting_xi": [
+            {
+              "name": "ADRE ARIDO GEOVANI",
+              "jersey_number": 88,
+              "position": "Penjaga Gawang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "JOKO SUPRIYANTO",
+              "jersey_number": 3,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "OSCAR NOVANGGA",
+              "jersey_number": 99,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "RIO PRATAMA VALENTINO",
+              "jersey_number": 26,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "RIZKY DWI NUGRAHA ASYARI",
+              "jersey_number": 2,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "FADIL",
+              "jersey_number": 14,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "FAJAR IHSANUDIN",
+              "jersey_number": 23,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                23,
+                45
+              ]
+            },
+            {
+              "name": "ICHLASUL AMAL ZARDAN AROBY",
+              "jersey_number": 10,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                64,
+                90
+              ]
+            },
+            {
+              "name": "RANGGA DWI LESMANA",
+              "jersey_number": 12,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "RADIANSYAH",
+              "jersey_number": 78,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                84,
+                84
+              ]
+            },
+            {
+              "name": "SAMSUL ARIFC",
+              "jersey_number": 9,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                45,
+                45
+              ]
+            },
+            {
+              "name": "BAYU NUGROHO",
+              "jersey_number": 92,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                45,
+                45
+              ]
+            },
+            {
+              "name": "TEGAR ANDRIE SHEVANTON",
+              "jersey_number": 6,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                45,
+                45
+              ]
+            },
+            {
+              "name": "FAHMI ARMA ARDIANSHYA",
+              "jersey_number": 30,
+              "position": "Penyerang"
+            },
+            {
+              "name": "MUCHAMAD ZEGGA NOVEMBRIAN",
+              "jersey_number": 21,
+              "position": "Penyerang"
+            },
+            {
+              "name": "MOHAMMAD FEBRYANSYAH REFYAN SANUSI",
+              "jersey_number": 83,
+              "position": "Penyerang"
+            },
+            {
+              "name": "JOVAN JORDANTIAN SYAHWA MAULANA",
+              "jersey_number": 22,
+              "position": "Penyerang"
+            },
+            {
+              "name": "YOGA PRASETYA",
+              "jersey_number": 33,
+              "position": "Penyerang"
+            },
+            {
+              "name": "ANANDA DHEA BAGUS SAPUTRA",
+              "jersey_number": 15,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                84,
+                84
+              ]
+            },
+            {
+              "name": "NUR IKHSAN",
+              "jersey_number": 1,
+              "position": "Penyerang"
+            },
+            {
+              "name": "M REVAN JONI NURIANTO",
+              "jersey_number": 7,
+              "position": "Penyerang"
+            },
+            {
+              "name": "MUHAMMAD DAVIN PRASETIYO",
+              "jersey_number": 14,
+              "position": "Penjaga Gawang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "15ACHMAD DWI FIRMANSYAH'",
+              "jersey_number": 45,
+              "position": "Belakang",
+              "substitution_minutes": [
+                6,
+                45
+              ]
+            },
+            {
+              "name": "ADE M NUR SAIHITUA",
+              "jersey_number": 19,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "ALDI TRI NUGROHO",
+              "jersey_number": 18,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "BAYU AJI",
+              "jersey_number": 3,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "SILVIO ESCOBAR BENITEZ",
+              "jersey_number": 9,
+              "position": "Belakang",
+              "substitution_minutes": [
+                61,
+                61
+              ]
+            },
+            {
+              "name": "M ALWI FURQON",
+              "jersey_number": 8,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                81,
+                81
+              ]
+            },
+            {
+              "name": "ABDUL RAHMANC",
+              "jersey_number": 21,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "13MUHAMAD SULTAN AKBAR'",
+              "jersey_number": 90,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                26,
+                90
+              ]
+            },
+            {
+              "name": "RAYA SHEVA PRADANA",
+              "jersey_number": 79,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                45,
+                45
+              ]
+            },
+            {
+              "name": "RIFALDI BAWUO",
+              "jersey_number": 11,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                61,
+                61
+              ]
+            }
+          ],
+          "substitutes": [
+            {
+              "name": "TONY SUCIPTO",
+              "jersey_number": 6,
+              "position": null
+            },
+            {
+              "name": "MUHAMMAD ALMAGHFIRU INZAGHI",
+              "jersey_number": 87,
+              "position": null
+            },
+            {
+              "name": "REFAN NADIEF ATALLAH",
+              "jersey_number": 16,
+              "position": null
+            },
+            {
+              "name": "DITEA DWI CAHYA",
+              "jersey_number": 29,
+              "position": null
+            },
+            {
+              "name": "RIO FERNANDO DWI ARDIANSYAH",
+              "jersey_number": 75,
+              "position": null
+            }
+          ],
+          "coach": ""
+        }
+      },
+      "events": [],
+      "statistics": {},
+      "base_team": "PERSIBO Bojonegoro"
+    },
+    {
+      "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-12-04/Persikutim_United/Persibo_Bojonegoro",
+      "scraped_at": "2025-12-05T18:48:02.194618",
+      "date": "Kamis, 4 Desember 2025",
+      "venue": "Banyuanyar",
+      "home_team": "PERSIKUTIM UNITED",
+      "away_team": "PERSIBO BOJONEGORO",
+      "score": "1:2",
+      "home_score": 1,
+      "away_score": 2,
+      "lineups": {
+        "home_team": {
+          "starting_xi": [
+            {
+              "name": "902552857163518142741478688123309921",
+              "jersey_number": 520,
+              "position": null
+            },
+            {
+              "name": "Penjaga GawangMUHAMMAD RIDHO27BelakangDENI KUSNANTO4M. FEBRI SURYANTO35MUHAMMAD FARHAN SOPIULLOH5SHOLEH YOGA FEBRIANTO14GelandangARI WAKUM25AYUEP YULIANTO18DION GALEH SAPUTRA16PenyerangALBERT THEO WICAKSONO57JOHAN YOGA UTAMAC90RAFLIANOOR28PenyerangARIF AGUNG MUSTHOFAAM2MUHAMMAD ADRIANRWF10NOVAL JUNIOR ISKANDARCM8MUHAMMAD ILHAM FAHMICM36ANDIKA YOGATAMA PANJAITANCF9DICKY KURNIAWANLWF11JUANDA SAPUTRAGK33FAARIS SILVA NURHIDAYATRB21AKHMAD RIYADILB17M. ANDIKA KURNIAWAN",
+              "jersey_number": 13,
+              "position": null,
+              "substitution_minutes": [
+                90,
+                90,
+                29,
+                31,
+                90,
+                90,
+                90,
+                45,
+                59,
+                73,
+                59,
+                90,
+                90,
+                45,
+                59,
+                59,
+                73,
+                56,
+                31
+              ]
+            },
+            {
+              "name": "MUHAMMAD RIDHO",
+              "jersey_number": 27,
+              "position": "Penjaga Gawang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "DENI KUSNANTO",
+              "jersey_number": 4,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "M. FEBRI SURYANTO",
+              "jersey_number": 35,
+              "position": "Belakang",
+              "substitution_minutes": [
+                29,
+                31
+              ]
+            },
+            {
+              "name": "MUHAMMAD FARHAN SOPIULLOH",
+              "jersey_number": 5,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "SHOLEH YOGA FEBRIANTO",
+              "jersey_number": 14,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "ARI WAKUM",
+              "jersey_number": 25,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                45,
+                45
+              ]
+            },
+            {
+              "name": "AYUEP YULIANTO",
+              "jersey_number": 18,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                59,
+                59
+              ]
+            },
+            {
+              "name": "DION GALEH SAPUTRA",
+              "jersey_number": 16,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                73,
+                73
+              ]
+            },
+            {
+              "name": "ALBERT THEO WICAKSONO",
+              "jersey_number": 57,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                59,
+                59
+              ]
+            },
+            {
+              "name": "JOHAN YOGA UTAMAC",
+              "jersey_number": 90,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "RAFLIANOOR",
+              "jersey_number": 28,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "ARIF AGUNG MUSTHOFA",
+              "jersey_number": 2,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                45,
+                45
+              ]
+            },
+            {
+              "name": "MUHAMMAD ADRIANRWF",
+              "jersey_number": 10,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                59,
+                59
+              ]
+            },
+            {
+              "name": "NOVAL JUNIOR ISKANDAR",
+              "jersey_number": 8,
+              "position": "Penyerang"
+            },
+            {
+              "name": "MUHAMMAD ILHAM FAHMI",
+              "jersey_number": 36,
+              "position": "Penyerang"
+            },
+            {
+              "name": "ANDIKA YOGATAMA PANJAITAN",
+              "jersey_number": 9,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                59,
+                59
+              ]
+            },
+            {
+              "name": "DICKY KURNIAWANLWF",
+              "jersey_number": 11,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                73,
+                73
+              ]
+            },
+            {
+              "name": "JUANDA SAPUTRA",
+              "jersey_number": 33,
+              "position": "Penyerang"
+            },
+            {
+              "name": "FAARIS SILVA NURHIDAYAT",
+              "jersey_number": 21,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                56,
+                31
+              ]
+            },
+            {
+              "name": "AKHMAD RIYADI",
+              "jersey_number": 17,
+              "position": "Penyerang"
+            },
+            {
+              "name": "M. ANDIKA KURNIAWAN",
+              "jersey_number": 13,
+              "position": "Penyerang"
+            },
+            {
+              "name": "ADRE ARIDO GEOVANI",
+              "jersey_number": 88,
+              "position": "Penjaga Gawang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "FAHMI ARMA ARDIANSHYA",
+              "jersey_number": 30,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "JOKO SUPRIYANTO",
+              "jersey_number": 3,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "OSCAR NOVANGGA",
+              "jersey_number": 99,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "RIZKY DWI NUGRAHA ASYARI",
+              "jersey_number": 2,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "15ANANDA DHEA BAGUS SAPUTRA'",
+              "jersey_number": 74,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                74,
+                74
+              ]
+            },
+            {
+              "name": "FADILC",
+              "jersey_number": 14,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "TEGAR ANDRIE SHEVANTON",
+              "jersey_number": 6,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                71,
+                71
+              ]
+            },
+            {
+              "name": "IKHWAN AZKA FAUZI WIBOWO",
+              "jersey_number": 20,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                86,
+                86
+              ]
+            },
+            {
+              "name": "78RADIANSYAH'",
+              "jersey_number": 71,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                58,
+                71
+              ]
+            },
+            {
+              "name": "12RANGGA DWI LESMANA'",
+              "jersey_number": 90,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                8,
+                90
+              ]
+            },
+            {
+              "name": "MUHAMMAD RIDHO",
+              "jersey_number": 27,
+              "position": "Penjaga Gawang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "DENI KUSNANTO",
+              "jersey_number": 4,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "M. FEBRI SURYANTO",
+              "jersey_number": 35,
+              "position": "Belakang",
+              "substitution_minutes": [
+                29,
+                31
+              ]
+            },
+            {
+              "name": "MUHAMMAD FARHAN SOPIULLOH",
+              "jersey_number": 5,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "SHOLEH YOGA FEBRIANTO",
+              "jersey_number": 14,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "ARI WAKUM",
+              "jersey_number": 25,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                45,
+                45
+              ]
+            },
+            {
+              "name": "AYUEP YULIANTO",
+              "jersey_number": 18,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                59,
+                59
+              ]
+            },
+            {
+              "name": "DION GALEH SAPUTRA",
+              "jersey_number": 16,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                73,
+                73
+              ]
+            },
+            {
+              "name": "ALBERT THEO WICAKSONO",
+              "jersey_number": 57,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                59,
+                59
+              ]
+            },
+            {
+              "name": "JOHAN YOGA UTAMAC",
+              "jersey_number": 90,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "RAFLIANOOR",
+              "jersey_number": 28,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "ARIF AGUNG MUSTHOFA",
+              "jersey_number": 2,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                45,
+                45
+              ]
+            },
+            {
+              "name": "MUHAMMAD ADRIANRWF",
+              "jersey_number": 10,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                59,
+                59
+              ]
+            },
+            {
+              "name": "NOVAL JUNIOR ISKANDAR",
+              "jersey_number": 8,
+              "position": "Penyerang"
+            },
+            {
+              "name": "MUHAMMAD ILHAM FAHMI",
+              "jersey_number": 36,
+              "position": "Penyerang"
+            },
+            {
+              "name": "ANDIKA YOGATAMA PANJAITAN",
+              "jersey_number": 9,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                59,
+                59
+              ]
+            },
+            {
+              "name": "DICKY KURNIAWANLWF",
+              "jersey_number": 11,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                73,
+                73
+              ]
+            },
+            {
+              "name": "JUANDA SAPUTRA",
+              "jersey_number": 33,
+              "position": "Penyerang"
+            },
+            {
+              "name": "FAARIS SILVA NURHIDAYAT",
+              "jersey_number": 21,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                56,
+                31
+              ]
+            },
+            {
+              "name": "AKHMAD RIYADI",
+              "jersey_number": 17,
+              "position": "Penyerang"
+            },
+            {
+              "name": "M. ANDIKA KURNIAWAN",
+              "jersey_number": 13,
+              "position": "Penyerang"
+            },
+            {
+              "name": "ADRE ARIDO GEOVANI",
+              "jersey_number": 88,
+              "position": "Penjaga Gawang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "FAHMI ARMA ARDIANSHYA",
+              "jersey_number": 30,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "JOKO SUPRIYANTO",
+              "jersey_number": 3,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "OSCAR NOVANGGA",
+              "jersey_number": 99,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "RIZKY DWI NUGRAHA ASYARI",
+              "jersey_number": 2,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "15ANANDA DHEA BAGUS SAPUTRA'",
+              "jersey_number": 74,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                74,
+                74
+              ]
+            },
+            {
+              "name": "FADILC",
+              "jersey_number": 14,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "TEGAR ANDRIE SHEVANTON",
+              "jersey_number": 6,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                71,
+                71
+              ]
+            },
+            {
+              "name": "IKHWAN AZKA FAUZI WIBOWO",
+              "jersey_number": 20,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                86,
+                86
+              ]
+            },
+            {
+              "name": "78RADIANSYAH'",
+              "jersey_number": 71,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                58,
+                71
+              ]
+            },
+            {
+              "name": "12RANGGA DWI LESMANA'",
+              "jersey_number": 90,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                8,
+                90
+              ]
+            }
+          ],
+          "substitutes": [
+            {
+              "name": "SAMSUL ARIF",
+              "jersey_number": 9,
+              "position": null
+            },
+            {
+              "name": "FAJAR IHSANUDIN",
+              "jersey_number": 23,
+              "position": null
+            },
+            {
+              "name": "MUCHAMAD ZEGGA NOVEMBRIAN",
+              "jersey_number": 21,
+              "position": null
+            },
+            {
+              "name": "JOVAN JORDANTIAN SYAHWA MAULANA",
+              "jersey_number": 22,
+              "position": null
+            },
+            {
+              "name": "YOGA PRASETYA",
+              "jersey_number": 33,
+              "position": null
+            },
+            {
+              "name": "NUR IKHSAN",
+              "jersey_number": 1,
+              "position": null
+            },
+            {
+              "name": "SAMSUL ARIF",
+              "jersey_number": 9,
+              "position": null
+            },
+            {
+              "name": "FAJAR IHSANUDIN",
+              "jersey_number": 23,
+              "position": null
+            },
+            {
+              "name": "MUCHAMAD ZEGGA NOVEMBRIAN",
+              "jersey_number": 21,
+              "position": null
+            },
+            {
+              "name": "JOVAN JORDANTIAN SYAHWA MAULANA",
+              "jersey_number": 22,
+              "position": null
+            },
+            {
+              "name": "YOGA PRASETYA",
+              "jersey_number": 33,
+              "position": null
+            },
+            {
+              "name": "NUR IKHSAN",
+              "jersey_number": 1,
+              "position": null
+            }
+          ],
+          "coach": ""
+        },
+        "away_team": {
+          "starting_xi": [
+            {
+              "name": "MUHAMMAD RIDHO",
+              "jersey_number": 27,
+              "position": "Penjaga Gawang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "DENI KUSNANTO",
+              "jersey_number": 4,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "M. FEBRI SURYANTO",
+              "jersey_number": 35,
+              "position": "Belakang",
+              "substitution_minutes": [
+                29,
+                31
+              ]
+            },
+            {
+              "name": "MUHAMMAD FARHAN SOPIULLOH",
+              "jersey_number": 5,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "SHOLEH YOGA FEBRIANTO",
+              "jersey_number": 14,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "ARI WAKUM",
+              "jersey_number": 25,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                45,
+                45
+              ]
+            },
+            {
+              "name": "AYUEP YULIANTO",
+              "jersey_number": 18,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                59,
+                59
+              ]
+            },
+            {
+              "name": "DION GALEH SAPUTRA",
+              "jersey_number": 16,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                73,
+                73
+              ]
+            },
+            {
+              "name": "ALBERT THEO WICAKSONO",
+              "jersey_number": 57,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                59,
+                59
+              ]
+            },
+            {
+              "name": "JOHAN YOGA UTAMAC",
+              "jersey_number": 90,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "RAFLIANOOR",
+              "jersey_number": 28,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "ARIF AGUNG MUSTHOFA",
+              "jersey_number": 2,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                45,
+                45
+              ]
+            },
+            {
+              "name": "MUHAMMAD ADRIANRWF",
+              "jersey_number": 10,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                59,
+                59
+              ]
+            },
+            {
+              "name": "NOVAL JUNIOR ISKANDAR",
+              "jersey_number": 8,
+              "position": "Penyerang"
+            },
+            {
+              "name": "MUHAMMAD ILHAM FAHMI",
+              "jersey_number": 36,
+              "position": "Penyerang"
+            },
+            {
+              "name": "ANDIKA YOGATAMA PANJAITAN",
+              "jersey_number": 9,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                59,
+                59
+              ]
+            },
+            {
+              "name": "DICKY KURNIAWANLWF",
+              "jersey_number": 11,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                73,
+                73
+              ]
+            },
+            {
+              "name": "JUANDA SAPUTRA",
+              "jersey_number": 33,
+              "position": "Penyerang"
+            },
+            {
+              "name": "FAARIS SILVA NURHIDAYAT",
+              "jersey_number": 21,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                56,
+                31
+              ]
+            },
+            {
+              "name": "AKHMAD RIYADI",
+              "jersey_number": 17,
+              "position": "Penyerang"
+            },
+            {
+              "name": "M. ANDIKA KURNIAWAN",
+              "jersey_number": 13,
+              "position": "Penyerang"
+            },
+            {
+              "name": "ADRE ARIDO GEOVANI",
+              "jersey_number": 88,
+              "position": "Penjaga Gawang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "FAHMI ARMA ARDIANSHYA",
+              "jersey_number": 30,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "JOKO SUPRIYANTO",
+              "jersey_number": 3,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "OSCAR NOVANGGA",
+              "jersey_number": 99,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "RIZKY DWI NUGRAHA ASYARI",
+              "jersey_number": 2,
+              "position": "Belakang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "15ANANDA DHEA BAGUS SAPUTRA'",
+              "jersey_number": 74,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                74,
+                74
+              ]
+            },
+            {
+              "name": "FADILC",
+              "jersey_number": 14,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                90,
+                90
+              ]
+            },
+            {
+              "name": "TEGAR ANDRIE SHEVANTON",
+              "jersey_number": 6,
+              "position": "Gelandang",
+              "substitution_minutes": [
+                71,
+                71
+              ]
+            },
+            {
+              "name": "IKHWAN AZKA FAUZI WIBOWO",
+              "jersey_number": 20,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                86,
+                86
+              ]
+            },
+            {
+              "name": "78RADIANSYAH'",
+              "jersey_number": 71,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                58,
+                71
+              ]
+            },
+            {
+              "name": "12RANGGA DWI LESMANA'",
+              "jersey_number": 90,
+              "position": "Penyerang",
+              "substitution_minutes": [
+                8,
+                90
+              ]
+            }
+          ],
+          "substitutes": [
+            {
+              "name": "SAMSUL ARIF",
+              "jersey_number": 9,
+              "position": null
+            },
+            {
+              "name": "FAJAR IHSANUDIN",
+              "jersey_number": 23,
+              "position": null
+            },
+            {
+              "name": "MUCHAMAD ZEGGA NOVEMBRIAN",
+              "jersey_number": 21,
+              "position": null
+            },
+            {
+              "name": "JOVAN JORDANTIAN SYAHWA MAULANA",
+              "jersey_number": 22,
+              "position": null
+            },
+            {
+              "name": "YOGA PRASETYA",
+              "jersey_number": 33,
+              "position": null
+            },
+            {
+              "name": "NUR IKHSAN",
+              "jersey_number": 1,
+              "position": null
+            }
+          ],
+          "coach": ""
+        }
+      },
+      "events": [],
+      "statistics": {},
+      "base_team": "PERSIBO Bojonegoro"
+    }
+  ]

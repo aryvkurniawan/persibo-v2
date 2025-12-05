@@ -1,0 +1,35 @@
+---
+interface Props {
+  items: Array<{ label: string; href: string }>;
+}
+
+const { items } = Astro.props;
+---
+
+<nav class="px-4 py-2 mb-4" aria-label="Breadcrumb">
+  <ol class="flex items-center gap-2 text-sm flex-wrap">
+    {items.map((item, index) => (
+      <li class="flex items-center gap-2">
+        {index > 0 && <span class="material-symbols-outlined text-slate-500 text-base">chevron_right</span>}
+        {index === items.length - 1 ? (
+          <span class="text-slate-400 font-medium">{item.label}</span>
+        ) : (
+          <a href={item.href} class="text-slate-400 hover:text-white transition-colors">
+            {item.label}
+          </a>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.label,
+    "item": `${Astro.site || 'https://persibo-bojonegoro.id'}${item.href}`
+  }))
+})} />

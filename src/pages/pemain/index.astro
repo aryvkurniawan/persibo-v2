@@ -1,0 +1,167 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PlayerCard from '../../components/PlayerCard.astro';
+import SearchBar from '../../components/SearchBar.astro';
+import FilterBar from '../../components/FilterBar.astro';
+import { loadPlayers } from '../../utils/dataLoader';
+import { loadPlayerDetails } from '../../utils/dataLoader';
+
+const players = await loadPlayers();
+const playerDetails = await loadPlayerDetails();
+
+// Merge player data with details for position info and photo
+const playersWithDetails = players.map(player => {
+  const detail = playerDetails.find(pd => pd.name === player.name);
+  return {
+    ...player,
+    position: detail?.position || player.position || '',
+    photo_url: player.photo_url || detail?.photo_url
+  };
+});
+---
+
+<Layout 
+  title="Daftar Pemain PERSIBO Bojonegoro - Skuad Lengkap (Unofficial)"
+  description="Lihat daftar lengkap pemain PERSIBO Bojonegoro. Informasi pemain, posisi, statistik, dan profil lengkap seluruh skuad tim. Website Unofficial."
+>
+  <div class="px-4 py-4">
+    <!-- Intro Text -->
+    <section class="mb-6">
+      <div class="rounded-xl bg-slate-800/50 p-6 border border-slate-700">
+        <h1 class="text-2xl font-extrabold text-white mb-3">Daftar Pemain PERSIBO Bojonegoro</h1>
+        <div class="space-y-3 text-slate-300 leading-relaxed">
+          <p>
+            Lihat daftar lengkap <strong class="text-white">pemain PERSIBO Bojonegoro</strong> untuk musim Liga Nusantara 2025-26. Tim ini terdiri dari pemain-pemain berbakat dengan berbagai posisi: penjaga gawang, bek, gelandang, dan penyerang.
+          </p>
+          <p>
+            Gunakan fitur pencarian dan filter di bawah untuk menemukan pemain berdasarkan nama, posisi, atau usia. Klik pada kartu pemain untuk melihat profil lengkap, statistik, dan riwayat klub.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="mb-4">
+      <SearchBar />
+    </div>
+    
+    <!-- Mobile Filter Toggle -->
+    <div class="lg:hidden mb-4">
+      <button id="filter-toggle" class="w-full flex items-center justify-between bg-slate-800/50 border border-primary/20 rounded-lg px-4 py-3 text-white hover:bg-slate-800/70 transition-colors">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined">tune</span>
+          <span class="font-medium">Filter</span>
+        </div>
+        <span class="material-symbols-outlined text-sm" id="filter-icon">expand_more</span>
+      </button>
+    </div>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
+      <!-- Sidebar dengan Filter -->
+      <div class="lg:col-span-1 hidden lg:block" id="filter-sidebar-desktop">
+        <FilterBar />
+      </div>
+      
+      <!-- Mobile Filter (Collapsible) -->
+      <div class="lg:hidden hidden" id="filter-sidebar-mobile">
+        <FilterBar />
+      </div>
+      
+      <!-- Main Content -->
+      <div class="lg:col-span-3">
+        <div id="players-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {playersWithDetails.map((player) => (
+            <PlayerCard player={player} />
+          ))}
+        </div>
+        
+        <p id="no-results" class="hidden text-center text-slate-400 py-8">
+          Tidak ada pemain yang ditemukan.
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('search-input');
+    const positionFilter = document.getElementById('position-filter');
+    const ageFilter = document.getElementById('age-filter');
+    const resetFilter = document.getElementById('reset-filter');
+    const playersContainer = document.getElementById('players-container');
+    const noResults = document.getElementById('no-results');
+    const filterToggle = document.getElementById('filter-toggle');
+    const filterSidebarMobile = document.getElementById('filter-sidebar-mobile');
+    const filterIcon = document.getElementById('filter-icon');
+    
+    if (!searchInput || !playersContainer) return;
+    
+    const playerCards = playersContainer.querySelectorAll('[data-player-card]');
+
+    // Filter toggle for mobile
+    if (filterToggle && filterSidebarMobile && filterIcon) {
+      filterToggle.addEventListener('click', () => {
+        const isHidden = filterSidebarMobile.classList.contains('hidden');
+        if (isHidden) {
+          filterSidebarMobile.classList.remove('hidden');
+          filterIcon.style.transform = 'rotate(180deg)';
+        } else {
+          filterSidebarMobile.classList.add('hidden');
+          filterIcon.style.transform = 'rotate(0deg)';
+        }
+      });
+    }
+
+    function filterPlayers() {
+      const searchTerm = (searchInput?.value || '').toLowerCase();
+      const selectedPosition = positionFilter?.value || '';
+      const selectedAge = ageFilter?.value || '';
+
+      let visibleCount = 0;
+
+      playerCards.forEach((card) => {
+        const playerName = (card.getAttribute('data-player-name') || '').toLowerCase();
+        const playerPosition = card.getAttribute('data-player-position') || '';
+        const playerAge = parseInt(card.getAttribute('data-player-age') || '0');
+
+        const matchesSearch = !searchTerm || playerName.includes(searchTerm);
+        const matchesPosition = !selectedPosition || playerPosition === selectedPosition;
+        
+        let matchesAge = true;
+        if (selectedAge) {
+          if (selectedAge === '18-22') matchesAge = playerAge >= 18 && playerAge <= 22;
+          else if (selectedAge === '23-27') matchesAge = playerAge >= 23 && playerAge <= 27;
+          else if (selectedAge === '28-32') matchesAge = playerAge >= 28 && playerAge <= 32;
+          else if (selectedAge === '33+') matchesAge = playerAge >= 33;
+        }
+
+        if (matchesSearch && matchesPosition && matchesAge) {
+          card.style.display = '';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (visibleCount === 0) {
+        playersContainer.classList.add('hidden');
+        if (noResults) noResults.classList.remove('hidden');
+      } else {
+        playersContainer.classList.remove('hidden');
+        if (noResults) noResults.classList.add('hidden');
+      }
+    }
+
+    if (searchInput) searchInput.addEventListener('input', filterPlayers);
+    if (positionFilter) positionFilter.addEventListener('change', filterPlayers);
+    if (ageFilter) ageFilter.addEventListener('change', filterPlayers);
+    if (resetFilter) {
+      resetFilter.addEventListener('click', () => {
+        if (searchInput) searchInput.value = '';
+        if (positionFilter) positionFilter.value = '';
+        if (ageFilter) ageFilter.value = '';
+        filterPlayers();
+      });
+    }
+  });
+</script>

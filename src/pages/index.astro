@@ -1,0 +1,244 @@
+---
+import Layout from '../layouts/Layout.astro';
+import StandingsTable from '../components/StandingsTable.astro';
+import PlayerCard from '../components/PlayerCard.astro';
+import MatchTimelineCard from '../components/MatchTimelineCard.astro';
+import { loadStandings, getPersiboStanding, getStandingsByGroup } from '../utils/dataLoader';
+import { loadPlayers } from '../utils/dataLoader';
+import { loadPlayerDetails } from '../utils/dataLoader';
+import { loadFixtures, getCompletedFixtures, getScheduledFixtures } from '../utils/dataLoader';
+
+const standings = await loadStandings();
+const players = await loadPlayers();
+const playerDetails = await loadPlayerDetails();
+const persiboStanding = getPersiboStanding(standings);
+const groupCStandings = getStandingsByGroup(standings, 'C');
+
+// Get fixtures for timeline
+const allFixtures = await loadFixtures();
+const completedFixtures = getCompletedFixtures(allFixtures);
+const scheduledFixtures = getScheduledFixtures(allFixtures);
+
+// Get last 3 matches (newest first: PERSIKUTIM, then RANS)
+const last3Matches = completedFixtures.slice().reverse().slice(0, 3);
+
+// Get next match (first scheduled)
+const nextMatch = scheduledFixtures.length > 0 ? scheduledFixtures[0] : null;
+
+// Get top players by club_history count
+const topPlayers = playerDetails
+  .filter(p => p.club === 'PERSIBO Bojonegoro')
+  .sort((a, b) => {
+    const aHistoryCount = a.club_history?.length || 0;
+    const bHistoryCount = b.club_history?.length || 0;
+    return bHistoryCount - aHistoryCount;
+  })
+  .slice(0, 10)
+  .map(pd => {
+    const player = players.find(p => p.name === pd.name);
+    return player || null;
+  })
+  .filter(p => p !== null);
+
+// Get top scorers (by goals)
+const topScorers = playerDetails
+  .filter(p => p.club === 'PERSIBO Bojonegoro' && p.statistics?.goals > 0)
+  .sort((a, b) => {
+    const aGoals = a.statistics?.goals || 0;
+    const bGoals = b.statistics?.goals || 0;
+    return bGoals - aGoals;
+  })
+  .slice(0, 10)
+  .map(pd => {
+    const player = players.find(p => p.name === pd.name);
+    if (player) {
+      return { ...player, goals: pd.statistics?.goals || 0 };
+    }
+    return null;
+  })
+  .filter(p => p !== null);
+---
+
+<Layout 
+  title="PERSIBO Bojonegoro - Website Unofficial Tim Sepak Bola Bojonegoro"
+  description="Website Unofficial PERSIBO Bojonegoro. Informasi lengkap tentang tim, pemain, klasemen Liga Nusantara 2025-26, jadwal pertandingan, dan berita terbaru."
+>
+  <div class="px-4 py-4">
+    <!-- Hero Cards -->
+    <section class="mb-4">
+      <div class="flex items-stretch gap-4 overflow-x-auto pb-2">
+        <div class="flex h-full flex-1 flex-col rounded-xl bg-slate-800/50 shadow-lg min-w-[300px] w-full overflow-hidden">
+          <div class="w-full bg-center bg-no-repeat aspect-video bg-cover flex flex-col relative" style="background-image: url('/hero.jpg');">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro Text -->
+    <section class="mb-6">
+      <div class="rounded-xl bg-slate-800/50 p-6 border border-slate-700">
+        <h1 class="text-2xl font-extrabold text-white mb-3">Selamat Datang di Website Unofficial PERSIBO Bojonegoro</h1>
+        <div class="space-y-3 text-slate-300 leading-relaxed">
+          <p>
+            Website ini menyediakan informasi lengkap tentang <strong class="text-white">PERSIBO Bojonegoro</strong>, tim sepak bola kebanggaan masyarakat Bojonegoro yang saat ini berlaga di <strong class="text-primary">Liga Nusantara 2025-26</strong>. Dapatkan update terkini tentang klasemen, jadwal pertandingan, profil pemain, dan informasi tim.
+          </p>
+          <p>
+            PERSIBO Bojonegoro, yang dikenal dengan julukan <strong class="text-primary">Laskar Angling Dharma</strong>, adalah klub sepak bola profesional yang didirikan pada 12 Maret 1949. Tim ini memiliki sejarah panjang dan prestasi gemilang, termasuk juara Piala Indonesia 2012 dan partisipasi di AFC Cup 2013.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Mini: Last Matches & Next Match -->
+    {(last3Matches.length > 0 || nextMatch) && (
+      <section class="mb-4">
+        <div class="flex items-center justify-between mb-3 px-4">
+          <h2 class="text-slate-100 text-[22px] font-extrabold leading-tight tracking-[-0.015em]">Pertandingan</h2>
+          <a href="/pertandingan" class="text-primary hover:text-primary/80 text-sm font-medium flex items-center gap-1">
+            Lihat Semua
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+        <div class="px-4">
+          <div class="flex gap-3 overflow-x-auto pb-2 [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {nextMatch && (
+              <MatchTimelineCard match={nextMatch} isNextMatch={true} />
+            )}
+            {last3Matches.map((match) => (
+              <MatchTimelineCard match={match} />
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Klasemen Grup C -->
+    <section class="mb-4">
+      <h2 class="text-slate-100 text-[22px] font-extrabold leading-tight tracking-[-0.015em] pb-3 pt-5 px-4">Klasemen Grup C</h2>
+      <div class="px-4">
+        <StandingsTable standings={standings} group="C" />
+      </div>
+    </section>
+
+    <!-- Top Scorers -->
+    {topScorers.length > 0 && (
+      <section class="mb-4">
+        <h2 class="text-slate-100 text-[22px] font-extrabold leading-tight tracking-[-0.015em] pb-3 pt-5 px-4">Top Scorer</h2>
+        <div class="px-4">
+          <div class="rounded-xl bg-slate-800/50 border border-slate-700 overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full">
+                <thead class="bg-slate-900/50">
+                  <tr>
+                    <th class="text-left py-3 px-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Posisi</th>
+                    <th class="text-left py-3 px-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Pemain</th>
+                    <th class="text-center py-3 px-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Posisi</th>
+                    <th class="text-center py-3 px-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Gol</th>
+                    <th class="text-center py-3 px-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Main</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-700">
+                  {topScorers.map((player, index) => {
+                    const playerDetail = playerDetails.find(pd => pd.name === player.name);
+                    const slug = player.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+                    return (
+                      <tr class="hover:bg-slate-800/70 transition-colors">
+                        <td class="py-3 px-4">
+                          <div class="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-primary font-bold text-sm">
+                            {index + 1}
+                          </div>
+                        </td>
+                        <td class="py-3 px-4">
+                          <a href={`/pemain/${slug}`} class="flex items-center gap-3 hover:text-primary transition-colors">
+                            {player.photo_url && (
+                              <div class="w-10 h-10 rounded-full overflow-hidden bg-slate-700 flex-shrink-0">
+                                <img src={player.photo_url} alt={player.name} class="w-full h-full object-cover" />
+                              </div>
+                            )}
+                            <div>
+                              <div class="text-white font-medium text-sm">{player.name}</div>
+                              {player.jersey_number && (
+                                <div class="text-xs text-slate-400">#{player.jersey_number}</div>
+                              )}
+                            </div>
+                          </a>
+                        </td>
+                        <td class="py-3 px-4 text-center">
+                          <span class="text-slate-300 text-sm">{playerDetail?.position || player.position || '-'}</span>
+                        </td>
+                        <td class="py-3 px-4 text-center">
+                          <div class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-primary font-bold text-sm">
+                            {player.goals}
+                          </div>
+                        </td>
+                        <td class="py-3 px-4 text-center">
+                          <span class="text-slate-300 text-sm">{playerDetail?.statistics?.appearances || player.appearances || 0}</span>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Top Players -->
+    {topPlayers.length > 0 && (
+      <section class="mb-4">
+        <h2 class="text-slate-100 text-[22px] font-extrabold leading-tight tracking-[-0.015em] pb-3 pt-5 px-4">Top Pemain</h2>
+        <div class="px-4">
+          <div class="flex gap-4 overflow-x-auto pb-2 [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {topPlayers.map((player) => (
+              <div class="min-w-[280px] flex-shrink-0">
+                <PlayerCard player={player} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Berita Terbaru -->
+    <section class="mb-4">
+      <div class="flex items-center justify-between mb-3 px-4">
+        <h2 class="text-slate-100 text-[22px] font-extrabold leading-tight tracking-[-0.015em]">Berita Terbaru</h2>
+        <a href="/tim/berita" class="text-primary hover:text-primary/80 text-sm font-medium flex items-center gap-1">
+          Lihat Semua
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </div>
+      <div class="px-4">
+        <a href="/tim/berita/bangkit-persibo-raih-kemenangan-perdana-tumbangkan-persikutim" class="block rounded-xl bg-slate-800/50 border border-slate-700 overflow-hidden hover:border-slate-600 transition-all group">
+          <!-- Featured Image -->
+          <div class="relative w-full h-48 bg-cover bg-center" style="background-image: url('/img/persibo-persikutam.jpg');">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/70 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-4">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">Liga 3 Nusantara</span>
+                <span class="text-xs text-slate-300">4 Desember 2025</span>
+              </div>
+              <h3 class="text-lg font-bold text-white leading-tight group-hover:text-primary transition-colors">
+                Bangkit! Persibo Raih Kemenangan Perdana di Liga 3, Tumbangkan Persikutim 2-1
+              </h3>
+            </div>
+          </div>
+          
+          <!-- Article Preview -->
+          <div class="p-4">
+            <p class="text-slate-300 text-sm leading-relaxed line-clamp-2">
+              Persibo Bojonegoro berhasil memetik kemenangan krusial di laga kedua Grup C Liga 3 Nusantara. Laskar Angling Dharma sukses menumbangkan Persikutim United dengan skor akhir 2-1.
+            </p>
+            <div class="flex items-center gap-2 text-primary text-xs font-medium mt-3">
+              <span>Baca Selengkapnya</span>
+              <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+  </div>
+</Layout>
