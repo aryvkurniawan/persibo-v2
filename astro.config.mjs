@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://persibo-bojonegoro.id',
+  site: 'https://persibo.com',
   integrations: [
     tailwind(),
     sitemap(),

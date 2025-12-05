@@ -129,7 +129,7 @@ dan proyek ini mengikuti [Semantic Versioning](https://semver.org/lang/id/).
 ```
 
 #### Configuration
-- Site URL: `https://persibo-bojonegoro.id`
+- Site URL: `https://persibo.com`
 - Sitemap: Enabled dengan default settings
 - Tailwind: Dark mode enabled
 
