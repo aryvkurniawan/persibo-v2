@@ -1,6 +1,7 @@
 ---
 import type { Fixture } from '../types';
 import { loadTeams, getTeamLogo } from '../utils/dataLoader';
+import { optimizeTeamLogo } from '../utils/imageOptimizer';
 
 interface Props {
   match: Fixture;
@@ -21,8 +22,10 @@ const persiboLost = isCompleted && ((isPersiboHome && parseInt(homeScore) < pars
 const isDraw = isCompleted && homeScore === awayScore;
 
 // Get team logos
-const homeTeamLogo = isPersiboHome ? '/logo.png' : (getTeamLogo(teams, match.home_team) || null);
-const awayTeamLogo = isPersiboAway ? '/logo.png' : (getTeamLogo(teams, match.away_team) || null);
+const homeTeamLogoRaw = isPersiboHome ? '/logo-32.png' : (getTeamLogo(teams, match.home_team) || null);
+const awayTeamLogoRaw = isPersiboAway ? '/logo-32.png' : (getTeamLogo(teams, match.away_team) || null);
+const homeTeamLogo = optimizeTeamLogo(homeTeamLogoRaw, 32);
+const awayTeamLogo = optimizeTeamLogo(awayTeamLogoRaw, 32);
 
 // Get opponent name
 const opponentName = isPersiboHome ? match.away_team : match.home_team;
@@ -52,7 +55,7 @@ const opponentLogo = isPersiboHome ? awayTeamLogo : homeTeamLogo;
   <div class="flex flex-col gap-3 mb-2">
     <!-- Persibo -->
     <div class="flex items-center justify-center gap-2">
-      <img src="/logo.png" alt={`Logo PERSIBO Bojonegoro - ${isNextMatch ? 'Jadwal' : 'Hasil'} pertandingan vs ${opponentName}`} class="h-8 w-8 object-contain flex-shrink-0" />
+      <img src="/logo-32.png" alt={`Logo PERSIBO Bojonegoro - ${isNextMatch ? 'Jadwal' : 'Hasil'} pertandingan vs ${opponentName}`} class="h-8 w-8 object-contain flex-shrink-0" width="32" height="32" loading="lazy" />
       <span class="text-sm font-bold text-white">PERSIBO</span>
     </div>
     
@@ -74,7 +77,7 @@ const opponentLogo = isPersiboHome ? awayTeamLogo : homeTeamLogo;
     <!-- Opponent -->
     <div class="flex items-center justify-center gap-2">
       {opponentLogo && (
-        <img src={opponentLogo} alt={`Logo ${opponentName} - ${isNextMatch ? 'Jadwal' : 'Hasil'} pertandingan vs PERSIBO Bojonegoro`} class="h-8 w-8 object-contain flex-shrink-0" />
+        <img src={opponentLogo} alt={`Logo ${opponentName} - ${isNextMatch ? 'Jadwal' : 'Hasil'} pertandingan vs PERSIBO Bojonegoro`} class="h-8 w-8 object-contain flex-shrink-0" width="32" height="32" loading="lazy" />
       )}
       <span class="text-sm font-bold text-slate-300">{opponentName}</span>
     </div>

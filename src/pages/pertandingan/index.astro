@@ -12,12 +12,12 @@ const scheduledFixtures = getScheduledFixtures(allFixtures);
   title="Jadwal & Hasil Pertandingan PERSIBO Bojonegoro (Unofficial)"
   description="Jadwal pertandingan dan hasil pertandingan PERSIBO Bojonegoro di Liga Nusantara 2025-26. Informasi lengkap tentang fixture dan hasil match. Website Unofficial."
 >
-  <div class="px-4 py-4">
+  <div class="max-w-7xl mx-auto px-4 lg:px-6 py-4 lg:py-6">
     <!-- Intro Text -->
-    <section class="mb-6">
-      <div class="rounded-xl bg-slate-800/50 p-6 border border-slate-700">
-        <h1 class="text-2xl font-extrabold text-white mb-3">Jadwal & Hasil Pertandingan PERSIBO Bojonegoro</h1>
-        <div class="space-y-3 text-slate-300 leading-relaxed">
+    <section class="mb-6 lg:mb-8">
+      <div class="rounded-xl bg-slate-800/50 p-6 lg:p-8 border border-slate-700">
+        <h1 class="text-2xl lg:text-3xl font-extrabold text-white mb-3 lg:mb-4">Jadwal & Hasil Pertandingan PERSIBO Bojonegoro</h1>
+        <div class="space-y-3 lg:space-y-4 text-slate-300 leading-relaxed text-sm lg:text-base">
           <p>
             Ikuti perjalanan <strong class="text-white">PERSIBO Bojonegoro</strong> di <strong class="text-primary">Liga Nusantara 2025-26</strong>. Halaman ini menampilkan semua hasil pertandingan yang sudah selesai dan jadwal pertandingan yang akan datang.
           </p>
@@ -30,17 +30,17 @@ const scheduledFixtures = getScheduledFixtures(allFixtures);
 
     <!-- Tab Switcher -->
     {(completedFixtures.length > 0 || scheduledFixtures.length > 0) && (
-      <div class="mb-4">
-        <div class="flex gap-2 bg-slate-800/50 rounded-lg p-1">
+      <div class="mb-4 lg:mb-6">
+        <div class="flex gap-2 bg-slate-800/50 rounded-lg p-1 max-w-md">
           <button 
             id="tab-completed" 
-            class="flex-1 py-3 px-4 rounded-lg font-medium text-sm transition-all bg-primary text-white"
+            class="flex-1 py-3 px-4 rounded-lg font-medium text-sm lg:text-base transition-all bg-primary text-white"
           >
             Hasil ({completedFixtures.length})
           </button>
           <button 
             id="tab-scheduled" 
-            class="flex-1 py-3 px-4 rounded-lg font-medium text-sm transition-all text-slate-400 hover:text-white"
+            class="flex-1 py-3 px-4 rounded-lg font-medium text-sm lg:text-base transition-all text-slate-400 hover:text-white"
           >
             Jadwal ({scheduledFixtures.length})
           </button>
@@ -50,10 +50,12 @@ const scheduledFixtures = getScheduledFixtures(allFixtures);
 
     <!-- Hasil Pertandingan -->
     {completedFixtures.length > 0 && (
-      <section id="section-completed" class="mb-6">
-        <div class="px-4 space-y-3">
+      <section id="section-completed" class="mb-6 lg:mb-8" style="pointer-events: auto;">
+        <div class="space-y-3 lg:space-y-4 lg:grid lg:grid-cols-2 lg:gap-6">
           {completedFixtures.map((match) => (
-            <MatchCard match={match} />
+            <div class="lg:contents">
+              <MatchCard match={match} />
+            </div>
           ))}
         </div>
       </section>
@@ -61,10 +63,12 @@ const scheduledFixtures = getScheduledFixtures(allFixtures);
 
     <!-- Jadwal Pertandingan -->
     {scheduledFixtures.length > 0 && (
-      <section id="section-scheduled" class="mb-6 hidden">
-        <div class="px-4 space-y-3">
+      <section id="section-scheduled" class="mb-6 lg:mb-8 hidden" style="pointer-events: auto;">
+        <div class="space-y-3 lg:space-y-4 lg:grid lg:grid-cols-2 lg:gap-6">
           {scheduledFixtures.map((match) => (
-            <MatchCard match={match} />
+            <div class="lg:contents">
+              <MatchCard match={match} />
+            </div>
           ))}
         </div>
       </section>
@@ -72,45 +76,59 @@ const scheduledFixtures = getScheduledFixtures(allFixtures);
 
     <!-- Empty State -->
     {allFixtures.length === 0 && (
-      <div class="px-4 py-8">
-        <div class="bg-slate-800/50 rounded-xl shadow-lg p-8 text-center">
-          <span class="material-symbols-outlined text-slate-400 text-6xl mb-4">calendar_month</span>
-          <p class="text-slate-300 mb-2 font-medium">Belum ada data pertandingan</p>
-          <p class="text-slate-500 text-sm">Data jadwal dan hasil pertandingan akan tersedia segera.</p>
+      <div class="py-8 lg:py-12">
+        <div class="bg-slate-800/50 rounded-xl shadow-lg p-8 lg:p-12 text-center">
+          <span class="material-symbols-outlined text-slate-400 text-6xl lg:text-7xl mb-4">calendar_month</span>
+          <p class="text-slate-300 mb-2 font-medium text-lg lg:text-xl">Belum ada data pertandingan</p>
+          <p class="text-slate-400 text-sm lg:text-base">Data jadwal dan hasil pertandingan akan tersedia segera.</p>
         </div>
       </div>
     )}
   </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const tabCompleted = document.getElementById('tab-completed');
-    const tabScheduled = document.getElementById('tab-scheduled');
-    const sectionCompleted = document.getElementById('section-completed');
-    const sectionScheduled = document.getElementById('section-scheduled');
+<script is:inline>
+  (function() {
+    function initTabs() {
+      const tabCompleted = document.getElementById('tab-completed');
+      const tabScheduled = document.getElementById('tab-scheduled');
+      const sectionCompleted = document.getElementById('section-completed');
+      const sectionScheduled = document.getElementById('section-scheduled');
 
-    if (!tabCompleted || !tabScheduled) return;
+      if (!tabCompleted || !tabScheduled) return;
 
-    function switchTab(showCompleted) {
-      if (showCompleted) {
-        tabCompleted.classList.add('bg-primary', 'text-white');
-        tabCompleted.classList.remove('text-slate-400');
-        tabScheduled.classList.remove('bg-primary', 'text-white');
-        tabScheduled.classList.add('text-slate-400');
-        if (sectionCompleted) sectionCompleted.classList.remove('hidden');
-        if (sectionScheduled) sectionScheduled.classList.add('hidden');
-      } else {
-        tabScheduled.classList.add('bg-primary', 'text-white');
-        tabScheduled.classList.remove('text-slate-400');
-        tabCompleted.classList.remove('bg-primary', 'text-white');
-        tabCompleted.classList.add('text-slate-400');
-        if (sectionScheduled) sectionScheduled.classList.remove('hidden');
-        if (sectionCompleted) sectionCompleted.classList.add('hidden');
+      function switchTab(showCompleted) {
+        if (showCompleted) {
+          tabCompleted.classList.add('bg-primary', 'text-white');
+          tabCompleted.classList.remove('text-slate-400');
+          tabScheduled.classList.remove('bg-primary', 'text-white');
+          tabScheduled.classList.add('text-slate-400');
+          if (sectionCompleted) sectionCompleted.classList.remove('hidden');
+          if (sectionScheduled) sectionScheduled.classList.add('hidden');
+        } else {
+          tabScheduled.classList.add('bg-primary', 'text-white');
+          tabScheduled.classList.remove('text-slate-400');
+          tabCompleted.classList.remove('bg-primary', 'text-white');
+          tabCompleted.classList.add('text-slate-400');
+          if (sectionScheduled) sectionScheduled.classList.remove('hidden');
+          if (sectionCompleted) sectionCompleted.classList.add('hidden');
+        }
       }
+
+      tabCompleted.addEventListener('click', function(e) {
+        e.preventDefault();
+        switchTab(true);
+      });
+      tabScheduled.addEventListener('click', function(e) {
+        e.preventDefault();
+        switchTab(false);
+      });
     }
 
-    tabCompleted.addEventListener('click', () => switchTab(true));
-    tabScheduled.addEventListener('click', () => switchTab(false));
-  });
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initTabs);
+    } else {
+      initTabs();
+    }
+  })();
 </script>
 </Layout>

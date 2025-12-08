@@ -1,6 +1,8 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
+import ShareButtons from '../../../components/ShareButtons.astro';
+import { optimizeImage } from '../../../utils/imageOptimizer';
 
 const breadcrumbItems = [
   { label: 'Beranda', href: '/' },
@@ -9,15 +11,18 @@ const breadcrumbItems = [
   { label: 'Pukulan Telak di Injury Time, Persibo Tumbang 0-1 dari RANS', href: '/tim/berita/pukulan-telak-injury-time-persibo-tumbang-rans' }
 ];
 
-const publishedDate = '2025-11-29';
+const publishedDate = '2025-11-29T00:00:00+07:00';
+const modifiedDate = '2025-11-29T00:00:00+07:00';
 const author = 'persibo.com';
+const authorUrl = 'https://persibo.com';
 ---
 
 <Layout 
   title="Pukulan Telak di Injury Time, Persibo Tumbang 0-1 dari RANS Nusantara FC di Laga Perdana - PERSIBO Bojonegoro (Unofficial)"
-  description="Langkah awal Persibo Bojonegoro di Liga 3 Nusantara 2025/2026 harus ternodai setelah menelan kekalahan pahit 0-1 dari RANS Nusantara FC. Gol dramatis di menit ke-94 menjadi pembeda. Website Unofficial."
+  description="Langkah awal Persibo Bojonegoro di Liga 3 Nusantara 2025-2026 harus ternodai setelah menelan kekalahan pahit 0-1 dari RANS Nusantara FC. Gol dramatis di menit ke-94 menjadi pembeda. Website Unofficial."
+  ogImage="/img/persibo-rans.jpg"
 >
-  <div class="px-4 py-4 max-w-4xl mx-auto">
+  <div class="px-4 lg:px-6 py-4 lg:py-6 max-w-4xl mx-auto">
     <Breadcrumb items={breadcrumbItems} />
     
     <!-- Back Button -->
@@ -42,7 +47,7 @@ const author = 'persibo.com';
           Pukulan Telak di Injury Time, Persibo Tumbang 0-1 dari RANS Nusantara FC di Laga Perdana
         </h1>
         
-        <div class="flex items-center gap-3 text-sm text-slate-400">
+        <div class="flex items-center gap-3 text-sm text-slate-400 mb-4">
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-base">location_on</span>
             <span>SOLO</span>
@@ -53,23 +58,35 @@ const author = 'persibo.com';
             <span>Stadion Sriwedari</span>
           </div>
         </div>
+        
+        <!-- Share Buttons -->
+        <div class="mb-6 pt-4 border-t border-slate-700">
+          <ShareButtons 
+            title="Pukulan Telak di Injury Time, Persibo Tumbang 0-1 dari RANS Nusantara FC di Laga Perdana"
+            description="Langkah awal Persibo Bojonegoro di Liga 3 Nusantara 2025-2026 harus ternodai setelah menelan kekalahan pahit 0-1 dari RANS Nusantara FC. Gol dramatis di menit ke-94 menjadi pembeda."
+            type="article"
+          />
+        </div>
       </div>
 
       <!-- Featured Image -->
       <div class="mb-6 rounded-xl overflow-hidden">
         <img 
-          src="/img/persibo-rans.jpg" 
+          src={optimizeImage('/img/persibo-rans.jpg', { width: 1200, height: 675, quality: 75, format: 'webp', fit: 'cover' }, Astro.site || Astro.url.origin)} 
           alt="Pertandingan Persibo Bojonegoro vs RANS Nusantara FC di Stadion Sriwedari, Solo" 
           class="w-full h-auto object-cover"
+          loading="lazy"
+          width="800"
+          height="450"
         />
-        <p class="text-xs text-slate-500 mt-2 text-center">Foto: Laga perdana Persibo Bojonegoro melawan RANS Nusantara FC di Liga 3 Nusantara 2025/2026</p>
+        <p class="text-xs text-slate-400 mt-2 text-center">Foto: Laga perdana Persibo Bojonegoro melawan RANS Nusantara FC di Liga 3 Nusantara 2025-2026</p>
       </div>
 
       <!-- Article Content -->
       <div class="prose prose-invert prose-slate max-w-none">
         <div class="space-y-4 text-slate-300 leading-relaxed">
           <p class="text-lg font-medium text-white">
-            <strong>SOLO, persibo.com</strong> – Langkah awal Persibo Bojonegoro di pentas Liga 3 Nusantara 2025/2026 harus ternodai setelah menelan kekalahan pahit <strong class="text-primary">0-1</strong> dari <strong class="text-white">RANS Nusantara FC</strong>. Dalam laga perdana yang digelar di <strong class="text-white">Stadion Sriwedari, Solo</strong>, pada <strong class="text-primary">Sabtu (29/11/2025)</strong>, gol dramatis di penghujung laga menjadi pembeda.
+            <strong>SOLO, persibo.com</strong> – Langkah awal Persibo Bojonegoro di pentas Liga 3 Nusantara 2025-2026 harus ternodai setelah menelan kekalahan pahit <strong class="text-primary">0-1</strong> dari <strong class="text-white">RANS Nusantara FC</strong>. Dalam laga perdana yang digelar di <strong class="text-white">Stadion Sriwedari, Solo</strong>, pada <strong class="text-primary">Sabtu (29/11/2025)</strong>, gol dramatis di penghujung laga menjadi pembeda.
           </p>
 
           <p>
@@ -165,20 +182,21 @@ const author = 'persibo.com';
   "headline": "Pukulan Telak di Injury Time, Persibo Tumbang 0-1 dari RANS Nusantara FC di Laga Perdana",
   "image": `${Astro.site || Astro.url.origin}/img/persibo-rans.jpg`,
   "datePublished": publishedDate,
-  "dateModified": publishedDate,
+  "dateModified": modifiedDate,
   "author": {
     "@type": "Organization",
-    "name": author
+    "name": author,
+    "url": authorUrl
   },
   "publisher": {
     "@type": "Organization",
     "name": "PERSIBO Bojonegoro (Unofficial)",
     "logo": {
       "@type": "ImageObject",
-      "url": `${Astro.site || Astro.url.origin}/logo.png`
+      "url": `${Astro.site || Astro.url.origin}/logo-128.png`
     }
   },
-  "description": "Langkah awal Persibo Bojonegoro di Liga 3 Nusantara 2025/2026 harus ternodai setelah menelan kekalahan pahit 0-1 dari RANS Nusantara FC. Gol dramatis di menit ke-94 menjadi pembeda.",
+  "description": "Langkah awal Persibo Bojonegoro di Liga 3 Nusantara 2025-2026 harus ternodai setelah menelan kekalahan pahit 0-1 dari RANS Nusantara FC. Gol dramatis di menit ke-94 menjadi pembeda.",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": `${Astro.site || Astro.url.origin}/tim/berita/pukulan-telak-injury-time-persibo-tumbang-rans`

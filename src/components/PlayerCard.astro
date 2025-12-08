@@ -1,5 +1,6 @@
 ---
 import type { Player } from '../types';
+import { optimizePlayerPhoto } from '../utils/imageOptimizer';
 
 interface Props {
   player: Player;
@@ -7,38 +8,46 @@ interface Props {
 
 const { player } = Astro.props;
 const slug = player.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+const optimizedPhoto = optimizePlayerPhoto(player.photo_url, 'card');
 ---
 
 <div 
-  class="rounded-xl bg-slate-800/50 shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+  class="rounded-xl bg-slate-800/50 shadow-lg overflow-hidden hover:shadow-xl lg:hover:shadow-2xl transition-all lg:hover:scale-[1.02] lg:hover:bg-slate-800/70"
   data-player-card
   data-player-name={player.name}
   data-player-position={player.position || ''}
   data-player-age={player.age}
 >
-  {player.photo_url && (
-    <div class="w-full h-80 md:h-96 bg-cover bg-top bg-no-repeat" style={`background-image: url("${player.photo_url}"); background-position: center top;`}>
-      <div class="w-full h-full bg-gradient-to-t from-slate-800/80 to-transparent"></div>
-      <img src={player.photo_url} alt={`Foto ${player.name}, ${player.position} PERSIBO Bojonegoro dengan nomor punggung ${player.jersey_number}`} class="sr-only" />
+  {optimizedPhoto && (
+    <div class="w-full h-80 md:h-96 lg:h-80 bg-cover bg-top bg-no-repeat relative overflow-hidden">
+      <img 
+        src={optimizedPhoto} 
+        alt={`Foto ${player.name}, ${player.position} PERSIBO Bojonegoro dengan nomor punggung ${player.jersey_number}`} 
+        class="absolute inset-0 w-full h-full object-cover object-top"
+        loading="lazy"
+        width="400"
+        height="500"
+      />
+      <div class="absolute inset-0 w-full h-full bg-gradient-to-t from-slate-800/80 to-transparent"></div>
     </div>
   )}
-  <div class="p-4">
+  <div class="p-4 lg:p-5">
     <div class="flex items-center gap-4">
-      <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center ring-2 ring-primary/30 shrink-0">
-        <span class="text-2xl font-bold text-primary">{player.jersey_number}</span>
+      <div class="w-16 h-16 lg:w-20 lg:h-20 bg-primary/20 rounded-full flex items-center justify-center ring-2 ring-primary/30 shrink-0">
+        <span class="text-2xl lg:text-3xl font-bold text-primary">{player.jersey_number}</span>
       </div>
       <div class="flex-1 min-w-0">
-        <h3 class="font-bold text-lg text-white truncate">{player.name}</h3>
-        <p class="text-sm text-slate-400">Usia: {player.age} tahun</p>
-        <p class="text-sm text-slate-400">{player.country}</p>
+        <h3 class="font-bold text-lg lg:text-xl text-white line-clamp-2 leading-tight">{player.name}</h3>
+        <p class="text-sm lg:text-base text-slate-400 mt-1">Usia: {player.age} tahun</p>
+        <p class="text-sm lg:text-base text-slate-400">{player.country}</p>
         {player.position && (
-          <p class="text-xs text-accent-teal mt-1">{player.position}</p>
+          <p class="text-xs lg:text-sm text-accent-teal mt-1">{player.position}</p>
         )}
       </div>
     </div>
     <a 
       href={`/pemain/${slug}`}
-      class="mt-4 block text-center bg-accent-teal/20 text-accent-teal py-3 rounded-lg hover:bg-accent-teal/30 transition-colors text-sm font-bold min-h-[44px] flex items-center justify-center"
+      class="mt-4 lg:mt-5 block text-center bg-accent-teal/20 text-accent-teal py-3 lg:py-3.5 rounded-lg hover:bg-accent-teal/30 lg:hover:bg-accent-teal/40 transition-colors text-sm lg:text-base font-bold min-h-[44px] flex items-center justify-center"
     >
       Lihat Detail
     </a>

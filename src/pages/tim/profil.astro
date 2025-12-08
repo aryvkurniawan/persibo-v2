@@ -13,24 +13,24 @@ const breadcrumbItems = [
   title="Profil Tim PERSIBO Bojonegoro (Unofficial)"
   description="Profil lengkap PERSIBO Bojonegoro: sejarah, visi misi, dan daftar prestasi tim sepak bola kebanggaan Bojonegoro. Website Unofficial."
 >
-  <div class="px-4 py-4">
+  <div class="max-w-7xl mx-auto px-4 lg:px-6 py-4 lg:py-6">
     <Breadcrumb items={breadcrumbItems} />
     
     <!-- Header -->
-    <div class="mb-6">
+    <div class="mb-6 lg:mb-8">
       <div class="flex items-center gap-3 mb-4">
         <a href="/tim" class="text-slate-400 hover:text-white transition-colors">
           <span class="material-symbols-outlined text-2xl">arrow_back</span>
         </a>
-        <h1 class="text-2xl font-extrabold text-white">Profil Tim</h1>
+        <h1 class="text-2xl lg:text-3xl font-extrabold text-white">Profil Tim</h1>
       </div>
-      <p class="text-slate-400 text-sm">Sejarah, visi misi, dan prestasi PERSIBO Bojonegoro</p>
+      <p class="text-slate-400 text-sm lg:text-base">Sejarah, visi misi, dan prestasi PERSIBO Bojonegoro</p>
     </div>
 
     <!-- Hero Section -->
-    <div class="rounded-xl bg-gradient-to-br from-primary/20 via-accent-purple/20 to-accent-teal/20 p-6 mb-6 border border-primary/30">
+    <div class="rounded-xl bg-gradient-to-br from-primary/20 via-accent-purple/20 to-accent-teal/20 p-6 lg:p-8 mb-6 lg:mb-8 border border-primary/30">
       <div class="flex items-center gap-4">
-        <img src="/logo.png" alt="Logo PERSIBO Bojonegoro - Laskar Angling Dharma" class="w-20 h-20 object-contain" />
+        <img src="/logo-64.png" alt="Logo PERSIBO Bojonegoro - Laskar Angling Dharma" class="w-20 h-20 object-contain" width="80" height="80" />
         <div>
           <h2 class="text-2xl font-bold text-white mb-1">PERSIBO Bojonegoro</h2>
           <p class="text-slate-300">Laskar Angling Dharma</p>
@@ -40,14 +40,14 @@ const breadcrumbItems = [
     </div>
 
     <!-- Sejarah -->
-    <section class="mb-6">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-          <span class="material-symbols-outlined text-primary">history</span>
+    <section class="mb-6 lg:mb-8">
+      <div class="flex items-center gap-3 mb-4 lg:mb-6">
+        <div class="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-primary/20 flex items-center justify-center">
+          <span class="material-symbols-outlined text-primary text-xl lg:text-2xl">history</span>
         </div>
-        <h2 class="text-xl font-bold text-white">Sejarah</h2>
+        <h2 class="text-xl lg:text-2xl font-bold text-white">Sejarah</h2>
       </div>
-      <div class="rounded-xl bg-slate-800/50 p-6 space-y-4">
+      <div class="rounded-xl bg-slate-800/50 p-6 lg:p-8 space-y-4 lg:space-y-6">
         <p class="text-slate-300 leading-relaxed">
           Persibo Bojonegoro didirikan pada <strong class="text-white">12 Maret 1949</strong> atas prakarsa Raden Temenggung Sukardi yang saat itu menjabat sebagai Bupati Bojonegoro. Sempat mengalami masa vakum pada tahun 1960, klub ini bangkit kembali pada milenium baru (tahun 2000) dan mulai menanjaki piramida sepak bola nasional dari Divisi Dua.
         </p>
@@ -86,14 +86,14 @@ const breadcrumbItems = [
     </section>
 
     <!-- Visi dan Misi -->
-    <section class="mb-6">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-accent-teal/20 flex items-center justify-center">
-          <span class="material-symbols-outlined text-accent-teal">visibility</span>
+    <section class="mb-6 lg:mb-8">
+      <div class="flex items-center gap-3 mb-4 lg:mb-6">
+        <div class="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-accent-teal/20 flex items-center justify-center">
+          <span class="material-symbols-outlined text-accent-teal text-xl lg:text-2xl">visibility</span>
         </div>
-        <h2 class="text-xl font-bold text-white">Visi dan Misi</h2>
+        <h2 class="text-xl lg:text-2xl font-bold text-white">Visi dan Misi</h2>
       </div>
-      <div class="rounded-xl bg-slate-800/50 p-6 space-y-6">
+      <div class="rounded-xl bg-slate-800/50 p-6 lg:p-8 space-y-6 lg:space-y-8">
         <div>
           <h3 class="text-lg font-bold text-primary mb-3 flex items-center gap-2">
             <span class="material-symbols-outlined text-xl">target</span>
@@ -127,14 +127,14 @@ const breadcrumbItems = [
     </section>
 
     <!-- Prestasi -->
-    <section class="mb-6">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-accent-purple/20 flex items-center justify-center">
-          <span class="material-symbols-outlined text-accent-purple">emoji_events</span>
+    <section class="mb-6 lg:mb-8">
+      <div class="flex items-center gap-3 mb-4 lg:mb-6">
+        <div class="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-accent-purple/20 flex items-center justify-center">
+          <span class="material-symbols-outlined text-accent-purple text-xl lg:text-2xl">emoji_events</span>
         </div>
-        <h2 class="text-xl font-bold text-white">Daftar Prestasi</h2>
+        <h2 class="text-xl lg:text-2xl font-bold text-white">Daftar Prestasi</h2>
       </div>
-      <div class="rounded-xl bg-slate-800/50 p-6 space-y-6">
+      <div class="rounded-xl bg-slate-800/50 p-6 lg:p-8 space-y-6 lg:space-y-8">
         <!-- Tingkat Nasional & Internasional -->
         <div>
           <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
@@ -196,14 +196,14 @@ const breadcrumbItems = [
     </section>
 
     <!-- FAQ Section -->
-    <section class="mb-6">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-          <span class="material-symbols-outlined text-primary">help</span>
+    <section class="mb-6 lg:mb-8">
+      <div class="flex items-center gap-3 mb-4 lg:mb-6">
+        <div class="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-primary/20 flex items-center justify-center">
+          <span class="material-symbols-outlined text-primary text-xl lg:text-2xl">help</span>
         </div>
-        <h2 class="text-xl font-bold text-white">Pertanyaan Umum (FAQ)</h2>
+        <h2 class="text-xl lg:text-2xl font-bold text-white">Pertanyaan Umum (FAQ)</h2>
       </div>
-      <div class="rounded-xl bg-slate-800/50 p-6 space-y-4">
+      <div class="rounded-xl bg-slate-800/50 p-6 lg:p-8 space-y-4 lg:space-y-6">
         <div class="border-b border-slate-700 pb-4 last:border-0 last:pb-0">
           <h3 class="text-lg font-bold text-white mb-2">Kapan PERSIBO Bojonegoro didirikan?</h3>
           <p class="text-slate-300 leading-relaxed">PERSIBO Bojonegoro didirikan pada <strong class="text-white">12 Maret 1949</strong> atas prakarsa Raden Temenggung Sukardi yang saat itu menjabat sebagai Bupati Bojonegoro.</p>
@@ -238,8 +238,10 @@ const breadcrumbItems = [
   "sport": "Soccer",
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "JL. UNTUNG SUROPATI NO. 39",
     "addressLocality": "Bojonegoro",
     "addressRegion": "Jawa Timur",
+    "postalCode": "62115",
     "addressCountry": "ID"
   },
   "memberOf": {

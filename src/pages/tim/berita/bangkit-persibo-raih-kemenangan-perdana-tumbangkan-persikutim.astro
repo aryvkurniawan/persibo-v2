@@ -1,6 +1,8 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
+import ShareButtons from '../../../components/ShareButtons.astro';
+import { optimizeImage } from '../../../utils/imageOptimizer';
 
 const breadcrumbItems = [
   { label: 'Beranda', href: '/' },
@@ -9,15 +11,18 @@ const breadcrumbItems = [
   { label: 'Bangkit! Persibo Raih Kemenangan Perdana', href: '/tim/berita/bangkit-persibo-raih-kemenangan-perdana-tumbangkan-persikutim' }
 ];
 
-const publishedDate = '2025-12-04';
+const publishedDate = '2025-12-04T00:00:00+07:00';
+const modifiedDate = '2025-12-04T00:00:00+07:00';
 const author = 'persibo.com';
+const authorUrl = 'https://persibo.com';
 ---
 
 <Layout 
   title="Bangkit! Persibo Raih Kemenangan Perdana di Liga 3, Tumbangkan Persikutim 2-1 - PERSIBO Bojonegoro (Unofficial)"
   description="Persibo Bojonegoro berhasil memetik kemenangan krusial di laga kedua Grup C Liga 3 Nusantara. Laskar Angling Dharma sukses menumbangkan Persikutim United dengan skor akhir 2-1. Website Unofficial."
+  ogImage="/img/persibo-persikutam.jpg"
 >
-  <div class="px-4 py-4 max-w-4xl mx-auto">
+  <div class="px-4 lg:px-6 py-4 lg:py-6 max-w-4xl mx-auto">
     <Breadcrumb items={breadcrumbItems} />
     
     <!-- Back Button -->
@@ -42,7 +47,7 @@ const author = 'persibo.com';
           Bangkit! Persibo Raih Kemenangan Perdana di Liga 3, Tumbangkan Persikutim 2-1
         </h1>
         
-        <div class="flex items-center gap-3 text-sm text-slate-400">
+        <div class="flex items-center gap-3 text-sm text-slate-400 mb-4">
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-base">location_on</span>
             <span>SOLO</span>
@@ -53,16 +58,28 @@ const author = 'persibo.com';
             <span>Stadion Banyuanyar</span>
           </div>
         </div>
+        
+        <!-- Share Buttons -->
+        <div class="mb-6 pt-4 border-t border-slate-700">
+          <ShareButtons 
+            title="Bangkit! Persibo Raih Kemenangan Perdana di Liga 3, Tumbangkan Persikutim 2-1"
+            description="Persibo Bojonegoro berhasil memetik kemenangan krusial di laga kedua Grup C Liga 3 Nusantara. Laskar Angling Dharma sukses menumbangkan Persikutim United dengan skor akhir 2-1."
+            type="article"
+          />
+        </div>
       </div>
 
       <!-- Featured Image -->
       <div class="mb-6 rounded-xl overflow-hidden">
         <img 
-          src="/img/persibo-persikutam.jpg" 
+          src={optimizeImage('/img/persibo-persikutam.jpg', { width: 1200, height: 675, quality: 75, format: 'webp', fit: 'cover' }, Astro.site || Astro.url.origin)} 
           alt="Kemenangan Persibo Bojonegoro melawan Persikutim United di Liga 3 Nusantara" 
           class="w-full h-auto object-cover"
+          loading="lazy"
+          width="800"
+          height="450"
         />
-        <p class="text-xs text-slate-500 mt-2 text-center">Foto: Kemenangan perdana Persibo Bojonegoro melawan Persikutim United di Liga 3 Nusantara 2025/2026</p>
+        <p class="text-xs text-slate-400 mt-2 text-center">Foto: Kemenangan perdana Persibo Bojonegoro melawan Persikutim United di Liga 3 Nusantara 2025-2026</p>
       </div>
 
       <!-- Article Content -->
@@ -167,17 +184,18 @@ const author = 'persibo.com';
   "headline": "Bangkit! Persibo Raih Kemenangan Perdana di Liga 3, Tumbangkan Persikutim 2-1",
   "image": `${Astro.site || Astro.url.origin}/img/persibo-persikutam.jpg`,
   "datePublished": publishedDate,
-  "dateModified": publishedDate,
+  "dateModified": modifiedDate,
   "author": {
     "@type": "Organization",
-    "name": author
+    "name": author,
+    "url": authorUrl
   },
   "publisher": {
     "@type": "Organization",
     "name": "PERSIBO Bojonegoro (Unofficial)",
     "logo": {
       "@type": "ImageObject",
-      "url": `${Astro.site || Astro.url.origin}/logo.png`
+      "url": `${Astro.site || Astro.url.origin}/logo-128.png`
     }
   },
   "description": "Persibo Bojonegoro berhasil memetik kemenangan krusial di laga kedua Grup C Liga 3 Nusantara. Laskar Angling Dharma sukses menumbangkan Persikutim United dengan skor akhir 2-1.",

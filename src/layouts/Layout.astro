@@ -1,11 +1,23 @@
 ---
+import GlobalSearch from '../components/GlobalSearch.astro';
+
 interface Props {
   title?: string;
   description?: string;
   showBottomNav?: boolean;
+  ogImage?: string;
 }
 
-const { title = 'PERSIBO Bojonegoro', description = 'Website Unofficial PERSIBO Bojonegoro - Liga Nusantara 2025-26', showBottomNav = true } = Astro.props;
+const { title = 'PERSIBO Bojonegoro', description = 'Website Unofficial PERSIBO Bojonegoro - Liga Nusantara 2025-2026', showBottomNav = true, ogImage } = Astro.props;
+const defaultOgImage = `${Astro.site || Astro.url.origin}/logo.png`;
+// If ogImage is provided and is already a full URL (http/https), use it directly
+// If it's a local path (starts with /), prepend origin
+// Otherwise use default
+const finalOgImage = ogImage 
+  ? (ogImage.startsWith('http://') || ogImage.startsWith('https://') 
+      ? ogImage 
+      : `${Astro.site || Astro.url.origin}${ogImage.startsWith('/') ? ogImage : `/${ogImage}`}`)
+  : defaultOgImage;
 const currentPath = Astro.url.pathname;
 ---
 
@@ -17,10 +29,26 @@ const currentPath = Astro.url.pathname;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <!-- Disable Cloudflare Rocket Loader for better performance -->
+    <meta name="cf-2xx-ok" content="" />
+    <meta name="cf-browser-verification" content="" />
+    <script is:inline>
+      // Aggressively disable Rocket Loader before it loads
+      (function() {
+        if (typeof window !== 'undefined') {
+          window.$RocketLoader = undefined;
+          Object.defineProperty(window, '$RocketLoader', {
+            value: undefined,
+            writable: false,
+            configurable: false
+          });
+        }
+      })();
+    </script>
     <title>{title}</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="keywords" content="PERSIBO Bojonegoro, Liga Nusantara, Sepak Bola Indonesia, Tim Sepak Bola Bojonegoro, Klasemen Liga Nusantara 2025-26" />
+    <meta name="keywords" content="PERSIBO Bojonegoro, Liga Nusantara, Sepak Bola Indonesia, Tim Sepak Bola Bojonegoro, Klasemen Liga Nusantara 2025-2026" />
     <meta name="author" content="PERSIBO Bojonegoro" />
     <meta name="robots" content="index, follow" />
     <meta name="language" content="Indonesian" />
@@ -31,7 +59,7 @@ const currentPath = Astro.url.pathname;
     <meta property="og:url" content={Astro.url.href} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={`${Astro.site || Astro.url.origin}/logo.png`} />
+    <meta property="og:image" content={finalOgImage} />
     <meta property="og:locale" content="id_ID" />
     <meta property="og:site_name" content="PERSIBO Bojonegoro" />
     
@@ -40,10 +68,40 @@ const currentPath = Astro.url.pathname;
     <meta name="twitter:url" content={Astro.url.href} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={`${Astro.site || Astro.url.origin}/logo.png`} />
+    <meta name="twitter:image" content={finalOgImage} />
     
     <!-- Canonical URL -->
     <link rel="canonical" href={Astro.url.href} />
+    
+    <!-- Preload Critical Resources (conditional based on route) -->
+    {currentPath === '/' && (
+      <link rel="preload" href="/hero.jpg" as="image" fetchpriority="high" />
+    )}
+    
+    <!-- Additional Rocket Loader prevention -->
+    <script is:inline>
+      // Prevent Rocket Loader from loading
+      (function() {
+        if (typeof window !== 'undefined') {
+          Object.defineProperty(window, '$RocketLoader', {
+            value: undefined,
+            writable: false,
+            configurable: false
+          });
+        }
+      })();
+    </script>
+    
+    <!-- DNS Prefetch for External Resources -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://images.weserv.nl" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    
+    <!-- Preconnect for Critical Third-Party Resources (for faster image loading) -->
+    <link rel="preconnect" href="https://images.weserv.nl" crossorigin />
     
     <!-- Structured Data - Organization -->
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -52,52 +110,136 @@ const currentPath = Astro.url.pathname;
       "name": "PERSIBO Bojonegoro",
       "alternateName": "Laskar Angling Dharma",
       "url": Astro.site || "https://persibo.com",
-      "logo": `${Astro.site || Astro.url.origin}/logo.png`,
-      "description": "Website Unofficial PERSIBO Bojonegoro - Tim sepak bola profesional dari Bojonegoro, Jawa Timur. Informasi lengkap tentang tim, pemain, klasemen, dan jadwal pertandingan di Liga Nusantara 2025-26.",
+      "logo": `${Astro.site || Astro.url.origin}/logo-128.png`,
+      "description": "Website Unofficial PERSIBO Bojonegoro - Tim sepak bola profesional dari Bojonegoro, Jawa Timur. Informasi lengkap tentang tim, pemain, klasemen, dan jadwal pertandingan di Liga Nusantara 2025-2026.",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "JL. UNTUNG SUROPATI NO. 39",
         "addressLocality": "Bojonegoro",
         "addressRegion": "Jawa Timur",
+        "postalCode": "62115",
         "addressCountry": "ID"
       },
       "sameAs": [
         "https://www.ileague.id/clubs/single/LIGA_NUSANTARA_2025-26/persibo_bojonegoro"
       ]
     })} />
+    <!-- Non-blocking Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700;800&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1300254481589524" crossorigin="anonymous"></script>
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W843MTD8G4"></script>
+    <!-- Preload critical Lexend font weights (400, 700) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap" rel="stylesheet" /></noscript>
+    
+    <!-- Non-critical Lexend weights (500, 800) - load after initial render -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;800&display=swap" rel="stylesheet" /></noscript>
+    
+    <!-- Material Symbols - optimized subset, non-blocking -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" /></noscript>
+    
+    <!-- Google AdSense - Keep original format as required by AdSense policy -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1300254481589524" crossorigin="anonymous" data-cfasync="false"></script>
+    
+    <!-- Google tag (gtag.js) - Load after user interaction or scroll to reduce unused JS -->
     <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-W843MTD8G4');
+      // Load GTM/GA only after user interaction or scroll (reduces unused JS)
+      let gtmLoaded = false;
+      
+      function loadGTM() {
+        if (gtmLoaded) return;
+        gtmLoaded = true;
+        
+        const gtagScript = document.createElement('script');
+        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-W843MTD8G4';
+        gtagScript.async = true;
+        document.head.appendChild(gtagScript);
+        
+        gtagScript.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-W843MTD8G4');
+        };
+      }
+      
+      // Load on user interaction (click, scroll, touch)
+      ['click', 'scroll', 'touchstart', 'keydown'].forEach(function(event) {
+        document.addEventListener(event, function() {
+          loadGTM();
+        }, { once: true, passive: true });
+      });
+      
+      // Fallback: Load after 5 seconds if no interaction
+      setTimeout(function() {
+        loadGTM();
+      }, 5000);
     </script>
   </head>
   <body class="bg-background-dark font-display min-h-screen">
     <div class="relative flex h-auto min-h-screen w-full flex-col bg-background-dark group/design-root overflow-x-hidden">
-      <!-- Sticky Header -->
-      <header class="sticky top-0 z-20 flex items-center justify-between bg-background-dark/80 p-4 pb-2 backdrop-blur-sm">
-        <div class="flex size-12 shrink-0 items-center justify-start">
-          {currentPath !== '/' && (
-            <a href="/" class="text-white">
-              <span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+      <!-- Top Navigation Bar (Desktop Only) -->
+      <nav class="hidden lg:flex sticky top-0 z-30 bg-background-dark/95 backdrop-blur-sm border-b border-slate-800">
+        <div class="max-w-7xl mx-auto w-full px-6 py-4">
+          <div class="flex items-center gap-6">
+            <!-- Logo + Site Name -->
+            <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity flex-shrink-0">
+              <img src="/logo-64.png" alt="Logo PERSIBO Bojonegoro - Website Unofficial" class="h-10 w-10 object-contain" width="40" height="40" fetchpriority="high" />
+              <span class="text-xl font-extrabold text-white font-lexend-extrabold">PERSIBO Bojonegoro</span>
             </a>
-          )}
-        </div>
-        <h2 class="flex-1 text-center text-lg font-bold leading-tight tracking-[-0.015em] text-white font-lexend-extrabold">
-          <div class="flex items-center justify-center gap-2">
-            <img src="/logo.png" alt="Logo PERSIBO Bojonegoro - Website Unofficial" class="h-8 w-8 object-contain" />
-            <span>PERSIBO Bojonegoro</span>
+            
+            <!-- Global Search -->
+            <div class="flex-1 max-w-md">
+              <GlobalSearch />
+            </div>
+            
+            <!-- Navigation Links -->
+            <div class="flex items-center gap-1 flex-shrink-0">
+              <a href="/" class={`px-4 py-2 rounded-lg font-medium text-sm transition-colors ${currentPath === '/' ? 'bg-primary text-white' : 'text-slate-300 hover:text-white hover:bg-slate-800/50'}`}>
+                Beranda
+              </a>
+              <a href="/pertandingan" class={`px-4 py-2 rounded-lg font-medium text-sm transition-colors ${currentPath === '/pertandingan' ? 'bg-primary text-white' : 'text-slate-300 hover:text-white hover:bg-slate-800/50'}`}>
+                Jadwal
+              </a>
+              <a href="/klasemen" class={`px-4 py-2 rounded-lg font-medium text-sm transition-colors ${currentPath === '/klasemen' ? 'bg-primary text-white' : 'text-slate-300 hover:text-white hover:bg-slate-800/50'}`}>
+                Klasemen
+              </a>
+              <a href="/pemain" class={`px-4 py-2 rounded-lg font-medium text-sm transition-colors ${currentPath.startsWith('/pemain') ? 'bg-primary text-white' : 'text-slate-300 hover:text-white hover:bg-slate-800/50'}`}>
+                Pemain
+              </a>
+              <a href="/tim" class={`px-4 py-2 rounded-lg font-medium text-sm transition-colors ${currentPath.startsWith('/tim') ? 'bg-primary text-white' : 'text-slate-300 hover:text-white hover:bg-slate-800/50'}`}>
+                Tim
+              </a>
+            </div>
           </div>
-        </h2>
-        <div class="flex w-12 items-center justify-end">
-          <!-- Empty space for balance -->
+        </div>
+      </nav>
+
+      <!-- Sticky Header (Mobile) -->
+      <header class="lg:hidden sticky top-0 z-20 bg-background-dark/80 backdrop-blur-sm">
+        <div class="flex items-center justify-between p-4 pb-2">
+          <div class="flex size-12 shrink-0 items-center justify-start">
+            {currentPath !== '/' && (
+              <a href="/" class="text-white">
+                <span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+              </a>
+            )}
+          </div>
+          <h2 class="flex-1 text-center text-lg font-bold leading-tight tracking-[-0.015em] text-white font-lexend-extrabold">
+            <div class="flex items-center justify-center gap-2">
+              <img src="/logo-32.png" alt="Logo PERSIBO Bojonegoro - Website Unofficial" class="h-8 w-8 object-contain" width="32" height="32" fetchpriority="high" />
+              <span>PERSIBO Bojonegoro</span>
+            </div>
+          </h2>
+          <div class="flex w-12 items-center justify-end">
+            <!-- Empty space for balance -->
+          </div>
+        </div>
+        <!-- Mobile Search -->
+        <div class="px-4 pb-2">
+          <GlobalSearch />
         </div>
       </header>
 
@@ -106,38 +248,144 @@ const currentPath = Astro.url.pathname;
         <slot />
       </main>
 
-      <!-- Bottom Navigation -->
+      <!-- Bottom Navigation (Mobile Only) -->
       {showBottomNav && (
-        <nav class="fixed bottom-0 left-0 right-0 h-20 bg-background-dark/80 backdrop-blur-sm border-t border-slate-800 flex justify-around items-center z-10">
-          <a href="/" class={`flex flex-col items-center gap-1 ${currentPath === '/' ? 'text-primary' : 'text-slate-500'}`}>
+        <nav class="lg:hidden fixed bottom-0 left-0 right-0 h-20 bg-background-dark/80 backdrop-blur-sm border-t border-slate-800 flex justify-around items-center z-10">
+          <a href="/" class={`flex flex-col items-center gap-1 ${currentPath === '/' ? 'text-primary' : 'text-slate-400'}`}>
             <span class="material-symbols-outlined" style={currentPath === '/' ? "font-variation-settings: 'FILL' 1;" : ""}>home</span>
             <p class="text-xs font-bold">Beranda</p>
           </a>
-          <a href="/pertandingan" class={`flex flex-col items-center gap-1 ${currentPath === '/pertandingan' ? 'text-primary' : 'text-slate-500'}`}>
+          <a href="/pertandingan" class={`flex flex-col items-center gap-1 ${currentPath === '/pertandingan' ? 'text-primary' : 'text-slate-400'}`}>
             <span class="material-symbols-outlined">calendar_month</span>
             <p class="text-xs">Jadwal</p>
           </a>
-          <a href="/klasemen" class={`flex flex-col items-center gap-1 ${currentPath === '/klasemen' ? 'text-primary' : 'text-slate-500'}`}>
+          <a href="/klasemen" class={`flex flex-col items-center gap-1 ${currentPath === '/klasemen' ? 'text-primary' : 'text-slate-400'}`}>
             <span class="material-symbols-outlined">emoji_events</span>
             <p class="text-xs">Klasemen</p>
           </a>
-          <a href="/pemain" class={`flex flex-col items-center gap-1 ${currentPath.startsWith('/pemain') ? 'text-primary' : 'text-slate-500'}`}>
+          <a href="/pemain" class={`flex flex-col items-center gap-1 ${currentPath.startsWith('/pemain') ? 'text-primary' : 'text-slate-400'}`}>
             <span class="material-symbols-outlined">person</span>
             <p class="text-xs">Pemain</p>
           </a>
-          <a href="/tim" class={`flex flex-col items-center gap-1 ${currentPath.startsWith('/tim') ? 'text-primary' : 'text-slate-500'}`}>
+          <a href="/tim" class={`flex flex-col items-center gap-1 ${currentPath.startsWith('/tim') ? 'text-primary' : 'text-slate-400'}`}>
             <span class="material-symbols-outlined" style={currentPath.startsWith('/tim') ? "font-variation-settings: 'FILL' 1;" : ""}>groups</span>
             <p class="text-xs font-bold">Tim</p>
           </a>
         </nav>
       )}
       
-      {showBottomNav && <div class="h-20"></div>}
+      {showBottomNav && <div class="lg:hidden h-20"></div>}
+      
+      <!-- Footer (Desktop Only) -->
+      <footer class="hidden lg:block border-t border-slate-800 bg-gradient-to-b from-background-dark via-background-dark/95 to-background-dark mt-auto">
+        <div class="max-w-7xl mx-auto px-6 py-12">
+          <!-- Main Footer Content -->
+          <div class="grid grid-cols-4 gap-8 mb-8">
+            <!-- Logo & Brand -->
+            <div class="col-span-1">
+              <div class="flex items-center gap-3 mb-4">
+                <img src="/logo-64.png" alt="Logo PERSIBO Bojonegoro" class="h-10 w-10 object-contain" width="40" height="40" />
+                <div>
+                  <h3 class="text-lg font-bold text-white">PERSIBO Bojonegoro</h3>
+                  <p class="text-xs text-slate-400">Laskar Angling Dharma</p>
+                </div>
+              </div>
+              <p class="text-sm text-slate-400 leading-relaxed">
+                Website Unofficial untuk informasi tim, pemain, dan pertandingan PERSIBO Bojonegoro di Liga Nusantara 2025-2026.
+              </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-span-1">
+              <h4 class="text-sm font-bold text-white mb-4 uppercase tracking-wider">Navigasi</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a href="/" class="text-sm text-slate-400 hover:text-primary transition-colors">Beranda</a>
+                </li>
+                <li>
+                  <a href="/pertandingan" class="text-sm text-slate-400 hover:text-primary transition-colors">Jadwal & Hasil</a>
+                </li>
+                <li>
+                  <a href="/klasemen" class="text-sm text-slate-400 hover:text-primary transition-colors">Klasemen</a>
+                </li>
+                <li>
+                  <a href="/pemain" class="text-sm text-slate-400 hover:text-primary transition-colors">Pemain</a>
+                </li>
+                <li>
+                  <a href="/tim" class="text-sm text-slate-400 hover:text-primary transition-colors">Tim</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Info -->
+            <div class="col-span-1">
+              <h4 class="text-sm font-bold text-white mb-4 uppercase tracking-wider">Informasi</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a href="/tim/profil" class="text-sm text-slate-400 hover:text-primary transition-colors">Profil Tim</a>
+                </li>
+                <li>
+                  <a href="/tim/official" class="text-sm text-slate-400 hover:text-primary transition-colors">Official & Staff</a>
+                </li>
+                <li>
+                  <a href="/tim/berita" class="text-sm text-slate-400 hover:text-primary transition-colors">Berita</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- External Links -->
+            <div class="col-span-1">
+              <h4 class="text-sm font-bold text-white mb-4 uppercase tracking-wider">Tautan</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a href="https://www.ileague.id/clubs/single/LIGA_NUSANTARA_2025-26/persibo_bojonegoro" 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     class="text-sm text-slate-400 hover:text-primary transition-colors inline-flex items-center gap-1">
+                    iLeague.id
+                    <span class="material-symbols-outlined text-xs">open_in_new</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="border-t border-slate-800/50 my-8"></div>
+
+          <!-- Bottom Section -->
+          <div class="flex items-center justify-between">
+            <!-- Credit -->
+            <div class="flex items-center gap-6">
+              <p class="text-sm text-slate-400">
+                <span class="font-medium text-slate-300">Jengker</span> Proudly Present <span class="font-medium text-primary">Persibo v2</span>
+              </p>
+              <span class="text-slate-600">•</span>
+              <p class="text-xs text-slate-400">© 2025 All Rights Reserved</p>
+            </div>
+
+            <!-- Disclaimer Badge -->
+            <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/50 border border-slate-700/50">
+              <span class="material-symbols-outlined text-slate-400 text-base">info</span>
+              <p class="text-xs text-slate-400">
+                <span class="font-medium text-slate-300">Unofficial</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Disclaimer Text -->
+          <div class="mt-6 pt-6 border-t border-slate-800/30">
+            <p class="text-xs text-slate-400 leading-relaxed text-center">
+              Website ini tidak berafiliasi dengan manajemen resmi PERSIBO Bojonegoro. Semua informasi disediakan untuk tujuan informatif semata.
+            </p>
+          </div>
+        </div>
+      </footer>
       
       <!-- Scroll to Top Button -->
       <button 
         id="scroll-to-top"
-        class="fixed bottom-24 right-4 z-30 hidden w-12 h-12 rounded-full bg-primary text-white shadow-lg hover:bg-primary/90 transition-all opacity-0 pointer-events-none flex items-center justify-center"
+        class="fixed bottom-24 lg:bottom-8 right-4 z-30 hidden w-12 h-12 rounded-full bg-primary text-white shadow-lg hover:bg-primary/90 transition-all opacity-0 pointer-events-none flex items-center justify-center"
         aria-label="Scroll to top"
       >
         <span class="material-symbols-outlined text-2xl">arrow_upward</span>
@@ -146,8 +394,15 @@ const currentPath = Astro.url.pathname;
   </body>
 </html>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
+<script is:inline>
+  // Defer scroll-to-top script
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initScrollToTop);
+  } else {
+    initScrollToTop();
+  }
+  
+  function initScrollToTop() {
     const scrollToTopBtn = document.getElementById('scroll-to-top');
     if (!scrollToTopBtn) return;
 
@@ -161,7 +416,17 @@ const currentPath = Astro.url.pathname;
       }
     }
 
-    window.addEventListener('scroll', toggleScrollButton);
+    // Throttle scroll event for performance
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          toggleScrollButton();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
     
     scrollToTopBtn.addEventListener('click', () => {
       window.scrollTo({
@@ -169,7 +434,7 @@ const currentPath = Astro.url.pathname;
         behavior: 'smooth'
       });
     });
-  });
+  }
 </script>
 
 <style is:global>

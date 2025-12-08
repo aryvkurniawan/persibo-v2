@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import { loadOfficials } from '../../utils/dataLoader';
+import { optimizePlayerPhoto } from '../../utils/imageOptimizer';
 
 const officials = await loadOfficials();
 
@@ -16,40 +17,50 @@ const breadcrumbItems = [
   title="Official & Staff PERSIBO Bojonegoro (Unofficial)"
   description="Lihat daftar lengkap official dan staff PERSIBO Bojonegoro. Pelatih kepala, asisten pelatih, manager tim, dan seluruh staff pendukung. Website Unofficial."
 >
-  <div class="px-4 py-4">
+  <div class="max-w-7xl mx-auto px-4 lg:px-6 py-4 lg:py-6">
     <Breadcrumb items={breadcrumbItems} />
     
     <!-- Intro Text -->
-    <section class="mb-6">
-      <div class="rounded-xl bg-slate-800/50 p-6 border border-slate-700">
-        <h1 class="text-2xl font-extrabold text-white mb-3">Official & Staff PERSIBO Bojonegoro</h1>
-        <p class="text-slate-300 leading-relaxed">
-          Berikut adalah daftar lengkap <strong class="text-white">official dan staff PERSIBO Bojonegoro</strong> yang mengelola tim di musim Liga Nusantara 2025-26. Tim ini didukung oleh pelatih kepala, asisten pelatih, manager tim, dan seluruh staff pendukung yang berdedikasi untuk kesuksesan tim.
+    <section class="mb-6 lg:mb-8">
+      <div class="rounded-xl bg-slate-800/50 p-6 lg:p-8 border border-slate-700">
+        <h1 class="text-2xl lg:text-3xl font-extrabold text-white mb-3 lg:mb-4">Official & Staff PERSIBO Bojonegoro</h1>
+        <p class="text-slate-300 leading-relaxed text-sm lg:text-base">
+          Berikut adalah daftar lengkap <strong class="text-white">official dan staff PERSIBO Bojonegoro</strong> yang mengelola tim di musim Liga Nusantara 2025-2026. Tim ini didukung oleh pelatih kepala, asisten pelatih, manager tim, dan seluruh staff pendukung yang berdedikasi untuk kesuksesan tim.
         </p>
       </div>
     </section>
     
-    <div class="flex items-center gap-3 mb-6">
+    <div class="flex items-center gap-3 mb-6 lg:mb-8">
       <a href="/tim" class="text-slate-400 hover:text-white transition-colors">
         <span class="material-symbols-outlined text-2xl">arrow_back</span>
       </a>
-      <h2 class="text-2xl font-extrabold text-white">Daftar Official & Staff</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-white">Daftar Official & Staff</h2>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
       {officials.map((official) => (
         <div class="rounded-xl bg-slate-800/50 shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-          {official.photo_url && (
-            <div class="w-full h-80 md:h-96 bg-cover bg-top bg-no-repeat" style={`background-image: url("${official.photo_url}"); background-position: center top;`}>
-              <div class="w-full h-full bg-gradient-to-t from-slate-800/80 to-transparent"></div>
-              <img src={official.photo_url} alt={`Foto ${official.name}, ${official.position} PERSIBO Bojonegoro`} class="sr-only" />
-            </div>
-          )}
+          {(() => {
+            const optimizedPhoto = optimizePlayerPhoto(official.photo_url, 'medium');
+            return optimizedPhoto ? (
+              <div class="w-full h-80 md:h-96 bg-cover bg-top bg-no-repeat relative overflow-hidden">
+                <img 
+                  src={optimizedPhoto} 
+                  alt={`Foto ${official.name}, ${official.position} PERSIBO Bojonegoro`} 
+                  class="absolute inset-0 w-full h-full object-cover object-top"
+                  loading="lazy"
+                  width="400"
+                  height="480"
+                />
+                <div class="absolute inset-0 w-full h-full bg-gradient-to-t from-slate-800/80 to-transparent"></div>
+              </div>
+            ) : null;
+          })()}
           <div class="p-4">
             <h3 class="text-xl font-bold text-white mb-2">{official.name}</h3>
             {official.position && (
               <p class="text-slate-400 mb-4">{official.position}</p>
             )}
-            <p class="text-sm text-slate-500">Tim: {official.team}</p>
+            <p class="text-sm text-slate-400">Tim: {official.team}</p>
           </div>
         </div>
       ))}

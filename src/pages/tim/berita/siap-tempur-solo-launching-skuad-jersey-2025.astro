@@ -1,6 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
+import ShareButtons from '../../../components/ShareButtons.astro';
 
 const breadcrumbItems = [
   { label: 'Beranda', href: '/' },
@@ -9,15 +10,18 @@ const breadcrumbItems = [
   { label: 'Siap Tempur di Solo! Persibo Luncurkan Skuad dan Jersey Anyar', href: '/tim/berita/siap-tempur-solo-launching-skuad-jersey-2025' }
 ];
 
-const publishedDate = '2025-11-25';
+const publishedDate = '2025-11-25T00:00:00+07:00';
+const modifiedDate = '2025-11-25T00:00:00+07:00';
 const author = 'persibo.com';
+const authorUrl = 'https://persibo.com';
 ---
 
 <Layout 
-  title="Siap Tempur di Solo! Persibo Bojonegoro Resmi Luncurkan Skuad dan Jersey Anyar Musim 2025/2026 - PERSIBO Bojonegoro (Unofficial)"
-  description="Persibo Bojonegoro secara resmi memperkenalkan komposisi skuad dan jersey terbaru untuk Liga 3 Nusantara musim 2025/2026. Acara launching digelar di Hotel Eastern, Bojonegoro dengan 30 pemain siap tempur. Website Unofficial."
+  title="Siap Tempur di Solo! Persibo Bojonegoro Resmi Luncurkan Skuad dan Jersey Anyar Musim 2025-2026 - PERSIBO Bojonegoro (Unofficial)"
+  description="Persibo Bojonegoro secara resmi memperkenalkan komposisi skuad dan jersey terbaru untuk Liga 3 Nusantara musim 2025-2026. Acara launching digelar di Hotel Eastern, Bojonegoro dengan 30 pemain siap tempur. Website Unofficial."
+  ogImage="/img/drama-pinalti.jpg"
 >
-  <div class="px-4 py-4 max-w-4xl mx-auto">
+  <div class="px-4 lg:px-6 py-4 lg:py-6 max-w-4xl mx-auto">
     <Breadcrumb items={breadcrumbItems} />
     
     <!-- Back Button -->
@@ -39,14 +43,23 @@ const author = 'persibo.com';
         </div>
         
         <h1 class="text-2xl md:text-3xl font-extrabold text-white mb-4 leading-tight">
-          Siap Tempur di Solo! Persibo Bojonegoro Resmi Luncurkan Skuad dan Jersey Anyar Musim 2025/2026
+          Siap Tempur di Solo! Persibo Bojonegoro Resmi Luncurkan Skuad dan Jersey Anyar Musim 2025-2026
         </h1>
         
-        <div class="flex items-center gap-3 text-sm text-slate-400">
+        <div class="flex items-center gap-3 text-sm text-slate-400 mb-4">
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-base">location_on</span>
             <span>BOJONEGORO</span>
           </div>
+        </div>
+        
+        <!-- Share Buttons -->
+        <div class="mb-6 pt-4 border-t border-slate-700">
+          <ShareButtons 
+            title="Siap Tempur di Solo! Persibo Bojonegoro Resmi Luncurkan Skuad dan Jersey Anyar Musim 2025-2026"
+            description="Persibo Bojonegoro secara resmi memperkenalkan komposisi skuad dan jersey terbaru untuk Liga 3 Nusantara musim 2025-2026"
+            type="article"
+          />
         </div>
       </div>
 
@@ -61,14 +74,14 @@ const author = 'persibo.com';
           <source src="/video/launching-2025.mp4" type="video/mp4" />
           Browser Anda tidak mendukung pemutaran video.
         </video>
-        <p class="text-xs text-slate-500 mt-2 px-4 pb-4 text-center">Video: Peluncuran Skuad dan Jersey Persibo Bojonegoro Musim 2025/2026</p>
+        <p class="text-xs text-slate-400 mt-2 px-4 pb-4 text-center">Video: Peluncuran Skuad dan Jersey Persibo Bojonegoro Musim 2025-2026</p>
       </div>
 
       <!-- Article Content -->
       <div class="prose prose-invert prose-slate max-w-none">
         <div class="space-y-4 text-slate-300 leading-relaxed">
           <p class="text-lg font-medium text-white">
-            <strong>BOJONEGORO, persibo.com</strong> – Persibo Bojonegoro secara resmi memperkenalkan komposisi skuad dan jubah perang terbaru mereka untuk mengarungi kompetisi Liga 3 Nusantara musim 2025/2026. Acara peluncuran (<em>launching</em>) tim ini digelar dengan meriah namun tetap khidmat di <strong class="text-white">Hotel Eastern, Bojonegoro</strong>, pada <strong class="text-primary">Selasa, 25 November 2025</strong>.
+            <strong>BOJONEGORO, persibo.com</strong> – Persibo Bojonegoro secara resmi memperkenalkan komposisi skuad dan jubah perang terbaru mereka untuk mengarungi kompetisi Liga 3 Nusantara musim 2025-2026. Acara peluncuran (<em>launching</em>) tim ini digelar dengan meriah namun tetap khidmat di <strong class="text-white">Hotel Eastern, Bojonegoro</strong>, pada <strong class="text-primary">Selasa, 25 November 2025</strong>.
           </p>
 
           <p>
@@ -134,7 +147,7 @@ const author = 'persibo.com';
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "NewsArticle",
-  "headline": "Siap Tempur di Solo! Persibo Bojonegoro Resmi Luncurkan Skuad dan Jersey Anyar Musim 2025/2026",
+  "headline": "Siap Tempur di Solo! Persibo Bojonegoro Resmi Luncurkan Skuad dan Jersey Anyar Musim 2025-2026",
   "image": `${Astro.site || Astro.url.origin}/img/drama-pinalti.jpg`,
   "video": {
     "@type": "VideoObject",
@@ -143,20 +156,21 @@ const author = 'persibo.com';
     "uploadDate": publishedDate
   },
   "datePublished": publishedDate,
-  "dateModified": publishedDate,
+  "dateModified": modifiedDate,
   "author": {
     "@type": "Organization",
-    "name": author
+    "name": author,
+    "url": authorUrl
   },
   "publisher": {
     "@type": "Organization",
     "name": "PERSIBO Bojonegoro (Unofficial)",
     "logo": {
       "@type": "ImageObject",
-      "url": `${Astro.site || Astro.url.origin}/logo.png`
+      "url": `${Astro.site || Astro.url.origin}/logo-128.png`
     }
   },
-  "description": "Persibo Bojonegoro secara resmi memperkenalkan komposisi skuad dan jersey terbaru untuk Liga 3 Nusantara musim 2025/2026. Acara launching digelar di Hotel Eastern, Bojonegoro dengan 30 pemain siap tempur.",
+  "description": "Persibo Bojonegoro secara resmi memperkenalkan komposisi skuad dan jersey terbaru untuk Liga 3 Nusantara musim 2025-2026. Acara launching digelar di Hotel Eastern, Bojonegoro dengan 30 pemain siap tempur.",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": `${Astro.site || Astro.url.origin}/tim/berita/siap-tempur-solo-launching-skuad-jersey-2025`

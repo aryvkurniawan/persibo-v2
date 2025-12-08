@@ -91,6 +91,7 @@ out
 *.tmp
 *.temp
 .cache/
+**/*.tmp
 
 # Coverage directory used by tools like istanbul
 coverage/

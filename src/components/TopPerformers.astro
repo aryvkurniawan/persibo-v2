@@ -1,0 +1,146 @@
+---
+import type { PlayerDetail } from '../types';
+import { loadPlayerDetails } from '../utils/dataLoader';
+
+interface Props {
+  currentPlayer: PlayerDetail;
+  statType: 'goals' | 'appearances' | 'saves';
+  limit?: number;
+}
+
+const { currentPlayer, statType, limit = 5 } = Astro.props;
+const allPlayers = await loadPlayerDetails();
+const persiboPlayers = allPlayers.filter(p => p.club === 'PERSIBO Bojonegoro');
+
+// Get top performers based on stat type
+let topPerformers: Array<{ player: PlayerDetail; value: number }> = [];
+
+if (statType === 'goals') {
+  topPerformers = persiboPlayers
+    .map(p => {
+      const totalGoals = p.club_history?.reduce((sum, h) => sum + (parseInt(h.goals) || 0), 0) || p.statistics.goals;
+      return { player: p, value: totalGoals };
+    })
+    .filter(p => p.value > 0)
+    .sort((a, b) => b.value - a.value)
+    .slice(0, limit);
+} else if (statType === 'appearances') {
+  topPerformers = persiboPlayers
+    .map(p => {
+      const totalApps = p.club_history?.reduce((sum, h) => sum + (parseInt(h.appearances) || 0), 0) || p.statistics.appearances;
+      return { player: p, value: totalApps };
+    })
+    .filter(p => p.value > 0)
+    .sort((a, b) => b.value - a.value)
+    .slice(0, limit);
+} else if (statType === 'saves') {
+  topPerformers = persiboPlayers
+    .filter(p => p.position?.toUpperCase().includes('GAWANG'))
+    .map(p => {
+      const totalSaves = p.club_history?.reduce((sum, h) => sum + (parseInt(h.saves) || 0), 0) || 0;
+      return { player: p, value: totalSaves };
+    })
+    .filter(p => p.value > 0)
+    .sort((a, b) => b.value - a.value)
+    .slice(0, limit);
+}
+
+const currentPlayerValue = statType === 'goals' 
+  ? (currentPlayer.club_history?.reduce((sum, h) => sum + (parseInt(h.goals) || 0), 0) || currentPlayer.statistics.goals)
+  : statType === 'appearances'
+  ? (currentPlayer.club_history?.reduce((sum, h) => sum + (parseInt(h.appearances) || 0), 0) || currentPlayer.statistics.appearances)
+  : (currentPlayer.club_history?.reduce((sum, h) => sum + (parseInt(h.saves) || 0), 0) || 0);
+
+const currentPlayerRank = topPerformers.findIndex(p => p.player.name === currentPlayer.name) + 1;
+const maxValue = topPerformers.length > 0 ? topPerformers[0].value : 1;
+---
+
+{topPerformers.length > 0 && (
+  <div class="rounded-xl bg-background-dark/50 p-4 lg:p-6 ring-1 ring-white/10">
+    <div class="flex items-center justify-between mb-4">
+      <h4 class="text-lg lg:text-xl font-bold text-white">
+        {statType === 'goals' && 'Top Scorer'}
+        {statType === 'appearances' && 'Most Appearances'}
+        {statType === 'saves' && 'Top Goalkeeper'}
+      </h4>
+      {currentPlayerRank > 0 && currentPlayerRank <= limit && (
+        <span class="text-sm text-primary font-medium">Peringkat #{currentPlayerRank}</span>
+      )}
+    </div>
+    
+    <div class="space-y-3">
+      {topPerformers.map((item, index) => {
+        const slug = item.player.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+        const isCurrentPlayer = item.player.name === currentPlayer.name;
+        const percentage = maxValue > 0 ? (item.value / maxValue) * 100 : 0;
+        
+        return (
+          <a 
+            href={`/pemain/${slug}`}
+            class={`block p-3 rounded-lg transition-colors ${
+              isCurrentPlayer 
+                ? 'bg-primary/20 ring-1 ring-primary/30' 
+                : 'bg-slate-900/30 hover:bg-slate-900/50'
+            }`}
+          >
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-3">
+                <div class={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
+                  index === 0 
+                    ? 'bg-yellow-500 text-black' 
+                    : index === 1 
+                    ? 'bg-slate-400 text-black' 
+                    : index === 2
+                    ? 'bg-orange-600 text-white'
+                    : 'bg-slate-700 text-white'
+                }`}>
+                  {index + 1}
+                </div>
+                <div>
+                  <p class={`font-medium ${isCurrentPlayer ? 'text-primary' : 'text-white'}`}>
+                    {item.player.name}
+                  </p>
+                  <p class="text-xs text-slate-400">{item.player.position}</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <p class={`text-lg font-bold ${isCurrentPlayer ? 'text-primary' : 'text-white'}`}>
+                  {item.value}
+                </p>
+              </div>
+            </div>
+            
+            {/* Progress Bar */}
+            <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+              <div 
+                class={`h-full transition-all ${
+                  isCurrentPlayer ? 'bg-primary' : 'bg-accent-teal'
+                }`}
+                style={`width: ${percentage}%`}
+              ></div>
+            </div>
+          </a>
+        );
+      })}
+      
+      {currentPlayerRank > limit && (
+        <div class="pt-2 border-t border-slate-700">
+          <div class="p-3 rounded-lg bg-slate-900/30">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold bg-slate-700 text-white">
+                  {currentPlayerRank}
+                </div>
+                <div>
+                  <p class="font-medium text-primary">Anda</p>
+                  <p class="text-xs text-slate-400">{currentPlayer.position}</p>
+                </div>
+              </div>
+              <p class="text-lg font-bold text-primary">{currentPlayerValue}</p>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+)}

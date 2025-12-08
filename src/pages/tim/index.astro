@@ -12,25 +12,25 @@ const breadcrumbItems = [
   title="Tim PERSIBO Bojonegoro (Unofficial)"
   description="Informasi lengkap tentang tim PERSIBO Bojonegoro. Profil tim, official, berita, dan galeri. Website Unofficial."
 >
-  <div class="px-4 py-4">
+  <div class="max-w-7xl mx-auto px-4 lg:px-6 py-4 lg:py-6">
     <Breadcrumb items={breadcrumbItems} />
     
     <!-- Intro Text -->
-    <section class="mb-6">
-      <div class="rounded-xl bg-slate-800/50 p-6 border border-slate-700">
-        <h1 class="text-2xl font-extrabold text-white mb-3">Tim PERSIBO Bojonegoro</h1>
-        <p class="text-slate-300 leading-relaxed">
+    <section class="mb-6 lg:mb-8">
+      <div class="rounded-xl bg-slate-800/50 p-6 lg:p-8 border border-slate-700">
+        <h1 class="text-2xl lg:text-3xl font-extrabold text-white mb-3 lg:mb-4">Tim PERSIBO Bojonegoro</h1>
+        <p class="text-slate-300 leading-relaxed text-sm lg:text-base">
           Jelajahi informasi lengkap tentang <strong class="text-white">PERSIBO Bojonegoro</strong>. Dari profil tim yang mencakup sejarah, visi misi, dan prestasi, hingga daftar official dan staff yang mengelola tim. Akses juga berita terbaru dan galeri foto tim.
         </p>
       </div>
     </section>
     
-    <div class="mb-6">
-      <h2 class="text-xl font-extrabold text-white mb-2">Menu</h2>
-      <p class="text-slate-400 text-sm">Pilih menu di bawah untuk melihat informasi lebih detail</p>
+    <div class="mb-6 lg:mb-8">
+      <h2 class="text-xl lg:text-2xl font-extrabold text-white mb-2">Menu</h2>
+      <p class="text-slate-400 text-sm lg:text-base">Pilih menu di bawah untuk melihat informasi lebih detail</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 lg:gap-6">
       <!-- Profil Tim -->
       <a href="/tim/profil" class="group">
         <div class="rounded-xl bg-gradient-to-br from-primary/20 to-accent-purple/20 p-6 border border-primary/30 hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/20">
@@ -87,7 +87,7 @@ const breadcrumbItems = [
               <span class="material-symbols-outlined text-3xl text-slate-500">photo_library</span>
             </div>
             <div>
-              <h2 class="text-xl font-bold text-slate-500 mb-1">Galeri</h2>
+              <h2 class="text-xl font-bold text-slate-400 mb-1">Galeri</h2>
               <p class="text-slate-600 text-sm">Foto-foto tim dan pertandingan</p>
             </div>
           </div>
@@ -100,7 +100,7 @@ const breadcrumbItems = [
     </div>
 
     <!-- Credit & Disclaimer -->
-    <div class="px-4 mt-8 mb-4 space-y-4">
+    <div class="mt-8 lg:mt-12 mb-4 space-y-4">
       <!-- Credit -->
       <div class="rounded-xl bg-slate-800/50 p-6 border border-slate-700">
         <p class="text-sm text-slate-400 text-center">

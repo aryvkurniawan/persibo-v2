@@ -54,6 +54,10 @@ export async function getStaticPaths() {
 const { player } = Astro.props;
 const slug = player.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
 
+// Import optimizeImage untuk OG image (ukuran 1200x630 untuk OG image)
+import { optimizeImage } from '../../utils/imageOptimizer';
+const ogImage = player.photo_url ? optimizeImage(player.photo_url, { width: 1200, height: 630, quality: 90, format: 'jpg', fit: 'cover' }) : undefined;
+
 const breadcrumbItems = [
   { label: 'Beranda', href: '/' },
   { label: 'Pemain', href: '/pemain' },
@@ -64,9 +68,14 @@ const breadcrumbItems = [
 <Layout 
   title={`${player.full_name} - PERSIBO Bojonegoro (Unofficial)`}
   description={`Profil lengkap ${player.full_name}, ${player.position} dari PERSIBO Bojonegoro. Usia ${player.age} tahun, ${player.country}. Statistik: ${player.statistics.appearances} main, ${player.statistics.goals} gol. Website Unofficial.`}
+  ogImage={ogImage}
 >
-  <Breadcrumb items={breadcrumbItems} />
-  <PlayerDetail player={player} />
+  <div class="max-w-7xl mx-auto">
+    <div class="px-4 lg:px-6 pt-4">
+      <Breadcrumb items={breadcrumbItems} />
+    </div>
+    <PlayerDetail player={player} />
+  </div>
 </Layout>
 
 <script type="application/ld+json" set:html={JSON.stringify({

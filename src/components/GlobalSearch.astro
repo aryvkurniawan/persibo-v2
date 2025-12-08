@@ -1,0 +1,345 @@
+---
+// Generate unique ID for this instance
+const uniqueId = `search-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<div class="global-search-container relative" data-search-id={uniqueId}>
+  <!-- Search Input -->
+  <div class="relative">
+    <input
+      type="text"
+      data-search-input
+      placeholder="Cari pemain, berita, pertandingan..."
+      class="w-full px-4 py-2 pl-10 pr-10 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:ring-2 focus:ring-primary focus:border-primary transition-all text-sm lg:text-base min-h-[40px]"
+      autocomplete="off"
+    />
+    <span class="material-symbols-outlined absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 text-lg">search</span>
+    <button
+      data-clear-search-btn
+      class="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-white hidden"
+      aria-label="Hapus pencarian"
+    >
+      <span class="material-symbols-outlined text-lg">close</span>
+    </button>
+  </div>
+
+  <!-- Search Results Dropdown -->
+  <div
+    data-search-results
+    class="hidden absolute top-full left-0 right-0 mt-2 bg-slate-900 border border-slate-700 rounded-lg shadow-2xl max-h-[70vh] overflow-y-auto z-50"
+  >
+    <div data-search-loading class="hidden p-4 text-center text-slate-400">
+      <span class="material-symbols-outlined animate-spin">sync</span>
+      <p class="mt-2 text-sm">Mencari...</p>
+    </div>
+    
+    <div data-search-no-results class="hidden p-4 text-center text-slate-400">
+      <span class="material-symbols-outlined text-3xl mb-2">search_off</span>
+      <p class="text-sm">Tidak ada hasil ditemukan</p>
+    </div>
+    
+    <div data-search-results-list class="divide-y divide-slate-800"></div>
+  </div>
+</div>
+
+<script is:inline>
+  // Prevent double execution
+  (function() {
+    if (window.globalSearchInitialized) return;
+    window.globalSearchInitialized = true;
+    
+    // Shared search index across all instances
+    if (typeof window.globalSearchIndex === 'undefined') {
+      window.globalSearchIndex = null;
+    }
+    
+    // Initialize all search instances
+    function initializeAllSearches() {
+      const searchContainers = document.querySelectorAll('.global-search-container:not([data-initialized])');
+      
+      searchContainers.forEach((container) => {
+        container.setAttribute('data-initialized', 'true');
+        const searchId = container.getAttribute('data-search-id');
+        const searchInput = container.querySelector('[data-search-input]');
+        const searchResults = container.querySelector('[data-search-results]');
+        const searchResultsList = container.querySelector('[data-search-results-list]');
+        const searchLoading = container.querySelector('[data-search-loading]');
+        const searchNoResults = container.querySelector('[data-search-no-results]');
+        const clearSearchBtn = container.querySelector('[data-clear-search-btn]');
+        
+        if (!searchInput || !searchResults || !searchResultsList) {
+          return;
+        }
+        
+        initializeSearchInstance(searchInput, searchResults, searchResultsList, searchLoading, searchNoResults, clearSearchBtn, container, searchId);
+      });
+    }
+    
+    // Load search index (shared)
+    async function loadSearchIndex() {
+      if (window.globalSearchIndex) {
+        return window.globalSearchIndex;
+      }
+      
+      try {
+        const response = await fetch('/search-index.json');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        window.globalSearchIndex = data;
+        return data;
+      } catch (err) {
+        console.error('Error loading search index:', err);
+        return null;
+      }
+    }
+    
+    // Simple fuzzy search function
+    function searchItems(query, items, searchFields = ['searchText']) {
+      if (!query || query.length < 2) return [];
+      
+      const lowerQuery = query.toLowerCase().trim();
+      const queryWords = lowerQuery.split(/\s+/);
+      
+      return items
+        .map(item => {
+          let score = 0;
+          let matchCount = 0;
+          
+          searchFields.forEach(field => {
+            const text = (item[field] || '').toLowerCase();
+            queryWords.forEach(word => {
+              if (text.includes(word)) {
+                matchCount++;
+                if (text === word || text.startsWith(word)) {
+                  score += 10;
+                } else if (text.includes(word)) {
+                  score += 5;
+                }
+              }
+            });
+          });
+          
+          if (item.title?.toLowerCase().includes(lowerQuery)) {
+            score += 15;
+          }
+          
+          return { item, score, matchCount };
+        })
+        .filter(result => result.matchCount > 0)
+        .sort((a, b) => {
+          if (b.score !== a.score) return b.score - a.score;
+          return b.matchCount - a.matchCount;
+        })
+        .slice(0, 10)
+        .map(result => result.item);
+    }
+    
+    // Highlight search terms
+    function highlightText(text, query) {
+      if (!query) return text;
+      const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+      return text.replace(regex, '<mark class="bg-primary/30 text-primary font-medium">$1</mark>');
+    }
+    
+    // Initialize a single search instance
+    function initializeSearchInstance(searchInput, searchResults, searchResultsList, searchLoading, searchNoResults, clearSearchBtn, container, searchId) {
+      let searchTimeout;
+      
+      // Render search results
+      function renderResults(results, query) {
+        if (!results || results.length === 0) {
+          searchResultsList.innerHTML = '';
+          searchNoResults.classList.remove('hidden');
+          searchResults.classList.remove('hidden');
+          return;
+        }
+        
+        searchNoResults.classList.add('hidden');
+        const grouped = results.reduce((acc, item) => {
+          if (!acc[item.category]) acc[item.category] = [];
+          acc[item.category].push(item);
+          return acc;
+        }, {});
+        
+        let html = '';
+        const categoryOrder = ['Pemain', 'Berita', 'Pertandingan', 'Tim'];
+        
+        categoryOrder.forEach(category => {
+          if (!grouped[category] || grouped[category].length === 0) return;
+          
+          html += `
+            <div class="p-3 bg-slate-800/30">
+              <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">${category}</h3>
+              <div class="space-y-1">
+          `;
+          
+          grouped[category].slice(0, 5).forEach(item => {
+            const hasUrl = item.url && item.url !== 'null';
+            const escapedTitle = (item.title || '').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+            
+            html += `
+              <a
+                href="${hasUrl ? item.url : '#'}"
+                class="block p-3 rounded-lg hover:bg-slate-800 transition-colors ${!hasUrl ? 'cursor-not-allowed opacity-60' : ''}"
+                ${hasUrl ? '' : 'onclick="return false;"'}
+              >
+                <div class="flex items-start gap-3">
+                  ${item.image ? `
+                    <img
+                      src="${item.image}"
+                      alt="${escapedTitle}"
+                      class="w-10 h-10 rounded-lg object-cover flex-shrink-0"
+                      loading="lazy"
+                    />
+                  ` : `
+                    <div class="w-10 h-10 rounded-lg bg-slate-700 flex items-center justify-center flex-shrink-0">
+                      <span class="material-symbols-outlined text-slate-400 text-lg">
+                        ${category === 'Pemain' ? 'person' : category === 'Berita' ? 'article' : category === 'Pertandingan' ? 'sports_soccer' : 'groups'}
+                      </span>
+                    </div>
+                  `}
+                  <div class="flex-1 min-w-0">
+                    <h4 class="text-sm font-medium text-white mb-1 line-clamp-1 search-result-title" data-title="${escapedTitle}"></h4>
+                    <p class="text-xs text-slate-400 line-clamp-1">${item.subtitle || ''}</p>
+                  </div>
+                </div>
+              </a>
+            `;
+          });
+          
+          html += `
+              </div>
+            </div>
+          `;
+        });
+        
+        searchResultsList.innerHTML = html;
+        searchResults.classList.remove('hidden');
+        
+        // Apply highlighting
+        if (query && query.length > 0) {
+          const titleElements = searchResultsList.querySelectorAll('.search-result-title');
+          titleElements.forEach(el => {
+            const text = el.getAttribute('data-title');
+            const highlighted = highlightText(text, query);
+            el.innerHTML = highlighted;
+          });
+        } else {
+          const titleElements = searchResultsList.querySelectorAll('.search-result-title');
+          titleElements.forEach(el => {
+            const text = el.getAttribute('data-title');
+            el.textContent = text;
+          });
+        }
+      }
+      
+      // Perform search
+      async function performSearch(query) {
+        if (!query || query.length < 2) {
+          searchResults.classList.add('hidden');
+          return;
+        }
+        
+        const index = await loadSearchIndex();
+        if (!index) {
+          return;
+        }
+        
+        searchLoading.classList.remove('hidden');
+        searchResults.classList.remove('hidden');
+        
+        const players = searchItems(query, index.players || []);
+        const news = searchItems(query, index.news || []);
+        const matches = searchItems(query, index.matches || []);
+        const teams = searchItems(query, index.teams || []);
+        
+        const allResults = [...players, ...news, ...matches, ...teams];
+        
+        searchLoading.classList.add('hidden');
+        renderResults(allResults, query);
+      }
+      
+      // Input handler
+      function handleInput(e) {
+        clearTimeout(searchTimeout);
+        const query = e.target.value.trim();
+        
+        if (clearSearchBtn) {
+          clearSearchBtn.classList.toggle('hidden', !query);
+        }
+        
+        if (query.length < 2) {
+          searchResults.classList.add('hidden');
+          searchResultsList.innerHTML = '';
+          return;
+        }
+        
+        searchTimeout = setTimeout(() => {
+          performSearch(query);
+        }, 300);
+      }
+      
+      // Attach event listeners
+      searchInput.addEventListener('input', handleInput);
+      searchInput.addEventListener('keyup', handleInput);
+      
+      // Clear button
+      if (clearSearchBtn) {
+        clearSearchBtn.addEventListener('click', () => {
+          searchInput.value = '';
+          searchResults.classList.add('hidden');
+          clearSearchBtn.classList.add('hidden');
+          searchInput.focus();
+        });
+      }
+      
+      // Close on outside click
+      document.addEventListener('click', (e) => {
+        if (!container.contains(e.target)) {
+          searchResults.classList.add('hidden');
+        }
+      });
+      
+      // ESC to close
+      searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          searchResults.classList.add('hidden');
+          searchInput.blur();
+        }
+      });
+    }
+    
+    // Wait for DOM ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeAllSearches);
+    } else {
+      setTimeout(initializeAllSearches, 100);
+    }
+  })();
+</script>
+
+<style>
+  [data-search-results] {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(148, 163, 184, 0.3) transparent;
+  }
+  
+  [data-search-results]::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  [data-search-results]::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  [data-search-results]::-webkit-scrollbar-thumb {
+    background-color: rgba(148, 163, 184, 0.3);
+    border-radius: 3px;
+  }
+  
+  [data-search-results]::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(148, 163, 184, 0.5);
+  }
+</style>

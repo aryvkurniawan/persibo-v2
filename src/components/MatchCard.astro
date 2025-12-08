@@ -1,6 +1,7 @@
 ---
 import type { Fixture } from '../types';
 import { loadTeams, getTeamLogo, getMatchDetailSlug } from '../utils/dataLoader';
+import { optimizeTeamLogo } from '../utils/imageOptimizer';
 
 interface Props {
   match: Fixture;
@@ -26,18 +27,20 @@ const homeTeam = match.home_team;
 const awayTeam = match.away_team;
 
 // Get team logos
-const homeTeamLogo = isPersiboHome ? '/logo.png' : (getTeamLogo(teams, homeTeam) || null);
-const awayTeamLogo = isPersiboAway ? '/logo.png' : (getTeamLogo(teams, awayTeam) || null);
+const homeTeamLogoRaw = isPersiboHome ? '/logo-32.png' : (getTeamLogo(teams, homeTeam) || null);
+const awayTeamLogoRaw = isPersiboAway ? '/logo-32.png' : (getTeamLogo(teams, awayTeam) || null);
+const homeTeamLogo = optimizeTeamLogo(homeTeamLogoRaw, 64);
+const awayTeamLogo = optimizeTeamLogo(awayTeamLogoRaw, 64);
 ---
 
-<div class="rounded-xl bg-slate-800/50 p-4 shadow-lg">
-  <div class="flex items-center justify-between mb-3">
+<div class="rounded-xl bg-slate-800/50 p-4 lg:p-6 shadow-lg relative hover:shadow-xl lg:hover:bg-slate-800/70 transition-all" style="pointer-events: auto;">
+  <div class="flex items-center justify-between mb-3 lg:mb-4">
     <div class="flex items-center gap-2">
-      <span class="material-symbols-outlined text-slate-400 text-sm">calendar_month</span>
-      <span class="text-slate-400 text-sm font-medium">{match.date}</span>
+      <span class="material-symbols-outlined text-slate-400 text-sm lg:text-base">calendar_month</span>
+      <span class="text-slate-400 text-sm lg:text-base font-medium">{match.date}</span>
     </div>
     {isCompleted && (
-      <span class={`px-2 py-1 rounded text-xs font-bold ${
+      <span class={`px-2 lg:px-3 py-1 rounded text-xs lg:text-sm font-bold ${
         persiboWon ? 'bg-green-500/20 text-green-400' : 
         persiboLost ? 'bg-red-500/20 text-red-400' : 
         'bg-yellow-500/20 text-yellow-400'
@@ -46,33 +49,33 @@ const awayTeamLogo = isPersiboAway ? '/logo.png' : (getTeamLogo(teams, awayTeam)
       </span>
     )}
     {isScheduled && (
-      <span class="px-2 py-1 rounded text-xs font-bold bg-blue-500/20 text-blue-400">
+      <span class="px-2 lg:px-3 py-1 rounded text-xs lg:text-sm font-bold bg-blue-500/20 text-blue-400">
         JADWAL
       </span>
     )}
   </div>
 
-  <div class="flex items-center justify-between gap-4 mb-3">
+  <div class="flex items-center justify-between gap-4 lg:gap-6 mb-3 lg:mb-4">
     <!-- Home Team -->
     <div class="flex-1 text-right">
-      <p class={`text-sm font-bold mb-1 ${
+      <p class={`text-sm lg:text-base font-bold mb-1 lg:mb-2 ${
         isPersiboHome ? 'text-white' : 'text-slate-300'
       }`}>
         {homeTeam}
       </p>
       {homeTeamLogo && (
-        <img src={homeTeamLogo} alt={`Logo ${homeTeam} - ${isCompleted ? `Hasil pertandingan ${homeScore}:${awayScore} vs ${awayTeam}` : `Jadwal pertandingan vs ${awayTeam}`} Liga Nusantara 2025-26`} class="h-8 w-8 object-contain mx-auto mt-1" />
+        <img src={homeTeamLogo} alt={`Logo ${homeTeam} - ${isCompleted ? `Hasil pertandingan ${homeScore}:${awayScore} vs ${awayTeam}` : `Jadwal pertandingan vs ${awayTeam}`} Liga Nusantara 2025-2026`} class="h-8 w-8 lg:h-10 lg:w-10 object-contain mx-auto mt-1" width="32" height="32" loading="lazy" />
       )}
     </div>
 
     <!-- Score -->
-    <div class="flex flex-col items-center gap-1 min-w-[80px]">
+    <div class="flex flex-col items-center gap-1 lg:gap-2 min-w-[80px] lg:min-w-[100px]">
       {isCompleted ? (
         <>
-          <div class="text-2xl font-bold text-white">
+          <div class="text-2xl lg:text-3xl font-bold text-white">
             {homeScore} : {awayScore}
           </div>
-          <div class={`text-xs font-bold ${
+          <div class={`text-xs lg:text-sm font-bold ${
             persiboWon ? 'text-green-400' : 
             persiboLost ? 'text-red-400' : 
             'text-yellow-400'
@@ -81,36 +84,37 @@ const awayTeamLogo = isPersiboAway ? '/logo.png' : (getTeamLogo(teams, awayTeam)
           </div>
         </>
       ) : (
-        <div class="text-lg font-bold text-slate-500">VS</div>
+        <div class="text-lg lg:text-xl font-bold text-slate-500">VS</div>
       )}
     </div>
 
     <!-- Away Team -->
     <div class="flex-1 text-left">
-      <p class={`text-sm font-bold mb-1 ${
+      <p class={`text-sm lg:text-base font-bold mb-1 lg:mb-2 ${
         isPersiboAway ? 'text-white' : 'text-slate-300'
       }`}>
         {awayTeam}
       </p>
       {awayTeamLogo && (
-        <img src={awayTeamLogo} alt={`Logo ${awayTeam} - ${isCompleted ? `Hasil pertandingan ${homeScore}:${awayScore} vs ${homeTeam}` : `Jadwal pertandingan vs ${homeTeam}`} Liga Nusantara 2025-26`} class="h-8 w-8 object-contain mx-auto mt-1" />
+        <img src={awayTeamLogo} alt={`Logo ${awayTeam} - ${isCompleted ? `Hasil pertandingan ${homeScore}:${awayScore} vs ${homeTeam}` : `Jadwal pertandingan vs ${homeTeam}`} Liga Nusantara 2025-2026`} class="h-8 w-8 lg:h-10 lg:w-10 object-contain mx-auto mt-1" width="32" height="32" loading="lazy" />
       )}
     </div>
   </div>
 
-  <div class="flex items-center justify-between pt-3 border-t border-slate-700">
+  <div class="flex items-center justify-between pt-3 lg:pt-4 border-t border-slate-700">
     <div class="flex items-center gap-2">
-      <span class="material-symbols-outlined text-slate-400 text-sm">location_on</span>
-      <span class="text-slate-400 text-xs">{match.venue}</span>
+      <span class="material-symbols-outlined text-slate-400 text-sm lg:text-base">location_on</span>
+      <span class="text-slate-400 text-xs lg:text-sm">{match.venue}</span>
     </div>
-    <div class="flex items-center gap-2">
+    <div class="flex items-center gap-2 lg:gap-3">
       {isCompleted && match.match_url && (
         <a 
           href={`/pertandingan/${getMatchDetailSlug(match)}`}
-          class="text-primary hover:text-primary/80 text-sm font-medium flex items-center gap-1 py-2 px-3 rounded-lg hover:bg-primary/10 transition-colors min-h-[44px]"
+          class="text-primary hover:text-primary/80 text-sm lg:text-base font-medium flex items-center gap-1 py-2 px-3 lg:px-4 rounded-lg hover:bg-primary/10 lg:hover:bg-primary/20 transition-colors min-h-[44px] cursor-pointer relative z-10"
+          style="pointer-events: auto;"
         >
           Detail
-          <span class="material-symbols-outlined text-base">arrow_forward</span>
+          <span class="material-symbols-outlined text-base lg:text-lg">arrow_forward</span>
         </a>
       )}
       {match.match_url && (
@@ -118,10 +122,11 @@ const awayTeamLogo = isPersiboAway ? '/logo.png' : (getTeamLogo(teams, awayTeam)
           href={match.match_url} 
           target="_blank" 
           rel="noopener noreferrer"
-          class="text-slate-400 hover:text-slate-300 text-sm font-medium flex items-center gap-1 py-2 px-3 rounded-lg hover:bg-slate-700/50 transition-colors min-h-[44px]"
+          class="text-slate-400 hover:text-slate-300 text-sm lg:text-base font-medium flex items-center gap-1 py-2 px-3 lg:px-4 rounded-lg hover:bg-slate-700/50 lg:hover:bg-slate-700/70 transition-colors min-h-[44px] cursor-pointer relative z-10"
+          style="pointer-events: auto;"
           title="Buka di iLeague.id"
         >
-          <span class="material-symbols-outlined text-base">open_in_new</span>
+          <span class="material-symbols-outlined text-base lg:text-lg">open_in_new</span>
         </a>
       )}
     </div>

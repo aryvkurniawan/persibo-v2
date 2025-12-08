@@ -12,27 +12,39 @@ const { lineup, teamName, isHome } = Astro.props;
 const players = await loadPlayers();
 
 // Filter out invalid players (those with weird names or jersey numbers)
-const validStartingXI = lineup.starting_xi.filter(p => 
-  p.name && 
-  p.name.length < 100 && 
-  p.name.length > 2 &&
-  !p.name.match(/^\d+$/) && 
-  !p.name.match(/^\d+[A-Z]/) &&
-  p.jersey_number && 
-  p.jersey_number < 1000 &&
-  p.jersey_number > 0
-);
+const isValidPlayer = (p: MatchDetailPlayer): boolean => {
+  // Check name exists and is string
+  if (!p.name || typeof p.name !== 'string') return false;
+  
+  const name = p.name.trim();
+  
+  // Length validation (3-50 characters)
+  if (name.length < 3 || name.length > 50) return false;
+  
+  // Must contain at least one letter (not just numbers/spaces)
+  if (!/[A-Za-z]/.test(name)) return false;
+  
+  // Cannot be only digits
+  if (/^\d+$/.test(name)) return false;
+  
+  // Cannot start with digit followed by letters (e.g., "15ACHMAD")
+  if (/^\d+[A-Za-z]/.test(name)) return false;
+  
+  // Cannot be only digits and spaces (e.g., "9 14 78 23 88...")
+  if (/^[\d\s]+$/.test(name)) return false;
+  
+  // Cannot have 5+ consecutive digits (likely scraped error)
+  if (/\d{5,}/.test(name)) return false;
+  
+  // Jersey number validation (1-99)
+  if (!p.jersey_number || typeof p.jersey_number !== 'number') return false;
+  if (p.jersey_number < 1 || p.jersey_number > 99) return false;
+  
+  return true;
+};
 
-const validSubstitutes = lineup.substitutes.filter(p => 
-  p.name && 
-  p.name.length < 100 && 
-  p.name.length > 2 &&
-  !p.name.match(/^\d+$/) && 
-  !p.name.match(/^\d+[A-Z]/) &&
-  p.jersey_number && 
-  p.jersey_number < 1000 &&
-  p.jersey_number > 0
-);
+const validStartingXI = lineup.starting_xi.filter(isValidPlayer);
+const validSubstitutes = lineup.substitutes.filter(isValidPlayer);
 
 // Group players by position
 const groupByPosition = (players: MatchDetailPlayer[]) => {

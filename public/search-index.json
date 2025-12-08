@@ -1,0 +1,600 @@
+{
+  "players": [
+    {
+      "id": "ikhsan",
+      "title": "NUR IKHSAN",
+      "subtitle": " • 27 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/ikhsan",
+      "category": "Pemain",
+      "searchText": "ikhsan nur ikhsan  indonesia 27",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE1715849914.jpg"
+    },
+    {
+      "id": "rizky-d",
+      "title": "RIZKY DWI NUGRAHA ASYARI",
+      "subtitle": " • 22 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/rizky-d",
+      "category": "Pemain",
+      "searchText": "rizky d rizky dwi nugraha asyari  indonesia 22",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE24091211.jpg"
+    },
+    {
+      "id": "joko-s",
+      "title": "JOKO SUPRIYANTO",
+      "subtitle": " • 29 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/joko-s",
+      "category": "Pemain",
+      "searchText": "joko s joko supriyanto  indonesia 29",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE22250896.jpg"
+    },
+    {
+      "id": "romy",
+      "title": "LIGA NUSANTARA 2025-26",
+      "subtitle": " • 19 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/romy",
+      "category": "Pemain",
+      "searchText": "romy liga nusantara 2025-26  indonesia 19",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE25178307.jpg"
+    },
+    {
+      "id": "shevanton",
+      "title": "TEGAR ANDRIE SHEVANTON",
+      "subtitle": " • 21 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/shevanton",
+      "category": "Pemain",
+      "searchText": "shevanton tegar andrie shevanton  indonesia 21",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE21129780.jpg"
+    },
+    {
+      "id": "revan",
+      "title": "LIGA NUSANTARA 2025-26",
+      "subtitle": " • 23 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/revan",
+      "category": "Pemain",
+      "searchText": "revan liga nusantara 2025-26  indonesia 23",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE2018145752.jpg"
+    },
+    {
+      "id": "ilham",
+      "title": "ILHAM MAULANA",
+      "subtitle": " • 20 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/ilham",
+      "category": "Pemain",
+      "searchText": "ilham ilham maulana  indonesia 20",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE24318109.jpg"
+    },
+    {
+      "id": "samsul",
+      "title": "SAMSUL ARIF",
+      "subtitle": " • 40 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/samsul",
+      "category": "Pemain",
+      "searchText": "samsul samsul arif  indonesia 40",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE1109.jpg"
+    },
+    {
+      "id": "oby",
+      "title": "ICHLASUL AMAL ZARDAN AROBY",
+      "subtitle": " • 22 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/oby",
+      "category": "Pemain",
+      "searchText": "oby ichlasul amal zardan aroby  indonesia 22",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE24053031.jpg"
+    },
+    {
+      "id": "rangga-dwi",
+      "title": "RANGGA DWI LESMANA",
+      "subtitle": " • 19 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/rangga-dwi",
+      "category": "Pemain",
+      "searchText": "rangga dwi rangga dwi lesmana  indonesia 19",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE22168789.jpg"
+    },
+    {
+      "id": "fadil-s",
+      "title": "LIGA NUSANTARA 2025-26",
+      "subtitle": " • 41 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/fadil-s",
+      "category": "Pemain",
+      "searchText": "fadil s liga nusantara 2025-26  indonesia 41",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE3338.jpg"
+    },
+    {
+      "id": "bagus",
+      "title": "ANANDA DHEA BAGUS SAPUTRA",
+      "subtitle": " • 24 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/bagus",
+      "category": "Pemain",
+      "searchText": "bagus ananda dhea bagus saputra  indonesia 24",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE25179901.jpg"
+    },
+    {
+      "id": "j-wutoy",
+      "title": "JHON EDWARD JOSUA WUTOY",
+      "subtitle": " • 22 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/j-wutoy",
+      "category": "Pemain",
+      "searchText": "j. wutoy jhon edward josua wutoy  indonesia 22",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE24221723.jpg"
+    },
+    {
+      "id": "gilang",
+      "title": "GILANG PRATAMA",
+      "subtitle": " • 21 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/gilang",
+      "category": "Pemain",
+      "searchText": "gilang gilang pratama  indonesia 21",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE23062143.jpg"
+    },
+    {
+      "id": "azka-fauzi",
+      "title": "IKHWAN AZKA FAUZI WIBOWO",
+      "subtitle": " • 29 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/azka-fauzi",
+      "category": "Pemain",
+      "searchText": "azka fauzi ikhwan azka fauzi wibowo  indonesia 29",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE1617857055.jpg"
+    },
+    {
+      "id": "zegga",
+      "title": "MUCHAMAD ZEGGA NOVEMBRIAN",
+      "subtitle": " • 19 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/zegga",
+      "category": "Pemain",
+      "searchText": "zegga muchamad zegga novembrian  indonesia 19",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE23283816.jpg"
+    },
+    {
+      "id": "jovan",
+      "title": "JOVAN JORDANTIAN SYAHWA MAULANA",
+      "subtitle": " • 19 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/jovan",
+      "category": "Pemain",
+      "searchText": "jovan jovan jordantian syahwa maulana  indonesia 19",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE24225298.jpg"
+    },
+    {
+      "id": "fajar-i",
+      "title": "FAJAR IHSANUDIN",
+      "subtitle": " • 21 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/fajar-i",
+      "category": "Pemain",
+      "searchText": "fajar. i fajar ihsanudin  indonesia 21",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE21140253.jpg"
+    },
+    {
+      "id": "rio",
+      "title": "RIO PRATAMA VALENTINO",
+      "subtitle": " • 30 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/rio",
+      "category": "Pemain",
+      "searchText": "rio rio pratama valentino  indonesia 30",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE1616364746.jpg"
+    },
+    {
+      "id": "f-febrian",
+      "title": "FIQY FEBRIAN",
+      "subtitle": " • 20 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/f-febrian",
+      "category": "Pemain",
+      "searchText": "f. febrian fiqy febrian  indonesia 20",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE23293219.jpg"
+    },
+    {
+      "id": "nono",
+      "title": "FRANSISKUS XAVERIUS NONO",
+      "subtitle": " • 19 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/nono",
+      "category": "Pemain",
+      "searchText": "nono fransiskus xaverius nono  indonesia 19",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE25179390.jpg"
+    },
+    {
+      "id": "y-rejauw",
+      "title": "YONAS TERIANUAS REJAUW",
+      "subtitle": " • 22 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/y-rejauw",
+      "category": "Pemain",
+      "searchText": "y. rejauw yonas terianuas rejauw  indonesia 22",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE25175334.jpg"
+    },
+    {
+      "id": "fahmi",
+      "title": "FAHMI ARMA ARDIANSHYA",
+      "subtitle": " • 20 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/fahmi",
+      "category": "Pemain",
+      "searchText": "fahmi fahmi arma ardianshya  indonesia 20",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE23256619.jpg"
+    },
+    {
+      "id": "yoga-p",
+      "title": "YOGA PRASETYA",
+      "subtitle": " • 22 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/yoga-p",
+      "category": "Pemain",
+      "searchText": "yoga p yoga prasetya  indonesia 22",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE25179646.jpg"
+    },
+    {
+      "id": "tirta-bayu",
+      "title": "TIRTA BAYU NUGROHO",
+      "subtitle": " • 22 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/tirta-bayu",
+      "category": "Pemain",
+      "searchText": "tirta bayu tirta bayu nugroho  indonesia 22",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE21219852.jpg"
+    },
+    {
+      "id": "radiansyah",
+      "title": "LIGA NUSANTARA 2025-26",
+      "subtitle": " • 34 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/radiansyah",
+      "category": "Pemain",
+      "searchText": "radiansyah liga nusantara 2025-26  indonesia 34",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE4118.jpg"
+    },
+    {
+      "id": "m-febryansyah-rs",
+      "title": "MOHAMMAD FEBRYANSYAH REFYAN SANUSI",
+      "subtitle": " • 20 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/m-febryansyah-rs",
+      "category": "Pemain",
+      "searchText": "m febryansyah r.s mohammad febryansyah refyan sanusi  indonesia 20",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE24108909.jpg"
+    },
+    {
+      "id": "adre-arido",
+      "title": "ADRE ARIDO GEOVANI",
+      "subtitle": " • 21 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/adre-arido",
+      "category": "Pemain",
+      "searchText": "adre arido adre arido geovani  indonesia 21",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE22082144.jpg"
+    },
+    {
+      "id": "bayu-nu",
+      "title": "BAYU NUGROHO",
+      "subtitle": " • 33 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/bayu-nu",
+      "category": "Pemain",
+      "searchText": "bayu nu bayu nugroho  indonesia 33",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE5067.jpg"
+    },
+    {
+      "id": "oscar",
+      "title": "OSCAR NOVANGGA",
+      "subtitle": " • 21 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/oscar",
+      "category": "Pemain",
+      "searchText": "oscar oscar novangga  indonesia 21",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE23294644.jpg"
+    }
+  ],
+  "news": [
+    {
+      "id": "siap-tempur-solo-launching-skuad-jersey-2025",
+      "title": "Siap Tempur di Solo! Persibo Bojonegoro Resmi Luncurkan Skuad dan Jersey Anyar Musim 2025-2026",
+      "subtitle": "2025-11-25",
+      "description": "Persibo Bojonegoro secara resmi memperkenalkan komposisi skuad dan jersey terbaru untuk Liga 3 Nusantara musim 2025-2026.",
+      "url": "/tim/berita/siap-tempur-solo-launching-skuad-jersey-2025",
+      "category": "Berita",
+      "searchText": "siap tempur di solo! persibo bojonegoro resmi luncurkan skuad dan jersey anyar musim 2025-2026 persibo bojonegoro secara resmi memperkenalkan komposisi skuad dan jersey terbaru untuk liga 3 nusantara musim 2025-2026.",
+      "image": null
+    },
+    {
+      "id": "bangkit-persibo-raih-kemenangan-perdana-tumbangkan-persikutim",
+      "title": "Bangkit! Persibo Raih Kemenangan Perdana di Liga 3, Tumbangkan Persikutim 2-1",
+      "subtitle": "2025-12-04",
+      "description": "Persibo Bojonegoro berhasil memetik kemenangan krusial di laga kedua Grup C Liga 3 Nusantara.",
+      "url": "/tim/berita/bangkit-persibo-raih-kemenangan-perdana-tumbangkan-persikutim",
+      "category": "Berita",
+      "searchText": "bangkit! persibo raih kemenangan perdana di liga 3, tumbangkan persikutim 2-1 persibo bojonegoro berhasil memetik kemenangan krusial di laga kedua grup c liga 3 nusantara.",
+      "image": null
+    },
+    {
+      "id": "pukulan-telak-injury-time-persibo-tumbang-rans",
+      "title": "Pukulan Telak di Injury Time, Persibo Tumbang 0-1 dari RANS Nusantara FC di Laga Perdana",
+      "subtitle": "2025-11-29",
+      "description": "Langkah awal Persibo Bojonegoro di Liga 3 Nusantara 2025-2026 harus ternodai setelah menelan kekalahan pahit 0-1 dari RANS Nusantara FC.",
+      "url": "/tim/berita/pukulan-telak-injury-time-persibo-tumbang-rans",
+      "category": "Berita",
+      "searchText": "pukulan telak di injury time, persibo tumbang 0-1 dari rans nusantara fc di laga perdana langkah awal persibo bojonegoro di liga 3 nusantara 2025-2026 harus ternodai setelah menelan kekalahan pahit 0-1 dari rans nusantara fc.",
+      "image": null
+    },
+    {
+      "id": "drama-penalti-degradasi-liga-2",
+      "title": "Drama Penalti Menit Akhir: Kilas Balik Persibo Bojonegoro Terdegradasi ke Liga 3",
+      "subtitle": "2025-02-28",
+      "description": "Kilas balik degradasi Persibo Bojonegoro dari Liga 2 ke Liga 3 Nusantara.",
+      "url": "/tim/berita/drama-penalti-degradasi-liga-2",
+      "category": "Berita",
+      "searchText": "drama penalti menit akhir: kilas balik persibo bojonegoro terdegradasi ke liga 3 kilas balik degradasi persibo bojonegoro dari liga 2 ke liga 3 nusantara.",
+      "image": null
+    }
+  ],
+  "matches": [
+    {
+      "id": "29 November 2025-persibo-bojonegoro-vs-rans-nusantara-fc",
+      "title": "PERSIBO BOJONEGORO vs RANS NUSANTARA FC",
+      "subtitle": "0:1 • 29 November 2025",
+      "description": "Pertandingan Liga Nusantara 2025-2026 di SRIWEDARI",
+      "url": "/pertandingan/29 November 2025-persibo-bojonegoro-vs-rans-nusantara-fc",
+      "category": "Pertandingan",
+      "searchText": "persibo bojonegoro rans nusantara fc sriwedari 0:1 29 november 2025",
+      "image": null
+    },
+    {
+      "id": "4 Desember 2025-persikutim-united-vs-persibo-bojonegoro",
+      "title": "PERSIKUTIM UNITED vs PERSIBO BOJONEGORO",
+      "subtitle": "1:2 • 4 Desember 2025",
+      "description": "Pertandingan Liga Nusantara 2025-2026 di BANYUANYAR",
+      "url": "/pertandingan/4 Desember 2025-persikutim-united-vs-persibo-bojonegoro",
+      "category": "Pertandingan",
+      "searchText": "persikutim united persibo bojonegoro banyuanyar 1:2 4 desember 2025",
+      "image": null
+    }
+  ],
+  "teams": [
+    {
+      "id": "psds-deli-serdang",
+      "title": "PSDS Deli Serdang",
+      "subtitle": "Tim Liga Nusantara",
+      "description": "Tim dari Liga Nusantara 2025-2026",
+      "url": null,
+      "category": "Tim",
+      "searchText": "psds deli serdang",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/2208496.png"
+    },
+    {
+      "id": "batavia-fc",
+      "title": "Batavia FC",
+      "subtitle": "Tim Liga Nusantara",
+      "description": "Tim dari Liga Nusantara 2025-2026",
+      "url": null,
+      "category": "Tim",
+      "searchText": "batavia fc",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/2517965.png"
+    },
+    {
+      "id": "dejan-fc",
+      "title": "Dejan FC",
+      "subtitle": "Tim Liga Nusantara",
+      "description": "Tim dari Liga Nusantara 2025-2026",
+      "url": null,
+      "category": "Tim",
+      "searchText": "dejan fc",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/2409314.png"
+    },
+    {
+      "id": "gresik-united-fc",
+      "title": "Gresik United FC",
+      "subtitle": "Tim Liga Nusantara",
+      "description": "Tim dari Liga Nusantara 2025-2026",
+      "url": null,
+      "category": "Tim",
+      "searchText": "gresik united fc",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/69.png"
+    },
+    {
+      "id": "nusantara-united-fc",
+      "title": "Nusantara United FC",
+      "subtitle": "Tim Liga Nusantara",
+      "description": "Tim dari Liga Nusantara 2025-2026",
+      "url": null,
+      "category": "Tim",
+      "searchText": "nusantara united fc",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/1819851417.png"
+    },
+    {
+      "id": "pekanbaru-fc",
+      "title": "Pekanbaru FC",
+      "subtitle": "Tim Liga Nusantara",
+      "description": "Tim dari Liga Nusantara 2025-2026",
+      "url": null,
+      "category": "Tim",
+      "searchText": "pekanbaru fc",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/2517284.png"
+    },
+    {
+      "id": "persebata-lembata",
+      "title": "PERSEBATA Lembata",
+      "subtitle": "Tim Liga Nusantara",
+      "description": "Tim dari Liga Nusantara 2025-2026",
+      "url": null,
+      "category": "Tim",
+      "searchText": "persebata lembata",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/2517436.png"
+    },
+    {
+      "id": "perseden-denpasar",
+      "title": "PERSEDEN Denpasar",
+      "subtitle": "Tim Liga Nusantara",
+      "description": "Tim dari Liga Nusantara 2025-2026",
+      "url": null,
+      "category": "Tim",
+      "searchText": "perseden denpasar",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/246.png"
+    },
+    {
+      "id": "persekabpas",
+      "title": "PERSEKABPAS",
+      "subtitle": "Tim Liga Nusantara",
+      "description": "Tim dari Liga Nusantara 2025-2026",
+      "url": null,
+      "category": "Tim",
+      "searchText": "persekabpas",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/39.png"
+    },
+    {
+      "id": "perserang-serang",
+      "title": "PERSERANG Serang",
+      "subtitle": "Tim Liga Nusantara",
+      "description": "Tim dari Liga Nusantara 2025-2026",
+      "url": null,
+      "category": "Tim",
+      "searchText": "perserang serang",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/8.png"
+    },
+    {
+      "id": "persiba-bantul",
+      "title": "PERSIBA Bantul",
+      "subtitle": "Tim Liga Nusantara",
+      "description": "Tim dari Liga Nusantara 2025-2026",
+      "url": null,
+      "category": "Tim",
+      "searchText": "persiba bantul",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/68.png"
+    },
+    {
+      "id": "persibo-bojonegoro",
+      "title": "PERSIBO Bojonegoro",
+      "subtitle": "Tim Liga Nusantara",
+      "description": "Tim dari Liga Nusantara 2025-2026",
+      "url": null,
+      "category": "Tim",
+      "searchText": "persibo bojonegoro",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/29.png"
+    },
+    {
+      "id": "persika-karanganyar",
+      "title": "PERSIKA Karanganyar",
+      "subtitle": "Tim Liga Nusantara",
+      "description": "Tim dari Liga Nusantara 2025-2026",
+      "url": null,
+      "category": "Tim",
+      "searchText": "persika karanganyar",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/2517773.png"
+    },
+    {
+      "id": "persikota-kota-tangerang",
+      "title": "PERSIKOTA Kota Tangerang",
+      "subtitle": "Tim Liga Nusantara",
+      "description": "Tim dari Liga Nusantara 2025-2026",
+      "url": null,
+      "category": "Tim",
+      "searchText": "persikota kota tangerang",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/17.png"
+    },
+    {
+      "id": "persikutim-united",
+      "title": "PERSIKUTIM United",
+      "subtitle": "Tim Liga Nusantara",
+      "description": "Tim dari Liga Nusantara 2025-2026",
+      "url": null,
+      "category": "Tim",
+      "searchText": "persikutim united",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/2408207.png"
+    },
+    {
+      "id": "persipa",
+      "title": "PERSIPA",
+      "subtitle": "Tim Liga Nusantara",
+      "description": "Tim dari Liga Nusantara 2025-2026",
+      "url": null,
+      "category": "Tim",
+      "searchText": "persipa",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/1813607788.png"
+    },
+    {
+      "id": "persitara-jakarta-utara",
+      "title": "PERSITARA Jakarta Utara",
+      "subtitle": "Tim Liga Nusantara",
+      "description": "Tim dari Liga Nusantara 2025-2026",
+      "url": null,
+      "category": "Tim",
+      "searchText": "persitara jakarta utara",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/13.png"
+    },
+    {
+      "id": "psgc-ciamis",
+      "title": "PSGC Ciamis",
+      "subtitle": "Tim Liga Nusantara",
+      "description": "Tim dari Liga Nusantara 2025-2026",
+      "url": null,
+      "category": "Tim",
+      "searchText": "psgc ciamis",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/204.png"
+    },
+    {
+      "id": "rans-nusantara-fc",
+      "title": "RANS Nusantara FC",
+      "subtitle": "Tim Liga Nusantara",
+      "description": "Tim dari Liga Nusantara 2025-2026",
+      "url": null,
+      "category": "Tim",
+      "searchText": "rans nusantara fc",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/217.png"
+    },
+    {
+      "id": "sang-maestro-fc",
+      "title": "Sang Maestro FC",
+      "subtitle": "Tim Liga Nusantara",
+      "description": "Tim dari Liga Nusantara 2025-2026",
+      "url": null,
+      "category": "Tim",
+      "searchText": "sang maestro fc",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/2517664.png"
+    },
+    {
+      "id": "tri-brata-rafflesia-fc",
+      "title": "Tri Brata Rafflesia FC",
+      "subtitle": "Tim Liga Nusantara",
+      "description": "Tim dari Liga Nusantara 2025-2026",
+      "url": null,
+      "category": "Tim",
+      "searchText": "tri brata rafflesia fc",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/2518516.png"
+    },
+    {
+      "id": "waanal-brothers",
+      "title": "Waanal Brothers",
+      "subtitle": "Tim Liga Nusantara",
+      "description": "Tim dari Liga Nusantara 2025-2026",
+      "url": null,
+      "category": "Tim",
+      "searchText": "waanal brothers",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/2408141.png"
+    },
+    {
+      "id": "persewar",
+      "title": "Persewar",
+      "subtitle": "Tim Liga Nusantara",
+      "description": "Tim dari Liga Nusantara 2025-2026",
+      "url": null,
+      "category": "Tim",
+      "searchText": "persewar",
+      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/v/200/1819851386.png"
+    }
+  ]
+}

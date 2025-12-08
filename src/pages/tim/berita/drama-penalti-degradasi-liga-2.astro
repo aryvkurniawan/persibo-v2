@@ -1,6 +1,8 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
+import ShareButtons from '../../../components/ShareButtons.astro';
+import { optimizeImage } from '../../../utils/imageOptimizer';
 
 const breadcrumbItems = [
   { label: 'Beranda', href: '/' },
@@ -9,15 +11,18 @@ const breadcrumbItems = [
   { label: 'Drama Penalti Menit Akhir', href: '/tim/berita/drama-penalti-degradasi-liga-2' }
 ];
 
-const publishedDate = '2025-02-28';
+const publishedDate = '2025-02-28T00:00:00+07:00';
+const modifiedDate = '2025-02-28T00:00:00+07:00';
 const author = 'persibo.com';
+const authorUrl = 'https://persibo.com';
 ---
 
 <Layout 
   title="Drama Penalti Menit Akhir: Kilas Balik Persibo Bojonegoro Terdegradasi ke Liga 3 - PERSIBO Bojonegoro (Unofficial)"
   description="Kilas balik degradasi Persibo Bojonegoro dari Liga 2 ke Liga 3 Nusantara. Drama penalti di menit ke-90 saat melawan Persipura Jayapura menjadi momen kelabu yang mengubah nasib Laskar Angling Dharma. Website Unofficial."
+  ogImage="/img/drama-pinalti.jpg"
 >
-  <div class="px-4 py-4 max-w-4xl mx-auto">
+  <div class="px-4 lg:px-6 py-4 lg:py-6 max-w-4xl mx-auto">
     <Breadcrumb items={breadcrumbItems} />
     
     <!-- Back Button -->
@@ -42,29 +47,41 @@ const author = 'persibo.com';
           Drama Penalti Menit Akhir: Kilas Balik Persibo Bojonegoro Terdegradasi ke Liga 3
         </h1>
         
-        <div class="flex items-center gap-3 text-sm text-slate-400">
+        <div class="flex items-center gap-3 text-sm text-slate-400 mb-4">
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-base">location_on</span>
             <span>BOJONEGORO</span>
           </div>
+        </div>
+        
+        <!-- Share Buttons -->
+        <div class="mb-6 pt-4 border-t border-slate-700">
+          <ShareButtons 
+            title="Drama Penalti Menit Akhir: Kilas Balik Persibo Bojonegoro Terdegradasi ke Liga 3"
+            description="Kilas balik degradasi Persibo Bojonegoro dari Liga 2 ke Liga 3 Nusantara. Drama penalti di menit ke-90 saat melawan Persipura Jayapura menjadi momen kelabu yang mengubah nasib Laskar Angling Dharma."
+            type="article"
+          />
         </div>
       </div>
 
       <!-- Featured Image -->
       <div class="mb-6 rounded-xl overflow-hidden">
         <img 
-          src="/img/drama-pinalti.jpg" 
+          src={optimizeImage('/img/drama-pinalti.jpg', { width: 1200, height: 675, quality: 75, format: 'webp', fit: 'cover' }, Astro.site || Astro.url.origin)} 
           alt="Drama penalti menit akhir yang menentukan degradasi Persibo Bojonegoro dari Liga 2" 
           class="w-full h-auto object-cover"
+          loading="lazy"
+          width="800"
+          height="450"
         />
-        <p class="text-xs text-slate-500 mt-2 text-center">Foto: Momen dramatis penalti di menit ke-90 yang menentukan nasib Persibo Bojonegoro</p>
+        <p class="text-xs text-slate-400 mt-2 text-center">Foto: Momen dramatis penalti di menit ke-90 yang menentukan nasib Persibo Bojonegoro</p>
       </div>
 
       <!-- Article Content -->
       <div class="prose prose-invert prose-slate max-w-none">
         <div class="space-y-4 text-slate-300 leading-relaxed">
           <p class="text-lg font-medium text-white">
-            <strong>BOJONEGORO, persibo.com</strong> – Perjalanan Laskar Angling Dharma harus menemui jalan terjal pada awal tahun ini. Sebelum kini berjuang keras di Liga 3 Nusantara musim 2025/2026, Persibo Bojonegoro harus menelan pil pahit terdegradasi dari kasta kedua sepak bola Indonesia, Liga 2.
+            <strong>BOJONEGORO, persibo.com</strong> – Perjalanan Laskar Angling Dharma harus menemui jalan terjal pada awal tahun ini. Sebelum kini berjuang keras di Liga 3 Nusantara musim 2025-2026, Persibo Bojonegoro harus menelan pil pahit terdegradasi dari kasta kedua sepak bola Indonesia, Liga 2.
           </p>
 
           <p>
@@ -131,17 +148,18 @@ const author = 'persibo.com';
   "headline": "Drama Penalti Menit Akhir: Kilas Balik Persibo Bojonegoro Terdegradasi ke Liga 3",
   "image": `${Astro.site || Astro.url.origin}/img/drama-pinalti.jpg`,
   "datePublished": publishedDate,
-  "dateModified": publishedDate,
+  "dateModified": modifiedDate,
   "author": {
     "@type": "Organization",
-    "name": author
+    "name": author,
+    "url": authorUrl
   },
   "publisher": {
     "@type": "Organization",
     "name": "PERSIBO Bojonegoro (Unofficial)",
     "logo": {
       "@type": "ImageObject",
-      "url": `${Astro.site || Astro.url.origin}/logo.png`
+      "url": `${Astro.site || Astro.url.origin}/logo-128.png`
     }
   },
   "description": "Kilas balik degradasi Persibo Bojonegoro dari Liga 2 ke Liga 3 Nusantara. Drama penalti di menit ke-90 saat melawan Persipura Jayapura menjadi momen kelabu yang mengubah nasib Laskar Angling Dharma.",

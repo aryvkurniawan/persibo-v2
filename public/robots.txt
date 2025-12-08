@@ -1,0 +1,16 @@
+# robots.txt for PERSIBO Bojonegoro Website
+# https://persibo.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://persibo.com/sitemap.xml
+
+# Disallow admin or private paths (if any in the future)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Crawl-delay (optional, uncomment if needed)
+# Crawl-delay: 1
+

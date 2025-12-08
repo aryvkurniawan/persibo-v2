@@ -7,6 +7,7 @@ import { loadStandings, getPersiboStanding, getStandingsByGroup } from '../utils
 import { loadPlayers } from '../utils/dataLoader';
 import { loadPlayerDetails } from '../utils/dataLoader';
 import { loadFixtures, getCompletedFixtures, getScheduledFixtures } from '../utils/dataLoader';
+import { optimizePlayerPhoto, optimizeImage } from '../utils/imageOptimizer';
 
 const standings = await loadStandings();
 const players = await loadPlayers();
@@ -25,9 +26,13 @@ const last3Matches = completedFixtures.slice().reverse().slice(0, 3);
 // Get next match (first scheduled)
 const nextMatch = scheduledFixtures.length > 0 ? scheduledFixtures[0] : null;
 
-// Get top players by club_history count
+// Get top players by club_history count (umur > 28 tahun)
 const topPlayers = playerDetails
-  .filter(p => p.club === 'PERSIBO Bojonegoro')
+  .filter(p => {
+    const isPersibo = p.club === 'PERSIBO Bojonegoro';
+    const age = parseInt(p.age) || 0;
+    return isPersibo && age > 28;
+  })
   .sort((a, b) => {
     const aHistoryCount = a.club_history?.length || 0;
     const bHistoryCount = b.club_history?.length || 0;
@@ -61,14 +66,24 @@ const topScorers = playerDetails
 
 <Layout 
   title="PERSIBO Bojonegoro - Website Unofficial Tim Sepak Bola Bojonegoro"
-  description="Website Unofficial PERSIBO Bojonegoro. Informasi lengkap tentang tim, pemain, klasemen Liga Nusantara 2025-26, jadwal pertandingan, dan berita terbaru."
+  description="Website Unofficial PERSIBO Bojonegoro. Informasi lengkap tentang tim, pemain, klasemen Liga Nusantara 2025-2026, jadwal pertandingan, dan berita terbaru."
 >
-  <div class="px-4 py-4">
+  <div class="max-w-7xl mx-auto px-4 lg:px-6 py-4 lg:py-6">
     <!-- Hero Cards -->
-    <section class="mb-4">
-      <div class="flex items-stretch gap-4 overflow-x-auto pb-2">
-        <div class="flex h-full flex-1 flex-col rounded-xl bg-slate-800/50 shadow-lg min-w-[300px] w-full overflow-hidden">
-          <div class="w-full bg-center bg-no-repeat aspect-video bg-cover flex flex-col relative" style="background-image: url('/hero.jpg');">
+    <section class="mb-4 lg:mb-6">
+      <div class="flex items-stretch gap-4 overflow-x-auto lg:overflow-x-visible pb-2">
+        <div class="flex h-full flex-1 flex-col rounded-xl bg-slate-800/50 shadow-lg min-w-[300px] lg:min-w-0 w-full overflow-hidden">
+          <div class="w-full bg-center bg-no-repeat aspect-video bg-cover flex flex-col relative">
+            <img 
+              src={optimizeImage('/hero.jpg', { width: 1600, height: 900, quality: 75, format: 'webp', fit: 'cover' }, Astro.site || Astro.url.origin)} 
+              alt="PERSIBO Bojonegoro - Laskar Angling Dharma" 
+              class="absolute inset-0 w-full h-full object-cover"
+              fetchpriority="high"
+              loading="eager"
+              width="1600"
+              height="900"
+              decoding="async"
+            />
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent"></div>
           </div>
         </div>
@@ -76,12 +91,12 @@ const topScorers = playerDetails
     </section>
 
     <!-- Intro Text -->
-    <section class="mb-6">
-      <div class="rounded-xl bg-slate-800/50 p-6 border border-slate-700">
-        <h1 class="text-2xl font-extrabold text-white mb-3">Selamat Datang di Website Unofficial PERSIBO Bojonegoro</h1>
-        <div class="space-y-3 text-slate-300 leading-relaxed">
+    <section class="mb-6 lg:mb-8">
+      <div class="rounded-xl bg-slate-800/50 p-6 lg:p-8 border border-slate-700">
+        <h1 class="text-2xl lg:text-3xl font-extrabold text-white mb-3 lg:mb-4">Selamat Datang di Website Unofficial PERSIBO Bojonegoro</h1>
+        <div class="space-y-3 lg:space-y-4 text-slate-300 leading-relaxed text-sm lg:text-base">
           <p>
-            Website ini menyediakan informasi lengkap tentang <strong class="text-white">PERSIBO Bojonegoro</strong>, tim sepak bola kebanggaan masyarakat Bojonegoro yang saat ini berlaga di <strong class="text-primary">Liga Nusantara 2025-26</strong>. Dapatkan update terkini tentang klasemen, jadwal pertandingan, profil pemain, dan informasi tim.
+            Website ini menyediakan informasi lengkap tentang <strong class="text-white">PERSIBO Bojonegoro</strong>, tim sepak bola kebanggaan masyarakat Bojonegoro yang saat ini berlaga di <strong class="text-primary">Liga Nusantara 2025-2026</strong>. Dapatkan update terkini tentang klasemen, jadwal pertandingan, profil pemain, dan informasi tim.
           </p>
           <p>
             PERSIBO Bojonegoro, yang dikenal dengan julukan <strong class="text-primary">Laskar Angling Dharma</strong>, adalah klub sepak bola profesional yang didirikan pada 12 Maret 1949. Tim ini memiliki sejarah panjang dan prestasi gemilang, termasuk juara Piala Indonesia 2012 dan partisipasi di AFC Cup 2013.
@@ -92,42 +107,44 @@ const topScorers = playerDetails
 
     <!-- Timeline Mini: Last Matches & Next Match -->
     {(last3Matches.length > 0 || nextMatch) && (
-      <section class="mb-4">
-        <div class="flex items-center justify-between mb-3 px-4">
-          <h2 class="text-slate-100 text-[22px] font-extrabold leading-tight tracking-[-0.015em]">Pertandingan</h2>
-          <a href="/pertandingan" class="text-primary hover:text-primary/80 text-sm font-medium flex items-center gap-1">
+      <section class="mb-4 lg:mb-6">
+        <div class="flex items-center justify-between mb-3 lg:mb-4">
+          <h2 class="text-slate-100 text-[22px] lg:text-2xl font-extrabold leading-tight tracking-[-0.015em]">Pertandingan</h2>
+          <a href="/pertandingan" class="text-primary hover:text-primary/80 text-sm lg:text-base font-medium flex items-center gap-1">
             Lihat Semua
             <span class="material-symbols-outlined text-sm">arrow_forward</span>
           </a>
         </div>
-        <div class="px-4">
-          <div class="flex gap-3 overflow-x-auto pb-2 [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            {nextMatch && (
+        <div class="flex gap-3 lg:gap-4 overflow-x-auto lg:overflow-x-visible pb-2 [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-2 xl:grid-cols-3">
+          {nextMatch && (
+            <div class="lg:contents">
               <MatchTimelineCard match={nextMatch} isNextMatch={true} />
-            )}
-            {last3Matches.map((match) => (
+            </div>
+          )}
+          {last3Matches.map((match) => (
+            <div class="lg:contents">
               <MatchTimelineCard match={match} />
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
     )}
 
     <!-- Klasemen Grup C -->
-    <section class="mb-4">
-      <h2 class="text-slate-100 text-[22px] font-extrabold leading-tight tracking-[-0.015em] pb-3 pt-5 px-4">Klasemen Grup C</h2>
-      <div class="px-4">
+    <section class="mb-4 lg:mb-6">
+      <h2 class="text-slate-100 text-[22px] lg:text-2xl font-extrabold leading-tight tracking-[-0.015em] pb-3 lg:pb-4 pt-5">Klasemen Grup C</h2>
+      <div>
         <StandingsTable standings={standings} group="C" />
       </div>
     </section>
 
     <!-- Top Scorers -->
     {topScorers.length > 0 && (
-      <section class="mb-4">
-        <h2 class="text-slate-100 text-[22px] font-extrabold leading-tight tracking-[-0.015em] pb-3 pt-5 px-4">Top Scorer</h2>
-        <div class="px-4">
+      <section class="mb-4 lg:mb-6">
+        <h2 class="text-slate-100 text-[22px] lg:text-2xl font-extrabold leading-tight tracking-[-0.015em] pb-3 lg:pb-4 pt-5">Top Scorer</h2>
+        <div>
           <div class="rounded-xl bg-slate-800/50 border border-slate-700 overflow-hidden">
-            <div class="overflow-x-auto">
+            <div class="overflow-x-auto lg:overflow-x-visible">
               <table class="w-full">
                 <thead class="bg-slate-900/50">
                   <tr>
@@ -151,11 +168,14 @@ const topScorers = playerDetails
                         </td>
                         <td class="py-3 px-4">
                           <a href={`/pemain/${slug}`} class="flex items-center gap-3 hover:text-primary transition-colors">
-                            {player.photo_url && (
-                              <div class="w-10 h-10 rounded-full overflow-hidden bg-slate-700 flex-shrink-0">
-                                <img src={player.photo_url} alt={player.name} class="w-full h-full object-cover" />
-                              </div>
-                            )}
+                            {(() => {
+                              const optimizedPhoto = optimizePlayerPhoto(player.photo_url, 'tiny', Astro.site || Astro.url.origin);
+                              return optimizedPhoto ? (
+                                <div class="w-10 h-10 rounded-full overflow-hidden bg-slate-700 flex-shrink-0">
+                                  <img src={optimizedPhoto} alt={player.name} class="w-full h-full object-cover" loading="lazy" width="40" height="40" />
+                                </div>
+                              ) : null;
+                            })()}
                             <div>
                               <div class="text-white font-medium text-sm">{player.name}</div>
                               {player.jersey_number && (
@@ -188,33 +208,76 @@ const topScorers = playerDetails
 
     <!-- Top Players -->
     {topPlayers.length > 0 && (
-      <section class="mb-4">
-        <h2 class="text-slate-100 text-[22px] font-extrabold leading-tight tracking-[-0.015em] pb-3 pt-5 px-4">Top Pemain</h2>
-        <div class="px-4">
-          <div class="flex gap-4 overflow-x-auto pb-2 [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            {topPlayers.map((player) => (
-              <div class="min-w-[280px] flex-shrink-0">
-                <PlayerCard player={player} />
-              </div>
-            ))}
-          </div>
+      <section class="mb-4 lg:mb-6">
+        <h2 class="text-slate-100 text-[22px] lg:text-2xl font-extrabold leading-tight tracking-[-0.015em] pb-3 lg:pb-4 pt-5">Top Pemain</h2>
+        <div class="flex gap-4 lg:gap-6 overflow-x-auto lg:overflow-x-visible pb-2 [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-3 xl:grid-cols-4">
+          {topPlayers.map((player) => (
+            <div class="min-w-[280px] lg:min-w-0 flex-shrink-0 lg:contents">
+              <PlayerCard player={player} />
+            </div>
+          ))}
         </div>
       </section>
     )}
 
     <!-- Berita Terbaru -->
-    <section class="mb-4">
-      <div class="flex items-center justify-between mb-3 px-4">
-        <h2 class="text-slate-100 text-[22px] font-extrabold leading-tight tracking-[-0.015em]">Berita Terbaru</h2>
-        <a href="/tim/berita" class="text-primary hover:text-primary/80 text-sm font-medium flex items-center gap-1">
+    <section class="mb-4 lg:mb-6">
+      <div class="flex items-center justify-between mb-3 lg:mb-4">
+        <h2 class="text-slate-100 text-[22px] lg:text-2xl font-extrabold leading-tight tracking-[-0.015em]">Berita Terbaru</h2>
+        <a href="/tim/berita" class="text-primary hover:text-primary/80 text-sm lg:text-base font-medium flex items-center gap-1">
           Lihat Semua
           <span class="material-symbols-outlined text-sm">arrow_forward</span>
         </a>
       </div>
-      <div class="px-4">
-        <a href="/tim/berita/bangkit-persibo-raih-kemenangan-perdana-tumbangkan-persikutim" class="block rounded-xl bg-slate-800/50 border border-slate-700 overflow-hidden hover:border-slate-600 transition-all group">
+      <div class="flex gap-4 overflow-x-auto pb-2 [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0 lg:gap-6">
+        <a href="/tim/berita/persibo-lawan-persika-karanganyar-jumat-12-desember" class="min-w-[280px] flex-shrink-0 lg:min-w-full block rounded-xl bg-slate-800/50 border border-slate-700 overflow-hidden hover:border-slate-600 transition-all group">
           <!-- Featured Image -->
-          <div class="relative w-full h-48 bg-cover bg-center" style="background-image: url('/img/persibo-persikutam.jpg');">
+          <div class="relative w-full h-48 bg-cover bg-center overflow-hidden">
+            <img 
+              src={optimizeImage('/img/persibo-persikutam.jpg', { width: 800, height: 400, quality: 70, format: 'webp', fit: 'cover' }, Astro.site || Astro.url.origin)} 
+              alt="Persibo Bojonegoro siap menghadapi Persika Karanganyar di Liga 3 Nusantara" 
+              class="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              width="800"
+              height="400"
+              decoding="async"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/70 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-4">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">Liga 3 Nusantara</span>
+                <span class="text-xs text-slate-300">8 Desember 2025</span>
+              </div>
+              <h3 class="text-lg font-bold text-white leading-tight group-hover:text-primary transition-colors">
+                Persibo Bojonegoro Lawan Persika Karanganyar Jumat 12 Desember
+              </h3>
+            </div>
+          </div>
+          
+          <!-- Article Preview -->
+          <div class="p-4">
+            <p class="text-slate-300 text-sm leading-relaxed line-clamp-2">
+              Persibo Bojonegoro akan melanjutkan petualangannya di Liga 3 Nusantara 2025-2026 dengan menghadapi Persika Karanganyar pada Jumat, 12 Desember 2025 sore. Laskar Angling Dharma siap melanjutkan tren positif setelah kemenangan perdana.
+            </p>
+            <div class="flex items-center gap-2 text-primary text-xs font-medium mt-3">
+              <span>Baca Selengkapnya</span>
+              <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/tim/berita/bangkit-persibo-raih-kemenangan-perdana-tumbangkan-persikutim" class="min-w-[280px] flex-shrink-0 lg:min-w-full block rounded-xl bg-slate-800/50 border border-slate-700 overflow-hidden hover:border-slate-600 transition-all group">
+          <!-- Featured Image -->
+          <div class="relative w-full h-48 bg-cover bg-center overflow-hidden">
+            <img 
+              src={optimizeImage('/img/persibo-persikutam.jpg', { width: 800, height: 400, quality: 70, format: 'webp', fit: 'cover' }, Astro.site || Astro.url.origin)} 
+              alt="Persibo Bojonegoro vs Persikutim United - Liga 3 Nusantara" 
+              class="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              width="800"
+              height="400"
+              decoding="async"
+            />
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/70 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-4">
               <div class="flex items-center gap-2 mb-2">
@@ -238,13 +301,57 @@ const topScorers = playerDetails
             </div>
           </div>
         </a>
+
+        <a href="/tim/berita/pukulan-telak-injury-time-persibo-tumbang-rans" class="min-w-[280px] flex-shrink-0 lg:min-w-full block rounded-xl bg-slate-800/50 border border-slate-700 overflow-hidden hover:border-slate-600 transition-all group">
+          <!-- Featured Image -->
+          <div class="relative w-full h-48 bg-cover bg-center overflow-hidden">
+            <img 
+              src={optimizeImage('/img/persibo-rans.jpg', { width: 800, height: 400, quality: 70, format: 'webp', fit: 'cover' }, Astro.site || Astro.url.origin)} 
+              alt="Pertandingan Persibo Bojonegoro vs RANS Nusantara FC di Stadion Sriwedari, Solo" 
+              class="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              width="800"
+              height="400"
+              decoding="async"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/70 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-4">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">Liga 3 Nusantara</span>
+                <span class="text-xs text-slate-300">29 November 2025</span>
+              </div>
+              <h3 class="text-lg font-bold text-white leading-tight group-hover:text-primary transition-colors">
+                Pukulan Telak di Injury Time, Persibo Tumbang 0-1 dari RANS Nusantara FC di Laga Perdana
+              </h3>
+            </div>
+          </div>
+          
+          <!-- Article Preview -->
+          <div class="p-4">
+            <p class="text-slate-300 text-sm leading-relaxed line-clamp-2">
+              Langkah awal Persibo Bojonegoro di pentas Liga 3 Nusantara 2025-2026 harus ternodai setelah menelan kekalahan pahit 0-1 dari RANS Nusantara FC. Gol dramatis di menit ke-94 menjadi pembeda.
+            </p>
+            <div class="flex items-center gap-2 text-primary text-xs font-medium mt-3">
+              <span>Baca Selengkapnya</span>
+              <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </div>
+          </div>
+        </a>
       </div>
     </section>
 
     <!-- Sakpole Image -->
-    <section class="mb-4">
-      <div class="px-4">
-        <img src="/sakpole.png" alt="Sakpole" class="w-full h-auto rounded-xl" loading="lazy" />
+    <section class="mb-4 lg:mb-6">
+      <div>
+        <img 
+          src={optimizeImage('/sakpole.png', { width: 800, quality: 75, format: 'webp', fit: 'contain' }, Astro.site || Astro.url.origin)} 
+          alt="Sakpole" 
+          class="w-full h-auto rounded-xl" 
+          loading="lazy"
+          width="800"
+          height="auto"
+          decoding="async"
+        />
       </div>
     </section>
   </div>

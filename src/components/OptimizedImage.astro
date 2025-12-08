@@ -1,0 +1,70 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  src: string | ImageMetadata;
+  alt: string;
+  width?: number;
+  height?: number;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  fetchpriority?: 'high' | 'low' | 'auto';
+  format?: 'webp' | 'avif' | 'png' | 'jpg';
+  quality?: number;
+}
+
+const { 
+  src, 
+  alt, 
+  width, 
+  height, 
+  class: className = '',
+  loading = 'lazy',
+  fetchpriority = 'auto',
+  format,
+  quality = 80
+} = Astro.props;
+
+// If src is a string (external URL or public path), use regular img tag
+// If src is ImageMetadata (imported), use Astro Image component
+if (typeof src === 'string') {
+  // External URL or public path - use regular img with optimization attributes
+  const isExternal = src.startsWith('http://') || src.startsWith('https://');
+  const imgSrc = isExternal ? src : src.startsWith('/') ? src : `/${src}`;
+  
+  // For public images, we can't optimize them, but we can add proper attributes
+  const imgAttrs: Record<string, any> = {
+    src: imgSrc,
+    alt,
+    loading,
+    class: className,
+  };
+  
+  if (width) imgAttrs.width = width;
+  if (height) imgAttrs.height = height;
+  if (fetchpriority !== 'auto') imgAttrs.fetchpriority = fetchpriority;
+  
+  // Add decoding for better performance
+  imgAttrs.decoding = 'async';
+  
+  // For external images, add referrerpolicy
+  if (isExternal) {
+    imgAttrs.referrerpolicy = 'no-referrer-when-downgrade';
+  }
+---
+
+{typeof src === 'string' ? (
+  <img {...imgAttrs} />
+) : (
+  <Image
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    class={className}
+    loading={loading}
+    fetchpriority={fetchpriority}
+    format={format}
+    quality={quality}
+  />
+)}
