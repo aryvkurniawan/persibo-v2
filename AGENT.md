@@ -5,8 +5,8 @@ Dokumentasi ini dibuat untuk membantu AI agent memahami konteks, struktur, dan k
 ## 📋 Konteks Proyek
 
 **Nama Proyek:** PERSIBO Bojonegoro - Website Unofficial  
-**Teknologi:** Astro 4.15.0 + Tailwind CSS + TypeScript  
-**Tujuan:** Website unofficial untuk menyediakan informasi lengkap tentang tim sepak bola PERSIBO Bojonegoro yang berlaga di Liga Nusantara 2025-26  
+**Teknologi:** Astro 7.4.1 + Tailwind CSS + TypeScript  
+**Tujuan:** Website unofficial untuk menyediakan informasi lengkap tentang tim sepak bola PERSIBO Bojonegoro yang berlaga di Liga Nusantara 2026-27  
 **Target Audience:** Penggemar dan masyarakat Bojonegoro (mobile-first design)  
 **Status:** Website UNOFFICIAL - tidak berafiliasi dengan manajemen resmi
 
@@ -29,6 +29,7 @@ persibo-astro/
 │   ├── types.ts        # TypeScript type definitions
 │   └── utils/          # Utility functions
 ├── astro.config.mjs    # Konfigurasi Astro
+├── postcss.config.mjs  # Tailwind + autoprefixer
 ├── package.json
 ├── tailwind.config.mjs
 └── tsconfig.json
@@ -36,25 +37,44 @@ persibo-astro/
 
 ### Teknologi Stack
 
-- **Astro 4.15.0** - Static Site Generator
-- **Tailwind CSS 3.4.1** - Utility-first CSS framework
+- **Astro 7.4.1** - Static Site Generator
+- **Tailwind CSS 3.4** - Utility-first CSS framework (via PostCSS, `postcss.config.mjs`)
 - **TypeScript** - Type safety
-- **@astrojs/sitemap 3.2.0** - Sitemap generation
-- **@astrojs/tailwind 5.1.3** - Tailwind integration
+- **@astrojs/sitemap 3.7.4** - Sitemap generation
+- **autoprefixer** - CSS vendor prefixes
 
 ## 📊 Data Structure
 
 ### Data Files (src/data/)
 
-Semua data disimpan dalam format JSON dan di-load menggunakan `dataLoader.ts`:
+Semua data disimpan dalam format JSON dan di-load menggunakan `dataLoader.ts`.
 
-1. **players.json** - Daftar pemain (basic info)
-2. **playerDetails.json** - Detail lengkap pemain (statistik, club history, foto)
-3. **officials.json** - Official & staff tim
-4. **fixtures.json** - Jadwal & hasil pertandingan
-5. **matchDetails.json** - Detail pertandingan (lineup, events, statistics)
-6. **standings.json** - Klasemen Liga Nusantara 2025-26
-7. **teams.json** - Informasi tim dengan logo
+Data per musim ada di `src/data/seasons/<musim>/`:
+
+1. **standings.json** - Klasemen
+2. **fixtures.json** - Jadwal & hasil pertandingan
+3. **teams.json** - Informasi tim dengan logo
+4. **matchDetails.json** - Detail pertandingan (lineup, events, statistics)
+
+Data skuad (berlaku untuk skuad terakhir, 2025-26):
+
+5. **players.json** - Daftar pemain (basic info)
+6. **playerDetails.json** - Detail lengkap pemain (statistik, club history, foto)
+7. **officials.json** - Official & staff tim
+
+`2025-26` adalah arsip beku; `2026-27` adalah musim aktif. Jangan timpa arsip saat scraping.
+
+Scraper (`.scratch/scrape_ileague.py`) menolak menulis ke musim yang filenya sudah ada
+kecuali dijalankan dengan `--force`. Arsip juga di-tag git: `archive/2025-26-final`.
+Kalau arsip terlanjur tertimpa, pulihkan dengan:
+
+```bash
+git checkout archive/2025-26-final -- src/data/seasons/2025-26
+```
+
+Endpoint iLeague yang dipakai scraper (`/embed/klasemen/...`, `/table/index/...`,
+`/clubs/single/...`) tetap sama antar musim; halaman `/table/embed/<KOMPETISI>`
+hanya membungkus endpoint tersebut lewat `<iframe>`.
 
 ### Type Definitions (src/types.ts)
 
@@ -75,10 +95,10 @@ Semua data disimpan dalam format JSON dan di-load menggunakan `dataLoader.ts`:
 - `loadOfficials()` - Load officials data
 - `loadPlayers()` - Load players data
 - `loadPlayerDetails()` - Load player details
-- `loadStandings()` - Load standings data
-- `loadFixtures()` - Load fixtures data
-- `loadMatchDetails()` - Load match details
-- `loadTeams()` - Load teams data
+- `loadStandings(season?)` - Load standings (default `CURRENT_SEASON`)
+- `loadFixtures(season?)` - Load fixtures
+- `loadMatchDetails(season?)` - Load match details
+- `loadTeams(season?)` - Load teams
 
 ### Helper Functions
 - `getPlayerBySlug()` - Find player by slug
@@ -91,22 +111,20 @@ Semua data disimpan dalam format JSON dan di-load menggunakan `dataLoader.ts`:
 - `getMatchDetailByUrl()` - Find match detail by match_url
 - `getMatchDetailSlug()` - Generate slug untuk match detail page
 
-**Catatan:** Semua loader functions menggunakan pattern:
-```typescript
-const module = await import('../data/file.json');
-return (module.default || module) as Type[];
-```
+**Catatan:** Loader memakai static import JSON per musim di `dataLoader.ts` (bukan dynamic import). Tambah musim baru dengan menambah import dan entri di objek `SEASONS`.
 
 ## 🎨 Komponen (src/components/)
 
 ### Komponen yang Tersedia
 
-1. **Breadcrumb.astro** - Breadcrumb navigation dengan JSON-LD schema
-2. **Lineup.astro** - Display match lineup (Starting XI & Substitutes)
-3. **MatchCard.astro** - Card untuk menampilkan pertandingan
-4. **MatchTimelineCard.astro** - Card untuk timeline pertandingan (homepage)
+1. **PageHeader.astro** - Header halaman bersama (label, judul `font-cond`, meta, deskripsi)
+2. **Breadcrumb.astro** - Breadcrumb navigation dengan JSON-LD schema
+3. **Lineup.astro** - Display match lineup (Starting XI & Cadangan)
+4. **MatchCard.astro** - Card untuk menampilkan pertandingan
 5. **PlayerCard.astro** - Card untuk menampilkan pemain
 6. **StandingsTable.astro** - Tabel klasemen responsive
+7. **FilterBar.astro / SearchBar.astro** - Filter dan pencarian pemain
+8. **ShareButtons.astro** - Tombol bagikan (native, WhatsApp, Facebook, X, Telegram, salin link)
 
 ### Konvensi Komponen
 
@@ -125,7 +143,6 @@ return (module.default || module) as Type[];
 - `tim/profil.astro` - Profil tim dengan FAQ
 - `tim/official.astro` - Official & staff
 - `tim/berita.astro` - Daftar berita
-- `tim/galeri.astro` - Galeri (placeholder)
 - `pemain/index.astro` - Daftar pemain dengan search & filter
 - `pertandingan/index.astro` - Jadwal & hasil pertandingan
 
@@ -143,11 +160,12 @@ return (module.default || module) as Type[];
 - Touch target minimal 44x44px
 - Horizontal scroll untuk sections tertentu (top players)
 
-### Dark Theme
-- Background: `bg-slate-900` (main), `bg-slate-800/50` (cards)
-- Text: `text-slate-100`, `text-slate-300`
-- Borders: `border-slate-700`
-- Accent: Blue/Persibo colors
+### Dark Theme (broadcast style)
+- Background: `bg-background-dark` (#121018); panels `bg-[#0c0b0f]`
+- Text: `text-white`, `text-white/60`, `text-white/40`
+- Borders: `border-white/12`, `border-white/15`
+- Accent: `text-primary` (#f97316); square corners, condensed headings (`font-cond`)
+- Page title block: `PageHeader.astro`; section header: `border-b border-white/15 pb-3` + `font-cond text-2xl uppercase`
 
 ### Typography
 - Font: Lexend (Google Fonts)
@@ -280,7 +298,7 @@ import data from '../data/file.json';
 
 ### Color Palette
 - Primary: Slate (dark theme)
-- Accent: Blue (untuk links, buttons)
+- Accent: Orange `primary` (#f97316) untuk links, buttons, highlight
 - Success: Green (untuk menang)
 - Danger: Red (untuk kalah)
 - Warning: Yellow (untuk seri)
@@ -299,14 +317,13 @@ import data from '../data/file.json';
 ## 🔄 Update Data
 
 ### Sumber Data
-Data berasal dari scraping dan disimpan di:
-- `C:\Repository\persibo-scrape\py-final\output\*.json`
+Data berasal dari scraping iLeague dan disimpan per musim di `src/data/seasons/<musim>/`.
 
 ### Update Process
-1. Scrape data baru ke `py-final/output/`
-2. Copy JSON files ke `persibo-astro/src/data/`
-3. Pastikan format JSON valid (2-space indentation)
-4. Rebuild: `npm run build`
+1. Jalankan `.scratch/scrape_ileague.py` (hanya menulis musim aktif; `2025-26` dibekukan)
+2. Pastikan `src/data/seasons/2026-27/` terisi dan format JSON valid
+3. Rebuild: `npm run build`
+4. Commit juga folder `src/data/seasons/` agar arsip ikut tersimpan di git
 
 ## ⚠️ Important Notes
 
@@ -353,7 +370,6 @@ npm run preview  # Preview production build
 ## 🎯 Future Enhancements
 
 Ide untuk pengembangan selanjutnya:
-- [ ] Galeri foto/video
 - [ ] Statistik lebih detail
 - [ ] Grafik statistik
 - [ ] Share buttons
@@ -362,6 +378,6 @@ Ide untuk pengembangan selanjutnya:
 
 ---
 
-**Last Updated:** 2025-12-05  
+**Last Updated:** 2026-10-30  
 **Version:** 1.0.0  
 **Maintainer:** Jengker
