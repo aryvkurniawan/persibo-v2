@@ -1,0 +1,191 @@
+---
+import type { MatchDetailLineup, MatchDetailPlayer } from '../types';
+import faces from '../data/players/faces.json';
+
+interface Props {
+  lineup: MatchDetailLineup;
+  teamName: string;
+  side: 'home' | 'away';
+}
+
+const { lineup, teamName, side } = Astro.props;
+
+type Face = { name: string; photo_local?: string };
+const photoByName = new Map<string, string>();
+for (const face of faces as Face[]) {
+  if (face.photo_local) photoByName.set(face.name.toUpperCase(), face.photo_local);
+}
+
+// Scraped lineups carry noise: rows that are actually shirt-number strings, and
+// duplicates from the three responsive copies iLeague renders.
+const seen = new Set<string>();
+const clean = lineup.starting_xi.filter((player) => {
+  const name = (player.name ?? '').trim();
+  if (name.length < 3 || !/[A-Za-z]/.test(name) || /^\d/.test(name)) return false;
+  if (!player.jersey_number || player.jersey_number < 1 || player.jersey_number > 99) return false;
+  const key = `${player.jersey_number}:${name}`;
+  if (seen.has(key)) return false;
+  seen.add(key);
+  return true;
+});
+
+// The 2025-26 scrape captured the whole squad in the starting_xi field (65 names,
+// with duplicated shirt numbers). A pitch cannot represent that honestly, so those
+// matches fall back to a squad grid below.
+const isRealEleven = clean.length > 0 && clean.length <= 11;
+
+// Rows follow how many players the scrape actually lists, not a fixed formation:
+// Liga 2 sides lined up 4-3-3, 5-3-2 and 3-4-3 in the same season.
+const ROWS = ['Penjaga Gawang', 'Belakang', 'Gelandang', 'Penyerang'] as const;
+const rows = ROWS.map((position) => ({
+  position,
+  players: clean.filter((player) => player.position === position),
+})).filter((row) => row.players.length > 0);
+
+// Side-by-side panels read as two halves of one pitch, so the away team is
+// mirrored: its forwards face the halfway line and its keeper sits by its own box.
+if (side === 'away') rows.reverse();
+
+// Anything the scrape could not classify still has to appear somewhere.
+const unplaced = clean.filter((player) => !ROWS.includes(player.position as (typeof ROWS)[number]));
+
+// Shirt labels have to fit under a 44px badge, but the last word alone collapses
+// into initials ("HH", "DEWARI"). Prefer the longest word, which is usually the
+// family name, and keep the full name in the title attribute.
+const shortName = (name: string) => {
+  const parts = name.trim().split(/\s+/).filter((part) => part.length > 1);
+  if (parts.length <= 1) return name.trim();
+  return parts.reduce((longest, part) => (part.length > longest.length ? part : longest), parts[0]);
+};
+
+const cardIcon = (cards?: MatchDetailPlayer['cards']) => {
+  if (!cards?.length) return null;
+  return cards.includes('red') ? 'red' : 'yellow';
+};
+---
+
+<div class="border border-white/12 bg-[#0c0b0f]">
+  <div class="flex flex-wrap items-baseline justify-between gap-2 border-b border-white/10 px-4 py-3">
+    <div class="flex items-baseline gap-2">
+      <h3 class="font-cond text-lg font-semibold uppercase leading-none text-white">{teamName}</h3>
+      <span class="text-[8px] font-bold uppercase tracking-[0.16em] text-white/25">
+        {side === 'home' ? 'Kandang' : 'Tandang'}
+      </span>
+    </div>
+    {lineup.coach && (
+      <span class="text-[9px] uppercase tracking-[0.14em] text-white/35">{lineup.coach}</span>
+    )}
+  </div>
+
+  <!-- Pitch: rows by position, halved vertically so both teams share one field. -->
+  {!isRealEleven && (
+    <div class="border-b border-white/10 bg-[#0a1410] px-4 py-3">
+      <p class="text-[9px] uppercase tracking-[0.14em] text-white/30">
+        Sumber hanya mencantumkan daftar skuad, bukan sebelas awal.
+      </p>
+      <div class="mt-2 grid grid-cols-2 gap-x-3 gap-y-1 sm:grid-cols-3">
+        {clean.map((player) => (
+          <div class="flex items-baseline gap-1.5">
+            <span class="w-5 shrink-0 text-right font-cond text-[11px] font-bold leading-none text-primary tnum">
+              {player.jersey_number}
+            </span>
+            <span class="min-w-0 flex-1 truncate text-[11px] text-white/70">{player.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+
+  <div class={`relative z-10 overflow-hidden bg-[#0a1410] px-3 py-4 ${isRealEleven ? '' : 'hidden'}`}>
+    <!-- mowing stripes + halfway line, drawn in CSS to keep it weightless -->
+    <div class="pointer-events-none absolute inset-0 opacity-[0.55]">
+      <div class="absolute inset-0 bg-[repeating-linear-gradient(0deg,rgba(255,255,255,0.03)_0px,rgba(255,255,255,0.03)_28px,transparent_28px,transparent_56px)]"></div>
+      <div class={`absolute inset-x-0 h-px bg-white/15 ${side === 'home' ? 'top-0' : 'bottom-0'}`}></div>
+      <div class={`absolute left-1/2 h-16 w-32 -translate-x-1/2 rounded-none border border-white/12 ${side === 'home' ? 'top-0 border-t-0' : 'bottom-0 border-b-0'}`}></div>
+    </div>
+
+    <div class="relative space-y-4">
+      {rows.map((row) => (
+        <div>
+          <p class="mb-2 text-center text-[7px] font-bold uppercase tracking-[0.2em] text-white/20">{row.position}</p>
+          <div class="flex flex-wrap items-start justify-center gap-x-1 gap-y-2">
+            {row.players.map((player) => {
+              const photo = photoByName.get(player.name.toUpperCase());
+              const card = cardIcon(player.cards);
+              return (
+                <div class="flex w-[56px] flex-col items-center gap-1">
+                  <div class="relative">
+                    <div class="h-11 w-11 overflow-hidden rounded-full border border-white/20 bg-[#161318]">
+                      {photo ? (
+                        <img
+                          src={photo}
+                          alt=""
+                          class="h-full w-full object-cover object-top"
+                          loading="lazy"
+                          width="44"
+                          height="44"
+                        />
+                      ) : (
+                        <span class="flex h-full w-full items-center justify-center font-cond text-sm font-bold text-white/25">
+                          {player.jersey_number}
+                        </span>
+                      )}
+                    </div>
+                    <span class="absolute -bottom-1 -right-1 flex h-4 w-4 items-center justify-center border border-[#0a1410] bg-primary font-cond text-[9px] font-bold leading-none text-black tnum">
+                      {player.jersey_number}
+                    </span>
+                    {card && (
+                      <span class={`absolute -left-1 -top-1 h-2.5 w-3 border border-[#0a1410] ${card === 'red' ? 'bg-red-500' : 'bg-yellow-400'}`}></span>
+                    )}
+                  </div>
+                  <span class="line-clamp-2 w-full break-words text-center text-[8px] font-semibold uppercase leading-tight tracking-tight text-white/60">
+                    {shortName(player.name)}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      ))}
+
+      {unplaced.length > 0 && (
+        <div class="flex flex-wrap items-start justify-center gap-x-1 gap-y-2 border-t border-white/10 pt-3">
+          {unplaced.map((player) => (
+            <div class="flex w-[56px] flex-col items-center gap-1">
+              <div class="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-[#161318] font-cond text-sm font-bold text-white/50">
+                {player.jersey_number}
+              </div>
+              <span class="line-clamp-2 w-full break-words text-center text-[8px] font-semibold uppercase leading-tight tracking-tight text-white/60">
+                {shortName(player.name)}
+              </span>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+
+  {lineup.substitutes.length > 0 && (
+    <div class="border-t border-white/10 px-4 py-3">
+      <p class="text-[9px] font-bold uppercase tracking-[0.18em] text-white/35">Cadangan</p>
+      <div class="mt-2 grid grid-cols-2 gap-x-3 gap-y-1 sm:grid-cols-3">
+        {lineup.substitutes
+          .filter((player) => player.name && /[A-Za-z]/.test(player.name))
+          .map((player) => {
+            const onMinute = player.substitution_minutes?.[0];
+            return (
+              <div class="flex items-baseline gap-1.5">
+                <span class="w-5 shrink-0 text-right font-cond text-[11px] font-bold leading-none text-white/25 tnum">
+                  {player.jersey_number || '–'}
+                </span>
+                <span class="min-w-0 flex-1 truncate text-[11px] text-white/55">{player.name}</span>
+                {onMinute ? (
+                  <span class="shrink-0 text-[8px] uppercase tracking-[0.1em] text-primary/70 tnum">▲{onMinute}'</span>
+                ) : null}
+              </div>
+            );
+          })}
+      </div>
+    </div>
+  )}
+</div>

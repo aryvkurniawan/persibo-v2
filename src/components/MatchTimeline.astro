@@ -1,0 +1,98 @@
+---
+import type { TimelineEvent } from '../utils/matchTimeline';
+
+interface Props {
+  events: TimelineEvent[];
+  homeTeam: string;
+  awayTeam: string;
+}
+
+const { events, homeTeam, awayTeam } = Astro.props;
+
+const icon = (type: TimelineEvent['type']) =>
+  type === 'goal' ? 'sports_soccer'
+    : type === 'substitution' ? 'swap_horiz'
+    : type === 'other' ? 'circle'
+    : 'square';
+
+const tone = (event: TimelineEvent) =>
+  event.type === 'red_card' ? 'text-red-400'
+    : event.type === 'yellow_card' ? 'text-yellow-400'
+    : event.type === 'goal' ? 'text-primary'
+    : 'text-white/40';
+
+// Yellow and red cards read better as a filled block than a glyph.
+const isCard = (type: TimelineEvent['type']) => type === 'yellow_card' || type === 'red_card';
+---
+
+<div class="border border-white/12 bg-[#0c0b0f]">
+  <div class="grid grid-cols-[1fr_auto_1fr] items-center border-b border-white/10">
+    <div class="px-3 py-2.5 text-right">
+      <p class="font-cond text-sm font-semibold uppercase leading-none text-white">{homeTeam}</p>
+      <span class="text-[8px] uppercase tracking-[0.16em] text-white/25">Kandang</span>
+    </div>
+    <div class="w-14"></div>
+    <div class="px-3 py-2.5">
+      <p class="font-cond text-sm font-semibold uppercase leading-none text-white">{awayTeam}</p>
+      <span class="text-[8px] uppercase tracking-[0.16em] text-white/25">Tandang</span>
+    </div>
+  </div>
+
+  <div class="relative divide-y divide-white/5">
+    <!-- centre spine the minute column sits on -->
+    <div class="pointer-events-none absolute inset-y-0 left-1/2 w-px -translate-x-1/2 bg-white/10"></div>
+
+    {events.map((event) => (
+      <div class="relative grid grid-cols-[1fr_auto_1fr] items-center">
+        <!-- home side -->
+        <div class="flex min-w-0 items-center justify-end gap-1.5 py-2.5 pl-2 pr-1">
+          {event.side !== 'away' && (
+            <>
+              <div class="min-w-0 text-right">
+                <p class="truncate text-[11px] text-white/80">{event.player}</p>
+                {event.swapped && <p class="truncate text-[9px] text-white/30">◀ {event.swapped.off}</p>}
+              </div>
+              {isCard(event.type) ? (
+                <span class={`h-2.5 w-2 shrink-0 ${event.type === 'red_card' ? 'bg-red-500' : 'bg-yellow-400'}`}></span>
+              ) : (
+                <span class={`material-symbols-outlined shrink-0 text-[13px] ${tone(event)}`}>{icon(event.type)}</span>
+              )}
+            </>
+          )}
+        </div>
+
+        <!-- minute, on the spine. The score sits in the same fixed slot on every
+             row so the minute column never shifts between goals and other events. -->
+        <div class="z-10 flex w-14 flex-col items-center justify-center bg-[#0c0b0f] py-1.5">
+          <span class={`font-cond text-[10px] font-bold leading-none tnum ${
+            event.type === 'goal' ? 'text-primary' : 'text-white/55'
+          }`}>
+            {event.label}
+          </span>
+          <span class={`mt-0.5 h-[13px] font-cond text-[9px] font-bold leading-[13px] tnum ${
+            event.score ? 'border border-white/15 px-1 text-white' : 'text-transparent'
+          }`}>
+            {event.score ? `${event.score.home}:${event.score.away}` : '·'}
+          </span>
+        </div>
+
+        <!-- away side -->
+        <div class="flex min-w-0 items-center gap-1.5 py-2.5 pl-1 pr-2">
+          {event.side === 'away' && (
+            <>
+              {isCard(event.type) ? (
+                <span class={`h-2.5 w-2 shrink-0 ${event.type === 'red_card' ? 'bg-red-500' : 'bg-yellow-400'}`}></span>
+              ) : (
+                <span class={`material-symbols-outlined shrink-0 text-[13px] ${tone(event)}`}>{icon(event.type)}</span>
+              )}
+              <div class="min-w-0">
+                <p class="truncate text-[11px] text-white/80">{event.player}</p>
+                {event.swapped && <p class="truncate text-[9px] text-white/30">▶ {event.swapped.off}</p>}
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>

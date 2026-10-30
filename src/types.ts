@@ -101,7 +101,10 @@ export interface MatchDetailPlayer {
   name: string;
   jersey_number: number;
   position: string | null;
+  /** Minutes this player was involved in a substitution, as scraped ("'90"). */
   substitution_minutes?: number[];
+  /** Cards shown to this player during the match. */
+  cards?: Array<'yellow' | 'red'>;
 }
 
 export interface MatchDetailLineup {
@@ -112,8 +115,10 @@ export interface MatchDetailLineup {
 
 export interface MatchDetailEvent {
   type: string;
-  minute: number;
+  /** Raw iLeague minute string: "40'", "70(1)'" (stoppage), "90+1'". */
+  minute: string;
   player: string;
+  jersey_number?: number | null;
   team: string;
 }
 
@@ -133,6 +138,10 @@ export interface MatchDetail {
   };
   events: MatchDetailEvent[];
   statistics: Record<string, any>;
+  /** Only the referee and first assistant are reliably published. */
+  officials?: Record<string, string>;
+  kickoff_time?: string;
+  attendance?: number;
   base_team: string;
 }
 

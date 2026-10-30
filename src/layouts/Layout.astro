@@ -268,7 +268,7 @@ const currentPath = Astro.url.pathname.replace(/\/+$/, '') || '/';
       </script>
 
       <!-- Main Content -->
-      <main class="flex-1 overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <main class="relative z-10 flex-1 overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <slot />
       </main>
 

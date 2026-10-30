@@ -179,9 +179,29 @@ export function localLogoFor(teamName: string): string | null {
 }
 
 export function getMatchDetailByUrl(matchDetails: MatchDetail[], matchUrl: string): MatchDetail | undefined {
-  // URLs differ only by casing/underscores between the fixture and detail scrapes.
-  const key = matchUrl.toLowerCase().replace(/[^a-z0-9]/g, '');
-  return matchDetails.find(md => md.match_url.toLowerCase().replace(/[^a-z0-9]/g, '') === key);
+  // The fixture and detail scrapes disagree on the URL slug: casing, missing
+  // suffixes ("RANS_Nusantara_FC" vs "Rans_Nusantara"), so an exact key never
+  // matches. Compare the date and each club slug as a prefix instead.
+  const parts = (url: string) => {
+    const segments = url.replace(/\?.*$/, '').replace(/\/+$/, '').split('/');
+    return {
+      date: segments[segments.length - 3] ?? '',
+      home: (segments[segments.length - 2] ?? '').toLowerCase().replace(/[^a-z0-9]/g, ''),
+      away: (segments[segments.length - 1] ?? '').toLowerCase().replace(/[^a-z0-9]/g, ''),
+    };
+  };
+  const sameClub = (a: string, b: string) =>
+    a.length > 2 && b.length > 2 && (a.startsWith(b) || b.startsWith(a));
+
+  const target = parts(matchUrl);
+  return matchDetails.find((detail) => {
+    const candidate = parts(detail.match_url);
+    return (
+      candidate.date === target.date &&
+      sameClub(candidate.home, target.home) &&
+      sameClub(candidate.away, target.away)
+    );
+  });
 }
 
 export function getMatchDetailSlug(match: MatchDetail | Fixture): string {
