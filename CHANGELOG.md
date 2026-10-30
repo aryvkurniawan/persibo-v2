@@ -5,6 +5,20 @@ Semua perubahan penting pada proyek ini akan didokumentasikan dalam file ini.
 Format berdasarkan [Keep a Changelog](https://keepachangelog.com/id/1.0.0/),
 dan proyek ini mengikuti [Semantic Versioning](https://semver.org/lang/id/).
 
+## [Unreleased]
+
+### Changed
+- Seluruh halaman memakai satu bahasa desain "broadcast" dari homepage: judul `font-cond` uppercase, panel kotak `bg-[#0c0b0f]` + `border-white/12`, aksen oranye, tanpa sudut membulat.
+- `PageHeader.astro` baru sebagai header halaman bersama (label, judul, meta, deskripsi).
+- `StandingsTable`, `MatchCard`, `PlayerCard`, `Lineup`, `FilterBar`, `SearchBar`, `Breadcrumb`, `ShareButtons`, `TopPerformers`, `PlayerStatsChart` dirombak mengikuti token tersebut.
+- Halaman pertandingan tidak lagi memakai tab Hasil/Jadwal: kedua bagian ditampilkan berurutan.
+- Daftar berita kini data-driven (array `articles`), bukan markup duplikat per artikel.
+- Profil tim disusun ulang: grid dua kolom, panel prestasi di sidebar, FAQ memakai data yang sama dengan JSON-LD.
+
+### Removed
+- `MatchTimelineCard.astro` (tidak dipakai halaman mana pun).
+- Filter pemain duplikat: satu panel filter dipakai untuk mobile dan desktop.
+
 ## [1.0.0] - 2025-12-05
 
 ### Added

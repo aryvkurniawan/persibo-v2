@@ -303,6 +303,16 @@
   ],
   "news": [
     {
+      "id": "persibo-lawan-persika-karanganyar-jumat-12-desember",
+      "title": "Persibo Bojonegoro Lawan Persika Karanganyar Jumat 12 Desember",
+      "subtitle": "2025-12-08",
+      "description": "Persibo Bojonegoro akan melanjutkan petualangannya di Liga 3 Nusantara 2025-2026 dengan menghadapi Persika Karanganyar pada Jumat, 12 Desember 2025 sore.",
+      "url": "/tim/berita/persibo-lawan-persika-karanganyar-jumat-12-desember",
+      "category": "Berita",
+      "searchText": "persibo bojonegoro lawan persika karanganyar jumat 12 desember persibo bojonegoro akan melanjutkan petualangannya di liga 3 nusantara 2025-2026 dengan menghadapi persika karanganyar pada jumat, 12 desember 2025 sore.",
+      "image": null
+    },
+    {
       "id": "siap-tempur-solo-launching-skuad-jersey-2025",
       "title": "Siap Tempur di Solo! Persibo Bojonegoro Resmi Luncurkan Skuad dan Jersey Anyar Musim 2025-2026",
       "subtitle": "2025-11-25",
@@ -345,256 +355,386 @@
   ],
   "matches": [
     {
-      "id": "29 November 2025-persibo-bojonegoro-vs-rans-nusantara-fc",
-      "title": "PERSIBO BOJONEGORO vs RANS NUSANTARA FC",
-      "subtitle": "0:1 • 29 November 2025",
-      "description": "Pertandingan Liga Nusantara 2025-2026 di SRIWEDARI",
-      "url": "/pertandingan/29 November 2025-persibo-bojonegoro-vs-rans-nusantara-fc",
+      "id": "2026-11-13-persibo-bojonegoro-vs-persipa",
+      "title": "PERSIBO Bojonegoro vs PERSIPA",
+      "subtitle": "Jadwal 15:30 • 13 November 2026",
+      "description": "Pertandingan Liga Nusantara 2026-27 di LETJEN H. SOEDIRMAN",
+      "url": "/pertandingan/2026-11-13-persibo-bojonegoro-vs-persipa",
       "category": "Pertandingan",
-      "searchText": "persibo bojonegoro rans nusantara fc sriwedari 0:1 29 november 2025",
+      "searchText": "persibo bojonegoro persipa letjen h. soedirman  13 november 2026",
       "image": null
     },
     {
-      "id": "4 Desember 2025-persikutim-united-vs-persibo-bojonegoro",
-      "title": "PERSIKUTIM UNITED vs PERSIBO BOJONEGORO",
-      "subtitle": "1:2 • 4 Desember 2025",
-      "description": "Pertandingan Liga Nusantara 2025-2026 di BANYUANYAR",
-      "url": "/pertandingan/4 Desember 2025-persikutim-united-vs-persibo-bojonegoro",
+      "id": "2026-11-17-persibangga-purbalin-vs-persibo-bojonegoro",
+      "title": "PERSIBANGGA PURBALINGGA vs PERSIBO Bojonegoro",
+      "subtitle": "Jadwal 15:30 • 17 November 2026",
+      "description": "Pertandingan Liga Nusantara 2026-27 di TRISANJA",
+      "url": "/pertandingan/2026-11-17-persibangga-purbalin-vs-persibo-bojonegoro",
       "category": "Pertandingan",
-      "searchText": "persikutim united persibo bojonegoro banyuanyar 1:2 4 desember 2025",
+      "searchText": "persibangga purbalingga persibo bojonegoro trisanja  17 november 2026",
+      "image": null
+    },
+    {
+      "id": "2026-11-22-persibo-bojonegoro-vs-gresik-united-fc",
+      "title": "PERSIBO Bojonegoro vs Gresik United FC",
+      "subtitle": "Jadwal 15:30 • 22 November 2026",
+      "description": "Pertandingan Liga Nusantara 2026-27 di LETJEN H. SOEDIRMAN",
+      "url": "/pertandingan/2026-11-22-persibo-bojonegoro-vs-gresik-united-fc",
+      "category": "Pertandingan",
+      "searchText": "persibo bojonegoro gresik united fc letjen h. soedirman  22 november 2026",
+      "image": null
+    },
+    {
+      "id": "2026-11-26-putra-sang-fajar-fc-vs-persibo-bojonegoro",
+      "title": "PUTRA SANG FAJAR FC vs PERSIBO Bojonegoro",
+      "subtitle": "Jadwal 15:30 • 26 November 2026",
+      "description": "Pertandingan Liga Nusantara 2026-27 di GELORA SOEPRIADI",
+      "url": "/pertandingan/2026-11-26-putra-sang-fajar-fc-vs-persibo-bojonegoro",
+      "category": "Pertandingan",
+      "searchText": "putra sang fajar fc persibo bojonegoro gelora soepriadi  26 november 2026",
+      "image": null
+    },
+    {
+      "id": "2026-11-30-persinga-ngawi-vs-persibo-bojonegoro",
+      "title": "PERSINGA NGAWI vs PERSIBO Bojonegoro",
+      "subtitle": "Jadwal 15:30 • 30 November 2026",
+      "description": "Pertandingan Liga Nusantara 2026-27 di STADION KETONGGO NGAWI",
+      "url": "/pertandingan/2026-11-30-persinga-ngawi-vs-persibo-bojonegoro",
+      "category": "Pertandingan",
+      "searchText": "persinga ngawi persibo bojonegoro stadion ketonggo ngawi  30 november 2026",
+      "image": null
+    },
+    {
+      "id": "2026-12-04-persibo-bojonegoro-vs-persiba-bantul",
+      "title": "PERSIBO Bojonegoro vs PERSIBA Bantul",
+      "subtitle": "Jadwal 15:30 • 4 Desember 2026",
+      "description": "Pertandingan Liga Nusantara 2026-27 di LETJEN H. SOEDIRMAN",
+      "url": "/pertandingan/2026-12-04-persibo-bojonegoro-vs-persiba-bantul",
+      "category": "Pertandingan",
+      "searchText": "persibo bojonegoro persiba bantul letjen h. soedirman  4 desember 2026",
+      "image": null
+    },
+    {
+      "id": "2026-12-08-persibo-bojonegoro-vs-persika-karanganyar",
+      "title": "PERSIBO Bojonegoro vs PERSIKA Karanganyar",
+      "subtitle": "Jadwal 15:30 • 8 Desember 2026",
+      "description": "Pertandingan Liga Nusantara 2026-27 di LETJEN H. SOEDIRMAN",
+      "url": "/pertandingan/2026-12-08-persibo-bojonegoro-vs-persika-karanganyar",
+      "category": "Pertandingan",
+      "searchText": "persibo bojonegoro persika karanganyar letjen h. soedirman  8 desember 2026",
+      "image": null
+    },
+    {
+      "id": "2026-12-12-gresik-united-fc-vs-persibo-bojonegoro",
+      "title": "Gresik United FC vs PERSIBO Bojonegoro",
+      "subtitle": "Jadwal 15:30 • 12 Desember 2026",
+      "description": "Pertandingan Liga Nusantara 2026-27 di GELORA JOKO SAMUDRO",
+      "url": "/pertandingan/2026-12-12-gresik-united-fc-vs-persibo-bojonegoro",
+      "category": "Pertandingan",
+      "searchText": "gresik united fc persibo bojonegoro gelora joko samudro  12 desember 2026",
+      "image": null
+    },
+    {
+      "id": "2026-12-17-persibo-bojonegoro-vs-putra-sang-fajar-fc",
+      "title": "PERSIBO Bojonegoro vs PUTRA SANG FAJAR FC",
+      "subtitle": "Jadwal 15:30 • 17 Desember 2026",
+      "description": "Pertandingan Liga Nusantara 2026-27 di LETJEN H. SOEDIRMAN",
+      "url": "/pertandingan/2026-12-17-persibo-bojonegoro-vs-putra-sang-fajar-fc",
+      "category": "Pertandingan",
+      "searchText": "persibo bojonegoro putra sang fajar fc letjen h. soedirman  17 desember 2026",
+      "image": null
+    },
+    {
+      "id": "2026-12-20-persiba-bantul-vs-persibo-bojonegoro",
+      "title": "PERSIBA Bantul vs PERSIBO Bojonegoro",
+      "subtitle": "Jadwal 15:30 • 20 Desember 2026",
+      "description": "Pertandingan Liga Nusantara 2026-27 di SULTAN AGUNG",
+      "url": "/pertandingan/2026-12-20-persiba-bantul-vs-persibo-bojonegoro",
+      "category": "Pertandingan",
+      "searchText": "persiba bantul persibo bojonegoro sultan agung  20 desember 2026",
+      "image": null
+    },
+    {
+      "id": "2027-01-06-persibo-bojonegoro-vs-persinga-ngawi",
+      "title": "PERSIBO Bojonegoro vs PERSINGA NGAWI",
+      "subtitle": "Jadwal 15:30 • 6 Januari 2027",
+      "description": "Pertandingan Liga Nusantara 2026-27 di LETJEN H. SOEDIRMAN",
+      "url": "/pertandingan/2027-01-06-persibo-bojonegoro-vs-persinga-ngawi",
+      "category": "Pertandingan",
+      "searchText": "persibo bojonegoro persinga ngawi letjen h. soedirman  6 januari 2027",
+      "image": null
+    },
+    {
+      "id": "2027-01-10-persika-karanganyar-vs-persibo-bojonegoro",
+      "title": "PERSIKA Karanganyar vs PERSIBO Bojonegoro",
+      "subtitle": "Jadwal 15:30 • 10 Januari 2027",
+      "description": "Pertandingan Liga Nusantara 2026-27 di MANAHAN",
+      "url": "/pertandingan/2027-01-10-persika-karanganyar-vs-persibo-bojonegoro",
+      "category": "Pertandingan",
+      "searchText": "persika karanganyar persibo bojonegoro manahan  10 januari 2027",
+      "image": null
+    },
+    {
+      "id": "2027-01-17-persipa-vs-persibo-bojonegoro",
+      "title": "PERSIPA vs PERSIBO Bojonegoro",
+      "subtitle": "Jadwal 15:30 • 17 Januari 2027",
+      "description": "Pertandingan Liga Nusantara 2026-27 di MOCH. SOEBROTO",
+      "url": "/pertandingan/2027-01-17-persipa-vs-persibo-bojonegoro",
+      "category": "Pertandingan",
+      "searchText": "persipa persibo bojonegoro moch. soebroto  17 januari 2027",
+      "image": null
+    },
+    {
+      "id": "2027-01-21-persibo-bojonegoro-vs-persibangga-purbalin",
+      "title": "PERSIBO Bojonegoro vs PERSIBANGGA PURBALINGGA",
+      "subtitle": "Jadwal 00:00 • 21 Januari 2027",
+      "description": "Pertandingan Liga Nusantara 2026-27 di LETJEN H. SOEDIRMAN",
+      "url": "/pertandingan/2027-01-21-persibo-bojonegoro-vs-persibangga-purbalin",
+      "category": "Pertandingan",
+      "searchText": "persibo bojonegoro persibangga purbalingga letjen h. soedirman  21 januari 2027",
       "image": null
     }
   ],
   "teams": [
     {
-      "id": "psds-deli-serdang",
-      "title": "PSDS Deli Serdang",
-      "subtitle": "Tim Liga Nusantara",
-      "description": "Tim dari Liga Nusantara 2025-2026",
-      "url": null,
+      "id": "sriwijaya-fc",
+      "title": "Sriwijaya FC",
+      "subtitle": "Tim Liga Nusantara · lihat klasemen",
+      "description": "Tim dari Liga Nusantara 2026-27",
+      "url": "/klasemen",
       "category": "Tim",
-      "searchText": "psds deli serdang",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/2208496.png"
-    },
-    {
-      "id": "batavia-fc",
-      "title": "Batavia FC",
-      "subtitle": "Tim Liga Nusantara",
-      "description": "Tim dari Liga Nusantara 2025-2026",
-      "url": null,
-      "category": "Tim",
-      "searchText": "batavia fc",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/2517965.png"
-    },
-    {
-      "id": "dejan-fc",
-      "title": "Dejan FC",
-      "subtitle": "Tim Liga Nusantara",
-      "description": "Tim dari Liga Nusantara 2025-2026",
-      "url": null,
-      "category": "Tim",
-      "searchText": "dejan fc",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/2409314.png"
-    },
-    {
-      "id": "gresik-united-fc",
-      "title": "Gresik United FC",
-      "subtitle": "Tim Liga Nusantara",
-      "description": "Tim dari Liga Nusantara 2025-2026",
-      "url": null,
-      "category": "Tim",
-      "searchText": "gresik united fc",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/69.png"
-    },
-    {
-      "id": "nusantara-united-fc",
-      "title": "Nusantara United FC",
-      "subtitle": "Tim Liga Nusantara",
-      "description": "Tim dari Liga Nusantara 2025-2026",
-      "url": null,
-      "category": "Tim",
-      "searchText": "nusantara united fc",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/1819851417.png"
-    },
-    {
-      "id": "pekanbaru-fc",
-      "title": "Pekanbaru FC",
-      "subtitle": "Tim Liga Nusantara",
-      "description": "Tim dari Liga Nusantara 2025-2026",
-      "url": null,
-      "category": "Tim",
-      "searchText": "pekanbaru fc",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/2517284.png"
-    },
-    {
-      "id": "persebata-lembata",
-      "title": "PERSEBATA Lembata",
-      "subtitle": "Tim Liga Nusantara",
-      "description": "Tim dari Liga Nusantara 2025-2026",
-      "url": null,
-      "category": "Tim",
-      "searchText": "persebata lembata",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/2517436.png"
-    },
-    {
-      "id": "perseden-denpasar",
-      "title": "PERSEDEN Denpasar",
-      "subtitle": "Tim Liga Nusantara",
-      "description": "Tim dari Liga Nusantara 2025-2026",
-      "url": null,
-      "category": "Tim",
-      "searchText": "perseden denpasar",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/246.png"
-    },
-    {
-      "id": "persekabpas",
-      "title": "PERSEKABPAS",
-      "subtitle": "Tim Liga Nusantara",
-      "description": "Tim dari Liga Nusantara 2025-2026",
-      "url": null,
-      "category": "Tim",
-      "searchText": "persekabpas",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/39.png"
-    },
-    {
-      "id": "perserang-serang",
-      "title": "PERSERANG Serang",
-      "subtitle": "Tim Liga Nusantara",
-      "description": "Tim dari Liga Nusantara 2025-2026",
-      "url": null,
-      "category": "Tim",
-      "searchText": "perserang serang",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/8.png"
-    },
-    {
-      "id": "persiba-bantul",
-      "title": "PERSIBA Bantul",
-      "subtitle": "Tim Liga Nusantara",
-      "description": "Tim dari Liga Nusantara 2025-2026",
-      "url": null,
-      "category": "Tim",
-      "searchText": "persiba bantul",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/68.png"
-    },
-    {
-      "id": "persibo-bojonegoro",
-      "title": "PERSIBO Bojonegoro",
-      "subtitle": "Tim Liga Nusantara",
-      "description": "Tim dari Liga Nusantara 2025-2026",
-      "url": null,
-      "category": "Tim",
-      "searchText": "persibo bojonegoro",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/29.png"
-    },
-    {
-      "id": "persika-karanganyar",
-      "title": "PERSIKA Karanganyar",
-      "subtitle": "Tim Liga Nusantara",
-      "description": "Tim dari Liga Nusantara 2025-2026",
-      "url": null,
-      "category": "Tim",
-      "searchText": "persika karanganyar",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/2517773.png"
-    },
-    {
-      "id": "persikota-kota-tangerang",
-      "title": "PERSIKOTA Kota Tangerang",
-      "subtitle": "Tim Liga Nusantara",
-      "description": "Tim dari Liga Nusantara 2025-2026",
-      "url": null,
-      "category": "Tim",
-      "searchText": "persikota kota tangerang",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/17.png"
-    },
-    {
-      "id": "persikutim-united",
-      "title": "PERSIKUTIM United",
-      "subtitle": "Tim Liga Nusantara",
-      "description": "Tim dari Liga Nusantara 2025-2026",
-      "url": null,
-      "category": "Tim",
-      "searchText": "persikutim united",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/2408207.png"
-    },
-    {
-      "id": "persipa",
-      "title": "PERSIPA",
-      "subtitle": "Tim Liga Nusantara",
-      "description": "Tim dari Liga Nusantara 2025-2026",
-      "url": null,
-      "category": "Tim",
-      "searchText": "persipa",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/1813607788.png"
+      "searchText": "sriwijaya fc",
+      "image": "https://assets.ileague.id/uploads/images/logo/101/h/50/9.png"
     },
     {
       "id": "persitara-jakarta-utara",
       "title": "PERSITARA Jakarta Utara",
-      "subtitle": "Tim Liga Nusantara",
-      "description": "Tim dari Liga Nusantara 2025-2026",
-      "url": null,
+      "subtitle": "Tim Liga Nusantara · lihat klasemen",
+      "description": "Tim dari Liga Nusantara 2026-27",
+      "url": "/klasemen",
       "category": "Tim",
       "searchText": "persitara jakarta utara",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/13.png"
+      "image": "https://assets.ileague.id/uploads/images/logo/101/h/50/13.png"
     },
     {
-      "id": "psgc-ciamis",
-      "title": "PSGC Ciamis",
-      "subtitle": "Tim Liga Nusantara",
-      "description": "Tim dari Liga Nusantara 2025-2026",
-      "url": null,
+      "id": "persikota-kota-tangerang",
+      "title": "PERSIKOTA Kota Tangerang",
+      "subtitle": "Tim Liga Nusantara · lihat klasemen",
+      "description": "Tim dari Liga Nusantara 2026-27",
+      "url": "/klasemen",
       "category": "Tim",
-      "searchText": "psgc ciamis",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/204.png"
+      "searchText": "persikota kota tangerang",
+      "image": "https://assets.ileague.id/uploads/images/logo/101/h/50/17.png"
     },
     {
-      "id": "rans-nusantara-fc",
-      "title": "RANS Nusantara FC",
-      "subtitle": "Tim Liga Nusantara",
-      "description": "Tim dari Liga Nusantara 2025-2026",
-      "url": null,
+      "id": "pesik",
+      "title": "Pesik",
+      "subtitle": "Tim Liga Nusantara · lihat klasemen",
+      "description": "Tim dari Liga Nusantara 2026-27",
+      "url": "/klasemen",
       "category": "Tim",
-      "searchText": "rans nusantara fc",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/217.png"
+      "searchText": "pesik",
+      "image": "https://assets.ileague.id/uploads/images/logo/101/h/50/74.png"
     },
     {
-      "id": "sang-maestro-fc",
-      "title": "Sang Maestro FC",
-      "subtitle": "Tim Liga Nusantara",
-      "description": "Tim dari Liga Nusantara 2025-2026",
-      "url": null,
+      "id": "pekanbaru-fc",
+      "title": "Pekanbaru FC",
+      "subtitle": "Tim Liga Nusantara · lihat klasemen",
+      "description": "Tim dari Liga Nusantara 2026-27",
+      "url": "/klasemen",
       "category": "Tim",
-      "searchText": "sang maestro fc",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/2517664.png"
+      "searchText": "pekanbaru fc",
+      "image": "https://assets.ileague.id/uploads/images/logo/101/h/50/2517284.png"
     },
     {
-      "id": "tri-brata-rafflesia-fc",
-      "title": "Tri Brata Rafflesia FC",
-      "subtitle": "Tim Liga Nusantara",
-      "description": "Tim dari Liga Nusantara 2025-2026",
-      "url": null,
+      "id": "batavia-fc",
+      "title": "Batavia FC",
+      "subtitle": "Tim Liga Nusantara · lihat klasemen",
+      "description": "Tim dari Liga Nusantara 2026-27",
+      "url": "/klasemen",
       "category": "Tim",
-      "searchText": "tri brata rafflesia fc",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/2518516.png"
+      "searchText": "batavia fc",
+      "image": "https://assets.ileague.id/uploads/images/logo/101/h/50/2517965.png"
     },
     {
-      "id": "waanal-brothers",
-      "title": "Waanal Brothers",
-      "subtitle": "Tim Liga Nusantara",
-      "description": "Tim dari Liga Nusantara 2025-2026",
-      "url": null,
+      "id": "persekat-tegal",
+      "title": "Persekat Tegal",
+      "subtitle": "Tim Liga Nusantara · lihat klasemen",
+      "description": "Tim dari Liga Nusantara 2026-27",
+      "url": "/klasemen",
       "category": "Tim",
-      "searchText": "waanal brothers",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/h/50/2408141.png"
+      "searchText": "persekat tegal",
+      "image": "https://assets.ileague.id/uploads/images/logo/101/h/50/1819851408.png"
     },
     {
-      "id": "persewar",
-      "title": "Persewar",
-      "subtitle": "Tim Liga Nusantara",
-      "description": "Tim dari Liga Nusantara 2025-2026",
-      "url": null,
+      "id": "persikotas-nusantara",
+      "title": "Persikotas Nusantara",
+      "subtitle": "Tim Liga Nusantara · lihat klasemen",
+      "description": "Tim dari Liga Nusantara 2026-27",
+      "url": "/klasemen",
       "category": "Tim",
-      "searchText": "persewar",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/logo/93/v/200/1819851386.png"
+      "searchText": "persikotas nusantara",
+      "image": "https://assets.ileague.id/uploads/images/logo/101/h/50/1819851417.png"
+    },
+    {
+      "id": "persibo-bojonegoro",
+      "title": "PERSIBO Bojonegoro",
+      "subtitle": "Tim Liga Nusantara · lihat klasemen",
+      "description": "Tim dari Liga Nusantara 2026-27",
+      "url": "/klasemen",
+      "category": "Tim",
+      "searchText": "persibo bojonegoro",
+      "image": "https://assets.ileague.id/uploads/images/logo/101/h/50/29.png"
+    },
+    {
+      "id": "persiba-bantul",
+      "title": "PERSIBA Bantul",
+      "subtitle": "Tim Liga Nusantara · lihat klasemen",
+      "description": "Tim dari Liga Nusantara 2026-27",
+      "url": "/klasemen",
+      "category": "Tim",
+      "searchText": "persiba bantul",
+      "image": "https://assets.ileague.id/uploads/images/logo/101/h/50/68.png"
+    },
+    {
+      "id": "gresik-united-fc",
+      "title": "Gresik United FC",
+      "subtitle": "Tim Liga Nusantara · lihat klasemen",
+      "description": "Tim dari Liga Nusantara 2026-27",
+      "url": "/klasemen",
+      "category": "Tim",
+      "searchText": "gresik united fc",
+      "image": "https://assets.ileague.id/uploads/images/logo/101/h/50/69.png"
+    },
+    {
+      "id": "persibangga",
+      "title": "Persibangga",
+      "subtitle": "Tim Liga Nusantara · lihat klasemen",
+      "description": "Tim dari Liga Nusantara 2026-27",
+      "url": "/klasemen",
+      "category": "Tim",
+      "searchText": "persibangga",
+      "image": "https://assets.ileague.id/uploads/images/logo/101/h/50/200.png"
+    },
+    {
+      "id": "persinga-ngawi",
+      "title": "Persinga Ngawi",
+      "subtitle": "Tim Liga Nusantara · lihat klasemen",
+      "description": "Tim dari Liga Nusantara 2026-27",
+      "url": "/klasemen",
+      "category": "Tim",
+      "searchText": "persinga ngawi",
+      "image": "https://assets.ileague.id/uploads/images/logo/101/h/50/208.png"
+    },
+    {
+      "id": "persika-karanganyar",
+      "title": "PERSIKA Karanganyar",
+      "subtitle": "Tim Liga Nusantara · lihat klasemen",
+      "description": "Tim dari Liga Nusantara 2026-27",
+      "url": "/klasemen",
+      "category": "Tim",
+      "searchText": "persika karanganyar",
+      "image": "https://assets.ileague.id/uploads/images/logo/101/h/50/2517773.png"
+    },
+    {
+      "id": "putra-sang-fajar-fc",
+      "title": "Putra Sang Fajar FC",
+      "subtitle": "Tim Liga Nusantara · lihat klasemen",
+      "description": "Tim dari Liga Nusantara 2026-27",
+      "url": "/klasemen",
+      "category": "Tim",
+      "searchText": "putra sang fajar fc",
+      "image": "https://assets.ileague.id/uploads/images/logo/101/h/50/2518516.png"
+    },
+    {
+      "id": "persipa",
+      "title": "PERSIPA",
+      "subtitle": "Tim Liga Nusantara · lihat klasemen",
+      "description": "Tim dari Liga Nusantara 2026-27",
+      "url": "/klasemen",
+      "category": "Tim",
+      "searchText": "persipa",
+      "image": "https://assets.ileague.id/uploads/images/logo/101/h/50/1813607788.png"
+    },
+    {
+      "id": "persekabpas",
+      "title": "PERSEKABPAS",
+      "subtitle": "Tim Liga Nusantara · lihat klasemen",
+      "description": "Tim dari Liga Nusantara 2026-27",
+      "url": "/klasemen",
+      "category": "Tim",
+      "searchText": "persekabpas",
+      "image": "https://assets.ileague.id/uploads/images/logo/101/h/50/39.png"
+    },
+    {
+      "id": "perseden-denpasar",
+      "title": "PERSEDEN Denpasar",
+      "subtitle": "Tim Liga Nusantara · lihat klasemen",
+      "description": "Tim dari Liga Nusantara 2026-27",
+      "url": "/klasemen",
+      "category": "Tim",
+      "searchText": "perseden denpasar",
+      "image": "https://assets.ileague.id/uploads/images/logo/101/h/50/246.png"
+    },
+    {
+      "id": "psn-ngada",
+      "title": "Psn Ngada",
+      "subtitle": "Tim Liga Nusantara · lihat klasemen",
+      "description": "Tim dari Liga Nusantara 2026-27",
+      "url": "/klasemen",
+      "category": "Tim",
+      "searchText": "psn ngada",
+      "image": "https://assets.ileague.id/uploads/images/logo/101/h/50/248.png"
+    },
+    {
+      "id": "donggala-fc",
+      "title": "Donggala FC",
+      "subtitle": "Tim Liga Nusantara · lihat klasemen",
+      "description": "Tim dari Liga Nusantara 2026-27",
+      "url": "/klasemen",
+      "category": "Tim",
+      "searchText": "donggala fc",
+      "image": "https://assets.ileague.id/uploads/images/logo/101/h/50/301.png"
+    },
+    {
+      "id": "persikutim-united",
+      "title": "PERSIKUTIM United",
+      "subtitle": "Tim Liga Nusantara · lihat klasemen",
+      "description": "Tim dari Liga Nusantara 2026-27",
+      "url": "/klasemen",
+      "category": "Tim",
+      "searchText": "persikutim united",
+      "image": "https://assets.ileague.id/uploads/images/logo/101/h/50/2408207.png"
+    },
+    {
+      "id": "persipani",
+      "title": "Persipani",
+      "subtitle": "Tim Liga Nusantara · lihat klasemen",
+      "description": "Tim dari Liga Nusantara 2026-27",
+      "url": "/klasemen",
+      "category": "Tim",
+      "searchText": "persipani",
+      "image": "https://assets.ileague.id/uploads/images/logo/101/h/50/2408341.png"
+    },
+    {
+      "id": "persinab-fc",
+      "title": "Persinab FC",
+      "subtitle": "Tim Liga Nusantara · lihat klasemen",
+      "description": "Tim dari Liga Nusantara 2026-27",
+      "url": "/klasemen",
+      "category": "Tim",
+      "searchText": "persinab fc",
+      "image": "https://assets.ileague.id/uploads/images/logo/101/h/50/2517664.png"
+    },
+    {
+      "id": "pasuruan-united",
+      "title": "Pasuruan United",
+      "subtitle": "Tim Liga Nusantara · lihat klasemen",
+      "description": "Tim dari Liga Nusantara 2026-27",
+      "url": "/klasemen",
+      "category": "Tim",
+      "searchText": "pasuruan united",
+      "image": "https://assets.ileague.id/uploads/images/logo/101/h/50/1819299011.png"
     }
   ]
 }

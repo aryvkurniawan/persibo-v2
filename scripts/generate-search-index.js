@@ -6,16 +6,34 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const DATA_DIR = join(__dirname, '../src/data');
+const SEASON_DIR = join(DATA_DIR, 'seasons/2026-27');
 const PUBLIC_DIR = join(__dirname, '../public');
 
 // Load all data
 const players = JSON.parse(readFileSync(join(DATA_DIR, 'players.json'), 'utf-8'));
 const playerDetails = JSON.parse(readFileSync(join(DATA_DIR, 'playerDetails.json'), 'utf-8'));
-const fixtures = JSON.parse(readFileSync(join(DATA_DIR, 'fixtures.json'), 'utf-8'));
-const teams = JSON.parse(readFileSync(join(DATA_DIR, 'teams.json'), 'utf-8'));
+const fixtures = JSON.parse(readFileSync(join(SEASON_DIR, 'fixtures.json'), 'utf-8'));
+const teams = JSON.parse(readFileSync(join(SEASON_DIR, 'teams.json'), 'utf-8'));
+
+// Keep slugs identical to getMatchDetailSlug() in src/utils/dataLoader.ts.
+const MONTHS = { januari: '01', februari: '02', maret: '03', april: '04', mei: '05', juni: '06', juli: '07', agustus: '08', september: '09', oktober: '10', november: '11', desember: '12' };
+function matchSlug(fixture) {
+  const parts = fixture.date.match(/(\d{1,2})\s+(\w+)\s+(\d{4})/);
+  const datePart = parts ? `${parts[3]}-${MONTHS[parts[2].toLowerCase()]}-${parts[1].padStart(2, '0')}` : '';
+  const home = fixture.home_team.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '').substring(0, 20);
+  const away = fixture.away_team.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '').substring(0, 20);
+  return `${datePart}-${home}-vs-${away}`;
+}
 
 // News articles (static pages)
 const newsArticles = [
+  {
+    title: 'Persibo Bojonegoro Lawan Persika Karanganyar Jumat 12 Desember',
+    description: 'Persibo Bojonegoro akan melanjutkan petualangannya di Liga 3 Nusantara 2025-2026 dengan menghadapi Persika Karanganyar pada Jumat, 12 Desember 2025 sore.',
+    url: '/tim/berita/persibo-lawan-persika-karanganyar-jumat-12-desember',
+    category: 'Berita',
+    date: '2025-12-08'
+  },
   {
     title: 'Siap Tempur di Solo! Persibo Bojonegoro Resmi Luncurkan Skuad dan Jersey Anyar Musim 2025-2026',
     description: 'Persibo Bojonegoro secara resmi memperkenalkan komposisi skuad dan jersey terbaru untuk Liga 3 Nusantara musim 2025-2026.',
@@ -73,28 +91,27 @@ const searchIndex = {
     image: null
   })),
   
-  matches: fixtures
-    .filter(f => f.status === 'COMPLETED')
-    .map(fixture => {
-      const matchSlug = `${fixture.date}-${fixture.home_team.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '').substring(0, 20)}-vs-${fixture.away_team.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '').substring(0, 20)}`;
-      return {
-        id: matchSlug,
-        title: `${fixture.home_team} vs ${fixture.away_team}`,
-        subtitle: `${fixture.score} • ${fixture.date}`,
-        description: `Pertandingan Liga Nusantara 2025-2026 di ${fixture.venue}`,
-        url: `/pertandingan/${matchSlug}`,
-        category: 'Pertandingan',
-        searchText: `${fixture.home_team} ${fixture.away_team} ${fixture.venue} ${fixture.score} ${fixture.date}`.toLowerCase(),
-        image: null
-      };
-    }),
+  matches: fixtures.map(fixture => {
+    const slug = matchSlug(fixture);
+    const completed = fixture.status === 'COMPLETED';
+    return {
+      id: slug,
+      title: `${fixture.home_team} vs ${fixture.away_team}`,
+      subtitle: `${completed ? fixture.score : `Jadwal ${fixture.time}`} • ${fixture.date}`,
+      description: `Pertandingan Liga Nusantara 2026-27 di ${fixture.venue}`,
+      url: `/pertandingan/${slug}`,
+      category: 'Pertandingan',
+      searchText: `${fixture.home_team} ${fixture.away_team} ${fixture.venue} ${fixture.score || ''} ${fixture.date}`.toLowerCase(),
+      image: null
+    };
+  }),
   
   teams: teams.map(team => ({
     id: team.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, ''),
     title: team.name,
-    subtitle: 'Tim Liga Nusantara',
-    description: `Tim dari Liga Nusantara 2025-2026`,
-    url: null, // Teams tidak punya detail page
+    subtitle: 'Tim Liga Nusantara · lihat klasemen',
+    description: `Tim dari Liga Nusantara 2026-27`,
+    url: '/klasemen',
     category: 'Tim',
     searchText: team.name.toLowerCase(),
     image: team.logo_url || null
