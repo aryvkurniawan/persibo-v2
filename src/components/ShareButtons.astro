@@ -23,7 +23,7 @@ const telegramUrl = `https://t.me/share/url?url=${encodedUrl}&text=${encodedText
   <!-- Mobile: Native Share Button (if available) -->
   <button 
     id="native-share-btn"
-    class="native-share-btn flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-white transition-colors text-sm font-medium border border-slate-700"
+    class="native-share-btn flex items-center gap-2 border border-white/20 px-3 py-2 text-[9px] font-bold uppercase tracking-[0.18em] text-white/60 transition-colors hover:border-primary hover:text-primary"
     aria-label="Bagikan menggunakan native share"
   >
     <span class="material-symbols-outlined text-lg">share</span>
@@ -37,7 +37,7 @@ const telegramUrl = `https://t.me/share/url?url=${encodedUrl}&text=${encodedText
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      class="flex items-center justify-center w-10 h-10 rounded-lg bg-green-600 hover:bg-green-700 text-white transition-colors"
+      class="flex h-9 w-9 items-center justify-center border border-white/15 text-white/55 transition-colors hover:border-primary hover:text-primary"
       aria-label="Bagikan ke WhatsApp"
       title="Bagikan ke WhatsApp"
     >
@@ -51,7 +51,7 @@ const telegramUrl = `https://t.me/share/url?url=${encodedUrl}&text=${encodedText
       href={facebookUrl}
       target="_blank"
       rel="noopener noreferrer"
-      class="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-600 hover:bg-blue-700 text-white transition-colors"
+      class="flex h-9 w-9 items-center justify-center border border-white/15 text-white/55 transition-colors hover:border-primary hover:text-primary"
       aria-label="Bagikan ke Facebook"
       title="Bagikan ke Facebook"
     >
@@ -65,7 +65,7 @@ const telegramUrl = `https://t.me/share/url?url=${encodedUrl}&text=${encodedText
       href={twitterUrl}
       target="_blank"
       rel="noopener noreferrer"
-      class="flex items-center justify-center w-10 h-10 rounded-lg bg-black hover:bg-gray-800 text-white transition-colors"
+      class="flex h-9 w-9 items-center justify-center border border-white/15 text-white/55 transition-colors hover:border-primary hover:text-primary"
       aria-label="Bagikan ke Twitter/X"
       title="Bagikan ke Twitter/X"
     >
@@ -79,7 +79,7 @@ const telegramUrl = `https://t.me/share/url?url=${encodedUrl}&text=${encodedText
       href={telegramUrl}
       target="_blank"
       rel="noopener noreferrer"
-      class="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-500 hover:bg-blue-600 text-white transition-colors"
+      class="flex h-9 w-9 items-center justify-center border border-white/15 text-white/55 transition-colors hover:border-primary hover:text-primary"
       aria-label="Bagikan ke Telegram"
       title="Bagikan ke Telegram"
     >
@@ -91,7 +91,7 @@ const telegramUrl = `https://t.me/share/url?url=${encodedUrl}&text=${encodedText
     <!-- Copy Link -->
     <button 
       id="copy-link-btn"
-      class="flex items-center justify-center w-10 h-10 rounded-lg bg-slate-700 hover:bg-slate-600 text-white transition-colors"
+      class="flex h-9 w-9 items-center justify-center border border-white/15 text-white/55 transition-colors hover:border-primary hover:text-primary"
       aria-label="Salin link"
       title="Salin link"
     >
@@ -149,13 +149,13 @@ const telegramUrl = `https://t.me/share/url?url=${encodedUrl}&text=${encodedText
           // Show feedback
           const originalContent = copyLinkBtn.innerHTML;
           copyLinkBtn.innerHTML = '<span class="material-symbols-outlined text-lg">check</span>';
-          copyLinkBtn.classList.add('bg-green-600');
-          copyLinkBtn.classList.remove('bg-slate-700');
+          copyLinkBtn.classList.add('border-primary', 'text-primary');
+          copyLinkBtn.classList.remove('border-white/15', 'text-white/55');
           
           setTimeout(() => {
             copyLinkBtn.innerHTML = originalContent;
-            copyLinkBtn.classList.remove('bg-green-600');
-            copyLinkBtn.classList.add('bg-slate-700');
+            copyLinkBtn.classList.remove('border-primary', 'text-primary');
+            copyLinkBtn.classList.add('border-white/15', 'text-white/55');
           }, 2000);
         } catch (err) {
           console.error('Failed to copy:', err);
@@ -170,12 +170,12 @@ const telegramUrl = `https://t.me/share/url?url=${encodedUrl}&text=${encodedText
             document.execCommand('copy');
             const originalContent = copyLinkBtn.innerHTML;
             copyLinkBtn.innerHTML = '<span class="material-symbols-outlined text-lg">check</span>';
-            copyLinkBtn.classList.add('bg-green-600');
-            copyLinkBtn.classList.remove('bg-slate-700');
+            copyLinkBtn.classList.add('border-primary', 'text-primary');
+            copyLinkBtn.classList.remove('border-white/15', 'text-white/55');
             setTimeout(() => {
               copyLinkBtn.innerHTML = originalContent;
-              copyLinkBtn.classList.remove('bg-green-600');
-              copyLinkBtn.classList.add('bg-slate-700');
+              copyLinkBtn.classList.remove('border-primary', 'text-primary');
+              copyLinkBtn.classList.add('border-white/15', 'text-white/55');
             }, 2000);
           } catch (fallbackErr) {
             console.error('Fallback copy failed:', fallbackErr);

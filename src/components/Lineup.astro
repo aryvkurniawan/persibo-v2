@@ -46,6 +46,17 @@ const isValidPlayer = (p: MatchDetailPlayer): boolean => {
 const validStartingXI = lineup.starting_xi.filter(isValidPlayer);
 const validSubstitutes = lineup.substitutes.filter(isValidPlayer);
 
+// The scrape repeats players; keep the first occurrence of each shirt number + name.
+const uniquePlayers = (list: MatchDetailPlayer[]) => {
+  const seen = new Set<string>();
+  return list.filter((p) => {
+    const key = `${p.jersey_number}:${p.name}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+};
+
 // Group players by position
 const groupByPosition = (players: MatchDetailPlayer[]) => {
   const grouped: Record<string, MatchDetailPlayer[]> = {};
@@ -59,51 +70,48 @@ const groupByPosition = (players: MatchDetailPlayer[]) => {
   return grouped;
 };
 
-const startingXIGrouped = groupByPosition(validStartingXI);
+const startingXIGrouped = groupByPosition(uniquePlayers(validStartingXI));
+const uniqueSubs = uniquePlayers(validSubstitutes);
 const positionOrder = ['Penjaga Gawang', 'Belakang', 'Gelandang', 'Penyerang', 'Lainnya'];
 ---
 
-<div class="rounded-xl bg-slate-800/50 border border-slate-700 p-4">
-  <div class="flex items-center gap-2 mb-4">
-    <h3 class="text-lg font-bold text-white">{teamName}</h3>
+<div class="border border-white/12 bg-[#0c0b0f]">
+  <div class="flex flex-wrap items-baseline justify-between gap-2 border-b border-white/10 px-4 py-3">
+    <h3 class="font-cond text-xl font-semibold uppercase leading-none text-white">{teamName}</h3>
     {lineup.coach && (
-      <span class="text-xs text-slate-400">Pelatih: {lineup.coach}</span>
+      <span class="text-[9px] uppercase tracking-[0.14em] text-white/35">Pelatih: {lineup.coach}</span>
     )}
   </div>
 
   <!-- Starting XI -->
-  <div class="mb-4">
-    <h4 class="text-sm font-bold text-slate-300 mb-3">Starting XI</h4>
-    <div class="space-y-3">
+  <div class="px-4 py-3">
+    <p class="text-[9px] font-bold uppercase tracking-[0.18em] text-primary">Starting XI</p>
+    <div class="mt-2 space-y-3">
       {positionOrder.map(position => {
         const playersInPosition = startingXIGrouped[position] || [];
         if (playersInPosition.length === 0) return null;
-        
+
         return (
           <div key={position}>
-            <p class="text-xs font-medium text-slate-400 mb-2">{position}</p>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+            <p class="mb-1.5 text-[8px] font-bold uppercase tracking-[0.16em] text-white/30">{position}</p>
+            <div class="grid grid-cols-1 gap-1 sm:grid-cols-2">
               {playersInPosition.map((player) => {
-                const playerData = players.find(p => 
+                const playerData = players.find(p =>
                   p.name.toLowerCase().includes(player.name.toLowerCase().split(' ')[0]) ||
                   player.name.toLowerCase().includes(p.name.toLowerCase().split(' ')[0])
                 );
                 const slug = playerData ? playerData.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '') : null;
-                
+
                 return (
-                  <div class="flex items-center gap-2 p-2 rounded-lg bg-slate-900/50 hover:bg-slate-900/70 transition-colors">
-                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                      <span class="text-xs font-bold text-primary">{player.jersey_number}</span>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                      {slug ? (
-                        <a href={`/pemain/${slug}`} class="block text-sm text-white hover:text-primary transition-colors truncate">
-                          {player.name}
-                        </a>
-                      ) : (
-                        <span class="text-sm text-white truncate block">{player.name}</span>
-                      )}
-                    </div>
+                  <div class="flex items-center gap-2 py-1">
+                    <span class="w-6 shrink-0 text-right font-cond text-sm font-bold leading-none text-primary tnum">{player.jersey_number}</span>
+                    {slug ? (
+                      <a href={`/pemain/${slug}`} class="block truncate text-[13px] text-white/85 transition-colors hover:text-primary">
+                        {player.name}
+                      </a>
+                    ) : (
+                      <span class="block truncate text-[13px] text-white/85">{player.name}</span>
+                    )}
                   </div>
                 );
               })}
@@ -115,31 +123,27 @@ const positionOrder = ['Penjaga Gawang', 'Belakang', 'Gelandang', 'Penyerang', '
   </div>
 
   <!-- Substitutes -->
-  {validSubstitutes.length > 0 && (
-    <div>
-      <h4 class="text-sm font-bold text-slate-300 mb-3">Substitutes</h4>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-        {validSubstitutes.map((player) => {
-          const playerData = players.find(p => 
+  {uniqueSubs.length > 0 && (
+    <div class="border-t border-white/10 px-4 py-3">
+      <p class="text-[9px] font-bold uppercase tracking-[0.18em] text-white/35">Cadangan</p>
+      <div class="mt-2 grid grid-cols-1 gap-1 sm:grid-cols-2">
+        {uniqueSubs.map((player) => {
+          const playerData = players.find(p =>
             p.name.toLowerCase().includes(player.name.toLowerCase().split(' ')[0]) ||
             player.name.toLowerCase().includes(p.name.toLowerCase().split(' ')[0])
           );
           const slug = playerData ? playerData.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '') : null;
-          
+
           return (
-            <div class="flex items-center gap-2 p-2 rounded-lg bg-slate-900/30 hover:bg-slate-900/50 transition-colors">
-              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-slate-700/50 flex items-center justify-center">
-                <span class="text-xs font-bold text-slate-400">{player.jersey_number}</span>
-              </div>
-              <div class="flex-1 min-w-0">
-                {slug ? (
-                  <a href={`/pemain/${slug}`} class="block text-sm text-slate-300 hover:text-primary transition-colors truncate">
-                    {player.name}
-                  </a>
-                ) : (
-                  <span class="text-sm text-slate-300 truncate block">{player.name}</span>
-                )}
-              </div>
+            <div class="flex items-center gap-2 py-1">
+              <span class="w-6 shrink-0 text-right font-cond text-sm font-bold leading-none text-white/30 tnum">{player.jersey_number}</span>
+              {slug ? (
+                <a href={`/pemain/${slug}`} class="block truncate text-[13px] text-white/60 transition-colors hover:text-primary">
+                  {player.name}
+                </a>
+              ) : (
+                <span class="block truncate text-[13px] text-white/60">{player.name}</span>
+              )}
             </div>
           );
         })}

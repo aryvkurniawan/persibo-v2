@@ -56,66 +56,47 @@ const maxValue = topPerformers.length > 0 ? topPerformers[0].value : 1;
 ---
 
 {topPerformers.length > 0 && (
-  <div class="rounded-xl bg-background-dark/50 p-4 lg:p-6 ring-1 ring-white/10">
-    <div class="flex items-center justify-between mb-4">
-      <h4 class="text-lg lg:text-xl font-bold text-white">
+  <div class="border border-white/12 bg-[#0c0b0f] p-4">
+    <div class="mb-3 flex items-center justify-between border-b border-white/10 pb-3">
+      <h4 class="text-[9px] font-bold uppercase tracking-[0.18em] text-primary">
         {statType === 'goals' && 'Top Scorer'}
         {statType === 'appearances' && 'Most Appearances'}
         {statType === 'saves' && 'Top Goalkeeper'}
       </h4>
       {currentPlayerRank > 0 && currentPlayerRank <= limit && (
-        <span class="text-sm text-primary font-medium">Peringkat #{currentPlayerRank}</span>
+        <span class="text-[9px] font-bold uppercase tracking-[0.18em] text-white/40">Peringkat #{currentPlayerRank}</span>
       )}
     </div>
-    
-    <div class="space-y-3">
+
+    <div class="space-y-2">
       {topPerformers.map((item, index) => {
         const slug = item.player.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
         const isCurrentPlayer = item.player.name === currentPlayer.name;
         const percentage = maxValue > 0 ? (item.value / maxValue) * 100 : 0;
         
         return (
-          <a 
+          <a
             href={`/pemain/${slug}`}
-            class={`block p-3 rounded-lg transition-colors ${
-              isCurrentPlayer 
-                ? 'bg-primary/20 ring-1 ring-primary/30' 
-                : 'bg-slate-900/30 hover:bg-slate-900/50'
+            class={`block border-l-2 px-2 py-1.5 transition-colors ${
+              isCurrentPlayer
+                ? 'border-primary bg-primary/10'
+                : 'border-transparent hover:border-white/20'
             }`}
           >
-            <div class="flex items-center justify-between mb-2">
-              <div class="flex items-center gap-3">
-                <div class={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
-                  index === 0 
-                    ? 'bg-yellow-500 text-black' 
-                    : index === 1 
-                    ? 'bg-slate-400 text-black' 
-                    : index === 2
-                    ? 'bg-orange-600 text-white'
-                    : 'bg-slate-700 text-white'
-                }`}>
-                  {index + 1}
-                </div>
-                <div>
-                  <p class={`font-medium ${isCurrentPlayer ? 'text-primary' : 'text-white'}`}>
-                    {item.player.name}
-                  </p>
-                  <p class="text-xs text-slate-400">{item.player.position}</p>
-                </div>
-              </div>
-              <div class="text-right">
-                <p class={`text-lg font-bold ${isCurrentPlayer ? 'text-primary' : 'text-white'}`}>
-                  {item.value}
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex min-w-0 items-center gap-2">
+                <span class={`w-4 shrink-0 text-[10px] font-bold tnum ${isCurrentPlayer ? 'text-primary' : 'text-white/30'}`}>{index + 1}</span>
+                <p class={`truncate text-[13px] ${isCurrentPlayer ? 'font-semibold text-primary' : 'text-white/85'}`}>
+                  {item.player.name}
                 </p>
               </div>
+              <span class={`shrink-0 font-cond text-lg font-semibold leading-none tnum ${isCurrentPlayer ? 'text-primary' : 'text-white'}`}>
+                {item.value}
+              </span>
             </div>
-            
-            {/* Progress Bar */}
-            <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
-              <div 
-                class={`h-full transition-all ${
-                  isCurrentPlayer ? 'bg-primary' : 'bg-accent-teal'
-                }`}
+            <div class="mt-1.5 h-0.5 w-full bg-white/5">
+              <div
+                class={`h-full ${isCurrentPlayer ? 'bg-primary' : 'bg-white/25'}`}
                 style={`width: ${percentage}%`}
               ></div>
             </div>
@@ -124,20 +105,13 @@ const maxValue = topPerformers.length > 0 ? topPerformers[0].value : 1;
       })}
       
       {currentPlayerRank > limit && (
-        <div class="pt-2 border-t border-slate-700">
-          <div class="p-3 rounded-lg bg-slate-900/30">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold bg-slate-700 text-white">
-                  {currentPlayerRank}
-                </div>
-                <div>
-                  <p class="font-medium text-primary">Anda</p>
-                  <p class="text-xs text-slate-400">{currentPlayer.position}</p>
-                </div>
-              </div>
-              <p class="text-lg font-bold text-primary">{currentPlayerValue}</p>
+        <div class="mt-2 border-t border-white/10 pt-2">
+          <div class="flex items-center justify-between px-2 py-1.5">
+            <div class="flex min-w-0 items-center gap-2">
+              <span class="w-4 shrink-0 text-[10px] font-bold text-primary tnum">{currentPlayerRank}</span>
+              <p class="truncate text-[13px] font-semibold text-primary">{currentPlayer.name}</p>
             </div>
+            <span class="shrink-0 font-cond text-lg font-semibold leading-none text-primary tnum">{currentPlayerValue}</span>
           </div>
         </div>
       )}

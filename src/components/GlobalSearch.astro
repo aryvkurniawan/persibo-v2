@@ -9,14 +9,19 @@ const uniqueId = `search-${Math.random().toString(36).substr(2, 9)}`;
     <input
       type="text"
       data-search-input
-      placeholder="Cari pemain, berita, pertandingan..."
-      class="w-full px-4 py-2 pl-10 pr-10 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:ring-2 focus:ring-primary focus:border-primary transition-all text-sm lg:text-base min-h-[40px]"
+      placeholder="Cari pemain, berita…"
+      class="w-full min-h-[40px] border border-white/15 bg-[#0c0b0f] py-2 pl-10 pr-10 text-[11px] font-semibold uppercase tracking-[0.12em] text-white placeholder:text-white/35 focus:border-primary focus:outline-none"
       autocomplete="off"
+      role="combobox"
+      aria-label="Cari pemain, berita, pertandingan"
+      aria-autocomplete="list"
+      aria-expanded="false"
+      aria-controls={`${uniqueId}-results`}
     />
-    <span class="material-symbols-outlined absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 text-lg">search</span>
+    <span class="material-symbols-outlined absolute left-3 top-1/2 transform -translate-y-1/2 text-white/40 text-lg">search</span>
     <button
       data-clear-search-btn
-      class="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-white hidden"
+      class="absolute right-3 top-1/2 transform -translate-y-1/2 text-white/40 hover:text-white hidden"
       aria-label="Hapus pencarian"
     >
       <span class="material-symbols-outlined text-lg">close</span>
@@ -26,19 +31,21 @@ const uniqueId = `search-${Math.random().toString(36).substr(2, 9)}`;
   <!-- Search Results Dropdown -->
   <div
     data-search-results
-    class="hidden absolute top-full left-0 right-0 mt-2 bg-slate-900 border border-slate-700 rounded-lg shadow-2xl max-h-[70vh] overflow-y-auto z-50"
+    id={`${uniqueId}-results`}
+    role="listbox"
+    class="hidden absolute top-full left-0 right-0 mt-2 bg-[#0c0b0f] border border-white/15 shadow-2xl max-h-[70vh] overflow-y-auto z-50"
   >
-    <div data-search-loading class="hidden p-4 text-center text-slate-400">
+    <div data-search-loading class="hidden p-4 text-center text-white/40">
       <span class="material-symbols-outlined animate-spin">sync</span>
-      <p class="mt-2 text-sm">Mencari...</p>
+      <p class="mt-2 text-xs uppercase tracking-[0.14em]">Mencari...</p>
     </div>
-    
-    <div data-search-no-results class="hidden p-4 text-center text-slate-400">
+
+    <div data-search-no-results class="hidden p-4 text-center text-white/40">
       <span class="material-symbols-outlined text-3xl mb-2">search_off</span>
-      <p class="text-sm">Tidak ada hasil ditemukan</p>
+      <p class="text-xs uppercase tracking-[0.14em]">Tidak ada hasil ditemukan</p>
     </div>
-    
-    <div data-search-results-list class="divide-y divide-slate-800"></div>
+
+    <div data-search-results-list class="divide-y divide-white/10"></div>
   </div>
 </div>
 
@@ -146,16 +153,55 @@ const uniqueId = `search-${Math.random().toString(36).substr(2, 9)}`;
     // Initialize a single search instance
     function initializeSearchInstance(searchInput, searchResults, searchResultsList, searchLoading, searchNoResults, clearSearchBtn, container, searchId) {
       let searchTimeout;
+      let activeIndex = -1;
+
+      function getOptions() {
+        return Array.from(searchResultsList.querySelectorAll('[role="option"]'));
+      }
+
+      function setActive(index) {
+        const options = getOptions();
+        if (options.length === 0 || index < 0) {
+          activeIndex = -1;
+          options.forEach(option => {
+            option.classList.remove('bg-white/5');
+            option.setAttribute('aria-selected', 'false');
+          });
+          searchInput.removeAttribute('aria-activedescendant');
+          return;
+        }
+        activeIndex = (index + options.length) % options.length;
+        options.forEach((option, i) => {
+          const isActive = i === activeIndex;
+          option.classList.toggle('bg-white/5', isActive);
+          option.setAttribute('aria-selected', String(isActive));
+          if (isActive) {
+            searchInput.setAttribute('aria-activedescendant', option.id);
+            option.scrollIntoView({ block: 'nearest' });
+          }
+        });
+      }
+
+      function setExpanded(expanded) {
+        searchResults.classList.toggle('hidden', !expanded);
+        searchInput.setAttribute('aria-expanded', String(expanded));
+        if (!expanded) {
+          setActive(-1);
+          searchInput.removeAttribute('aria-activedescendant');
+        }
+      }
       
       // Render search results
       function renderResults(results, query) {
         if (!results || results.length === 0) {
           searchResultsList.innerHTML = '';
+          activeIndex = -1;
+          searchInput.removeAttribute('aria-activedescendant');
           searchNoResults.classList.remove('hidden');
-          searchResults.classList.remove('hidden');
+          setExpanded(true);
           return;
         }
-        
+
         searchNoResults.classList.add('hidden');
         const grouped = results.reduce((acc, item) => {
           if (!acc[item.category]) acc[item.category] = [];
@@ -165,14 +211,15 @@ const uniqueId = `search-${Math.random().toString(36).substr(2, 9)}`;
         
         let html = '';
         const categoryOrder = ['Pemain', 'Berita', 'Pertandingan', 'Tim'];
+        let optionIndex = 0;
         
         categoryOrder.forEach(category => {
           if (!grouped[category] || grouped[category].length === 0) return;
           
           html += `
-            <div class="p-3 bg-slate-800/30">
-              <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">${category}</h3>
-              <div class="space-y-1">
+            <div class="p-3 bg-white/[0.02]" role="group" aria-label="${category}">
+              <h3 class="mb-2 text-[9px] font-bold uppercase tracking-[0.2em] text-primary" aria-hidden="true">${category}</h3>
+              <div class="space-y-1" role="none">
           `;
           
           grouped[category].slice(0, 5).forEach(item => {
@@ -181,8 +228,11 @@ const uniqueId = `search-${Math.random().toString(36).substr(2, 9)}`;
             
             html += `
               <a
+                id="${searchId}-option-${optionIndex++}"
+                role="option"
+                aria-selected="false"
                 href="${hasUrl ? item.url : '#'}"
-                class="block p-3 rounded-lg hover:bg-slate-800 transition-colors ${!hasUrl ? 'cursor-not-allowed opacity-60' : ''}"
+                class="block p-3 transition-colors hover:bg-white/5 ${!hasUrl ? 'cursor-not-allowed opacity-60' : ''}"
                 ${hasUrl ? '' : 'onclick="return false;"'}
               >
                 <div class="flex items-start gap-3">
@@ -190,19 +240,19 @@ const uniqueId = `search-${Math.random().toString(36).substr(2, 9)}`;
                     <img
                       src="${item.image}"
                       alt="${escapedTitle}"
-                      class="w-10 h-10 rounded-lg object-cover flex-shrink-0"
+                      class="h-9 w-9 flex-shrink-0 object-contain"
                       loading="lazy"
                     />
                   ` : `
-                    <div class="w-10 h-10 rounded-lg bg-slate-700 flex items-center justify-center flex-shrink-0">
-                      <span class="material-symbols-outlined text-slate-400 text-lg">
+                    <div class="flex h-9 w-9 flex-shrink-0 items-center justify-center bg-white/5">
+                      <span class="material-symbols-outlined text-lg text-white/40">
                         ${category === 'Pemain' ? 'person' : category === 'Berita' ? 'article' : category === 'Pertandingan' ? 'sports_soccer' : 'groups'}
                       </span>
                     </div>
                   `}
-                  <div class="flex-1 min-w-0">
-                    <h4 class="text-sm font-medium text-white mb-1 line-clamp-1 search-result-title" data-title="${escapedTitle}"></h4>
-                    <p class="text-xs text-slate-400 line-clamp-1">${item.subtitle || ''}</p>
+                  <div class="min-w-0 flex-1">
+                    <h4 class="mb-1 line-clamp-1 text-sm font-semibold text-white search-result-title" data-title="${escapedTitle}"></h4>
+                    <p class="line-clamp-1 text-[10px] uppercase tracking-[0.12em] text-white/35">${item.subtitle || ''}</p>
                   </div>
                 </div>
               </a>
@@ -216,7 +266,9 @@ const uniqueId = `search-${Math.random().toString(36).substr(2, 9)}`;
         });
         
         searchResultsList.innerHTML = html;
-        searchResults.classList.remove('hidden');
+        activeIndex = -1;
+        searchInput.removeAttribute('aria-activedescendant');
+        setExpanded(true);
         
         // Apply highlighting
         if (query && query.length > 0) {
@@ -238,17 +290,17 @@ const uniqueId = `search-${Math.random().toString(36).substr(2, 9)}`;
       // Perform search
       async function performSearch(query) {
         if (!query || query.length < 2) {
-          searchResults.classList.add('hidden');
+          setExpanded(false);
           return;
         }
-        
+
         const index = await loadSearchIndex();
         if (!index) {
           return;
         }
-        
+
         searchLoading.classList.remove('hidden');
-        searchResults.classList.remove('hidden');
+        setExpanded(true);
         
         const players = searchItems(query, index.players || []);
         const news = searchItems(query, index.news || []);
@@ -263,19 +315,21 @@ const uniqueId = `search-${Math.random().toString(36).substr(2, 9)}`;
       
       // Input handler
       function handleInput(e) {
+        if (e.type === 'keyup' && ['Escape', 'ArrowDown', 'ArrowUp'].includes(e.key)) return;
         clearTimeout(searchTimeout);
         const query = e.target.value.trim();
-        
+
         if (clearSearchBtn) {
           clearSearchBtn.classList.toggle('hidden', !query);
         }
-        
+
         if (query.length < 2) {
-          searchResults.classList.add('hidden');
           searchResultsList.innerHTML = '';
+          searchNoResults.classList.add('hidden');
+          setExpanded(false);
           return;
         }
-        
+
         searchTimeout = setTimeout(() => {
           performSearch(query);
         }, 300);
@@ -289,24 +343,48 @@ const uniqueId = `search-${Math.random().toString(36).substr(2, 9)}`;
       if (clearSearchBtn) {
         clearSearchBtn.addEventListener('click', () => {
           searchInput.value = '';
-          searchResults.classList.add('hidden');
+          setExpanded(false);
           clearSearchBtn.classList.add('hidden');
           searchInput.focus();
         });
       }
-      
+
       // Close on outside click
       document.addEventListener('click', (e) => {
         if (!container.contains(e.target)) {
-          searchResults.classList.add('hidden');
+          setExpanded(false);
         }
       });
-      
-      // ESC to close
+
+      // Hover highlights the option
+      searchResultsList.addEventListener('mouseover', (e) => {
+        const option = e.target.closest('[role="option"]');
+        if (!option) return;
+        const index = getOptions().indexOf(option);
+        if (index !== -1 && index !== activeIndex) setActive(index);
+      });
+
+      // Keyboard navigation
       searchInput.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
-          searchResults.classList.add('hidden');
+          setExpanded(false);
           searchInput.blur();
+          return;
+        }
+
+        if (searchResults.classList.contains('hidden')) return;
+        const options = getOptions();
+        if (options.length === 0) return;
+
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          setActive(activeIndex + 1);
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          setActive(activeIndex <= 0 ? -1 : activeIndex - 1);
+        } else if (e.key === 'Enter' && activeIndex >= 0) {
+          e.preventDefault();
+          options[activeIndex].click();
         }
       });
     }

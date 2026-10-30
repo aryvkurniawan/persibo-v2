@@ -6,15 +6,15 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<nav class="px-4 py-2 mb-4" aria-label="Breadcrumb">
-  <ol class="flex items-center gap-2 text-sm flex-wrap">
+<nav class="mb-6" aria-label="Breadcrumb">
+  <ol class="flex flex-wrap items-center gap-1.5 text-[9px] font-bold uppercase tracking-[0.16em]">
     {items.map((item, index) => (
       <li class="flex items-center gap-2">
-        {index > 0 && <span class="material-symbols-outlined text-slate-500 text-base">chevron_right</span>}
+        {index > 0 && <span class="text-white/20">/</span>}
         {index === items.length - 1 ? (
-          <span class="text-slate-400 font-medium">{item.label}</span>
+          <span class="text-white/50">{item.label}</span>
         ) : (
-          <a href={item.href} class="text-slate-400 hover:text-white transition-colors">
+          <a href={item.href} class="inline-flex items-center text-white/30 transition-colors hover:text-primary">
             {item.label}
           </a>
         )}

@@ -1,58 +1,71 @@
 ---
 import type { Standing } from '../types';
-import { loadTeams, getTeamLogo } from '../utils/dataLoader';
-import { optimizeTeamLogo } from '../utils/imageOptimizer';
+import { loadTeams, getTeamLogo, CURRENT_SEASON, type Season } from '../utils/dataLoader';
 
 interface Props {
   standings: Standing[];
   group: string;
   highlightTeam?: string;
+  season?: Season;
 }
 
-const { standings, group, highlightTeam = 'PERSIBO Bojonegoro' } = Astro.props;
+const { standings, group, highlightTeam = 'PERSIBO', season = CURRENT_SEASON } = Astro.props;
 const groupStandings = standings.filter(s => s.group === group).sort((a, b) => a.position - b.position);
-const teams = await loadTeams();
+const teams = await loadTeams(season);
+const isHighlighted = (club: string) => club.toUpperCase().includes(highlightTeam.toUpperCase());
+
+const th = 'px-1.5 py-2.5 text-right text-[9px] font-bold uppercase tracking-[0.16em] text-white/30 sm:px-2 lg:px-3';
+const td = 'px-1.5 py-2.5 text-right text-[11px] tnum sm:px-2 lg:px-3';
 ---
 
-<div class="overflow-hidden rounded-xl border border-primary/20 bg-black/30">
-  <div class="overflow-x-auto lg:overflow-x-visible">
-    <table class="w-full min-w-[600px] lg:min-w-full">
+<div class="overflow-hidden border border-white/12 bg-[#0c0b0f]">
+  <div class="overflow-x-auto">
+    <table class="w-full table-fixed">
       <thead>
-        <tr class="border-b border-primary/20">
-          <th class="px-3 lg:px-4 py-3 lg:py-4 text-center text-xs lg:text-sm font-semibold uppercase tracking-wider text-zinc-400" style="width: 40px;">#</th>
-          <th class="px-3 lg:px-4 py-3 lg:py-4 text-left text-xs lg:text-sm font-semibold uppercase tracking-wider text-zinc-400" style="min-width: 150px;">Tim</th>
-          <th class="px-3 lg:px-4 py-3 lg:py-4 text-center text-xs lg:text-sm font-semibold uppercase tracking-wider text-zinc-400" style="width: 50px;">Main</th>
-          <th class="px-3 lg:px-4 py-3 lg:py-4 text-center text-xs lg:text-sm font-semibold uppercase tracking-wider text-zinc-400" style="width: 50px;">Menang</th>
-          <th class="px-3 lg:px-4 py-3 lg:py-4 text-center text-xs lg:text-sm font-semibold uppercase tracking-wider text-zinc-400" style="width: 50px;">Seri</th>
-          <th class="px-3 lg:px-4 py-3 lg:py-4 text-center text-xs lg:text-sm font-semibold uppercase tracking-wider text-zinc-400" style="width: 50px;">Kalah</th>
-          <th class="px-3 lg:px-4 py-3 lg:py-4 text-center text-xs lg:text-sm font-semibold uppercase tracking-wider text-zinc-400" style="width: 70px;">Gol</th>
-          <th class="px-3 lg:px-4 py-3 lg:py-4 text-center text-xs lg:text-sm font-bold uppercase tracking-wider text-zinc-400" style="width: 50px;">Poin</th>
+        <tr class="border-b border-white/10">
+          <th class="w-7 px-1.5 py-2.5 text-left sm:px-2 text-[9px] font-bold uppercase tracking-[0.16em] text-white/30 lg:px-3">#</th>
+          <th class="px-1.5 py-2.5 text-left sm:px-2 text-[9px] font-bold uppercase tracking-[0.16em] text-white/30 lg:px-3">Klub</th>
+          <th class={`${th} w-10`}>Main</th>
+          <th class={`${th} hidden w-9 sm:table-cell`}>M</th>
+          <th class={`${th} hidden w-9 sm:table-cell`}>S</th>
+          <th class={`${th} hidden w-9 sm:table-cell`}>K</th>
+          <th class={`${th} hidden w-10 sm:table-cell`}>SG</th>
+          <th class={`${th} w-10`}>Pts</th>
         </tr>
       </thead>
-      <tbody>
-        {groupStandings.map((standing) => (
-          <tr class={`border-b border-primary/20 hover:bg-slate-800/30 transition-colors ${standing.club === highlightTeam ? 'bg-primary/20' : ''}`}>
-            <td class={`px-3 lg:px-4 py-2 lg:py-3 text-center text-sm lg:text-base font-bold ${standing.club === highlightTeam ? 'text-primary' : 'text-zinc-200'}`}>{standing.position}</td>
-            <td class={`px-3 lg:px-4 py-2 lg:py-3 text-sm lg:text-base font-bold ${standing.club === highlightTeam ? 'text-primary' : 'text-white'}`}>
-              <div class="flex items-center gap-2 lg:gap-3">
-                {(() => {
-                  const teamLogoRaw = standing.club === highlightTeam ? '/logo-32.png' : (getTeamLogo(teams, standing.club) || null);
-                  const teamLogo = optimizeTeamLogo(teamLogoRaw, 32);
-                  return teamLogo ? (
-                    <img src={teamLogo} alt={`Logo ${standing.club} - Posisi ${standing.position} di klasemen Liga Nusantara 2025-2026 Grup ${group}`} class="h-6 w-6 lg:h-7 lg:w-7 object-contain" />
-                  ) : null;
-                })()}
-                <span>{standing.club}</span>
-              </div>
-            </td>
-            <td class={`px-3 lg:px-4 py-2 lg:py-3 text-center text-sm lg:text-base ${standing.club === highlightTeam ? 'font-bold text-primary' : 'font-medium text-zinc-300'}`}>{standing.played}</td>
-            <td class={`px-3 lg:px-4 py-2 lg:py-3 text-center text-sm lg:text-base ${standing.club === highlightTeam ? 'font-bold text-primary' : 'font-medium text-zinc-300'}`}>{standing.won}</td>
-            <td class={`px-3 lg:px-4 py-2 lg:py-3 text-center text-sm lg:text-base ${standing.club === highlightTeam ? 'font-bold text-primary' : 'font-medium text-zinc-300'}`}>{typeof standing.drawn === 'number' ? standing.drawn : (typeof standing.drawn === 'string' && standing.drawn.startsWith('-') ? '0' : standing.drawn)}</td>
-            <td class={`px-3 lg:px-4 py-2 lg:py-3 text-center text-sm lg:text-base ${standing.club === highlightTeam ? 'font-bold text-primary' : 'font-medium text-zinc-300'}`}>{typeof standing.lost === 'number' ? standing.lost : (standing.lost || '0')}</td>
-            <td class={`px-3 lg:px-4 py-2 lg:py-3 text-center text-sm lg:text-base ${standing.club === highlightTeam ? 'font-bold text-primary' : 'font-medium text-zinc-300'}`}>{standing.goals_for}:{standing.goals_against}</td>
-            <td class={`px-3 lg:px-4 py-2 lg:py-3 text-center text-sm lg:text-base font-bold ${standing.club === highlightTeam ? 'text-primary' : 'text-white'}`}>{standing.points}</td>
-          </tr>
-        ))}
+      <tbody class="divide-y divide-white/5">
+        {groupStandings.map((standing) => {
+          const isPersibo = isHighlighted(standing.club);
+          const teamLogo = isPersibo ? '/logo-32.png' : (getTeamLogo(teams, standing.club) || null);
+          return (
+            <tr class={`transition-colors hover:bg-white/[0.03] ${isPersibo ? 'bg-primary/10' : ''}`}>
+              <td class={`${td} text-left ${isPersibo ? 'text-primary' : 'text-white/35'}`}>{standing.position}</td>
+              <td class="px-1.5 py-2.5 sm:px-2 lg:px-3">
+                <div class="flex items-center gap-2">
+                  {teamLogo && (
+                    <img
+                      src={teamLogo}
+                      alt=""
+                      class="h-5 w-5 shrink-0 object-contain"
+                      loading="lazy"
+                      width="20"
+                      height="20"
+                    />
+                  )}
+                  <span class={`line-clamp-2 text-[10px] font-semibold uppercase leading-tight tracking-wide sm:line-clamp-1 sm:text-[11px] ${isPersibo ? 'text-primary' : 'text-white/80'}`}>
+                    {standing.club}
+                  </span>
+                </div>
+              </td>
+              <td class={`${td} ${isPersibo ? 'text-primary' : 'text-white/40'}`}>{standing.played}</td>
+              <td class={`${td} hidden sm:table-cell ${isPersibo ? 'text-primary' : 'text-white/60'}`}>{standing.won}</td>
+              <td class={`${td} hidden sm:table-cell ${isPersibo ? 'text-primary' : 'text-white/60'}`}>{standing.drawn}</td>
+              <td class={`${td} hidden sm:table-cell ${isPersibo ? 'text-primary' : 'text-white/60'}`}>{standing.lost}</td>
+              <td class={`${td} hidden sm:table-cell ${isPersibo ? 'text-primary' : 'text-white/60'}`}>{standing.goal_diff > 0 ? `+${standing.goal_diff}` : standing.goal_diff}</td>
+              <td class={`${td} font-bold ${isPersibo ? 'text-primary' : 'text-white'}`}>{standing.points}</td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   </div>
