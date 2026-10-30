@@ -1,0 +1,63 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import StandingsTable from '../../components/StandingsTable.astro';
+import MatchCard from '../../components/MatchCard.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import { loadStandings, loadFixtures, getPersiboStanding, getCompletedFixtures, ARCHIVE_SEASON } from '../../utils/dataLoader';
+
+const standings = await loadStandings(ARCHIVE_SEASON);
+const fixtures = getCompletedFixtures(await loadFixtures(ARCHIVE_SEASON));
+const persibo = getPersiboStanding(standings);
+const groups = [...new Set(standings.map((standing) => standing.group))].sort();
+---
+
+<Layout
+  title="Arsip Liga Nusantara 2025-26 - PERSIBO Bojonegoro (Unofficial)"
+  description="Arsip musim 2025-26 PERSIBO Bojonegoro: klasemen final dan seluruh hasil pertandingan."
+>
+  <div class="mx-auto max-w-7xl px-4 py-8 lg:px-6 lg:py-12">
+    <PageHeader
+      label="Arsip musim"
+      title="2025-26"
+      meta={`${fixtures.length} laga`}
+      description={`Musim telah selesai. PERSIBO Bojonegoro finis di peringkat ${persibo?.position} Grup ${persibo?.group} dengan ${persibo?.points} poin dari ${persibo?.played} laga.`}
+    />
+
+    <section class="mt-8">
+      <div class="mb-4 flex items-end justify-between border-b border-white/15 pb-3">
+        <h2 class="font-cond text-2xl font-bold uppercase tracking-wide text-white">Klasemen final</h2>
+        <span class="text-[10px] uppercase tracking-[0.18em] text-white/30">Grup {groups.join(' · ')}</span>
+      </div>
+      <div class="space-y-6">
+        {groups.map((group) => (
+          <div>
+            <h3 class="mb-3 text-[10px] font-bold uppercase tracking-[0.18em] text-white/40">Grup {group}</h3>
+            <StandingsTable standings={standings} group={group} season={ARCHIVE_SEASON} />
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="mt-10">
+      <div class="mb-4 flex items-end justify-between border-b border-white/15 pb-3">
+        <h2 class="font-cond text-2xl font-bold uppercase tracking-wide text-white">Hasil pertandingan</h2>
+        <span class="text-[10px] uppercase tracking-[0.18em] text-white/30">{fixtures.length} laga</span>
+      </div>
+      <div class="grid gap-3 lg:grid-cols-2">
+        {fixtures.map((fixture) => <MatchCard match={fixture} season={ARCHIVE_SEASON} />)}
+      </div>
+    </section>
+
+    <div class="mt-10 flex flex-wrap items-center gap-6 border-t border-white/10 pt-6">
+      <a href="/arsip/2024-25" class="text-[10px] font-bold uppercase tracking-[0.18em] text-primary hover:text-primary/80">
+        Arsip 2024-25 →
+      </a>
+      <a href="/arsip/pemain" class="text-[10px] font-bold uppercase tracking-[0.18em] text-primary hover:text-primary/80">
+        Semua pemain →
+      </a>
+      <a href="/" class="text-[10px] font-bold uppercase tracking-[0.18em] text-white/40 hover:text-white/70">
+        Kembali ke musim 2026-27
+      </a>
+    </div>
+  </div>
+</Layout>

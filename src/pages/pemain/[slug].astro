@@ -16,7 +16,7 @@ export async function getStaticPaths() {
     if (existingDetail) {
       return {
         ...existingDetail,
-        photo_url: player.photo_url || existingDetail.photo_url,
+        photo_url: player.photo_local || player.photo_url || existingDetail.photo_url,
       };
     }
     
@@ -30,7 +30,7 @@ export async function getStaticPaths() {
       position: player.position || '',
       age: player.age,
       country: player.country,
-      photo_url: player.photo_url,
+      photo_url: player.photo_local || player.photo_url,
       statistics: {
         appearances: parseInt(player.appearances) || 0,
         goals: 0,
@@ -54,7 +54,7 @@ export async function getStaticPaths() {
 const { player } = Astro.props;
 const slug = player.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
 
-const ogImage = player.photo_url || undefined;
+const ogImage = player.photo_local || player.photo_url || undefined;
 
 const breadcrumbItems = [
   { label: 'Beranda', href: '/' },

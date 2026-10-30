@@ -1,0 +1,85 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import faces from '../../data/players/faces.json';
+
+type Face = {
+  player_id: number;
+  name: string;
+  seasons: string[];
+  photo_url: string;
+  photo_local?: string;
+};
+
+// Everyone who has worn the shirt, newest season first. iLeague re-registers
+// players each year, so this list is the one place that remembers them across
+// seasons even after their registration lapses.
+const players = (faces as Face[])
+  .map((player) => ({
+    ...player,
+    seasons: [...player.seasons].sort().reverse(),
+    latest: [...player.seasons].sort().reverse()[0] ?? '',
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const bySeason = players.reduce<Record<string, number>>((acc, player) => {
+  for (const season of player.seasons) acc[season] = (acc[season] ?? 0) + 1;
+  return acc;
+}, {});
+
+const seasonLabels = Object.keys(bySeason).sort().reverse();
+const currentSquad = players.filter((p) => p.seasons.includes('2025-26')).length;
+---
+
+<Layout
+  title="Arsip Pemain PERSIBO Bojonegoro - Semua yang Pernah Berkostum (Unofficial)"
+  description={`Arsip ${players.length} pemain yang pernah memperkuat PERSIBO Bojonegoro, lengkap dengan musim dan fotonya.`}
+>
+  <div class="mx-auto max-w-7xl px-4 py-8 lg:px-6 lg:py-12">
+    <PageHeader
+      label="Arsip pemain"
+      title="Pernah di Persibo"
+      meta={`${players.length} pemain`}
+      description={`Setiap pemain yang pernah tampil untuk PERSIBO Bojonegoro sejak 2024-25, lengkap dengan fotonya. ${currentSquad} di antaranya masih tercatat di skuad 2025-26.`}
+    />
+
+    <div class="mt-6 flex flex-wrap gap-2">
+      {seasonLabels.map((season) => (
+        <span class="border border-white/12 bg-[#0c0b0f] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-white/50">
+          {season} <span class="text-primary">{bySeason[season]}</span>
+        </span>
+      ))}
+    </div>
+
+    <div class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 lg:gap-4">
+      {players.map((player) => (
+        <article class="group flex flex-col border border-white/12 bg-[#0c0b0f] transition-colors hover:border-primary/50">
+          <div class="relative aspect-[4/5] w-full overflow-hidden bg-[#161318]">
+            {player.photo_local ? (
+              <img
+                src={player.photo_local}
+                alt={`Foto ${player.name}, mantan pemain PERSIBO Bojonegoro`}
+                class="h-full w-full object-cover object-top opacity-90 transition-opacity group-hover:opacity-100"
+                loading="lazy"
+                width="400"
+                height="500"
+              />
+            ) : (
+              <div class="flex h-full items-center justify-center text-[10px] uppercase tracking-[0.16em] text-white/20">
+                Tanpa foto
+              </div>
+            )}
+          </div>
+          <div class="flex flex-1 flex-col gap-1 border-t border-white/10 p-3">
+            <h2 class="line-clamp-2 text-[11px] font-bold uppercase leading-tight tracking-wide text-white/85">
+              {player.name}
+            </h2>
+            <p class="mt-auto text-[10px] uppercase tracking-[0.14em] text-white/30">
+              {player.seasons.join(' · ')}
+            </p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</Layout>

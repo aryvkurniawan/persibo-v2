@@ -1,0 +1,83 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import StandingsTable from '../../components/StandingsTable.astro';
+import MatchCard from '../../components/MatchCard.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import { loadStandings, loadFixtures, getPersiboStanding, getCompletedFixtures } from '../../utils/dataLoader';
+
+const SEASON = '2024-25' as const;
+
+const standings = await loadStandings(SEASON);
+const fixtures = getCompletedFixtures(await loadFixtures(SEASON));
+
+// Liga 2 2024-25 ran in three stages: a seven-group first round, a four-group
+// play-off, then two groups of eight. Persibo's run ended in the play-off, so
+// the page walks the stages in the order they were played.
+const stageOrder = ['Penyisihan', 'Play-off', '8 Besar'];
+const stages = stageOrder
+  .map((stage) => ({
+    stage,
+    groups: [...new Set(standings.filter((s) => s.stage === stage).map((s) => s.group))].sort(),
+    rows: standings.filter((s) => s.stage === stage),
+  }))
+  .filter((s) => s.rows.length > 0);
+
+const persibo = standings.find(
+  (s) => s.club.toUpperCase().includes('PERSIBO') && s.stage === 'Play-off'
+);
+---
+
+<Layout
+  title="Arsip Liga 2 2024-25 - PERSIBO Bojonegoro (Unofficial)"
+  description="Arsip musim 2024-25 PERSIBO Bojonegoro di Liga 2: klasemen penyisihan, play-off, dan seluruh hasil pertandingan."
+>
+  <div class="mx-auto max-w-7xl px-4 py-8 lg:px-6 lg:py-12">
+    <PageHeader
+      label="Arsip musim"
+      title="2024-25"
+      meta={`${fixtures.length} laga`}
+      description={`Musim Liga 2 2024-25. PERSIBO Bojonegoro finis di peringkat ${persibo?.position} Grup ${persibo?.group} pada fase play-off dengan ${persibo?.points} poin dari ${persibo?.played} laga.`}
+    />
+
+    {stages.map(({ stage, groups, rows }) => (
+      <section class="mt-8">
+        <div class="mb-4 flex items-end justify-between border-b border-white/15 pb-3">
+          <h2 class="font-cond text-2xl font-bold uppercase tracking-wide text-white">
+            {stage === 'Penyisihan' ? 'Fase penyisihan' : stage === 'Play-off' ? 'Fase play-off' : 'Babak 8 besar'}
+          </h2>
+          <span class="text-[10px] uppercase tracking-[0.18em] text-white/30">{rows.length} tim</span>
+        </div>
+        <div class="grid gap-6 lg:grid-cols-2">
+          {groups.map((group) => (
+            <div>
+              <h3 class="mb-3 text-[10px] font-bold uppercase tracking-[0.18em] text-white/40">Grup {group}</h3>
+              <StandingsTable standings={rows} group={group} season={SEASON} />
+            </div>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <section class="mt-10">
+      <div class="mb-4 flex items-end justify-between border-b border-white/15 pb-3">
+        <h2 class="font-cond text-2xl font-bold uppercase tracking-wide text-white">Hasil pertandingan</h2>
+        <span class="text-[10px] uppercase tracking-[0.18em] text-white/30">{fixtures.length} laga</span>
+      </div>
+      <div class="grid gap-3 lg:grid-cols-2">
+        {fixtures.map((fixture) => <MatchCard match={fixture} season={SEASON} />)}
+      </div>
+    </section>
+
+    <div class="mt-10 flex flex-wrap items-center gap-6 border-t border-white/10 pt-6">
+      <a href="/arsip/2025-26" class="text-[10px] font-bold uppercase tracking-[0.18em] text-primary hover:text-primary/80">
+        Arsip 2025-26 →
+      </a>
+      <a href="/arsip/pemain" class="text-[10px] font-bold uppercase tracking-[0.18em] text-primary hover:text-primary/80">
+        Semua pemain →
+      </a>
+      <a href="/" class="text-[10px] font-bold uppercase tracking-[0.18em] text-white/40 hover:text-white/70">
+        Kembali ke musim 2026-27
+      </a>
+    </div>
+  </div>
+</Layout>

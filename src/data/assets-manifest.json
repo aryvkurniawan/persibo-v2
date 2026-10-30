@@ -1,0 +1,1645 @@
+{
+  "generated_at": "2026-10-30T11:07:38.614Z",
+  "note": "Images mirrored from assets.ileague.id so past seasons survive the source going away.",
+  "count": 109,
+  "assets": [
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE22082144.jpeg",
+      "path": "/img/players/adre-arido-geovani.jpg",
+      "bytes": 15318,
+      "width": 300,
+      "sha256": "acf81ccb06710065",
+      "fetched_at": "2026-10-30T11:07:38.212Z",
+      "kind": "player-photo",
+      "name": "ADRE ARIDO GEOVANI",
+      "seasons": [
+        "2025-26"
+      ],
+      "player_ids": [
+        22082144
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE1713788757.jpeg",
+      "path": "/img/players/adzib-al-hakim-arsyad.jpg",
+      "bytes": 36227,
+      "width": 400,
+      "sha256": "6ed49ee01f787b8e",
+      "fetched_at": "2026-10-30T11:07:37.798Z",
+      "kind": "player-photo",
+      "name": "ADZIB AL HAKIM ARSYAD",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        1713788757
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE24029185.png",
+      "path": "/img/players/aji-restu-ginanjar.jpg",
+      "bytes": 25448,
+      "width": 300,
+      "sha256": "d80ab95f50dbd6da",
+      "fetched_at": "2026-10-30T11:07:37.998Z",
+      "kind": "player-photo",
+      "name": "AJI RESTU GINANJAR",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        24029185
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE6407.jpeg",
+      "path": "/img/players/alfin-ismail-tuasalamony.jpg",
+      "bytes": 45028,
+      "width": 400,
+      "sha256": "9050d6b4dfa9b136",
+      "fetched_at": "2026-10-30T11:07:37.531Z",
+      "kind": "player-photo",
+      "name": "ALFIN ISMAIL TUASALAMONY",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        6407
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE23229996.png",
+      "path": "/img/players/amir-hamzah.jpg",
+      "bytes": 22372,
+      "width": 300,
+      "sha256": "59df38d6ca91edd6",
+      "fetched_at": "2026-10-30T11:07:38.108Z",
+      "kind": "player-photo",
+      "name": "AMIR HAMZAH",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        23229996
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE25179901.jpeg",
+      "path": "/img/players/ananda-dhea-bagus-saputra.jpg",
+      "bytes": 17526,
+      "width": 300,
+      "sha256": "50f258ad6364c407",
+      "fetched_at": "2026-10-30T11:07:38.459Z",
+      "kind": "player-photo",
+      "name": "ANANDA DHEA BAGUS SAPUTRA",
+      "seasons": [
+        "2025-26"
+      ],
+      "player_ids": [
+        25179901
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE2012161866.jpeg",
+      "path": "/img/players/ardi-maulana.jpg",
+      "bytes": 43722,
+      "width": 400,
+      "sha256": "368106a0ba803947",
+      "fetched_at": "2026-10-30T11:07:37.870Z",
+      "kind": "player-photo",
+      "name": "ARDI MAULANA",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        2012161866
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE22175487.jpg",
+      "path": "/img/players/barnabas-sobor.jpg",
+      "bytes": 24894,
+      "width": 300,
+      "sha256": "a857415c90ce5d16",
+      "fetched_at": "2026-10-30T11:07:38.200Z",
+      "kind": "player-photo",
+      "name": "BARNABAS SOBOR",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        22175487
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE5067.jpeg",
+      "path": "/img/players/bayu-nugroho.jpg",
+      "bytes": 28655,
+      "width": 400,
+      "sha256": "ae3ec44f4f356a19",
+      "fetched_at": "2026-10-30T11:07:38.378Z",
+      "kind": "player-photo",
+      "name": "BAYU NUGROHO",
+      "seasons": [
+        "2025-26"
+      ],
+      "player_ids": [
+        5067
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE22239523.jpeg",
+      "path": "/img/players/brayen-pondaag.jpg",
+      "bytes": 31960,
+      "width": 400,
+      "sha256": "1e16eaac117aa6e1",
+      "fetched_at": "2026-10-30T11:07:37.975Z",
+      "kind": "player-photo",
+      "name": "BRAYEN PONDAAG",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        22239523
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE6899.jpeg",
+      "path": "/img/players/derry-rachman-noor.jpg",
+      "bytes": 22851,
+      "width": 400,
+      "sha256": "6d451ba787b62fd2",
+      "fetched_at": "2026-10-30T11:07:38.104Z",
+      "kind": "player-photo",
+      "name": "DERRY RACHMAN NOOR",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        6899
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE21145242.jpeg",
+      "path": "/img/players/diandra-diaz-dewari.jpg",
+      "bytes": 54132,
+      "width": 400,
+      "sha256": "febf548a01e2474d",
+      "fetched_at": "2026-10-30T11:07:37.599Z",
+      "kind": "player-photo",
+      "name": "DIANDRA DIAZ DEWARI",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        21145242
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE23099993.png",
+      "path": "/img/players/enzo-nicolas-jacques-celestine.jpg",
+      "bytes": 22693,
+      "width": 300,
+      "sha256": "bb53447804d0be4f",
+      "fetched_at": "2026-10-30T11:07:37.653Z",
+      "kind": "player-photo",
+      "name": "ENZO NICOLAS JACQUES CELESTINE",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        23099993
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE3338.jpeg",
+      "path": "/img/players/fadil.jpg",
+      "bytes": 38921,
+      "width": 400,
+      "sha256": "f658abcd0e6dbba8",
+      "fetched_at": "2026-10-30T11:07:38.332Z",
+      "kind": "player-photo",
+      "name": "FADIL",
+      "seasons": [
+        "2025-26"
+      ],
+      "player_ids": [
+        3338
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE23256619.jpg",
+      "path": "/img/players/fahmi-arma-ardianshya.jpg",
+      "bytes": 19941,
+      "width": 300,
+      "sha256": "a24cc6226273c2b6",
+      "fetched_at": "2026-10-30T11:07:38.405Z",
+      "kind": "player-photo",
+      "name": "FAHMI ARMA ARDIANSHYA",
+      "seasons": [
+        "2025-26"
+      ],
+      "player_ids": [
+        23256619
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE21140253.jpg",
+      "path": "/img/players/fajar-ihsanudin.jpg",
+      "bytes": 19108,
+      "width": 300,
+      "sha256": "4d8d559eb9a73885",
+      "fetched_at": "2026-10-30T11:07:37.703Z",
+      "kind": "player-photo",
+      "name": "FAJAR IHSANUDIN",
+      "seasons": [
+        "2024-25",
+        "2025-26"
+      ],
+      "player_ids": [
+        21140253
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE635.jpeg",
+      "path": "/img/players/gerri-martin-millian-mandagi.jpg",
+      "bytes": 23655,
+      "width": 400,
+      "sha256": "62ed8b4ab7aa4d78",
+      "fetched_at": "2026-10-30T11:07:37.492Z",
+      "kind": "player-photo",
+      "name": "GERRI MARTIN MILLIAN MANDAGI",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        635
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE23062143.jpg",
+      "path": "/img/players/gilang-pratama.jpg",
+      "bytes": 19130,
+      "width": 300,
+      "sha256": "8e16f30868c08e16",
+      "fetched_at": "2026-10-30T11:07:38.548Z",
+      "kind": "player-photo",
+      "name": "GILANG PRATAMA",
+      "seasons": [
+        "2025-26"
+      ],
+      "player_ids": [
+        23062143
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE1817438049.jpeg",
+      "path": "/img/players/hadi-ardiansyah.jpg",
+      "bytes": 34720,
+      "width": 400,
+      "sha256": "bb24307406db8486",
+      "fetched_at": "2026-10-30T11:07:37.838Z",
+      "kind": "player-photo",
+      "name": "HADI ARDIANSYAH",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        1817438049
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE6394.jpeg",
+      "path": "/img/players/hendra-adi-bayauw.jpg",
+      "bytes": 40378,
+      "width": 400,
+      "sha256": "4dbe6eadad9a95a4",
+      "fetched_at": "2026-10-30T11:07:37.717Z",
+      "kind": "player-photo",
+      "name": "HENDRA ADI BAYAUW",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        6394
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE2019792480.jpeg",
+      "path": "/img/players/i-made-tri-somanada.jpg",
+      "bytes": 37680,
+      "width": 400,
+      "sha256": "f240a4a4cf33bb1a",
+      "fetched_at": "2026-10-30T11:07:37.891Z",
+      "kind": "player-photo",
+      "name": "I MADE TRI SOMANADA",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        2019792480
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE24053031.jpg",
+      "path": "/img/players/ichlasul-amal-zardan-aroby.jpg",
+      "bytes": 19625,
+      "width": 300,
+      "sha256": "37761e7ae49c26f1",
+      "fetched_at": "2026-10-30T11:07:38.010Z",
+      "kind": "player-photo",
+      "name": "ICHLASUL AMAL ZARDAN AROBY",
+      "seasons": [
+        "2024-25",
+        "2025-26"
+      ],
+      "player_ids": [
+        24053031
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE1617857055.jpeg",
+      "path": "/img/players/ikhwan-azka-fauzi-wibowo.jpg",
+      "bytes": 32308,
+      "width": 400,
+      "sha256": "e62216532f1cb214",
+      "fetched_at": "2026-10-30T11:07:37.994Z",
+      "kind": "player-photo",
+      "name": "IKHWAN AZKA FAUZI WIBOWO",
+      "seasons": [
+        "2024-25",
+        "2025-26"
+      ],
+      "player_ids": [
+        1617857055
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE24318109.jpg",
+      "path": "/img/players/ilham-maulana.jpg",
+      "bytes": 17608,
+      "width": 300,
+      "sha256": "9cbb7fc29ccc1e36",
+      "fetched_at": "2026-10-30T11:07:38.500Z",
+      "kind": "player-photo",
+      "name": "ILHAM MAULANA",
+      "seasons": [
+        "2025-26"
+      ],
+      "player_ids": [
+        24318109
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE1619998185.jpeg",
+      "path": "/img/players/israel-wamiau.jpg",
+      "bytes": 23430,
+      "width": 400,
+      "sha256": "b129627c8697514e",
+      "fetched_at": "2026-10-30T11:07:38.080Z",
+      "kind": "player-photo",
+      "name": "ISRAEL WAMIAU",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        1619998185
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE23072952.jpg",
+      "path": "/img/players/jahanbakhsh-zabihi-taher.jpg",
+      "bytes": 24072,
+      "width": 300,
+      "sha256": "29857aa04c045170",
+      "fetched_at": "2026-10-30T11:07:37.512Z",
+      "kind": "player-photo",
+      "name": "JAHANBAKHSH ZABIHI TAHER",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        23072952
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE2669.jpeg",
+      "path": "/img/players/jajang-sukmara.jpg",
+      "bytes": 36680,
+      "width": 400,
+      "sha256": "ee90ab79def21b8e",
+      "fetched_at": "2026-10-30T11:07:37.578Z",
+      "kind": "player-photo",
+      "name": "JAJANG SUKMARA",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        2669
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE24221723.jpg",
+      "path": "/img/players/jhon-edward-josua-wutoy.jpg",
+      "bytes": 19933,
+      "width": 300,
+      "sha256": "ebef3422a5bc0cf3",
+      "fetched_at": "2026-10-30T11:07:38.596Z",
+      "kind": "player-photo",
+      "name": "JHON EDWARD JOSUA WUTOY",
+      "seasons": [
+        "2025-26"
+      ],
+      "player_ids": [
+        24221723
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE22250896.jpg",
+      "path": "/img/players/joko-supriyanto.jpg",
+      "bytes": 19016,
+      "width": 300,
+      "sha256": "8a0845c332ece7d7",
+      "fetched_at": "2026-10-30T11:07:38.258Z",
+      "kind": "player-photo",
+      "name": "JOKO SUPRIYANTO",
+      "seasons": [
+        "2025-26"
+      ],
+      "player_ids": [
+        22250896
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE24225298.jpg",
+      "path": "/img/players/jovan-jordantian-syahwa-maulana.jpg",
+      "bytes": 18700,
+      "width": 300,
+      "sha256": "fdf5799548bd17ad",
+      "fetched_at": "2026-10-30T11:07:38.443Z",
+      "kind": "player-photo",
+      "name": "JOVAN JORDANTIAN SYAHWA MAULANA",
+      "seasons": [
+        "2025-26"
+      ],
+      "player_ids": [
+        24225298
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE1816764831.jpeg",
+      "path": "/img/players/lerby-eliandry-pong-babu.jpg",
+      "bytes": 37215,
+      "width": 400,
+      "sha256": "5f128b7d41af3827",
+      "fetched_at": "2026-10-30T11:07:37.828Z",
+      "kind": "player-photo",
+      "name": "LERBY ELIANDRY PONG BABU",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        1816764831
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE24066894.jpg",
+      "path": "/img/players/m-febri-suryanto.jpg",
+      "bytes": 22171,
+      "width": 300,
+      "sha256": "67f1ff103037ef1b",
+      "fetched_at": "2026-10-30T11:07:38.061Z",
+      "kind": "player-photo",
+      "name": "M. FEBRI SURYANTO",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        24066894
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE1714389343.jpeg",
+      "path": "/img/players/m-ghozy.jpg",
+      "bytes": 40450,
+      "width": 400,
+      "sha256": "856c129baa588164",
+      "fetched_at": "2026-10-30T11:07:37.833Z",
+      "kind": "player-photo",
+      "name": "M. GHOZY",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        1714389343
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE2018145752.jpeg",
+      "path": "/img/players/m-revan-joni-nurianto.jpg",
+      "bytes": 18575,
+      "width": 300,
+      "sha256": "76412d4dd334bd03",
+      "fetched_at": "2026-10-30T11:07:38.502Z",
+      "kind": "player-photo",
+      "name": "M REVAN JONI NURIANTO",
+      "seasons": [
+        "2025-26"
+      ],
+      "player_ids": [
+        2018145752
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE25178307.jpg",
+      "path": "/img/players/m-romy-arif-setiawan.jpg",
+      "bytes": 22338,
+      "width": 300,
+      "sha256": "f8d5ea3fb7ba8a4c",
+      "fetched_at": "2026-10-30T11:07:38.596Z",
+      "kind": "player-photo",
+      "name": "M. ROMY ARIF SETIAWAN",
+      "seasons": [
+        "2025-26"
+      ],
+      "player_ids": [
+        25178307
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE23087785.png",
+      "path": "/img/players/marthinus-isir.jpg",
+      "bytes": 21999,
+      "width": 300,
+      "sha256": "856e06a44e891961",
+      "fetched_at": "2026-10-30T11:07:37.953Z",
+      "kind": "player-photo",
+      "name": "MARTHINUS ISIR",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        23087785
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE4580.jpeg",
+      "path": "/img/players/mohamad-arozi.jpg",
+      "bytes": 35575,
+      "width": 400,
+      "sha256": "3fdbe25e373ac5f2",
+      "fetched_at": "2026-10-30T11:07:38.238Z",
+      "kind": "player-photo",
+      "name": "MOHAMAD AROZI",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        4580
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE24108909.jpg",
+      "path": "/img/players/mohammad-febryansyah-refyan-sanusi.jpg",
+      "bytes": 20205,
+      "width": 300,
+      "sha256": "b2c9f8aa5f842a3e",
+      "fetched_at": "2026-10-30T11:07:38.416Z",
+      "kind": "player-photo",
+      "name": "MOHAMMAD FEBRYANSYAH REFYAN SANUSI",
+      "seasons": [
+        "2025-26"
+      ],
+      "player_ids": [
+        24108909
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE23283816.jpg",
+      "path": "/img/players/muchamad-zegga-novembrian.jpg",
+      "bytes": 19127,
+      "width": 300,
+      "sha256": "e3d37528f99d4d3a",
+      "fetched_at": "2026-10-30T11:07:38.409Z",
+      "kind": "player-photo",
+      "name": "MUCHAMAD ZEGGA NOVEMBRIAN",
+      "seasons": [
+        "2025-26"
+      ],
+      "player_ids": [
+        23283816
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE1712708130.jpeg",
+      "path": "/img/players/muh-aji-kurniawan.jpg",
+      "bytes": 18899,
+      "width": 300,
+      "sha256": "dc221d9ac9970b75",
+      "fetched_at": "2026-10-30T11:07:37.742Z",
+      "kind": "player-photo",
+      "name": "MUH AJI KURNIAWAN",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        1712708130
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE1819718627.jpeg",
+      "path": "/img/players/muhammad-febriansyah.jpg",
+      "bytes": 18153,
+      "width": 400,
+      "sha256": "c9c48e44fe7a3368",
+      "fetched_at": "2026-10-30T11:07:38.203Z",
+      "kind": "player-photo",
+      "name": "MUHAMMAD FEBRIANSYAH",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        1819718627
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE1618524475.jpeg",
+      "path": "/img/players/muhammad-ridho.jpg",
+      "bytes": 33918,
+      "width": 400,
+      "sha256": "d55dd2bf99fb024d",
+      "fetched_at": "2026-10-30T11:07:37.976Z",
+      "kind": "player-photo",
+      "name": "MUHAMMAD RIDHO",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        1618524475
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE23303650.jpg",
+      "path": "/img/players/nugroho-santoso.jpg",
+      "bytes": 20128,
+      "width": 300,
+      "sha256": "4dc6ea34f1fbee50",
+      "fetched_at": "2026-10-30T11:07:38.111Z",
+      "kind": "player-photo",
+      "name": "NUGROHO SANTOSO",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        23303650
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE1715849914.jpeg",
+      "path": "/img/players/nur-ikhsan.jpg",
+      "bytes": 28889,
+      "width": 400,
+      "sha256": "10b0ad80c11adadc",
+      "fetched_at": "2026-10-30T11:07:38.532Z",
+      "kind": "player-photo",
+      "name": "NUR IKHSAN",
+      "seasons": [
+        "2025-26"
+      ],
+      "player_ids": [
+        1715849914
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE1618125610.jpg",
+      "path": "/img/players/nurhidayat-hh.jpg",
+      "bytes": 16339,
+      "width": 300,
+      "sha256": "6edd28bb3cdd68d6",
+      "fetched_at": "2026-10-30T11:07:37.575Z",
+      "kind": "player-photo",
+      "name": "NURHIDAYAT HH",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        1618125610
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE2305.jpeg",
+      "path": "/img/players/osas-marvellous-ikpefua.jpg",
+      "bytes": 34168,
+      "width": 400,
+      "sha256": "55b8f09551728354",
+      "fetched_at": "2026-10-30T11:07:37.673Z",
+      "kind": "player-photo",
+      "name": "OSAS MARVELLOUS IKPEFUA",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        2305
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE23294644.jpg",
+      "path": "/img/players/oscar-novangga.jpg",
+      "bytes": 19051,
+      "width": 300,
+      "sha256": "ddc5092b6831eb06",
+      "fetched_at": "2026-10-30T11:07:38.261Z",
+      "kind": "player-photo",
+      "name": "OSCAR NOVANGGA",
+      "seasons": [
+        "2025-26"
+      ],
+      "player_ids": [
+        23294644
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE1891.jpeg",
+      "path": "/img/players/otavio-dutra.jpg",
+      "bytes": 20233,
+      "width": 300,
+      "sha256": "e31b9e442399520d",
+      "fetched_at": "2026-10-30T11:07:37.533Z",
+      "kind": "player-photo",
+      "name": "OTAVIO DUTRA",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        1891
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE4118.jpeg",
+      "path": "/img/players/radiansyah.jpg",
+      "bytes": 39950,
+      "width": 400,
+      "sha256": "bcc4a1159be14092",
+      "fetched_at": "2026-10-30T11:07:37.691Z",
+      "kind": "player-photo",
+      "name": "RADIANSYAH",
+      "seasons": [
+        "2024-25",
+        "2025-26"
+      ],
+      "player_ids": [
+        4118
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE21152601.jpg",
+      "path": "/img/players/raka-octa-bernanda.jpg",
+      "bytes": 27797,
+      "width": 300,
+      "sha256": "eb17477a4bc22f41",
+      "fetched_at": "2026-10-30T11:07:38.171Z",
+      "kind": "player-photo",
+      "name": "RAKA OCTA BERNANDA",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        21152601
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE22168789.jpeg",
+      "path": "/img/players/rangga-dwi-lesmana.jpg",
+      "bytes": 24322,
+      "width": 300,
+      "sha256": "680de110cf425465",
+      "fetched_at": "2026-10-30T11:07:38.324Z",
+      "kind": "player-photo",
+      "name": "RANGGA DWI LESMANA",
+      "seasons": [
+        "2025-26"
+      ],
+      "player_ids": [
+        22168789
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE22301916.jpg",
+      "path": "/img/players/revaldo-agusto.jpg",
+      "bytes": 18024,
+      "width": 300,
+      "sha256": "9d6d0810ea768515",
+      "fetched_at": "2026-10-30T11:07:38.032Z",
+      "kind": "player-photo",
+      "name": "REVALDO AGUSTO",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        22301916
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE1717052002.jpeg",
+      "path": "/img/players/reza-irfana.jpg",
+      "bytes": 38458,
+      "width": 400,
+      "sha256": "ff82e640de54c56e",
+      "fetched_at": "2026-10-30T11:07:37.926Z",
+      "kind": "player-photo",
+      "name": "REZA IRFANA",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        1717052002
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE1616364746.jpeg",
+      "path": "/img/players/rio-pratama-valentino.jpg",
+      "bytes": 41730,
+      "width": 400,
+      "sha256": "2c5db3144ca0395d",
+      "fetched_at": "2026-10-30T11:07:38.328Z",
+      "kind": "player-photo",
+      "name": "RIO PRATAMA VALENTINO",
+      "seasons": [
+        "2025-26"
+      ],
+      "player_ids": [
+        1616364746
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE24091211.jpeg",
+      "path": "/img/players/rizky-dwi-nugraha-asyari.jpg",
+      "bytes": 16260,
+      "width": 300,
+      "sha256": "db2a87f4fec78183",
+      "fetched_at": "2026-10-30T11:07:38.278Z",
+      "kind": "player-photo",
+      "name": "RIZKY DWI NUGRAHA ASYARI",
+      "seasons": [
+        "2025-26"
+      ],
+      "player_ids": [
+        24091211
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE1109.jpeg",
+      "path": "/img/players/samsul-arif.jpg",
+      "bytes": 44437,
+      "width": 400,
+      "sha256": "d8917aeef1ecc4cc",
+      "fetched_at": "2026-10-30T11:07:38.377Z",
+      "kind": "player-photo",
+      "name": "SAMSUL ARIF",
+      "seasons": [
+        "2025-26"
+      ],
+      "player_ids": [
+        1109
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE1616452331.jpeg",
+      "path": "/img/players/selamet-budiono.jpg",
+      "bytes": 26788,
+      "width": 400,
+      "sha256": "562185bcfe0ca0cd",
+      "fetched_at": "2026-10-30T11:07:38.179Z",
+      "kind": "player-photo",
+      "name": "SELAMET BUDIONO",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        1616452331
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE21315906.jpeg",
+      "path": "/img/players/slamet-nurcahyono.jpg",
+      "bytes": 33131,
+      "width": 400,
+      "sha256": "fe711c4452a7ff4d",
+      "fetched_at": "2026-10-30T11:07:38.115Z",
+      "kind": "player-photo",
+      "name": "SLAMET NURCAHYONO",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        21315906
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE21129780.jpeg",
+      "path": "/img/players/tegar-andrie-shevanton.jpg",
+      "bytes": 14711,
+      "width": 300,
+      "sha256": "8a1c3cbaac061d1f",
+      "fetched_at": "2026-10-30T11:07:38.357Z",
+      "kind": "player-photo",
+      "name": "TEGAR ANDRIE SHEVANTON",
+      "seasons": [
+        "2025-26"
+      ],
+      "player_ids": [
+        21129780
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE21219852.jpg",
+      "path": "/img/players/tirta-bayu-nugroho.jpg",
+      "bytes": 18337,
+      "width": 300,
+      "sha256": "f7d33f1548fe89f8",
+      "fetched_at": "2026-10-30T11:07:38.530Z",
+      "kind": "player-photo",
+      "name": "TIRTA BAYU NUGROHO",
+      "seasons": [
+        "2025-26"
+      ],
+      "player_ids": [
+        21219852
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE24030231.jpg",
+      "path": "/img/players/vitor-hugo-encarnacao-freitas.jpg",
+      "bytes": 18499,
+      "width": 300,
+      "sha256": "386e8a86ce37ac4c",
+      "fetched_at": "2026-10-30T11:07:37.594Z",
+      "kind": "player-photo",
+      "name": "VITOR HUGO ENCARNACAO FREITAS",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        24030231
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE25179646.jpg",
+      "path": "/img/players/yoga-prasetya.jpg",
+      "bytes": 19329,
+      "width": 300,
+      "sha256": "ba9e9504be96acf0",
+      "fetched_at": "2026-10-30T11:07:38.465Z",
+      "kind": "player-photo",
+      "name": "YOGA PRASETYA",
+      "seasons": [
+        "2025-26"
+      ],
+      "player_ids": [
+        25179646
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE2756.jpeg",
+      "path": "/img/players/yohanes-ferinando-pahabol.jpg",
+      "bytes": 45464,
+      "width": 400,
+      "sha256": "48044b9c8ca363f3",
+      "fetched_at": "2026-10-30T11:07:37.709Z",
+      "kind": "player-photo",
+      "name": "YOHANES FERINANDO PAHABOL",
+      "seasons": [
+        "2024-25"
+      ],
+      "player_ids": [
+        2756
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/PE25175334.jpg",
+      "path": "/img/players/yonas-terianuas-rejauw.jpg",
+      "bytes": 18932,
+      "width": 300,
+      "sha256": "6da080f1a90de32d",
+      "fetched_at": "2026-10-30T11:07:38.543Z",
+      "kind": "player-photo",
+      "name": "YONAS TERIANUAS REJAUW",
+      "seasons": [
+        "2025-26"
+      ],
+      "player_ids": [
+        25175334
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/82/h/50/1817798767.png",
+      "path": "/img/teams/adhyaksa-fc-bekasi.png",
+      "bytes": 6802,
+      "width": 105,
+      "sha256": "2d55d5503872a58f",
+      "fetched_at": "2026-10-30T11:07:37.115Z",
+      "kind": "team-logo",
+      "name": "ADHYAKSA FC BEKASI",
+      "seasons": [
+        "2024-25"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/93/h/50/2517965.png",
+      "path": "/img/teams/batavia-fc.png",
+      "bytes": 3155,
+      "width": 50,
+      "sha256": "b6740b5cd3ff7afa",
+      "fetched_at": "2026-10-30T11:07:37.238Z",
+      "kind": "team-logo",
+      "name": "Batavia FC",
+      "seasons": [
+        "2025-26",
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/82/h/50/30.png",
+      "path": "/img/teams/bhayangkara-lampung-fc.png",
+      "bytes": 20438,
+      "width": 160,
+      "sha256": "03028c9192ccec19",
+      "fetched_at": "2026-10-30T11:07:37.004Z",
+      "kind": "team-logo",
+      "name": "BHAYANGKARA LAMPUNG FC",
+      "seasons": [
+        "2024-25"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/82/h/50/2409314.png",
+      "path": "/img/teams/de-red-fc.png",
+      "bytes": 9821,
+      "width": 160,
+      "sha256": "166829009a501e13",
+      "fetched_at": "2026-10-30T11:07:37.126Z",
+      "kind": "team-logo",
+      "name": "DE RED FC",
+      "seasons": [
+        "2024-25",
+        "2025-26"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/82/h/50/35.png",
+      "path": "/img/teams/deltras-fc.png",
+      "bytes": 5677,
+      "width": 105,
+      "sha256": "b88b3efa18b9d18e",
+      "fetched_at": "2026-10-30T11:07:36.991Z",
+      "kind": "team-logo",
+      "name": "DELTRAS FC",
+      "seasons": [
+        "2024-25"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/82/h/50/301.png",
+      "path": "/img/teams/donggala-fc.png",
+      "bytes": 4642,
+      "width": 105,
+      "sha256": "03f35b4561a33fe8",
+      "fetched_at": "2026-10-30T11:07:37.187Z",
+      "kind": "team-logo",
+      "name": "DONGGALA FC",
+      "seasons": [
+        "2024-25",
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/82/h/50/1814914856.png",
+      "path": "/img/teams/garudayaksa-fc.png",
+      "bytes": 3492,
+      "width": 105,
+      "sha256": "13d68ab391b22845",
+      "fetched_at": "2026-10-30T11:07:37.047Z",
+      "kind": "team-logo",
+      "name": "GARUDAYAKSA FC",
+      "seasons": [
+        "2024-25"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/82/h/50/69.png",
+      "path": "/img/teams/gresik-united-fc.png",
+      "bytes": 3423,
+      "width": 105,
+      "sha256": "be9226fa550b99d3",
+      "fetched_at": "2026-10-30T11:07:37.140Z",
+      "kind": "team-logo",
+      "name": "Gresik United FC",
+      "seasons": [
+        "2024-25",
+        "2025-26",
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/82/h/50/2409755.png",
+      "path": "/img/teams/isenmulang-kalteng-fc.png",
+      "bytes": 19569,
+      "width": 160,
+      "sha256": "4675a817d68f81f8",
+      "fetched_at": "2026-10-30T11:07:37.074Z",
+      "kind": "team-logo",
+      "name": "ISENMULANG KALTENG FC",
+      "seasons": [
+        "2024-25"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/1819299011.png",
+      "path": "/img/teams/pasuruan-united.png",
+      "bytes": 34019,
+      "width": 160,
+      "sha256": "53aa0c2ebb359729",
+      "fetched_at": "2026-10-30T11:07:37.455Z",
+      "kind": "team-logo",
+      "name": "Pasuruan United",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/93/h/50/2517284.png",
+      "path": "/img/teams/pekanbaru-fc.png",
+      "bytes": 2436,
+      "width": 50,
+      "sha256": "d7faba0af1c20984",
+      "fetched_at": "2026-10-30T11:07:37.252Z",
+      "kind": "team-logo",
+      "name": "Pekanbaru FC",
+      "seasons": [
+        "2025-26",
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/93/h/50/2517436.png",
+      "path": "/img/teams/persebata-lembata.png",
+      "bytes": 2645,
+      "width": 50,
+      "sha256": "d9c18728086af2a8",
+      "fetched_at": "2026-10-30T11:07:37.346Z",
+      "kind": "team-logo",
+      "name": "PERSEBATA Lembata",
+      "seasons": [
+        "2025-26"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/93/h/50/246.png",
+      "path": "/img/teams/perseden-denpasar.png",
+      "bytes": 2797,
+      "width": 50,
+      "sha256": "786f5816acf73414",
+      "fetched_at": "2026-10-30T11:07:37.341Z",
+      "kind": "team-logo",
+      "name": "PERSEDEN Denpasar",
+      "seasons": [
+        "2025-26",
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/93/h/50/39.png",
+      "path": "/img/teams/persekabpas.png",
+      "bytes": 14059,
+      "width": 160,
+      "sha256": "972d913074cf7646",
+      "fetched_at": "2026-10-30T11:07:37.324Z",
+      "kind": "team-logo",
+      "name": "PERSEKABPAS",
+      "seasons": [
+        "2025-26",
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/82/h/50/1819851408.png",
+      "path": "/img/teams/persekat-tegal.png",
+      "bytes": 16413,
+      "width": 160,
+      "sha256": "7f23c88111199c52",
+      "fetched_at": "2026-10-30T11:07:37.126Z",
+      "kind": "team-logo",
+      "name": "PERSEKAT TEGAL",
+      "seasons": [
+        "2024-25",
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/93/h/50/8.png",
+      "path": "/img/teams/perserang-serang.png",
+      "bytes": 5728,
+      "width": 105,
+      "sha256": "bb137a916c8e40ad",
+      "fetched_at": "2026-10-30T11:07:37.292Z",
+      "kind": "team-logo",
+      "name": "PERSERANG Serang",
+      "seasons": [
+        "2025-26"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/82/h/50/1819851386.png",
+      "path": "/img/teams/persewar.png",
+      "bytes": 19310,
+      "width": 160,
+      "sha256": "bd2cb1d0722a7e98",
+      "fetched_at": "2026-10-30T11:07:37.183Z",
+      "kind": "team-logo",
+      "name": "PERSEWAR",
+      "seasons": [
+        "2024-25"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/93/h/50/68.png",
+      "path": "/img/teams/persiba-bantul.png",
+      "bytes": 21779,
+      "width": 160,
+      "sha256": "2212a4f7007ae002",
+      "fetched_at": "2026-10-30T11:07:37.337Z",
+      "kind": "team-logo",
+      "name": "PERSIBA Bantul",
+      "seasons": [
+        "2025-26",
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/200.png",
+      "path": "/img/teams/persibangga.png",
+      "bytes": 42850,
+      "width": 160,
+      "sha256": "5d9253c7342f3615",
+      "fetched_at": "2026-10-30T11:07:37.405Z",
+      "kind": "team-logo",
+      "name": "Persibangga",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/82/h/50/29.png",
+      "path": "/img/teams/persibo-bojonegoro.png",
+      "bytes": 20417,
+      "width": 160,
+      "sha256": "d11923b17a91876d",
+      "fetched_at": "2026-10-30T11:07:37.147Z",
+      "kind": "team-logo",
+      "name": "PERSIBO Bojonegoro",
+      "seasons": [
+        "2024-25",
+        "2025-26",
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/82/h/50/21.png",
+      "path": "/img/teams/persijap-jepara.png",
+      "bytes": 4442,
+      "width": 106,
+      "sha256": "4e39a309cafe910e",
+      "fetched_at": "2026-10-30T11:07:36.989Z",
+      "kind": "team-logo",
+      "name": "PERSIJAP JEPARA",
+      "seasons": [
+        "2024-25"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/93/h/50/2517773.png",
+      "path": "/img/teams/persika-karanganyar.png",
+      "bytes": 2973,
+      "width": 50,
+      "sha256": "3130165db2a69c9b",
+      "fetched_at": "2026-10-30T11:07:37.291Z",
+      "kind": "team-logo",
+      "name": "PERSIKA Karanganyar",
+      "seasons": [
+        "2025-26",
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/82/h/50/125.png",
+      "path": "/img/teams/persikabo-1973.png",
+      "bytes": 18829,
+      "width": 160,
+      "sha256": "3acc0db22cf719a5",
+      "fetched_at": "2026-10-30T11:07:37.126Z",
+      "kind": "team-logo",
+      "name": "PERSIKABO 1973",
+      "seasons": [
+        "2024-25"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/82/h/50/17.png",
+      "path": "/img/teams/persikota-kota-tangerang.png",
+      "bytes": 22853,
+      "width": 160,
+      "sha256": "4ace9f4bfc78d639",
+      "fetched_at": "2026-10-30T11:07:37.077Z",
+      "kind": "team-logo",
+      "name": "PERSIKOTA Kota Tangerang",
+      "seasons": [
+        "2024-25",
+        "2025-26",
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/82/h/50/1819851417.png",
+      "path": "/img/teams/persikotas-nusantara.png",
+      "bytes": 2487,
+      "width": 106,
+      "sha256": "c9000df97c72a840",
+      "fetched_at": "2026-10-30T11:07:37.045Z",
+      "kind": "team-logo",
+      "name": "PERSIKOTAS NUSANTARA",
+      "seasons": [
+        "2024-25",
+        "2025-26",
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/93/h/50/2408207.png",
+      "path": "/img/teams/persikutim-united.png",
+      "bytes": 3107,
+      "width": 50,
+      "sha256": "1118ef59a5536b5f",
+      "fetched_at": "2026-10-30T11:07:37.316Z",
+      "kind": "team-logo",
+      "name": "PERSIKUTIM United",
+      "seasons": [
+        "2025-26",
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/93/h/50/2517664.png",
+      "path": "/img/teams/persinab-fc.png",
+      "bytes": 2799,
+      "width": 50,
+      "sha256": "ceb78c8e13b30d4d",
+      "fetched_at": "2026-10-30T11:07:37.304Z",
+      "kind": "team-logo",
+      "name": "Persinab FC",
+      "seasons": [
+        "2025-26",
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/208.png",
+      "path": "/img/teams/persinga-ngawi.png",
+      "bytes": 36709,
+      "width": 160,
+      "sha256": "ecf701394000cd09",
+      "fetched_at": "2026-10-30T11:07:37.453Z",
+      "kind": "team-logo",
+      "name": "Persinga Ngawi",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/82/h/50/1813607788.png",
+      "path": "/img/teams/persipa.png",
+      "bytes": 5250,
+      "width": 105,
+      "sha256": "06c1a94610638523",
+      "fetched_at": "2026-10-30T11:07:37.210Z",
+      "kind": "team-logo",
+      "name": "PERSIPA",
+      "seasons": [
+        "2024-25",
+        "2025-26",
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/2408341.png",
+      "path": "/img/teams/persipani.png",
+      "bytes": 37624,
+      "width": 160,
+      "sha256": "7a536a3f94c846a0",
+      "fetched_at": "2026-10-30T11:07:37.453Z",
+      "kind": "team-logo",
+      "name": "Persipani",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/82/h/50/58.png",
+      "path": "/img/teams/persipura-jayapura.png",
+      "bytes": 4284,
+      "width": 105,
+      "sha256": "aff7a7c2d646ccb1",
+      "fetched_at": "2026-10-30T11:07:37.188Z",
+      "kind": "team-logo",
+      "name": "PERSIPURA JAYAPURA",
+      "seasons": [
+        "2024-25"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/82/h/50/4.png",
+      "path": "/img/teams/persiraja-banda-aceh.png",
+      "bytes": 6166,
+      "width": 105,
+      "sha256": "2ddefa884d8d1163",
+      "fetched_at": "2026-10-30T11:07:36.989Z",
+      "kind": "team-logo",
+      "name": "PERSIRAJA BANDA ACEH",
+      "seasons": [
+        "2024-25"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/93/h/50/13.png",
+      "path": "/img/teams/persitara-jakarta-utara.png",
+      "bytes": 3360,
+      "width": 50,
+      "sha256": "63c9a4a3fdd27a73",
+      "fetched_at": "2026-10-30T11:07:37.264Z",
+      "kind": "team-logo",
+      "name": "PERSITARA Jakarta Utara",
+      "seasons": [
+        "2025-26",
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/74.png",
+      "path": "/img/teams/pesik.png",
+      "bytes": 38089,
+      "width": 160,
+      "sha256": "fb0cd1a69112b1e3",
+      "fetched_at": "2026-10-30T11:07:37.390Z",
+      "kind": "team-logo",
+      "name": "Pesik",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/93/h/50/2208496.png",
+      "path": "/img/teams/psds-deli-serdang.png",
+      "bytes": 3071,
+      "width": 105,
+      "sha256": "3bb5b403b4c65615",
+      "fetched_at": "2026-10-30T11:07:37.239Z",
+      "kind": "team-logo",
+      "name": "PSDS Deli Serdang",
+      "seasons": [
+        "2025-26"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/93/h/50/204.png",
+      "path": "/img/teams/psgc-ciamis.png",
+      "bytes": 25856,
+      "width": 160,
+      "sha256": "274b57e2f6d7777f",
+      "fetched_at": "2026-10-30T11:07:37.262Z",
+      "kind": "team-logo",
+      "name": "PSGC Ciamis",
+      "seasons": [
+        "2025-26"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/82/h/50/27.png",
+      "path": "/img/teams/psim-yogyakarta.png",
+      "bytes": 6550,
+      "width": 105,
+      "sha256": "01ce26928b283b68",
+      "fetched_at": "2026-10-30T11:07:36.961Z",
+      "kind": "team-logo",
+      "name": "PSIM YOGYAKARTA",
+      "seasons": [
+        "2024-25"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/82/h/50/1.png",
+      "path": "/img/teams/psms-medan.png",
+      "bytes": 2744,
+      "width": 105,
+      "sha256": "ff7a2fedcd9568c7",
+      "fetched_at": "2026-10-30T11:07:37.049Z",
+      "kind": "team-logo",
+      "name": "PSMS MEDAN",
+      "seasons": [
+        "2024-25"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/248.png",
+      "path": "/img/teams/psn-ngada.png",
+      "bytes": 51544,
+      "width": 160,
+      "sha256": "71e0159c1d85c32f",
+      "fetched_at": "2026-10-30T11:07:37.426Z",
+      "kind": "team-logo",
+      "name": "Psn Ngada",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/82/h/50/2.png",
+      "path": "/img/teams/psps-pekanbaru.png",
+      "bytes": 4204,
+      "width": 106,
+      "sha256": "a82599a9b2811018",
+      "fetched_at": "2026-10-30T11:07:36.995Z",
+      "kind": "team-logo",
+      "name": "PSPS PEKANBARU",
+      "seasons": [
+        "2024-25"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/93/h/50/2518516.png",
+      "path": "/img/teams/putra-sang-fajar-fc.png",
+      "bytes": 39435,
+      "width": 160,
+      "sha256": "e12e5ce16b790981",
+      "fetched_at": "2026-10-30T11:07:37.273Z",
+      "kind": "team-logo",
+      "name": "Putra Sang Fajar FC",
+      "seasons": [
+        "2025-26",
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/82/h/50/217.png",
+      "path": "/img/teams/rans-nusantara-fc.png",
+      "bytes": 20113,
+      "width": 160,
+      "sha256": "2f6b709db8143fff",
+      "fetched_at": "2026-10-30T11:07:37.208Z",
+      "kind": "team-logo",
+      "name": "RANS Nusantara FC",
+      "seasons": [
+        "2024-25",
+        "2025-26"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/82/h/50/9.png",
+      "path": "/img/teams/sriwijaya-fc.png",
+      "bytes": 4150,
+      "width": 105,
+      "sha256": "e628e034f731f0c3",
+      "fetched_at": "2026-10-30T11:07:37.049Z",
+      "kind": "team-logo",
+      "name": "SRIWIJAYA FC",
+      "seasons": [
+        "2024-25",
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/82/h/50/2409089.png",
+      "path": "/img/teams/sumsel-united.png",
+      "bytes": 15759,
+      "width": 160,
+      "sha256": "49c19b208dada773",
+      "fetched_at": "2026-10-30T11:07:37.195Z",
+      "kind": "team-logo",
+      "name": "SUMSEL UNITED",
+      "seasons": [
+        "2024-25"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/logo/93/h/50/2408141.png",
+      "path": "/img/teams/waanal-brothers.png",
+      "bytes": 12892,
+      "width": 160,
+      "sha256": "3d3825d3b09217b0",
+      "fetched_at": "2026-10-30T11:07:37.362Z",
+      "kind": "team-logo",
+      "name": "Waanal Brothers",
+      "seasons": [
+        "2025-26"
+      ]
+    }
+  ]
+}

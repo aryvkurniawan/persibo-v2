@@ -8,7 +8,7 @@ import { formatDateLong } from '../../utils/dates';
 
 export async function getStaticPaths() {
   const paths = [];
-  const seasons: Season[] = [CURRENT_SEASON, ARCHIVE_SEASON];
+  const seasons: Season[] = [CURRENT_SEASON, ARCHIVE_SEASON, '2024-25'];
 
   for (const season of seasons) {
     const fixtures = await loadFixtures(season);
@@ -28,7 +28,9 @@ export async function getStaticPaths() {
 
 const { fixture, matchDetail, season } = Astro.props;
 const teams = await loadTeams(season);
-const seasonLabel = season === ARCHIVE_SEASON ? '2025-26' : '2026-27';
+const seasonLabel = season;
+// Liga 2 ran until 2024-25; the competition was renamed Liga Nusantara after that.
+const competitionName = season === '2024-25' ? 'Liga 2' : 'Liga Nusantara';
 
 const isCompleted = fixture.status === 'COMPLETED';
 const isPersiboHome = fixture.home_team.toUpperCase().includes('PERSIBO');
@@ -47,6 +49,46 @@ const hasPlayers = (lineup?: { starting_xi: unknown[]; substitutes: unknown[] })
 const homeLineup = hasPlayers(matchDetail?.lineups?.home_team) ? matchDetail!.lineups.home_team : null;
 const awayLineup = hasPlayers(matchDetail?.lineups?.away_team) ? matchDetail!.lineups.away_team : null;
 
+// Scraped keys are English snake_case; the page speaks Indonesian.
+const STAT_LABELS: Record<string, string> = {
+  possession: 'Penguasaan bola',
+  shots: 'Total tembakan',
+  shots_on_target: 'Tembakan ke gawang',
+  shot_accuracy: 'Akurasi tembakan',
+  passes_completed: 'Umpan sukses',
+  passes_failed: 'Umpan gagal',
+  corners: 'Tendangan sudut',
+  tackles_won: 'Tekel sukses',
+  offsides: 'Offside',
+  fouls: 'Pelanggaran',
+  yellow_cards: 'Kartu kuning',
+  red_cards: 'Kartu merah',
+};
+const STAT_ORDER = Object.keys(STAT_LABELS);
+const statRows = matchDetail?.statistics
+  ? Object.entries(matchDetail.statistics)
+      .filter(([, value]) => value !== null && typeof value === 'object')
+      .sort(([a], [b]) => {
+        const ai = STAT_ORDER.indexOf(a);
+        const bi = STAT_ORDER.indexOf(b);
+        return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+      })
+      .map(([key, value]) => {
+        const pair = value as { home: number | null; away: number | null };
+        const home = pair.home ?? 0;
+        const away = pair.away ?? 0;
+        const total = home + away;
+        return {
+          key,
+          label: STAT_LABELS[key] ?? key.replace(/_/g, ' '),
+          home: pair.home,
+          away: pair.away,
+          homePct: total > 0 ? (home / total) * 100 : 50,
+          awayPct: total > 0 ? (away / total) * 100 : 50,
+        };
+      })
+  : [];
+
 const breadcrumbItems = [
   { label: 'Beranda', href: '/' },
   { label: 'Pertandingan', href: '/pertandingan' },
@@ -56,7 +98,7 @@ const breadcrumbItems = [
 
 <Layout
   title={`${fixture.home_team} vs ${fixture.away_team} - ${isCompleted ? 'Hasil' : 'Jadwal'} Pertandingan (Unofficial)`}
-  description={`${isCompleted ? 'Hasil' : 'Jadwal'} pertandingan ${fixture.home_team} vs ${fixture.away_team} di Liga Nusantara ${seasonLabel}. ${matchState}, tanggal ${fixture.date}, venue ${fixture.venue}.`}
+  description={`${isCompleted ? 'Hasil' : 'Jadwal'} pertandingan ${fixture.home_team} vs ${fixture.away_team} di ${competitionName} ${seasonLabel}. ${matchState}, tanggal ${fixture.date}, venue ${fixture.venue}.`}
 >
   <div class="mx-auto max-w-7xl px-4 py-8 lg:px-6 lg:py-12">
     <Breadcrumb items={breadcrumbItems} />
@@ -65,7 +107,7 @@ const breadcrumbItems = [
     <!-- Match Header -->
     <div class="border border-white/12 bg-[#0c0b0f]">
       <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 px-4 py-3">
-        <span class="text-[9px] font-bold uppercase tracking-[0.18em] text-primary">Liga Nusantara {seasonLabel}</span>
+        <span class="text-[9px] font-bold uppercase tracking-[0.18em] text-primary">{competitionName} {seasonLabel}</span>
         <div class="flex flex-col items-end gap-0.5 text-right">
           <span class="text-[9px] uppercase tracking-[0.16em] text-white/40">{formatDateLong(fixture.date)} · {fixture.time ?? '15.30'} WIB</span>
           <span class="text-[9px] uppercase tracking-[0.16em] text-white/25">{fixture.venue}</span>
@@ -119,7 +161,7 @@ const breadcrumbItems = [
       <div class="flex items-center justify-between gap-3 border-t border-white/10 px-4 py-3">
         <ShareButtons
           title={`${fixture.home_team} vs ${fixture.away_team} - ${isCompleted ? fixture.score : fixture.date}`}
-          description={`${isCompleted ? 'Hasil' : 'Jadwal'} pertandingan ${fixture.home_team} vs ${fixture.away_team} di Liga Nusantara ${seasonLabel}. ${matchState}, tanggal ${fixture.date}.`}
+          description={`${isCompleted ? 'Hasil' : 'Jadwal'} pertandingan ${fixture.home_team} vs ${fixture.away_team} di ${competitionName} ${seasonLabel}. ${matchState}, tanggal ${fixture.date}.`}
           type="match"
         />
         {fixture.match_url && (
@@ -169,33 +211,33 @@ const breadcrumbItems = [
     )}
 
     <!-- Statistics -->
-    {matchDetail && matchDetail.statistics && Object.keys(matchDetail.statistics).length > 0 && (
+    {statRows.length > 0 && (
       <section class="mt-8">
         <div class="mb-3 flex items-end justify-between border-b border-white/15 pb-3">
           <h2 class="font-cond text-2xl font-bold uppercase leading-none tracking-wide text-white">Statistik</h2>
+          <span class="text-[9px] uppercase tracking-[0.18em] text-white/30">
+            {isPersiboHome ? 'kiri PERSIBO' : 'kanan PERSIBO'}
+          </span>
         </div>
         <div class="border border-white/12 bg-[#0c0b0f]">
           <div class="divide-y divide-white/5">
-            {Object.entries(matchDetail.statistics).map(([key, value]) => {
-              const isPair = value !== null && typeof value === 'object';
-              return (
-                <div class="flex items-center justify-between gap-4 px-4 py-3">
-                  <span class="shrink-0 text-[10px] uppercase tracking-[0.14em] text-white/40">{key.replace(/_/g, ' ')}</span>
-                  {isPair ? (
-                    <span class="flex min-w-0 flex-col items-end gap-1 text-right">
-                      {Object.entries(value).map(([side, sideValue]) => (
-                        <span class="line-clamp-2 max-w-[22rem] break-words text-[10px] leading-snug text-white/60">
-                          <span class="mr-1 uppercase tracking-[0.14em] text-white/30">{side}</span>
-                          {String(sideValue)}
-                        </span>
-                      ))}
-                    </span>
-                  ) : (
-                    <span class="font-cond text-lg font-semibold leading-none text-white tnum">{String(value)}</span>
-                  )}
+            {statRows.map((row) => (
+              <div class="px-4 py-3">
+                <div class="flex items-baseline justify-between gap-3">
+                  <span class={`font-cond text-lg font-semibold leading-none tnum ${isPersiboHome ? 'text-primary' : 'text-white'}`}>
+                    {row.home ?? '–'}
+                  </span>
+                  <span class="text-center text-[10px] uppercase tracking-[0.14em] text-white/40">{row.label}</span>
+                  <span class={`font-cond text-lg font-semibold leading-none tnum ${isPersiboHome ? 'text-white' : 'text-primary'}`}>
+                    {row.away ?? '–'}
+                  </span>
                 </div>
-              );
-            })}
+                <div class="mt-1.5 flex h-0.5 gap-0.5 overflow-hidden">
+                  <span class={`h-full ${isPersiboHome ? 'bg-primary/70' : 'bg-white/20'}`} style={`width: ${row.homePct}%`}></span>
+                  <span class={`h-full ${isPersiboHome ? 'bg-white/20' : 'bg-primary/70'}`} style={`width: ${row.awayPct}%`}></span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -4,6 +4,8 @@ export interface Official {
   team: string;
   team_url: string;
   photo_url?: string;
+  /** Mirror of photo_url under public/img. */
+  photo_local?: string;
   scraped_at: string;
 }
 
@@ -52,6 +54,8 @@ export interface PlayerDetail {
 
 export interface Standing {
   group: string;
+  /** Competition phase. Liga 2 2024-25 ran Penyisihan -> Play-off -> 8 Besar; later seasons have a single stage. */
+  stage?: string;
   league: string;
   scraped_at: string;
   position: number;
@@ -87,6 +91,8 @@ export interface Team {
   name: string;
   url: string | null;
   logo_url: string;
+  /** Mirror of logo_url under public/img, so the crest survives iLeague dropping it. */
+  logo_local?: string;
   ileague_url: string;
   scraped_at: string;
 }

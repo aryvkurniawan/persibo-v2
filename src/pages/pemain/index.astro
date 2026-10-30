@@ -15,7 +15,7 @@ const playersWithDetails = players.map(player => {
   return {
     ...player,
     position: detail?.position || player.position || '',
-    photo_url: player.photo_url || detail?.photo_url
+    photo_url: player.photo_local || player.photo_url || detail?.photo_url
   };
 });
 ---

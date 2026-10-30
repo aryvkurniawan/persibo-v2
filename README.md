@@ -1,16 +1,14 @@
 # PERSIBO Bojonegoro - Website Unofficial
 
-Website unofficial untuk PERSIBO Bojonegoro yang menyediakan informasi lengkap tentang tim sepak bola kebanggaan masyarakat Bojonegoro yang saat ini berlaga di Liga Nusantara 2025-26.
+Website unofficial untuk PERSIBO Bojonegoro yang menyediakan informasi lengkap tentang tim sepak bola kebanggaan masyarakat Bojonegoro yang saat ini berlaga di Liga Nusantara 2026-27.
 
 ## 🚀 Fitur
 
 ### Halaman Utama
-- **Hero Section** dengan gambar tim
-- **Timeline Mini** menampilkan pertandingan selanjutnya dan 3 hasil pertandingan terakhir
-- **Klasemen Grup C** dengan quick jump links
-- **Top Scorer** tabel pemain dengan gol terbanyak
-- **Top Players** dengan horizontal scroll, diurutkan berdasarkan club history
-- **Berita Terbaru** menampilkan artikel terbaru
+- **Hero pertandingan berikutnya** dengan countdown kickoff
+- **Ticker musim** dan **klasemen grup** PERSIBO
+- **Jadwal mendatang** dan **berita terbaru**
+- **Link arsip musim** di footer
 
 ### Halaman Pemain
 - **Daftar Pemain** dengan fitur search dan filter (posisi, usia, negara)
@@ -22,8 +20,8 @@ Website unofficial untuk PERSIBO Bojonegoro yang menyediakan informasi lengkap t
   - Link ke profil pemain
 
 ### Halaman Pertandingan
-- **Jadwal & Hasil Pertandingan** dengan tab switcher (Jadwal/Hasil)
-- **Detail Pertandingan** untuk setiap pertandingan selesai:
+- **Jadwal & Hasil Pertandingan** dalam satu halaman (jadwal lalu hasil)
+- **Detail Pertandingan** untuk pertandingan selesai dan terjadwal:
   - Lineup (Starting XI & Substitutes) untuk kedua tim
   - Timeline Events (gol, kartu, pergantian pemain)
   - Statistik pertandingan
@@ -33,7 +31,6 @@ Website unofficial untuk PERSIBO Bojonegoro yang menyediakan informasi lengkap t
 - **Profil Tim** dengan FAQ section
 - **Official & Staff** dengan foto dan informasi
 - **Berita** daftar artikel berita
-- **Galeri** (placeholder)
 
 ### Fitur SEO & Analytics
 - ✅ SEO Meta Tags lengkap
@@ -56,7 +53,7 @@ Website unofficial untuk PERSIBO Bojonegoro yang menyediakan informasi lengkap t
 - 📊 **Responsive Tables** untuk klasemen
 - 🔝 **Scroll to Top** button
 - 🧭 **Breadcrumb Navigation**
-- 📱 **Bottom Navigation** untuk navigasi mudah
+- 🗂️ **Arsip musim** untuk data lama (2025-26)
 
 ## 🛠️ Teknologi
 
@@ -99,17 +96,18 @@ persibo-astro/
 │   │   ├── Breadcrumb.astro
 │   │   ├── Lineup.astro
 │   │   ├── MatchCard.astro
-│   │   ├── MatchTimelineCard.astro
 │   │   ├── PlayerCard.astro
 │   │   └── StandingsTable.astro
 │   ├── data/         # Data JSON
-│   │   ├── fixtures.json
-│   │   ├── matchDetails.json
+│   │   ├── seasons/
+│   │   │   ├── 2024-25/  # Arsip: standings, fixtures, teams, matchDetails
+│   │   │   ├── 2025-26/  # Arsip: standings, fixtures, teams, matchDetails
+│   │   │   └── 2026-27/  # Musim aktif
+│   │   ├── players/
+│   │   │   └── faces.json  # Semua yang pernah main di Persibo + fotonya
 │   │   ├── officials.json
 │   │   ├── playerDetails.json
-│   │   ├── players.json
-│   │   ├── standings.json
-│   │   └── teams.json
+│   │   └── players.json
 │   ├── layouts/      # Layout templates
 │   │   └── Layout.astro
 │   ├── pages/        # Halaman website
@@ -121,13 +119,16 @@ persibo-astro/
 │   │   ├── pertandingan/
 │   │   │   ├── index.astro      # Jadwal & hasil
 │   │   │   └── [slug].astro     # Detail pertandingan
+│   │   ├── arsip/
+│   │   │   ├── 2024-25.astro    # Arsip Liga 2 2024-25
+│   │   │   ├── 2025-26.astro    # Arsip Liga Nusantara 2025-26
+│   │   │   └── pemain.astro     # Semua pemain yang pernah main di Persibo
 │   │   └── tim/
 │   │       ├── index.astro      # Menu tim
 │   │       ├── profil.astro     # Profil tim
 │   │       ├── official.astro   # Official & staff
 │   │       ├── berita.astro     # Daftar berita
-│   │       ├── berita/          # Artikel berita
-│   │       └── galeri.astro     # Galeri
+│   │       └── berita/          # Artikel berita
 │   ├── types.ts      # TypeScript types
 │   └── utils/
 │       └── dataLoader.ts  # Utility functions untuk load data
@@ -138,15 +139,28 @@ persibo-astro/
 
 ## 📊 Data Sources
 
-Data diambil dari scraping dan disimpan dalam format JSON di folder `src/data/`:
+Data diambil dari scraping iLeague dan disimpan per musim di `src/data/seasons/<musim>/`:
 
-- `players.json` - Daftar pemain
-- `playerDetails.json` - Detail lengkap pemain
-- `officials.json` - Official & staff
-- `fixtures.json` - Jadwal & hasil pertandingan
-- `matchDetails.json` - Detail pertandingan (lineup, events, stats)
 - `standings.json` - Klasemen
-- `teams.json` - Informasi tim
+- `fixtures.json` - Jadwal & hasil pertandingan
+- `teams.json` - Informasi tim dan logo
+- `matchDetails.json` - Detail pertandingan (lineup, events, stats)
+
+Data skuad terakhir ada di `src/data/players.json`, `playerDetails.json`, dan `officials.json` (belum ada data skuad 2026-27 dari iLeague). File `fixtures.json`, `standings.json`, dan `teams.json` di root `src/data/` adalah snapshot lama; jangan dipakai untuk halaman.
+
+**Arsip dibekukan**: jangan timpa `src/data/seasons/2024-25/` dan `2025-26/` saat scraping musim baru. Halaman arsip ada di `/arsip/2024-25` dan `/arsip/2025-26`; detail pertandingan lama tetap dibuat dari data itu.
+
+### Foto & logo disimpan lokal
+
+Situs ini dulu menampilkan logo klub dan foto pemain langsung dari `assets.ileague.id`. Kalau iLeague mengganti atau menghapus berkasnya, arsip kehilangan gambar tanpa error apa pun. Karena itu aset disalin ke `public/img/` dan dicatat di `src/data/assets-manifest.json` (URL asli, ukuran, waktu unduh):
+
+```bash
+npm run fetch-assets
+```
+
+Skripnya idempoten: berkas yang sudah ada dilewati, dan aman dijalankan ulang kapan saja. Logo klub mempertahankan transparansi (PNG); foto pemain diperkecil ke lebar 400 px lalu disimpan sebagai JPEG.
+
+Kalau menambah musim atau pemain baru, perbarui `src/data/players/faces.json` (atau `teams.json`) lalu jalankan skrip ini lagi. Halaman akan memakai `logo_local` / `photo_local` lebih dulu, dan jatuh ke URL iLeague kalau salinan lokalnya belum ada.
 
 ## 🎨 Design Reference
 
