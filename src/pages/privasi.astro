@@ -1,0 +1,171 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const siteUrl = (Astro.site || Astro.url.origin).toString().replace(/\/+$/, '');
+
+const breadcrumbItems = [
+  { label: 'Beranda', href: '/' },
+  { label: 'Kebijakan Privasi', href: '/privasi' }
+];
+
+const updated = '30 Oktober 2026';
+const contactUrl = 'https://github.com/aryvkurniawan/persibo-v2/issues';
+
+const sections = [
+  {
+    id: 'ringkasan',
+    title: 'Ringkasan Singkat',
+    body: [
+      'persibo.com adalah situs <strong class="text-white">unofficial</strong> tentang PERSIBO Bojonegoro. Situs ini tidak memiliki akun pengguna, tidak meminta pendaftaran, dan tidak menyimpan data pribadi Anda di server kami.',
+      'Satu-satunya data yang diproses berasal dari layanan pihak ketiga yang kami pasang untuk mengukur kunjungan dan menampilkan iklan, yaitu <strong class="text-white">Google Analytics</strong> dan <strong class="text-white">Google AdSense</strong>.',
+    ],
+  },
+  {
+    id: 'data',
+    title: 'Data yang Dikumpulkan',
+    body: [
+      'Kami <strong class="text-white">tidak mengumpulkan</strong> nama, alamat email, nomor telepon, atau data identitas apa pun. Situs ini tidak memiliki formulir pendaftaran, formulir kontak, kolom komentar, maupun area login.',
+      'Secara otomatis, layanan pihak ketiga mencatat informasi teknis non-identitas seperti jenis perangkat, browser, ukuran layar, halaman yang dibuka, durasi kunjungan, perkiraan lokasi (tingkat kota/negara), dan alamat IP. Data ini digunakan dalam bentuk agregat untuk memahami pemakaian situs.',
+    ],
+  },
+  {
+    id: 'cookie',
+    title: 'Cookie dan Teknologi Serupa',
+    body: [
+      'Situs ini menggunakan cookie yang dipasang oleh pihak ketiga. Cookie adalah berkas kecil yang disimpan di browser Anda untuk mengenali kunjungan berulang dan menayangkan iklan yang relevan.',
+      'Anda dapat menolak atau menghapus cookie kapan saja melalui pengaturan browser. Menolak cookie tidak menghalangi Anda membaca konten situs ini, karena seluruh konten disajikan sebagai halaman statis.',
+    ],
+  },
+  {
+    id: 'google',
+    title: 'Google AdSense dan Analytics',
+    body: [
+      'Kami memasang <strong class="text-white">Google AdSense</strong> (client ID <code class="text-white/70">ca-pub-1300254481589524</code>) untuk menampilkan iklan. Google, sebagai vendor pihak ketiga, menggunakan cookie untuk menayangkan iklan berdasarkan kunjungan Anda sebelumnya ke situs ini maupun situs lain di internet.',
+      'Penggunaan cookie iklan memungkinkan Google dan mitranya menayangkan iklan kepada Anda berdasarkan kunjungan Anda ke situs ini dan/atau situs lain di internet. Anda dapat menonaktifkan iklan yang dipersonalisasi melalui <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary/80 underline">Setelan Iklan Google</a>, atau menolak cookie vendor pihak ketiga melalui <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary/80 underline">aboutads.info</a>.',
+      'Kami juga memasang <strong class="text-white">Google Analytics</strong> (ID <code class="text-white/70">G-W843MTD8G4</code>) untuk mengukur jumlah kunjungan dan halaman yang paling banyak dibaca. Data Analytics hanya kami lihat dalam bentuk laporan agregat.',
+      'Penjelasan lengkap mengenai cara Google memproses data tersedia di <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary/80 underline">Kebijakan Privasi &amp; Persyaratan Google</a>.',
+    ],
+  },
+  {
+    id: 'sumber',
+    title: 'Sumber Data Sepak Bola',
+    body: [
+      'Data klasemen, jadwal, dan hasil pertandingan diambil dari <a href="https://www.ileague.id" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary/80 underline">iLeague.id</a> sebagai sumber resmi penyelenggara. Logo klub dimuat dari aset publik iLeague dan Wikimedia Commons.',
+      'Situs ini <strong class="text-white">tidak berafiliasi</strong> dengan manajemen resmi PERSIBO Bojonegoro maupun dengan operator Liga Nusantara. Seluruh merek dan logo adalah milik pemegang hak masing-masing.',
+    ],
+  },
+  {
+    id: 'anak',
+    title: 'Privasi Anak',
+    body: [
+      'Situs ini tidak ditujukan untuk anak di bawah 13 tahun dan kami tidak dengan sengaja mengumpulkan data dari anak-anak. Karena tidak ada pendaftaran maupun formulir, tidak ada data pribadi anak yang tersimpan di sisi kami.',
+    ],
+  },
+  {
+    id: 'hak',
+    title: 'Hak Anda',
+    body: [
+      'Anda berhak meminta penjelasan mengenai data apa yang diproses, meminta penghapusan data yang terkait dengan Anda, dan menolak pemrosesan cookie. Karena kami tidak menyimpan data pribadi di server, permintaan yang paling efektif adalah melalui pengaturan browser dan <a href="https://myaccount.google.com/" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary/80 underline">akun Google</a> Anda.',
+      'Untuk pertanyaan lain mengenai privasi di situs ini, silakan hubungi kami melalui kanal yang tersedia di bagian Kontak.',
+    ],
+  },
+  {
+    id: 'perubahan',
+    title: 'Perubahan Kebijakan',
+    body: [
+      'Kebijakan ini dapat diperbarui bila ada perubahan layanan yang dipasang di situs. Versi terbaru selalu tersedia di halaman ini, dengan tanggal pembaruan tercantum di bagian atas.',
+    ],
+  },
+];
+---
+
+<Layout
+  title="Kebijakan Privasi - PERSIBO Bojonegoro (Unofficial)"
+  description="Kebijakan privasi persibo.com: data yang diproses, penggunaan cookie, Google AdSense dan Analytics, serta hak pengguna. Website Unofficial."
+>
+  <div class="mx-auto max-w-7xl px-4 py-8 lg:px-6 lg:py-12">
+    <Breadcrumb items={breadcrumbItems} />
+
+    <PageHeader
+      label="Transparansi data"
+      title="Kebijakan Privasi"
+      meta={`Diperbarui ${updated}`}
+      description="Penjelasan terbuka mengenai data apa yang diproses saat Anda mengunjungi persibo.com, oleh siapa, dan bagaimana Anda dapat mengendalikannya."
+    />
+
+    <div class="mt-8 grid gap-6 lg:grid-cols-[1fr_0.4fr] lg:gap-10">
+      <div class="space-y-8">
+        {sections.map((section) => (
+          <section id={section.id}>
+            <div class="mb-3 border-b border-white/15 pb-3">
+              <h2 class="font-cond text-2xl font-bold uppercase leading-none tracking-wide text-white">{section.title}</h2>
+            </div>
+            <div class="space-y-4 text-sm leading-relaxed text-white/55">
+              {section.body.map((paragraph) => <p set:html={paragraph} />)}
+            </div>
+          </section>
+        ))}
+
+        <section id="kontak">
+          <div class="mb-3 border-b border-white/15 pb-3">
+            <h2 class="font-cond text-2xl font-bold uppercase leading-none tracking-wide text-white">Kontak</h2>
+          </div>
+          <div class="space-y-4 text-sm leading-relaxed text-white/55">
+            <p>
+              Situs ini dikelola secara independen oleh penggemar PERSIBO Bojonegoro. Pertanyaan, koreksi data, atau permintaan terkait privasi dapat disampaikan melalui:
+            </p>
+            <p>
+              <a href={contactUrl} target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary/80 underline">
+                github.com/aryvkurniawan/persibo-v2 — Issues
+              </a>
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <aside class="lg:sticky lg:top-6 lg:self-start">
+        <div class="border border-white/12 bg-[#0c0b0f] p-5">
+          <p class="text-[9px] font-bold uppercase tracking-[0.24em] text-primary">Isi halaman</p>
+          <ul class="mt-3 space-y-2 text-[11px] uppercase tracking-[0.12em]">
+            {sections.map((section) => (
+              <li>
+                <a href={`#${section.id}`} class="text-white/45 transition-colors hover:text-primary">{section.title}</a>
+              </li>
+            ))}
+            <li><a href="#kontak" class="text-white/45 transition-colors hover:text-primary">Kontak</a></li>
+          </ul>
+        </div>
+
+        <div class="mt-4 border-l-2 border-primary bg-white/[0.02] px-4 py-3">
+          <p class="text-xs leading-relaxed text-white/50">
+            Tidak ada akun, tidak ada formulir, tidak ada data pribadi yang disimpan di server kami.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Layout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Kebijakan Privasi",
+  "description": "Kebijakan privasi persibo.com: data yang diproses, penggunaan cookie, Google AdSense dan Analytics, serta hak pengguna.",
+  "url": `${siteUrl}/privasi`,
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "PERSIBO Bojonegoro (Unofficial)",
+    "url": siteUrl
+  },
+  "dateModified": "2026-10-30",
+  "publisher": {
+    "@type": "Organization",
+    "name": "PERSIBO Bojonegoro (Unofficial)",
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${siteUrl}/logo-128.png`
+    }
+  }
+})} />
