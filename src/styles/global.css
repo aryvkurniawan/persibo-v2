@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-cond {
+  font-family: 'Barlow Condensed', 'Lexend', sans-serif;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes ticker-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.ticker-marquee {
+  animation: ticker-marquee 32s linear infinite;
+  will-change: transform;
+}
+
+.ticker-marquee:hover {
+  animation-play-state: paused;
+}
+
+.proto-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(249, 115, 22, 0.5) transparent;
+}
+
+.proto-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.proto-scroll::-webkit-scrollbar-thumb {
+  background: rgba(249, 115, 22, 0.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-marquee { animation: none; }
+}

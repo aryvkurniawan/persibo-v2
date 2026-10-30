@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
@@ -39,7 +38,9 @@ export default defineConfig({
     },
   },
   integrations: [
-    tailwind(),
-    sitemap(),
+    sitemap({
+      // Throwaway design prototypes must not be indexed or deployed as real pages.
+      filter: (page) => !page.includes('/proto-'),
+    }),
   ],
 });
