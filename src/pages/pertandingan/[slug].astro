@@ -101,6 +101,13 @@ const timeline = matchDetail?.events?.length
 // Goals only, in order, for the scoreline strip under the hero.
 const goals = timeline.filter((event) => event.type === 'goal');
 
+// iLeague sometimes lists more goals than the result implies, or none at all for
+// the losing side. Flag it so the strip never quietly contradicts the score.
+const goalsUnreconciled =
+  isCompleted &&
+  (goals.filter((g) => g.side === 'home').length !== Number(homeScore) ||
+    goals.filter((g) => g.side === 'away').length !== Number(awayScore));
+
 // Officials are patchy: only the referee is always present, so show what exists.
 const officialLabels: Array<[string, string]> = [
   ['referee', 'Wasit'],
@@ -198,23 +205,51 @@ const breadcrumbItems = [
       </div>
     </div>
 
-    <!-- Scoreline: who scored, in order. The quickest read on the page. -->
+    <!-- Goals, grouped by side. A flat list reads as "all of these are ours",
+         which is exactly wrong when the source only records one team's goals. -->
     {goals.length > 0 && (
       <div class="mt-3 border border-white/12 bg-[#0c0b0f]">
-        <div class="divide-y divide-white/5">
-          {goals.map((goal) => (
-            <div class="flex items-center gap-3 px-4 py-2">
-              <span class="w-10 shrink-0 text-right font-cond text-sm font-bold leading-none text-primary tnum">{goal.label}</span>
-              <span class="material-symbols-outlined shrink-0 text-[13px] text-primary">sports_soccer</span>
-              <p class={`min-w-0 flex-1 truncate text-[12px] ${goal.side === 'home' ? 'text-white/85' : 'text-white/60'}`}>
-                {goal.player}
-              </p>
-              <span class="shrink-0 font-cond text-[11px] font-bold leading-none text-white/50 tnum">
-                {goal.score?.home}:{goal.score?.away}
-              </span>
-            </div>
-          ))}
+        <div class="grid grid-cols-2 divide-x divide-white/10">
+          {(['home', 'away'] as const).map((sideKey) => {
+            const sideGoals = goals.filter((goal) => goal.side === sideKey);
+            const teamName = sideKey === 'home' ? fixture.home_team : fixture.away_team;
+            const teamLogo = sideKey === 'home' ? homeTeamLogo : awayTeamLogo;
+            const score = sideKey === 'home' ? homeScore : awayScore;
+            return (
+              <div class="min-w-0 px-3 py-2.5">
+                <div class={`mb-2 flex items-center gap-2 ${sideKey === 'away' ? 'flex-row-reverse text-right' : ''}`}>
+                  {teamLogo && <img src={teamLogo} alt="" class="h-4 w-4 shrink-0 object-contain" loading="lazy" width="16" height="16" />}
+                  <span class="min-w-0 flex-1 truncate text-[9px] font-bold uppercase tracking-[0.14em] text-white/40">
+                    {teamName}
+                  </span>
+                  {!goalsUnreconciled && (
+                    <span class="shrink-0 font-cond text-sm font-bold leading-none text-white tnum">{score}</span>
+                  )}
+                </div>
+                {sideGoals.length > 0 ? (
+                  <ul class={`space-y-1 ${sideKey === 'away' ? 'text-right' : ''}`}>
+                    {sideGoals.map((goal) => (
+                      <li class={`flex items-baseline gap-1.5 text-[11px] leading-tight text-white/80 ${sideKey === 'away' ? 'flex-row-reverse' : ''}`}>
+                        <span class="shrink-0 font-cond text-[10px] font-bold text-primary tnum">{goal.label}</span>
+                        <span class="min-w-0 break-words text-left">{goal.player}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p class="text-[10px] uppercase tracking-[0.12em] text-white/20">Tidak tercatat</p>
+                )}
+              </div>
+            );
+          })}
         </div>
+
+        <!-- When the goal list does not add up to the scoreline, say so instead of
+             letting readers assume the missing goals never happened. -->
+        {goalsUnreconciled && (
+          <p class="border-t border-white/10 px-3 py-2 text-[9px] uppercase leading-relaxed tracking-[0.1em] text-white/30">
+            Pencetak gol di sumber tidak cocok dengan skor akhir, jadi daftar ini belum lengkap.
+          </p>
+        )}
       </div>
     )}
 
