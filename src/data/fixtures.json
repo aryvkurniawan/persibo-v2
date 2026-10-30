@@ -6,7 +6,7 @@
     "score": "0:1",
     "status": "COMPLETED",
     "venue": "SRIWEDARI",
-    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/Persibo_Bojonegoro/Rans_Nusantara",
     "team": "PERSIBO Bojonegoro",
     "scraped_at": "2025-12-05T14:34:00.879226"
   },
@@ -17,7 +17,7 @@
     "score": "1:2",
     "status": "COMPLETED",
     "venue": "BANYUANYAR",
-    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-12-04/Persikutim_United/Persibo_Bojonegoro",
     "team": "PERSIBO Bojonegoro",
     "scraped_at": "2025-12-05T14:34:00.880311"
   },
@@ -28,7 +28,7 @@
     "score": "",
     "status": "SCHEDULED",
     "venue": "UNS",
-    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-12-07/Persewar/Persibo_Bojonegoro",
     "team": "PERSIBO Bojonegoro",
     "scraped_at": "2025-12-05T14:34:00.882050"
   },
@@ -39,7 +39,7 @@
     "score": "",
     "status": "SCHEDULED",
     "venue": "BANYUANYAR",
-    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-12-12/Persibo_Bojonegoro/Persika_Karanganyar",
     "team": "PERSIBO Bojonegoro",
     "scraped_at": "2025-12-05T14:34:00.882975"
   },
@@ -50,7 +50,7 @@
     "score": "",
     "status": "SCHEDULED",
     "venue": "BANYUANYAR",
-    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "match_url": null,
     "team": "PERSIBO Bojonegoro",
     "scraped_at": "2025-12-05T14:34:00.884606"
   },
@@ -61,7 +61,7 @@
     "score": "",
     "status": "SCHEDULED",
     "venue": "BANYUANYAR",
-    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-12-20/Rans_Nusantara/Persibo_Bojonegoro",
     "team": "PERSIBO Bojonegoro",
     "scraped_at": "2025-12-05T14:34:00.886959"
   },
@@ -72,7 +72,7 @@
     "score": "",
     "status": "SCHEDULED",
     "venue": "UNS",
-    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-12-23/Persibo_Bojonegoro/Persikutim_United",
     "team": "PERSIBO Bojonegoro",
     "scraped_at": "2025-12-05T14:34:00.889829"
   },
@@ -83,7 +83,7 @@
     "score": "",
     "status": "SCHEDULED",
     "venue": "BANYUANYAR",
-    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-12-27/Persibo_Bojonegoro/Persewar",
     "team": "PERSIBO Bojonegoro",
     "scraped_at": "2025-12-05T14:34:00.892633"
   },
@@ -94,7 +94,7 @@
     "score": "",
     "status": "SCHEDULED",
     "venue": "UNS",
-    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-12-30/Persika_Karanganyar/Persibo_Bojonegoro",
     "team": "PERSIBO Bojonegoro",
     "scraped_at": "2025-12-05T14:34:00.894982"
   },
@@ -105,7 +105,7 @@
     "score": "",
     "status": "SCHEDULED",
     "venue": "BANYUANYAR",
-    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "match_url": null,
     "team": "PERSIBO Bojonegoro",
     "scraped_at": "2025-12-05T14:34:00.897114"
   },
@@ -116,7 +116,7 @@
     "score": "",
     "status": "SCHEDULED",
     "venue": "UNS",
-    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2026-01-07/Persibo_Bojonegoro/Rans_Nusantara",
     "team": "PERSIBO Bojonegoro",
     "scraped_at": "2025-12-05T14:34:00.899671"
   },
@@ -127,7 +127,7 @@
     "score": "",
     "status": "SCHEDULED",
     "venue": "BANYUANYAR",
-    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2026-01-11/Persikutim_United/Persibo_Bojonegoro",
     "team": "PERSIBO Bojonegoro",
     "scraped_at": "2025-12-05T14:34:00.903509"
   },
@@ -138,7 +138,7 @@
     "score": "",
     "status": "SCHEDULED",
     "venue": "UNS",
-    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2026-01-15/Persewar/Persibo_Bojonegoro",
     "team": "PERSIBO Bojonegoro",
     "scraped_at": "2025-12-05T14:34:00.905329"
   },
@@ -149,7 +149,7 @@
     "score": "",
     "status": "SCHEDULED",
     "venue": "UNS",
-    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2025-11-29/PERSIBO_Bojonegoro/RANS_Nusantara_FC",
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2025-26/2026-01-19/Persibo_Bojonegoro/Persika_Karanganyar",
     "team": "PERSIBO Bojonegoro",
     "scraped_at": "2025-12-05T14:34:00.906916"
   }
