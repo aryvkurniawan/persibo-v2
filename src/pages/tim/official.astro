@@ -32,7 +32,7 @@ const initials = (name: string) =>
 
     <div class="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 lg:gap-4">
       {officials.map((official) => {
-        const photo = official.photo_url;
+        const photo = official.photo_local || official.photo_url;
         return (
           <div class="border border-white/12 bg-[#0c0b0f]">
             <div class="relative aspect-[3/4] w-full overflow-hidden bg-[#161318]">

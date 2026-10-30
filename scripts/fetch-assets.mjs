@@ -84,6 +84,35 @@ async function collectPlayerPhotos() {
   return wanted;
 }
 
+/**
+ * Official and staff portraits, plus any player photo that never made it into
+ * faces.json (iLeague lists a squad member without a registration row). Both
+ * were the last things still hotlinked from iLeague.
+ */
+async function collectStragglers() {
+  const wanted = new Map();
+
+  const officials = await readJson(path.join(ROOT, 'src', 'data', 'officials.json'), []);
+  for (const person of officials) {
+    const url = person.photo_url || '';
+    if (!url.startsWith('http')) continue;
+    if (!wanted.has(url)) {
+      wanted.set(url, { kind: 'official-photo', name: person.name, seasons: new Set(['2025-26']) });
+    }
+  }
+
+  const players = await readJson(path.join(ROOT, 'src', 'data', 'players.json'), []);
+  for (const player of players) {
+    const url = player.photo_url || '';
+    if (!url.startsWith('http') || player.photo_local) continue;
+    if (!wanted.has(url)) {
+      wanted.set(url, { kind: 'player-photo', name: player.name, seasons: new Set(['2025-26']) });
+    }
+  }
+
+  return wanted;
+}
+
 async function download(url) {
   const res = await fetch(url, { headers: { 'User-Agent': UA }, redirect: 'follow' });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -154,6 +183,20 @@ async function main() {
       seasons: [...info.seasons],
       player_ids: [...info.player_ids],
       width: 400,
+    });
+  }
+
+  for (const [url, info] of await collectStragglers()) {
+    jobs.push({
+      url,
+      target:
+        info.kind === 'official-photo'
+          ? path.join('img', 'officials', `${slug(info.name)}.jpg`)
+          : path.join('img', 'players', `${slug(info.name)}.jpg`),
+      kind: info.kind,
+      name: info.name,
+      seasons: [...info.seasons],
+      width: info.kind === 'official-photo' ? 240 : 400,
     });
   }
 

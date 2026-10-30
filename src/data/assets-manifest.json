@@ -1,8 +1,112 @@
 {
-  "generated_at": "2026-10-30T11:07:38.614Z",
+  "generated_at": "2026-10-30T12:24:42.081Z",
   "note": "Images mirrored from assets.ileague.id so past seasons survive the source going away.",
-  "count": 109,
+  "count": 118,
   "assets": [
+    {
+      "source_url": "https://assets.ligaindonesiabaru.com/uploads/images/official/OF090008.jpg",
+      "path": "/img/officials/agus-supriyanto.jpg",
+      "bytes": 17456,
+      "width": 240,
+      "sha256": "17860081dd7aec91",
+      "fetched_at": "2026-10-30T12:24:41.911Z",
+      "kind": "official-photo",
+      "name": "AGUS SUPRIYANTO",
+      "seasons": [
+        "2025-26"
+      ]
+    },
+    {
+      "source_url": "https://assets.ligaindonesiabaru.com/uploads/images/official/OF191217.jpg",
+      "path": "/img/officials/ardiyan-angga-pramuja.jpg",
+      "bytes": 11298,
+      "width": 240,
+      "sha256": "2649567f598d7808",
+      "fetched_at": "2026-10-30T12:24:41.910Z",
+      "kind": "official-photo",
+      "name": "ARDIYAN ANGGA PRAMUJA",
+      "seasons": [
+        "2025-26"
+      ]
+    },
+    {
+      "source_url": "https://assets.ligaindonesiabaru.com/uploads/images/official/OF241539.jpg",
+      "path": "/img/officials/deddy-adrianto-wibowo-st.jpg",
+      "bytes": 13313,
+      "width": 240,
+      "sha256": "b26d41ba49288945",
+      "fetched_at": "2026-10-30T12:24:41.937Z",
+      "kind": "official-photo",
+      "name": "DEDDY ADRIANTO WIBOWO. ST",
+      "seasons": [
+        "2025-26"
+      ]
+    },
+    {
+      "source_url": "https://assets.ligaindonesiabaru.com/uploads/images/official/OF191284.jpg",
+      "path": "/img/officials/gary-anggrana-sa.jpg",
+      "bytes": 21117,
+      "width": 240,
+      "sha256": "b73677bfe73ede9e",
+      "fetched_at": "2026-10-30T12:24:41.914Z",
+      "kind": "official-photo",
+      "name": "GARY ANGGRANA,SA",
+      "seasons": [
+        "2025-26"
+      ]
+    },
+    {
+      "source_url": "https://assets.ligaindonesiabaru.com/uploads/images/official/OF241729.jpg",
+      "path": "/img/officials/jeffri-h-jehosua.jpg",
+      "bytes": 17472,
+      "width": 240,
+      "sha256": "dadb4ee69de31ff1",
+      "fetched_at": "2026-10-30T12:24:41.906Z",
+      "kind": "official-photo",
+      "name": "JEFFRI H.JEHOSUA",
+      "seasons": [
+        "2025-26"
+      ]
+    },
+    {
+      "source_url": "https://assets.ligaindonesiabaru.com/uploads/images/official/OF253054.jpg",
+      "path": "/img/officials/pauji.jpg",
+      "bytes": 16364,
+      "width": 240,
+      "sha256": "61def1b4b9a862fb",
+      "fetched_at": "2026-10-30T12:24:41.939Z",
+      "kind": "official-photo",
+      "name": "PAUJI",
+      "seasons": [
+        "2025-26"
+      ]
+    },
+    {
+      "source_url": "https://assets.ligaindonesiabaru.com/uploads/images/official/OF252619.jpg",
+      "path": "/img/officials/prabowo-sucipto.jpg",
+      "bytes": 16116,
+      "width": 240,
+      "sha256": "24a1652268a6d7bf",
+      "fetched_at": "2026-10-30T12:24:42.029Z",
+      "kind": "official-photo",
+      "name": "PRABOWO SUCIPTO",
+      "seasons": [
+        "2025-26"
+      ]
+    },
+    {
+      "source_url": "https://assets.ligaindonesiabaru.com/uploads/images/official/OF240673.jpg",
+      "path": "/img/officials/sultony-alfin-aprizal.jpg",
+      "bytes": 9171,
+      "width": 240,
+      "sha256": "296cd9a5240d34a8",
+      "fetched_at": "2026-10-30T12:24:42.020Z",
+      "kind": "official-photo",
+      "name": "SULTONY ALFIN APRIZAL",
+      "seasons": [
+        "2025-26"
+      ]
+    },
     {
       "source_url": "https://assets.ileague.id/uploads/images/player/PE22082144.jpeg",
       "path": "/img/players/adre-arido-geovani.jpg",
@@ -676,6 +780,19 @@
       ],
       "player_ids": [
         1618524475
+      ]
+    },
+    {
+      "source_url": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE25179390.jpg",
+      "path": "/img/players/nono.jpg",
+      "bytes": 21467,
+      "width": 300,
+      "sha256": "3d609aa70fcfc9af",
+      "fetched_at": "2026-10-30T12:24:42.061Z",
+      "kind": "player-photo",
+      "name": "NONO",
+      "seasons": [
+        "2025-26"
       ]
     },
     {
