@@ -25,6 +25,7 @@ const next = scheduled[0] ?? null;
 const nextIsHome = next?.home_team.toUpperCase().includes('PERSIBO') ?? true;
 const nextOpponent = next ? (nextIsHome ? next.away_team : next.home_team) : '';
 const homeCount = fixtures.filter((fixture) => fixture.home_team.toUpperCase().includes('PERSIBO')).length;
+const awayCount = fixtures.length - homeCount;
 const friendlies = await loadFriendlies();
 
 const [nextDay, nextMonth, nextYear] = next ? next.date.replace(/^[^,]+,\s*/, '').split(' ') : ['--', '---', '----'];
@@ -167,7 +168,7 @@ const news = [
               </div>
               <div class="flex flex-col items-center gap-1">
                 <span class="font-cond text-2xl leading-none text-white/25">VS</span>
-                <span class="text-[8px] uppercase tracking-[0.2em] text-white/25">{nextIsHome ? 'Home' : 'Away'}</span>
+                <span class="text-[8px] uppercase tracking-[0.2em] text-white/25">{nextIsHome ? 'Kandang' : 'Tandang'}</span>
               </div>
               <div class="flex flex-row-reverse items-center gap-3 text-right">
                 <img src={logoFor(nextOpponent)} alt="" width="48" height="48" class="h-12 w-12 shrink-0 object-contain" />
@@ -269,8 +270,8 @@ const news = [
           <p class="mt-1 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/35">Tim di grup</p>
         </div>
         <div class="px-4 py-4 lg:px-8">
-          <p class="font-cond text-3xl font-bold leading-none text-primary tnum">1</p>
-          <p class="mt-1 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/35">Tujuan: promosi</p>
+          <p class="font-cond text-3xl font-bold leading-none text-white tnum">{awayCount}</p>
+          <p class="mt-1 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/35">Laga tandang</p>
         </div>
       </div>
     </div>
@@ -305,7 +306,7 @@ const news = [
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <span class={`px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-[0.14em] ${home ? 'bg-primary text-[#08070a]' : 'border border-white/20 text-white/45'}`}>
-                  {home ? 'Home' : 'Away'}
+                  {home ? 'Kandang' : 'Tandang'}
                 </span>
               </div>
               <p class="mt-4 text-[10px] font-bold uppercase tracking-[0.18em] text-primary">

@@ -18,7 +18,11 @@ const scheduledFixtures = getScheduledFixtures(allFixtures);
       label="Liga Nusantara 2026-27"
       title="Jadwal & Hasil"
       meta={`${allFixtures.length} laga`}
-      description={`${scheduledFixtures.length} laga terjadwal · ${completedFixtures.length} laga selesai. PERSIBO Bojonegoro.`}
+      description={
+        completedFixtures.length === 0
+          ? `${scheduledFixtures.length} laga terjadwal, belum ada yang dimainkan.`
+          : `${scheduledFixtures.length} laga terjadwal dan ${completedFixtures.length} laga selesai.`
+      }
     />
 
     {scheduledFixtures.length > 0 && (

@@ -9,7 +9,7 @@ const officials = await loadOfficials();
 const breadcrumbItems = [
   { label: 'Beranda', href: '/' },
   { label: 'Tim', href: '/tim' },
-  { label: 'Official & Staff', href: '/tim/official' }
+  { label: 'Ofisial & Staf', href: '/tim/official' }
 ];
 
 const initials = (name: string) =>
@@ -17,7 +17,7 @@ const initials = (name: string) =>
 ---
 
 <Layout
-  title="Official & Staff PERSIBO Bojonegoro (Unofficial)"
+  title="Ofisial & Staf PERSIBO Bojonegoro (Unofficial)"
   description="Daftar official dan staff PERSIBO Bojonegoro: pelatih kepala, asisten pelatih, manager tim, dan staff pendukung."
 >
   <div class="mx-auto max-w-7xl px-4 py-8 lg:px-6 lg:py-12">
@@ -25,7 +25,7 @@ const initials = (name: string) =>
 
     <PageHeader
       label="Struktur tim"
-      title="Official & Staff"
+      title="Ofisial & Staf"
       meta={`${officials.length} orang`}
       description="Pelatih, manajer, dan staf pendukung PERSIBO Bojonegoro."
     />

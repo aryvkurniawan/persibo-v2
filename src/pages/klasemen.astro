@@ -7,6 +7,7 @@ import { loadStandings, getPersiboStanding } from '../utils/dataLoader';
 const standings = await loadStandings();
 const persibo = getPersiboStanding(standings);
 const groups = [...new Set(standings.map((standing) => standing.group))].sort();
+const totalPlayed = standings.reduce((sum, row) => sum + (row.played || 0), 0);
 ---
 
 <Layout
@@ -19,6 +20,15 @@ const groups = [...new Set(standings.map((standing) => standing.group))].sort();
       title="Klasemen"
       description={`Posisi PERSIBO Bojonegoro di Grup ${persibo?.group ?? '-'}. ${persibo?.played === 0 ? 'Belum ada laga dimainkan.' : `${persibo?.played} laga dimainkan.`}`}
     />
+
+    <!-- A table of zeroes ranks teams by nothing. Say so rather than letting the
+         position column imply a standing that no match has produced yet. -->
+    {totalPlayed === 0 && (
+      <p class="mt-6 border border-white/12 border-l-2 border-l-primary bg-[#0c0b0f] px-4 py-3 text-[11px] leading-relaxed text-white/45">
+        Belum ada pertandingan yang dimainkan, jadi urutan di bawah ini belum berarti apa-apa.
+        Klasemen sungguhan terisi setelah matchday pertama pada 13 November 2026.
+      </p>
+    )}
 
     <!-- Quick Jump to Group -->
     <div class="mb-6 mt-6">

@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const variants = [
+  {
+    id: 'A',
+    note: 'Eyebrow di atas, putih pudar',
+    render: 'eyebrow-muted',
+  },
+  { id: 'B', note: 'Eyebrow di atas, oranye', render: 'eyebrow-primary' },
+  { id: 'C', note: 'Satu baris di bawah tahun', render: 'inline-below' },
+  { id: 'D', note: 'Badge hari di kiri angka', render: 'side-badge' },
+];
+---
+
+<Layout title="Prototype tanggal" description="Prototype varian tanggal matchday">
+  <div class="mx-auto max-w-7xl px-4 py-10 lg:px-8">
+    <p class="text-[10px] font-bold uppercase tracking-[0.24em] text-primary">Prototype</p>
+    <h1 class="mt-2 font-cond text-4xl font-bold uppercase leading-none">Varian tanggal matchday</h1>
+    <p class="mt-3 max-w-xl text-sm text-white/45">
+      Empat cara menaruh nama hari. Semua memakai angka 13 / NOV / 2026 yang sama.
+    </p>
+
+    <div class="mt-8 grid gap-4 lg:grid-cols-2">
+      {
+        variants.map((v) => (
+          <div class="border border-white/12 bg-[#0c0b0f]">
+            <div class="flex items-center justify-between border-b border-white/10 px-4 py-2.5">
+              <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Varian {v.id}</span>
+              <span class="text-[9px] uppercase tracking-[0.14em] text-white/35">{v.note}</span>
+            </div>
+
+            <div class="px-4 py-7">
+              {v.render === 'eyebrow-muted' && (
+                <div>
+                  <p class="mb-2.5 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">
+                    <span class="inline-block h-px w-7 bg-primary" />
+                    Jumat
+                  </p>
+                  <div class="flex items-end gap-4">
+                    <div class="font-cond text-[104px] font-bold leading-[0.72] text-primary">13</div>
+                    <div class="pb-2">
+                      <p class="font-cond text-4xl font-semibold leading-none">NOV</p>
+                      <p class="mt-1 text-[11px] font-semibold tracking-[0.34em] text-white/50">2026</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {v.render === 'eyebrow-primary' && (
+                <div>
+                  <p class="mb-2.5 text-[10px] font-bold uppercase tracking-[0.3em] text-primary">Jumat</p>
+                  <div class="flex items-end gap-4">
+                    <div class="font-cond text-[104px] font-bold leading-[0.72] text-primary">13</div>
+                    <div class="pb-2">
+                      <p class="font-cond text-4xl font-semibold leading-none">NOV</p>
+                      <p class="mt-1 text-[11px] font-semibold tracking-[0.34em] text-white/50">2026</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {v.render === 'inline-below' && (
+                <div class="flex items-end gap-4">
+                  <div class="font-cond text-[104px] font-bold leading-[0.72] text-primary">13</div>
+                  <div class="pb-2">
+                    <p class="font-cond text-4xl font-semibold leading-none">NOV</p>
+                    <p class="mt-1 text-[11px] font-semibold tracking-[0.3em] text-white/50">Jumat · 2026</p>
+                  </div>
+                </div>
+              )}
+
+              {v.render === 'side-badge' && (
+                <div class="flex items-end gap-4">
+                  <div class="flex flex-col justify-end pb-1">
+                    <span class="bg-primary px-2 py-1 text-[9px] font-bold uppercase tracking-[0.22em] text-[#08070a]">
+                      Jumat
+                    </span>
+                  </div>
+                  <div class="flex items-end gap-4">
+                    <div class="font-cond text-[104px] font-bold leading-[0.72] text-primary">13</div>
+                    <div class="pb-2">
+                      <p class="font-cond text-4xl font-semibold leading-none">NOV</p>
+                      <p class="mt-1 text-[11px] font-semibold tracking-[0.34em] text-white/50">2026</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</Layout>
