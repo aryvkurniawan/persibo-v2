@@ -2,7 +2,8 @@
 import Layout from '../../../layouts/Layout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import ShareButtons from '../../../components/ShareButtons.astro';
-import { optimizeImage } from '../../../utils/imageOptimizer';
+
+const siteUrl = (Astro.site || Astro.url.origin).toString().replace(/\/+$/, '');
 
 const breadcrumbItems = [
   { label: 'Beranda', href: '/' },
@@ -19,40 +20,33 @@ const authorUrl = 'https://persibo.com';
 
 <Layout 
   title="Bangkit! Persibo Raih Kemenangan Perdana di Liga 3, Tumbangkan Persikutim 2-1 - PERSIBO Bojonegoro (Unofficial)"
-  description="Persibo Bojonegoro berhasil memetik kemenangan krusial di laga kedua Grup C Liga 3 Nusantara. Laskar Angling Dharma sukses menumbangkan Persikutim United dengan skor akhir 2-1. Website Unofficial."
+  description="Persibo Bojonegoro berhasil memetik kemenangan krusial di laga kedua Grup C Liga 3 Nusantara. Laskar Angling Dharma sukses menumbangkan Persikutim United dengan skor akhir 2-1."
   ogImage="/img/persibo-persikutam.jpg"
 >
-  <div class="px-4 lg:px-6 py-4 lg:py-6 max-w-4xl mx-auto">
+  <div class="mx-auto max-w-3xl px-4 py-8 lg:px-6 lg:py-12">
     <Breadcrumb items={breadcrumbItems} />
     
-    <!-- Back Button -->
-    <div class="mb-4">
-      <a href="/tim/berita" class="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors py-2 px-3 rounded-lg hover:bg-slate-800/50">
-        <span class="material-symbols-outlined text-xl">arrow_back</span>
-        <span class="text-sm font-medium">Kembali ke Berita</span>
-      </a>
-    </div>
 
     <!-- Article Header -->
-    <article class="mb-8">
+    <article>
       <div class="mb-6">
         <div class="flex items-center gap-2 mb-4 flex-wrap">
-          <span class="text-xs font-medium text-primary bg-primary/20 px-3 py-1 rounded-full">Liga 3 Nusantara</span>
-          <span class="text-xs text-slate-400">4 Desember 2025</span>
-          <span class="text-xs text-slate-500">•</span>
-          <span class="text-xs text-slate-400">persibo.com</span>
+          <span class="bg-primary px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-[0.14em] text-[#08070a]">Liga 3 Nusantara</span>
+          <span class="text-xs text-white/40">4 Desember 2025</span>
+          <span class="text-xs text-white/30">•</span>
+          <span class="text-xs text-white/40">persibo.com</span>
         </div>
         
-        <h1 class="text-2xl md:text-3xl font-extrabold text-white mb-4 leading-tight">
+        <h1 class="mt-4 font-cond text-3xl font-bold uppercase leading-[0.95] text-white sm:text-4xl md:text-5xl">
           Bangkit! Persibo Raih Kemenangan Perdana di Liga 3, Tumbangkan Persikutim 2-1
         </h1>
         
-        <div class="flex items-center gap-3 text-sm text-slate-400 mb-4">
+        <div class="mt-3 flex items-center gap-3 text-[11px] uppercase tracking-[0.12em] text-white/40 mb-4">
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-base">location_on</span>
             <span>SOLO</span>
           </div>
-          <span class="text-slate-500">•</span>
+          <span class="text-white/30">•</span>
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-base">stadium</span>
             <span>Stadion Banyuanyar</span>
@@ -60,7 +54,7 @@ const authorUrl = 'https://persibo.com';
         </div>
         
         <!-- Share Buttons -->
-        <div class="mb-6 pt-4 border-t border-slate-700">
+        <div class="mb-6 border-y border-white/10 py-4">
           <ShareButtons 
             title="Bangkit! Persibo Raih Kemenangan Perdana di Liga 3, Tumbangkan Persikutim 2-1"
             description="Persibo Bojonegoro berhasil memetik kemenangan krusial di laga kedua Grup C Liga 3 Nusantara. Laskar Angling Dharma sukses menumbangkan Persikutim United dengan skor akhir 2-1."
@@ -70,21 +64,21 @@ const authorUrl = 'https://persibo.com';
       </div>
 
       <!-- Featured Image -->
-      <div class="mb-6 rounded-xl overflow-hidden">
+      <div class="mb-6 overflow-hidden border border-white/12">
         <img 
-          src={optimizeImage('/img/persibo-persikutam.jpg', { width: 1200, height: 675, quality: 75, format: 'webp', fit: 'cover' }, Astro.site || Astro.url.origin)} 
+          src="/img/persibo-persikutam.jpg" 
           alt="Kemenangan Persibo Bojonegoro melawan Persikutim United di Liga 3 Nusantara" 
           class="w-full h-auto object-cover"
           loading="lazy"
           width="800"
           height="450"
         />
-        <p class="text-xs text-slate-400 mt-2 text-center">Foto: Kemenangan perdana Persibo Bojonegoro melawan Persikutim United di Liga 3 Nusantara 2025-2026</p>
+        <p class="mt-2 text-center text-[9px] uppercase tracking-[0.14em] text-white/30">Foto: Kemenangan perdana Persibo Bojonegoro melawan Persikutim United di Liga 3 Nusantara 2025-2026</p>
       </div>
 
       <!-- Article Content -->
-      <div class="prose prose-invert prose-slate max-w-none">
-        <div class="space-y-4 text-slate-300 leading-relaxed">
+      <div class="max-w-none">
+        <div class="space-y-4 text-white/60 leading-relaxed">
           <p class="text-lg font-medium text-white">
             <strong>SOLO, persibo.com</strong> – Persibo Bojonegoro berhasil memetik kemenangan krusial di laga kedua Grup C Liga 3 Nusantara. Laskar Angling Dharma sukses menumbangkan <strong class="text-white">Persikutim United</strong> dengan skor akhir <strong class="text-primary">2-1</strong> dalam pertandingan yang berlangsung di <strong class="text-white">Stadion Banyuanyar, Solo</strong>, pada <strong class="text-primary">Kamis (4/12/2025)</strong>.
           </p>
@@ -93,8 +87,8 @@ const authorUrl = 'https://persibo.com';
             Keunggulan Persibo sudah tercipta sejak awal pertandingan. Penyerang <strong class="text-primary">Rangga Dwi Lesmana</strong> berhasil mencatatkan namanya di papan skor pada <strong class="text-white">menit ke-10</strong>, membawa Laskar Angling Dharma unggul cepat <strong class="text-primary">1-0</strong>. Gol tersebut memberikan suntikan kepercayaan diri yang besar bagi tim, yang tampil solid untuk mempertahankan keunggulannya hingga babak pertama usai.
           </p>
 
-          <div class="bg-gradient-to-r from-primary/20 to-accent-teal/20 border-l-4 border-primary rounded-lg p-4 my-6">
-            <p class="text-slate-200">
+          <div class="my-6 border-l-2 border-primary bg-white/[0.02] px-4 py-3">
+            <p class="text-white/70">
               <strong class="text-white">Gol Cepat di Menit Ke-10</strong><br/>
               <strong class="text-primary">Rangga Dwi Lesmana</strong> menjadi pahlawan dengan mencetak gol pembuka yang memberikan keunggulan awal bagi Persibo. Gol ini menjadi kunci kemenangan Laskar Angling Dharma.
             </p>
@@ -104,7 +98,7 @@ const authorUrl = 'https://persibo.com';
             Memasuki babak kedua, Persibo terus berjuang keras mengamankan poin penuh. Meski lawan sempat memberikan perlawanan, Laskar Angling Dharma berhasil menjaga keunggulan hingga peluit panjang dibunyikan dengan skor kemenangan <strong class="text-primary">2-1</strong>.
           </p>
 
-          <h2 class="text-xl font-bold text-white mt-8 mb-4">Jawaban Tuntas Atas Kekalahan Pembuka</h2>
+          <h2 class="font-cond text-2xl font-bold uppercase tracking-wide text-white mt-8 mb-3">Jawaban Tuntas Atas Kekalahan Pembuka</h2>
 
           <p>
             Kemenangan ini menjadi <strong class="text-white">jawaban tuntas atas hasil mengecewakan di laga pembuka</strong>. Tiga poin perdana ini sangat vital untuk menjaga asa Persibo lolos dari fase grup dan menjadi modal penting untuk menghadapi sisa pertandingan. Hasil ini membuktikan karakter kuat skuad Persibo yang mampu bangkit dari kekalahan dan menunjukkan <strong class="text-primary">mental pemenang</strong>.
@@ -115,49 +109,49 @@ const authorUrl = 'https://persibo.com';
           </p>
 
           <!-- Match Summary Box -->
-          <div class="bg-gradient-to-r from-slate-800/50 to-slate-900/50 rounded-lg p-6 border border-slate-700 my-6">
+          <div class="my-6 border border-white/12 bg-[#0c0b0f] p-5">
             <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
               <span class="material-symbols-outlined text-primary">sports_soccer</span>
               Ringkasan Pertandingan
             </h3>
             <div class="grid grid-cols-2 gap-4 text-sm">
               <div>
-                <p class="text-slate-400 mb-1">Tanggal</p>
+                <p class="text-white/40 mb-1">Tanggal</p>
                 <p class="text-white font-medium">4 Desember 2025</p>
               </div>
               <div>
-                <p class="text-slate-400 mb-1">Venue</p>
+                <p class="text-white/40 mb-1">Venue</p>
                 <p class="text-white font-medium">Stadion Banyuanyar, Solo</p>
               </div>
               <div>
-                <p class="text-slate-400 mb-1">Skor</p>
+                <p class="text-white/40 mb-1">Skor</p>
                 <p class="text-white font-bold text-lg">2 - 1</p>
               </div>
               <div>
-                <p class="text-slate-400 mb-1">Pencetak Gol</p>
+                <p class="text-white/40 mb-1">Pencetak Gol</p>
                 <p class="text-white font-medium">Rangga Dwi Lesmana (10')</p>
               </div>
             </div>
           </div>
 
           <!-- Sources -->
-          <div class="border-t border-slate-700 pt-6 mt-8">
+          <div class="mt-8 border-t border-white/10 pt-6">
             <h3 class="text-lg font-bold text-white mb-3">Sumber:</h3>
-            <ul class="space-y-2 text-sm text-slate-400">
+            <ul class="space-y-2 text-sm text-white/40">
               <li>
-                <span class="text-slate-500">[1]</span>{' '}
+                <span class="text-white/30">[1]</span>{' '}
                 <a href="https://jatim.tribunnews.com/bola-jatim/526076/kalahkan-persikumtim-united-persibo-bojonegoro-raih-kemenangan-perdana-di-liga-nusantara" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary/80 underline">
                   Tribun Jatim - Kalahkan Persikumtim United, Persibo Bojonegoro Raih Kemenangan Perdana di Liga Nusantara
                 </a>
               </li>
               <li>
-                <span class="text-slate-500">[2]</span>{' '}
+                <span class="text-white/30">[2]</span>{' '}
                 <a href="https://siap.viva.co.id/sport/21540-persikota-dan-persibo-amankan-tiga-poin-di-laga-kedua-liga-nusantara-202526" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary/80 underline">
                   Siap.Viva - Persikota dan Persibo Amankan Tiga Poin di Laga Kedua Liga Nusantara 2025/26
                 </a>
               </li>
               <li>
-                <span class="text-slate-500">[3]</span>{' '}
+                <span class="text-white/30">[3]</span>{' '}
                 <a href="https://www.instagram.com/p/DR2A25oideg/" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary/80 underline">
                   Instagram Resmi Persibo Bojonegoro
                 </a>
@@ -169,8 +163,8 @@ const authorUrl = 'https://persibo.com';
     </article>
 
     <!-- Related Articles / Back to News -->
-    <div class="mt-8 pt-6 border-t border-slate-700">
-      <a href="/tim/berita" class="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium">
+    <div class="mt-10 border-t border-white/10 pt-6">
+      <a href="/tim/berita" class="text-[10px] font-bold uppercase tracking-[0.18em] text-primary hover:text-primary/80">
         <span class="material-symbols-outlined">arrow_back</span>
         <span>Kembali ke Daftar Berita</span>
       </a>
@@ -182,7 +176,7 @@ const authorUrl = 'https://persibo.com';
   "@context": "https://schema.org",
   "@type": "NewsArticle",
   "headline": "Bangkit! Persibo Raih Kemenangan Perdana di Liga 3, Tumbangkan Persikutim 2-1",
-  "image": `${Astro.site || Astro.url.origin}/img/persibo-persikutam.jpg`,
+  "image": `${siteUrl}/img/persibo-persikutam.jpg`,
   "datePublished": publishedDate,
   "dateModified": modifiedDate,
   "author": {
@@ -192,15 +186,15 @@ const authorUrl = 'https://persibo.com';
   },
   "publisher": {
     "@type": "Organization",
-    "name": "PERSIBO Bojonegoro (Unofficial)",
+    "name": "PERSIBO Bojonegoro",
     "logo": {
       "@type": "ImageObject",
-      "url": `${Astro.site || Astro.url.origin}/logo-128.png`
+      "url": `${siteUrl}/logo-128.png`
     }
   },
   "description": "Persibo Bojonegoro berhasil memetik kemenangan krusial di laga kedua Grup C Liga 3 Nusantara. Laskar Angling Dharma sukses menumbangkan Persikutim United dengan skor akhir 2-1.",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": `${Astro.site || Astro.url.origin}/tim/berita/bangkit-persibo-raih-kemenangan-perdana-tumbangkan-persikutim`
+    "@id": `${siteUrl}/tim/berita/bangkit-persibo-raih-kemenangan-perdana-tumbangkan-persikutim`
   }
 })} />

@@ -1,8 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import PageHeader from '../../components/PageHeader.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import { loadOfficials } from '../../utils/dataLoader';
-import { optimizePlayerPhoto } from '../../utils/imageOptimizer';
 
 const officials = await loadOfficials();
 
@@ -11,59 +11,56 @@ const breadcrumbItems = [
   { label: 'Tim', href: '/tim' },
   { label: 'Official & Staff', href: '/tim/official' }
 ];
+
+const initials = (name: string) =>
+  name.split(/\s+/).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
 ---
 
-<Layout 
+<Layout
   title="Official & Staff PERSIBO Bojonegoro (Unofficial)"
-  description="Lihat daftar lengkap official dan staff PERSIBO Bojonegoro. Pelatih kepala, asisten pelatih, manager tim, dan seluruh staff pendukung. Website Unofficial."
+  description="Daftar official dan staff PERSIBO Bojonegoro: pelatih kepala, asisten pelatih, manager tim, dan staff pendukung."
 >
-  <div class="max-w-7xl mx-auto px-4 lg:px-6 py-4 lg:py-6">
+  <div class="mx-auto max-w-7xl px-4 py-8 lg:px-6 lg:py-12">
     <Breadcrumb items={breadcrumbItems} />
-    
-    <!-- Intro Text -->
-    <section class="mb-6 lg:mb-8">
-      <div class="rounded-xl bg-slate-800/50 p-6 lg:p-8 border border-slate-700">
-        <h1 class="text-2xl lg:text-3xl font-extrabold text-white mb-3 lg:mb-4">Official & Staff PERSIBO Bojonegoro</h1>
-        <p class="text-slate-300 leading-relaxed text-sm lg:text-base">
-          Berikut adalah daftar lengkap <strong class="text-white">official dan staff PERSIBO Bojonegoro</strong> yang mengelola tim di musim Liga Nusantara 2025-2026. Tim ini didukung oleh pelatih kepala, asisten pelatih, manager tim, dan seluruh staff pendukung yang berdedikasi untuk kesuksesan tim.
-        </p>
-      </div>
-    </section>
-    
-    <div class="flex items-center gap-3 mb-6 lg:mb-8">
-      <a href="/tim" class="text-slate-400 hover:text-white transition-colors">
-        <span class="material-symbols-outlined text-2xl">arrow_back</span>
-      </a>
-      <h2 class="text-2xl lg:text-3xl font-extrabold text-white">Daftar Official & Staff</h2>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-      {officials.map((official) => (
-        <div class="rounded-xl bg-slate-800/50 shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-          {(() => {
-            const optimizedPhoto = optimizePlayerPhoto(official.photo_url, 'medium');
-            return optimizedPhoto ? (
-              <div class="w-full h-80 md:h-96 bg-cover bg-top bg-no-repeat relative overflow-hidden">
-                <img 
-                  src={optimizedPhoto} 
-                  alt={`Foto ${official.name}, ${official.position} PERSIBO Bojonegoro`} 
-                  class="absolute inset-0 w-full h-full object-cover object-top"
+
+    <PageHeader
+      label="Struktur tim"
+      title="Official & Staff"
+      meta={`${officials.length} orang`}
+      description="Pelatih, manajer, dan staf pendukung PERSIBO Bojonegoro."
+    />
+
+    <div class="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 lg:gap-4">
+      {officials.map((official) => {
+        const photo = official.photo_url;
+        return (
+          <div class="border border-white/12 bg-[#0c0b0f]">
+            <div class="relative aspect-[3/4] w-full overflow-hidden bg-[#161318]">
+              <div class="absolute inset-0 flex items-center justify-center font-cond text-5xl font-bold text-white/10 select-none">
+                {initials(official.name)}
+              </div>
+              {photo && (
+                <img
+                  src={photo}
+                  alt={`Foto ${official.name}, ${official.position} PERSIBO Bojonegoro`}
+                  class="absolute inset-0 h-full w-full object-cover object-top opacity-90"
                   loading="lazy"
                   width="400"
-                  height="480"
+                  height="533"
+                  onerror="this.remove()"
                 />
-                <div class="absolute inset-0 w-full h-full bg-gradient-to-t from-slate-800/80 to-transparent"></div>
-              </div>
-            ) : null;
-          })()}
-          <div class="p-4">
-            <h3 class="text-xl font-bold text-white mb-2">{official.name}</h3>
-            {official.position && (
-              <p class="text-slate-400 mb-4">{official.position}</p>
-            )}
-            <p class="text-sm text-slate-400">Tim: {official.team}</p>
+              )}
+              <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#0c0b0f] to-transparent"></div>
+            </div>
+            <div class="border-t border-white/10 p-3">
+              <h2 class="line-clamp-2 font-cond text-lg font-semibold uppercase leading-[1.05] text-white">{official.name}</h2>
+              {official.position && (
+                <p class="mt-1 text-[9px] font-bold uppercase tracking-[0.14em] text-primary">{official.position}</p>
+              )}
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   </div>
 </Layout>

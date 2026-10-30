@@ -3,50 +3,49 @@ import Layout from '../../layouts/Layout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Lineup from '../../components/Lineup.astro';
 import ShareButtons from '../../components/ShareButtons.astro';
-import { loadFixtures, getMatchDetailSlug } from '../../utils/dataLoader';
-import { loadMatchDetails, getMatchDetailByUrl } from '../../utils/dataLoader';
-import { loadTeams, getTeamLogo } from '../../utils/dataLoader';
-import { optimizeTeamLogo } from '../../utils/imageOptimizer';
-import type { MatchDetail } from '../../types';
+import { loadFixtures, getMatchDetailSlug, loadMatchDetails, getMatchDetailByUrl, loadTeams, getTeamLogo, CURRENT_SEASON, ARCHIVE_SEASON, type Season } from '../../utils/dataLoader';
+import { formatDateLong } from '../../utils/dates';
 
 export async function getStaticPaths() {
-  const fixtures = await loadFixtures();
-  const matchDetails = await loadMatchDetails();
-  
-  // Create paths for all completed fixtures
-  const paths = fixtures
-    .filter(f => f.status === 'COMPLETED')
-    .map(fixture => {
+  const paths = [];
+  const seasons: Season[] = [CURRENT_SEASON, ARCHIVE_SEASON];
+
+  for (const season of seasons) {
+    const fixtures = await loadFixtures(season);
+    const matchDetails = await loadMatchDetails(season);
+
+    for (const fixture of fixtures) {
       const matchDetail = fixture.match_url ? getMatchDetailByUrl(matchDetails, fixture.match_url) : null;
-      const slug = getMatchDetailSlug(fixture);
-      return {
-        params: { slug },
-        props: { 
-          fixture,
-          matchDetail: matchDetail || null
-        }
-      };
-    });
-  
+      paths.push({
+        params: { slug: getMatchDetailSlug(fixture) },
+        props: { fixture, matchDetail: matchDetail || null, season },
+      });
+    }
+  }
+
   return paths;
 }
 
-const { fixture, matchDetail } = Astro.props;
-const teams = await loadTeams();
+const { fixture, matchDetail, season } = Astro.props;
+const teams = await loadTeams(season);
+const seasonLabel = season === ARCHIVE_SEASON ? '2025-26' : '2026-27';
 
+const isCompleted = fixture.status === 'COMPLETED';
 const isPersiboHome = fixture.home_team.toUpperCase().includes('PERSIBO');
 const isPersiboAway = fixture.away_team.toUpperCase().includes('PERSIBO');
 const [homeScore, awayScore] = fixture.score ? fixture.score.split(':') : ['', ''];
-const persiboScore = isPersiboHome ? homeScore : awayScore;
-const opponentScore = isPersiboHome ? awayScore : homeScore;
-const persiboWon = parseInt(homeScore) > parseInt(awayScore) ? isPersiboHome : (parseInt(awayScore) > parseInt(homeScore) ? isPersiboAway : false);
-const persiboLost = parseInt(homeScore) < parseInt(awayScore) ? isPersiboHome : (parseInt(awayScore) < parseInt(homeScore) ? isPersiboAway : false);
-const isDraw = homeScore === awayScore;
+const matchState = isCompleted ? `Skor ${fixture.score}` : `Jadwal ${fixture.time}`;
+const persiboWon = isCompleted && (parseInt(homeScore) > parseInt(awayScore) ? isPersiboHome : (parseInt(awayScore) > parseInt(homeScore) ? isPersiboAway : false));
+const persiboLost = isCompleted && (parseInt(homeScore) < parseInt(awayScore) ? isPersiboHome : (parseInt(awayScore) < parseInt(homeScore) ? isPersiboAway : false));
+const isDraw = isCompleted && homeScore === awayScore;
 
-const homeTeamLogoRaw = isPersiboHome ? '/logo-64.png' : (getTeamLogo(teams, fixture.home_team) || null);
-const awayTeamLogoRaw = isPersiboAway ? '/logo-64.png' : (getTeamLogo(teams, fixture.away_team) || null);
-const homeTeamLogo = optimizeTeamLogo(homeTeamLogoRaw, 80);
-const awayTeamLogo = optimizeTeamLogo(awayTeamLogoRaw, 80);
+const homeTeamLogo = isPersiboHome ? '/logo-64.png' : (getTeamLogo(teams, fixture.home_team) || null);
+const awayTeamLogo = isPersiboAway ? '/logo-64.png' : (getTeamLogo(teams, fixture.away_team) || null);
+
+const hasPlayers = (lineup?: { starting_xi: unknown[]; substitutes: unknown[] }) =>
+  Boolean(lineup && (lineup.starting_xi.length > 0 || lineup.substitutes.length > 0));
+const homeLineup = hasPlayers(matchDetail?.lineups?.home_team) ? matchDetail!.lineups.home_team : null;
+const awayLineup = hasPlayers(matchDetail?.lineups?.away_team) ? matchDetail!.lineups.away_team : null;
 
 const breadcrumbItems = [
   { label: 'Beranda', href: '/' },
@@ -55,141 +54,113 @@ const breadcrumbItems = [
 ];
 ---
 
-<Layout 
-  title={`${fixture.home_team} vs ${fixture.away_team} - Detail Pertandingan (Unofficial)`}
-  description={`Detail pertandingan ${fixture.home_team} vs ${fixture.away_team} di Liga Nusantara 2025-2026. Skor ${fixture.score}, tanggal ${fixture.date}, venue ${fixture.venue}. Website Unofficial.`}
+<Layout
+  title={`${fixture.home_team} vs ${fixture.away_team} - ${isCompleted ? 'Hasil' : 'Jadwal'} Pertandingan (Unofficial)`}
+  description={`${isCompleted ? 'Hasil' : 'Jadwal'} pertandingan ${fixture.home_team} vs ${fixture.away_team} di Liga Nusantara ${seasonLabel}. ${matchState}, tanggal ${fixture.date}, venue ${fixture.venue}.`}
 >
-  <div class="max-w-7xl mx-auto px-4 lg:px-6 py-4 lg:py-6">
+  <div class="mx-auto max-w-7xl px-4 py-8 lg:px-6 lg:py-12">
     <Breadcrumb items={breadcrumbItems} />
-    
-    <!-- Back Button -->
-    <div class="mb-4 lg:mb-6">
-      <a href="/pertandingan" class="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors py-2 px-3 rounded-lg hover:bg-slate-800/50">
-        <span class="material-symbols-outlined text-xl">arrow_back</span>
-        <span class="text-sm lg:text-base font-medium">Kembali ke Pertandingan</span>
-      </a>
-    </div>
+    <h1 class="sr-only">{fixture.home_team} vs {fixture.away_team} - {fixture.date}</h1>
 
     <!-- Match Header -->
-    <div class="rounded-xl bg-slate-800/50 border border-slate-700 p-4 md:p-6 lg:p-8 mb-6 lg:mb-8">
-      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0 mb-4">
-        <div class="flex items-center gap-2">
-          <span class="material-symbols-outlined text-slate-400 text-sm">calendar_month</span>
-          <span class="text-slate-300 text-xs sm:text-sm">{fixture.date}</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <span class="material-symbols-outlined text-slate-400 text-sm">location_on</span>
-          <span class="text-slate-300 text-xs sm:text-sm">{fixture.venue}</span>
+    <div class="border border-white/12 bg-[#0c0b0f]">
+      <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 px-4 py-3">
+        <span class="text-[9px] font-bold uppercase tracking-[0.18em] text-primary">Liga Nusantara {seasonLabel}</span>
+        <div class="flex flex-col items-end gap-0.5 text-right">
+          <span class="text-[9px] uppercase tracking-[0.16em] text-white/40">{formatDateLong(fixture.date)} · {fixture.time ?? '15.30'} WIB</span>
+          <span class="text-[9px] uppercase tracking-[0.16em] text-white/25">{fixture.venue}</span>
         </div>
       </div>
 
-      <!-- Teams and Score -->
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 mb-4">
-        <!-- Home Team -->
-        <div class="flex-1 text-center w-full sm:w-auto">
+      <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-3 px-4 py-8 lg:gap-8 lg:px-10 lg:py-12">
+        <div class="flex flex-col items-center gap-2 text-center">
           {homeTeamLogo && (
-            <img src={homeTeamLogo} alt={fixture.home_team} class="h-12 w-12 sm:h-16 sm:w-16 object-contain mx-auto mb-2" width="64" height="64" loading="lazy" />
+            <img src={homeTeamLogo} alt={`Logo ${fixture.home_team}`} class="h-14 w-14 object-contain lg:h-20 lg:w-20" width="80" height="80" loading="lazy" />
           )}
-          <h2 class={`text-sm sm:text-lg font-bold ${isPersiboHome ? 'text-white' : 'text-slate-300'} break-words`}>
+          <h2 class={`font-cond text-xl font-semibold uppercase leading-none lg:text-3xl ${isPersiboHome ? 'text-white' : 'text-white/60'}`}>
             {fixture.home_team}
           </h2>
-          {isPersiboHome && (
-            <span class="text-xs text-primary mt-1 block">HOME</span>
+          <span class="text-[8px] font-bold uppercase tracking-[0.18em] text-white/30">Kandang</span>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          {isCompleted ? (
+            <>
+              <span class={`font-cond text-5xl font-bold leading-none tnum lg:text-7xl ${
+                persiboWon ? 'text-green-400' : persiboLost ? 'text-red-400' : 'text-yellow-400'
+              }`}>
+                {homeScore}<span class="px-1 text-white/20">:</span>{awayScore}
+              </span>
+              <span class={`border px-2 py-0.5 text-[8px] font-bold uppercase tracking-[0.16em] ${
+                persiboWon ? 'border-green-500/40 text-green-400' : persiboLost ? 'border-red-500/40 text-red-400' : 'border-yellow-500/40 text-yellow-400'
+              }`}>
+                {persiboWon ? 'Menang' : persiboLost ? 'Kalah' : 'Seri'}
+              </span>
+            </>
+          ) : (
+            <>
+              <span class="font-cond text-5xl font-bold leading-none text-white tnum lg:text-7xl">{fixture.time ?? '15.30'}</span>
+              <span class="text-[8px] font-bold uppercase tracking-[0.18em] text-white/30">WIB · Jadwal</span>
+            </>
           )}
         </div>
 
-        <!-- Score -->
-        <div class="flex flex-col items-center gap-2 min-w-[100px] sm:min-w-[120px]">
-          <div class={`text-2xl sm:text-4xl font-extrabold ${
-            persiboWon ? 'text-green-400' : 
-            persiboLost ? 'text-red-400' : 
-            'text-yellow-400'
-          }`}>
-            {homeScore} : {awayScore}
-          </div>
-          {persiboWon && (
-            <span class="text-xs font-bold text-green-400 bg-green-500/20 px-2 sm:px-3 py-1 rounded-full">MENANG</span>
-          )}
-          {persiboLost && (
-            <span class="text-xs font-bold text-red-400 bg-red-500/20 px-2 sm:px-3 py-1 rounded-full">KALAH</span>
-          )}
-          {isDraw && (
-            <span class="text-xs font-bold text-yellow-400 bg-yellow-500/20 px-2 sm:px-3 py-1 rounded-full">SERI</span>
-          )}
-        </div>
-
-        <!-- Away Team -->
-        <div class="flex-1 text-center w-full sm:w-auto">
+        <div class="flex flex-col items-center gap-2 text-center">
           {awayTeamLogo && (
-            <img src={awayTeamLogo} alt={fixture.away_team} class="h-12 w-12 sm:h-16 sm:w-16 object-contain mx-auto mb-2" width="64" height="64" loading="lazy" />
+            <img src={awayTeamLogo} alt={`Logo ${fixture.away_team}`} class="h-14 w-14 object-contain lg:h-20 lg:w-20" width="80" height="80" loading="lazy" />
           )}
-          <h2 class={`text-sm sm:text-lg font-bold ${isPersiboAway ? 'text-white' : 'text-slate-300'} break-words`}>
+          <h2 class={`font-cond text-xl font-semibold uppercase leading-none lg:text-3xl ${isPersiboAway ? 'text-white' : 'text-white/60'}`}>
             {fixture.away_team}
           </h2>
-          {isPersiboAway && (
-            <span class="text-xs text-primary mt-1 block">AWAY</span>
-          )}
+          <span class="text-[8px] font-bold uppercase tracking-[0.18em] text-white/30">Tandang</span>
         </div>
       </div>
-      
-      <!-- Share Buttons -->
-      <div class="mt-6 pt-6 border-t border-slate-700">
-        <ShareButtons 
-          title={`${fixture.home_team} vs ${fixture.away_team} - ${fixture.score}`}
-          description={`Detail pertandingan ${fixture.home_team} vs ${fixture.away_team} di Liga Nusantara 2025-2026. Skor ${fixture.score}, tanggal ${fixture.date}.`}
+
+      <div class="flex items-center justify-between gap-3 border-t border-white/10 px-4 py-3">
+        <ShareButtons
+          title={`${fixture.home_team} vs ${fixture.away_team} - ${isCompleted ? fixture.score : fixture.date}`}
+          description={`${isCompleted ? 'Hasil' : 'Jadwal'} pertandingan ${fixture.home_team} vs ${fixture.away_team} di Liga Nusantara ${seasonLabel}. ${matchState}, tanggal ${fixture.date}.`}
           type="match"
         />
+        {fixture.match_url && (
+          <a href={fixture.match_url} target="_blank" rel="noopener noreferrer" class="text-[9px] font-bold uppercase tracking-[0.18em] text-white/40 hover:text-primary">
+            iLeague ↗
+          </a>
+        )}
       </div>
     </div>
 
-    <!-- Lineups -->
-    {matchDetail && matchDetail.lineups && (
-      <section class="mb-6 lg:mb-8">
-        <h2 class="text-xl lg:text-2xl font-bold text-white mb-4 lg:mb-6">Lineup</h2>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
-          <Lineup 
-            lineup={matchDetail.lineups.home_team} 
-            teamName={fixture.home_team}
-            isHome={true}
-          />
-          <Lineup 
-            lineup={matchDetail.lineups.away_team} 
-            teamName={fixture.away_team}
-            isHome={false}
-          />
+    <!-- Lineups (scrape only captures the PERSIBO side) -->
+    {matchDetail && (homeLineup || awayLineup) && (
+      <section class="mt-8">
+        <div class="mb-3 flex items-end justify-between border-b border-white/15 pb-3">
+          <h2 class="font-cond text-2xl font-bold uppercase leading-none tracking-wide text-white">Lineup</h2>
+          <span class="text-[9px] uppercase tracking-[0.18em] text-white/30">Starting XI</span>
+        </div>
+        <div class={`grid grid-cols-1 gap-3 ${homeLineup && awayLineup ? 'lg:grid-cols-2' : ''}`}>
+          {homeLineup && <Lineup lineup={homeLineup} teamName={fixture.home_team} isHome={true} />}
+          {awayLineup && <Lineup lineup={awayLineup} teamName={fixture.away_team} isHome={false} />}
         </div>
       </section>
     )}
 
     <!-- Events Timeline -->
     {matchDetail && matchDetail.events && matchDetail.events.length > 0 && (
-      <section class="mb-6 lg:mb-8">
-        <h2 class="text-xl lg:text-2xl font-bold text-white mb-4 lg:mb-6">Timeline Pertandingan</h2>
-        <div class="rounded-xl bg-slate-800/50 border border-slate-700 p-4 lg:p-6">
-          <div class="space-y-3 lg:space-y-4">
-            {matchDetail.events.map((event, index) => (
-              <div key={index} class="flex items-center gap-3 lg:gap-4 p-3 lg:p-4 rounded-lg bg-slate-900/50 hover:bg-slate-900/70 transition-colors">
-                <div class="flex-shrink-0 w-12 lg:w-14 text-center">
-                  <span class="text-sm lg:text-base font-bold text-primary">{event.minute}'</span>
-                </div>
-                <div class="flex-1">
-                  <div class="flex items-center gap-2 lg:gap-3">
-                    {event.type === 'goal' && (
-                      <span class="material-symbols-outlined text-green-400 text-lg lg:text-xl">sports_soccer</span>
-                    )}
-                    {event.type === 'yellow_card' && (
-                      <span class="material-symbols-outlined text-yellow-400 text-lg lg:text-xl">warning</span>
-                    )}
-                    {event.type === 'red_card' && (
-                      <span class="material-symbols-outlined text-red-400 text-lg lg:text-xl">block</span>
-                    )}
-                    {event.type === 'substitution' && (
-                      <span class="material-symbols-outlined text-blue-400 text-lg lg:text-xl">swap_horiz</span>
-                    )}
-                    <span class="text-white text-sm lg:text-base font-medium">{event.player}</span>
-                    <span class="text-slate-400 text-xs lg:text-sm">({event.team})</span>
-                  </div>
-                </div>
+      <section class="mt-8">
+        <div class="mb-3 flex items-end justify-between border-b border-white/15 pb-3">
+          <h2 class="font-cond text-2xl font-bold uppercase leading-none tracking-wide text-white">Timeline</h2>
+          <span class="text-[9px] uppercase tracking-[0.18em] text-white/30">{matchDetail.events.length} kejadian</span>
+        </div>
+        <div class="border border-white/12 bg-[#0c0b0f]">
+          <div class="divide-y divide-white/5">
+            {matchDetail.events.map((event) => (
+              <div class="flex items-center gap-3 px-4 py-3">
+                <span class="w-10 shrink-0 text-right font-cond text-lg font-bold leading-none text-primary tnum">{event.minute}'</span>
+                <span class="material-symbols-outlined text-base text-white/40">
+                  {event.type === 'goal' ? 'sports_soccer' : event.type === 'yellow_card' ? 'warning' : event.type === 'red_card' ? 'block' : 'swap_horiz'}
+                </span>
+                <p class="min-w-0 flex-1 truncate text-sm text-white/85">{event.player}</p>
+                <span class="shrink-0 text-[9px] uppercase tracking-[0.14em] text-white/30">{event.team}</span>
               </div>
             ))}
           </div>
@@ -199,41 +170,47 @@ const breadcrumbItems = [
 
     <!-- Statistics -->
     {matchDetail && matchDetail.statistics && Object.keys(matchDetail.statistics).length > 0 && (
-      <section class="mb-6 lg:mb-8">
-        <h2 class="text-xl lg:text-2xl font-bold text-white mb-4 lg:mb-6">Statistik Pertandingan</h2>
-        <div class="rounded-xl bg-slate-800/50 border border-slate-700 p-4 lg:p-6">
-          <div class="space-y-2 lg:space-y-3 text-sm lg:text-base text-slate-300">
-            {Object.entries(matchDetail.statistics).map(([key, value]) => (
-              <div class="flex items-center justify-between py-2 lg:py-3 border-b border-slate-700 last:border-0 hover:bg-slate-900/30 transition-colors rounded px-2">
-                <span class="text-slate-400">{key}</span>
-                <span class="text-white font-medium">{String(value)}</span>
-              </div>
-            ))}
+      <section class="mt-8">
+        <div class="mb-3 flex items-end justify-between border-b border-white/15 pb-3">
+          <h2 class="font-cond text-2xl font-bold uppercase leading-none tracking-wide text-white">Statistik</h2>
+        </div>
+        <div class="border border-white/12 bg-[#0c0b0f]">
+          <div class="divide-y divide-white/5">
+            {Object.entries(matchDetail.statistics).map(([key, value]) => {
+              const isPair = value !== null && typeof value === 'object';
+              return (
+                <div class="flex items-center justify-between gap-4 px-4 py-3">
+                  <span class="shrink-0 text-[10px] uppercase tracking-[0.14em] text-white/40">{key.replace(/_/g, ' ')}</span>
+                  {isPair ? (
+                    <span class="flex min-w-0 flex-col items-end gap-1 text-right">
+                      {Object.entries(value).map(([side, sideValue]) => (
+                        <span class="line-clamp-2 max-w-[22rem] break-words text-[10px] leading-snug text-white/60">
+                          <span class="mr-1 uppercase tracking-[0.14em] text-white/30">{side}</span>
+                          {String(sideValue)}
+                        </span>
+                      ))}
+                    </span>
+                  ) : (
+                    <span class="font-cond text-lg font-semibold leading-none text-white tnum">{String(value)}</span>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
     )}
 
-    <!-- No Match Detail Message -->
-    {!matchDetail && (
-      <div class="rounded-xl bg-slate-800/50 border border-slate-700 p-6 text-center">
-        <span class="material-symbols-outlined text-slate-400 text-4xl mb-3 block">info</span>
-        <p class="text-slate-300 mb-2">Detail pertandingan belum tersedia</p>
-        <p class="text-slate-400 text-sm">Lineup dan statistik akan ditampilkan jika data tersedia.</p>
-      </div>
-    )}
-
     <!-- External Link -->
     {fixture.match_url && (
-      <div class="mt-6 pt-6 border-t border-slate-700">
-        <a 
-          href={fixture.match_url} 
-          target="_blank" 
+      <div class="mt-8 border-t border-white/10 pt-4">
+        <a
+          href={fixture.match_url}
+          target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium"
+          class="text-[10px] font-bold uppercase tracking-[0.18em] text-primary hover:text-primary/80"
         >
-          <span>Lihat Detail di iLeague.id</span>
-          <span class="material-symbols-outlined text-base">open_in_new</span>
+          Lihat detail di iLeague.id ↗
         </a>
       </div>
     )}

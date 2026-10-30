@@ -3,6 +3,8 @@ import Layout from '../../../layouts/Layout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import ShareButtons from '../../../components/ShareButtons.astro';
 
+const siteUrl = (Astro.site || Astro.url.origin).toString().replace(/\/+$/, '');
+
 const breadcrumbItems = [
   { label: 'Beranda', href: '/' },
   { label: 'Tim', href: '/tim' },
@@ -18,35 +20,28 @@ const authorUrl = 'https://persibo.com';
 
 <Layout 
   title="Siap Tempur di Solo! Persibo Bojonegoro Resmi Luncurkan Skuad dan Jersey Anyar Musim 2025-2026 - PERSIBO Bojonegoro (Unofficial)"
-  description="Persibo Bojonegoro secara resmi memperkenalkan komposisi skuad dan jersey terbaru untuk Liga 3 Nusantara musim 2025-2026. Acara launching digelar di Hotel Eastern, Bojonegoro dengan 30 pemain siap tempur. Website Unofficial."
+  description="Persibo Bojonegoro secara resmi memperkenalkan komposisi skuad dan jersey terbaru untuk Liga 3 Nusantara musim 2025-2026. Acara launching digelar di Hotel Eastern, Bojonegoro dengan 30 pemain siap tempur."
   ogImage="/img/drama-pinalti.jpg"
 >
-  <div class="px-4 lg:px-6 py-4 lg:py-6 max-w-4xl mx-auto">
+  <div class="mx-auto max-w-3xl px-4 py-8 lg:px-6 lg:py-12">
     <Breadcrumb items={breadcrumbItems} />
     
-    <!-- Back Button -->
-    <div class="mb-4">
-      <a href="/tim/berita" class="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors py-2 px-3 rounded-lg hover:bg-slate-800/50">
-        <span class="material-symbols-outlined text-xl">arrow_back</span>
-        <span class="text-sm font-medium">Kembali ke Berita</span>
-      </a>
-    </div>
 
     <!-- Article Header -->
-    <article class="mb-8">
+    <article>
       <div class="mb-6">
         <div class="flex items-center gap-2 mb-4 flex-wrap">
-          <span class="text-xs font-medium text-primary bg-primary/20 px-3 py-1 rounded-full">Liga 3 Nusantara</span>
-          <span class="text-xs text-slate-400">25 November 2025</span>
-          <span class="text-xs text-slate-500">•</span>
-          <span class="text-xs text-slate-400">persibo.com</span>
+          <span class="bg-primary px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-[0.14em] text-[#08070a]">Liga 3 Nusantara</span>
+          <span class="text-xs text-white/40">25 November 2025</span>
+          <span class="text-xs text-white/30">•</span>
+          <span class="text-xs text-white/40">persibo.com</span>
         </div>
         
-        <h1 class="text-2xl md:text-3xl font-extrabold text-white mb-4 leading-tight">
+        <h1 class="mt-4 font-cond text-3xl font-bold uppercase leading-[0.95] text-white sm:text-4xl md:text-5xl">
           Siap Tempur di Solo! Persibo Bojonegoro Resmi Luncurkan Skuad dan Jersey Anyar Musim 2025-2026
         </h1>
         
-        <div class="flex items-center gap-3 text-sm text-slate-400 mb-4">
+        <div class="mt-3 flex items-center gap-3 text-[11px] uppercase tracking-[0.12em] text-white/40 mb-4">
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-base">location_on</span>
             <span>BOJONEGORO</span>
@@ -54,7 +49,7 @@ const authorUrl = 'https://persibo.com';
         </div>
         
         <!-- Share Buttons -->
-        <div class="mb-6 pt-4 border-t border-slate-700">
+        <div class="mb-6 border-y border-white/10 py-4">
           <ShareButtons 
             title="Siap Tempur di Solo! Persibo Bojonegoro Resmi Luncurkan Skuad dan Jersey Anyar Musim 2025-2026"
             description="Persibo Bojonegoro secara resmi memperkenalkan komposisi skuad dan jersey terbaru untuk Liga 3 Nusantara musim 2025-2026"
@@ -64,7 +59,7 @@ const authorUrl = 'https://persibo.com';
       </div>
 
       <!-- Featured Video -->
-      <div class="mb-6 rounded-xl overflow-hidden bg-slate-900">
+      <div class="mb-6 overflow-hidden border border-white/12 bg-[#0c0b0f]">
         <video 
           controls 
           class="w-full h-auto"
@@ -74,12 +69,12 @@ const authorUrl = 'https://persibo.com';
           <source src="/video/launching-2025.mp4" type="video/mp4" />
           Browser Anda tidak mendukung pemutaran video.
         </video>
-        <p class="text-xs text-slate-400 mt-2 px-4 pb-4 text-center">Video: Peluncuran Skuad dan Jersey Persibo Bojonegoro Musim 2025-2026</p>
+        <p class="text-xs text-white/40 mt-2 px-4 pb-4 text-center">Video: Peluncuran Skuad dan Jersey Persibo Bojonegoro Musim 2025-2026</p>
       </div>
 
       <!-- Article Content -->
-      <div class="prose prose-invert prose-slate max-w-none">
-        <div class="space-y-4 text-slate-300 leading-relaxed">
+      <div class="max-w-none">
+        <div class="space-y-4 text-white/60 leading-relaxed">
           <p class="text-lg font-medium text-white">
             <strong>BOJONEGORO, persibo.com</strong> – Persibo Bojonegoro secara resmi memperkenalkan komposisi skuad dan jubah perang terbaru mereka untuk mengarungi kompetisi Liga 3 Nusantara musim 2025-2026. Acara peluncuran (<em>launching</em>) tim ini digelar dengan meriah namun tetap khidmat di <strong class="text-white">Hotel Eastern, Bojonegoro</strong>, pada <strong class="text-primary">Selasa, 25 November 2025</strong>.
           </p>
@@ -88,8 +83,8 @@ const authorUrl = 'https://persibo.com';
             Acara tersebut ditandai dengan prosesi <strong class="text-white">potong tumpeng dan doa bersama</strong> yang diikuti oleh seluruh manajemen, pelatih, dan pemain. Ritual ini menjadi simbol harapan keselamatan serta penanda kesiapan penuh Laskar Angling Dharma sebelum bertolak menghadapi ketatnya persaingan kompetisi yang akan dipusatkan di <strong class="text-primary">Kota Solo</strong>.
           </p>
 
-          <div class="bg-slate-800/50 border-l-4 border-primary rounded-lg p-4 my-6">
-            <p class="text-slate-200">
+          <div class="my-6 border-l-2 border-primary bg-white/[0.02] px-4 py-3">
+            <p class="text-white/70">
               <strong class="text-white">30 Pemain Siap Tempur</strong><br/>
               Untuk musim ini, manajemen Persibo memperkenalkan total <strong class="text-primary">30 pemain</strong> yang siap berjuang di lapangan hijau. Komposisi skuad diracik dengan kombinasi menarik antara talenta lokal dan pengalaman tingkat tinggi.
             </p>
@@ -99,13 +94,13 @@ const authorUrl = 'https://persibo.com';
             Tercatat, sebanyak <strong class="text-white">enam pemain merupakan putra asli daerah Bojonegoro</strong>, menegaskan komitmen klub untuk tetap memberi panggung bagi talenta-talenta terbaik daerah.
           </p>
 
-          <h2 class="text-xl font-bold text-white mt-8 mb-4">Kembalinya Legenda: Samsul Arif</h2>
+          <h2 class="font-cond text-2xl font-bold uppercase tracking-wide text-white mt-8 mb-3">Kembalinya Legenda: Samsul Arif</h2>
 
           <p>
             Sorotan utama dalam peluncuran ini tertuju pada kehadiran sosok legenda hidup, <strong class="text-primary">Samsul Arif</strong>. Kembalinya penyerang senior ini ke skuad Persibo diharapkan tidak hanya menambah ketajaman lini depan, tetapi juga membawa aura positif dan mentalitas juara bagi para pemain muda. Pengalaman Samsul Arif di kasta tertinggi sepak bola Indonesia dinilai vital untuk membimbing tim melewati tekanan kompetisi Liga 3.
           </p>
 
-          <h2 class="text-xl font-bold text-white mt-8 mb-4">Jersey Anyar dengan Semangat Kebangkitan</h2>
+          <h2 class="font-cond text-2xl font-bold uppercase tracking-wide text-white mt-8 mb-3">Jersey Anyar dengan Semangat Kebangkitan</h2>
 
           <p>
             Peluncuran <strong class="text-white">jersey baru</strong> juga menjadi daya tarik, dengan desain yang mencerminkan semangat baru kebangkitan Persibo. Momen perkenalan ini diabadikan dalam berbagai dokumentasi resmi tim yang menunjukkan optimisme tinggi dari seluruh elemen klub.
@@ -116,17 +111,17 @@ const authorUrl = 'https://persibo.com';
           </p>
 
           <!-- Sources -->
-          <div class="border-t border-slate-700 pt-6 mt-8">
+          <div class="mt-8 border-t border-white/10 pt-6">
             <h3 class="text-lg font-bold text-white mb-3">Sumber:</h3>
-            <ul class="space-y-2 text-sm text-slate-400">
+            <ul class="space-y-2 text-sm text-white/40">
               <li>
-                <span class="text-slate-500">[1]</span> Portal JTV
+                <span class="text-white/30">[1]</span> Portal JTV
               </li>
               <li>
-                <span class="text-slate-500">[2]</span> Suara Bojonegoro
+                <span class="text-white/30">[2]</span> Suara Bojonegoro
               </li>
               <li>
-                <span class="text-slate-500">[3]</span> Instagram Resmi Persibo Bojonegoro
+                <span class="text-white/30">[3]</span> Instagram Resmi Persibo Bojonegoro
               </li>
             </ul>
           </div>
@@ -135,8 +130,8 @@ const authorUrl = 'https://persibo.com';
     </article>
 
     <!-- Related Articles / Back to News -->
-    <div class="mt-8 pt-6 border-t border-slate-700">
-      <a href="/tim/berita" class="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium">
+    <div class="mt-10 border-t border-white/10 pt-6">
+      <a href="/tim/berita" class="text-[10px] font-bold uppercase tracking-[0.18em] text-primary hover:text-primary/80">
         <span class="material-symbols-outlined">arrow_back</span>
         <span>Kembali ke Daftar Berita</span>
       </a>
@@ -148,11 +143,11 @@ const authorUrl = 'https://persibo.com';
   "@context": "https://schema.org",
   "@type": "NewsArticle",
   "headline": "Siap Tempur di Solo! Persibo Bojonegoro Resmi Luncurkan Skuad dan Jersey Anyar Musim 2025-2026",
-  "image": `${Astro.site || Astro.url.origin}/img/drama-pinalti.jpg`,
+  "image": `${siteUrl}/img/drama-pinalti.jpg`,
   "video": {
     "@type": "VideoObject",
-    "contentUrl": `${Astro.site || Astro.url.origin}/video/launching-2025.mp4`,
-    "embedUrl": `${Astro.site || Astro.url.origin}/video/launching-2025.mp4`,
+    "contentUrl": `${siteUrl}/video/launching-2025.mp4`,
+    "embedUrl": `${siteUrl}/video/launching-2025.mp4`,
     "uploadDate": publishedDate
   },
   "datePublished": publishedDate,
@@ -164,15 +159,15 @@ const authorUrl = 'https://persibo.com';
   },
   "publisher": {
     "@type": "Organization",
-    "name": "PERSIBO Bojonegoro (Unofficial)",
+    "name": "PERSIBO Bojonegoro",
     "logo": {
       "@type": "ImageObject",
-      "url": `${Astro.site || Astro.url.origin}/logo-128.png`
+      "url": `${siteUrl}/logo-128.png`
     }
   },
   "description": "Persibo Bojonegoro secara resmi memperkenalkan komposisi skuad dan jersey terbaru untuk Liga 3 Nusantara musim 2025-2026. Acara launching digelar di Hotel Eastern, Bojonegoro dengan 30 pemain siap tempur.",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": `${Astro.site || Astro.url.origin}/tim/berita/siap-tempur-solo-launching-skuad-jersey-2025`
+    "@id": `${siteUrl}/tim/berita/siap-tempur-solo-launching-skuad-jersey-2025`
   }
 })} />

@@ -2,7 +2,8 @@
 import Layout from '../../../layouts/Layout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import ShareButtons from '../../../components/ShareButtons.astro';
-import { optimizeImage } from '../../../utils/imageOptimizer';
+
+const siteUrl = (Astro.site || Astro.url.origin).toString().replace(/\/+$/, '');
 
 const breadcrumbItems = [
   { label: 'Beranda', href: '/' },
@@ -19,40 +20,33 @@ const authorUrl = 'https://persibo.com';
 
 <Layout 
   title="Persibo Bojonegoro Lawan Persika Karanganyar Jumat 12 Desember - PERSIBO Bojonegoro (Unofficial)"
-  description="Persibo Bojonegoro akan melanjutkan petualangannya di Liga 3 Nusantara 2025-2026 dengan menghadapi Persika Karanganyar pada Jumat, 12 Desember 2025 sore. Laskar Angling Dharma siap melanjutkan tren positif setelah kemenangan perdana. Website Unofficial."
+  description="Persibo Bojonegoro akan melanjutkan petualangannya di Liga 3 Nusantara 2025-2026 dengan menghadapi Persika Karanganyar pada Jumat, 12 Desember 2025 sore. Laskar Angling Dharma siap melanjutkan tren positif setelah kemenangan perdana."
   ogImage="/img/persibo-persikutam.jpg"
 >
-  <div class="px-4 lg:px-6 py-4 lg:py-6 max-w-4xl mx-auto">
+  <div class="mx-auto max-w-3xl px-4 py-8 lg:px-6 lg:py-12">
     <Breadcrumb items={breadcrumbItems} />
     
-    <!-- Back Button -->
-    <div class="mb-4">
-      <a href="/tim/berita" class="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors py-2 px-3 rounded-lg hover:bg-slate-800/50">
-        <span class="material-symbols-outlined text-xl">arrow_back</span>
-        <span class="text-sm font-medium">Kembali ke Berita</span>
-      </a>
-    </div>
 
     <!-- Article Header -->
-    <article class="mb-8">
+    <article>
       <div class="mb-6">
         <div class="flex items-center gap-2 mb-4 flex-wrap">
-          <span class="text-xs font-medium text-primary bg-primary/20 px-3 py-1 rounded-full">Liga 3 Nusantara</span>
-          <span class="text-xs text-slate-400">8 Desember 2025</span>
-          <span class="text-xs text-slate-500">•</span>
-          <span class="text-xs text-slate-400">persibo.com</span>
+          <span class="bg-primary px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-[0.14em] text-[#08070a]">Liga 3 Nusantara</span>
+          <span class="text-xs text-white/40">8 Desember 2025</span>
+          <span class="text-xs text-white/30">•</span>
+          <span class="text-xs text-white/40">persibo.com</span>
         </div>
         
-        <h1 class="text-2xl md:text-3xl font-extrabold text-white mb-4 leading-tight">
+        <h1 class="mt-4 font-cond text-3xl font-bold uppercase leading-[0.95] text-white sm:text-4xl md:text-5xl">
           Persibo Bojonegoro Lawan Persika Karanganyar Jumat 12 Desember
         </h1>
         
-        <div class="flex items-center gap-3 text-sm text-slate-400 mb-4">
+        <div class="mt-3 flex items-center gap-3 text-[11px] uppercase tracking-[0.12em] text-white/40 mb-4">
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-base">calendar_month</span>
             <span>Jumat, 12 Desember 2025</span>
           </div>
-          <span class="text-slate-500">•</span>
+          <span class="text-white/30">•</span>
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-base">schedule</span>
             <span>Sore</span>
@@ -60,7 +54,7 @@ const authorUrl = 'https://persibo.com';
         </div>
         
         <!-- Share Buttons -->
-        <div class="mb-6 pt-4 border-t border-slate-700">
+        <div class="mb-6 border-y border-white/10 py-4">
           <ShareButtons 
             title="Persibo Bojonegoro Lawan Persika Karanganyar Jumat 12 Desember"
             description="Persibo Bojonegoro akan melanjutkan petualangannya di Liga 3 Nusantara 2025-2026 dengan menghadapi Persika Karanganyar pada Jumat, 12 Desember 2025 sore."
@@ -70,21 +64,21 @@ const authorUrl = 'https://persibo.com';
       </div>
 
       <!-- Featured Image -->
-      <div class="mb-6 rounded-xl overflow-hidden">
+      <div class="mb-6 overflow-hidden border border-white/12">
         <img 
-          src={optimizeImage('/img/persibo-persikutam.jpg', { width: 1200, height: 675, quality: 75, format: 'webp', fit: 'cover' }, Astro.site || Astro.url.origin)} 
+          src="/img/persibo-persikutam.jpg" 
           alt="Persibo Bojonegoro siap menghadapi Persika Karanganyar di Liga 3 Nusantara" 
           class="w-full h-auto object-cover"
           loading="lazy"
           width="800"
           height="450"
         />
-        <p class="text-xs text-slate-400 mt-2 text-center">Foto: Tim Persibo Bojonegoro dalam pertandingan Liga 3 Nusantara 2025-2026</p>
+        <p class="mt-2 text-center text-[9px] uppercase tracking-[0.14em] text-white/30">Foto: Tim Persibo Bojonegoro dalam pertandingan Liga 3 Nusantara 2025-2026</p>
       </div>
 
       <!-- Article Content -->
-      <div class="prose prose-invert prose-slate max-w-none">
-        <div class="space-y-4 text-slate-300 leading-relaxed">
+      <div class="max-w-none">
+        <div class="space-y-4 text-white/60 leading-relaxed">
           <p class="text-lg font-medium text-white">
             <strong>BOJONEGORO, persibo.com</strong> – <strong class="text-white">Persibo Bojonegoro</strong> akan melanjutkan petualangannya di <strong class="text-primary">Liga 3 Nusantara 2025-2026</strong> dengan menghadapi <strong class="text-white">Persika Karanganyar</strong> pada <strong class="text-primary">Jumat, 12 Desember 2025 sore</strong>. Laskar Angling Dharma siap melanjutkan tren positif setelah berhasil meraih kemenangan perdana di laga sebelumnya.
           </p>
@@ -93,14 +87,14 @@ const authorUrl = 'https://persibo.com';
             Setelah berhasil memetik tiga poin penting dengan mengalahkan Persikutim United dengan skor <strong class="text-primary">2-1</strong>, Persibo Bojonegoro kini memiliki momentum yang baik untuk menghadapi lawan berikutnya. Tim asuhan pelatih tersebut akan berusaha mempertahankan performa solid yang telah ditunjukkan di pertandingan sebelumnya.
           </p>
 
-          <div class="bg-gradient-to-r from-primary/20 to-accent-teal/20 border-l-4 border-primary rounded-lg p-4 my-6">
-            <p class="text-slate-200">
+          <div class="my-6 border-l-2 border-primary bg-white/[0.02] px-4 py-3">
+            <p class="text-white/70">
               <strong class="text-white">Momentum Positif</strong><br/>
               Kemenangan perdana di Liga 3 Nusantara memberikan kepercayaan diri yang besar bagi <strong class="text-primary">Laskar Angling Dharma</strong>. Tim kini siap menghadapi tantangan berikutnya dengan semangat yang membara.
             </p>
           </div>
 
-          <h2 class="text-xl font-bold text-white mt-8 mb-4">Persiapan Matang Menghadapi Persika Karanganyar</h2>
+          <h2 class="font-cond text-2xl font-bold uppercase tracking-wide text-white mt-8 mb-3">Persiapan Matang Menghadapi Persika Karanganyar</h2>
 
           <p>
             <strong class="text-white">Persika Karanganyar</strong> merupakan lawan yang tidak boleh diremehkan. Tim asal Jawa Tengah ini dikenal memiliki permainan yang solid dan disiplin. Oleh karena itu, Persibo Bojonegoro harus mempersiapkan strategi yang matang untuk menghadapi lawan yang akan memberikan perlawanan sengit.
@@ -110,7 +104,7 @@ const authorUrl = 'https://persibo.com';
             Pelatih dan tim manajemen Persibo Bojonegoro telah melakukan analisis mendalam terhadap kekuatan dan kelemahan lawan. Skuad Laskar Angling Dharma akan fokus pada permainan kolektif yang solid, dengan memaksimalkan potensi serangan balik dan menjaga konsistensi di lini pertahanan.
           </p>
 
-          <h2 class="text-xl font-bold text-white mt-8 mb-4">Target Tiga Poin untuk Perkuat Posisi</h2>
+          <h2 class="font-cond text-2xl font-bold uppercase tracking-wide text-white mt-8 mb-3">Target Tiga Poin untuk Perkuat Posisi</h2>
 
           <p>
             Dengan target utama untuk <strong class="text-white">lolos dari fase grup</strong> dan meraih promosi ke Liga 2, setiap pertandingan menjadi sangat krusial bagi Persibo Bojonegoro. Tiga poin dari pertandingan melawan Persika Karanganyar akan sangat berarti untuk memperkuat posisi di klasemen Grup C Liga 3 Nusantara.
@@ -121,26 +115,26 @@ const authorUrl = 'https://persibo.com';
           </p>
 
           <!-- Match Preview Box -->
-          <div class="bg-gradient-to-r from-slate-800/50 to-slate-900/50 rounded-lg p-6 border border-slate-700 my-6">
+          <div class="my-6 border border-white/12 bg-[#0c0b0f] p-5">
             <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
               <span class="material-symbols-outlined text-primary">event</span>
               Preview Pertandingan
             </h3>
             <div class="grid grid-cols-2 gap-4 text-sm">
               <div>
-                <p class="text-slate-400 mb-1">Tanggal</p>
+                <p class="text-white/40 mb-1">Tanggal</p>
                 <p class="text-white font-medium">Jumat, 12 Desember 2025</p>
               </div>
               <div>
-                <p class="text-slate-400 mb-1">Waktu</p>
+                <p class="text-white/40 mb-1">Waktu</p>
                 <p class="text-white font-medium">Sore</p>
               </div>
               <div>
-                <p class="text-slate-400 mb-1">Kompetisi</p>
+                <p class="text-white/40 mb-1">Kompetisi</p>
                 <p class="text-white font-medium">Liga 3 Nusantara 2025-2026</p>
               </div>
               <div>
-                <p class="text-slate-400 mb-1">Grup</p>
+                <p class="text-white/40 mb-1">Grup</p>
                 <p class="text-white font-medium">Grup C</p>
               </div>
             </div>
@@ -151,17 +145,17 @@ const authorUrl = 'https://persibo.com';
           </p>
 
           <!-- Sources -->
-          <div class="border-t border-slate-700 pt-6 mt-8">
+          <div class="mt-8 border-t border-white/10 pt-6">
             <h3 class="text-lg font-bold text-white mb-3">Sumber:</h3>
-            <ul class="space-y-2 text-sm text-slate-400">
+            <ul class="space-y-2 text-sm text-white/40">
               <li>
-                <span class="text-slate-500">[1]</span>{' '}
+                <span class="text-white/30">[1]</span>{' '}
                 <a href="https://www.google.com/search?q=persibo+bojonegoro&tbm=nws" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary/80 underline">
                   Google News - Persibo Bojonegoro
                 </a>
               </li>
               <li>
-                <span class="text-slate-500">[2]</span>{' '}
+                <span class="text-white/30">[2]</span>{' '}
                 <a href="https://blokbojonegoro.com" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary/80 underline">
                   blokBojonegoro.com
                 </a>
@@ -173,8 +167,8 @@ const authorUrl = 'https://persibo.com';
     </article>
 
     <!-- Related Articles / Back to News -->
-    <div class="mt-8 pt-6 border-t border-slate-700">
-      <a href="/tim/berita" class="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium">
+    <div class="mt-10 border-t border-white/10 pt-6">
+      <a href="/tim/berita" class="text-[10px] font-bold uppercase tracking-[0.18em] text-primary hover:text-primary/80">
         <span class="material-symbols-outlined">arrow_back</span>
         <span>Kembali ke Daftar Berita</span>
       </a>
@@ -186,7 +180,7 @@ const authorUrl = 'https://persibo.com';
   "@context": "https://schema.org",
   "@type": "NewsArticle",
   "headline": "Persibo Bojonegoro Lawan Persika Karanganyar Jumat 12 Desember",
-  "image": `${Astro.site || Astro.url.origin}/img/persibo-persikutam.jpg`,
+  "image": `${siteUrl}/img/persibo-persikutam.jpg`,
   "datePublished": publishedDate,
   "dateModified": modifiedDate,
   "author": {
@@ -196,16 +190,16 @@ const authorUrl = 'https://persibo.com';
   },
   "publisher": {
     "@type": "Organization",
-    "name": "PERSIBO Bojonegoro (Unofficial)",
+    "name": "PERSIBO Bojonegoro",
     "logo": {
       "@type": "ImageObject",
-      "url": `${Astro.site || Astro.url.origin}/logo-128.png`
+      "url": `${siteUrl}/logo-128.png`
     }
   },
   "description": "Persibo Bojonegoro akan melanjutkan petualangannya di Liga 3 Nusantara 2025-2026 dengan menghadapi Persika Karanganyar pada Jumat, 12 Desember 2025 sore.",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": `${Astro.site || Astro.url.origin}/tim/berita/persibo-lawan-persika-karanganyar-jumat-12-desember`
+    "@id": `${siteUrl}/tim/berita/persibo-lawan-persika-karanganyar-jumat-12-desember`
   }
 })} />
 

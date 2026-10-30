@@ -1,10 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import PageHeader from '../../components/PageHeader.astro';
 import PlayerCard from '../../components/PlayerCard.astro';
 import SearchBar from '../../components/SearchBar.astro';
 import FilterBar from '../../components/FilterBar.astro';
-import { loadPlayers } from '../../utils/dataLoader';
-import { loadPlayerDetails } from '../../utils/dataLoader';
+import { loadPlayers, loadPlayerDetails } from '../../utils/dataLoader';
 
 const players = await loadPlayers();
 const playerDetails = await loadPlayerDetails();
@@ -20,61 +20,42 @@ const playersWithDetails = players.map(player => {
 });
 ---
 
-<Layout 
+<Layout
   title="Daftar Pemain PERSIBO Bojonegoro - Skuad Lengkap (Unofficial)"
-  description="Lihat daftar lengkap pemain PERSIBO Bojonegoro. Informasi pemain, posisi, statistik, dan profil lengkap seluruh skuad tim. Website Unofficial."
+  description="Lihat daftar lengkap pemain PERSIBO Bojonegoro. Informasi pemain, posisi, statistik, dan profil lengkap seluruh skuad tim."
 >
-  <div class="max-w-7xl mx-auto px-4 lg:px-6 py-4 lg:py-6">
-    <!-- Intro Text -->
-    <section class="mb-6 lg:mb-8">
-      <div class="rounded-xl bg-slate-800/50 p-6 lg:p-8 border border-slate-700">
-        <h1 class="text-2xl lg:text-3xl font-extrabold text-white mb-3 lg:mb-4">Daftar Pemain PERSIBO Bojonegoro</h1>
-        <div class="space-y-3 lg:space-y-4 text-slate-300 leading-relaxed text-sm lg:text-base">
-          <p>
-            Lihat daftar lengkap <strong class="text-white">pemain PERSIBO Bojonegoro</strong> untuk musim Liga Nusantara 2025-2026. Tim ini terdiri dari pemain-pemain berbakat dengan berbagai posisi: penjaga gawang, bek, gelandang, dan penyerang.
-          </p>
-          <p>
-            Gunakan fitur pencarian dan filter di bawah untuk menemukan pemain berdasarkan nama, posisi, atau usia. Klik pada kartu pemain untuk melihat profil lengkap, statistik, dan riwayat klub.
-          </p>
-        </div>
-      </div>
-    </section>
+  <div class="mx-auto max-w-7xl px-4 py-8 lg:px-6 lg:py-12">
+    <PageHeader
+      label="Skuad 2025-26 · Arsip"
+      title="Pemain"
+      meta={`${playersWithDetails.length} pemain`}
+      description="Skuad terakhir PERSIBO Bojonegoro yang terdaftar di Liga Nusantara 2025-26. Data skuad 2026-27 menyusul setelah pendaftaran."
+    />
 
-    <div class="mb-4">
-      <SearchBar />
-    </div>
-    
-    <!-- Mobile Filter Toggle -->
-    <div class="lg:hidden mb-4">
-      <button id="filter-toggle" class="w-full flex items-center justify-between bg-slate-800/50 border border-primary/20 rounded-lg px-4 py-3 text-white hover:bg-slate-800/70 transition-colors">
-        <div class="flex items-center gap-2">
-          <span class="material-symbols-outlined">tune</span>
-          <span class="font-medium">Filter</span>
+    <div class="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-6">
+      <div class="lg:col-span-1">
+        <div class="space-y-3 lg:sticky lg:top-24">
+          <SearchBar />
+
+          <button id="filter-toggle" class="flex w-full items-center justify-between border border-white/15 bg-[#0c0b0f] px-4 py-3 text-white lg:hidden" aria-expanded="false" aria-controls="filter-panel">
+            <span class="text-[10px] font-bold uppercase tracking-[0.18em]">Filter</span>
+            <span class="material-symbols-outlined text-lg text-white/40" id="filter-icon">expand_more</span>
+          </button>
+
+          <div id="filter-panel" class="hidden lg:block">
+            <FilterBar />
+          </div>
         </div>
-        <span class="material-symbols-outlined text-sm" id="filter-icon">expand_more</span>
-      </button>
-    </div>
-    
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
-      <!-- Sidebar dengan Filter -->
-      <div class="lg:col-span-1 hidden lg:block" id="filter-sidebar-desktop">
-        <FilterBar />
       </div>
-      
-      <!-- Mobile Filter (Collapsible) -->
-      <div class="lg:hidden hidden" id="filter-sidebar-mobile">
-        <FilterBar />
-      </div>
-      
-      <!-- Main Content -->
+
       <div class="lg:col-span-3">
-        <div id="players-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+        <div id="players-container" class="grid grid-cols-2 gap-3 md:grid-cols-3 lg:gap-4">
           {playersWithDetails.map((player) => (
             <PlayerCard player={player} />
           ))}
         </div>
-        
-        <p id="no-results" class="hidden text-center text-slate-400 py-8">
+
+        <p id="no-results" class="hidden py-16 text-center text-sm text-white/40">
           Tidak ada pemain yang ditemukan.
         </p>
       </div>
@@ -84,7 +65,6 @@ const playersWithDetails = players.map(player => {
 
 <script is:inline>
   (function() {
-    // Wait for DOM to be ready
     function init() {
       const searchInput = document.getElementById('search-input');
       const positionFilter = document.getElementById('position-filter');
@@ -93,27 +73,19 @@ const playersWithDetails = players.map(player => {
       const playersContainer = document.getElementById('players-container');
       const noResults = document.getElementById('no-results');
       const filterToggle = document.getElementById('filter-toggle');
-      const filterSidebarMobile = document.getElementById('filter-sidebar-mobile');
+      const filterPanel = document.getElementById('filter-panel');
       const filterIcon = document.getElementById('filter-icon');
-      
-      if (!searchInput || !playersContainer) {
-        console.warn('Search or players container not found');
-        return;
-      }
-      
+
+      if (!searchInput || !playersContainer) return;
+
       const playerCards = playersContainer.querySelectorAll('[data-player-card]');
 
-        // Filter toggle for mobile
-      if (filterToggle && filterSidebarMobile && filterIcon) {
+      if (filterToggle && filterPanel && filterIcon) {
         filterToggle.addEventListener('click', () => {
-          const isHidden = filterSidebarMobile.classList.contains('hidden');
-          if (isHidden) {
-            filterSidebarMobile.classList.remove('hidden');
-            filterIcon.style.transform = 'rotate(180deg)';
-          } else {
-            filterSidebarMobile.classList.add('hidden');
-            filterIcon.style.transform = 'rotate(0deg)';
-          }
+          const isHidden = filterPanel.classList.contains('hidden');
+          filterPanel.classList.toggle('hidden', !isHidden);
+          filterToggle.setAttribute('aria-expanded', String(isHidden));
+          filterIcon.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
         });
       }
 
@@ -131,7 +103,7 @@ const playersWithDetails = players.map(player => {
 
           const matchesSearch = !searchTerm || playerName.includes(searchTerm);
           const matchesPosition = !selectedPosition || playerPosition === selectedPosition;
-          
+
           let matchesAge = true;
           if (selectedAge) {
             if (selectedAge === '18-22') matchesAge = playerAge >= 18 && playerAge <= 22;
@@ -169,8 +141,7 @@ const playersWithDetails = players.map(player => {
         });
       }
     }
-    
-    // Initialize when DOM is ready
+
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', init);
     } else {
