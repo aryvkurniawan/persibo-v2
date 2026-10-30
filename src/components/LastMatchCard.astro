@@ -1,0 +1,116 @@
+---
+import type { Friendly } from '../types';
+import { getTeamLogo, loadTeams } from '../utils/dataLoader';
+import { formatDateLong, formatDateShort } from '../utils/dates';
+
+interface Props {
+  match: Friendly;
+  /** `large` = the highlighted newest match, `small` = the rest of the scroll row. */
+  size?: 'large' | 'small';
+}
+
+const { match, size = 'small' } = Astro.props;
+
+const teams = await loadTeams();
+const isPersiboHome = match.home_team.toUpperCase().includes('PERSIBO');
+const persiboScore = isPersiboHome ? match.home_score : match.away_score;
+const opponentScore = isPersiboHome ? match.away_score : match.home_score;
+const opponent = isPersiboHome ? match.away_team : match.home_team;
+const opponentLogo = match.opponent_logo || getTeamLogo(teams, opponent) || '/logo-64.png';
+
+const outcome = persiboScore > opponentScore ? 'MENANG' : persiboScore < opponentScore ? 'KALAH' : 'SERI';
+const outcomeClass =
+  outcome === 'MENANG'
+    ? 'border-green-500/40 text-green-400'
+    : outcome === 'KALAH'
+      ? 'border-red-500/40 text-red-400'
+      : 'border-yellow-500/40 text-yellow-400';
+
+const dateText = match.date ? formatDateLong(match.date_label) : match.date_label;
+const dateShort = match.date ? formatDateShort(match.date_label) : match.date_label;
+---
+
+{
+  size === 'large' ? (
+    <article class="relative w-[80vw] shrink-0 snap-start border border-white/12 bg-[#0c0b0f] sm:w-[420px]">
+      <span class="absolute left-0 top-0 h-0.5 w-full bg-primary" />
+
+      <div class="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-2.5">
+        <p class="flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.2em] text-primary">
+          <span class="inline-block h-1.5 w-1.5 bg-primary" />
+          Terbaru · {match.competition}
+        </p>
+        <span class={`border px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-[0.14em] ${outcomeClass}`}>
+          {outcome}
+        </span>
+      </div>
+
+      <div class="px-4 py-4">
+        <p class="text-[9px] font-semibold uppercase tracking-[0.18em] text-white/35">{dateText}</p>
+
+        <div class="mt-3 grid grid-cols-[1fr_auto_1fr] items-center gap-2">
+          <div class="flex flex-col items-center gap-1.5 text-center">
+            <img src="/logo-64.png" alt="" width="40" height="40" class="h-10 w-10 object-contain" loading="lazy" />
+            <p class="font-cond text-sm font-semibold uppercase leading-none text-white">PERSIBO</p>
+            <p class="text-[8px] uppercase tracking-[0.14em] text-white/30">{isPersiboHome ? 'Kandang' : 'Tandang'}</p>
+          </div>
+
+          <div class="flex flex-col items-center gap-1">
+            <p class="font-cond text-4xl font-bold leading-none text-white tnum">
+              {persiboScore}<span class="px-1 text-white/25">:</span>{opponentScore}
+            </p>
+            <p class="text-[8px] font-bold uppercase tracking-[0.16em] text-white/25">Selesai</p>
+          </div>
+
+          <div class="flex flex-col items-center gap-1.5 text-center">
+            <img src={opponentLogo} alt="" width="40" height="40" class="h-10 w-10 object-contain" loading="lazy" />
+            <p class="font-cond text-sm font-semibold uppercase leading-[1.05] text-white/85">{opponent}</p>
+            <p class="text-[8px] uppercase tracking-[0.14em] text-white/30">{isPersiboHome ? 'Tamu' : 'Kandang'}</p>
+          </div>
+        </div>
+
+        {match.scorers.length > 0 && (
+          <ul class="mt-3.5 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-white/10 pt-3">
+            {match.scorers.map((scorer) => (
+              <li class="flex items-baseline gap-1.5 text-[10px] leading-snug text-white/45">
+                <span class="font-bold text-primary tnum">{scorer.minute}'</span>
+                <span>{scorer.player}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        <p class="mt-3 flex items-start gap-1.5 text-[9px] uppercase tracking-[0.12em] text-white/30">
+          <span class="material-symbols-outlined text-[13px] leading-none">location_on</span>
+          <span class="min-w-0">{match.venue}</span>
+        </p>
+      </div>
+    </article>
+  ) : (
+    <article class="flex w-[64vw] shrink-0 snap-start flex-col border border-white/12 bg-[#0c0b0f] p-4 transition-colors hover:border-primary/50 sm:w-[200px]">
+      <div class="flex items-start justify-between gap-2">
+        <p class="text-[10px] font-bold uppercase tracking-[0.14em] text-primary">{dateShort}</p>
+        <span class={`border px-1.5 py-0.5 text-[7px] font-bold uppercase tracking-[0.12em] ${outcomeClass}`}>
+          {outcome}
+        </span>
+      </div>
+
+      <ul class="flex flex-1 flex-col justify-center gap-4 py-3">
+        <li class="flex items-center gap-2.5">
+          <img src="/logo-64.png" alt="" width="30" height="30" class="h-[30px] w-[30px] shrink-0 object-contain" loading="lazy" />
+          <p class="min-w-0 flex-1 truncate font-cond text-xl font-semibold uppercase leading-none text-white">PERSIBO</p>
+          <p class="font-cond text-2xl font-bold leading-none text-white tnum">{persiboScore}</p>
+        </li>
+        <li class="flex items-center gap-2.5">
+          <img src={opponentLogo} alt="" width="30" height="30" class="h-[30px] w-[30px] shrink-0 object-contain" loading="lazy" />
+          <p class="min-w-0 flex-1 font-cond text-xl font-semibold uppercase leading-[1.05] text-white/70">{opponent}</p>
+          <p class="font-cond text-2xl font-bold leading-none text-white/70 tnum">{opponentScore}</p>
+        </li>
+      </ul>
+
+      <div class="border-t border-white/10 pt-2.5">
+        <p class="line-clamp-2 text-[8px] uppercase leading-snug tracking-[0.12em] text-white/25">{match.venue}</p>
+      </div>
+    </article>
+  )
+}

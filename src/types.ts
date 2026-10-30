@@ -59,10 +59,11 @@ export interface Standing {
   club: string;
   played: number;
   won: number;
-  drawn: number | string;
-  lost: number | string;
+  drawn: number;
+  lost: number;
   goals_for: number;
   goals_against: number;
+  goal_diff: number;
   points: number;
   form: string;
   selanjutnya_url: string;
@@ -75,8 +76,10 @@ export interface Fixture {
   score: string;
   status: 'COMPLETED' | 'SCHEDULED' | 'LIVE' | 'POSTPONED';
   venue: string;
-  match_url: string;
+  match_url: string | null;
   team: string;
+  time?: string;
+  kickoff_iso?: string;
   scraped_at: string;
 }
 
@@ -125,4 +128,34 @@ export interface MatchDetail {
   events: MatchDetailEvent[];
   statistics: Record<string, any>;
   base_team: string;
+}
+
+export interface FriendlyScorer {
+  player: string;
+  minute: number;
+  team: string;
+}
+
+export interface FriendlySource {
+  label: string;
+  url: string;
+}
+
+/** Non-competitive fixtures (pre-season friendlies). iLeague does not publish
+ *  these, so they are curated from local press reports. */
+export interface Friendly {
+  /** ISO date, or null when press reports only give a rough period. */
+  date: string | null;
+  date_label: string;
+  competition: string;
+  home_team: string;
+  away_team: string;
+  home_score: number;
+  away_score: number;
+  venue: string;
+  /** Local logo for opponents iLeague does not carry (friendlies only). */
+  opponent_logo?: string;
+  scorers: FriendlyScorer[];
+  note: string;
+  sources: FriendlySource[];
 }

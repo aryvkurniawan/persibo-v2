@@ -1,0 +1,114 @@
+[
+  {
+    "date": "2026-10-25",
+    "date_label": "25 Oktober 2026",
+    "competition": "Uji Coba",
+    "home_team": "PERSIBO Bojonegoro",
+    "away_team": "PERSITARA Jakarta Utara",
+    "home_score": 2,
+    "away_score": 0,
+    "venue": "Stadion Letjen H. Soedirman, Bojonegoro",
+    "scorers": [
+      {
+        "player": "Sehabudin Ahmad",
+        "minute": 13,
+        "team": "PERSIBO Bojonegoro"
+      },
+      {
+        "player": "Putra Chaniago",
+        "minute": 29,
+        "team": "PERSIBO Bojonegoro"
+      }
+    ],
+    "note": "Laga uji coba terbuka untuk umum, persiapan jelang Liga Nusantara 2026-27.",
+    "sources": [
+      {
+        "label": "blokBojonegoro.com",
+        "url": "https://www.blokbojonegoro.com/2026/10/25/persibo-bojonegoro-tundukkan-persitara-2-0-pada-laga-uji-coba"
+      },
+      {
+        "label": "Radar Bojonegoro",
+        "url": "https://radarbojonegoro.jawapos.com/sportainment/2610270001/meski-persibo-menang-2-0-atas-persitara-lini-depan-jadi-catatan"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-16",
+    "date_label": "16 Oktober 2026",
+    "competition": "Uji Coba",
+    "home_team": "PERSIBO Bojonegoro",
+    "away_team": "Persibat Kabupaten Batang",
+    "home_score": 2,
+    "away_score": 1,
+    "venue": "Solo",
+    "scorers": [],
+    "note": "Laga kedua rangkaian TC di Solo.",
+    "sources": [
+      {
+        "label": "iNewsBojonegoro",
+        "url": "https://bojonegoro.inews.id/read/723634/persibo-bojonegoro-raih-2-kemenangan-dalam-uji-coba-di-solo-modal-menuju-liga-nusantara"
+      }
+    ],
+    "opponent_logo": "/img/teams/persibat.png"
+  },
+  {
+    "date": "2026-10-14",
+    "date_label": "14 Oktober 2026",
+    "competition": "Uji Coba",
+    "home_team": "PERSIBO Bojonegoro",
+    "away_team": "Persis Solo U-20",
+    "home_score": 6,
+    "away_score": 2,
+    "venue": "Lestarindo Sport Garden, Solo",
+    "scorers": [],
+    "note": "Laga pembuka TC di Solo.",
+    "sources": [
+      {
+        "label": "iNewsBojonegoro",
+        "url": "https://bojonegoro.inews.id/read/722878/persibo-bojonegoro-menang-6-2-atas-persis-epa-u-20-pada-laga-perdana-tc-di-solo"
+      },
+      {
+        "label": "Radar Bojonegoro",
+        "url": "https://radarbojonegoro.jawapos.com/sportainment/2610160003/persibo-menang-besar-atas-persis-u-20-hari-ini-kembali-jalani-uji-coba"
+      }
+    ],
+    "opponent_logo": "/img/teams/persis-solo-u20.png"
+  },
+  {
+    "date": "2026-10-10",
+    "date_label": "10 Oktober 2026",
+    "competition": "Uji Coba",
+    "home_team": "PERSEKABPAS",
+    "away_team": "PERSIBO Bojonegoro",
+    "home_score": 1,
+    "away_score": 0,
+    "venue": "Pasuruan",
+    "scorers": [],
+    "note": "Laga tandang melawan sesama peserta Liga Nusantara.",
+    "sources": [
+      {
+        "label": "iNewsBojonegoro",
+        "url": "https://bojonegoro.inews.id/read/722637/persibo-bojonegoro-bidik-promosi-ke-liga-2-sejumlah-pemain-baru-resmi-merapat"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-07",
+    "date_label": "7 Oktober 2026",
+    "competition": "Uji Coba",
+    "home_team": "Persela Lamongan",
+    "away_team": "PERSIBO Bojonegoro",
+    "home_score": 3,
+    "away_score": 0,
+    "venue": "Stadion Surajaya, Lamongan",
+    "scorers": [],
+    "note": "Uji coba melawan tim kasta lebih tinggi.",
+    "sources": [
+      {
+        "label": "iNewsBojonegoro",
+        "url": "https://bojonegoro.inews.id/read/725589/persibo-sapu-bersih-tiga-laga-uji-coba-siap-bersaing-menuju-liga-2"
+      }
+    ],
+    "opponent_logo": "/img/teams/persela.png"
+  }
+]
