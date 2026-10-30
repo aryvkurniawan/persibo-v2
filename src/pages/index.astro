@@ -1,358 +1,400 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import StandingsTable from '../components/StandingsTable.astro';
-import PlayerCard from '../components/PlayerCard.astro';
-import MatchTimelineCard from '../components/MatchTimelineCard.astro';
-import { loadStandings, getPersiboStanding, getStandingsByGroup } from '../utils/dataLoader';
-import { loadPlayers } from '../utils/dataLoader';
-import { loadPlayerDetails } from '../utils/dataLoader';
-import { loadFixtures, getCompletedFixtures, getScheduledFixtures } from '../utils/dataLoader';
-import { optimizePlayerPhoto, optimizeImage } from '../utils/imageOptimizer';
+import {
+  loadStandings,
+  loadFixtures,
+  loadTeams,
+  getPersiboStanding,
+  getStandingsByGroup,
+  getScheduledFixtures,
+  getTeamLogo,
+  getMatchDetailSlug,
+  loadFriendlies,
+} from '../utils/dataLoader';
+import FriendlyMatches from '../components/FriendlyMatches.astro';
+import { getWeekday, formatDateShort, formatDateLong } from '../utils/dates';
 
 const standings = await loadStandings();
-const players = await loadPlayers();
-const playerDetails = await loadPlayerDetails();
-const persiboStanding = getPersiboStanding(standings);
-const groupCStandings = getStandingsByGroup(standings, 'C');
+const fixtures = await loadFixtures();
+const teams = await loadTeams();
+const persibo = getPersiboStanding(standings);
+const group = persibo?.group ?? 'B';
+const groupStandings = getStandingsByGroup(standings, group);
+const scheduled = getScheduledFixtures(fixtures);
+const next = scheduled[0] ?? null;
+const nextIsHome = next?.home_team.toUpperCase().includes('PERSIBO') ?? true;
+const nextOpponent = next ? (nextIsHome ? next.away_team : next.home_team) : '';
+const homeCount = fixtures.filter((fixture) => fixture.home_team.toUpperCase().includes('PERSIBO')).length;
+const friendlies = await loadFriendlies();
 
-// Get fixtures for timeline
-const allFixtures = await loadFixtures();
-const completedFixtures = getCompletedFixtures(allFixtures);
-const scheduledFixtures = getScheduledFixtures(allFixtures);
+const [nextDay, nextMonth, nextYear] = next ? next.date.replace(/^[^,]+,\s*/, '').split(' ') : ['--', '---', '----'];
+const nextWeekday = next ? getWeekday(next.date) : '';
 
-// Get last 3 matches (newest first: PERSIKUTIM, then RANS)
-const last3Matches = completedFixtures.slice().reverse().slice(0, 3);
+const logoFor = (team: string) =>
+  team.toUpperCase().includes('PERSIBO') ? '/logo-64.png' : getTeamLogo(teams, team) || '/logo-64.png';
 
-// Get next match (first scheduled)
-const nextMatch = scheduledFixtures.length > 0 ? scheduledFixtures[0] : null;
+const shortTeamNames: Record<string, string> = {
+  'Persibangga Purbalingga': 'Persibangga',
+  'Putra Sang Fajar FC': 'Putra Sang Fajar',
+  'Gresik United FC': 'Gresik United',
+  'Persika Karanganyar': 'Persika',
+  'Persinga Ngawi': 'Persinga',
+  'Persiba Bantul': 'Persiba',
+};
 
-// Get top players by club_history count (umur > 28 tahun)
-const topPlayers = playerDetails
-  .filter(p => {
-    const isPersibo = p.club === 'PERSIBO Bojonegoro';
-    const age = parseInt(p.age) || 0;
-    return isPersibo && age > 28;
-  })
-  .sort((a, b) => {
-    const aHistoryCount = a.club_history?.length || 0;
-    const bHistoryCount = b.club_history?.length || 0;
-    return bHistoryCount - aHistoryCount;
-  })
-  .slice(0, 10)
-  .map(pd => {
-    const player = players.find(p => p.name === pd.name);
-    return player || null;
-  })
-  .filter(p => p !== null);
+const shortTeam = (team: string) => {
+  const key = Object.keys(shortTeamNames).find((name) => name.toUpperCase() === team.toUpperCase());
+  return key ? shortTeamNames[key] : team;
+};
 
-// Get top scorers (by goals)
-const topScorers = playerDetails
-  .filter(p => p.club === 'PERSIBO Bojonegoro' && p.statistics?.goals > 0)
-  .sort((a, b) => {
-    const aGoals = a.statistics?.goals || 0;
-    const bGoals = b.statistics?.goals || 0;
-    return bGoals - aGoals;
-  })
-  .slice(0, 10)
-  .map(pd => {
-    const player = players.find(p => p.name === pd.name);
-    if (player) {
-      return { ...player, goals: pd.statistics?.goals || 0 };
-    }
-    return null;
-  })
-  .filter(p => p !== null);
+const shortDate = formatDateShort;
+
+const news = [
+  {
+    title: 'Persibo Lawan Persika Karanganyar Jumat 12 Desember',
+    date: '8 Des 2025',
+    tag: 'Laga',
+    img: '/img/persibo-persikutam.jpg',
+    href: '/tim/berita/persibo-lawan-persika-karanganyar-jumat-12-desember',
+    excerpt: 'Laskar Angling Dharma melanjutkan tren positif setelah kemenangan perdana di Grup C.',
+  },
+  {
+    title: 'Bangkit! Persibo Raih Kemenangan Perdana, Tumbangkan Persikutim 2-1',
+    date: '4 Des 2025',
+    tag: 'Hasil',
+    img: '/img/persibo-persikutam.jpg',
+    href: '/tim/berita/bangkit-persibo-raih-kemenangan-perdana-tumbangkan-persikutim',
+    excerpt: 'Kemenangan krusial di laga kedua Grup C Liga 3 Nusantara.',
+  },
+  {
+    title: 'Pukulan Telak di Injury Time, Persibo Tumbang 0-1 dari RANS',
+    date: '29 Nov 2025',
+    tag: 'Hasil',
+    img: '/img/persibo-rans.jpg',
+    href: '/tim/berita/pukulan-telak-injury-time-persibo-tumbang-rans',
+    excerpt: 'Gol dramatis di menit ke-94 menjadi pembeda laga perdana musim lalu.',
+  },
+  {
+    title: 'Siap Tempur di Solo! Persibo Resmi Luncurkan Skuad dan Jersey Anyar',
+    date: '25 Nov 2025',
+    tag: 'Tim',
+    img: '/img/persibo-persikutam.jpg',
+    href: '/tim/berita/siap-tempur-solo-launching-skuad-jersey-2025',
+    excerpt: 'Komposisi skuad dan jubah perang terbaru diperkenalkan di Hotel Eastern, Bojonegoro.',
+  },
+];
 ---
 
-<Layout 
-  title="PERSIBO Bojonegoro - Website Unofficial Tim Sepak Bola Bojonegoro"
-  description="Website Unofficial PERSIBO Bojonegoro. Informasi lengkap tentang tim, pemain, klasemen Liga Nusantara 2025-2026, jadwal pertandingan, dan berita terbaru."
+<Layout
+  title="PERSIBO Bojonegoro — Liga Nusantara 2026-27 (Unofficial)"
+  description="Jadwal, klasemen, dan kabar terbaru PERSIBO Bojonegoro di Liga Nusantara 2026-27. Musim baru dimulai 13 November 2026. Website Unofficial."
 >
-  <div class="max-w-7xl mx-auto px-4 lg:px-6 py-4 lg:py-6">
-    <!-- Hero Cards -->
-    <section class="mb-4 lg:mb-6">
-      <div class="flex items-stretch gap-4 overflow-x-auto lg:overflow-x-visible pb-2">
-        <div class="flex h-full flex-1 flex-col rounded-xl bg-slate-800/50 shadow-lg min-w-[300px] lg:min-w-0 w-full overflow-hidden">
-          <div class="w-full bg-center bg-no-repeat aspect-video bg-cover flex flex-col relative">
-            <img 
-              src={optimizeImage('/hero.jpg', { width: 1600, height: 900, quality: 75, format: 'webp', fit: 'cover' }, Astro.site || Astro.url.origin)} 
-              alt="PERSIBO Bojonegoro - Laskar Angling Dharma" 
-              class="absolute inset-0 w-full h-full object-cover"
-              fetchpriority="high"
-              loading="eager"
-              width="1600"
-              height="900"
-              decoding="async"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent"></div>
+  <div class="overflow-hidden border-b border-[#08070a] bg-primary text-[#08070a]">
+    <div class="ticker-marquee flex w-max items-center py-2 text-[10px] font-extrabold uppercase tracking-[0.24em]">
+      <span class="flex items-center gap-6 whitespace-nowrap px-3">
+        Liga Nusantara 2026-27 <span aria-hidden="true">✦</span> Grup {group} <span aria-hidden="true">✦</span>
+        {fixtures.length} laga <span aria-hidden="true">✦</span> Matchday 01 · {next ? formatDateLong(next.date) : 'segera'} <span aria-hidden="true">✦</span>
+        {next?.venue ?? 'Bojonegoro'} <span aria-hidden="true">✦</span> Bojonegoro <span aria-hidden="true">✦</span>
+      </span>
+      <span class="flex items-center gap-6 whitespace-nowrap px-3" aria-hidden="true">
+        Liga Nusantara 2026-27 <span aria-hidden="true">✦</span> Grup {group} <span aria-hidden="true">✦</span>
+        {fixtures.length} laga <span aria-hidden="true">✦</span> Matchday 01 · {next ? formatDateLong(next.date) : 'segera'} <span aria-hidden="true">✦</span>
+        {next?.venue ?? 'Bojonegoro'} <span aria-hidden="true">✦</span> Bojonegoro <span aria-hidden="true">✦</span>
+      </span>
+    </div>
+  </div>
+
+  <section class="relative overflow-hidden border-b border-white/15">
+    <h1 class="sr-only">PERSIBO Bojonegoro — Liga Nusantara 2026-27</h1>
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(249,115,22,0.10),transparent_42%)]"></div>
+    <img
+      src="/logo.png"
+      alt=""
+      aria-hidden="true"
+      class="pointer-events-none select-none absolute -right-10 top-1/2 hidden h-[420px] w-[420px] -translate-y-1/2 rotate-12 object-contain opacity-[0.04] lg:block"
+    />
+
+    <div class="relative mx-auto grid max-w-7xl lg:grid-cols-[1.12fr_0.88fr]">
+      <div class="min-w-0 border-b border-white/15 px-4 py-8 lg:border-b-0 lg:border-r lg:px-8 lg:py-12">
+        <div class="flex items-center justify-between gap-3 border-b border-white/10 pb-4 text-[9px] font-bold uppercase tracking-[0.16em] sm:text-[10px] sm:tracking-[0.24em]">
+          <p class="flex items-center gap-2 text-white/55 sm:gap-3">
+            <span class="inline-block h-2 w-2 shrink-0 bg-primary"></span>
+            Matchday 01 · Grup {group}
+          </p>
+          <p class="hidden shrink-0 text-white/30 sm:block">Liga Nusantara 2026-27</p>
+        </div>
+
+        {next ? (
+          <>
+            <div class="mt-7 flex flex-wrap items-end justify-between gap-6">
+              <div>
+                {nextWeekday && (
+                  <p class="mb-3 flex items-center gap-2.5 text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">
+                    <span class="inline-block h-px w-7 bg-primary"></span>
+                    {nextWeekday}
+                  </p>
+                )}
+                <div class="flex items-end gap-4">
+                  <div class="font-cond text-[104px] font-bold leading-[0.72] text-primary sm:text-[136px]">{nextDay}</div>
+                  <div class="pb-2">
+                    <p class="font-cond text-4xl font-semibold leading-none sm:text-5xl">{nextMonth.slice(0, 3).toUpperCase()}</p>
+                    <p class="mt-1 text-[11px] font-semibold tracking-[0.34em] text-white/50">{nextYear}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="border-l border-white/20 pl-5 max-[379px]:border-l-0 max-[379px]:border-t max-[379px]:border-white/10 max-[379px]:pl-0 max-[379px]:pt-3">
+                <p class="text-[10px] uppercase tracking-[0.2em] text-white/40">Kick-off</p>
+                <p class="font-cond text-3xl font-semibold leading-none text-white">
+                  {next.time ?? '15.30'} <span class="text-base text-white/40">WIB</span>
+                </p>
+                <p class="mt-2 text-xs uppercase tracking-[0.12em] text-white/50">{next.venue}</p>
+              </div>
+            </div>
+
+            <div class="mt-7 grid grid-cols-[1fr_auto_1fr] items-center gap-2 border-y border-white/15 py-5 sm:gap-4">
+              <div class="flex items-center gap-3">
+                <img src="/logo-64.png" alt="" width="48" height="48" class="h-12 w-12 shrink-0 object-contain" />
+                <div>
+                  <p class="text-sm font-bold uppercase leading-tight sm:text-base">PERSIBO</p>
+                  <p class="text-[10px] uppercase tracking-[0.18em] text-white/45">Bojonegoro</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-center gap-1">
+                <span class="font-cond text-2xl leading-none text-white/25">VS</span>
+                <span class="text-[8px] uppercase tracking-[0.2em] text-white/25">{nextIsHome ? 'Home' : 'Away'}</span>
+              </div>
+              <div class="flex flex-row-reverse items-center gap-3 text-right">
+                <img src={logoFor(nextOpponent)} alt="" width="48" height="48" class="h-12 w-12 shrink-0 object-contain" />
+                <div>
+                  <p class="text-sm font-bold uppercase leading-tight sm:text-base">{shortTeam(nextOpponent)}</p>
+                  <p class="text-[10px] uppercase tracking-[0.18em] text-white/45">Grup {group}</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="mt-5 text-[9px] font-bold uppercase tracking-[0.24em] text-white/35">Menuju kick-off</p>
+            <div class="mt-2 grid max-w-sm grid-cols-3 gap-2">
+              <div class="border border-white/15 bg-white/[0.02] px-2 py-3 text-center">
+                <p class="font-cond text-3xl font-bold leading-none text-white tnum" data-countdown>--</p>
+                <p class="mt-1 text-[8px] font-semibold uppercase tracking-[0.2em] text-white/40">Hari</p>
+              </div>
+              <div class="border border-white/15 bg-white/[0.02] px-2 py-3 text-center">
+                <p class="font-cond text-3xl font-bold leading-none text-white tnum" data-countdown-hours>--</p>
+                <p class="mt-1 text-[8px] font-semibold uppercase tracking-[0.2em] text-white/40">Jam</p>
+              </div>
+              <div class="border border-white/15 bg-white/[0.02] px-2 py-3 text-center">
+                <p class="font-cond text-3xl font-bold leading-none text-white tnum" data-countdown-mins>--</p>
+                <p class="mt-1 text-[8px] font-semibold uppercase tracking-[0.2em] text-white/40">Menit</p>
+              </div>
+            </div>
+
+            <div class="mt-6 flex flex-wrap items-center gap-3">
+              <a href="/pertandingan" class="inline-flex items-center gap-2 bg-primary px-5 py-3 text-[11px] font-bold uppercase tracking-[0.18em] text-[#08070a] hover:bg-primary/90">
+                Jadwal lengkap
+                <span aria-hidden="true">→</span>
+              </a>
+              <a href="#klasemen" class="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/55 hover:text-white">
+                Klasemen Grup {group}
+              </a>
+            </div>
+
+          </>
+        ) : (
+          <div class="py-16">
+            <p class="text-[10px] font-bold uppercase tracking-[0.24em] text-primary">Musim 2026-27</p>
+            <p class="font-cond mt-2 text-5xl font-bold uppercase leading-none text-white">Jadwal segera hadir.</p>
+            <p class="mt-3 text-sm text-white/40">Data pertandingan belum dipublikasikan.</p>
+          </div>
+        )}
+      </div>
+
+      <aside id="klasemen" class="px-4 py-8 lg:px-8 lg:py-10">
+        <div class="border border-white/12 bg-[#0c0b0f]">
+          <div class="flex items-center justify-between border-b border-white/10 px-4 py-3">
+            <div>
+              <p class="text-[9px] font-bold uppercase tracking-[0.22em] text-primary">Klasemen</p>
+              <h2 class="font-cond text-2xl font-bold uppercase leading-none tracking-wide">Grup {group}</h2>
+            </div>
+            <span class="text-[9px] uppercase tracking-[0.18em] text-white/35">M / Poin</span>
+          </div>
+
+          <div class="grid grid-cols-[1.1rem_1.4rem_1fr_1.1rem_1.4rem] items-center gap-2 border-b border-white/10 px-4 py-2 text-[8px] font-bold uppercase tracking-[0.16em] text-white/30">
+            <span>#</span><span></span><span>Klub</span><span class="text-right">M</span><span class="text-right">Pts</span>
+          </div>
+
+          <ul class="divide-y divide-white/5">
+            {groupStandings.map((team) => {
+              const isPersibo = team.club.toUpperCase().includes('PERSIBO');
+              return (
+                <li class={`grid grid-cols-[1.1rem_1.4rem_1fr_1.1rem_1.4rem] items-center gap-2 px-4 py-2.5 ${isPersibo ? 'bg-primary/10 text-primary' : 'text-white/75'}`}>
+                  <span class={`text-[11px] tnum ${isPersibo ? 'text-primary' : 'text-white/35'}`}>{team.position}</span>
+                  <img src={logoFor(team.club)} alt="" width="20" height="20" class="h-5 w-5 object-contain" loading="lazy" />
+                  <span class="truncate text-[11px] font-semibold uppercase tracking-wide">{team.club}</span>
+                  <span class="text-right text-[11px] text-white/40 tnum">{team.played}</span>
+                  <span class={`text-right text-[11px] font-bold tnum ${isPersibo ? 'text-primary' : 'text-white'}`}>{team.points}</span>
+                </li>
+              );
+            })}
+          </ul>
+
+          <div class="flex items-center justify-between border-t border-white/10 px-4 py-3">
+            <span class="text-[9px] uppercase tracking-[0.16em] text-white/30">
+              {persibo?.played === 0 ? 'Belum ada laga' : `${persibo?.played ?? 0} laga dimainkan`}
+            </span>
+            <a href="/klasemen" class="text-[9px] font-bold uppercase tracking-[0.18em] text-primary">Lengkap →</a>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Intro Text -->
-    <section class="mb-6 lg:mb-8">
-      <div class="rounded-xl bg-slate-800/50 p-6 lg:p-8 border border-slate-700">
-        <h1 class="text-2xl lg:text-3xl font-extrabold text-white mb-3 lg:mb-4">Selamat Datang di Website Unofficial PERSIBO Bojonegoro</h1>
-        <div class="space-y-3 lg:space-y-4 text-slate-300 leading-relaxed text-sm lg:text-base">
-          <p>
-            Website ini menyediakan informasi lengkap tentang <strong class="text-white">PERSIBO Bojonegoro</strong>, tim sepak bola kebanggaan masyarakat Bojonegoro yang saat ini berlaga di <strong class="text-primary">Liga Nusantara 2025-2026</strong>. Dapatkan update terkini tentang klasemen, jadwal pertandingan, profil pemain, dan informasi tim.
-          </p>
-          <p>
-            PERSIBO Bojonegoro, yang dikenal dengan julukan <strong class="text-primary">Laskar Angling Dharma</strong>, adalah klub sepak bola profesional yang didirikan pada 12 Maret 1949. Tim ini memiliki sejarah panjang dan prestasi gemilang, termasuk juara Piala Indonesia 2012 dan partisipasi di AFC Cup 2013.
-          </p>
+      </aside>
+    </div>
+
+    <div class="relative border-t border-white/15">
+      <div class="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-white/10 lg:grid-cols-4">
+        <div class="px-4 py-4 lg:px-8">
+          <p class="font-cond text-3xl font-bold leading-none text-white tnum">{fixtures.length}</p>
+          <p class="mt-1 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/35">Pertandingan</p>
+        </div>
+        <div class="px-4 py-4 lg:px-8">
+          <p class="font-cond text-3xl font-bold leading-none text-white tnum">{homeCount}</p>
+          <p class="mt-1 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/35">Laga kandang</p>
+        </div>
+        <div class="px-4 py-4 lg:px-8">
+          <p class="font-cond text-3xl font-bold leading-none text-white tnum">{groupStandings.length}</p>
+          <p class="mt-1 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/35">Tim di grup</p>
+        </div>
+        <div class="px-4 py-4 lg:px-8">
+          <p class="font-cond text-3xl font-bold leading-none text-primary tnum">1</p>
+          <p class="mt-1 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/35">Tujuan: promosi</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Timeline Mini: Last Matches & Next Match -->
-    {(last3Matches.length > 0 || nextMatch) && (
-      <section class="mb-4 lg:mb-6">
-        <div class="flex items-center justify-between mb-3 lg:mb-4">
-          <h2 class="text-slate-100 text-[22px] lg:text-2xl font-extrabold leading-tight tracking-[-0.015em]">Pertandingan</h2>
-          <a href="/pertandingan" class="text-primary hover:text-primary/80 text-sm lg:text-base font-medium flex items-center gap-1">
-            Lihat Semua
-            <span class="material-symbols-outlined text-sm">arrow_forward</span>
-          </a>
-        </div>
-        <div class="flex gap-3 lg:gap-4 overflow-x-auto lg:overflow-x-visible pb-2 [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-2 xl:grid-cols-3">
-          {nextMatch && (
-            <div class="lg:contents">
-              <MatchTimelineCard match={nextMatch} isNextMatch={true} />
-            </div>
-          )}
-          {last3Matches.map((match) => (
-            <div class="lg:contents">
-              <MatchTimelineCard match={match} />
-            </div>
-          ))}
-        </div>
-      </section>
-    )}
+  {friendlies.length > 0 && <FriendlyMatches matches={friendlies} />}
 
-    <!-- Klasemen Grup C -->
-    <section class="mb-4 lg:mb-6">
-      <h2 class="text-slate-100 text-[22px] lg:text-2xl font-extrabold leading-tight tracking-[-0.015em] pb-3 lg:pb-4 pt-5">Klasemen Grup C</h2>
-      <div>
-        <StandingsTable standings={standings} group="C" />
-      </div>
-    </section>
-
-    <!-- Top Scorers -->
-    {topScorers.length > 0 && (
-      <section class="mb-4 lg:mb-6">
-        <h2 class="text-slate-100 text-[22px] lg:text-2xl font-extrabold leading-tight tracking-[-0.015em] pb-3 lg:pb-4 pt-5">Top Scorer</h2>
+  <section class="border-b border-white/15 bg-white/[0.02]">
+    <div class="mx-auto max-w-7xl px-4 py-6 lg:px-8">
+      <div class="mb-4 flex items-end justify-between border-b border-white/10 pb-3">
         <div>
-          <div class="rounded-xl bg-slate-800/50 border border-slate-700 overflow-hidden">
-            <div class="overflow-x-auto lg:overflow-x-visible">
-              <table class="w-full">
-                <thead class="bg-slate-900/50">
-                  <tr>
-                    <th class="text-left py-3 px-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Posisi</th>
-                    <th class="text-left py-3 px-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Pemain</th>
-                    <th class="text-center py-3 px-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Posisi</th>
-                    <th class="text-center py-3 px-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Gol</th>
-                    <th class="text-center py-3 px-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Main</th>
-                  </tr>
-                </thead>
-                <tbody class="divide-y divide-slate-700">
-                  {topScorers.map((player, index) => {
-                    const playerDetail = playerDetails.find(pd => pd.name === player.name);
-                    const slug = player.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
-                    return (
-                      <tr class="hover:bg-slate-800/70 transition-colors">
-                        <td class="py-3 px-4">
-                          <div class="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-primary font-bold text-sm">
-                            {index + 1}
-                          </div>
-                        </td>
-                        <td class="py-3 px-4">
-                          <a href={`/pemain/${slug}`} class="flex items-center gap-3 hover:text-primary transition-colors">
-                            {(() => {
-                              const optimizedPhoto = optimizePlayerPhoto(player.photo_url, 'tiny', Astro.site || Astro.url.origin);
-                              return optimizedPhoto ? (
-                                <div class="w-10 h-10 rounded-full overflow-hidden bg-slate-700 flex-shrink-0">
-                                  <img src={optimizedPhoto} alt={player.name} class="w-full h-full object-cover" loading="lazy" width="40" height="40" />
-                                </div>
-                              ) : null;
-                            })()}
-                            <div>
-                              <div class="text-white font-medium text-sm">{player.name}</div>
-                              {player.jersey_number && (
-                                <div class="text-xs text-slate-400">#{player.jersey_number}</div>
-                              )}
-                            </div>
-                          </a>
-                        </td>
-                        <td class="py-3 px-4 text-center">
-                          <span class="text-slate-300 text-sm">{playerDetail?.position || player.position || '-'}</span>
-                        </td>
-                        <td class="py-3 px-4 text-center">
-                          <div class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-primary font-bold text-sm">
-                            {player.goals}
-                          </div>
-                        </td>
-                        <td class="py-3 px-4 text-center">
-                          <span class="text-slate-300 text-sm">{playerDetail?.statistics?.appearances || player.appearances || 0}</span>
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
-          </div>
+          <p class="text-[9px] font-bold uppercase tracking-[0.24em] text-primary">Jalur {fixtures.length} laga</p>
+          <h2 class="font-cond text-2xl font-bold uppercase leading-none tracking-wide">Jadwal terdekat</h2>
         </div>
-      </section>
-    )}
+        <a href="/pertandingan" class="text-[9px] font-bold uppercase tracking-[0.18em] text-white/45 hover:text-primary">
+          Semua {fixtures.length} laga →
+        </a>
+      </div>
 
-    <!-- Top Players -->
-    {topPlayers.length > 0 && (
-      <section class="mb-4 lg:mb-6">
-        <h2 class="text-slate-100 text-[22px] lg:text-2xl font-extrabold leading-tight tracking-[-0.015em] pb-3 lg:pb-4 pt-5">Top Pemain</h2>
-        <div class="flex gap-4 lg:gap-6 overflow-x-auto lg:overflow-x-visible pb-2 [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-3 xl:grid-cols-4">
-          {topPlayers.map((player) => (
-            <div class="min-w-[280px] lg:min-w-0 flex-shrink-0 lg:contents">
-              <PlayerCard player={player} />
+      <div class="proto-scroll flex snap-x gap-3 overflow-x-auto pb-2">
+        {scheduled.slice(0, 6).map((fixture, index) => {
+          const home = fixture.home_team.toUpperCase().includes('PERSIBO');
+          const opponent = home ? fixture.away_team : fixture.home_team;
+          return (
+            <a
+              href={`/pertandingan/${getMatchDetailSlug(fixture)}`}
+              class="group relative min-w-[224px] snap-start border border-white/12 bg-[#0c0b0f] p-4 transition-colors hover:border-primary/60 sm:min-w-[240px]"
+            >
+              <span class="absolute left-0 top-0 h-0.5 w-full bg-primary opacity-0 transition-opacity group-hover:opacity-100"></span>
+              <div class="flex items-start justify-between">
+                <span class="font-cond text-4xl font-bold leading-none text-white/15 tnum">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <span class={`px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-[0.14em] ${home ? 'bg-primary text-[#08070a]' : 'border border-white/20 text-white/45'}`}>
+                  {home ? 'Home' : 'Away'}
+                </span>
+              </div>
+              <p class="mt-4 text-[10px] font-bold uppercase tracking-[0.18em] text-primary">
+                {shortDate(fixture.date)} · {fixture.time ?? '15.30'} WIB
+              </p>
+              <div class="mt-2 flex items-center gap-2">
+                <img src={logoFor(opponent)} alt="" width="26" height="26" class="h-6 w-6 shrink-0 object-contain" loading="lazy" />
+                <p class="min-w-0 truncate font-cond text-xl font-semibold uppercase leading-none">{shortTeam(opponent)}</p>
+              </div>
+              <p class="mt-3 truncate text-[9px] uppercase tracking-[0.14em] text-white/30">
+                {home ? '' : 'di '}{fixture.venue}
+              </p>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-7xl px-4 py-12 lg:px-8">
+    <section>
+      <div class="mb-5 flex items-end justify-between border-b border-white/20 pb-3">
+        <div>
+          <p class="text-[9px] font-bold uppercase tracking-[0.24em] text-primary">Dari ruang ganti</p>
+          <h2 class="font-cond text-2xl font-bold uppercase leading-none tracking-wide">Kabar terbaru</h2>
+        </div>
+        <a href="/tim/berita" class="text-[9px] font-bold uppercase tracking-[0.18em] text-white/45 hover:text-primary">
+          Semua berita →
+        </a>
+      </div>
+
+      <div class="grid gap-4 lg:grid-cols-[1.55fr_0.45fr]">
+        <a href={news[0].href} class="group relative block border border-white/12 bg-[#0c0b0f]">
+          <div class="relative aspect-[16/9] overflow-hidden">
+            <img
+              src={news[0].img}
+              alt=""
+              class="h-full w-full object-cover opacity-85 transition-opacity group-hover:opacity-100"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-4 lg:absolute lg:inset-x-0 lg:bottom-0 lg:bg-gradient-to-t lg:from-[#08070a] lg:via-[#08070a]/75 lg:to-transparent lg:p-6">
+            <div class="flex items-center gap-3">
+              <span class="bg-primary px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-[0.14em] text-[#08070a]">
+                {news[0].tag}
+              </span>
+              <span class="text-[9px] font-bold uppercase tracking-[0.18em] text-white/40">{news[0].date}</span>
             </div>
+            <h3 class="font-cond mt-2 text-2xl font-bold uppercase leading-[0.95] sm:text-3xl lg:text-4xl">
+              {news[0].title}
+            </h3>
+            <p class="mt-2 hidden max-w-xl text-sm leading-relaxed text-white/50 sm:block">{news[0].excerpt}</p>
+            <p class="mt-3 flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.18em] text-primary">
+              Baca selengkapnya
+              <span class="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+            </p>
+          </div>
+        </a>
+
+        <div class="grid content-start gap-3 sm:grid-cols-2 lg:grid-cols-1">
+          {news.slice(1).map((item) => (
+            <a href={item.href} class="group grid grid-cols-[5.5rem_1fr] gap-3 border border-white/12 bg-[#0c0b0f] p-3">
+              <div class="aspect-square overflow-hidden">
+                <img
+                  src={item.img}
+                  alt=""
+                  class="h-full w-full object-cover opacity-85 transition-opacity group-hover:opacity-100"
+                  loading="lazy"
+                />
+              </div>
+              <div class="min-w-0 self-center">
+                <p class="text-[8px] font-bold uppercase tracking-[0.16em] text-primary">{item.tag} · {item.date}</p>
+                <h3 class="mt-1 text-sm font-semibold leading-snug text-white/90 group-hover:text-white">{item.title}</h3>
+                <p class="mt-1 line-clamp-2 text-[11px] leading-relaxed text-white/35">{item.excerpt}</p>
+              </div>
+            </a>
           ))}
         </div>
-      </section>
-    )}
-
-    <!-- Berita Terbaru -->
-    <section class="mb-4 lg:mb-6">
-      <div class="flex items-center justify-between mb-3 lg:mb-4">
-        <h2 class="text-slate-100 text-[22px] lg:text-2xl font-extrabold leading-tight tracking-[-0.015em]">Berita Terbaru</h2>
-        <a href="/tim/berita" class="text-primary hover:text-primary/80 text-sm lg:text-base font-medium flex items-center gap-1">
-          Lihat Semua
-          <span class="material-symbols-outlined text-sm">arrow_forward</span>
-        </a>
-      </div>
-      <div class="flex gap-4 overflow-x-auto pb-2 [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0 lg:gap-6">
-        <a href="/tim/berita/persibo-lawan-persika-karanganyar-jumat-12-desember" class="min-w-[280px] flex-shrink-0 lg:min-w-full block rounded-xl bg-slate-800/50 border border-slate-700 overflow-hidden hover:border-slate-600 transition-all group">
-          <!-- Featured Image -->
-          <div class="relative w-full h-48 bg-cover bg-center overflow-hidden">
-            <img 
-              src={optimizeImage('/img/persibo-persikutam.jpg', { width: 800, height: 400, quality: 70, format: 'webp', fit: 'cover' }, Astro.site || Astro.url.origin)} 
-              alt="Persibo Bojonegoro siap menghadapi Persika Karanganyar di Liga 3 Nusantara" 
-              class="absolute inset-0 w-full h-full object-cover"
-              loading="lazy"
-              width="800"
-              height="400"
-              decoding="async"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/70 to-transparent"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">Liga 3 Nusantara</span>
-                <span class="text-xs text-slate-300">8 Desember 2025</span>
-              </div>
-              <h3 class="text-lg font-bold text-white leading-tight group-hover:text-primary transition-colors">
-                Persibo Bojonegoro Lawan Persika Karanganyar Jumat 12 Desember
-              </h3>
-            </div>
-          </div>
-          
-          <!-- Article Preview -->
-          <div class="p-4">
-            <p class="text-slate-300 text-sm leading-relaxed line-clamp-2">
-              Persibo Bojonegoro akan melanjutkan petualangannya di Liga 3 Nusantara 2025-2026 dengan menghadapi Persika Karanganyar pada Jumat, 12 Desember 2025 sore. Laskar Angling Dharma siap melanjutkan tren positif setelah kemenangan perdana.
-            </p>
-            <div class="flex items-center gap-2 text-primary text-xs font-medium mt-3">
-              <span>Baca Selengkapnya</span>
-              <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="/tim/berita/bangkit-persibo-raih-kemenangan-perdana-tumbangkan-persikutim" class="min-w-[280px] flex-shrink-0 lg:min-w-full block rounded-xl bg-slate-800/50 border border-slate-700 overflow-hidden hover:border-slate-600 transition-all group">
-          <!-- Featured Image -->
-          <div class="relative w-full h-48 bg-cover bg-center overflow-hidden">
-            <img 
-              src={optimizeImage('/img/persibo-persikutam.jpg', { width: 800, height: 400, quality: 70, format: 'webp', fit: 'cover' }, Astro.site || Astro.url.origin)} 
-              alt="Persibo Bojonegoro vs Persikutim United - Liga 3 Nusantara" 
-              class="absolute inset-0 w-full h-full object-cover"
-              loading="lazy"
-              width="800"
-              height="400"
-              decoding="async"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/70 to-transparent"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">Liga 3 Nusantara</span>
-                <span class="text-xs text-slate-300">4 Desember 2025</span>
-              </div>
-              <h3 class="text-lg font-bold text-white leading-tight group-hover:text-primary transition-colors">
-                Bangkit! Persibo Raih Kemenangan Perdana di Liga 3, Tumbangkan Persikutim 2-1
-              </h3>
-            </div>
-          </div>
-          
-          <!-- Article Preview -->
-          <div class="p-4">
-            <p class="text-slate-300 text-sm leading-relaxed line-clamp-2">
-              Persibo Bojonegoro berhasil memetik kemenangan krusial di laga kedua Grup C Liga 3 Nusantara. Laskar Angling Dharma sukses menumbangkan Persikutim United dengan skor akhir 2-1.
-            </p>
-            <div class="flex items-center gap-2 text-primary text-xs font-medium mt-3">
-              <span>Baca Selengkapnya</span>
-              <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="/tim/berita/pukulan-telak-injury-time-persibo-tumbang-rans" class="min-w-[280px] flex-shrink-0 lg:min-w-full block rounded-xl bg-slate-800/50 border border-slate-700 overflow-hidden hover:border-slate-600 transition-all group">
-          <!-- Featured Image -->
-          <div class="relative w-full h-48 bg-cover bg-center overflow-hidden">
-            <img 
-              src={optimizeImage('/img/persibo-rans.jpg', { width: 800, height: 400, quality: 70, format: 'webp', fit: 'cover' }, Astro.site || Astro.url.origin)} 
-              alt="Pertandingan Persibo Bojonegoro vs RANS Nusantara FC di Stadion Sriwedari, Solo" 
-              class="absolute inset-0 w-full h-full object-cover"
-              loading="lazy"
-              width="800"
-              height="400"
-              decoding="async"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/70 to-transparent"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">Liga 3 Nusantara</span>
-                <span class="text-xs text-slate-300">29 November 2025</span>
-              </div>
-              <h3 class="text-lg font-bold text-white leading-tight group-hover:text-primary transition-colors">
-                Pukulan Telak di Injury Time, Persibo Tumbang 0-1 dari RANS Nusantara FC di Laga Perdana
-              </h3>
-            </div>
-          </div>
-          
-          <!-- Article Preview -->
-          <div class="p-4">
-            <p class="text-slate-300 text-sm leading-relaxed line-clamp-2">
-              Langkah awal Persibo Bojonegoro di pentas Liga 3 Nusantara 2025-2026 harus ternodai setelah menelan kekalahan pahit 0-1 dari RANS Nusantara FC. Gol dramatis di menit ke-94 menjadi pembeda.
-            </p>
-            <div class="flex items-center gap-2 text-primary text-xs font-medium mt-3">
-              <span>Baca Selengkapnya</span>
-              <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-            </div>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <!-- Sakpole Image -->
-    <section class="mb-4 lg:mb-6">
-      <div>
-        <img 
-          src={optimizeImage('/sakpole.png', { width: 800, quality: 75, format: 'webp', fit: 'contain' }, Astro.site || Astro.url.origin)} 
-          alt="Sakpole" 
-          class="w-full h-auto rounded-xl" 
-          loading="lazy"
-          width="800"
-          height="auto"
-          decoding="async"
-        />
       </div>
     </section>
   </div>
+
+  {next?.kickoff_iso && (
+    <script is:inline define:vars={{ kickoffIso: next.kickoff_iso }}>
+      (function () {
+        var kickoff = new Date(kickoffIso);
+        var diff = Math.max(0, kickoff.getTime() - Date.now());
+        var days = Math.floor(diff / 86400000);
+        var hours = Math.floor((diff % 86400000) / 3600000);
+        var mins = Math.floor((diff % 3600000) / 60000);
+        var pad = function (n) { return String(n).padStart(2, '0'); };
+        document.querySelectorAll('[data-countdown]').forEach(function (el) { el.textContent = String(days); });
+        document.querySelectorAll('[data-countdown-hours]').forEach(function (el) { el.textContent = pad(hours); });
+        document.querySelectorAll('[data-countdown-mins]').forEach(function (el) { el.textContent = pad(mins); });
+      })();
+    </script>
+  )}
 </Layout>
