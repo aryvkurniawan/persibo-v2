@@ -1,0 +1,222 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import ShareButtons from '../../../components/ShareButtons.astro';
+
+const siteUrl = (Astro.site || Astro.url.origin).toString().replace(/\/+$/, '');
+
+const breadcrumbItems = [
+  { label: 'Beranda', href: '/' },
+  { label: 'Tim', href: '/tim' },
+  { label: 'Berita', href: '/tim/berita' },
+  { label: 'Persibo Tundukkan Persitara 2-0', href: '/tim/berita/persibo-tundukkan-persitara-2-0-uji-coba' }
+];
+
+const headline = 'Persibo Tundukkan Persitara 2-0 di Laga Uji Coba Perdana di Stadion Letjen H. Soedirman';
+const summary = 'Persibo Bojonegoro mengawali rangkaian uji coba jelang Liga Nusantara 2026-27 dengan kemenangan 2-0 atas Persitara Jakarta Utara di Stadion Letjen H. Soedirman, Bojonegoro.';
+
+const publishedDate = '2026-10-25T19:00:00+07:00';
+const modifiedDate = '2026-10-25T19:00:00+07:00';
+const author = 'persibo.com';
+const authorUrl = 'https://persibo.com';
+---
+
+<Layout
+  title={`${headline} - PERSIBO Bojonegoro (Unofficial)`}
+  description={`${summary} Website Unofficial.`}
+  ogImage="/img/persibo-persitara.jpg"
+>
+  <div class="mx-auto max-w-3xl px-4 py-8 lg:px-6 lg:py-12">
+    <Breadcrumb items={breadcrumbItems} />
+
+    <!-- Article Header -->
+    <article>
+      <div class="mb-6">
+        <div class="flex items-center gap-2 mb-4 flex-wrap">
+          <span class="bg-primary px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-[0.14em] text-[#08070a]">Uji Coba</span>
+          <span class="text-xs text-white/40">25 Oktober 2026</span>
+          <span class="text-xs text-white/30">•</span>
+          <span class="text-xs text-white/40">persibo.com</span>
+        </div>
+
+        <h1 class="mt-4 font-cond text-3xl font-bold uppercase leading-[0.95] text-white sm:text-4xl md:text-5xl">
+          {headline}
+        </h1>
+
+        <div class="mt-3 flex items-center gap-3 text-[11px] uppercase tracking-[0.12em] text-white/40 mb-4">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-base">location_on</span>
+            <span>BOJONEGORO</span>
+          </div>
+          <span class="text-white/30">•</span>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-base">stadium</span>
+            <span>Stadion Letjen H. Soedirman</span>
+          </div>
+        </div>
+
+        <!-- Share Buttons -->
+        <div class="mb-6 border-y border-white/10 py-4">
+          <ShareButtons
+            title={headline}
+            description={summary}
+            type="article"
+          />
+        </div>
+      </div>
+
+      <!-- Featured Image -->
+      <div class="mb-6 overflow-hidden border border-white/12">
+        <img
+          src="/img/persibo-persitara.jpg"
+          alt="Laga uji coba Persibo Bojonegoro melawan Persitara Jakarta Utara di Stadion Letjen H. Soedirman"
+          class="w-full h-auto object-cover"
+          loading="lazy"
+          width="1080"
+          height="675"
+        />
+        <p class="mt-2 text-center text-[9px] uppercase tracking-[0.14em] text-white/30">Foto: Laga uji coba Persibo Bojonegoro vs Persitara Jakarta Utara di Stadion Letjen H. Soedirman (Radar Bojonegoro)</p>
+      </div>
+
+      <!-- Article Content -->
+      <div class="max-w-none">
+        <div class="space-y-4 text-white/60 leading-relaxed">
+          <p class="text-lg font-medium text-white">
+            <strong>BOJONEGORO, persibo.com</strong> – Persibo Bojonegoro membuka rangkaian uji coba jelang Liga Nusantara 2026-27 dengan hasil positif. Menjamu <strong class="text-white">Persitara Jakarta Utara</strong> di <strong class="text-white">Stadion Letjen H. Soedirman, Bojonegoro</strong>, pada <strong class="text-primary">Minggu (25/10/2026)</strong> sore, Laskar Angling Dharma menang <strong class="text-primary">2-0</strong>.
+          </p>
+
+          <p>
+            Dua gol Persibo tercipta di paruh pertama. <strong class="text-primary">Sehabudin Ahmad</strong> membuka keunggulan pada <strong class="text-white">menit ke-13</strong>, lalu <strong class="text-primary">Putra Chaniago</strong> menggandakan skor pada <strong class="text-white">menit ke-29</strong>. Keunggulan itu bertahan hingga pertandingan berakhir.
+          </p>
+
+          <div class="my-6 border-l-2 border-primary bg-white/[0.02] px-4 py-3">
+            <p class="text-white/70">
+              <strong class="text-white">Dua Gol di Babak Pertama</strong><br/>
+              <strong class="text-primary">Sehabudin Ahmad</strong> (13') dan <strong class="text-primary">Putra Chaniago</strong> (29') memastikan Persibo menutup babak pertama dengan keunggulan dua gol tanpa balas.
+            </p>
+          </div>
+
+          <p>
+            Laga ini menjadi penampilan perdana Persibo di Stadion Letjen H. Soedirman dan disaksikan ribuan suporter dari berbagai elemen. Riuh pendukung di sepanjang tribun mewarnai jalannya pertandingan persahabatan tersebut.
+          </p>
+
+          <h2 class="font-cond text-2xl font-bold uppercase tracking-wide text-white mt-8 mb-3">Evaluasi Meski Menang</h2>
+
+          <p>
+            Presiden Klub Persibo Bojonegoro, <strong class="text-white">Wihadi Wiyanto</strong>, menilai hasil ini memuaskan, terutama karena menjadi laga perdana di stadion kebanggaan masyarakat Bojonegoro. Meski begitu, ia menegaskan kemenangan bukan berarti seluruh aspek permainan sudah berjalan sesuai harapan.
+          </p>
+
+          <p>
+            "Dari hasil yang sekarang ini, hasil perdana kita di Stadion Bojonegoro cukup memuaskan. Tapi, tadi kita melihat masih banyak yang harus dievaluasi lagi," ungkap Wihadi seusai pertandingan.
+          </p>
+
+          <p>
+            Wihadi juga berharap antusiasme penonton terus meningkat dan semakin banyak suporter datang ke stadion. Menurutnya, kemenangan ini menjadi suntikan semangat bagi pemain, pengurus, dan ofisial untuk melangkah ke tahap persiapan berikutnya.
+          </p>
+
+          <p>
+            Sementara itu, Head Coach Persibo <strong class="text-white">I Putu Gede</strong> menyoroti penyelesaian akhir sebagai catatan utama. Persibo menciptakan banyak peluang pada babak kedua, tetapi belum semuanya mampu dikonversi menjadi gol tambahan.
+          </p>
+
+          <p>
+            "Ini memang relatif di finishing, terutama di babak kedua. Itu memang terjadi sejak awal kita uji coba ketika berhadapan dengan Persela, sampai ketika di Solo juga banyak peluang," beber I Putu Gede.
+          </p>
+
+          <p>
+            Menurutnya, proses serangan yang dibangun anak asuhnya pada babak kedua sudah berjalan baik. "Syukur di awal kita sudah cetak gol. Proses-proses di babak kedua itu sangat bagus, tinggal finishing-nya saja. Dan yang terakhir, konsistensi. Kita masih perlu konsisten," tegasnya.
+          </p>
+
+          <h2 class="font-cond text-2xl font-bold uppercase tracking-wide text-white mt-8 mb-3">Modal Menuju 13 November</h2>
+
+          <p>
+            Bagi Putu Gede, pembenahan tidak berhenti pada urusan mencetak gol. Kualitas permainan secara keseluruhan juga perlu ditingkatkan, terutama dalam membangun serangan dengan aliran bola yang lebih cepat sesuai karakter permainan yang sedang dikembangkan.
+          </p>
+
+          <p>
+            Hasil ini menjadi modal penting bagi Persibo yang tergabung di <strong class="text-white">Grup B</strong> Liga Nusantara 2026-27. Kompetisi dijadwalkan bergulir <strong class="text-primary">13 November 2026</strong>, dengan Persibo membuka perjalanan menjamu <strong class="text-white">PERSIPA</strong> di Stadion Letjen H. Soedirman.
+          </p>
+
+          <!-- Match Summary Box -->
+          <div class="my-6 border border-white/12 bg-[#0c0b0f] p-5">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary">sports_soccer</span>
+              Ringkasan Pertandingan
+            </h3>
+            <div class="grid grid-cols-2 gap-4 text-sm">
+              <div>
+                <p class="text-white/40 mb-1">Tanggal</p>
+                <p class="text-white font-medium">25 Oktober 2026</p>
+              </div>
+              <div>
+                <p class="text-white/40 mb-1">Venue</p>
+                <p class="text-white font-medium">Stadion Letjen H. Soedirman, Bojonegoro</p>
+              </div>
+              <div>
+                <p class="text-white/40 mb-1">Skor</p>
+                <p class="text-white font-bold text-lg">2 - 0</p>
+              </div>
+              <div>
+                <p class="text-white/40 mb-1">Pencetak Gol</p>
+                <p class="text-white font-medium">Sehabudin Ahmad (13'), Putra Chaniago (29')</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sources -->
+          <div class="mt-8 border-t border-white/10 pt-6">
+            <h3 class="text-lg font-bold text-white mb-3">Sumber:</h3>
+            <ul class="space-y-2 text-sm text-white/40">
+              <li>
+                <span class="text-white/30">[1]</span>{' '}
+                <a href="https://www.blokbojonegoro.com/2026/10/25/persibo-bojonegoro-tundukkan-persitara-2-0-pada-laga-uji-coba" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary/80 underline">
+                  blokBojonegoro.com - Persibo Bojonegoro Tundukkan Persitara 2-0 pada Laga Uji Coba
+                </a>
+              </li>
+              <li>
+                <span class="text-white/30">[2]</span>{' '}
+                <a href="https://radarbojonegoro.jawapos.com/sportainment/2610270001/meski-persibo-menang-2-0-atas-persitara-lini-depan-jadi-catatan" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary/80 underline">
+                  Radar Bojonegoro - Meski Persibo Menang 2-0 Atas Persitara, Lini Depan Jadi Catatan
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Related Articles / Back to News -->
+    <div class="mt-10 border-t border-white/10 pt-6">
+      <a href="/tim/berita" class="text-[10px] font-bold uppercase tracking-[0.18em] text-primary hover:text-primary/80">
+        <span class="material-symbols-outlined">arrow_back</span>
+        <span>Kembali ke Daftar Berita</span>
+      </a>
+    </div>
+  </div>
+</Layout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": headline,
+  "image": `${siteUrl}/img/persibo-persitara.jpg`,
+  "datePublished": publishedDate,
+  "dateModified": modifiedDate,
+  "author": {
+    "@type": "Organization",
+    "name": author,
+    "url": authorUrl
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "PERSIBO Bojonegoro (Unofficial)",
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${siteUrl}/logo-128.png`
+    }
+  },
+  "description": summary,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/tim/berita/persibo-tundukkan-persitara-2-0-uji-coba`
+  }
+})} />

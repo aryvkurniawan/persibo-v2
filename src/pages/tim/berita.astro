@@ -1,198 +1,129 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import PageHeader from '../../components/PageHeader.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const siteUrl = (Astro.site || Astro.url.origin).toString().replace(/\/+$/, '');
 
 const breadcrumbItems = [
   { label: 'Beranda', href: '/' },
   { label: 'Tim', href: '/tim' },
   { label: 'Berita', href: '/tim/berita' }
 ];
+
+const articles = [
+  {
+    href: '/tim/berita/persibo-tundukkan-persitara-2-0-uji-coba',
+    tag: 'Uji Coba',
+    date: '25 Oktober 2026',
+    datePublished: '2026-10-25',
+    title: 'Persibo Tundukkan Persitara 2-0 di Laga Uji Coba Perdana di Stadion Letjen H. Soedirman',
+    excerpt: 'Dua gol Sehabudin Ahmad dan Putra Chaniago membawa Persibo Bojonegoro menang 2-0 atas Persitara Jakarta Utara di laga uji coba jelang Liga Nusantara 2026-27.',
+    image: '/img/persibo-persitara.jpg',
+  },
+  {
+    href: '/tim/berita/persibo-lawan-persika-karanganyar-jumat-12-desember',
+    tag: 'Laga',
+    date: '8 Desember 2025',
+    datePublished: '2025-12-08',
+    title: 'Persibo Bojonegoro Lawan Persika Karanganyar Jumat 12 Desember',
+    excerpt: 'Persibo Bojonegoro akan melanjutkan petualangannya di Liga 3 Nusantara 2025-2026 dengan menghadapi Persika Karanganyar pada Jumat, 12 Desember 2025 sore.',
+    image: '/img/persibo-persikutam.jpg',
+  },
+  {
+    href: '/tim/berita/bangkit-persibo-raih-kemenangan-perdana-tumbangkan-persikutim',
+    tag: 'Hasil',
+    date: '4 Desember 2025',
+    datePublished: '2025-12-04',
+    title: 'Bangkit! Persibo Raih Kemenangan Perdana di Liga 3, Tumbangkan Persikutim 2-1',
+    excerpt: 'Persibo Bojonegoro berhasil memetik kemenangan krusial di laga kedua Grup C Liga 3 Nusantara. Laskar Angling Dharma sukses menumbangkan Persikutim United dengan skor akhir 2-1.',
+    image: '/img/persibo-persikutam.jpg',
+  },
+  {
+    href: '/tim/berita/pukulan-telak-injury-time-persibo-tumbang-rans',
+    tag: 'Hasil',
+    date: '29 November 2025',
+    datePublished: '2025-11-29',
+    title: 'Pukulan Telak di Injury Time, Persibo Tumbang 0-1 dari RANS Nusantara FC',
+    excerpt: 'Langkah awal Persibo Bojonegoro di pentas Liga 3 Nusantara 2025-2026 harus ternodai setelah menelan kekalahan pahit 0-1 dari RANS Nusantara FC.',
+    image: '/img/persibo-rans.jpg',
+  },
+  {
+    href: '/tim/berita/siap-tempur-solo-launching-skuad-jersey-2025',
+    tag: 'Tim',
+    date: '25 November 2025',
+    datePublished: '2025-11-25',
+    title: 'Siap Tempur di Solo! Persibo Resmi Luncurkan Skuad dan Jersey Anyar',
+    excerpt: 'Persibo Bojonegoro resmi memperkenalkan komposisi skuad dan jubah perang terbaru untuk mengarungi Liga 3 Nusantara musim 2025-2026 di Hotel Eastern, Bojonegoro.',
+    image: '/img/persibo-persikutam.jpg',
+    video: true,
+  },
+  {
+    href: '/tim/berita/drama-penalti-degradasi-liga-2',
+    tag: 'Liga 2',
+    date: '28 Februari 2025',
+    datePublished: '2025-02-28',
+    title: 'Drama Penalti Menit Akhir: Kilas Balik Persibo Terdegradasi ke Liga 3',
+    excerpt: 'Perjalanan Laskar Angling Dharma harus menemui jalan terjal pada awal tahun ini. Persibo Bojonegoro harus menelan pil pahit terdegradasi dari Liga 2.',
+    image: '/img/drama-pinalti.jpg',
+  },
+];
 ---
 
-<Layout 
+<Layout
   title="Berita PERSIBO Bojonegoro (Unofficial)"
   description="Berita terbaru tentang PERSIBO Bojonegoro. Update terkini tentang tim, pertandingan, dan perkembangan Laskar Angling Dharma di Liga Nusantara 2025-2026. Website Unofficial."
 >
-  <div class="max-w-7xl mx-auto px-4 lg:px-6 py-4 lg:py-6">
+  <div class="mx-auto max-w-7xl px-4 py-8 lg:px-6 lg:py-12">
     <Breadcrumb items={breadcrumbItems} />
-    
-    <!-- Header -->
-    <div class="mb-6 lg:mb-8">
-      <div class="flex items-center gap-3 mb-4">
-        <a href="/tim" class="text-slate-400 hover:text-white transition-colors lg:hidden">
-          <span class="material-symbols-outlined text-2xl">arrow_back</span>
-        </a>
-        <div class="flex-1">
-          <h1 class="text-2xl lg:text-3xl font-extrabold text-white">Berita</h1>
-        </div>
-      </div>
-      <p class="text-slate-400 text-sm lg:text-base lg:ml-0">Update terbaru tentang PERSIBO Bojonegoro</p>
-    </div>
 
-    <!-- Article List -->
-    <div class="space-y-6 lg:space-y-8 lg:grid lg:grid-cols-2 lg:gap-6 xl:gap-8">
-      <!-- Article 1 - Persibo vs Persika Karanganyar -->
-      <article class="lg:contents rounded-xl bg-slate-800/50 border border-slate-700 overflow-hidden hover:border-slate-600 transition-all group">
-        <a href="/tim/berita/persibo-lawan-persika-karanganyar-jumat-12-desember" class="block">
-          <!-- Featured Image -->
-          <div class="relative w-full h-64 md:h-80 bg-cover bg-center overflow-hidden" style="background-image: url('/img/persibo-persikutam.jpg');">
-            <div class="absolute inset-0 w-full h-full bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">Liga 3 Nusantara</span>
-                <span class="text-xs text-slate-300">8 Desember 2025</span>
-              </div>
-              <h3 class="text-lg font-bold text-white leading-tight group-hover:text-primary transition-colors">
-                Persibo Bojonegoro Lawan Persika Karanganyar Jumat 12 Desember
-              </h3>
-            </div>
-          </div>
-          
-          <!-- Article Preview -->
-          <div class="p-4">
-            <p class="text-slate-300 text-sm leading-relaxed line-clamp-2">
-              Persibo Bojonegoro akan melanjutkan petualangannya di Liga 3 Nusantara 2025-2026 dengan menghadapi Persika Karanganyar pada Jumat, 12 Desember 2025 sore. Laskar Angling Dharma siap melanjutkan tren positif setelah kemenangan perdana.
-            </p>
-            <div class="flex items-center gap-2 text-primary text-xs font-medium mt-3">
-              <span>Baca Selengkapnya</span>
-              <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-            </div>
-          </div>
-        </a>
-      </article>
+    <PageHeader
+      label="Dari ruang ganti"
+      title="Berita"
+      meta={`${articles.length} artikel`}
+      description="Kabar terbaru PERSIBO Bojonegoro di Liga Nusantara."
+    />
 
-      <!-- Article 2 - Kemenangan Persikutim -->
-      <article class="lg:contents rounded-xl bg-slate-800/50 border border-slate-700 overflow-hidden hover:border-slate-600 transition-all group">
-        <a href="/tim/berita/bangkit-persibo-raih-kemenangan-perdana-tumbangkan-persikutim" class="block">
-          <!-- Featured Image -->
-          <div class="relative w-full h-64 md:h-80 bg-cover bg-center overflow-hidden" style="background-image: url('/img/persibo-persikutam.jpg');">
-            <div class="absolute inset-0 w-full h-full bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">Liga 3 Nusantara</span>
-                <span class="text-xs text-slate-300">4 Desember 2025</span>
-              </div>
-              <h3 class="text-lg font-bold text-white leading-tight group-hover:text-primary transition-colors">
-                Bangkit! Persibo Raih Kemenangan Perdana di Liga 3, Tumbangkan Persikutim 2-1
-              </h3>
-            </div>
+    <div class="mt-8 grid gap-3 md:grid-cols-2 lg:gap-4">
+      {articles.map((article) => (
+        <a href={article.href} class="group flex flex-col border border-white/12 bg-[#0c0b0f] transition-colors hover:border-primary/50">
+          <div class="relative aspect-[16/9] w-full overflow-hidden bg-[#161318]">
+            {article.video ? (
+              <>
+                <video class="h-full w-full object-cover opacity-85" muted playsinline preload="metadata">
+                  <source src="/video/launching-2025.mp4#t=0.5" type="video/mp4" />
+                </video>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-5xl text-white/80">play_circle</span>
+                </div>
+              </>
+            ) : (
+              <img
+                src={article.image}
+                alt=""
+                class="h-full w-full object-cover opacity-85 transition-opacity group-hover:opacity-100"
+                loading="lazy"
+                width="800"
+                height="450"
+              />
+            )}
+            <span class="absolute left-0 top-0 bg-primary px-1.5 py-1 text-[8px] font-bold uppercase tracking-[0.14em] text-[#08070a]">
+              {article.tag}
+            </span>
           </div>
-          
-          <!-- Article Preview -->
-          <div class="p-4">
-            <p class="text-slate-300 text-sm leading-relaxed line-clamp-2">
-              Persibo Bojonegoro berhasil memetik kemenangan krusial di laga kedua Grup C Liga 3 Nusantara. Laskar Angling Dharma sukses menumbangkan Persikutim United dengan skor akhir 2-1.
-            </p>
-            <div class="flex items-center gap-2 text-primary text-xs font-medium mt-3">
-              <span>Baca Selengkapnya</span>
-              <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-            </div>
-          </div>
-        </a>
-      </article>
 
-      <!-- Article 3 - Kekalahan RANS -->
-      <article class="lg:contents rounded-xl bg-slate-800/50 border border-slate-700 overflow-hidden hover:border-slate-600 transition-all group">
-        <a href="/tim/berita/pukulan-telak-injury-time-persibo-tumbang-rans" class="block">
-          <!-- Featured Image -->
-          <div class="relative w-full h-64 md:h-80 bg-cover bg-center overflow-hidden" style="background-image: url('/img/persibo-rans.jpg');">
-            <div class="absolute inset-0 w-full h-full bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">Liga 3 Nusantara</span>
-                <span class="text-xs text-slate-300">29 November 2025</span>
-              </div>
-              <h3 class="text-lg font-bold text-white leading-tight group-hover:text-primary transition-colors">
-                Pukulan Telak di Injury Time, Persibo Tumbang 0-1 dari RANS Nusantara FC di Laga Perdana
-              </h3>
-            </div>
-          </div>
-          
-          <!-- Article Preview -->
-          <div class="p-4">
-            <p class="text-slate-300 text-sm leading-relaxed line-clamp-2">
-              Langkah awal Persibo Bojonegoro di pentas Liga 3 Nusantara 2025-2026 harus ternodai setelah menelan kekalahan pahit 0-1 dari RANS Nusantara FC. Gol dramatis di menit ke-94 menjadi pembeda.
+          <div class="flex flex-1 flex-col p-4">
+            <span class="text-[9px] font-bold uppercase tracking-[0.16em] text-white/35">{article.date}</span>
+            <h2 class="mt-1.5 font-cond text-xl font-semibold uppercase leading-[1.02] text-white transition-colors group-hover:text-primary sm:text-2xl">
+              {article.title}
+            </h2>
+            <p class="mt-2 line-clamp-2 text-xs leading-relaxed text-white/45">{article.excerpt}</p>
+            <p class="mt-auto pt-3 text-[9px] font-bold uppercase tracking-[0.18em] text-primary">
+              Baca selengkapnya <span class="inline-block transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
             </p>
-            <div class="flex items-center gap-2 text-primary text-xs font-medium mt-3">
-              <span>Baca Selengkapnya</span>
-              <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-            </div>
           </div>
         </a>
-      </article>
-
-      <!-- Article 4 - Launching Skuad -->
-      <article class="lg:contents rounded-xl bg-slate-800/50 border border-slate-700 overflow-hidden hover:border-slate-600 transition-all group">
-        <a href="/tim/berita/siap-tempur-solo-launching-skuad-jersey-2025" class="block">
-          <!-- Featured Video Thumbnail -->
-          <div class="relative w-full h-64 md:h-80 bg-slate-900 overflow-hidden">
-            <video 
-              class="w-full h-full object-cover"
-              muted
-              playsinline
-              preload="metadata"
-            >
-              <source src="/video/launching-2025.mp4#t=0.5" type="video/mp4" />
-            </video>
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/70 to-transparent"></div>
-            <div class="absolute inset-0 flex items-center justify-center">
-              <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:bg-primary/30 transition-colors">
-                <span class="material-symbols-outlined text-white text-3xl">play_circle</span>
-              </div>
-            </div>
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">Liga 3 Nusantara</span>
-                <span class="text-xs text-slate-300">25 November 2025</span>
-              </div>
-              <h3 class="text-lg font-bold text-white leading-tight group-hover:text-primary transition-colors">
-                Siap Tempur di Solo! Persibo Bojonegoro Resmi Luncurkan Skuad dan Jersey Anyar Musim 2025-2026
-              </h3>
-            </div>
-          </div>
-          
-          <!-- Article Preview -->
-          <div class="p-4">
-            <p class="text-slate-300 text-sm leading-relaxed line-clamp-2">
-              Persibo Bojonegoro secara resmi memperkenalkan komposisi skuad dan jubah perang terbaru mereka untuk mengarungi kompetisi Liga 3 Nusantara musim 2025-2026. Acara peluncuran tim ini digelar dengan meriah namun tetap khidmat di Hotel Eastern, Bojonegoro.
-            </p>
-            <div class="flex items-center gap-2 text-primary text-xs font-medium mt-3">
-              <span>Baca Selengkapnya</span>
-              <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-            </div>
-          </div>
-        </a>
-      </article>
-
-      <!-- Article 5 - Degradasi Liga 2 -->
-      <article class="lg:contents rounded-xl bg-slate-800/50 border border-slate-700 overflow-hidden hover:border-slate-600 transition-all group">
-        <a href="/tim/berita/drama-penalti-degradasi-liga-2" class="block">
-          <!-- Featured Image -->
-          <div class="relative w-full h-64 md:h-80 bg-cover bg-center overflow-hidden" style="background-image: url('/img/drama-pinalti.jpg');">
-            <div class="absolute inset-0 w-full h-full bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="text-xs font-medium text-primary bg-primary/20 px-2 py-1 rounded-full">Liga 2</span>
-                <span class="text-xs text-slate-300">28 Februari 2025</span>
-              </div>
-              <h3 class="text-lg font-bold text-white leading-tight group-hover:text-primary transition-colors">
-                Drama Penalti Menit Akhir: Kilas Balik Persibo Bojonegoro Terdegradasi ke Liga 3
-              </h3>
-            </div>
-          </div>
-          
-          <!-- Article Preview -->
-          <div class="p-4">
-            <p class="text-slate-300 text-sm leading-relaxed line-clamp-2">
-              Perjalanan Laskar Angling Dharma harus menemui jalan terjal pada awal tahun ini. Sebelum kini berjuang keras di Liga 3 Nusantara musim 2025-2026, Persibo Bojonegoro harus menelan pil pahit terdegradasi dari kasta kedua sepak bola Indonesia, Liga 2.
-            </p>
-            <div class="flex items-center gap-2 text-primary text-xs font-medium mt-3">
-              <span>Baca Selengkapnya</span>
-              <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-            </div>
-          </div>
-        </a>
-      </article>
+      ))}
     </div>
   </div>
 </Layout>
@@ -204,57 +135,15 @@ const breadcrumbItems = [
   "description": "Berita terbaru tentang PERSIBO Bojonegoro",
   "mainEntity": {
     "@type": "ItemList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@type": "NewsArticle",
-          "headline": "Persibo Bojonegoro Lawan Persika Karanganyar Jumat 12 Desember",
-          "datePublished": "2025-12-08",
-          "image": `${Astro.site || Astro.url.origin}/img/persibo-persikutam.jpg`
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "item": {
-          "@type": "NewsArticle",
-          "headline": "Bangkit! Persibo Raih Kemenangan Perdana di Liga 3, Tumbangkan Persikutim 2-1",
-          "datePublished": "2025-12-04",
-          "image": `${Astro.site || Astro.url.origin}/img/persibo-persikutam.jpg`
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@type": "NewsArticle",
-          "headline": "Pukulan Telak di Injury Time, Persibo Tumbang 0-1 dari RANS Nusantara FC di Laga Perdana",
-          "datePublished": "2025-11-29",
-          "image": `${Astro.site || Astro.url.origin}/img/persibo-rans.jpg`
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
-        "item": {
-          "@type": "NewsArticle",
-          "headline": "Siap Tempur di Solo! Persibo Bojonegoro Resmi Luncurkan Skuad dan Jersey Anyar Musim 2025-2026",
-          "datePublished": "2025-11-25",
-          "video": `${Astro.site || Astro.url.origin}/video/launching-2025.mp4`
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 5,
-        "item": {
-          "@type": "NewsArticle",
-          "headline": "Drama Penalti Menit Akhir: Kilas Balik Persibo Bojonegoro Terdegradasi ke Liga 3",
-          "datePublished": "2025-02-28",
-          "image": `${Astro.site || Astro.url.origin}/img/drama-pinalti.jpg`
-        }
+    "itemListElement": articles.map((article, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "NewsArticle",
+        "headline": article.title,
+        "datePublished": article.datePublished,
+        "image": `${siteUrl}${article.image}`
       }
-    ]
+    }))
   }
 })} />
