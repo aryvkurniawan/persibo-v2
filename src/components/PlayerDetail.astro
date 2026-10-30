@@ -30,13 +30,22 @@ const avgGoalsPerGame = totalCareerAppearances > 0 ? (totalCareerGoals / totalCa
 const avgSavesPerGame = totalCareerAppearances > 0 && isGoalkeeper ? (totalCareerSaves / totalCareerAppearances).toFixed(2) : '0.00';
 const hasCareer = totalCareerAppearances > player.statistics.appearances;
 
+// iLeague publishes no assists, so there is no column for them: a hardcoded 0
+// reads as "this player never assisted" rather than "this is not tracked".
+const totalCards = totalYellowCardsHistory + totalRedCardsHistory;
 const stats = [
   { label: 'Main', value: player.statistics.appearances, total: hasCareer ? totalCareerAppearances : null, accent: false },
   { label: 'Gol', value: player.statistics.goals, total: totalCareerGoals > player.statistics.goals ? totalCareerGoals : null, accent: true },
-  isGoalkeeper && totalCareerSaves > 0
-    ? { label: 'Saves', value: totalCareerSaves, total: null, accent: false, note: `${avgSavesPerGame}/laga` }
-    : { label: 'Assist', value: 0, total: null, accent: false },
-  { label: 'Kartu', value: player.statistics.yellow_cards, total: null, accent: false, note: player.statistics.red_cards > 0 ? `${player.statistics.red_cards} merah` : null },
+  ...(isGoalkeeper
+    ? [{ label: 'Saves', value: totalCareerSaves, total: null, accent: false, note: `${avgSavesPerGame}/laga` }]
+    : []),
+  {
+    label: 'Kartu',
+    value: totalCards,
+    total: null,
+    accent: false,
+    note: totalRedCardsHistory > 0 ? `${totalYellowCardsHistory} kuning · ${totalRedCardsHistory} merah` : `${totalYellowCardsHistory} kuning`,
+  },
 ];
 ---
 
@@ -97,7 +106,7 @@ const stats = [
 
     <!-- Stats -->
     <div class="px-4 lg:px-0">
-      <div class="grid grid-cols-2 gap-2 lg:grid-cols-4">
+      <div class={`grid grid-cols-2 gap-2 ${stats.length === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'}`}>
         {stats.map((stat) => (
           <div class="border border-white/12 bg-[#0c0b0f] px-4 py-4">
             <p class="text-[9px] font-bold uppercase tracking-[0.18em] text-white/35">{stat.label}</p>

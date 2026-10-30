@@ -56,8 +56,42 @@ export async function loadPlayers(): Promise<Player[]> {
   return players as Player[];
 }
 
+/** iLeague's per-player history table repeats a row once per competition
+ *  edition and typos the current season as "20225". Both leak straight into
+ *  career totals: ADRE ARIDO showed 119 appearances from 14 rows that are
+ *  really 7 seasons worth 45. Normalise once here so every page agrees. */
+function normalizeHistory(history: PlayerDetail['club_history']): PlayerDetail['club_history'] {
+  const seen = new Map<string, PlayerDetail['club_history'][number]>();
+  for (const row of history) {
+    const year = row.year === '20225' ? '2025' : row.year;
+    const key = `${row.competition}|${year}|${row.club}`;
+    if (!seen.has(key)) seen.set(key, { ...row, year });
+  }
+  return [...seen.values()];
+}
+
+/** The hero figures are scraped separately from the history table and go stale,
+ *  so a player can read "MAIN 0" above a row saying "2 MAIN". The history row for
+ *  the current season is the one iLeague keeps updating, so it wins. */
+function reconcileCurrentSeason(player: PlayerDetail): PlayerDetail['statistics'] {
+  const current = player.club_history?.find((row) => row.year === '2025');
+  if (!current) return player.statistics;
+  return {
+    ...player.statistics,
+    appearances: parseInt(current.appearances) || 0,
+    goals: parseInt(current.goals) || 0,
+  };
+}
+
 export async function loadPlayerDetails(): Promise<PlayerDetail[]> {
-  return playerDetails as PlayerDetail[];
+  return (playerDetails as PlayerDetail[]).map((player) => {
+    const club_history = normalizeHistory(player.club_history ?? []);
+    return {
+      ...player,
+      club_history,
+      statistics: reconcileCurrentSeason({ ...player, club_history }),
+    };
+  });
 }
 
 export async function loadStandings(season: Season = CURRENT_SEASON): Promise<Standing[]> {

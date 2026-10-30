@@ -39,8 +39,28 @@ const persibo = standings.find(
       description={`Musim Liga 2 2024-25. PERSIBO Bojonegoro finis di peringkat ${persibo?.position} Grup ${persibo?.group} pada fase play-off dengan ${persibo?.points} poin dari ${persibo?.played} laga.`}
     />
 
+    <!-- Three stages stack into eleven tables, so let the reader jump straight
+         to the one they came for instead of scrolling past the rest. -->
+    <nav class="mt-6 flex gap-2 overflow-x-auto pb-1 [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:flex-wrap" aria-label="Lompat ke fase">
+      {stages.map(({ stage, rows }) => (
+        <a
+          href={`#fase-${stage.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
+          class="shrink-0 border border-white/15 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-white/70 transition-colors hover:border-primary hover:text-primary"
+        >
+          {stage === 'Penyisihan' ? 'Penyisihan' : stage === 'Play-off' ? 'Play-off' : '8 Besar'}
+          <span class="ml-1.5 text-white/30">{rows.length}</span>
+        </a>
+      ))}
+      <a
+        href="#hasil"
+        class="shrink-0 border border-white/15 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-white/70 transition-colors hover:border-primary hover:text-primary"
+      >
+        Hasil <span class="ml-1.5 text-white/30">{fixtures.length}</span>
+      </a>
+    </nav>
+
     {stages.map(({ stage, groups, rows }) => (
-      <section class="mt-8">
+      <section id={`fase-${stage.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`} class="mt-8 scroll-mt-28 lg:scroll-mt-24">
         <div class="mb-4 flex items-end justify-between border-b border-white/15 pb-3">
           <h2 class="font-cond text-2xl font-bold uppercase tracking-wide text-white">
             {stage === 'Penyisihan' ? 'Fase penyisihan' : stage === 'Play-off' ? 'Fase play-off' : 'Babak 8 besar'}
@@ -58,7 +78,7 @@ const persibo = standings.find(
       </section>
     ))}
 
-    <section class="mt-10">
+    <section id="hasil" class="mt-10 scroll-mt-28 lg:scroll-mt-24">
       <div class="mb-4 flex items-end justify-between border-b border-white/15 pb-3">
         <h2 class="font-cond text-2xl font-bold uppercase tracking-wide text-white">Hasil pertandingan</h2>
         <span class="text-[10px] uppercase tracking-[0.18em] text-white/30">{fixtures.length} laga</span>

@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import PageHeader from '../../components/PageHeader.astro';
-import PlayerCard from '../../components/PlayerCard.astro';
+import PlayerTable from '../../components/PlayerTable.astro';
 import SearchBar from '../../components/SearchBar.astro';
 import FilterBar from '../../components/FilterBar.astro';
 import { loadPlayers, loadPlayerDetails } from '../../utils/dataLoader';
@@ -9,13 +9,31 @@ import { loadPlayers, loadPlayerDetails } from '../../utils/dataLoader';
 const players = await loadPlayers();
 const playerDetails = await loadPlayerDetails();
 
-// Merge player data with details for position info and photo
-const playersWithDetails = players.map(player => {
-  const detail = playerDetails.find(pd => pd.name === player.name);
+const slugify = (name: string) => name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+
+// Career totals come from the history table, not the hero figures: the hero is
+// scraped separately and often still reads zero for players who appeared.
+const rows = players.map((player) => {
+  const detail = playerDetails.find((pd) => pd.name === player.name);
+  const totals = detail?.club_history?.reduce(
+    (acc, row) => ({
+      appearances: acc.appearances + (parseInt(row.appearances) || 0),
+      goals: acc.goals + (parseInt(row.goals) || 0),
+      saves: acc.saves + (parseInt(row.saves) || 0),
+    }),
+    { appearances: 0, goals: 0, saves: 0 }
+  );
   return {
-    ...player,
+    name: player.name,
+    slug: slugify(player.name),
     position: detail?.position || player.position || '',
-    photo_url: player.photo_local || player.photo_url || detail?.photo_url
+    age: player.age,
+    jersey: player.jersey_number,
+    photo: player.photo_local || player.photo_url || detail?.photo_url || null,
+    seasons: [],
+    appearances: totals?.appearances ?? 0,
+    goals: totals?.goals ?? 0,
+    saves: totals?.saves ?? 0,
   };
 });
 ---
@@ -28,7 +46,7 @@ const playersWithDetails = players.map(player => {
     <PageHeader
       label="Skuad 2025-26 · Arsip"
       title="Pemain"
-      meta={`${playersWithDetails.length} pemain`}
+      meta={`${rows.length} pemain`}
       description="Skuad terakhir PERSIBO Bojonegoro yang terdaftar di Liga Nusantara 2025-26. Data skuad 2026-27 menyusul setelah pendaftaran."
     />
 
@@ -49,103 +67,10 @@ const playersWithDetails = players.map(player => {
       </div>
 
       <div class="lg:col-span-3">
-        <div id="players-container" class="grid grid-cols-2 gap-3 md:grid-cols-3 lg:gap-4">
-          {playersWithDetails.map((player) => (
-            <PlayerCard player={player} />
-          ))}
-        </div>
-
-        <p id="no-results" class="hidden py-16 text-center text-sm text-white/40">
-          Tidak ada pemain yang ditemukan.
-        </p>
+        <PlayerTable rows={rows} />
       </div>
     </div>
   </div>
 </Layout>
 
-<script is:inline>
-  (function() {
-    function init() {
-      const searchInput = document.getElementById('search-input');
-      const positionFilter = document.getElementById('position-filter');
-      const ageFilter = document.getElementById('age-filter');
-      const resetFilter = document.getElementById('reset-filter');
-      const playersContainer = document.getElementById('players-container');
-      const noResults = document.getElementById('no-results');
-      const filterToggle = document.getElementById('filter-toggle');
-      const filterPanel = document.getElementById('filter-panel');
-      const filterIcon = document.getElementById('filter-icon');
 
-      if (!searchInput || !playersContainer) return;
-
-      const playerCards = playersContainer.querySelectorAll('[data-player-card]');
-
-      if (filterToggle && filterPanel && filterIcon) {
-        filterToggle.addEventListener('click', () => {
-          const isHidden = filterPanel.classList.contains('hidden');
-          filterPanel.classList.toggle('hidden', !isHidden);
-          filterToggle.setAttribute('aria-expanded', String(isHidden));
-          filterIcon.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
-        });
-      }
-
-      function filterPlayers() {
-        const searchTerm = (searchInput?.value || '').toLowerCase();
-        const selectedPosition = positionFilter?.value || '';
-        const selectedAge = ageFilter?.value || '';
-
-        let visibleCount = 0;
-
-        playerCards.forEach((card) => {
-          const playerName = (card.getAttribute('data-player-name') || '').toLowerCase();
-          const playerPosition = card.getAttribute('data-player-position') || '';
-          const playerAge = parseInt(card.getAttribute('data-player-age') || '0');
-
-          const matchesSearch = !searchTerm || playerName.includes(searchTerm);
-          const matchesPosition = !selectedPosition || playerPosition === selectedPosition;
-
-          let matchesAge = true;
-          if (selectedAge) {
-            if (selectedAge === '18-22') matchesAge = playerAge >= 18 && playerAge <= 22;
-            else if (selectedAge === '23-27') matchesAge = playerAge >= 23 && playerAge <= 27;
-            else if (selectedAge === '28-32') matchesAge = playerAge >= 28 && playerAge <= 32;
-            else if (selectedAge === '33+') matchesAge = playerAge >= 33;
-          }
-
-          if (matchesSearch && matchesPosition && matchesAge) {
-            card.style.display = '';
-            visibleCount++;
-          } else {
-            card.style.display = 'none';
-          }
-        });
-
-        if (visibleCount === 0) {
-          playersContainer.classList.add('hidden');
-          if (noResults) noResults.classList.remove('hidden');
-        } else {
-          playersContainer.classList.remove('hidden');
-          if (noResults) noResults.classList.add('hidden');
-        }
-      }
-
-      if (searchInput) searchInput.addEventListener('input', filterPlayers);
-      if (positionFilter) positionFilter.addEventListener('change', filterPlayers);
-      if (ageFilter) ageFilter.addEventListener('change', filterPlayers);
-      if (resetFilter) {
-        resetFilter.addEventListener('click', () => {
-          if (searchInput) searchInput.value = '';
-          if (positionFilter) positionFilter.value = '';
-          if (ageFilter) ageFilter.value = '';
-          filterPlayers();
-        });
-      }
-    }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', init);
-    } else {
-      init();
-    }
-  })();
-</script>

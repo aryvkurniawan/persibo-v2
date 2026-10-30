@@ -1,7 +1,9 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import PageHeader from '../../components/PageHeader.astro';
+import PlayerTable from '../../components/PlayerTable.astro';
 import faces from '../../data/players/faces.json';
+import { loadPlayers } from '../../utils/dataLoader';
 
 type Face = {
   player_id: number;
@@ -29,6 +31,28 @@ const bySeason = players.reduce<Record<string, number>>((acc, player) => {
 
 const seasonLabels = Object.keys(bySeason).sort().reverse();
 const currentSquad = players.filter((p) => p.seasons.includes('2025-26')).length;
+
+// Only the current squad has a profile page, so older names render as plain
+// text rather than a link that would 404. Match on the portrait instead of the
+// name: this file carries full names ("ADRE ARIDO GEOVANI") while the squad
+// list uses short ones ("ADRE ARIDO"), so names never line up.
+const profileByPhoto = new Map(
+  (await loadPlayers()).map((p) => [
+    p.photo_local ?? p.photo_url,
+    p.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, ''),
+  ])
+);
+const rows = players.map((player) => {
+  const photo = player.photo_local || player.photo_url || null;
+  return {
+    name: player.name,
+    slug: profileByPhoto.get(photo) ?? null,
+    position: '',
+    age: '',
+    photo,
+    seasons: player.seasons,
+  };
+});
 ---
 
 <Layout
@@ -51,35 +75,8 @@ const currentSquad = players.filter((p) => p.seasons.includes('2025-26')).length
       ))}
     </div>
 
-    <div class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 lg:gap-4">
-      {players.map((player) => (
-        <article class="group flex flex-col border border-white/12 bg-[#0c0b0f] transition-colors hover:border-primary/50">
-          <div class="relative aspect-[4/5] w-full overflow-hidden bg-[#161318]">
-            {player.photo_local ? (
-              <img
-                src={player.photo_local}
-                alt={`Foto ${player.name}, mantan pemain PERSIBO Bojonegoro`}
-                class="h-full w-full object-cover object-top opacity-90 transition-opacity group-hover:opacity-100"
-                loading="lazy"
-                width="400"
-                height="500"
-              />
-            ) : (
-              <div class="flex h-full items-center justify-center text-[10px] uppercase tracking-[0.16em] text-white/20">
-                Tanpa foto
-              </div>
-            )}
-          </div>
-          <div class="flex flex-1 flex-col gap-1 border-t border-white/10 p-3">
-            <h2 class="line-clamp-2 text-[11px] font-bold uppercase leading-tight tracking-wide text-white/85">
-              {player.name}
-            </h2>
-            <p class="mt-auto text-[10px] uppercase tracking-[0.14em] text-white/30">
-              {player.seasons.join(' · ')}
-            </p>
-          </div>
-        </article>
-      ))}
+    <div class="mt-8 max-w-3xl">
+      <PlayerTable rows={rows} showSeasons />
     </div>
   </div>
 </Layout>

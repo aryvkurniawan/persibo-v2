@@ -1,0 +1,233 @@
+---
+import type { Player, PlayerDetail } from '../types';
+
+export interface TableRow {
+  name: string;
+  fullName?: string;
+  slug: string | null;
+  position: string;
+  age: string;
+  jersey?: string;
+  photo: string | null;
+  seasons: string[];
+  /** Career totals from iLeague's history table; absent for archive-only rows. */
+  appearances?: number;
+  goals?: number;
+  saves?: number;
+}
+
+interface Props {
+  rows: TableRow[];
+  /** Show the season column (archive) instead of the shirt-number column. */
+  showSeasons?: boolean;
+  emptyLabel?: string;
+}
+
+const { rows, showSeasons = false, emptyLabel = 'Tidak ada pemain yang ditemukan.' } = Astro.props;
+
+// Grouping by position keeps the list readable without asking the reader to
+// sort it themselves: goalkeepers first, then the line behind them.
+const ORDER = ['P. GAWANG', 'BELAKANG', 'TENGAH', 'DEPAN'];
+const rank = (position: string) => {
+  const i = ORDER.indexOf(position);
+  return i === -1 ? ORDER.length : i;
+};
+
+const sorted = [...rows].sort((a, b) => {
+  const byPosition = rank(a.position) - rank(b.position);
+  if (byPosition !== 0) return byPosition;
+  if (showSeasons) return a.name.localeCompare(b.name);
+  return (parseInt(a.jersey ?? '0') || 0) - (parseInt(b.jersey ?? '0') || 0);
+});
+
+const hasStats = rows.some((r) => (r.appearances ?? 0) > 0 || (r.goals ?? 0) > 0);
+// Columns with nothing in them are noise: the archive knows names and seasons
+// but not positions or ages, so those two fold away there.
+const hasPosition = rows.some((r) => r.position);
+const hasAge = rows.some((r) => r.age);
+---
+
+<div class="overflow-x-auto border border-white/12 bg-[#0c0b0f]">
+  <table data-player-table class="w-full border-collapse text-left">
+    <thead>
+      <tr class="border-b border-white/12 text-[9px] uppercase tracking-[0.16em] text-white/30">
+        <th scope="col" class="w-10 py-2.5 pl-3 pr-1 text-right font-bold sm:w-12 sm:pl-4">
+          {showSeasons ? '' : '#'}
+        </th>
+        <th scope="col" class="py-2.5 pr-2 font-bold">Pemain</th>
+        {hasPosition && <th scope="col" class="hidden py-2.5 pr-2 font-bold sm:table-cell">Posisi</th>}
+        {hasAge && <th scope="col" class="w-14 py-2.5 pr-2 text-right font-bold">Usia</th>}
+        {hasStats && (
+          <>
+            <th scope="col" class="w-14 py-2.5 pr-2 text-right font-bold sm:w-16">
+              <span class="sm:hidden">M</span><span class="hidden sm:inline">Main</span>
+            </th>
+            <th scope="col" class="w-12 py-2.5 pr-2 text-right font-bold sm:w-14">
+              <span class="sm:hidden">G</span><span class="hidden sm:inline">Gol</span>
+            </th>
+            <th scope="col" class="hidden w-14 py-2.5 pr-3 text-right font-bold sm:table-cell">
+              <span class="sm:hidden">S</span><span class="hidden sm:inline">Saves</span>
+            </th>
+          </>
+        )}
+        {showSeasons && (
+          <th scope="col" class="hidden py-2.5 pr-3 text-right font-bold sm:table-cell">Musim</th>
+        )}
+      </tr>
+    </thead>
+    <tbody>
+      {sorted.map((row) => (
+        <tr
+          class="group border-b border-white/[0.06] last:border-0 transition-colors hover:bg-white/[0.03]"
+          data-name={row.name}
+          data-position={row.position}
+          data-age={row.age}
+        >
+          <td class="py-2 pl-3 pr-1 text-right sm:pl-4">
+            {showSeasons ? (
+              <span class="block h-8 w-8 shrink-0 overflow-hidden rounded-full bg-[#161318]">
+                {row.photo ? (
+                  <img
+                    src={row.photo}
+                    alt=""
+                    class="h-full w-full object-cover object-top opacity-90"
+                    loading="lazy"
+                    width="32"
+                    height="32"
+                  />
+                ) : (
+                  <span class="flex h-full w-full items-center justify-center text-[9px] text-white/20">–</span>
+                )}
+              </span>
+            ) : (
+              <span class="font-cond text-base font-bold leading-none text-primary tnum">{row.jersey || '–'}</span>
+            )}
+          </td>
+
+          <td class="py-2 pr-2">
+            <div class="flex items-center gap-2.5">
+              {!showSeasons && (
+                <span class="hidden h-8 w-8 shrink-0 overflow-hidden bg-[#161318] sm:block">
+                  {row.photo ? (
+                    <img
+                      src={row.photo}
+                      alt=""
+                      class="h-full w-full object-cover object-top opacity-90"
+                      loading="lazy"
+                      width="32"
+                      height="32"
+                    />
+                  ) : null}
+                </span>
+              )}
+              <div class="min-w-0">
+                {row.slug ? (
+                  <a
+                    href={`/pemain/${row.slug}`}
+                    class="block truncate text-[12px] font-semibold uppercase tracking-wide text-white/85 transition-colors group-hover:text-primary"
+                  >
+                    {row.name}
+                  </a>
+                ) : (
+                  <span class="block truncate text-[12px] font-semibold uppercase tracking-wide text-white/70">
+                    {row.name}
+                  </span>
+                )}
+                {row.position && (
+                  <span class="text-[9px] uppercase tracking-[0.14em] text-white/25 sm:hidden">{row.position}</span>
+                )}
+                {showSeasons && (
+                  <span class="text-[9px] uppercase tracking-[0.14em] text-white/25 sm:hidden">
+                    {row.seasons.join(' · ')}
+                  </span>
+                )}
+              </div>
+            </div>
+          </td>
+
+          {hasPosition && (
+            <td class="hidden py-2 pr-2 text-[10px] uppercase tracking-[0.12em] text-white/40 sm:table-cell">
+              {row.position || '–'}
+            </td>
+          )}
+
+          {hasAge && (
+            <td class="py-2 pr-2 text-right font-cond text-[13px] leading-none text-white/50 tnum">{row.age}</td>
+          )}
+
+          {hasStats && (
+            <>
+              <td class="py-2 pr-2 text-right font-cond text-[13px] leading-none text-white/80 tnum">{row.appearances ?? 0}</td>
+              <td class="py-2 pr-2 text-right font-cond text-[13px] leading-none text-white/80 tnum">{row.goals ?? 0}</td>
+              <td class="hidden py-2 pr-3 text-right font-cond text-[13px] leading-none text-white/50 tnum sm:table-cell">{row.saves ?? 0}</td>
+            </>
+          )}
+
+          {showSeasons && (
+            <td class="hidden py-2 pr-3 text-right text-[9px] uppercase tracking-[0.12em] text-white/30 sm:table-cell">
+              {row.seasons.join(' · ')}
+            </td>
+          )}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<p data-table-empty class="hidden py-16 text-center text-sm text-white/40">{emptyLabel}</p>
+
+<script is:inline>
+  // The filter bar hides rows rather than re-rendering, so the empty state has
+  // to be inferred from the table itself.
+  (function () {
+    function wire() {
+      const table = document.querySelector('[data-player-table]');
+      if (!table) return;
+      const rows = [...table.querySelectorAll('tbody tr')];
+      const empty = document.querySelector('[data-table-empty]');
+      const search = document.getElementById('search-input');
+      const position = document.getElementById('position-filter');
+      const age = document.getElementById('age-filter');
+      const reset = document.getElementById('reset-filter');
+      if (!search || !position) return;
+
+      function apply() {
+        const term = (search.value || '').toLowerCase();
+        const pos = position.value || '';
+        const ageBand = age?.value || '';
+        let visible = 0;
+
+        for (const row of rows) {
+          const name = (row.dataset.name || '').toLowerCase();
+          const rowPos = row.dataset.position || '';
+          const rowAge = parseInt(row.dataset.age || '0');
+          let ok = (!term || name.includes(term)) && (!pos || rowPos === pos);
+          if (ok && ageBand) {
+            if (ageBand === '18-22') ok = rowAge >= 18 && rowAge <= 22;
+            else if (ageBand === '23-27') ok = rowAge >= 23 && rowAge <= 27;
+            else if (ageBand === '28-32') ok = rowAge >= 28 && rowAge <= 32;
+            else if (ageBand === '33+') ok = rowAge >= 33;
+          }
+          row.style.display = ok ? '' : 'none';
+          if (ok) visible++;
+        }
+
+        table.classList.toggle('hidden', visible === 0);
+        if (empty) empty.classList.toggle('hidden', visible !== 0);
+      }
+
+      search.addEventListener('input', apply);
+      position.addEventListener('change', apply);
+      age?.addEventListener('change', apply);
+      reset?.addEventListener('click', () => {
+        search.value = '';
+        position.value = '';
+        if (age) age.value = '';
+        apply();
+      });
+    }
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire);
+    else wire();
+  })();
+</script>

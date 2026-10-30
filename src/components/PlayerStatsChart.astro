@@ -7,31 +7,34 @@ interface Props {
 
 const { player } = Astro.props;
 
-// Parse club history untuk chart data
-const chartData = (player.club_history || [])
-  .filter(h => {
-    // Filter out invalid years dan handle "20225" typo (should be 2025)
-    let yearStr = h.year;
-    if (yearStr === '20225') yearStr = '2025'; // Fix typo
-    const year = parseInt(yearStr);
-    return !isNaN(year) && year >= 2010 && year <= 2030;
-  })
-  .sort((a, b) => {
-    let yearA = parseInt(a.year === '20225' ? '2025' : a.year);
-    let yearB = parseInt(b.year === '20225' ? '2025' : b.year);
-    return yearA - yearB;
-  })
-  .map(h => {
-    const yearStr = h.year === '20225' ? '2025' : h.year;
-    return {
-      year: yearStr,
-      competition: h.competition,
-      appearances: parseInt(h.appearances) || 0,
-      goals: parseInt(h.goals) || 0,
-      saves: parseInt(h.saves) || 0,
-      cards: h.cards?.split('/').map(c => parseInt(c.trim()) || 0) || [0, 0],
-    };
-  });
+// One point per season. iLeague files each competition separately, so a player
+// with a league and a youth-league campaign in the same year would otherwise
+// plot twice on the same x value and draw a spike that never happened.
+const bySeason = new Map<string, { appearances: number; goals: number; saves: number; yellow: number; red: number }>();
+for (const h of player.club_history || []) {
+  const year = parseInt(h.year);
+  if (isNaN(year) || year < 2010 || year > 2030) continue;
+  const key = String(year);
+  const bucket = bySeason.get(key) ?? { appearances: 0, goals: 0, saves: 0, yellow: 0, red: 0 };
+  const cards = h.cards?.split('/').map((c) => parseInt(c.trim()) || 0) ?? [0, 0];
+  bucket.appearances += parseInt(h.appearances) || 0;
+  bucket.goals += parseInt(h.goals) || 0;
+  bucket.saves += parseInt(h.saves) || 0;
+  bucket.yellow += cards[0] || 0;
+  bucket.red += cards[1] || 0;
+  bySeason.set(key, bucket);
+}
+
+const chartData = [...bySeason.entries()]
+  .sort((a, b) => parseInt(a[0]) - parseInt(b[0]))
+  .map(([year, s]) => ({
+    year,
+    competition: '',
+    appearances: s.appearances,
+    goals: s.goals,
+    saves: s.saves,
+    cards: [s.yellow, s.red],
+  }));
 
 // Show chart if there's any valid history data (even if all stats are 0, show the chart)
 const hasHistory = chartData.length > 0;
