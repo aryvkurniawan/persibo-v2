@@ -22,7 +22,14 @@ Situs penggemar, dudu akun resmi. Data lan jadwal saben dina ing persibo.com.
 
 ---
 
-## 2. Versi pendek (story / reels / X)
+## 2. Versi portrait (`identitas-portrait.png`) — caption sama, jangan dipendekkan
+
+Gunakan caption nomor 1 apa adanya. Versi 1080×1350 punya ruang kosong lebih banyak di kanan-bawah,
+tapi caption tidak perlu diubah: teks di gambar sudah lengkap.
+
+---
+
+## 3. Versi pendek (story / reels / X)
 
 Isih urip.
 
@@ -32,7 +39,7 @@ Sawise titik, ana crita anyar. Dudu mung nalika menang.
 
 ---
 
-## 3. Versi Indonesia penuh (untuk audiens luar daerah)
+## 4. Versi Indonesia penuh (untuk audiens luar daerah)
 
 Ada yang berubah: mark-nya sekarang cuma satu huruf dan satu titik.
 

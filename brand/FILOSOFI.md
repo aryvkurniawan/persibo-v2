@@ -80,6 +80,7 @@ Huruf kecil tidak dipakai untuk headline. Mark dan logotype selalu uppercase.
 | `brand/png/mark-orange-1024.png`, `mark-transparent-1024.png` | Ekspor versi balik & transparan |
 | `social/out/identitas-wordmark.png` | Logotype `PERSIBO.` + `BOJONEGORO`, 1600×500 |
 | `social/out/identitas-umum.png` | Post pengumuman 1080×1080 (wordmark lengkap, tagline, palet) |
+| `social/out/identitas-portrait.png` | Versi portrait 1080×1350, komposisi disusun ulang untuk feed |
 
 SVG mark dibuat dari geometri murni (tanpa teks), jadi tajam di ukuran apa pun dan bisa dibuka di
 editor vektor mana pun. Logotype dan post dirender lewat `npm run sosmed` (job di

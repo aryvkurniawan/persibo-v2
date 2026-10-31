@@ -43,5 +43,10 @@
     "out": "identitas-umum",
     "url": "/sosmed/artboard/umum",
     "selector": "#art-umum"
+  },
+  {
+    "out": "identitas-portrait",
+    "url": "/sosmed/artboard/portrait",
+    "selector": "#art-portrait"
   }
 ]

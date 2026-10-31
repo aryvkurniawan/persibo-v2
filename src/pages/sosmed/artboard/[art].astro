@@ -4,7 +4,9 @@ import type { GetStaticPaths } from 'astro';
 import '../../../styles/global.css';
 
 export const getStaticPaths: GetStaticPaths = () =>
-  import.meta.env.DEV ? [{ params: { art: 'wordmark' } }, { params: { art: 'umum' } }] : [];
+  import.meta.env.DEV
+    ? [{ params: { art: 'wordmark' } }, { params: { art: 'umum' } }, { params: { art: 'portrait' } }]
+    : [];
 ---
 
 <!doctype html>
@@ -109,6 +111,69 @@ export const getStaticPaths: GetStaticPaths = () =>
               Persibo<span class="dot"></span>
             </p>
             <p class="mt-[8px] text-[11px] uppercase tracking-[0.26em] text-white/35">Laskar Angling Dharma</p>
+          </div>
+          <p class="text-[11px] uppercase tracking-[0.24em] text-white/40">persibo.com</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Portrait feed post, 1080x1350. Recomposed for the taller frame, not stretched. -->
+    <div
+      id="art-portrait"
+      class="relative h-[1350px] w-[1080px] overflow-hidden bg-[#0b0910]"
+      style="background-image:radial-gradient(circle at 50% 0%, rgba(249,115,22,0.18), transparent 52%)"
+    >
+      <div class="relative flex h-full flex-col px-[72px] py-[68px]">
+        <div class="flex items-center justify-between text-[13px] font-bold uppercase tracking-[0.3em]">
+          <p class="flex items-center gap-[10px] text-white/55">
+            <span class="inline-block h-[8px] w-[8px] bg-primary"></span>
+            Identitas anyar
+          </p>
+          <p class="text-white/35">2026</p>
+        </div>
+        <div class="mt-[16px] h-px w-full bg-white/15"></div>
+
+        <div class="mt-[116px] flex flex-col items-center">
+          <p class="font-cond text-[218px] font-extrabold uppercase leading-[0.8] tracking-[-0.01em]">
+            PERSIBO<span class="dot"></span>
+          </p>
+          <p class="mt-[26px] text-[27px] font-bold uppercase tracking-[0.62em] text-[#f97316]">Bojonegoro</p>
+        </div>
+
+        <div class="mt-[104px] h-px w-full bg-white/12"></div>
+
+        <p class="font-cond mt-auto text-[122px] font-extrabold uppercase leading-[0.84] text-white">
+          Isih<br />urip<span class="dot"></span>
+        </p>
+
+        <p class="mt-[34px] max-w-[620px] text-[24px] leading-[1.6] text-white/60">
+          Sawise titik, ana crita anyar. Dudu mung nalika menang.
+        </p>
+
+        <div class="mt-[72px] grid grid-cols-3 gap-[16px]">
+          <div>
+            <div class="h-[74px] w-full bg-[#f97316]"></div>
+            <p class="mt-[12px] text-[14px] font-bold uppercase tracking-[0.22em]">Geni</p>
+            <p class="mt-[5px] text-[11px] tracking-[0.16em] text-white/35">#F97316</p>
+          </div>
+          <div>
+            <div class="h-[74px] w-full border border-white/15 bg-[#0b0910]"></div>
+            <p class="mt-[12px] text-[14px] font-bold uppercase tracking-[0.22em]">Bengi</p>
+            <p class="mt-[5px] text-[11px] tracking-[0.16em] text-white/35">#0B0910</p>
+          </div>
+          <div>
+            <div class="h-[74px] w-full bg-[#f5f2ec]"></div>
+            <p class="mt-[12px] text-[14px] font-bold uppercase tracking-[0.22em]">Kapur</p>
+            <p class="mt-[5px] text-[11px] tracking-[0.16em] text-white/35">#F5F2EC</p>
+          </div>
+        </div>
+
+        <div class="mt-[54px] flex items-end justify-between border-t border-white/10 pt-[26px]">
+          <div>
+            <p class="font-cond text-[36px] font-bold uppercase leading-none">
+              Persibo<span class="dot"></span>
+            </p>
+            <p class="mt-[9px] text-[11px] uppercase tracking-[0.26em] text-white/35">Laskar Angling Dharma</p>
           </div>
           <p class="text-[11px] uppercase tracking-[0.24em] text-white/40">persibo.com</p>
         </div>
