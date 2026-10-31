@@ -37,8 +37,8 @@ const statusClass = isCompleted
 
 <article class="relative border border-white/12 bg-[#0c0b0f] p-4 transition-colors hover:border-primary/50">
   <div class="flex items-center justify-between gap-2 border-b border-white/10 pb-2.5">
-    <span class="text-[9px] font-bold uppercase tracking-[0.18em] text-white/40">{formatDateLong(match.date)}</span>
-    <span class={`border px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-[0.14em] ${statusClass}`}>
+    <span class="text-[11px] font-bold uppercase tracking-[0.18em] text-white/40">{formatDateLong(match.date)}</span>
+    <span class={`border px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.14em] ${statusClass}`}>
       {statusLabel}
     </span>
   </div>
@@ -95,11 +95,11 @@ const statusClass = isCompleted
   </div>
 
   <div class="flex items-center justify-between gap-2 border-t border-white/10 pt-3">
-    <span class="truncate text-[9px] uppercase tracking-[0.14em] text-white/30">{match.venue}</span>
+    <span class="truncate text-[11px] uppercase tracking-[0.14em] text-white/30">{match.venue}</span>
     <div class="flex shrink-0 items-center gap-2">
       <a
         href={`/pertandingan/${getMatchDetailSlug(match)}`}
-        class="text-[9px] font-bold uppercase tracking-[0.18em] text-primary hover:text-primary/80"
+        class="text-[11px] font-bold uppercase tracking-[0.18em] text-primary hover:text-primary/80"
       >
         Detail →
       </a>
@@ -108,7 +108,7 @@ const statusClass = isCompleted
           href={match.match_url}
           target="_blank"
           rel="noopener noreferrer"
-          class="text-[9px] font-bold uppercase tracking-[0.18em] text-white/40 hover:text-white"
+          class="text-[11px] font-bold uppercase tracking-[0.18em] text-white/40 hover:text-white"
           title="Buka di iLeague.id"
           aria-label={`Buka ${homeTeam} vs ${awayTeam} di iLeague.id`}
         >

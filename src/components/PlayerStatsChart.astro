@@ -52,7 +52,7 @@ const assists = 0; // Will be populated if data available
   <div class="space-y-6">
     <!-- Season Statistics Chart -->
     <div class="border border-white/12 bg-[#0c0b0f] p-4">
-      <h4 class="mb-3 border-b border-white/10 pb-3 text-[9px] font-bold uppercase tracking-[0.18em] text-primary">Statistik Per Musim</h4>
+      <h4 class="mb-3 border-b border-white/10 pb-3 text-[11px] font-bold uppercase tracking-[0.18em] text-primary">Statistik Per Musim</h4>
       <div class="space-y-4">
         <!-- Chart Container -->
         <div class="relative h-64 lg:h-80">
@@ -86,31 +86,31 @@ const assists = 0; // Will be populated if data available
 
     <!-- Career Totals -->
     <div class="border border-white/12 bg-[#0c0b0f] p-4">
-      <h4 class="mb-3 border-b border-white/10 pb-3 text-[9px] font-bold uppercase tracking-[0.18em] text-primary">Total Karir</h4>
+      <h4 class="mb-3 border-b border-white/10 pb-3 text-[11px] font-bold uppercase tracking-[0.18em] text-primary">Total Karir</h4>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
         <div class="flex flex-col">
-          <p class="text-[9px] font-bold uppercase tracking-[0.14em] text-white/35 mb-1">Total Main</p>
+          <p class="text-[11px] font-bold uppercase tracking-[0.14em] text-white/35 mb-1">Total Main</p>
           <p class="text-2xl font-bold text-white">{totalAppearances}</p>
         </div>
         <div class="flex flex-col">
-          <p class="text-[9px] font-bold uppercase tracking-[0.14em] text-white/35 mb-1">Total Gol</p>
+          <p class="text-[11px] font-bold uppercase tracking-[0.14em] text-white/35 mb-1">Total Gol</p>
           <p class="text-2xl font-bold text-accent-teal">{totalGoals}</p>
         </div>
         {player.position?.toUpperCase().includes('GAWANG') && totalSaves > 0 && (
           <div class="flex flex-col">
-            <p class="text-[9px] font-bold uppercase tracking-[0.14em] text-white/35 mb-1">Total Saves</p>
+            <p class="text-[11px] font-bold uppercase tracking-[0.14em] text-white/35 mb-1">Total Saves</p>
             <p class="text-2xl font-bold text-yellow-500">{totalSaves}</p>
           </div>
         )}
         {totalYellowCards > 0 && (
           <div class="flex flex-col">
-            <p class="text-[9px] font-bold uppercase tracking-[0.14em] text-white/35 mb-1">Kartu Kuning</p>
+            <p class="text-[11px] font-bold uppercase tracking-[0.14em] text-white/35 mb-1">Kartu Kuning</p>
             <p class="text-2xl font-bold text-yellow-500">{totalYellowCards}</p>
           </div>
         )}
         {totalRedCards > 0 && (
           <div class="flex flex-col">
-            <p class="text-[9px] font-bold uppercase tracking-[0.14em] text-white/35 mb-1">Kartu Merah</p>
+            <p class="text-[11px] font-bold uppercase tracking-[0.14em] text-white/35 mb-1">Kartu Merah</p>
             <p class="text-2xl font-bold text-red-500">{totalRedCards}</p>
           </div>
         )}

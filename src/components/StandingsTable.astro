@@ -14,7 +14,7 @@ const groupStandings = standings.filter(s => s.group === group).sort((a, b) => a
 const teams = await loadTeams(season);
 const isHighlighted = (club: string) => club.toUpperCase().includes(highlightTeam.toUpperCase());
 
-const th = 'px-1.5 py-2.5 text-right text-[9px] font-bold uppercase tracking-[0.16em] text-white/30 sm:px-2 lg:px-3';
+const th = 'px-1.5 py-2.5 text-right text-[11px] font-bold uppercase tracking-[0.16em] text-white/30 sm:px-2 lg:px-3';
 const td = 'px-1.5 py-2.5 text-right text-[11px] tnum sm:px-2 lg:px-3';
 ---
 
@@ -23,8 +23,8 @@ const td = 'px-1.5 py-2.5 text-right text-[11px] tnum sm:px-2 lg:px-3';
     <table class="w-full table-fixed">
       <thead>
         <tr class="border-b border-white/10">
-          <th class="w-7 px-1.5 py-2.5 text-left sm:px-2 text-[9px] font-bold uppercase tracking-[0.16em] text-white/30 lg:px-3">#</th>
-          <th class="px-1.5 py-2.5 text-left sm:px-2 text-[9px] font-bold uppercase tracking-[0.16em] text-white/30 lg:px-3">Klub</th>
+          <th class="w-7 px-1.5 py-2.5 text-left sm:px-2 text-[11px] font-bold uppercase tracking-[0.16em] text-white/30 lg:px-3">#</th>
+          <th class="px-1.5 py-2.5 text-left sm:px-2 text-[11px] font-bold uppercase tracking-[0.16em] text-white/30 lg:px-3">Klub</th>
           <th class={`${th} w-10`}>Main</th>
           <th class={`${th} hidden w-9 sm:table-cell`}>M</th>
           <th class={`${th} hidden w-9 sm:table-cell`}>S</th>

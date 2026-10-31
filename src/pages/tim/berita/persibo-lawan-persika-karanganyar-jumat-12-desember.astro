@@ -2,6 +2,7 @@
 import Layout from '../../../layouts/Layout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import ShareButtons from '../../../components/ShareButtons.astro';
+import MatchPreviewPanel from '../../../components/MatchPreviewPanel.astro';
 
 const siteUrl = (Astro.site || Astro.url.origin).toString().replace(/\/+$/, '');
 
@@ -21,7 +22,7 @@ const authorUrl = 'https://persibo.com';
 <Layout 
   title="Persibo Bojonegoro Lawan Persika Karanganyar Jumat 12 Desember - PERSIBO Bojonegoro (Unofficial)"
   description="Persibo Bojonegoro akan melanjutkan petualangannya di Liga 3 Nusantara 2025-2026 dengan menghadapi Persika Karanganyar pada Jumat, 12 Desember 2025 sore. Laskar Angling Dharma siap melanjutkan tren positif setelah kemenangan perdana."
-  ogImage="/img/persibo-persikutam.jpg"
+  ogImage="/img/teams/persika-karanganyar.png"
 >
   <div class="mx-auto max-w-3xl px-4 py-8 lg:px-6 lg:py-12">
     <Breadcrumb items={breadcrumbItems} />
@@ -31,7 +32,7 @@ const authorUrl = 'https://persibo.com';
     <article>
       <div class="mb-6">
         <div class="flex items-center gap-2 mb-4 flex-wrap">
-          <span class="bg-primary px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-[0.14em] text-[#08070a]">Liga 3 Nusantara</span>
+          <span class="bg-primary px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[#08070a]">Liga 3 Nusantara</span>
           <span class="text-xs text-white/40">8 Desember 2025</span>
           <span class="text-xs text-white/30">•</span>
           <span class="text-xs text-white/40">persibo.com</span>
@@ -63,17 +64,22 @@ const authorUrl = 'https://persibo.com';
         </div>
       </div>
 
-      <!-- Featured Image -->
+      <!-- This article previews a match that had not been played yet, so there is
+           no photo of it. Showing one from a different fixture would claim the
+           wrong match; show the fixture instead. -->
       <div class="mb-6 overflow-hidden border border-white/12">
-        <img 
-          src="/img/persibo-persikutam.jpg" 
-          alt="Persibo Bojonegoro siap menghadapi Persika Karanganyar di Liga 3 Nusantara" 
-          class="w-full h-auto object-cover"
-          loading="lazy"
-          width="800"
-          height="450"
+        <MatchPreviewPanel
+          home="Persibo"
+          away="Persika"
+          homeCrest="/logo-64.png"
+          awayCrest="/img/teams/persika-karanganyar.png"
+          date="12 Desember 2025"
+          venue="Stadion UNS"
+          competition="Liga Nusantara 2025-26"
         />
-        <p class="mt-2 text-center text-[9px] uppercase tracking-[0.14em] text-white/30">Foto: Tim Persibo Bojonegoro dalam pertandingan Liga 3 Nusantara 2025-2026</p>
+        <p class="border-t border-white/10 px-3 py-2 text-center text-[11px] uppercase tracking-[0.14em] text-white/30">
+          Pratinjau laga · foto pertandingan belum ada
+        </p>
       </div>
 
       <!-- Article Content -->
@@ -180,7 +186,7 @@ const authorUrl = 'https://persibo.com';
   "@context": "https://schema.org",
   "@type": "NewsArticle",
   "headline": "Persibo Bojonegoro Lawan Persika Karanganyar Jumat 12 Desember",
-  "image": `${siteUrl}/img/persibo-persikutam.jpg`,
+  "image": `${siteUrl}/img/teams/persika-karanganyar.png`,
   "datePublished": publishedDate,
   "dateModified": modifiedDate,
   "author": {

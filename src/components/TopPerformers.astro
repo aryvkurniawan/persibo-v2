@@ -58,13 +58,13 @@ const maxValue = topPerformers.length > 0 ? topPerformers[0].value : 1;
 {topPerformers.length > 0 && (
   <div class="border border-white/12 bg-[#0c0b0f] p-4">
     <div class="mb-3 flex items-center justify-between border-b border-white/10 pb-3">
-      <h4 class="text-[9px] font-bold uppercase tracking-[0.18em] text-primary">
+      <h4 class="text-[11px] font-bold uppercase tracking-[0.18em] text-primary">
         {statType === 'goals' && 'Top Scorer'}
         {statType === 'appearances' && 'Most Appearances'}
         {statType === 'saves' && 'Top Goalkeeper'}
       </h4>
       {currentPlayerRank > 0 && currentPlayerRank <= limit && (
-        <span class="text-[9px] font-bold uppercase tracking-[0.18em] text-white/40">Peringkat #{currentPlayerRank}</span>
+        <span class="text-[11px] font-bold uppercase tracking-[0.18em] text-white/40">Peringkat #{currentPlayerRank}</span>
       )}
     </div>
 

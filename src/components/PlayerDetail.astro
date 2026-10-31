@@ -65,7 +65,7 @@ const stats = [
     )}
     <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#0c0b0f] to-transparent"></div>
     <div class="absolute inset-x-0 bottom-0 p-4">
-      <p class="text-[9px] font-bold uppercase tracking-[0.18em] text-primary">{player.position || 'Pemain'}</p>
+      <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-primary">{player.position || 'Pemain'}</p>
       <h1 class="mt-1 font-cond text-4xl font-bold uppercase leading-none text-white">{player.full_name}</h1>
     </div>
   </div>
@@ -89,7 +89,7 @@ const stats = [
         )}
         <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#0c0b0f] to-transparent"></div>
         <div class="absolute inset-x-0 bottom-0 p-4">
-          <p class="text-[9px] font-bold uppercase tracking-[0.18em] text-primary">{player.position || 'Pemain'}</p>
+          <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-primary">{player.position || 'Pemain'}</p>
           <p class="mt-1 font-cond text-3xl font-bold uppercase leading-none text-white">{player.full_name}</p>
         </div>
       </div>
@@ -99,7 +99,7 @@ const stats = [
   <div class="mt-6 space-y-8 lg:mt-0">
     <!-- Header (desktop; mobile name sits on the photo) -->
     <div class="hidden px-4 lg:block lg:px-0">
-      <p class="text-[9px] font-bold uppercase tracking-[0.24em] text-primary">Profil pemain · Skuad 2025-26</p>
+      <p class="text-[11px] font-bold uppercase tracking-[0.24em] text-primary">Profil pemain · Skuad 2025-26</p>
       <h1 class="mt-1 font-cond text-5xl font-bold uppercase leading-none text-white lg:text-6xl">{player.full_name}</h1>
       <p class="mt-2 text-sm text-white/50">{player.position} · {player.club}</p>
     </div>
@@ -109,10 +109,10 @@ const stats = [
       <div class={`grid grid-cols-2 gap-2 ${stats.length === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'}`}>
         {stats.map((stat) => (
           <div class="border border-white/12 bg-[#0c0b0f] px-4 py-4">
-            <p class="text-[9px] font-bold uppercase tracking-[0.18em] text-white/35">{stat.label}</p>
+            <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-white/35">{stat.label}</p>
             <p class={`mt-2 font-cond text-4xl font-bold leading-none tnum ${stat.accent ? 'text-primary' : 'text-white'}`}>{stat.value}</p>
-            {stat.total && <p class="mt-1 text-[9px] uppercase tracking-[0.14em] text-white/30">Karir: {stat.total}</p>}
-            {stat.note && <p class="mt-1 text-[9px] uppercase tracking-[0.14em] text-white/30">{stat.note}</p>}
+            {stat.total && <p class="mt-1 text-[11px] uppercase tracking-[0.14em] text-white/30">Karir: {stat.total}</p>}
+            {stat.note && <p class="mt-1 text-[11px] uppercase tracking-[0.14em] text-white/30">{stat.note}</p>}
           </div>
         ))}
       </div>
@@ -155,18 +155,18 @@ const stats = [
       <div class="px-4 lg:px-0">
         <div class="mb-3 flex items-end justify-between border-b border-white/15 pb-3">
           <h2 class="font-cond text-2xl font-bold uppercase leading-none tracking-wide text-white">Riwayat Klub</h2>
-          <span class="text-[9px] uppercase tracking-[0.18em] text-white/30">{player.club_history.length} musim</span>
+          <span class="text-[11px] uppercase tracking-[0.18em] text-white/30">{player.club_history.length} musim</span>
         </div>
         <div class="divide-y divide-white/5 border border-white/12 bg-[#0c0b0f]">
           {player.club_history.map((history) => (
             <div class="flex items-center justify-between gap-3 px-4 py-3">
               <div class="min-w-0">
                 <p class="truncate text-sm font-medium text-white">{history.club}</p>
-                <p class="mt-0.5 text-[9px] uppercase tracking-[0.14em] text-white/30">{history.competition} · {history.year}</p>
+                <p class="mt-0.5 text-[11px] uppercase tracking-[0.14em] text-white/30">{history.competition} · {history.year}</p>
               </div>
               <div class="shrink-0 text-right">
-                <p class="font-cond text-lg font-semibold leading-none text-white tnum">{history.appearances} <span class="text-[9px] uppercase tracking-[0.14em] text-white/30">main</span></p>
-                <p class="mt-1 text-[9px] uppercase tracking-[0.14em] text-white/40">
+                <p class="font-cond text-lg font-semibold leading-none text-white tnum">{history.appearances} <span class="text-[11px] uppercase tracking-[0.14em] text-white/30">main</span></p>
+                <p class="mt-1 text-[11px] uppercase tracking-[0.14em] text-white/40">
                   {parseInt(history.goals) > 0 ? `${history.goals} gol` : '0 gol'}
                   {isGoalkeeper && parseInt(history.saves) > 0 && ` · ${history.saves} saves`}
                 </p>

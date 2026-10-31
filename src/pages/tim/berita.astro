@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
+import MatchPreviewPanel from '../../components/MatchPreviewPanel.astro';
 
 const siteUrl = (Astro.site || Astro.url.origin).toString().replace(/\/+$/, '');
 
@@ -28,7 +29,9 @@ const articles = [
     datePublished: '2025-12-08',
     title: 'Persibo Bojonegoro Lawan Persika Karanganyar Jumat 12 Desember',
     excerpt: 'Persibo Bojonegoro akan melanjutkan petualangannya di Liga 3 Nusantara 2025-2026 dengan menghadapi Persika Karanganyar pada Jumat, 12 Desember 2025 sore.',
-    image: '/img/persibo-persikutam.jpg',
+    // No photo of this match exists - the article was written before it was
+    // played. Show the fixture itself rather than borrowing another match's photo.
+    preview: { home: 'Persibo', away: 'Persika', date: '12 Des 2025', venue: 'UNS' },
   },
   {
     href: '/tim/berita/bangkit-persibo-raih-kemenangan-perdana-tumbangkan-persikutim',
@@ -97,6 +100,16 @@ const articles = [
                   <span class="material-symbols-outlined text-5xl text-white/80">play_circle</span>
                 </div>
               </>
+            ) : article.preview ? (
+              <MatchPreviewPanel
+                home={article.preview.home}
+                away={article.preview.away}
+                homeCrest="/logo-64.png"
+                awayCrest="/img/teams/persika-karanganyar.png"
+                date={article.preview.date}
+                venue={article.preview.venue}
+                competition="Liga Nusantara"
+              />
             ) : (
               <img
                 src={article.image}
@@ -107,18 +120,18 @@ const articles = [
                 height="450"
               />
             )}
-            <span class="absolute left-0 top-0 bg-primary px-1.5 py-1 text-[8px] font-bold uppercase tracking-[0.14em] text-[#08070a]">
+            <span class="absolute left-0 top-0 bg-primary px-1.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-[#08070a]">
               {article.tag}
             </span>
           </div>
 
           <div class="flex flex-1 flex-col p-4">
-            <span class="text-[9px] font-bold uppercase tracking-[0.16em] text-white/35">{article.date}</span>
+            <span class="text-[11px] font-bold uppercase tracking-[0.16em] text-white/35">{article.date}</span>
             <h2 class="mt-1.5 font-cond text-xl font-semibold uppercase leading-[1.02] text-white transition-colors group-hover:text-primary sm:text-2xl">
               {article.title}
             </h2>
             <p class="mt-2 line-clamp-2 text-xs leading-relaxed text-white/45">{article.excerpt}</p>
-            <p class="mt-auto pt-3 text-[9px] font-bold uppercase tracking-[0.18em] text-primary">
+            <p class="mt-auto pt-3 text-[11px] font-bold uppercase tracking-[0.18em] text-primary">
               Baca selengkapnya <span class="inline-block transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
             </p>
           </div>

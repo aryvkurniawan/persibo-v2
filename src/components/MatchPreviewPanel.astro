@@ -1,0 +1,58 @@
+---
+/**
+ * Stand-in for a photo on articles that preview an upcoming match.
+ *
+ * Those articles are written before the match is played, so no photo of it can
+ * exist. Reusing a picture from a different fixture is worse than having none:
+ * it silently claims the wrong match. This panel says only what is known.
+ */
+interface Props {
+  home: string;
+  away: string;
+  homeCrest: string;
+  awayCrest: string;
+  date: string;
+  venue: string;
+  competition: string;
+  size?: 'card' | 'feature';
+}
+
+const { home, away, homeCrest, awayCrest, date, venue, competition, size = 'feature' } = Astro.props;
+const isCard = size === 'card';
+---
+
+<div class={`relative flex h-full flex-col justify-between overflow-hidden border border-white/10 bg-[#100e13] ${isCard ? 'p-3' : 'p-4 lg:p-5'}`}>
+  <!-- Pitch markings, drawn rather than photographed: nothing here can be
+       mistaken for a picture of the actual match. -->
+  <svg class="pointer-events-none absolute inset-0 h-full w-full text-white/[0.045]" viewBox="0 0 400 225" preserveAspectRatio="none" aria-hidden="true">
+    <rect x="8" y="8" width="384" height="209" fill="none" stroke="currentColor" stroke-width="1.5" />
+    <line x1="200" y1="8" x2="200" y2="217" stroke="currentColor" stroke-width="1.5" />
+    <circle cx="200" cy="112" r="34" fill="none" stroke="currentColor" stroke-width="1.5" />
+    <circle cx="200" cy="112" r="2.5" fill="currentColor" />
+    <rect x="8" y="62" width="34" height="100" fill="none" stroke="currentColor" stroke-width="1.5" />
+    <rect x="358" y="62" width="34" height="100" fill="none" stroke="currentColor" stroke-width="1.5" />
+  </svg>
+
+  <div class="relative flex items-center justify-between gap-2">
+    <span class={`font-bold uppercase tracking-[0.18em] text-primary ${isCard ? 'text-[10px]' : 'text-[10px]'}`}>{competition}</span>
+    <span class={`font-bold uppercase tracking-[0.16em] text-white/30 ${isCard ? 'text-[10px]' : 'text-[11px]'}`}>Pratinjau</span>
+  </div>
+
+  <div class={`relative grid grid-cols-[1fr_auto_1fr] items-center ${isCard ? 'gap-2 py-2' : 'gap-4 py-6'}`}>
+    <div class="flex flex-col items-center gap-1.5 text-center">
+      <img src={homeCrest} alt="" width={isCard ? 28 : 56} height={isCard ? 28 : 56} class={`object-contain ${isCard ? 'h-7 w-7' : 'h-14 w-14'}`} loading="lazy" />
+      <span class={`font-semibold uppercase leading-tight text-white/85 ${isCard ? 'text-[10px]' : 'text-xs'}`}>{home}</span>
+    </div>
+    <span class={`font-cond font-bold leading-none text-white/25 ${isCard ? 'text-xs' : 'text-2xl'}`}>VS</span>
+    <div class="flex flex-col items-center gap-1.5 text-center">
+      <img src={awayCrest} alt="" width={isCard ? 28 : 56} height={isCard ? 28 : 56} class={`object-contain ${isCard ? 'h-7 w-7' : 'h-14 w-14'}`} loading="lazy" />
+      <span class={`font-semibold uppercase leading-tight text-white/85 ${isCard ? 'text-[10px]' : 'text-xs'}`}>{away}</span>
+    </div>
+  </div>
+
+  <div class={`relative flex flex-wrap items-center gap-x-2 gap-y-0.5 border-t border-white/10 pt-2 uppercase tracking-[0.12em] text-white/35 ${isCard ? 'text-[10px]' : 'text-[10px]'}`}>
+    <span class="text-white/60">{date}</span>
+    <span aria-hidden="true">·</span>
+    <span>{venue}</span>
+  </div>
+</div>

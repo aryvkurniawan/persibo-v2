@@ -29,7 +29,7 @@ const scheduledFixtures = getScheduledFixtures(allFixtures);
       <section class="mt-8">
         <div class="mb-3 flex items-end justify-between border-b border-white/15 pb-3">
           <h2 class="font-cond text-2xl font-bold uppercase leading-none tracking-wide text-white">Jadwal</h2>
-          <span class="text-[9px] uppercase tracking-[0.18em] text-white/30">{scheduledFixtures.length} laga</span>
+          <span class="text-[11px] uppercase tracking-[0.18em] text-white/30">{scheduledFixtures.length} laga</span>
         </div>
         <div class="grid gap-3 lg:grid-cols-2">
           {scheduledFixtures.map((match) => <MatchCard match={match} />)}
@@ -41,7 +41,7 @@ const scheduledFixtures = getScheduledFixtures(allFixtures);
       <section class="mt-10">
         <div class="mb-3 flex items-end justify-between border-b border-white/15 pb-3">
           <h2 class="font-cond text-2xl font-bold uppercase leading-none tracking-wide text-white">Hasil</h2>
-          <span class="text-[9px] uppercase tracking-[0.18em] text-white/30">{completedFixtures.length} laga</span>
+          <span class="text-[11px] uppercase tracking-[0.18em] text-white/30">{completedFixtures.length} laga</span>
         </div>
         <div class="grid gap-3 lg:grid-cols-2">
           {completedFixtures.map((match) => <MatchCard match={match} />)}

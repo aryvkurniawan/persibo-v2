@@ -79,13 +79,13 @@ const positionOrder = ['Penjaga Gawang', 'Belakang', 'Gelandang', 'Penyerang', '
   <div class="flex flex-wrap items-baseline justify-between gap-2 border-b border-white/10 px-4 py-3">
     <h3 class="font-cond text-xl font-semibold uppercase leading-none text-white">{teamName}</h3>
     {lineup.coach && (
-      <span class="text-[9px] uppercase tracking-[0.14em] text-white/35">Pelatih: {lineup.coach}</span>
+      <span class="text-[11px] uppercase tracking-[0.14em] text-white/35">Pelatih: {lineup.coach}</span>
     )}
   </div>
 
   <!-- Starting XI -->
   <div class="px-4 py-3">
-    <p class="text-[9px] font-bold uppercase tracking-[0.18em] text-primary">Starting XI</p>
+    <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-primary">Starting XI</p>
     <div class="mt-2 space-y-3">
       {positionOrder.map(position => {
         const playersInPosition = startingXIGrouped[position] || [];
@@ -93,7 +93,7 @@ const positionOrder = ['Penjaga Gawang', 'Belakang', 'Gelandang', 'Penyerang', '
 
         return (
           <div key={position}>
-            <p class="mb-1.5 text-[8px] font-bold uppercase tracking-[0.16em] text-white/30">{position}</p>
+            <p class="mb-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-white/30">{position}</p>
             <div class="grid grid-cols-1 gap-1 sm:grid-cols-2">
               {playersInPosition.map((player) => {
                 const playerData = players.find(p =>
@@ -125,7 +125,7 @@ const positionOrder = ['Penjaga Gawang', 'Belakang', 'Gelandang', 'Penyerang', '
   <!-- Substitutes -->
   {uniqueSubs.length > 0 && (
     <div class="border-t border-white/10 px-4 py-3">
-      <p class="text-[9px] font-bold uppercase tracking-[0.18em] text-white/35">Cadangan</p>
+      <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-white/35">Cadangan</p>
       <div class="mt-2 grid grid-cols-1 gap-1 sm:grid-cols-2">
         {uniqueSubs.map((player) => {
           const playerData = players.find(p =>

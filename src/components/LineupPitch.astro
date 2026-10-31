@@ -68,19 +68,19 @@ const cardIcon = (cards?: MatchDetailPlayer['cards']) => {
   <div class="flex flex-wrap items-baseline justify-between gap-2 border-b border-white/10 px-4 py-3">
     <div class="flex items-baseline gap-2">
       <h3 class="font-cond text-lg font-semibold uppercase leading-none text-white">{teamName}</h3>
-      <span class="text-[8px] font-bold uppercase tracking-[0.16em] text-white/25">
+      <span class="text-[10px] font-bold uppercase tracking-[0.16em] text-white/25">
         {side === 'home' ? 'Kandang' : 'Tandang'}
       </span>
     </div>
     {lineup.coach && (
-      <span class="text-[9px] uppercase tracking-[0.14em] text-white/35">{lineup.coach}</span>
+      <span class="text-[11px] uppercase tracking-[0.14em] text-white/35">{lineup.coach}</span>
     )}
   </div>
 
   <!-- Pitch: rows by position, halved vertically so both teams share one field. -->
   {!isRealEleven && (
     <div class="border-b border-white/10 bg-[#0a1410] px-4 py-3">
-      <p class="text-[9px] uppercase tracking-[0.14em] text-white/30">
+      <p class="text-[11px] uppercase tracking-[0.14em] text-white/30">
         Sumber hanya mencantumkan daftar skuad, bukan sebelas awal.
       </p>
       <div class="mt-2 grid grid-cols-2 gap-x-3 gap-y-1 sm:grid-cols-3">
@@ -107,7 +107,7 @@ const cardIcon = (cards?: MatchDetailPlayer['cards']) => {
     <div class="relative space-y-4">
       {rows.map((row) => (
         <div>
-          <p class="mb-2 text-center text-[7px] font-bold uppercase tracking-[0.2em] text-white/20">{row.position}</p>
+          <p class="mb-2 text-center text-[10px] font-bold uppercase tracking-[0.2em] text-white/20">{row.position}</p>
           <div class="flex flex-wrap items-start justify-center gap-x-1 gap-y-2">
             {row.players.map((player) => {
               const photo = photoByName.get(player.name.toUpperCase());
@@ -131,14 +131,14 @@ const cardIcon = (cards?: MatchDetailPlayer['cards']) => {
                         </span>
                       )}
                     </div>
-                    <span class="absolute -bottom-1 -right-1 flex h-4 w-4 items-center justify-center border border-[#0a1410] bg-primary font-cond text-[9px] font-bold leading-none text-black tnum">
+                    <span class="absolute -bottom-1 -right-1 flex h-4 w-4 items-center justify-center border border-[#0a1410] bg-primary font-cond text-[11px] font-bold leading-none text-black tnum">
                       {player.jersey_number}
                     </span>
                     {card && (
                       <span class={`absolute -left-1 -top-1 h-2.5 w-3 border border-[#0a1410] ${card === 'red' ? 'bg-red-500' : 'bg-yellow-400'}`}></span>
                     )}
                   </div>
-                  <span class="line-clamp-2 w-full break-words text-center text-[8px] font-semibold uppercase leading-tight tracking-tight text-white/60">
+                  <span class="line-clamp-2 w-full break-words text-center text-[10px] font-semibold uppercase leading-tight tracking-tight text-white/60">
                     {shortName(player.name)}
                   </span>
                 </div>
@@ -155,7 +155,7 @@ const cardIcon = (cards?: MatchDetailPlayer['cards']) => {
               <div class="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-[#161318] font-cond text-sm font-bold text-white/50">
                 {player.jersey_number}
               </div>
-              <span class="line-clamp-2 w-full break-words text-center text-[8px] font-semibold uppercase leading-tight tracking-tight text-white/60">
+              <span class="line-clamp-2 w-full break-words text-center text-[10px] font-semibold uppercase leading-tight tracking-tight text-white/60">
                 {shortName(player.name)}
               </span>
             </div>
@@ -167,7 +167,7 @@ const cardIcon = (cards?: MatchDetailPlayer['cards']) => {
 
   {lineup.substitutes.length > 0 && (
     <div class="border-t border-white/10 px-4 py-3">
-      <p class="text-[9px] font-bold uppercase tracking-[0.18em] text-white/35">Cadangan</p>
+      <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-white/35">Cadangan</p>
       <div class="mt-2 grid grid-cols-2 gap-x-3 gap-y-1 sm:grid-cols-3">
         {lineup.substitutes
           .filter((player) => player.name && /[A-Za-z]/.test(player.name))
@@ -180,7 +180,7 @@ const cardIcon = (cards?: MatchDetailPlayer['cards']) => {
                 </span>
                 <span class="min-w-0 flex-1 truncate text-[11px] text-white/55">{player.name}</span>
                 {onMinute ? (
-                  <span class="shrink-0 text-[8px] uppercase tracking-[0.1em] text-primary/70 tnum">▲{onMinute}'</span>
+                  <span class="shrink-0 text-[10px] uppercase tracking-[0.1em] text-primary/70 tnum">▲{onMinute}'</span>
                 ) : null}
               </div>
             );

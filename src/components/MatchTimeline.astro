@@ -29,12 +29,12 @@ const isCard = (type: TimelineEvent['type']) => type === 'yellow_card' || type =
   <div class="grid grid-cols-[1fr_auto_1fr] items-center border-b border-white/10">
     <div class="px-3 py-2.5 text-right">
       <p class="font-cond text-sm font-semibold uppercase leading-none text-white">{homeTeam}</p>
-      <span class="text-[8px] uppercase tracking-[0.16em] text-white/25">Kandang</span>
+      <span class="text-[10px] uppercase tracking-[0.16em] text-white/25">Kandang</span>
     </div>
     <div class="w-14"></div>
     <div class="px-3 py-2.5">
       <p class="font-cond text-sm font-semibold uppercase leading-none text-white">{awayTeam}</p>
-      <span class="text-[8px] uppercase tracking-[0.16em] text-white/25">Tandang</span>
+      <span class="text-[10px] uppercase tracking-[0.16em] text-white/25">Tandang</span>
     </div>
   </div>
 
@@ -50,7 +50,7 @@ const isCard = (type: TimelineEvent['type']) => type === 'yellow_card' || type =
             <>
               <div class="min-w-0 text-right">
                 <p class="truncate text-[11px] text-white/80">{event.player}</p>
-                {event.swapped && <p class="truncate text-[9px] text-white/30">◀ {event.swapped.off}</p>}
+                {event.swapped && <p class="truncate text-[11px] text-white/30">◀ {event.swapped.off}</p>}
               </div>
               {isCard(event.type) ? (
                 <span class={`h-2.5 w-2 shrink-0 ${event.type === 'red_card' ? 'bg-red-500' : 'bg-yellow-400'}`}></span>
@@ -69,7 +69,7 @@ const isCard = (type: TimelineEvent['type']) => type === 'yellow_card' || type =
           }`}>
             {event.label}
           </span>
-          <span class={`mt-0.5 h-[13px] font-cond text-[9px] font-bold leading-[13px] tnum ${
+          <span class={`mt-0.5 h-[13px] font-cond text-[11px] font-bold leading-[13px] tnum ${
             event.score ? 'border border-white/15 px-1 text-white' : 'text-transparent'
           }`}>
             {event.score ? `${event.score.home}:${event.score.away}` : '·'}
@@ -87,7 +87,7 @@ const isCard = (type: TimelineEvent['type']) => type === 'yellow_card' || type =
               )}
               <div class="min-w-0">
                 <p class="truncate text-[11px] text-white/80">{event.player}</p>
-                {event.swapped && <p class="truncate text-[9px] text-white/30">▶ {event.swapped.off}</p>}
+                {event.swapped && <p class="truncate text-[11px] text-white/30">▶ {event.swapped.off}</p>}
               </div>
             </>
           )}
