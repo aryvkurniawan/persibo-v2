@@ -149,8 +149,38 @@ hanya membungkus endpoint tersebut lewat `<iframe>`.
 ### Dynamic Routes
 - `pemain/[slug].astro` - Detail pemain (generate dari playerDetails)
 - `pertandingan/[slug].astro` - Detail pertandingan (generate dari fixtures COMPLETED)
+- `sosmed/[poster].astro` - Poster media sosial (dev-only, lihat bagian di bawah)
 
 **Penting:** Semua dynamic routes HARUS memiliki `getStaticPaths()` function untuk pre-render.
+
+### Poster Media Sosial (`npm run sosmed`)
+
+Poster dibuat sebagai halaman Astro biasa (Tailwind + font situs), lalu di-screenshot headless Chrome
+lewat `scripts/sosmed.mjs` → `social/out/<out>.png`. Resolusi default 1080×1080; isi resep poster
+ada di `social/posts.json` (satu entry = satu PNG).
+
+```json
+{ "out": "laga-persipa", "md": 1 }
+```
+
+Field opsional: `mode` (`jadwal`|`hasil`), `date`, `time`, `home`, `away`, `venue`, `grup`, `md`,
+`hs`/`as` (skor), `scorers` (`[{ minute, player, team }]`). Yang tidak diisi diambil dari laga
+berikutnya di `fixtures.json` musim aktif. Kanvas tetap 1080×1080.
+
+Mode `hasil` menampilkan skor besar, badge MENANG/KALAH/SERI, dan daftar pencetak gol. Blok
+pencetak gol hanya muncul kalau `scorers` diisi; kalau tidak, poster jatuh ke blok jadwal
+berikutnya. `matchDetails.events` sengaja tidak dipakai: isinya tidak cocok dengan skor laga
+(8 gol untuk laga 1:2) dan `team` selalu null — pencetak gol harus ditulis manual dari laporan laga.
+
+- Route hanya ada saat `astro dev` (`getStaticPaths` mengembalikan array kosong di build), jadi
+  tidak ikut ke `dist/` maupun sitemap.
+- Script memakai dev server yang sudah jalan di port 4321; kalau belum ada, ia menyalakannya sendiri.
+- Logo lawan diambil dari URL musim aktif dengan varian `/h/200/` (830px), bukan crest mirror
+  50–105px yang dipakai situs — kalau digambar di 160px hasilnya blur. Mirror tetap jadi fallback
+  lewat `onerror`.
+- Job boleh menunjuk halaman lain: `{ "out", "url": "/sosmed/identitas", "selector": "#art-wordmark", "transparent": true }`. Tanpa `url`/ `selector`, dipakai `/sosmed/<out>` dan `#poster`.
+- Artboard identitas (logotype, post pengumuman) ada di `src/pages/sosmed/identitas.astro`; filosofi mark di `brand/FILOSOFI.md`.
+- Font Barlow Condensed/Lexend diambil dari Google Fonts, jadi render butuh koneksi internet.
 
 ## 🎯 Design Principles
 

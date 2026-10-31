@@ -1,0 +1,118 @@
+---
+// Identity artboards for the social kit. Dev-only: nothing is generated at build.
+import type { GetStaticPaths } from 'astro';
+import '../../../styles/global.css';
+
+export const getStaticPaths: GetStaticPaths = () =>
+  import.meta.env.DEV ? [{ params: { art: 'wordmark' } }, { params: { art: 'umum' } }] : [];
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <title>Identitas PERSIBO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Lexend:wght@400;500;600;700;800&display=swap"
+    />
+    <style is:global>
+      html,
+      body {
+        margin: 0;
+        background: transparent;
+        color: #f5f2ec;
+        font-family: 'Lexend', sans-serif;
+      }
+      .dot {
+        display: inline-block;
+        width: 0.16em;
+        height: 0.16em;
+        background: #f97316;
+        vertical-align: baseline;
+        margin-left: 0.06em;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Horizontal lockup, transparent background. -->
+    <div
+      id="art-wordmark"
+      class="flex h-[500px] w-[1600px] flex-col items-center justify-center bg-[#0b0910]"
+    >
+      <p class="font-cond text-[220px] font-extrabold uppercase leading-[0.8] tracking-[-0.01em]">
+        PERSIBO<span class="dot"></span>
+      </p>
+      <p class="mt-[26px] text-[28px] font-bold uppercase tracking-[0.62em] text-[#f97316]">Bojonegoro</p>
+    </div>
+
+    <!-- Announcement post, 1080x1080. -->
+    <div
+      id="art-umum"
+      class="relative h-[1080px] w-[1080px] overflow-hidden bg-[#0b0910]"
+      style="background-image:radial-gradient(circle at 78% 8%, rgba(249,115,22,0.16), transparent 46%)"
+    >
+      <div class="relative flex h-full flex-col px-[64px] py-[56px]">
+        <div class="flex items-center justify-between text-[13px] font-bold uppercase tracking-[0.3em]">
+          <p class="flex items-center gap-[10px] text-white/55">
+            <span class="inline-block h-[8px] w-[8px] bg-primary"></span>
+            Identitas anyar
+          </p>
+          <p class="text-white/35">2026</p>
+        </div>
+        <div class="mt-[14px] h-px w-full bg-white/15"></div>
+
+        <!-- The whole wordmark, not just the initial: this is the mark people will recognise. -->
+        <div class="mt-[84px] flex flex-col items-center">
+          <p class="font-cond text-[196px] font-extrabold uppercase leading-[0.8] tracking-[-0.01em]">
+            PERSIBO<span class="dot"></span>
+          </p>
+          <p class="mt-[22px] text-[26px] font-bold uppercase tracking-[0.62em] text-[#f97316]">Bojonegoro</p>
+        </div>
+
+        <div class="mt-[86px] h-px w-full bg-white/12"></div>
+
+        <div class="mt-[44px] grid grid-cols-[auto_1fr] items-start gap-[44px]">
+          <p class="font-cond text-[96px] font-extrabold uppercase leading-[0.84] text-white">
+            Isih<br />urip<span class="dot"></span>
+          </p>
+          <p class="max-w-[520px] pt-[6px] text-[21px] leading-[1.55] text-white/60">
+            Sawise titik, ana crita anyar. Dudu mung nalika menang.
+          </p>
+        </div>
+
+        <!-- Palette strip: the philosophy, written in hex. -->
+        <div class="mt-[64px] grid grid-cols-3 gap-[14px]">
+          <div>
+            <div class="h-[64px] w-full bg-[#f97316]"></div>
+            <p class="mt-[10px] text-[13px] font-bold uppercase tracking-[0.22em]">Geni</p>
+            <p class="mt-[4px] text-[11px] tracking-[0.16em] text-white/35">#F97316</p>
+          </div>
+          <div>
+            <div class="h-[64px] w-full border border-white/15 bg-[#0b0910]"></div>
+            <p class="mt-[10px] text-[13px] font-bold uppercase tracking-[0.22em]">Bengi</p>
+            <p class="mt-[4px] text-[11px] tracking-[0.16em] text-white/35">#0B0910</p>
+          </div>
+          <div>
+            <div class="h-[64px] w-full bg-[#f5f2ec]"></div>
+            <p class="mt-[10px] text-[13px] font-bold uppercase tracking-[0.22em]">Kapur</p>
+            <p class="mt-[4px] text-[11px] tracking-[0.16em] text-white/35">#F5F2EC</p>
+          </div>
+        </div>
+
+        <div class="mt-auto flex items-end justify-between border-t border-white/10 pt-[22px]">
+          <div>
+            <p class="font-cond text-[34px] font-bold uppercase leading-none">
+              Persibo<span class="dot"></span>
+            </p>
+            <p class="mt-[8px] text-[11px] uppercase tracking-[0.26em] text-white/35">Laskar Angling Dharma</p>
+          </div>
+          <p class="text-[11px] uppercase tracking-[0.24em] text-white/40">persibo.com</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

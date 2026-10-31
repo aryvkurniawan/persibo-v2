@@ -1,0 +1,291 @@
+---
+import type { GetStaticPaths } from 'astro';
+import posts from '../../../social/posts.json';
+import assetsManifest from '../../data/assets-manifest.json';
+import { loadFixtures, loadTeams, getScheduledFixtures, getTeamLogo } from '../../utils/dataLoader';
+import { getWeekday } from '../../utils/dates';
+import '../../styles/global.css';
+
+type Post = {
+  out: string;
+  mode?: 'jadwal' | 'hasil';
+  date?: string;
+  time?: string;
+  home?: string;
+  away?: string;
+  venue?: string;
+  grup?: string;
+  md?: number;
+  hs?: string;
+  as?: string;
+  scorers?: { minute: string; player: string; team?: string }[];
+};
+
+// One static page per entry in social/posts.json; the render script screenshots each one.
+export const getStaticPaths: GetStaticPaths = () =>
+  (import.meta.env.DEV ? (posts as Post[]) : []).map((post) => ({ params: { poster: post.out }, props: { post } }));
+
+const { post } = Astro.props as { post: Post };
+
+const fixtures = await loadFixtures();
+const teams = await loadTeams();
+const next = getScheduledFixtures(fixtures)[0] ?? null;
+
+const homeTeam = post.home ?? next?.home_team ?? '';
+const awayTeam = post.away ?? next?.away_team ?? '';
+const isHome = homeTeam.toUpperCase().includes('PERSIBO');
+
+const longDate = post.date ?? next?.date ?? '';
+const [day, month, year] = longDate.replace(/^[^,]+,\s*/, '').split(' ');
+const weekday = getWeekday(longDate);
+
+
+const venue = post.venue ?? next?.venue ?? 'Bojonegoro';
+const group = post.grup ?? 'B';
+// Only fixtures in the loaded season have a matchday; friendlies and archive games do not.
+const derivedMatchday = fixtures.findIndex((fixture) => fixture.date === longDate) + 1;
+const matchday = post.md ? String(post.md) : derivedMatchday > 0 ? String(derivedMatchday) : '';
+
+const scorers = post.scorers ?? [];
+const mode = post.mode === 'hasil' ? 'hasil' : 'jadwal';
+const score = mode === 'hasil' ? `${post.hs ?? ''}:${post.as ?? ''}` : 'VS';
+const isPersibo = (team: string) => team.toUpperCase().includes('PERSIBO');
+// Mirrored crests are 50-105px wide, and the manifest points at last season's CDN path whose
+// /h/200/ variant is gone. The current season's teams.json URL does have an 830px file, so
+// map mirrored path → club name → current URL, and keep the mirror as the fallback.
+type LogoAsset = { kind: string; name: string; path: string };
+const teamLogoAssets = (assetsManifest.assets as LogoAsset[]).filter((asset) => asset.kind === 'team-logo');
+const nameByPath = new Map(teamLogoAssets.map((asset) => [asset.path, asset.name]));
+const remoteByName = new Map(teams.map((team) => [team.name.toUpperCase(), team.logo_url]));
+const logoFor = (team: string) => {
+  const local = getTeamLogo(teams, team);
+  if (!local || isPersibo(team)) return { src: '/logo.png', fallback: '/logo.png' };
+  const club = nameByPath.get(local);
+  const remote = (club && remoteByName.get(club.toUpperCase())) || '';
+  return { src: remote ? remote.replace('/h/50/', '/h/200/') : local, fallback: local };
+};
+const shortName = (team: string) => team.replace(/\s+(BOJONEGORO|FC|UNITED)$/i, '').toUpperCase();
+
+const persiboGoals = Number(isPersibo(homeTeam) ? post.hs : post.as);
+const rivalGoals = Number(isPersibo(homeTeam) ? post.as : post.hs);
+const outcome = Number.isNaN(persiboGoals) || Number.isNaN(rivalGoals)
+  ? ''
+  : persiboGoals > rivalGoals
+    ? 'Menang'
+    : persiboGoals < rivalGoals
+      ? 'Kalah'
+      : 'Seri';
+
+// Results have no published kick-off time; only use one the fixture actually has.
+const kickoff = post.time ?? next?.time;
+const time = (kickoff ?? '').replace(':', '.');
+
+// Only fixtures after this one; ISO compare keeps the order right across months.
+const refKickoff = fixtures.find((fixture) => fixture.date === longDate)?.kickoff_iso ?? '';
+const upcoming = getScheduledFixtures(fixtures)
+  .filter((fixture) => !refKickoff || (fixture.kickoff_iso ?? '') > refKickoff)
+  .slice(0, 3);
+
+const leftName = shortName(homeTeam);
+const rightName = shortName(awayTeam);
+const leftLogo = logoFor(homeTeam);
+const rightLogo = logoFor(awayTeam);
+// A friendly or archive fixture is not in this group table, so it gets no group caption.
+const sideCaption = (team: string) =>
+  isPersibo(team) ? 'Bojonegoro' : derivedMatchday > 0 ? `Grup ${group}` : '';
+const leftCaption = sideCaption(homeTeam);
+const rightCaption = sideCaption(awayTeam);
+// Long club names would otherwise run into the centre column.
+const nameClass = (name: string) =>
+  `font-cond font-bold uppercase leading-[0.95] ${name.length > 13 ? 'text-[2.4rem]' : 'text-[3.2rem]'}`;
+---
+
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <title>Poster laga — PERSIBO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Lexend:wght@400;500;600;700;800&display=swap"
+    />
+    <style is:global>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #0b0910;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="poster"
+      class="relative overflow-hidden bg-[#0b0910] text-[#f5f2ec]"
+      style="width:1080px;height:1080px;font-family:'Lexend',sans-serif"
+    >
+      <!-- Backdrop: orange glow plus a tilted crest watermark. -->
+      <div
+        class="pointer-events-none absolute inset-0"
+        style="background:radial-gradient(circle at 82% 6%, rgba(249,115,22,0.16), transparent 46%)"
+      >
+      </div>
+
+      <div class="relative flex h-full flex-col px-[3rem] py-[2.8rem]">
+        <!-- Header -->
+        <div class="flex items-center justify-between text-[0.62rem] font-bold uppercase tracking-[0.3em]">
+          <p class="flex items-center gap-[0.6rem] text-white/55">
+            <span class="inline-block h-[0.5rem] w-[0.5rem] bg-primary"></span>
+            Liga Nusantara 2026-27
+          </p>
+          <p class="text-white/35">Grup {group}</p>
+        </div>
+        <div class="mt-[0.9rem] h-px w-full bg-white/15"></div>
+
+        <!-- Date panel: the day is the hero, kick-off fills the opposite corner. -->
+        <div class="mt-[1.8rem] border border-white/12 bg-[#0c0b0f] px-[2rem] py-[2rem]">
+          <div class="flex items-start justify-between gap-[1rem]">
+            <div>
+              <p class="flex items-center gap-[0.7rem] text-[0.62rem] font-bold uppercase tracking-[0.32em] text-white/45">
+                <span class="inline-block h-px w-[1.6rem] bg-primary"></span>
+                {[mode === 'hasil' ? 'Hasil' : matchday ? `Matchday ${matchday}` : 'Jadwal', weekday].filter(Boolean).join(' · ')}
+              </p>
+              <div class="mt-[1rem] flex items-end gap-[1.1rem]">
+                <p class="font-cond text-[12rem] font-bold leading-[0.66] text-primary">{day ?? '--'}</p>
+                <div class="pb-[0.5rem]">
+                  <p class="font-cond text-[3.4rem] font-semibold uppercase leading-none">{(month ?? '').slice(0, 3)}</p>
+                  <p class="mt-[0.35rem] text-[0.68rem] font-semibold tracking-[0.34em] text-white/45">{year ?? ''}</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="shrink-0 border-l border-white/15 pl-[1.3rem] text-right">
+              {mode === 'jadwal' && kickoff && (
+                <>
+                  <p class="text-[0.55rem] uppercase tracking-[0.26em] text-white/40">Kick-off</p>
+                  <p class="font-cond mt-[0.3rem] text-[3.2rem] font-semibold leading-none">{time}</p>
+                  <p class="mt-[0.25rem] text-[0.62rem] uppercase tracking-[0.2em] text-white/40">WIB</p>
+                </>
+              )}
+              {mode === 'hasil' && outcome && (
+                <>
+                  <p class="text-[0.55rem] uppercase tracking-[0.26em] text-white/40">Hasil</p>
+                  <p class="font-cond mt-[0.2rem] text-[2.2rem] font-bold uppercase leading-none text-primary">{outcome}</p>
+                </>
+              )}
+              <p class="mt-[0.9rem] text-[0.55rem] uppercase tracking-[0.26em] text-white/40">Stadion</p>
+              <p class="mt-[0.3rem] max-w-[11rem] text-[0.72rem] font-semibold uppercase leading-[1.35] tracking-[0.06em] text-white/80">{venue}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Teams: left is always the home side, so the poster never flips the fixture order. -->
+        <div class="mt-[2rem] grid grid-cols-[1fr_auto_1fr] items-center gap-[1.2rem] border-y border-white/15 py-[2.6rem]">
+          <div class="flex min-w-0 flex-col items-start gap-[0.9rem]">
+            <img
+              src={leftLogo.src}
+              alt=""
+              class="h-[10rem] w-[10rem] object-contain"
+              onerror={`this.onerror=null;this.src='${leftLogo.fallback}'`}
+            />
+            <div class="min-w-0">
+              <p class={nameClass(leftName)}>{leftName}</p>
+              <p class="mt-[0.3rem] text-[0.62rem] uppercase tracking-[0.22em] text-white/45">{leftCaption}</p>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center justify-center px-[0.4rem]">
+            {mode === 'hasil' ? (
+              <p class="font-cond text-[7.5rem] font-bold leading-none text-primary">{score}</p>
+            ) : (
+              <p class="font-cond text-[4.5rem] leading-none text-white/22">VS</p>
+            )}
+            <p class="mt-[0.5rem] text-[0.58rem] uppercase tracking-[0.22em] text-white/25">
+              {isHome ? 'Kandang' : 'Tandang'}
+            </p>
+          </div>
+
+          <div class="flex min-w-0 flex-col items-end gap-[0.9rem] text-right">
+            <img
+              src={rightLogo.src}
+              alt=""
+              class="h-[10rem] w-[10rem] object-contain"
+              onerror={`this.onerror=null;this.src='${rightLogo.fallback}'`}
+            />
+            <div class="min-w-0">
+              <p class={nameClass(rightName)}>{rightName}</p>
+              <p class="mt-[0.3rem] text-[0.62rem] uppercase tracking-[0.22em] text-white/45">{rightCaption}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results get the scorers; fixtures get what comes next. -->
+        {mode === 'hasil' && scorers.length > 0 ? (
+          <div class="mt-[1.8rem]">
+            <p class="text-[0.58rem] font-bold uppercase tracking-[0.28em] text-white/40">Pencetak gol</p>
+            <div class="mt-[0.7rem] border-t border-white/12">
+              {scorers.map((goal) => (
+                <div class="flex items-center gap-[1rem] border-b border-white/12 py-[1.15rem]">
+                  <p class="font-cond w-[3.5rem] shrink-0 text-[1.15rem] font-bold uppercase leading-none text-primary">
+                    {goal.minute}
+                  </p>
+                  <p class="font-cond min-w-0 flex-1 truncate text-[1.35rem] font-semibold uppercase leading-none text-white/85">
+                    {goal.player}
+                  </p>
+                  <p class="w-[5rem] shrink-0 text-right text-[0.55rem] uppercase tracking-[0.2em] text-white/35">
+                    {(goal.team ?? '').toUpperCase()}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div class="mt-[1.8rem]">
+            <p class="text-[0.58rem] font-bold uppercase tracking-[0.28em] text-white/40">Jadwal berikutnya</p>
+            <div class="mt-[0.7rem] border-t border-white/12">
+              {upcoming.map((fixture) => {
+                const [d, m] = fixture.date.split(' ');
+                const opponentName = (isPersibo(fixture.home_team) ? fixture.away_team : fixture.home_team);
+                return (
+                  <div class="flex items-center gap-[1rem] border-b border-white/12 py-[0.62rem]">
+                    <p class="font-cond w-[5.5rem] shrink-0 text-[1.1rem] font-bold uppercase leading-none text-primary">
+                      {d} {m.slice(0, 3)}
+                    </p>
+                    <p class="font-cond min-w-0 flex-1 truncate text-[1.35rem] font-semibold uppercase leading-none text-white/85">
+                      {shortName(opponentName)}
+                    </p>
+                    <p class="w-[5rem] shrink-0 text-right text-[0.55rem] uppercase tracking-[0.2em] text-white/35">
+                      {isPersibo(fixture.home_team) ? 'Kandang' : 'Tandang'}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        <!-- Call to action -->
+        <div class="mt-[1.6rem] flex items-center justify-between bg-primary px-[1.5rem] py-[1.35rem] text-[#08070a]">
+          <p class="text-[0.68rem] font-extrabold uppercase tracking-[0.22em]">Jadwal &amp; klasemen lengkap</p>
+          <p class="font-cond text-[1.1rem] font-bold uppercase tracking-[0.12em]">persibo.com →</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-[1.2rem] flex items-end justify-between">
+          <div>
+            <p class="font-cond text-[2rem] font-bold uppercase leading-none text-white">
+              Persibo<span class="text-primary">.</span>
+            </p>
+            <p class="mt-[0.35rem] text-[0.55rem] uppercase tracking-[0.24em] text-white/35">Laskar Angling Dharma</p>
+          </div>
+          <p class="text-[0.52rem] uppercase tracking-[0.2em] text-white/25">© 2026 Persibo Bojonegoro</p>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>

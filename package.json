@@ -11,7 +11,8 @@
     "astro": "astro",
     "optimize-images": "node scripts/optimize-images.js",
     "generate-search-index": "node scripts/generate-search-index.js",
-    "fetch-assets": "node scripts/fetch-assets.mjs"
+    "fetch-assets": "node scripts/fetch-assets.mjs",
+    "sosmed": "node scripts/sosmed.mjs"
   },
   "dependencies": {
     "astro": "^7.4.1"
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@astrojs/sitemap": "^3.7.4",
     "autoprefixer": "^10.6.1",
+    "playwright-core": "^1.64.1",
     "sharp": "^0.33.5",
     "tailwindcss": "^3.4.1",
     "terser": "^5.44.1"

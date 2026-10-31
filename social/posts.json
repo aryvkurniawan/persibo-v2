@@ -1,0 +1,47 @@
+[
+  {
+    "out": "laga-persipa",
+    "md": 1
+  },
+  {
+    "out": "laga-persibangga-tandang",
+    "date": "17 November 2026",
+    "home": "PERSIBANGGA PURBALINGGA",
+    "away": "PERSIBO Bojonegoro",
+    "venue": "TRISANJA",
+    "md": 2
+  },
+  {
+    "out": "hasil-persitara",
+    "mode": "hasil",
+    "date": "25 Oktober 2026",
+    "home": "PERSIBO Bojonegoro",
+    "away": "PERSITARA",
+    "venue": "LETJEN H. SOEDIRMAN",
+    "hs": "2",
+    "as": "0",
+    "scorers": [
+      {
+        "minute": "13'",
+        "player": "SEHABUDIN AHMAD",
+        "team": "Persibo"
+      },
+      {
+        "minute": "29'",
+        "player": "PUTRA CHANIAGO",
+        "team": "Persibo"
+      }
+    ]
+  },
+  {
+    "out": "identitas-wordmark",
+    "url": "/sosmed/artboard/wordmark",
+    "selector": "#art-wordmark",
+    "transparent": false
+  },
+  {
+    "out": "identitas-umum",
+    "url": "/sosmed/artboard/umum",
+    "selector": "#art-umum"
+  }
+]

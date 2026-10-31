@@ -7,6 +7,9 @@ dan proyek ini mengikuti [Semantic Versioning](https://semver.org/lang/id/).
 
 ## [Unreleased]
 
+### Added
+- `npm run sosmed`: poster media sosial 1080×1080 dari halaman Astro `src/pages/sosmed/[poster].astro`, di-screenshot headless Chrome (`scripts/sosmed.mjs`) ke `social/out/`. Resep per gambar di `social/posts.json`; mode `jadwal` dan `hasil` (skor besar, badge MENANG/KALAH/SERI, pencetak gol dari field `scorers`), plus blok tiga laga berikutnya. Logo lawan pakai varian `/h/200/` agar tidak blur, footer poster bercap hak cipta.
+
 ### Changed
 - Seluruh halaman memakai satu bahasa desain "broadcast" dari homepage: judul `font-cond` uppercase, panel kotak `bg-[#0c0b0f]` + `border-white/12`, aksen oranye, tanpa sudut membulat.
 - `PageHeader.astro` baru sebagai header halaman bersama (label, judul, meta, deskripsi).

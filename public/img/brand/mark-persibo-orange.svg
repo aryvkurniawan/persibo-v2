@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="PERSIBO monogram">
+  <rect width="512" height="512" fill="#F97316"/>
+  <g fill="#0B0910">
+    <rect x="150" y="112" width="82" height="292"/>
+    <path d="M232 112 A118 118 0 0 1 232 348 L232 266 A36 36 0 0 0 232 194 Z"/>
+  </g>
+  <rect x="300" y="348" width="56" height="56" fill="#F5F2EC"/>
+</svg>
