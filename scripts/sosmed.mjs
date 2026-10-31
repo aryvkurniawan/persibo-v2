@@ -61,6 +61,8 @@ try {
 
   for (const job of selected) {
     await page.goto(`${BASE}${job.url ?? `/sosmed/${job.out}`}`, { waitUntil: 'networkidle' });
+    // Astro injects its dev toolbar into every dev page; it must not end up in the PNG.
+    await page.addStyleTag({ content: 'astro-dev-toolbar, #dev-toolbar-root { display: none !important; }' });
     const poster = page.locator(job.selector ?? '#poster');
     await poster.waitFor();
     await page.evaluate(() => document.fonts.ready);
