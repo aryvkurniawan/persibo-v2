@@ -144,5 +144,5 @@ jspm_packages/
 # Python
 __pycache__/
 
-# Social poster renders
-social/out/
+# Rendered social posters are deliverables, not build output (see scripts/sosmed.mjs)
+!social/out/

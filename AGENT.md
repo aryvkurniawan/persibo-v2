@@ -174,6 +174,7 @@ berikutnya. `matchDetails.events` sengaja tidak dipakai: isinya tidak cocok deng
 
 - Route hanya ada saat `astro dev` (`getStaticPaths` mengembalikan array kosong di build), jadi
   tidak ikut ke `dist/` maupun sitemap.
+- Hasil render di `social/out/` ikut di-commit: itu bahan yang diposting, bukan artefak build. Render ulang boleh menimpa berkas yang sama.
 - Script memakai dev server yang sudah jalan di port 4321; kalau belum ada, ia menyalakannya sendiri.
 - Logo lawan diambil dari URL musim aktif dengan varian `/h/200/` (830px), bukan crest mirror
   50–105px yang dipakai situs — kalau digambar di 160px hasilnya blur. Mirror tetap jadi fallback
