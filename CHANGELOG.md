@@ -11,6 +11,7 @@ dan proyek ini mengikuti [Semantic Versioning](https://semver.org/lang/id/).
 - Carousel jadwal grup (4 slide 1080×1350): `src/pages/sosmed/jadwal/[bagian].astro`, dev-only lewat `getStaticPaths`. Cover memuat crest `/logo.png` (753×1024, bukan crest 160px yang blur kalau dibesarkan), indeks 14 tanggal, dan strip tujuh klub lawan; tiga slide sisanya satu bulan masing-masing. Tanggal dan jam dibaca dari `fixtures.json`, jadi tidak ada yang diketik tangan.
 - `npm run derive-player-stats` (`scripts/derive-player-stats.js`): menurunkan statistik pemain dari `matchDetails.json` 2024-25 + 2025-26, bukan dari tabel iLeague. Penampilan = XI awal + pengganti yang benar-benar masuk (punya `substitution_minutes`), gol dan kartu dari linimasa. Jembatan nama pendek → lengkap ada di `scripts/player-alias.json`, dicocokkan lewat nomor punggung karena pencocokan nama samar gagal pada 12 dari 30 pemain. Skrip idempoten: boleh dijalankan ulang setelah data pertandingan bertambah.
 
+- Tautan media sosial resmi di footer: Instagram, Threads, dan Facebook (`@persibocom`), ikon SVG sebaris dengan deskripsi situs, terbuka di tab baru.
 
 ### Fixed
 - Laga kandang-tandang PERSIBANGGA (18 November 2026) semula tercatat 17 November di `src/data/seasons/2026-27/fixtures.json`. Halaman jadwal iLeague (`/fixtures/index/LIGA_NUSANTARA_2026-27/2`) dan halaman detailnya sama-sama menyebut Rabu, 18 November; `kickoff_iso` dan `match_url` ikut dikoreksi.
