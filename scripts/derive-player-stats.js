@@ -96,6 +96,10 @@ function patchHistory(history, season, stats) {
     row.appearances = String(stats.appearances);
     row.goals = String(stats.goals);
     row.cards = stats.yellow || stats.red ? `${stats.yellow}/${stats.red}` : '/';
+    // The scraped saves count belongs to the scraped appearance count (GERRI read
+    // 33 saves across 21 listed games, of which he played 13). Match details carry
+    // no saves, so the honest value here is blank, not a figure we cannot restate.
+    row.saves = '';
     row.source = 'derived:matchDetails';
     patched += 1;
   }
@@ -112,9 +116,10 @@ for (const player of details) {
   const fullName = ALIAS_BY_KEY.get(key(player.name)) ?? player.full_name ?? player.name;
   player.full_name = fullName;
 
-  // The headline stats describe the season the page is about.
-  const current = seasons.find((s) => s.season === '2025-26');
-  const stats = current.players.get(key(fullName));
+  // The headline stats describe the newest season the player actually played.
+  // Falling back keeps archive players, who left after 2024-25, from showing 0.
+  const played = seasons.filter((s) => s.players.has(key(fullName))).sort((a, b) => (a.season < b.season ? 1 : -1));
+  const stats = played.find((s) => s.players.get(key(fullName)).appearances > 0)?.players.get(key(fullName));
 
   if (stats) {
     player.statistics = {

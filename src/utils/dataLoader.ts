@@ -61,11 +61,16 @@ export async function loadPlayers(): Promise<Player[]> {
  *  career totals: ADRE ARIDO showed 119 appearances from 14 rows that are
  *  really 7 seasons worth 45. Normalise once here so every page agrees. */
 function normalizeHistory(history: PlayerDetail['club_history']): PlayerDetail['club_history'] {
+  // iLeague repeats rows verbatim and mistypes one season as "20225". Deduplicate,
+  // but let a recomputed row win over the scraped one it replaces: keeping the
+  // first occurrence silently discarded every derived figure.
   const seen = new Map<string, PlayerDetail['club_history'][number]>();
   for (const row of history) {
     const year = row.year === '20225' ? '2025' : row.year;
     const key = `${row.competition}|${year}|${row.club}`;
-    if (!seen.has(key)) seen.set(key, { ...row, year });
+    const next = { ...row, year };
+    const prev = seen.get(key);
+    if (!prev || (!prev.source && next.source)) seen.set(key, next);
   }
   return [...seen.values()];
 }
@@ -74,12 +79,19 @@ function normalizeHistory(history: PlayerDetail['club_history']): PlayerDetail['
  *  so a player can read "MAIN 0" above a row saying "2 MAIN". The history row for
  *  the current season is the one iLeague keeps updating, so it wins. */
 function reconcileCurrentSeason(player: PlayerDetail): PlayerDetail['statistics'] {
-  const current = player.club_history?.find((row) => row.year === '2025');
-  if (!current) return player.statistics;
+  // The hero figures describe the player's newest season *at Persibo*. Taking the
+  // newest row of any club made GERRI show his 8 games for Sriwijaya FC as if he
+  // had played them here, and hardcoding 2025 showed archive players a season they
+  // never featured in.
+  const newest = (player.club_history ?? [])
+    .filter((row) => /^\d{4}$/.test(String(row.year)))
+    .filter((row) => /PERSIBO/i.test(row.club ?? ''))
+    .sort((a, b) => Number(b.year) - Number(a.year))[0];
+  if (!newest) return player.statistics;
   return {
     ...player.statistics,
-    appearances: parseInt(current.appearances) || 0,
-    goals: parseInt(current.goals) || 0,
+    appearances: parseInt(newest.appearances) || 0,
+    goals: parseInt(newest.goals) || 0,
   };
 }
 

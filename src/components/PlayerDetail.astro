@@ -10,6 +10,16 @@ interface Props {
 
 const { player } = Astro.props;
 
+// Archive-only players stopped appearing after 2024-25, so a fixed "Skuad 2025-26"
+// header lied about them. Label the page with the newest season they actually played.
+const lastSeason = (player.club_history || [])
+  .filter((h) => /PERSIBO/i.test(h.club ?? ''))
+  .map((h) => String(h.year))
+  .filter((y) => /^\d{4}$/.test(y))
+  .map(Number)
+  .sort((a, b) => b - a)[0];
+const seasonLabel = lastSeason ? `Skuad ${lastSeason}-${String((lastSeason + 1) % 100).padStart(2, '0')}` : '';
+
 // Only rows recomputed from our own match details are summed. iLeague's scraped
 // "Penampilan" counts squad listings (it totals 21 a match), so adding its history
 // inflates everybody: SAMSUL read "Karir: 79" across 12 real appearances.
@@ -17,7 +27,8 @@ const trustedHistory = (player.club_history || []).filter((h) => h.source === 'd
 
 const totalCareerAppearances = trustedHistory.reduce((sum, h) => sum + (parseInt(h.appearances) || 0), 0);
 const totalCareerGoals = trustedHistory.reduce((sum, h) => sum + (parseInt(h.goals) || 0), 0);
-const totalCareerSaves = trustedHistory.reduce((sum, h) => sum + (parseInt(h.saves) || 0), 0);
+const savesRows = (player.club_history || []).filter((h) => (parseInt(h.saves) || 0) > 0);
+const totalCareerSaves = savesRows.reduce((sum, h) => sum + (parseInt(h.saves) || 0), 0);
 const isGoalkeeper = player.position?.toUpperCase().includes('GAWANG');
 
 const totalYellowCardsHistory = trustedHistory.reduce((sum, h) => {
@@ -30,14 +41,15 @@ const totalRedCardsHistory = trustedHistory.reduce((sum, h) => {
 }, 0);
 
 const avgGoalsPerGame = totalCareerAppearances > 0 ? (totalCareerGoals / totalCareerAppearances).toFixed(2) : '0.00';
-const avgSavesPerGame = totalCareerAppearances > 0 && isGoalkeeper ? (totalCareerSaves / totalCareerAppearances).toFixed(2) : '0.00';
+const savesAppearances = savesRows.reduce((sum, h) => sum + (parseInt(h.appearances) || 0), 0);
+const avgSavesPerGame = savesAppearances > 0 && isGoalkeeper ? (totalCareerSaves / savesAppearances).toFixed(2) : '0.00';
 // Career totals only mean something when the rows behind them are trustworthy.
 // iLeague's "Penampilan" counts squad listings, so summing its history inflates
 // every player; the matches we derive from are the only ones we can vouch for.
 const hasCareer = totalCareerAppearances > player.statistics.appearances;
 
-// No source publishes saves for Liga Nusantara. Showing 0 would claim the keeper
-// never made one, so the value stays empty and the note explains why.
+// Showing 0 would claim the keeper never made a save, so when nothing is recorded
+// the card reads blank and says so instead.
 const savesTracked = totalCareerSaves > 0;
 
 // iLeague publishes no assists, so there is no column for them: a hardcoded 0
@@ -115,7 +127,7 @@ const stats = [
   <div class="mt-6 space-y-8 lg:mt-0">
     <!-- Header (desktop; mobile name sits on the photo) -->
     <div class="hidden px-4 lg:block lg:px-0">
-      <p class="text-[11px] font-bold uppercase tracking-[0.24em] text-primary">Profil pemain · Skuad 2025-26</p>
+      <p class="text-[11px] font-bold uppercase tracking-[0.24em] text-primary">Profil pemain{seasonLabel && ` · ${seasonLabel}`}</p>
       <h1 class="mt-1 font-cond text-5xl font-bold uppercase leading-none text-white lg:text-6xl">{player.full_name}</h1>
       <p class="mt-2 text-sm text-white/50">{player.position} · {player.club}</p>
     </div>

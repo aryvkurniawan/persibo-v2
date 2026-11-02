@@ -472,7 +472,7 @@
         "club": "PERSIBO Bojonegoro",
         "appearances": "0",
         "goals": "0",
-        "saves": "0",
+        "saves": "",
         "cards": "/",
         "source": "derived:matchDetails"
       }
@@ -769,7 +769,7 @@
         "club": "PERSIBO Bojonegoro",
         "appearances": "6",
         "goals": "0",
-        "saves": "0",
+        "saves": "",
         "cards": "/",
         "source": "derived:matchDetails"
       },
@@ -983,7 +983,7 @@
         "club": "PERSIBO Bojonegoro",
         "appearances": "13",
         "goals": "0",
-        "saves": "0",
+        "saves": "",
         "cards": "3/0",
         "source": "derived:matchDetails"
       },
@@ -1370,7 +1370,7 @@
         "club": "PERSIBO Bojonegoro",
         "appearances": "21",
         "goals": "0",
-        "saves": "0",
+        "saves": "",
         "cards": "3/0",
         "source": "derived:matchDetails"
       },
@@ -1757,6 +1757,3099 @@
         "goals": "7",
         "saves": "0",
         "cards": "0/0"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "GERRI MARTIN MILLIAN MANDAGI",
+    "full_name": "GERRI MARTIN MILLIAN MANDAGI",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/gerri_martin_millian_mandagi",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIBO Bojonegoro",
+    "position": "P. GAWANG",
+    "age": "38",
+    "country": "Indonesia",
+    "photo_url": "/img/players/gerri-martin-millian-mandagi.jpg",
+    "statistics": {
+      "appearances": 13,
+      "goals": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "PEGADAIAN CHAMPIONSHIP 2025-26",
+        "year": "2025",
+        "klub_url": "https://www.ileague.id",
+        "club": "Sriwijaya FC",
+        "appearances": "8",
+        "goals": "0",
+        "saves": "11",
+        "cards": "0/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "13",
+        "goals": "0",
+        "saves": "",
+        "cards": "/",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSBS BIAK",
+        "appearances": "15",
+        "goals": "0",
+        "saves": "2",
+        "cards": "0/0"
+      },
+      {
+        "competition": "LIGA 2 2022-2023",
+        "year": "2022",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSBS BIAK",
+        "appearances": "5",
+        "goals": "0",
+        "saves": "6",
+        "cards": "0/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2022-2023",
+        "year": "2022",
+        "klub_url": "https://www.ileague.id",
+        "club": "BALI UNITED FC",
+        "appearances": "4",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2021-2022",
+        "year": "2021",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIPURA JAYAPURA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "2",
+        "cards": "0/0"
+      },
+      {
+        "competition": "SHOPEE LIGA 1 2020",
+        "year": "2020",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIPURA JAYAPURA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "LIGA 2 2019",
+        "year": "2019",
+        "klub_url": "https://www.ileague.id",
+        "club": "MITRA KUKAR",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "36",
+        "cards": "0/1"
+      },
+      {
+        "competition": "GO-JEK LIGA 1 2018",
+        "year": "2018",
+        "klub_url": "https://www.ileague.id",
+        "club": "MITRA KUKAR",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "58",
+        "cards": "0/0"
+      },
+      {
+        "competition": "GO-JEK TRAVELOKA LIGA 1 2017",
+        "year": "2017",
+        "klub_url": "https://www.ileague.id",
+        "club": "MITRA KUKAR",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "23",
+        "cards": "0/0"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "ALFIN ISMAIL TUASALAMONY",
+    "full_name": "ALFIN ISMAIL TUASALAMONY",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/alfin_ismail_tuasalamony",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIBO Bojonegoro",
+    "position": "BELAKANG",
+    "age": "34",
+    "country": "Indonesia",
+    "photo_url": "/img/players/alfin-ismail-tuasalamony.jpg",
+    "statistics": {
+      "appearances": 19,
+      "goals": 1,
+      "yellow_cards": 3,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "I.LEAGUE CUP 2026-2027",
+        "year": "2026",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSPS PEKANBARU",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      },
+      {
+        "competition": "PEGADAIAN CHAMPIONSHIP 2026-27",
+        "year": "2026",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSPS PEKANBARU",
+        "appearances": "8",
+        "goals": "0",
+        "saves": "0",
+        "cards": "2/0"
+      },
+      {
+        "competition": "PEGADAIAN CHAMPIONSHIP 2025-26",
+        "year": "2025",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSPS PEKANBARU",
+        "appearances": "25",
+        "goals": "4",
+        "saves": "0",
+        "cards": "6/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "19",
+        "goals": "1",
+        "saves": "",
+        "cards": "3/0",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSELA LAMONGAN",
+        "appearances": "10",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2023-2024",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIKABO 1973",
+        "appearances": "3",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2022-2023",
+        "year": "2022",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIKABO 1973",
+        "appearances": "21",
+        "goals": "0",
+        "saves": "1",
+        "cards": "1/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2022-2023",
+        "year": "2022",
+        "klub_url": "https://www.ileague.id",
+        "club": "RANS Nusantara FC",
+        "appearances": "21",
+        "goals": "0",
+        "saves": "1",
+        "cards": "1/0"
+      },
+      {
+        "competition": "LIGA 2 2021",
+        "year": "2021",
+        "klub_url": "https://www.ileague.id",
+        "club": "RANS Nusantara FC",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2021-2022",
+        "year": "2021",
+        "klub_url": "https://www.ileague.id",
+        "club": "MADURA UNITED FC",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "1",
+        "cards": "1/0"
+      },
+      {
+        "competition": "SHOPEE LIGA 1 2020",
+        "year": "2020",
+        "klub_url": "https://www.ileague.id",
+        "club": "MADURA UNITED FC",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "SHOPEE LIGA 1 2019",
+        "year": "2019",
+        "klub_url": "https://www.ileague.id",
+        "club": "AREMA FC",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "8/0"
+      },
+      {
+        "competition": "GO-JEK LIGA 1 2018",
+        "year": "2018",
+        "klub_url": "https://www.ileague.id",
+        "club": "AREMA FC",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "5/0"
+      },
+      {
+        "competition": "GO-JEK LIGA 1 2018",
+        "year": "2018",
+        "klub_url": "https://www.ileague.id",
+        "club": "Sriwijaya FC",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "5/0"
+      },
+      {
+        "competition": "GO-JEK TRAVELOKA LIGA 1 2017",
+        "year": "2017",
+        "klub_url": "https://www.ileague.id",
+        "club": "BHAYANGKARA LAMPUNG FC",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "4/0"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "JAHANBAKHSH ZABIHI TAHER",
+    "full_name": "JAHANBAKHSH ZABIHI TAHER",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/jahanbakhsh_zabihi_taher",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIBO Bojonegoro",
+    "position": "BELAKANG",
+    "age": "36",
+    "country": "Iran",
+    "photo_url": "/img/players/jahanbakhsh-zabihi-taher.jpg",
+    "statistics": {
+      "appearances": 19,
+      "goals": 5,
+      "yellow_cards": 3,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "I.LEAGUE CUP 2026-2027",
+        "year": "2026",
+        "klub_url": "https://www.ileague.id",
+        "club": "DELTRAS FC",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      },
+      {
+        "competition": "PEGADAIAN CHAMPIONSHIP 2026-27",
+        "year": "2026",
+        "klub_url": "https://www.ileague.id",
+        "club": "DELTRAS FC",
+        "appearances": "7",
+        "goals": "2",
+        "saves": "1",
+        "cards": "2/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "19",
+        "goals": "5",
+        "saves": "",
+        "cards": "3/0",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "Donggala United",
+        "appearances": "16",
+        "goals": "1",
+        "saves": "2",
+        "cards": "3/0"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "JAJANG SUKMARA",
+    "full_name": "JAJANG SUKMARA",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/jajang_sukmara",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIBO Bojonegoro",
+    "position": "BELAKANG",
+    "age": "38",
+    "country": "Indonesia",
+    "photo_url": "/img/players/jajang-sukmara.jpg",
+    "statistics": {
+      "appearances": 12,
+      "goals": 0,
+      "yellow_cards": 3,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "12",
+        "goals": "0",
+        "saves": "",
+        "cards": "3/0",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSIM YOGYAKARTA",
+        "appearances": "11",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2022-2023",
+        "year": "2022",
+        "klub_url": "https://www.ileague.id",
+        "club": "DEWA UNITED BANTEN FC",
+        "appearances": "30",
+        "goals": "0",
+        "saves": "0",
+        "cards": "2/0"
+      },
+      {
+        "competition": "LIGA 2 2021",
+        "year": "2021",
+        "klub_url": "https://www.ileague.id",
+        "club": "DEWA UNITED BANTEN FC",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "2/0"
+      },
+      {
+        "competition": "LIGA 2 2020 EXT",
+        "year": "2020",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSCS CILACAP",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      },
+      {
+        "competition": "LIGA 2 2020",
+        "year": "2020",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSCS CILACAP",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      },
+      {
+        "competition": "SHOPEE LIGA 1 2019",
+        "year": "2019",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSS SLEMAN",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "2/0"
+      },
+      {
+        "competition": "GO-JEK LIGA 1 2018",
+        "year": "2018",
+        "klub_url": "https://www.ileague.id",
+        "club": "PS BARITO PUTERA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "3/0"
+      },
+      {
+        "competition": "GO-JEK LIGA 1 2018",
+        "year": "2018",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSMS MEDAN",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "3/0"
+      },
+      {
+        "competition": "GO-JEK TRAVELOKA LIGA 1 2017",
+        "year": "2017",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIB BANDUNG",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "OTAVIO DUTRA",
+    "full_name": "OTAVIO DUTRA",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/otavio_dutra",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIBO Bojonegoro",
+    "position": "BELAKANG",
+    "age": "43",
+    "country": "Indonesia",
+    "photo_url": "/img/players/otavio-dutra.jpg",
+    "statistics": {
+      "appearances": 20,
+      "goals": 3,
+      "yellow_cards": 2,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "PEGADAIAN CHAMPIONSHIP 2025-26",
+        "year": "2025",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSIS SEMARANG",
+        "appearances": "21",
+        "goals": "2",
+        "saves": "0",
+        "cards": "4/0"
+      },
+      {
+        "competition": "PEGADAIAN CHAMPIONSHIP 2025-26",
+        "year": "2025",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSELA LAMONGAN",
+        "appearances": "21",
+        "goals": "2",
+        "saves": "0",
+        "cards": "4/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "20",
+        "goals": "3",
+        "saves": "",
+        "cards": "2/0",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSBS BIAK",
+        "appearances": "18",
+        "goals": "2",
+        "saves": "0",
+        "cards": "4/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "KALTENG PUTRA",
+        "appearances": "18",
+        "goals": "2",
+        "saves": "0",
+        "cards": "4/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2022-2023",
+        "year": "2022",
+        "klub_url": "https://www.ileague.id",
+        "club": "MADURA UNITED FC",
+        "appearances": "11",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2022-2023",
+        "year": "2022",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIJA JAKARTA",
+        "appearances": "11",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2021-2022",
+        "year": "2021",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIJA JAKARTA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "1/0"
+      },
+      {
+        "competition": "SHOPEE LIGA 1 2020",
+        "year": "2020",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIJA JAKARTA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "SHOPEE LIGA 1 2019",
+        "year": "2019",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSEBAYA SURABAYA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "5/0"
+      },
+      {
+        "competition": "GO-JEK LIGA 1 2018",
+        "year": "2018",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSEBAYA SURABAYA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "4/0"
+      },
+      {
+        "competition": "GO-JEK TRAVELOKA LIGA 1 2017",
+        "year": "2017",
+        "klub_url": "https://www.ileague.id",
+        "club": "BHAYANGKARA LAMPUNG FC",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "2",
+        "cards": "3/0"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "DIANDRA DIAZ DEWARI",
+    "full_name": "DIANDRA DIAZ DEWARI",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/diandra_diaz_dewari",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIBO Bojonegoro",
+    "position": "TENGAH",
+    "age": "22",
+    "country": "Indonesia",
+    "photo_url": "/img/players/diandra-diaz-dewari.jpg",
+    "statistics": {
+      "appearances": 17,
+      "goals": 1,
+      "yellow_cards": 4,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "I.LEAGUE CUP 2026-2027",
+        "year": "2026",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSIM YOGYAKARTA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      },
+      {
+        "competition": "BRI SUPER LEAGUE 2026-27",
+        "year": "2026",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSIM YOGYAKARTA",
+        "appearances": "5",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "PEGADAIAN CHAMPIONSHIP 2025-26",
+        "year": "2025",
+        "klub_url": "https://www.ileague.id",
+        "club": "ADHYAKSA FC BEKASI",
+        "appearances": "13",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "BRI SUPER LEAGUE 2025-26",
+        "year": "2025",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSIM YOGYAKARTA",
+        "appearances": "12",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "17",
+        "goals": "1",
+        "saves": "",
+        "cards": "4/0",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "BRI LIGA 1 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSBS BIAK",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      },
+      {
+        "competition": "EPA LIGA 1 U20 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIB BANDUNG U20",
+        "appearances": "12",
+        "goals": "1",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSBS BIAK",
+        "appearances": "14",
+        "goals": "0",
+        "saves": "0",
+        "cards": "2/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2021-2022",
+        "year": "2021",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIB BANDUNG",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "NURHIDAYAT HH",
+    "full_name": "NURHIDAYAT HH",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/nurhidayat_hh",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIBO Bojonegoro",
+    "position": "BELAKANG",
+    "age": "27",
+    "country": "Indonesia",
+    "photo_url": "/img/players/nurhidayat-hh.jpg",
+    "statistics": {
+      "appearances": 17,
+      "goals": 0,
+      "yellow_cards": 3,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "I.LEAGUE CUP 2026-2027",
+        "year": "2026",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIKU KUDUS",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      },
+      {
+        "competition": "PEGADAIAN CHAMPIONSHIP 2026-27",
+        "year": "2026",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIKU KUDUS",
+        "appearances": "8",
+        "goals": "1",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "BRI SUPER LEAGUE 2025-26",
+        "year": "2025",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSBS BIAK",
+        "appearances": "27",
+        "goals": "0",
+        "saves": "0",
+        "cards": "9/1"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "17",
+        "goals": "0",
+        "saves": "",
+        "cards": "3/0",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIRAJA BANDA ACEH",
+        "appearances": "13",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/1"
+      },
+      {
+        "competition": "BRI LIGA 1 2022-2023",
+        "year": "2022",
+        "klub_url": "https://www.ileague.id",
+        "club": "BHAYANGKARA LAMPUNG FC",
+        "appearances": "15",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/1"
+      },
+      {
+        "competition": "LIGA 2 2021",
+        "year": "2021",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSIM YOGYAKARTA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "2/1"
+      },
+      {
+        "competition": "LIGA 2 2021",
+        "year": "2021",
+        "klub_url": "https://www.ileague.id",
+        "club": "ADHYAKSA FC BEKASI",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "2/1"
+      },
+      {
+        "competition": "SHOPEE LIGA 1 2020",
+        "year": "2020",
+        "klub_url": "https://www.ileague.id",
+        "club": "BHAYANGKARA LAMPUNG FC",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "SHOPEE LIGA 1 2019",
+        "year": "2019",
+        "klub_url": "https://www.ileague.id",
+        "club": "BHAYANGKARA LAMPUNG FC",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "4/0"
+      },
+      {
+        "competition": "GO-JEK LIGA 1 2018",
+        "year": "2018",
+        "klub_url": "https://www.ileague.id",
+        "club": "BHAYANGKARA LAMPUNG FC",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "3/0"
+      },
+      {
+        "competition": "GO-JEK TRAVELOKA LIGA 1 2017",
+        "year": "2017",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSM MAKASSAR",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "VITOR HUGO ENCARNACAO FREITAS",
+    "full_name": "VITOR HUGO ENCARNACAO FREITAS",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/vitor_hugo_encarnacao_freitas",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIBO Bojonegoro",
+    "position": "TENGAH",
+    "age": "30",
+    "country": "Portugal",
+    "photo_url": "/img/players/vitor-hugo-encarnacao-freitas.jpg",
+    "statistics": {
+      "appearances": 17,
+      "goals": 4,
+      "yellow_cards": 2,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "I.LEAGUE CUP 2026-2027",
+        "year": "2026",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIKU KUDUS",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      },
+      {
+        "competition": "PEGADAIAN CHAMPIONSHIP 2026-27",
+        "year": "2026",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIKU KUDUS",
+        "appearances": "6",
+        "goals": "2",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "PEGADAIAN CHAMPIONSHIP 2025-26",
+        "year": "2025",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSMS MEDAN",
+        "appearances": "12",
+        "goals": "3",
+        "saves": "0",
+        "cards": "1/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "17",
+        "goals": "4",
+        "saves": "",
+        "cards": "2/0",
+        "source": "derived:matchDetails"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "ENZO NICOLAS JACQUES CELESTINE",
+    "full_name": "ENZO NICOLAS JACQUES CELESTINE",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/enzo_nicolas_jacques_celestine",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIBO Bojonegoro",
+    "position": "DEPAN",
+    "age": "29",
+    "country": "France",
+    "photo_url": "/img/players/enzo-nicolas-jacques-celestine.jpg",
+    "statistics": {
+      "appearances": 20,
+      "goals": 9,
+      "yellow_cards": 4,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "PEGADAIAN CHAMPIONSHIP 2025-26",
+        "year": "2025",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIKAD",
+        "appearances": "11",
+        "goals": "6",
+        "saves": "0",
+        "cards": "5/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "20",
+        "goals": "9",
+        "saves": "",
+        "cards": "4/0",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIPURA JAYAPURA",
+        "appearances": "18",
+        "goals": "5",
+        "saves": "0",
+        "cards": "2/0"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "OSAS MARVELLOUS IKPEFUA",
+    "full_name": "OSAS MARVELLOUS IKPEFUA",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/osas_marvellous_ikpefua",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIBO Bojonegoro",
+    "position": "DEPAN",
+    "age": "40",
+    "country": "Indonesia",
+    "photo_url": "/img/players/osas-marvellous-ikpefua.jpg",
+    "statistics": {
+      "appearances": 20,
+      "goals": 13,
+      "yellow_cards": 2,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "PEGADAIAN CHAMPIONSHIP 2025-26",
+        "year": "2025",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIPURA JAYAPURA",
+        "appearances": "12",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "20",
+        "goals": "13",
+        "saves": "",
+        "cards": "2/0",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSBS BIAK",
+        "appearances": "18",
+        "goals": "2",
+        "saves": "0",
+        "cards": "1/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "KALTENG PUTRA",
+        "appearances": "18",
+        "goals": "2",
+        "saves": "0",
+        "cards": "1/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2022-2023",
+        "year": "2022",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSITA",
+        "appearances": "13",
+        "goals": "1",
+        "saves": "0",
+        "cards": "2/0"
+      },
+      {
+        "competition": "LIGA 2 2021",
+        "year": "2021",
+        "klub_url": "https://www.ileague.id",
+        "club": "ADHYAKSA FC BEKASI",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2021-2022",
+        "year": "2021",
+        "klub_url": "https://www.ileague.id",
+        "club": "BHAYANGKARA LAMPUNG FC",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "SHOPEE LIGA 1 2020",
+        "year": "2020",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSM MAKASSAR",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "1/0"
+      },
+      {
+        "competition": "SHOPEE LIGA 1 2019",
+        "year": "2019",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIKABO 1973",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "5/0"
+      },
+      {
+        "competition": "GO-JEK LIGA 1 2018",
+        "year": "2018",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIJA JAKARTA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "1/0"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "YOHANES FERINANDO PAHABOL",
+    "full_name": "YOHANES FERINANDO PAHABOL",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/yohanes_ferinando_pahabol",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIBO Bojonegoro",
+    "position": "DEPAN",
+    "age": "34",
+    "country": "Indonesia",
+    "photo_url": "/img/players/yohanes-ferinando-pahabol.jpg",
+    "statistics": {
+      "appearances": 18,
+      "goals": 2,
+      "yellow_cards": 2,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "I.LEAGUE CUP 2026-2027",
+        "year": "2026",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIPURA JAYAPURA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      },
+      {
+        "competition": "PEGADAIAN CHAMPIONSHIP 2026-27",
+        "year": "2026",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIPURA JAYAPURA",
+        "appearances": "7",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "PEGADAIAN CHAMPIONSHIP 2025-26",
+        "year": "2025",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIPURA JAYAPURA",
+        "appearances": "25",
+        "goals": "0",
+        "saves": "0",
+        "cards": "1/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "18",
+        "goals": "2",
+        "saves": "",
+        "cards": "2/0",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "BRI LIGA 1 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIK KEDIRI",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      },
+      {
+        "competition": "BRI LIGA 1 2023-2024",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIK KEDIRI",
+        "appearances": "27",
+        "goals": "1",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2022-2023",
+        "year": "2022",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIK KEDIRI",
+        "appearances": "29",
+        "goals": "2",
+        "saves": "0",
+        "cards": "4/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2021-2022",
+        "year": "2021",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIPURA JAYAPURA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "2/0"
+      },
+      {
+        "competition": "SHOPEE LIGA 1 2020",
+        "year": "2020",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIPURA JAYAPURA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "SHOPEE LIGA 1 2019",
+        "year": "2019",
+        "klub_url": "https://www.ileague.id",
+        "club": "KALTENG PUTRA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "4/0"
+      },
+      {
+        "competition": "GO-JEK LIGA 1 2018",
+        "year": "2018",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSEBAYA SURABAYA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "2/0"
+      },
+      {
+        "competition": "GO-JEK TRAVELOKA LIGA 1 2017",
+        "year": "2017",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIPURA JAYAPURA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "2/0"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "HENDRA ADI BAYAUW",
+    "full_name": "HENDRA ADI BAYAUW",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/hendra_adi_bayauw",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIBO Bojonegoro",
+    "position": "DEPAN",
+    "age": "33",
+    "country": "Indonesia",
+    "photo_url": "/img/players/hendra-adi-bayauw.jpg",
+    "statistics": {
+      "appearances": 5,
+      "goals": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "5",
+        "goals": "0",
+        "saves": "",
+        "cards": "/",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "JAVA UNITED FC",
+        "appearances": "5",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2022-2023",
+        "year": "2022",
+        "klub_url": "https://www.ileague.id",
+        "club": "BALI UNITED FC",
+        "appearances": "21",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2021-2022",
+        "year": "2021",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIKABO 1973",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "2/0"
+      },
+      {
+        "competition": "SHOPEE LIGA 1 2020",
+        "year": "2020",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIKABO 1973",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "LIGA 2 2019",
+        "year": "2019",
+        "klub_url": "https://www.ileague.id",
+        "club": "MITRA KUKAR",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "5/1"
+      },
+      {
+        "competition": "GO-JEK LIGA 1 2018",
+        "year": "2018",
+        "klub_url": "https://www.ileague.id",
+        "club": "MITRA KUKAR",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "1/1"
+      },
+      {
+        "competition": "GO-JEK TRAVELOKA LIGA 1 2017",
+        "year": "2017",
+        "klub_url": "https://www.ileague.id",
+        "club": "MITRA KUKAR",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "3/0"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "MUH AJI KURNIAWAN",
+    "full_name": "MUH AJI KURNIAWAN",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/muh_aji_kurniawan",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIBO Bojonegoro",
+    "position": "BELAKANG",
+    "age": "26",
+    "country": "Indonesia",
+    "photo_url": "/img/players/muh-aji-kurniawan.jpg",
+    "statistics": {
+      "appearances": 0,
+      "goals": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "LIGA NUSANTARA 2026-27",
+        "year": "2026",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIKUTIM Patriot United",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      },
+      {
+        "competition": "PEGADAIAN CHAMPIONSHIP 2025-26",
+        "year": "2025",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBA BALIKPAPAN",
+        "appearances": "8",
+        "goals": "0",
+        "saves": "0",
+        "cards": "3/1"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "Persikota Tangerang",
+        "appearances": "7",
+        "goals": "0",
+        "saves": "0",
+        "cards": "1/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSELA LAMONGAN",
+        "appearances": "18",
+        "goals": "0",
+        "saves": "0",
+        "cards": "3/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2022-2023",
+        "year": "2022",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIKABO 1973",
+        "appearances": "17",
+        "goals": "0",
+        "saves": "0",
+        "cards": "2/0"
+      },
+      {
+        "competition": "LIGA 2 2021",
+        "year": "2021",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIJAP JEPARA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "1/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2021-2022",
+        "year": "2021",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSM MAKASSAR",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      },
+      {
+        "competition": "SHOPEE LIGA 1 2020",
+        "year": "2020",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSM MAKASSAR",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      },
+      {
+        "competition": "SHOPEE LIGA 1 2019",
+        "year": "2019",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSM MAKASSAR",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "ADZIB AL HAKIM ARSYAD",
+    "full_name": "ADZIB AL HAKIM ARSYAD",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/adzib_al_hakim_arsyad",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIBO Bojonegoro",
+    "position": "P. GAWANG",
+    "age": "27",
+    "country": "Indonesia",
+    "photo_url": "/img/players/adzib-al-hakim-arsyad.jpg",
+    "statistics": {
+      "appearances": 0,
+      "goals": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "I.LEAGUE CUP 2026-2027",
+        "year": "2026",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIPURA JAYAPURA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      },
+      {
+        "competition": "PEGADAIAN CHAMPIONSHIP 2026-27",
+        "year": "2026",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIPURA JAYAPURA",
+        "appearances": "4",
+        "goals": "0",
+        "saves": "9",
+        "cards": "0/0"
+      },
+      {
+        "competition": "PEGADAIAN CHAMPIONSHIP 2025-26",
+        "year": "2025",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIPURA JAYAPURA",
+        "appearances": "27",
+        "goals": "0",
+        "saves": "64",
+        "cards": "1/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSEWAR",
+        "appearances": "13",
+        "goals": "0",
+        "saves": "33",
+        "cards": "0/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSEWAR",
+        "appearances": "10",
+        "goals": "0",
+        "saves": "14",
+        "cards": "0/0"
+      },
+      {
+        "competition": "LIGA 2 2022-2023",
+        "year": "2022",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSEWAR",
+        "appearances": "6",
+        "goals": "0",
+        "saves": "10",
+        "cards": "0/0"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "LERBY ELIANDRY PONG BABU",
+    "full_name": "LERBY ELIANDRY PONG BABU",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/lerby_eliandry_pong_babu",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIBO Bojonegoro",
+    "position": "DEPAN",
+    "age": "35",
+    "country": "Indonesia",
+    "photo_url": "/img/players/lerby-eliandry-pong-babu.jpg",
+    "statistics": {
+      "appearances": 4,
+      "goals": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "PEGADAIAN CHAMPIONSHIP 2025-26",
+        "year": "2025",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIKU KUDUS",
+        "appearances": "23",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSPS PEKANBARU",
+        "appearances": "19",
+        "goals": "1",
+        "saves": "0",
+        "cards": "2/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "4",
+        "goals": "0",
+        "saves": "",
+        "cards": "/",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "BRI LIGA 1 2023-2024",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "MADURA UNITED FC",
+        "appearances": "2",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2022-2023",
+        "year": "2022",
+        "klub_url": "https://www.ileague.id",
+        "club": "BALI UNITED FC",
+        "appearances": "17",
+        "goals": "2",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2021-2022",
+        "year": "2021",
+        "klub_url": "https://www.ileague.id",
+        "club": "BALI UNITED FC",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "2/0"
+      },
+      {
+        "competition": "SHOPEE LIGA 1 2020",
+        "year": "2020",
+        "klub_url": "https://www.ileague.id",
+        "club": "BALI UNITED FC",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "SHOPEE LIGA 1 2019",
+        "year": "2019",
+        "klub_url": "https://www.ileague.id",
+        "club": "BORNEO FC SAMARINDA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "1/0"
+      },
+      {
+        "competition": "GO-JEK LIGA 1 2018",
+        "year": "2018",
+        "klub_url": "https://www.ileague.id",
+        "club": "BORNEO FC SAMARINDA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "3/0"
+      },
+      {
+        "competition": "GO-JEK TRAVELOKA LIGA 1 2017",
+        "year": "2017",
+        "klub_url": "https://www.ileague.id",
+        "club": "BORNEO FC SAMARINDA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "HADI ARDIANSYAH",
+    "full_name": "HADI ARDIANSYAH",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/hadi_ardiansyah",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIBO Bojonegoro",
+    "position": "BELAKANG",
+    "age": "26",
+    "country": "Indonesia",
+    "photo_url": "/img/players/hadi-ardiansyah.jpg",
+    "statistics": {
+      "appearances": 8,
+      "goals": 1,
+      "yellow_cards": 2,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "I.LEAGUE CUP 2026-2027",
+        "year": "2026",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSELA LAMONGAN",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      },
+      {
+        "competition": "PEGADAIAN CHAMPIONSHIP 2026-27",
+        "year": "2026",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSELA LAMONGAN",
+        "appearances": "8",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "BRI SUPER LEAGUE 2025-26",
+        "year": "2025",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSBS BIAK",
+        "appearances": "27",
+        "goals": "0",
+        "saves": "0",
+        "cards": "1/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "8",
+        "goals": "1",
+        "saves": "",
+        "cards": "2/0",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "SEMEN PADANG FC",
+        "appearances": "18",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "LIGA 2 2022-2023",
+        "year": "2022",
+        "klub_url": "https://www.ileague.id",
+        "club": "GARUDAYAKSA FC",
+        "appearances": "6",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2021-2022",
+        "year": "2021",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIJA JAKARTA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "ARDI MAULANA",
+    "full_name": "ARDI MAULANA",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/ardi_maulana",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIBO Bojonegoro",
+    "position": "TENGAH",
+    "age": "25",
+    "country": "Indonesia",
+    "photo_url": "/img/players/ardi-maulana.jpg",
+    "statistics": {
+      "appearances": 18,
+      "goals": 1,
+      "yellow_cards": 1,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "18",
+        "goals": "1",
+        "saves": "",
+        "cards": "1/0",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIJAP JEPARA",
+        "appearances": "17",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "ELITE PRO ACADEMY 2020",
+        "year": "2020",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIB BANDUNG U20",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      },
+      {
+        "competition": "SHOPEE LIGA 1 2020",
+        "year": "2020",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIB BANDUNG",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "I MADE TRI SOMANADA",
+    "full_name": "I MADE TRI SOMANADA",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/i_made_tri_somanada",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIBO Bojonegoro",
+    "position": "BELAKANG",
+    "age": "25",
+    "country": "Indonesia",
+    "photo_url": "/img/players/i-made-tri-somanada.jpg",
+    "statistics": {
+      "appearances": 2,
+      "goals": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIKOTAS Nusantara",
+        "appearances": "6",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "2",
+        "goals": "0",
+        "saves": "",
+        "cards": "/",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "ELITE PRO ACADEMY 2020",
+        "year": "2020",
+        "klub_url": "https://www.ileague.id",
+        "club": "BALI UNITED FC U20",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      },
+      {
+        "competition": "SHOPEE LIGA 1 2020",
+        "year": "2020",
+        "klub_url": "https://www.ileague.id",
+        "club": "BALI UNITED FC",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "REZA IRFANA",
+    "full_name": "REZA IRFANA",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/reza_irfana",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIBO Bojonegoro",
+    "position": "TENGAH",
+    "age": "27",
+    "country": "Indonesia",
+    "photo_url": "/img/players/reza-irfana.jpg",
+    "statistics": {
+      "appearances": 11,
+      "goals": 0,
+      "yellow_cards": 2,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "LIGA NUSANTARA 2025-26",
+        "year": "20225",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSEDEN Denpasar",
+        "appearances": "11",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "11",
+        "goals": "0",
+        "saves": "",
+        "cards": "2/0",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "BRI LIGA 1 2023-2024",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIKABO 1973",
+        "appearances": "27",
+        "goals": "0",
+        "saves": "0",
+        "cards": "3/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2022-2023",
+        "year": "2022",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSIS SEMARANG",
+        "appearances": "23",
+        "goals": "0",
+        "saves": "0",
+        "cards": "2/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2021-2022",
+        "year": "2021",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSIS SEMARANG",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "2/0"
+      },
+      {
+        "competition": "SHOPEE LIGA 1 2019",
+        "year": "2019",
+        "klub_url": "https://www.ileague.id",
+        "club": "BALI UNITED FC",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "BRAYEN PONDAAG",
+    "full_name": "BRAYEN PONDAAG",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/brayen_pondaag",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIBO Bojonegoro",
+    "position": "TENGAH",
+    "age": "25",
+    "country": "Indonesia",
+    "photo_url": "/img/players/brayen-pondaag.jpg",
+    "statistics": {
+      "appearances": 21,
+      "goals": 0,
+      "yellow_cards": 5,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "I.LEAGUE CUP 2026-2027",
+        "year": "2026",
+        "klub_url": "https://www.ileague.id",
+        "club": "ISENMULANG KALTENG FC",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      },
+      {
+        "competition": "BRI SUPER LEAGUE 2026-27",
+        "year": "2026",
+        "klub_url": "https://www.ileague.id",
+        "club": "ISENMULANG KALTENG FC",
+        "appearances": "8",
+        "goals": "0",
+        "saves": "0",
+        "cards": "2/0"
+      },
+      {
+        "competition": "PEGADAIAN CHAMPIONSHIP 2025-26",
+        "year": "2025",
+        "klub_url": "https://www.ileague.id",
+        "club": "ISENMULANG KALTENG FC",
+        "appearances": "26",
+        "goals": "0",
+        "saves": "2",
+        "cards": "7/1"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "21",
+        "goals": "0",
+        "saves": "",
+        "cards": "5/0",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "Donggala United",
+        "appearances": "11",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIKAB KAB BANDUNG",
+        "appearances": "11",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2022-2023",
+        "year": "2022",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSEBAYA SURABAYA",
+        "appearances": "23",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "MARTHINUS ISIR",
+    "full_name": "MARTHINUS ISIR",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/marthinus_isir",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIBO Bojonegoro",
+    "position": "BELAKANG",
+    "age": "24",
+    "country": "Indonesia",
+    "photo_url": "/img/players/marthinus-isir.jpg",
+    "statistics": {
+      "appearances": 2,
+      "goals": 0,
+      "yellow_cards": 1,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "2",
+        "goals": "0",
+        "saves": "",
+        "cards": "1/0",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSBS BIAK",
+        "appearances": "13",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "AJI RESTU GINANJAR",
+    "full_name": "AJI RESTU GINANJAR",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/aji_restu_ginanjar",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIBO Bojonegoro",
+    "position": "TENGAH",
+    "age": "23",
+    "country": "Indonesia",
+    "photo_url": "/img/players/aji-restu-ginanjar.jpg",
+    "statistics": {
+      "appearances": 0,
+      "goals": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "LIGA NUSANTARA 2025-26",
+        "year": "2025",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIKOTAS Nusantara",
+        "appearances": "12",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "ISENMULANG KALTENG FC",
+        "appearances": "6",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/",
+        "source": "derived:matchDetails"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "REVALDO AGUSTO",
+    "full_name": "REVALDO AGUSTO",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/revaldo_agusto",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIBO Bojonegoro",
+    "position": "BELAKANG",
+    "age": "20",
+    "country": "Indonesia",
+    "photo_url": "/img/players/revaldo-agusto.jpg",
+    "statistics": {
+      "appearances": 0,
+      "goals": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "LIGA NUSANTARA 2025-26",
+        "year": "20225",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIKA Karanganyar",
+        "appearances": "1",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "EPA LIGA 1 U18 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "BHAYANGKARA LAMPUNG FC U18",
+        "appearances": "24",
+        "goals": "1",
+        "saves": "",
+        "cards": "/"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "ISRAEL WAMIAU",
+    "full_name": "ISRAEL WAMIAU",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/israel_wamiau",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIPA Pati",
+    "position": "BELAKANG",
+    "age": "32",
+    "country": "Indonesia",
+    "photo_url": "/img/players/israel-wamiau.jpg",
+    "statistics": {
+      "appearances": 1,
+      "goals": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "PEGADAIAN CHAMPIONSHIP 2026-27",
+        "year": "2026",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIPURA JAYAPURA",
+        "appearances": "1",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "1",
+        "goals": "0",
+        "saves": "",
+        "cards": "/",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIPA Pati",
+        "appearances": "16",
+        "goals": "0",
+        "saves": "0",
+        "cards": "3/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSBS BIAK",
+        "appearances": "11",
+        "goals": "0",
+        "saves": "0",
+        "cards": "2/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2022-2023",
+        "year": "2022",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSITA",
+        "appearances": "6",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2021-2022",
+        "year": "2021",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIPURA JAYAPURA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "7/1"
+      },
+      {
+        "competition": "SHOPEE LIGA 1 2020",
+        "year": "2020",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIPURA JAYAPURA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "1/0"
+      },
+      {
+        "competition": "SHOPEE LIGA 1 2019",
+        "year": "2019",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIPURA JAYAPURA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "1/0"
+      },
+      {
+        "competition": "GO-JEK LIGA 1 2018",
+        "year": "2018",
+        "klub_url": "https://www.ileague.id",
+        "club": "AREMA FC",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "8/1"
+      },
+      {
+        "competition": "GO-JEK TRAVELOKA LIGA 1 2017",
+        "year": "2017",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIPURA JAYAPURA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "DERRY RACHMAN NOOR",
+    "full_name": "DERRY RACHMAN NOOR",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/derry_rachman_noor",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "GARUDAYAKSA FC",
+    "position": "BELAKANG",
+    "age": "32",
+    "country": "Indonesia",
+    "photo_url": "/img/players/derry-rachman-noor.jpg",
+    "statistics": {
+      "appearances": 9,
+      "goals": 0,
+      "yellow_cards": 1,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "PEGADAIAN CHAMPIONSHIP 2025-26",
+        "year": "2025",
+        "klub_url": "https://www.ileague.id",
+        "club": "ADHYAKSA FC BEKASI",
+        "appearances": "17",
+        "goals": "0",
+        "saves": "0",
+        "cards": "3/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "9",
+        "goals": "0",
+        "saves": "",
+        "cards": "1/0",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "GARUDAYAKSA FC",
+        "appearances": "16",
+        "goals": "0",
+        "saves": "0",
+        "cards": "1/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSMS MEDAN",
+        "appearances": "9",
+        "goals": "0",
+        "saves": "0",
+        "cards": "3/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2023-2024",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSS SLEMAN",
+        "appearances": "5",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2022-2023",
+        "year": "2022",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSS SLEMAN",
+        "appearances": "31",
+        "goals": "0",
+        "saves": "0",
+        "cards": "4/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2021-2022",
+        "year": "2021",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSS SLEMAN",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "5/0"
+      },
+      {
+        "competition": "SHOPEE LIGA 1 2020",
+        "year": "2020",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSS SLEMAN",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "2/1"
+      },
+      {
+        "competition": "SHOPEE LIGA 1 2019",
+        "year": "2019",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSS SLEMAN",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "8/0"
+      },
+      {
+        "competition": "LIGA 2 2018",
+        "year": "2018",
+        "klub_url": "https://www.ileague.id",
+        "club": "PS MOJOKERTO PUTRA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "LIGA 2 2017",
+        "year": "2017",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSSU REAL MADURA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      },
+      {
+        "competition": "LIGA 2 2017",
+        "year": "2017",
+        "klub_url": "https://www.ileague.id",
+        "club": "KALTENG PUTRA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "NUGROHO SANTOSO",
+    "full_name": "NUGROHO SANTOSO",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/nugroho_santoso",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIJAP JEPARA",
+    "position": "TENGAH",
+    "age": "23",
+    "country": "Indonesia",
+    "photo_url": "/img/players/nugroho-santoso.jpg",
+    "statistics": {
+      "appearances": 10,
+      "goals": 1,
+      "yellow_cards": 3,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "I.LEAGUE CUP 2026-2027",
+        "year": "2026",
+        "klub_url": "https://www.ileague.id",
+        "club": "PS BARITO PUTERA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      },
+      {
+        "competition": "PEGADAIAN CHAMPIONSHIP 2026-27",
+        "year": "2026",
+        "klub_url": "https://www.ileague.id",
+        "club": "PS BARITO PUTERA",
+        "appearances": "8",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "PEGADAIAN CHAMPIONSHIP 2025-26",
+        "year": "2025",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSPS PEKANBARU",
+        "appearances": "23",
+        "goals": "1",
+        "saves": "0",
+        "cards": "5/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "10",
+        "goals": "1",
+        "saves": "",
+        "cards": "3/0",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIJAP JEPARA",
+        "appearances": "23",
+        "goals": "1",
+        "saves": "0",
+        "cards": "4/0"
+      },
+      {
+        "competition": "EPA LIGA 1 U20 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "RANS NUSANTARA FC U20",
+        "appearances": "17",
+        "goals": "0",
+        "saves": "0",
+        "cards": "2/0"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "SELAMET BUDIONO",
+    "full_name": "SELAMET BUDIONO",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/selamet_budiono",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIBO Bojonegoro",
+    "position": "DEPAN",
+    "age": "31",
+    "country": "Indonesia",
+    "photo_url": "/img/players/selamet-budiono.jpg",
+    "statistics": {
+      "appearances": 5,
+      "goals": 0,
+      "yellow_cards": 1,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "5",
+        "goals": "0",
+        "saves": "",
+        "cards": "1/0",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "GARUDAYAKSA FC",
+        "appearances": "14",
+        "goals": "0",
+        "saves": "0",
+        "cards": "5/1"
+      },
+      {
+        "competition": "BRI LIGA 1 2022-2023",
+        "year": "2022",
+        "klub_url": "https://www.ileague.id",
+        "club": "PS BARITO PUTERA",
+        "appearances": "13",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "LIGA 2 2021",
+        "year": "2021",
+        "klub_url": "https://www.ileague.id",
+        "club": "DEWA UNITED BANTEN FC",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "1/0"
+      },
+      {
+        "competition": "LIGA 2 2020 EXT",
+        "year": "2020",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSIM YOGYAKARTA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      },
+      {
+        "competition": "LIGA 2 2020",
+        "year": "2020",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSIM YOGYAKARTA",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "1/0"
+      },
+      {
+        "competition": "LIGA 2 2019",
+        "year": "2019",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIS SOLO",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "2/0"
+      },
+      {
+        "competition": "LIGA 2 2018",
+        "year": "2018",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSS SLEMAN",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "1/0"
+      },
+      {
+        "competition": "GO-JEK TRAVELOKA LIGA 1 2017",
+        "year": "2017",
+        "klub_url": "https://www.ileague.id",
+        "club": "Sriwijaya FC",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "1",
+        "cards": "1/0"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "RAKA OCTA BERNANDA",
+    "full_name": "RAKA OCTA BERNANDA",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/raka_octa_bernanda",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIBO Bojonegoro",
+    "position": "P. GAWANG",
+    "age": "22",
+    "country": "Indonesia",
+    "photo_url": "/img/players/raka-octa-bernanda.jpg",
+    "statistics": {
+      "appearances": 8,
+      "goals": 0,
+      "yellow_cards": 1,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "I.LEAGUE CUP 2026-2027",
+        "year": "2026",
+        "klub_url": "https://www.ileague.id",
+        "club": "ADHYAKSA FC BEKASI",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      },
+      {
+        "competition": "PEGADAIAN CHAMPIONSHIP 2026-27",
+        "year": "2026",
+        "klub_url": "https://www.ileague.id",
+        "club": "ADHYAKSA FC BEKASI",
+        "appearances": "2",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "PEGADAIAN CHAMPIONSHIP 2025-26",
+        "year": "2025",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSIS SEMARANG",
+        "appearances": "18",
+        "goals": "0",
+        "saves": "4",
+        "cards": "0/0"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "8",
+        "goals": "0",
+        "saves": "",
+        "cards": "1/0",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "BRI LIGA 1 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSM MAKASSAR",
+        "appearances": "5",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "EPA LIGA 1 U20 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSM MAKASSAR U20",
+        "appearances": "1",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2023-2024",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSM MAKASSAR",
+        "appearances": "5",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "BRI LIGA 1 2022-2023",
+        "year": "2022",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSM MAKASSAR",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "MOHAMAD AROZI",
+    "full_name": "MOHAMAD AROZI",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/pegadaian_liga_2_2024-25/mohamad_arozi",
+    "scraped_at": "2026-11-02T19:48:11.541167",
+    "club": "PERSIBO Bojonegoro",
+    "position": "BELAKANG",
+    "age": "35",
+    "country": "Indonesia",
+    "photo_url": "/img/players/mohamad-arozi.jpg",
+    "statistics": {
+      "appearances": 1,
+      "goals": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "1",
+        "goals": "0",
+        "saves": "",
+        "cards": "/",
+        "source": "derived:matchDetails"
+      },
+      {
+        "competition": "PEGADAIAN LIGA 2 2023-24",
+        "year": "2023",
+        "klub_url": "https://www.ileague.id",
+        "club": "SULUT UNITED",
+        "appearances": "12",
+        "goals": "0",
+        "saves": "0",
+        "cards": "1/0"
+      },
+      {
+        "competition": "LIGA 2 2022-2023",
+        "year": "2022",
+        "klub_url": "https://www.ileague.id",
+        "club": "SULUT UNITED",
+        "appearances": "5",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "LIGA 2 2021",
+        "year": "2021",
+        "klub_url": "https://www.ileague.id",
+        "club": "SULUT UNITED",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "1",
+        "cards": "1/0"
+      },
+      {
+        "competition": "LIGA 2 2020 EXT",
+        "year": "2020",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSEKAT Tegal",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      },
+      {
+        "competition": "LIGA 2 2020",
+        "year": "2020",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSEKAT Tegal",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "LIGA 2 2019",
+        "year": "2019",
+        "klub_url": "https://www.ileague.id",
+        "club": "PSGC Ciamis",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "5/0"
+      },
+      {
+        "competition": "LIGA 2 2018",
+        "year": "2018",
+        "klub_url": "https://www.ileague.id",
+        "club": "DEWA UNITED BANTEN FC",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "0",
+        "cards": "0/0"
+      },
+      {
+        "competition": "LIGA 2 2017",
+        "year": "2017",
+        "klub_url": "https://www.ileague.id",
+        "club": "DEWA UNITED BANTEN FC",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "M. GHOZY",
+    "full_name": "M. GHOZY",
+    "detail_url": "",
+    "scraped_at": "",
+    "club": "PERSIBO Bojonegoro",
+    "position": "TENGAH",
+    "age": "",
+    "country": "Indonesia",
+    "jersey_number": "27",
+    "photo_url": "/img/players/m-ghozy.jpg",
+    "statistics": {
+      "appearances": 1,
+      "goals": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "1",
+        "goals": "0",
+        "saves": "",
+        "cards": "/",
+        "source": "derived:matchDetails"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "MUHAMMAD RIDHO",
+    "full_name": "MUHAMMAD RIDHO",
+    "detail_url": "",
+    "scraped_at": "",
+    "club": "PERSIBO Bojonegoro",
+    "position": "BELAKANG",
+    "age": "",
+    "country": "Indonesia",
+    "jersey_number": "33",
+    "photo_url": "/img/players/muhammad-ridho.jpg",
+    "statistics": {
+      "appearances": 3,
+      "goals": 0,
+      "yellow_cards": 1,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "3",
+        "goals": "0",
+        "saves": "",
+        "cards": "1/0",
+        "source": "derived:matchDetails"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "M. FEBRI SURYANTO",
+    "full_name": "M. FEBRI SURYANTO",
+    "detail_url": "",
+    "scraped_at": "",
+    "club": "PERSIBO Bojonegoro",
+    "position": "TENGAH",
+    "age": "",
+    "country": "Indonesia",
+    "jersey_number": "3",
+    "photo_url": "/img/players/m-febri-suryanto.jpg",
+    "statistics": {
+      "appearances": 0,
+      "goals": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "0",
+        "goals": "0",
+        "saves": "",
+        "cards": "/",
+        "source": "derived:matchDetails"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "SLAMET NURCAHYONO",
+    "full_name": "SLAMET NURCAHYONO",
+    "detail_url": "",
+    "scraped_at": "",
+    "club": "PERSIBO Bojonegoro",
+    "position": "DEPAN",
+    "age": "",
+    "country": "Indonesia",
+    "jersey_number": "9",
+    "photo_url": "/img/players/slamet-nurcahyono.jpg",
+    "statistics": {
+      "appearances": 3,
+      "goals": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "3",
+        "goals": "0",
+        "saves": "",
+        "cards": "/",
+        "source": "derived:matchDetails"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "AMIR HAMZAH",
+    "full_name": "AMIR HAMZAH",
+    "detail_url": "",
+    "scraped_at": "",
+    "club": "PERSIBO Bojonegoro",
+    "position": "TENGAH",
+    "age": "",
+    "country": "Indonesia",
+    "jersey_number": "67",
+    "photo_url": "/img/players/amir-hamzah.jpg",
+    "statistics": {
+      "appearances": 8,
+      "goals": 1,
+      "yellow_cards": 0,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "8",
+        "goals": "1",
+        "saves": "",
+        "cards": "/",
+        "source": "derived:matchDetails"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "BARNABAS SOBOR",
+    "full_name": "BARNABAS SOBOR",
+    "detail_url": "",
+    "scraped_at": "",
+    "club": "PERSIBO Bojonegoro",
+    "position": "DEPAN",
+    "age": "",
+    "country": "Indonesia",
+    "jersey_number": "88",
+    "photo_url": "/img/players/barnabas-sobor.jpg",
+    "statistics": {
+      "appearances": 1,
+      "goals": 0,
+      "yellow_cards": 1,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "1",
+        "goals": "0",
+        "saves": "",
+        "cards": "1/0",
+        "source": "derived:matchDetails"
+      }
+    ],
+    "base_team": "PERSIBO Bojonegoro"
+  },
+  {
+    "name": "MUHAMMAD FEBRIANSYAH",
+    "full_name": "MUHAMMAD FEBRIANSYAH",
+    "detail_url": "",
+    "scraped_at": "",
+    "club": "PERSIBO Bojonegoro",
+    "position": "BELAKANG",
+    "age": "",
+    "country": "Indonesia",
+    "jersey_number": "50",
+    "photo_url": "/img/players/muhammad-febriansyah.jpg",
+    "statistics": {
+      "appearances": 1,
+      "goals": 0,
+      "yellow_cards": 0,
+      "red_cards": 0
+    },
+    "club_history": [
+      {
+        "competition": "PEGADAIAN LIGA 2 2024-25",
+        "year": "2024",
+        "klub_url": "https://www.ileague.id",
+        "club": "PERSIBO Bojonegoro",
+        "appearances": "1",
+        "goals": "0",
+        "saves": "",
+        "cards": "/",
+        "source": "derived:matchDetails"
       }
     ],
     "base_team": "PERSIBO Bojonegoro"

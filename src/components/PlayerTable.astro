@@ -88,17 +88,17 @@ const hasAge = rows.some((r) => r.age);
           data-position={row.position}
           data-age={row.age}
         >
-          <td class="py-2 pl-3 pr-1 text-right sm:pl-4">
+          <td class="py-3 pl-3 pr-1 text-right sm:pl-4">
             {showSeasons ? (
-              <span class="block h-8 w-8 shrink-0 overflow-hidden rounded-full bg-[#161318]">
+              <span class="block h-10 w-10 shrink-0 overflow-hidden rounded-full bg-[#161318]">
                 {row.photo ? (
                   <img
                     src={row.photo}
                     alt=""
                     class="h-full w-full object-cover object-top opacity-90"
                     loading="lazy"
-                    width="32"
-                    height="32"
+                    width="40"
+                    height="40"
                   />
                 ) : (
                   <span class="flex h-full w-full items-center justify-center text-[11px] text-white/20">–</span>
@@ -109,18 +109,18 @@ const hasAge = rows.some((r) => r.age);
             )}
           </td>
 
-          <td class="py-2 pr-2">
-            <div class="flex items-center gap-2.5">
+          <td class="py-3 pr-2">
+            <div class="flex items-center gap-3">
               {!showSeasons && (
-                <span class="hidden h-8 w-8 shrink-0 overflow-hidden bg-[#161318] sm:block">
+                <span class="hidden h-10 w-10 shrink-0 overflow-hidden bg-[#161318] sm:block">
                   {row.photo ? (
                     <img
                       src={row.photo}
                       alt=""
                       class="h-full w-full object-cover object-top opacity-90"
                       loading="lazy"
-                      width="32"
-                      height="32"
+                      width="40"
+                      height="40"
                     />
                   ) : null}
                 </span>
@@ -129,20 +129,20 @@ const hasAge = rows.some((r) => r.age);
                 {row.slug ? (
                   <a
                     href={`/pemain/${row.slug}`}
-                    class="block truncate text-[12px] font-semibold uppercase tracking-wide text-white/85 transition-colors group-hover:text-primary"
+                    class="block truncate text-[15px] font-semibold uppercase tracking-wide text-white/85 transition-colors group-hover:text-primary"
                   >
                     {row.name}
                   </a>
                 ) : (
-                  <span class="block truncate text-[12px] font-semibold uppercase tracking-wide text-white/70">
+                  <span class="block truncate text-[15px] font-semibold uppercase tracking-wide text-white/70">
                     {row.name}
                   </span>
                 )}
                 {row.position && (
-                  <span class="text-[11px] uppercase tracking-[0.14em] text-white/25 sm:hidden">{row.position}</span>
+                  <span class="block text-[12px] uppercase tracking-[0.14em] text-white/30 sm:hidden">{row.position}</span>
                 )}
                 {showSeasons && (
-                  <span class="text-[11px] uppercase tracking-[0.14em] text-white/25 sm:hidden">
+                  <span class="block text-[11px] uppercase tracking-[0.14em] text-white/25 sm:hidden">
                     {row.seasons.join(' · ')}
                   </span>
                 )}
@@ -171,7 +171,7 @@ const hasAge = rows.some((r) => r.age);
           )}
 
           {showSeasons && (
-            <td class="hidden py-2 pr-3 text-right text-[11px] uppercase tracking-[0.12em] text-white/30 sm:table-cell">
+            <td class="hidden py-3 pr-3 text-right text-[13px] uppercase tracking-[0.12em] text-white/40 sm:table-cell">
               {row.seasons.join(' · ')}
             </td>
           )}

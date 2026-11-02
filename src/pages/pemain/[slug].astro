@@ -10,9 +10,17 @@ export async function getStaticPaths() {
   const players = await loadPlayers();
   
   // Create player details for all players, merging with existing details
+  const byName = new Map<string, PlayerDetailType>();
+
+  // playerDetails.json now covers the archive too, so every name in it gets a page.
+  // It goes first so the current squad's portrait and numbers win the merge.
+  for (const detail of playerDetails) {
+    byName.set(detail.name, detail);
+  }
+
   const allPlayerDetails: PlayerDetailType[] = players.map((player) => {
     const existingDetail = playerDetails.find(pd => pd.name === player.name);
-    
+
     if (existingDetail) {
       return {
         ...existingDetail,
@@ -42,7 +50,11 @@ export async function getStaticPaths() {
     };
   });
   
-  return allPlayerDetails.map((player) => {
+  for (const player of allPlayerDetails) {
+    byName.set(player.name, player);
+  }
+
+  return [...byName.values()].map((player) => {
     const slug = player.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
     return {
       params: { slug },

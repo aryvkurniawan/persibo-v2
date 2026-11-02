@@ -64,22 +64,53 @@ const newsArticles = [
   }
 ];
 
-// Build search index
-const searchIndex = {
-  players: players.map(player => {
+// The archive now has a page for every player who ever wore the shirt, so all of
+// them belong in search, not just the current squad. The squad list supplies the
+// portrait and guarantees today's names win when a spelling differs.
+function buildPlayerEntries() {
+  const slug = (name) => name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+  const byName = new Map();
+
+  for (const player of players) {
     const detail = playerDetails.find(pd => pd.name === player.name);
-    return {
-      id: player.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, ''),
+    byName.set(player.name, {
+      name: player.name,
       title: detail?.full_name || player.name,
       // players.json ships an empty position for all 30; playerDetails has the real one.
-      subtitle: `${detail?.position || player.position} • ${player.age} tahun • ${player.country}`,
-      description: `Pemain ${detail?.position || player.position} PERSIBO Bojonegoro`,
-      url: `/pemain/${player.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '')}`,
-      category: 'Pemain',
-      searchText: `${player.name} ${detail?.full_name || ''} ${detail?.position || player.position} ${player.country} ${player.age}`.toLowerCase(),
-      image: player.photo_url || null
-    };
-  }),
+      position: detail?.position || player.position,
+      age: player.age,
+      country: player.country,
+      image: player.photo_url || player.photo_local || detail?.photo_url || null,
+    });
+  }
+
+  for (const detail of playerDetails) {
+    if (byName.has(detail.name)) continue;
+    byName.set(detail.name, {
+      name: detail.name,
+      title: detail.full_name || detail.name,
+      position: detail.position || '',
+      age: detail.age || '',
+      country: detail.country || 'Indonesia',
+      image: detail.photo_url || null,
+    });
+  }
+
+  return [...byName.values()].map((p) => ({
+    id: slug(p.name),
+    title: p.title,
+    subtitle: `${p.position} • ${p.age} tahun • ${p.country}`,
+    description: `Pemain ${p.position} PERSIBO Bojonegoro`,
+    url: `/pemain/${slug(p.name)}`,
+    category: 'Pemain',
+    searchText: `${p.name} ${p.title} ${p.position} ${p.country} ${p.age}`.toLowerCase(),
+    image: p.image,
+  }));
+}
+
+// Build search index
+const searchIndex = {
+  players: buildPlayerEntries(),
   
   news: newsArticles.map(article => ({
     id: article.url.split('/').pop(),

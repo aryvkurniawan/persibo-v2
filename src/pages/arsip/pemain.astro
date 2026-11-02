@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import PlayerTable from '../../components/PlayerTable.astro';
 import faces from '../../data/players/faces.json';
-import { loadPlayers } from '../../utils/dataLoader';
+import { loadPlayerDetails } from '../../utils/dataLoader';
 
 type Face = {
   player_id: number;
@@ -32,23 +32,29 @@ const bySeason = players.reduce<Record<string, number>>((acc, player) => {
 const seasonLabels = Object.keys(bySeason).sort().reverse();
 const currentSquad = players.filter((p) => p.seasons.includes('2025-26')).length;
 
-// Only the current squad has a profile page, so older names render as plain
-// text rather than a link that would 404. Match on the portrait instead of the
-// name: this file carries full names ("ADRE ARIDO GEOVANI") while the squad
-// list uses short ones ("ADRE ARIDO"), so names never line up.
-const profileByPhoto = new Map(
-  (await loadPlayers()).map((p) => [
-    p.photo_local ?? p.photo_url,
-    p.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, ''),
-  ])
-);
+// Every archived player now has a profile, including the 2024-25-only ones that
+// the scraper backfilled. Slug comes from the same rule the route uses, so a row
+// can never point at a page that does not exist.
+const slugify = (name: string) => name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+// Both spellings point at the same record: faces.json carries the full name
+// ("ADRE ARIDO GEOVANI") while the squad list and the profile page use the short
+// one ("ADRE ARIDO"). Without the alias map 27 rows stayed unclickable.
+// Keys are normalised because iLeague mixes cases: full_name is sometimes
+// "Ilham Maulana" and sometimes "ILHAM MAULANA", and an exact lookup dropped four rows.
+const keyOf = (value: string) => value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+const detailByName = new Map<string, Awaited<ReturnType<typeof loadPlayerDetails>>[number]>();
+for (const detail of await loadPlayerDetails()) {
+  detailByName.set(keyOf(detail.name), detail);
+  if (detail.full_name) detailByName.set(keyOf(detail.full_name), detail);
+}
 const rows = players.map((player) => {
+  const detail = detailByName.get(keyOf(player.name));
   const photo = player.photo_local || player.photo_url || null;
   return {
     name: player.name,
-    slug: profileByPhoto.get(photo) ?? null,
-    position: '',
-    age: '',
+    slug: detail ? slugify(detail.name) : null,
+    position: detail?.position || '',
+    age: detail?.age || '',
     photo,
     seasons: player.seasons,
   };
@@ -75,7 +81,7 @@ const rows = players.map((player) => {
       ))}
     </div>
 
-    <div class="mt-8 max-w-3xl">
+    <div class="mt-8">
       <PlayerTable rows={rows} showSeasons />
     </div>
   </div>
