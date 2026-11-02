@@ -17,6 +17,7 @@ dan proyek ini mengikuti [Semantic Versioning](https://semver.org/lang/id/).
   - 2011-12 (Liga Prima Indonesia, peringkat 4) dan 2013 (didiskualifikasi) hanya menyimpan sebagian laga; halaman menyebut berapa yang bertahan, bukan menampilkannya seolah lengkap.
   - Musim sebelum 2024-25 tidak punya susunan pemain, pencetak gol, kartu, atau wasit di sumber mana pun, jadi halaman tidak merendernya sebagai kosong. Hanya skor yang ditampilkan.
   - iLeague tidak dipakai untuk ini: `/fixtures/index/PEGADAIAN_LIGA_2_2018` mengembalikan jadwal 2026, sehingga scrape per nama musim akan menulis jadwal tahun ini ke dalam file 2018.
+  - Teks halaman ditulis sebagai penyajian data, bukan laporan riset: paragraf metodologi tiga bagian diganti satu baris, catatan per musim dipendekkan, dan kredit penulis jadi satu baris tanpa menjelaskan syarat lisensinya di UI.
   - Penamaan musim dijelaskan di halaman: "2009-10" berarti kompetisi dua tahun yang mulai pertengahan tahun, "2013" berarti satu tahun kalender yang mulai awal tahun. Tiap musim juga menyebut jendela waktunya sendiri, karena periode 2011-2014 terganggu dualisme federasi dan sanksi.
   - Kredit penulis RSSSF diambil dari footer dokumen dan ditampilkan per musim (Feri Istanto, Novan Herfiyana, Karel Stokkermans untuk 2009-10; Karel Stokkermans untuk 2011-12 dan 2013), sesuai syarat RSSSF yang mewajibkan pencantuman penulis.
 

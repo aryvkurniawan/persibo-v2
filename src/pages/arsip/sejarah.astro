@@ -35,7 +35,7 @@ const detailedSeasons = [
       label="Arsip"
       title="Sejarah"
       meta={`${honours.length} gelar`}
-      description="Rekam jejak PERSIBO Bojonegoro sebelum era Liga Nusantara. Skor pertandingan diambil dari arsip RSSSF; susunan pemain, kartu, dan wasit tidak pernah diterbitkan untuk musim-musim ini."
+      description="Gelar dan hasil pertandingan PERSIBO Bojonegoro sebelum Liga Nusantara. Hanya skor yang tersimpan — tanpa susunan pemain, kartu, atau wasit."
     />
 
     <!-- Honours -->
@@ -83,22 +83,10 @@ const detailedSeasons = [
         <span class="text-[10px] uppercase tracking-[0.18em] text-white/30">skor saja</span>
       </div>
 
-      <div class="mb-6 max-w-2xl space-y-3 border border-white/10 bg-[#0c0b0f] px-4 py-4 text-[13px] leading-relaxed text-white/45">
-        <p>
-          Untuk musim sebelum 2024-25, sumber mana pun hanya menyimpan skor akhir.
-          Tidak ada susunan pemain, pencetak gol, kartu, atau wasit — jadi halaman ini
-          tidak menampilkannya. Angka rekor dihitung dari hasil pertandingan yang tersimpan,
-          bukan disalin dari tabel.
-        </p>
-        <p>
-          Penamaan musim di sepak bola Indonesia tidak seragam.
-          <span class="text-white/70">Dua tahun</span> berarti kompetisi yang dimulai
-          pertengahan tahun, seperti 2009-10. <span class="text-white/70">Satu tahun</span>
-          berarti kompetisi dalam satu tahun kalender, seperti 2013. Periode 2011-2014
-          diperumit dualisme federasi dan sanksi, sehingga beberapa musim berjalan
-          tidak seperti biasanya.
-        </p>
-      </div>
+      <p class="mb-6 max-w-2xl text-[13px] leading-relaxed text-white/40">
+        <span class="text-white/65">2009-10</span> mulai pertengahan tahun,{' '}
+        <span class="text-white/65">2013</span> dalam kalender penuh.
+      </p>
 
       <div class="space-y-10">
         {seasons.map((season) => {
@@ -138,7 +126,7 @@ const detailedSeasons = [
                 <>
                   <div class="mt-5 flex items-end justify-between">
                     <h4 class="text-[10px] font-bold uppercase tracking-[0.18em] text-white/40">
-                      Pertandingan tersimpan
+                      Pertandingan
                     </h4>
                     <span class="text-[10px] uppercase tracking-[0.16em] text-white/25">
                       {season.matches.length} laga
@@ -146,10 +134,10 @@ const detailedSeasons = [
                   </div>
 
                   {season.matches.length !== r.played && (
-                    <p class="mt-2 text-[12px] leading-relaxed text-white/35">
+                    <p class="mt-2 text-[12px] leading-relaxed text-white/30">
                       {season.matches.length > r.played
-                        ? `Rekor di atas hanya menghitung ${r.played} laga liga; daftar ini juga memuat laga gugur.`
-                        : `Arsip sumber hanya mencatat ${season.matches.length} dari ${r.played} laga; sisanya hilang sebelum sempat didokumentasikan.`}
+                        ? `${r.played} laga liga + laga gugur`
+                        : `${season.matches.length} dari ${r.played} laga`}
                     </p>
                   )}
 
@@ -183,8 +171,8 @@ const detailedSeasons = [
                   </ul>
                 </>
               ) : (
-                <p class="mt-5 border border-dashed border-white/12 px-4 py-4 text-[13px] text-white/35">
-                  Tidak ada daftar pertandingan yang bertahan untuk musim ini. Hanya rekor akhirnya yang tercatat.
+                <p class="mt-5 border border-dashed border-white/12 px-4 py-4 text-[13px] text-white/30">
+                  Rekor akhir saja. Daftar pertandingannya tidak tersimpan.
                 </p>
               )}
 
@@ -192,7 +180,7 @@ const detailedSeasons = [
                 Sumber:{' '}
                 <a href={season.source} target="_blank" rel="noopener noreferrer" class="text-white/45 underline decoration-white/20 hover:text-primary">RSSSF</a>
                 {season.credit && season.credit.length > 0 && (
-                  <> — disusun oleh {season.credit.join(', ')}. Digunakan dengan mencantumkan penulis sesuai syarat RSSSF.</>
+                  <> — {season.credit.join(', ')}</>
                 )}
               </p>
             </article>
