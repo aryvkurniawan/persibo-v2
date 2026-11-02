@@ -1691,12 +1691,12 @@
       ]
     },
     {
-      "source_url": "https://assets.ileague.id/uploads/images/logo/93/h/50/2518516.png",
+      "source_url": "https://assets.ileague.id/uploads/images/logo/101/v/150/2518516.png",
       "path": "/img/teams/putra-sang-fajar-fc.png",
-      "bytes": 39435,
-      "width": 160,
-      "sha256": "e12e5ce16b790981",
-      "fetched_at": "2026-10-30T11:07:37.273Z",
+      "bytes": 231030,
+      "width": 625,
+      "sha256": "3fdfebb84b89483e",
+      "fetched_at": "2026-11-02T00:00:00.000Z",
       "kind": "team-logo",
       "name": "Putra Sang Fajar FC",
       "seasons": [
