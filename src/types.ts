@@ -48,6 +48,8 @@ export interface PlayerDetail {
     goals: string;
     saves: string;
     cards: string;
+    /** Set when the row was recomputed from our own match details, not scraped. */
+    source?: string;
   }>;
   base_team: string;
 }

@@ -71,11 +71,12 @@ const searchIndex = {
     return {
       id: player.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, ''),
       title: detail?.full_name || player.name,
-      subtitle: `${player.position} • ${player.age} tahun • ${player.country}`,
-      description: `Pemain ${player.position} PERSIBO Bojonegoro`,
+      // players.json ships an empty position for all 30; playerDetails has the real one.
+      subtitle: `${detail?.position || player.position} • ${player.age} tahun • ${player.country}`,
+      description: `Pemain ${detail?.position || player.position} PERSIBO Bojonegoro`,
       url: `/pemain/${player.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '')}`,
       category: 'Pemain',
-      searchText: `${player.name} ${detail?.full_name || ''} ${player.position} ${player.country} ${player.age}`.toLowerCase(),
+      searchText: `${player.name} ${detail?.full_name || ''} ${detail?.position || player.position} ${player.country} ${player.age}`.toLowerCase(),
       image: player.photo_url || null
     };
   }),

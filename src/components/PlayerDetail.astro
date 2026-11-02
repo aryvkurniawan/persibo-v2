@@ -10,25 +10,35 @@ interface Props {
 
 const { player } = Astro.props;
 
-// Calculate additional stats from club_history
-const totalCareerAppearances = player.club_history?.reduce((sum, h) => sum + (parseInt(h.appearances) || 0), 0) || 0;
-const totalCareerGoals = player.club_history?.reduce((sum, h) => sum + (parseInt(h.goals) || 0), 0) || 0;
-const totalCareerSaves = player.club_history?.reduce((sum, h) => sum + (parseInt(h.saves) || 0), 0) || 0;
+// Only rows recomputed from our own match details are summed. iLeague's scraped
+// "Penampilan" counts squad listings (it totals 21 a match), so adding its history
+// inflates everybody: SAMSUL read "Karir: 79" across 12 real appearances.
+const trustedHistory = (player.club_history || []).filter((h) => h.source === 'derived:matchDetails');
+
+const totalCareerAppearances = trustedHistory.reduce((sum, h) => sum + (parseInt(h.appearances) || 0), 0);
+const totalCareerGoals = trustedHistory.reduce((sum, h) => sum + (parseInt(h.goals) || 0), 0);
+const totalCareerSaves = trustedHistory.reduce((sum, h) => sum + (parseInt(h.saves) || 0), 0);
 const isGoalkeeper = player.position?.toUpperCase().includes('GAWANG');
 
-// Parse cards from club_history
-const totalYellowCardsHistory = player.club_history?.reduce((sum, h) => {
+const totalYellowCardsHistory = trustedHistory.reduce((sum, h) => {
   const cards = h.cards?.split('/') || [];
   return sum + (parseInt(cards[0]?.trim()) || 0);
-}, 0) || 0;
-const totalRedCardsHistory = player.club_history?.reduce((sum, h) => {
+}, 0);
+const totalRedCardsHistory = trustedHistory.reduce((sum, h) => {
   const cards = h.cards?.split('/') || [];
   return sum + (parseInt(cards[1]?.trim()) || 0);
-}, 0) || 0;
+}, 0);
 
 const avgGoalsPerGame = totalCareerAppearances > 0 ? (totalCareerGoals / totalCareerAppearances).toFixed(2) : '0.00';
 const avgSavesPerGame = totalCareerAppearances > 0 && isGoalkeeper ? (totalCareerSaves / totalCareerAppearances).toFixed(2) : '0.00';
+// Career totals only mean something when the rows behind them are trustworthy.
+// iLeague's "Penampilan" counts squad listings, so summing its history inflates
+// every player; the matches we derive from are the only ones we can vouch for.
 const hasCareer = totalCareerAppearances > player.statistics.appearances;
+
+// No source publishes saves for Liga Nusantara. Showing 0 would claim the keeper
+// never made one, so the value stays empty and the note explains why.
+const savesTracked = totalCareerSaves > 0;
 
 // iLeague publishes no assists, so there is no column for them: a hardcoded 0
 // reads as "this player never assisted" rather than "this is not tracked".
@@ -37,7 +47,13 @@ const stats = [
   { label: 'Main', value: player.statistics.appearances, total: hasCareer ? totalCareerAppearances : null, accent: false },
   { label: 'Gol', value: player.statistics.goals, total: totalCareerGoals > player.statistics.goals ? totalCareerGoals : null, accent: true },
   ...(isGoalkeeper
-    ? [{ label: 'Saves', value: totalCareerSaves, total: null, accent: false, note: `${avgSavesPerGame}/laga` }]
+    ? [{
+        label: 'Saves',
+        value: savesTracked ? totalCareerSaves : '—',
+        total: null,
+        accent: false,
+        note: savesTracked ? `${avgSavesPerGame}/laga` : 'tidak dilacak',
+      }]
     : []),
   {
     label: 'Kartu',

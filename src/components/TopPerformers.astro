@@ -12,14 +12,19 @@ const { currentPlayer, statType, limit = 5 } = Astro.props;
 const allPlayers = await loadPlayerDetails();
 const persiboPlayers = allPlayers.filter(p => p.club === 'PERSIBO Bojonegoro');
 
+// Only rows recomputed from our match details are summed; iLeague's scraped
+// "Penampilan" counts squad listings and would rank everyone at ~79.
+const trusted = (p: PlayerDetail) => (p.club_history || []).filter(h => h.source === 'derived:matchDetails');
+const sumField = (p: PlayerDetail, field: 'goals' | 'appearances' | 'saves') =>
+  trusted(p).reduce((sum, h) => sum + (parseInt(h[field]) || 0), 0);
+
 // Get top performers based on stat type
 let topPerformers: Array<{ player: PlayerDetail; value: number }> = [];
 
 if (statType === 'goals') {
   topPerformers = persiboPlayers
     .map(p => {
-      const totalGoals = p.club_history?.reduce((sum, h) => sum + (parseInt(h.goals) || 0), 0) || p.statistics.goals;
-      return { player: p, value: totalGoals };
+      return { player: p, value: sumField(p, 'goals') || p.statistics.goals };
     })
     .filter(p => p.value > 0)
     .sort((a, b) => b.value - a.value)
@@ -27,8 +32,7 @@ if (statType === 'goals') {
 } else if (statType === 'appearances') {
   topPerformers = persiboPlayers
     .map(p => {
-      const totalApps = p.club_history?.reduce((sum, h) => sum + (parseInt(h.appearances) || 0), 0) || p.statistics.appearances;
-      return { player: p, value: totalApps };
+      return { player: p, value: sumField(p, 'appearances') || p.statistics.appearances };
     })
     .filter(p => p.value > 0)
     .sort((a, b) => b.value - a.value)
@@ -37,19 +41,18 @@ if (statType === 'goals') {
   topPerformers = persiboPlayers
     .filter(p => p.position?.toUpperCase().includes('GAWANG'))
     .map(p => {
-      const totalSaves = p.club_history?.reduce((sum, h) => sum + (parseInt(h.saves) || 0), 0) || 0;
-      return { player: p, value: totalSaves };
+      return { player: p, value: sumField(p, 'saves') };
     })
     .filter(p => p.value > 0)
     .sort((a, b) => b.value - a.value)
     .slice(0, limit);
 }
 
-const currentPlayerValue = statType === 'goals' 
-  ? (currentPlayer.club_history?.reduce((sum, h) => sum + (parseInt(h.goals) || 0), 0) || currentPlayer.statistics.goals)
+const currentPlayerValue = statType === 'goals'
+  ? (sumField(currentPlayer, 'goals') || currentPlayer.statistics.goals)
   : statType === 'appearances'
-  ? (currentPlayer.club_history?.reduce((sum, h) => sum + (parseInt(h.appearances) || 0), 0) || currentPlayer.statistics.appearances)
-  : (currentPlayer.club_history?.reduce((sum, h) => sum + (parseInt(h.saves) || 0), 0) || 0);
+  ? (sumField(currentPlayer, 'appearances') || currentPlayer.statistics.appearances)
+  : sumField(currentPlayer, 'saves');
 
 const currentPlayerRank = topPerformers.findIndex(p => p.player.name === currentPlayer.name) + 1;
 const maxValue = topPerformers.length > 0 ? topPerformers[0].value : 1;

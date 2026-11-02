@@ -10,10 +10,25 @@ dan proyek ini mengikuti [Semantic Versioning](https://semver.org/lang/id/).
 ### Added
 - `npm run sosmed`: poster media sosial 1080×1080 dari halaman Astro `src/pages/sosmed/[poster].astro`, di-screenshot headless Chrome (`scripts/sosmed.mjs`) ke `social/out/`. Resep per gambar di `social/posts.json`; mode `jadwal` dan `hasil` (skor besar, badge MENANG/KALAH/SERI, pencetak gol dari field `scorers`), plus blok tiga laga berikutnya. Logo lawan pakai varian `/h/200/` agar tidak blur, footer poster bercap hak cipta.
 - Carousel jadwal grup (4 slide 1080×1350): `src/pages/sosmed/jadwal/[bagian].astro`, dev-only lewat `getStaticPaths`. Cover memuat crest `/logo.png` (753×1024, bukan crest 160px yang blur kalau dibesarkan), indeks 14 tanggal, dan strip tujuh klub lawan; tiga slide sisanya satu bulan masing-masing. Tanggal dan jam dibaca dari `fixtures.json`, jadi tidak ada yang diketik tangan.
+- `npm run derive-player-stats` (`scripts/derive-player-stats.js`): menurunkan statistik pemain dari `matchDetails.json` 2024-25 + 2025-26, bukan dari tabel iLeague. Penampilan = XI awal + pengganti yang benar-benar masuk (punya `substitution_minutes`), gol dan kartu dari linimasa. Jembatan nama pendek → lengkap ada di `scripts/player-alias.json`, dicocokkan lewat nomor punggung karena pencocokan nama samar gagal pada 12 dari 30 pemain. Skrip idempoten: boleh dijalankan ulang setelah data pertandingan bertambah.
 
 ### Fixed
 - Laga kandang-tandang PERSIBANGGA (18 November 2026) semula tercatat 17 November di `src/data/seasons/2026-27/fixtures.json`. Halaman jadwal iLeague (`/fixtures/index/LIGA_NUSANTARA_2026-27/2`) dan halaman detailnya sama-sama menyebut Rabu, 18 November; `kickoff_iso` dan `match_url` ikut dikoreksi.
 - Carousel sempat menyebut "putaran 1" untuk 14 laga. Yang benar: 14 laga itu seluruh fase grup Grup B (8 klub, kandang-tandang), jadi labelnya "Jadwal Grup".
+- Statistik pemain salah di sumbernya: kolom "Penampilan" iLeague menghitung pemain yang masuk daftar pertandingan, bukan yang bermain — totalnya 21 per laga, jadi kiper cadangan terbaca 12 dan SAMSUL terbaca 79 main. Sekarang IKHSAN 3, SAMSUL 9, OSCAR 12, BAYU NUGROHO 11.
+- Baris `club_history` bertahun `"20225"` (salah ketik iLeague) dikoreksi jadi `2025`, sehingga musim 2025-26 akhirnya muncul di grafik "Statistik Per Musim".
+- "Total Karir", grafik per musim, dan daftar Top Scorer/Most Appearances tidak lagi menjumlah baris hasil scrape; hanya baris yang diturunkan dari match details (`source: derived:matchDetails`).
+- Saves tidak lagi tampil `0` untuk kiper: tidak ada sumber yang menerbitkannya di Liga Nusantara, jadi profil menampilkan `—` dengan catatan "tidak dilacak" dan kolom Saves di tabel pemain disembunyikan selama seluruh skuad tidak punya angkanya.
+- Kolom posisi di indeks pencarian kosong untuk 30 pemain karena `players.json` menyimpan `position: ""`; sekarang memakai `playerDetails.json`.
+- Pencocokan alias sempat peka huruf besar-kecil, jadi ILHAM, JOVAN, FAHMI, dan YOGA PRASETYA terbaca 0 penampilan padahal kartunya tercatat dari laga yang sama. Sekarang semua perbandingan lewat kunci ternormalisasi.
+- Riwayat klub menyimpan baris kembar dari iLeague sendiri (ADRE ARIDO mencantumkan musim U20 yang sama tujuh kali); 8 baris kembar dibuang agar penjumlahan tidak menggelembung.
+- Penimpaan angka hanya menyasar baris berklub PERSIBO pada tahun yang bersangkutan, bukan baris klub lain: 2024-25 tercatat dengan dua label kompetisi (`PEGADAIAN LIGA 2` dan `PNM LIGA NUSANTARA`), dan pemain seperti SAMSUL/JOKO S/ILHAM menghabiskan musim itu di klub lain sehingga angkanya tidak boleh disentuh.
+
+- Statistik pemain sebelumnya salah di sumbernya: kolom "Penampilan" iLeague menghitung pemain yang masuk daftar pertandingan, bukan yang bermain — totalnya 21 per laga, jadi kiper cadangan terbaca 12 dan SAMSUL terbaca 79 main. Sekarang IKHSAN 3, SAMSUL 9, OSCAR 12, BAYU NUGROHO 11.
+- Baris `club_history` bertahun `"20225"` (salah ketik iLeague) dikoreksi jadi `2025`, sehingga musim 2025-26 akhirnya muncul di grafik "Statistik Per Musim".
+- "Total Karir" dan daftar Top Scorer/Most Appearances tidak lagi menjumlah baris hasil scrape, hanya baris yang diturunkan dari match details (`source: derived:matchDetails`).
+- Saves tidak lagi ditampilkan sebagai `0` untuk kiper: tidak ada sumber yang menerbitkannya di Liga Nusantara, jadi nilainya `—` dengan catatan "tidak dilacak" alih-alih mengklaim kiper tak pernah membuat penyelamatan.
+- Kolom posisi di indeks pencarian kosong untuk 30 pemain karena `players.json` menyimpan `position: ""`; sekarang memakai `playerDetails.json`.
 
 ### Changed
 - Arsip 2025-26 dilengkapi: 12 dari 12 pertandingan punya detail (sebelumnya 3), masing-masing dengan XI + cadangan + pelatih kedua tim, daftar gol/kartu, wasit lengkap (termasuk asisten 2 dan cadangan wasit), dan venue. Scraper-nya `.scratch/scrape_ileague_2025_26.py`, memakai parser 2024-25 ditambah pembaca blok hero untuk gol/kartu karena tab Linimasa 2025-26 kosong di sumber. Statistik pertandingan tidak diisi: iLeague tidak pernah menerbitkannya untuk musim ini.

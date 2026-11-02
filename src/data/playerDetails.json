@@ -10,7 +10,7 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 0,
+      "appearances": 3,
       "goals": 0,
       "yellow_cards": 0,
       "red_cards": 0
@@ -18,13 +18,14 @@
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "0",
+        "appearances": "3",
         "goals": "0",
         "saves": "",
-        "cards": "/"
+        "cards": "/",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "LIGA 2 2017",
@@ -50,21 +51,22 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 0,
-      "goals": 0,
+      "appearances": 12,
+      "goals": 1,
       "yellow_cards": 0,
       "red_cards": 0
     },
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "0",
-        "goals": "0",
+        "appearances": "12",
+        "goals": "1",
         "saves": "",
-        "cards": "/"
+        "cards": "/",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "PNM LIGA NUSANTARA 2024-25",
@@ -90,21 +92,22 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 0,
+      "appearances": 10,
       "goals": 0,
-      "yellow_cards": 0,
+      "yellow_cards": 2,
       "red_cards": 0
     },
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "0",
+        "appearances": "10",
         "goals": "0",
         "saves": "",
-        "cards": "/"
+        "cards": "2/0",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "PEGADAIAN LIGA 2 2024-25",
@@ -141,7 +144,7 @@
   },
   {
     "name": "ROMY",
-    "full_name": "LIGA NUSANTARA 2025-26",
+    "full_name": "M. ROMY ARIF SETIAWAN",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2025-26/m._romy_arif_setiawan?token=UDAuNzAzODcxNTI=",
     "scraped_at": "2025-12-05T18:01:11.459204",
     "club": "PERSIBO Bojonegoro",
@@ -158,13 +161,14 @@
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
         "appearances": "0",
         "goals": "0",
         "saves": "",
-        "cards": "/"
+        "cards": "/",
+        "source": "derived:matchDetails"
       }
     ],
     "base_team": "PERSIBO Bojonegoro"
@@ -180,21 +184,22 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 2,
+      "appearances": 11,
       "goals": 0,
-      "yellow_cards": 0,
+      "yellow_cards": 1,
       "red_cards": 0
     },
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "2",
+        "appearances": "11",
         "goals": "0",
         "saves": "",
-        "cards": "/"
+        "cards": "1/0",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "PNM LIGA NUSANTARA 2024-25",
@@ -221,7 +226,7 @@
   },
   {
     "name": "REVAN",
-    "full_name": "LIGA NUSANTARA 2025-26",
+    "full_name": "M REVAN JONI NURIANTO",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2025-26/m_revan_joni_nurianto?token=UDAuMjU3NTQxODEwMg==",
     "scraped_at": "2025-12-05T18:01:25.056219",
     "club": "PERSIBO Bojonegoro",
@@ -230,7 +235,7 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 1,
+      "appearances": 8,
       "goals": 0,
       "yellow_cards": 0,
       "red_cards": 0
@@ -238,13 +243,14 @@
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "2",
+        "appearances": "8",
         "goals": "0",
         "saves": "",
-        "cards": "/"
+        "cards": "/",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "BRI LIGA 1 2021-2022",
@@ -281,7 +287,7 @@
   },
   {
     "name": "ILHAM",
-    "full_name": "ILHAM MAULANA",
+    "full_name": "Ilham Maulana",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2025-26/ilham_maulana?token=UDAuOTAxODEzNDI=",
     "scraped_at": "2025-12-05T18:01:31.678056",
     "club": "PERSIBO Bojonegoro",
@@ -290,7 +296,7 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 0,
+      "appearances": 3,
       "goals": 0,
       "yellow_cards": 0,
       "red_cards": 0
@@ -298,13 +304,14 @@
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "0",
+        "appearances": "3",
         "goals": "0",
         "saves": "",
-        "cards": "/"
+        "cards": "/",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "PEGADAIAN LIGA 2 2024-25",
@@ -330,7 +337,7 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 1,
+      "appearances": 9,
       "goals": 0,
       "yellow_cards": 0,
       "red_cards": 0
@@ -338,13 +345,14 @@
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "2",
+        "appearances": "9",
         "goals": "0",
         "saves": "",
-        "cards": "/"
+        "cards": "/",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "PEGADAIAN LIGA 2 2024-25",
@@ -440,31 +448,33 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 2,
+      "appearances": 8,
       "goals": 1,
-      "yellow_cards": 1,
+      "yellow_cards": 2,
       "red_cards": 0
     },
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "2",
+        "appearances": "8",
         "goals": "1",
         "saves": "",
-        "cards": "/"
+        "cards": "2/0",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "PEGADAIAN LIGA 2 2024-25",
         "year": "2024",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "3",
+        "appearances": "0",
         "goals": "0",
         "saves": "0",
-        "cards": "0/0"
+        "cards": "/",
+        "source": "derived:matchDetails"
       }
     ],
     "base_team": "PERSIBO Bojonegoro"
@@ -480,28 +490,29 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 2,
-      "goals": 1,
-      "yellow_cards": 1,
+      "appearances": 11,
+      "goals": 2,
+      "yellow_cards": 3,
       "red_cards": 0
     },
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "2",
-        "goals": "1",
+        "appearances": "11",
+        "goals": "2",
         "saves": "",
-        "cards": "/"
+        "cards": "3/0",
+        "source": "derived:matchDetails"
       }
     ],
     "base_team": "PERSIBO Bojonegoro"
   },
   {
     "name": "FADIL S",
-    "full_name": "LIGA NUSANTARA 2025-26",
+    "full_name": "FADIL",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2025-26/fadil?token=UDAuODMzMw==",
     "scraped_at": "2025-12-05T18:01:57.697058",
     "club": "PERSIBO Bojonegoro",
@@ -510,21 +521,22 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 2,
-      "goals": 0,
+      "appearances": 11,
+      "goals": 1,
       "yellow_cards": 0,
       "red_cards": 0
     },
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "2",
-        "goals": "0",
+        "appearances": "11",
+        "goals": "1",
         "saves": "",
-        "cards": "/"
+        "cards": "/",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "PEGADAIAN LIGA 2 2024-25",
@@ -620,21 +632,22 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 2,
-      "goals": 0,
+      "appearances": 9,
+      "goals": 2,
       "yellow_cards": 1,
       "red_cards": 0
     },
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "2",
-        "goals": "0",
+        "appearances": "9",
+        "goals": "2",
         "saves": "",
-        "cards": "/"
+        "cards": "1/0",
+        "source": "derived:matchDetails"
       }
     ],
     "base_team": "PERSIBO Bojonegoro"
@@ -650,7 +663,7 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 0,
+      "appearances": 1,
       "goals": 0,
       "yellow_cards": 0,
       "red_cards": 0
@@ -658,13 +671,14 @@
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "0",
+        "appearances": "1",
         "goals": "0",
         "saves": "",
-        "cards": "/"
+        "cards": "/",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "PNM LIGA NUSANTARA 2024-25",
@@ -698,13 +712,14 @@
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
         "appearances": "0",
         "goals": "0",
         "saves": "",
-        "cards": "/"
+        "cards": "/",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "EPA LIGA 1 U20 2023-24",
@@ -730,7 +745,7 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 1,
+      "appearances": 2,
       "goals": 0,
       "yellow_cards": 0,
       "red_cards": 0
@@ -738,23 +753,25 @@
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "1",
+        "appearances": "2",
         "goals": "0",
         "saves": "",
-        "cards": "/"
+        "cards": "/",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "PEGADAIAN LIGA 2 2024-25",
         "year": "2024",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "12",
+        "appearances": "6",
         "goals": "0",
         "saves": "0",
-        "cards": "0/0"
+        "cards": "/",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "LIGA 2 2022-2023",
@@ -860,7 +877,7 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 0,
+      "appearances": 3,
       "goals": 0,
       "yellow_cards": 0,
       "red_cards": 0
@@ -868,13 +885,14 @@
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "2",
+        "appearances": "3",
         "goals": "0",
         "saves": "",
-        "cards": "/"
+        "cards": "/",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "EPA LIGA 1 U18 2023-24",
@@ -891,7 +909,7 @@
   },
   {
     "name": "JOVAN",
-    "full_name": "JOVAN JORDANTIAN SYAHWA MAULANA",
+    "full_name": "Jovan Jordantian Syahwa Maulana",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2025-26/jovan_jordantian_syahwa_maulana?token=UDAuODkyNTIyNDI=",
     "scraped_at": "2025-12-05T18:02:42.892706",
     "club": "PERSIBO Bojonegoro",
@@ -900,7 +918,7 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 0,
+      "appearances": 1,
       "goals": 0,
       "yellow_cards": 0,
       "red_cards": 0
@@ -908,13 +926,14 @@
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "2",
+        "appearances": "1",
         "goals": "0",
         "saves": "",
-        "cards": "/"
+        "cards": "/",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "EPA LIGA 1 U20 2024-25",
@@ -940,7 +959,7 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 1,
+      "appearances": 6,
       "goals": 0,
       "yellow_cards": 1,
       "red_cards": 0
@@ -948,23 +967,25 @@
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "2",
+        "appearances": "6",
         "goals": "0",
         "saves": "",
-        "cards": "/"
+        "cards": "1/0",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "PEGADAIAN LIGA 2 2024-25",
         "year": "2024",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "20",
+        "appearances": "13",
         "goals": "0",
         "saves": "0",
-        "cards": "3/0"
+        "cards": "3/0",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "PEGADAIAN LIGA 2 2023-24",
@@ -990,21 +1011,22 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 2,
-      "goals": 0,
-      "yellow_cards": 0,
+      "appearances": 12,
+      "goals": 1,
+      "yellow_cards": 1,
       "red_cards": 0
     },
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "2",
-        "goals": "0",
+        "appearances": "12",
+        "goals": "1",
         "saves": "",
-        "cards": "/"
+        "cards": "1/0",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "PNM LIGA NUSANTARA 2024-25",
@@ -1088,7 +1110,7 @@
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
         "appearances": "0",
@@ -1128,7 +1150,7 @@
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
         "appearances": "0",
@@ -1158,20 +1180,21 @@
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
         "appearances": "0",
         "goals": "0",
         "saves": "",
-        "cards": "/"
+        "cards": "/",
+        "source": "derived:matchDetails"
       }
     ],
     "base_team": "PERSIBO Bojonegoro"
   },
   {
     "name": "FAHMI",
-    "full_name": "FAHMI ARMA ARDIANSHYA",
+    "full_name": "Fahmi Arma Ardianshya",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2025-26/fahmi_arma_ardianshya?token=UDAuOTE2NjUyMzI=",
     "scraped_at": "2025-12-05T18:03:24.929479",
     "club": "PERSIBO Bojonegoro",
@@ -1180,31 +1203,22 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 1,
+      "appearances": 9,
       "goals": 0,
-      "yellow_cards": 0,
+      "yellow_cards": 3,
       "red_cards": 0
     },
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "2",
+        "appearances": "9",
         "goals": "0",
         "saves": "",
-        "cards": "/"
-      },
-      {
-        "competition": "EPA LIGA 1 U18 2024-25",
-        "year": "2024",
-        "klub_url": "https://www.ileague.id",
-        "club": "PERSEBAYA SURABAYA U18",
-        "appearances": "0",
-        "goals": "0",
-        "saves": "",
-        "cards": "/"
+        "cards": "3/0",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "EPA LIGA 1 U18 2024-25",
@@ -1241,7 +1255,7 @@
   },
   {
     "name": "YOGA P",
-    "full_name": "YOGA PRASETYA",
+    "full_name": "yoga prasetya",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2025-26/yoga_prasetya?token=UDAuNjQ2OTcxNTI=",
     "scraped_at": "2025-12-05T18:03:31.828473",
     "club": "PERSIBO Bojonegoro",
@@ -1250,21 +1264,22 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 0,
+      "appearances": 5,
       "goals": 0,
-      "yellow_cards": 0,
+      "yellow_cards": 2,
       "red_cards": 0
     },
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "2",
+        "appearances": "5",
         "goals": "0",
         "saves": "",
-        "cards": "/"
+        "cards": "2/0",
+        "source": "derived:matchDetails"
       }
     ],
     "base_team": "PERSIBO Bojonegoro"
@@ -1280,7 +1295,7 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 0,
+      "appearances": 5,
       "goals": 0,
       "yellow_cards": 0,
       "red_cards": 0
@@ -1288,13 +1303,14 @@
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "0",
+        "appearances": "5",
         "goals": "0",
         "saves": "",
-        "cards": "/"
+        "cards": "/",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "PNM LIGA NUSANTARA 2024-25",
@@ -1321,7 +1337,7 @@
   },
   {
     "name": "RADIANSYAH",
-    "full_name": "LIGA NUSANTARA 2025-26",
+    "full_name": "RADIANSYAH",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2025-26/radiansyah?token=UDAuODExNA==",
     "scraped_at": "2025-12-05T18:03:45.278274",
     "club": "PERSIBO Bojonegoro",
@@ -1330,21 +1346,22 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 2,
+      "appearances": 10,
       "goals": 0,
-      "yellow_cards": 1,
+      "yellow_cards": 2,
       "red_cards": 0
     },
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "2",
+        "appearances": "10",
         "goals": "0",
         "saves": "",
-        "cards": "/"
+        "cards": "2/0",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "PEGADAIAN LIGA 2 2024-25",
@@ -1354,7 +1371,8 @@
         "appearances": "21",
         "goals": "0",
         "saves": "0",
-        "cards": "3/0"
+        "cards": "3/0",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "PEGADAIAN LIGA 2 2023-24",
@@ -1460,7 +1478,7 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 0,
+      "appearances": 1,
       "goals": 0,
       "yellow_cards": 0,
       "red_cards": 0
@@ -1468,13 +1486,14 @@
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
         "appearances": "1",
         "goals": "0",
         "saves": "",
-        "cards": "/"
+        "cards": "/",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "PNM LIGA NUSANTARA 2024-25",
@@ -1500,81 +1519,22 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 2,
+      "appearances": 11,
       "goals": 0,
-      "yellow_cards": 0,
-      "red_cards": 0
+      "yellow_cards": 1,
+      "red_cards": 1
     },
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "2",
+        "appearances": "11",
         "goals": "0",
         "saves": "",
-        "cards": "/"
-      },
-      {
-        "competition": "EPA LIGA 1 U20 2024-25",
-        "year": "2024",
-        "klub_url": "https://www.ileague.id",
-        "club": "PERSIJA JAKARTA U20",
-        "appearances": "11",
-        "goals": "0",
-        "saves": "11",
-        "cards": "0/0"
-      },
-      {
-        "competition": "EPA LIGA 1 U20 2024-25",
-        "year": "2024",
-        "klub_url": "https://www.ileague.id",
-        "club": "PERSIJA JAKARTA U20",
-        "appearances": "11",
-        "goals": "0",
-        "saves": "11",
-        "cards": "0/0"
-      },
-      {
-        "competition": "EPA LIGA 1 U20 2024-25",
-        "year": "2024",
-        "klub_url": "https://www.ileague.id",
-        "club": "PERSIJA JAKARTA U20",
-        "appearances": "11",
-        "goals": "0",
-        "saves": "11",
-        "cards": "0/0"
-      },
-      {
-        "competition": "EPA LIGA 1 U20 2024-25",
-        "year": "2024",
-        "klub_url": "https://www.ileague.id",
-        "club": "PERSIJA JAKARTA U20",
-        "appearances": "11",
-        "goals": "0",
-        "saves": "11",
-        "cards": "0/0"
-      },
-      {
-        "competition": "EPA LIGA 1 U20 2024-25",
-        "year": "2024",
-        "klub_url": "https://www.ileague.id",
-        "club": "PERSIJA JAKARTA U20",
-        "appearances": "11",
-        "goals": "0",
-        "saves": "11",
-        "cards": "0/0"
-      },
-      {
-        "competition": "EPA LIGA 1 U20 2024-25",
-        "year": "2024",
-        "klub_url": "https://www.ileague.id",
-        "club": "PERSIJA JAKARTA U20",
-        "appearances": "11",
-        "goals": "0",
-        "saves": "11",
-        "cards": "0/0"
+        "cards": "1/1",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "EPA LIGA 1 U20 2024-25",
@@ -1604,16 +1564,6 @@
         "appearances": "2",
         "goals": "0",
         "saves": "0",
-        "cards": "0/0"
-      },
-      {
-        "competition": "EPA LIGA 1 U20 2023-24",
-        "year": "2023",
-        "klub_url": "https://www.ileague.id",
-        "club": "PERSIJA JAKARTA U20",
-        "appearances": "8",
-        "goals": "0",
-        "saves": "1",
         "cards": "0/0"
       },
       {
@@ -1660,21 +1610,22 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 2,
-      "goals": 0,
-      "yellow_cards": 0,
+      "appearances": 11,
+      "goals": 5,
+      "yellow_cards": 1,
       "red_cards": 0
     },
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "2",
-        "goals": "0",
+        "appearances": "11",
+        "goals": "5",
         "saves": "",
-        "cards": "/"
+        "cards": "1/0",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "PNM LIGA NUSANTARA 2024-25",
@@ -1760,7 +1711,7 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 2,
+      "appearances": 12,
       "goals": 0,
       "yellow_cards": 0,
       "red_cards": 0
@@ -1768,13 +1719,14 @@
     "club_history": [
       {
         "competition": "LIGA NUSANTARA 2025-26",
-        "year": "20225",
+        "year": "2025",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "2",
+        "appearances": "12",
         "goals": "0",
         "saves": "",
-        "cards": "/"
+        "cards": "/",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "PEGADAIAN LIGA 2 2024-25",

@@ -11,6 +11,7 @@
     "astro": "astro",
     "optimize-images": "node scripts/optimize-images.js",
     "generate-search-index": "node scripts/generate-search-index.js",
+    "derive-player-stats": "node scripts/derive-player-stats.js",
     "fetch-assets": "node scripts/fetch-assets.mjs",
     "sosmed": "node scripts/sosmed.mjs"
   },

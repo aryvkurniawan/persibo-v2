@@ -41,6 +41,9 @@ const sorted = [...rows].sort((a, b) => {
 });
 
 const hasStats = rows.some((r) => (r.appearances ?? 0) > 0 || (r.goals ?? 0) > 0);
+// No source publishes saves for this competition, so the column only appears when
+// at least one row actually carries a number.
+const hasSaves = rows.some((r) => (r.saves ?? 0) > 0);
 // Columns with nothing in them are noise: the archive knows names and seasons
 // but not positions or ages, so those two fold away there.
 const hasPosition = rows.some((r) => r.position);
@@ -65,9 +68,11 @@ const hasAge = rows.some((r) => r.age);
             <th scope="col" class="w-12 py-2.5 pr-2 text-right font-bold sm:w-14">
               <span class="sm:hidden">G</span><span class="hidden sm:inline">Gol</span>
             </th>
-            <th scope="col" class="hidden w-14 py-2.5 pr-3 text-right font-bold sm:table-cell">
-              <span class="sm:hidden">S</span><span class="hidden sm:inline">Saves</span>
-            </th>
+            {hasSaves && (
+              <th scope="col" class="hidden w-14 py-2.5 pr-3 text-right font-bold sm:table-cell">
+                <span class="sm:hidden">S</span><span class="hidden sm:inline">Saves</span>
+              </th>
+            )}
           </>
         )}
         {showSeasons && (
@@ -159,7 +164,9 @@ const hasAge = rows.some((r) => r.age);
             <>
               <td class="py-2 pr-2 text-right font-cond text-[13px] leading-none text-white/80 tnum">{row.appearances ?? 0}</td>
               <td class="py-2 pr-2 text-right font-cond text-[13px] leading-none text-white/80 tnum">{row.goals ?? 0}</td>
-              <td class="hidden py-2 pr-3 text-right font-cond text-[13px] leading-none text-white/50 tnum sm:table-cell">{row.saves ?? 0}</td>
+              {hasSaves && (
+                <td class="hidden py-2 pr-3 text-right font-cond text-[13px] leading-none text-white/50 tnum sm:table-cell">{row.saves ?? 0}</td>
+              )}
             </>
           )}
 

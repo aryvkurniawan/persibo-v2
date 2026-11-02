@@ -11,7 +11,9 @@ const { player } = Astro.props;
 // with a league and a youth-league campaign in the same year would otherwise
 // plot twice on the same x value and draw a spike that never happened.
 const bySeason = new Map<string, { appearances: number; goals: number; saves: number; yellow: number; red: number }>();
-for (const h of player.club_history || []) {
+// Same rule as the stat cards: only rows we recomputed are trustworthy. iLeague's
+// scraped "Penampilan" counts squad listings, which would plot a fake career peak.
+for (const h of (player.club_history || []).filter((row) => row.source === 'derived:matchDetails')) {
   const year = parseInt(h.year);
   if (isNaN(year) || year < 2010 || year > 2030) continue;
   const key = String(year);

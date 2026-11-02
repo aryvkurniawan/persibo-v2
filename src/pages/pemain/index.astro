@@ -13,9 +13,13 @@ const slugify = (name: string) => name.toLowerCase().replace(/\s+/g, '-').replac
 
 // Career totals come from the history table, not the hero figures: the hero is
 // scraped separately and often still reads zero for players who appeared.
+// Rows recomputed from match details are the only ones summed — iLeague's scraped
+// "Penampilan" counts squad listings and inflates every player (79 for 9 games).
 const rows = players.map((player) => {
   const detail = playerDetails.find((pd) => pd.name === player.name);
-  const totals = detail?.club_history?.reduce(
+  const totals = detail?.club_history
+    ?.filter((row) => row.source === 'derived:matchDetails')
+    .reduce(
     (acc, row) => ({
       appearances: acc.appearances + (parseInt(row.appearances) || 0),
       goals: acc.goals + (parseInt(row.goals) || 0),
