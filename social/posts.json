@@ -5,7 +5,7 @@
   },
   {
     "out": "laga-persibangga-tandang",
-    "date": "17 November 2026",
+    "date": "18 November 2026",
     "home": "PERSIBANGGA PURBALINGGA",
     "away": "PERSIBO Bojonegoro",
     "venue": "TRISANJA",
@@ -48,5 +48,25 @@
     "out": "identitas-portrait",
     "url": "/sosmed/artboard/portrait",
     "selector": "#art-portrait"
+  },
+  {
+    "out": "jadwal-grup-1",
+    "url": "/sosmed/jadwal/1",
+    "selector": "#slide-1"
+  },
+  {
+    "out": "jadwal-grup-2",
+    "url": "/sosmed/jadwal/1",
+    "selector": "#slide-2"
+  },
+  {
+    "out": "jadwal-grup-3",
+    "url": "/sosmed/jadwal/1",
+    "selector": "#slide-3"
+  },
+  {
+    "out": "jadwal-grup-4",
+    "url": "/sosmed/jadwal/1",
+    "selector": "#slide-4"
   }
 ]

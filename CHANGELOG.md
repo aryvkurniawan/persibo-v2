@@ -9,6 +9,11 @@ dan proyek ini mengikuti [Semantic Versioning](https://semver.org/lang/id/).
 
 ### Added
 - `npm run sosmed`: poster media sosial 1080×1080 dari halaman Astro `src/pages/sosmed/[poster].astro`, di-screenshot headless Chrome (`scripts/sosmed.mjs`) ke `social/out/`. Resep per gambar di `social/posts.json`; mode `jadwal` dan `hasil` (skor besar, badge MENANG/KALAH/SERI, pencetak gol dari field `scorers`), plus blok tiga laga berikutnya. Logo lawan pakai varian `/h/200/` agar tidak blur, footer poster bercap hak cipta.
+- Carousel jadwal grup (4 slide 1080×1350): `src/pages/sosmed/jadwal/[bagian].astro`, dev-only lewat `getStaticPaths`. Cover memuat crest `/logo.png` (753×1024, bukan crest 160px yang blur kalau dibesarkan), indeks 14 tanggal, dan strip tujuh klub lawan; tiga slide sisanya satu bulan masing-masing. Tanggal dan jam dibaca dari `fixtures.json`, jadi tidak ada yang diketik tangan.
+
+### Fixed
+- Laga kandang-tandang PERSIBANGGA (18 November 2026) semula tercatat 17 November di `src/data/seasons/2026-27/fixtures.json`. Halaman jadwal iLeague (`/fixtures/index/LIGA_NUSANTARA_2026-27/2`) dan halaman detailnya sama-sama menyebut Rabu, 18 November; `kickoff_iso` dan `match_url` ikut dikoreksi.
+- Carousel sempat menyebut "putaran 1" untuk 14 laga. Yang benar: 14 laga itu seluruh fase grup Grup B (8 klub, kandang-tandang), jadi labelnya "Jadwal Grup".
 
 ### Changed
 - Arsip 2025-26 dilengkapi: 12 dari 12 pertandingan punya detail (sebelumnya 3), masing-masing dengan XI + cadangan + pelatih kedua tim, daftar gol/kartu, wasit lengkap (termasuk asisten 2 dan cadangan wasit), dan venue. Scraper-nya `.scratch/scrape_ileague_2025_26.py`, memakai parser 2024-25 ditambah pembaca blok hero untuk gol/kartu karena tab Linimasa 2025-26 kosong di sumber. Statistik pertandingan tidak diisi: iLeague tidak pernah menerbitkannya untuk musim ini.

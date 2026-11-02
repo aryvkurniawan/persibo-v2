@@ -55,6 +55,25 @@ Situs penggemar, bukan akun resmi. persibo.com
 
 ---
 
+## 5. Carousel jadwal grup (`jadwal-grup-1.png` … `jadwal-grup-4.png`)
+
+Empat slide: cover, November, Desember, Januari. Urutannya jangan diacak.
+
+Jadwal Persibo di Grup B sudah lengkap. 14 laga, dari 13 November sampai 21 Januari.
+
+Tujuh laga kandang semuanya di Stadion Letjen H. Soedirman. Tujuh sisanya main di kandang lawan.
+
+Satu catatan: laga terakhir 21 Januari lawan PERSIBANGGA belum ada jam tendangnya. Di iLeague
+masih kosong, jadi saya tulis TBC. Nanti saya perbarui kalau sudah keluar.
+
+Jadwal bisa berubah. Yang resmi tetap dari iLeague dan panitia.
+
+Situs penggemar, bukan akun resmi. Jadwal dan klasemen tiap hari di persibo.com.
+
+#Persibo #PersiboBojonegoro #LaskarAnglingDharma #Bojonegoro #LigaNusantara
+
+---
+
 ## Catatan
 
 - Jangan pakai kata "resmi", "official", atau "rebranding" — situs ini penggemar.

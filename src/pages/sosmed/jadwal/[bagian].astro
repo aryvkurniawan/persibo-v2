@@ -1,0 +1,302 @@
+---
+// Carousel jadwal grup: cover + one slide per month.
+//
+// Dev-only: getStaticPaths returns nothing outside `astro dev`, so nothing lands
+// in dist. scripts/sosmed.mjs screenshots each #slide-N.
+//
+// One rule keeps four slides reading as one post: identical margins, identical
+// header rule, identical card geometry. Only the cards and the month name change.
+import type { GetStaticPaths } from 'astro';
+import { loadFixtures, loadTeams, getScheduledFixtures, getTeamLogo } from '../../../utils/dataLoader';
+import { parseFixtureDate, getWeekdayShort } from '../../../utils/dates';
+import '../../../styles/global.css';
+
+export const getStaticPaths: GetStaticPaths = () =>
+  import.meta.env.DEV ? [{ params: { bagian: '1' } }] : [];
+
+const MONTH_NAMES = [
+  'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+  'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember',
+];
+
+const fixtures = getScheduledFixtures(await loadFixtures('2026-27'));
+const teams = await loadTeams('2026-27');
+
+const shortName = (team: string) => team.replace(/\s+(BOJONEGORO|FC|UNITED)$/i, '').toUpperCase();
+
+const rows = fixtures.map((fixture, index) => {
+  const isHome = fixture.home_team.toUpperCase().includes('PERSIBO');
+  const parsed = parseFixtureDate(fixture.date);
+  const opponent = isHome ? fixture.away_team : fixture.home_team;
+  // iLeague files the one fixture it has no kick-off for as 00:00.
+  const kickoff = fixture.time && fixture.time !== '00:00' ? fixture.time.replace(':', '.') : 'TBC';
+  return {
+    no: index + 1,
+    day: fixture.date.split(' ')[0].padStart(2, '0'),
+    month: parsed ? parsed.getUTCMonth() : 10,
+    weekday: getWeekdayShort(fixture.date).toUpperCase(),
+    isHome,
+    opponent: shortName(opponent),
+    venue: fixture.venue,
+    kickoff,
+    logo: getTeamLogo(teams, opponent) ?? '/logo-64.png',
+  };
+});
+
+// One slide per month, in order.
+const months: Array<{ name: string; rows: typeof rows }> = [];
+for (const row of rows) {
+  const open = months[months.length - 1];
+  if (!open || open.rows[0].month !== row.month) {
+    months.push({ name: MONTH_NAMES[row.month].toUpperCase(), rows: [row] });
+  } else {
+    open.rows.push(row);
+  }
+}
+
+const total = rows.length;
+const slideCount = months.length + 1;
+const first = rows[0];
+const last = rows[total - 1];
+const span = `${first.day} ${MONTH_NAMES[first.month].slice(0, 3)} — ${last.day} ${MONTH_NAMES[last.month].slice(0, 3)}`;
+
+// Every club Persibo meets, once, for the cover strip.
+const rivals = [...new Map(rows.map((row) => [row.opponent, row.logo])).entries()];
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <title>Jadwal grup — PERSIBO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Lexend:wght@400;500;600;700;800&display=swap"
+    />
+    <style is:global>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #0b0910;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ============================== Slide 1 — cover ============================== -->
+    <div
+      id="slide-1"
+      class="relative overflow-hidden bg-[#0b0910] text-[#f5f2ec]"
+      style="width:1080px;height:1350px;font-family:'Lexend',sans-serif"
+    >
+      <div
+        class="pointer-events-none absolute inset-0"
+        style="background:radial-gradient(circle at 78% -6%, rgba(249,115,22,0.22), transparent 46%)"
+      >
+      </div>
+      <div
+        class="pointer-events-none absolute inset-0 opacity-[0.05]"
+        style="background-image:linear-gradient(#f5f2ec 1px, transparent 1px);background-size:100% 60px"
+      >
+      </div>
+
+      <div class="absolute left-[72px] top-[64px]">
+        <p class="flex items-center gap-[10px] text-[12px] font-bold uppercase tracking-[0.3em] text-white/55">
+          <span class="inline-block h-[8px] w-[8px] bg-primary"></span>
+          Liga Nusantara · Grup B
+        </p>
+      </div>
+
+      <!-- Lockup left, crest right: the crest is the anchor the eye lands on first. -->
+      <div class="absolute left-[64px] top-[196px]">
+        <p class="font-cond text-[168px] font-extrabold uppercase leading-[0.8] tracking-[-0.02em] text-white">
+          JADWAL
+        </p>
+        <p class="font-cond text-[168px] font-extrabold uppercase leading-[0.8] tracking-[-0.02em] text-white">
+          GRUP<span class="text-primary">.</span>
+        </p>
+      </div>
+      <!-- Crest oversized and cropped by the frame edge: it reads as part of the
+           poster, not as a sticker sitting on it. -->
+      <div class="pointer-events-none absolute right-[6px] top-[22px] h-[590px] w-[440px]">
+        <div
+          class="h-full w-full rotate-[-6deg]"
+          style="filter:drop-shadow(0 32px 74px rgba(249,115,22,0.34))"
+        >
+          <img src="/logo.png" alt="" class="h-full w-full object-contain" />
+        </div>
+      </div>
+
+      <div class="absolute left-[72px] right-[72px] top-[520px]">
+        <div class="flex items-end gap-[26px]">
+          <p class="font-cond text-[168px] font-bold leading-[0.72] text-primary">{total}</p>
+          <div class="pb-[24px]">
+            <p class="text-[13px] font-bold uppercase tracking-[0.34em] text-white/70">Laga</p>
+            <p class="mt-[6px] text-[13px] font-medium uppercase tracking-[0.16em] text-white/40">{span}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- The eight clubs, once each. Crests carry more identity than names here. -->
+      <div class="absolute left-[72px] right-[72px] top-[660px]">
+        <div class="flex items-center justify-between border-y border-white/12 py-[26px]">
+          {rivals.map(([name, logo]) => (
+            <div class="flex w-[122px] flex-col items-center gap-[10px]">
+              <img src={logo} alt={name} class="h-[58px] w-[58px] object-contain" loading="eager" />
+              <p class="w-full text-center text-[8px] font-bold uppercase leading-[1.35] tracking-[0.09em] text-white/35">
+                {name}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- The run as a calendar: two rows of seven, orange for home. -->
+      <div class="absolute left-[72px] right-[72px] top-[886px]">
+        <div class="grid grid-cols-7 gap-y-[26px]">
+          {rows.map((row) => (
+            <div class="border-l-2 pl-[12px]" style={`border-color:${row.isHome ? 'rgb(249 115 22)' : 'rgba(245,242,236,0.16)'}`}>
+              <p class="font-cond text-[58px] font-bold leading-[0.82] text-white">{row.day}</p>
+              <p class="mt-[6px] text-[9px] font-bold uppercase tracking-[0.16em] text-white/40">
+                {MONTH_NAMES[row.month].slice(0, 3)}
+              </p>
+              <p class="mt-[1px] text-[8px] uppercase tracking-[0.14em] text-white/20">{row.weekday}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Closes the frame: the two facts a supporter asks first, one line each. -->
+      <div class="absolute left-[72px] right-[72px] bottom-[152px] border-t border-white/12 pt-[26px]">
+        <div class="flex items-start justify-between gap-[40px]">
+          <div>
+            <p class="text-[9px] font-bold uppercase tracking-[0.28em] text-primary">Kandang</p>
+            <p class="mt-[8px] text-[12px] uppercase leading-[1.6] tracking-[0.1em] text-white/70">
+              Stadion Letjen H. Soedirman
+            </p>
+          </div>
+          <div class="text-right">
+            <p class="text-[9px] font-bold uppercase tracking-[0.28em] text-white/40">Format</p>
+            <p class="mt-[8px] text-[12px] uppercase leading-[1.6] tracking-[0.1em] text-white/70">
+              Grup B · 8 klub<br />kandang-tandang
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="absolute bottom-[58px] left-[72px] right-[72px] flex items-end justify-between">
+        <p class="font-cond text-[34px] font-bold uppercase leading-none text-white">
+          Persibo<span class="text-primary">.</span>
+        </p>
+        <div class="flex items-center gap-[26px]">
+          <p class="text-[10px] uppercase tracking-[0.24em] text-white/30">01 — {slideCount}</p>
+          <p class="text-[10px] uppercase tracking-[0.24em] text-white/30">Geser →</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================== Slides 2…n — per month =========================== -->
+    {months.map((month, monthIndex) => {
+      const isLast = monthIndex === months.length - 1;
+      const shown = month.rows[month.rows.length - 1].no;
+      return (
+        <div
+          id={`slide-${monthIndex + 2}`}
+          class="relative overflow-hidden bg-[#0b0910] text-[#f5f2ec]"
+          style="width:1080px;height:1350px;font-family:'Lexend',sans-serif"
+        >
+          <div
+            class="pointer-events-none absolute inset-0"
+            style="background:radial-gradient(circle at 84% -6%, rgba(249,115,22,0.14), transparent 44%)"
+          >
+          </div>
+
+          <div class="absolute left-[72px] right-[72px] top-[62px] flex items-center justify-between">
+            <p class="flex items-center gap-[10px] text-[12px] font-bold uppercase tracking-[0.3em] text-white/55">
+              <span class="inline-block h-[8px] w-[8px] bg-primary"></span>
+              Jadwal grup B
+            </p>
+            <p class="text-[11px] uppercase tracking-[0.26em] text-white/30">
+              {String(monthIndex + 2).padStart(2, '0')} — {slideCount}
+            </p>
+          </div>
+
+          <div class="absolute left-[72px] right-[72px] top-[104px] flex items-end justify-between">
+            <p class="font-cond text-[76px] font-extrabold uppercase leading-[0.8] tracking-[-0.01em] text-white">
+              {month.name}
+            </p>
+            <p class="pb-[10px] text-[12px] font-bold uppercase tracking-[0.2em] text-primary">
+              {month.rows.length} laga
+            </p>
+          </div>
+          <div class="absolute left-[72px] right-[72px] top-[196px] h-px bg-white/15"></div>
+
+          <div class="absolute left-[72px] right-[72px] top-[224px] flex h-[1006px] flex-col justify-center gap-[16px]">
+            {month.rows.map((row) => (
+              <div class="relative flex h-[178px] items-center overflow-hidden rounded-[14px] bg-white/[0.035] ring-1 ring-white/[0.07]">
+                <!-- Home games are marked by the edge, not by a word. -->
+                <span class={`absolute left-0 top-0 h-full w-[5px] ${row.isHome ? 'bg-primary' : 'bg-white/15'}`}></span>
+
+                <div class="w-[150px] shrink-0 pl-[30px]">
+                  <p class="text-[10px] font-bold uppercase tracking-[0.22em] text-white/30">
+                    {String(row.no).padStart(2, '0')}
+                  </p>
+                  <p class="font-cond mt-[2px] text-[68px] font-bold leading-[0.82] text-white">{row.day}</p>
+                  <p class="mt-[4px] text-[10px] font-semibold uppercase tracking-[0.2em] text-white/40">
+                    {row.weekday}
+                  </p>
+                </div>
+
+                <div class="flex h-[92px] w-[92px] shrink-0 items-center justify-center rounded-[12px] bg-white/[0.05]">
+                  <img src={row.logo} alt="" class="h-[64px] w-[64px] object-contain" loading="eager" />
+                </div>
+
+                <div class="min-w-0 flex-1 px-[26px]">
+                  <p class="font-cond truncate text-[44px] font-bold uppercase leading-[1.02] text-white">
+                    {row.opponent}
+                  </p>
+                  <p class="mt-[6px] truncate text-[11px] uppercase tracking-[0.16em] text-white/35">
+                    {row.venue}
+                  </p>
+                </div>
+
+                <div class="w-[152px] shrink-0 pr-[28px] text-right">
+                  <span
+                    class={`inline-block px-[12px] py-[5px] text-[10px] font-bold uppercase tracking-[0.16em] ${
+                      row.isHome ? 'bg-primary text-[#0b0910]' : 'text-white/55 ring-1 ring-white/25'
+                    }`}
+                  >
+                    {row.isHome ? 'Kandang' : 'Tandang'}
+                  </span>
+                  <p class="font-cond mt-[10px] text-[28px] font-semibold leading-none text-white/75">
+                    {row.kickoff}
+                  </p>
+                </div>
+              </div>
+            ))}
+
+          </div>
+
+          <div class="absolute bottom-[52px] left-[72px] right-[72px]">
+            <div class="flex gap-[6px]">
+              {rows.map((row) => (
+                <span class={`h-[5px] flex-1 ${row.no <= shown ? 'bg-primary' : 'bg-white/12'}`}></span>
+              ))}
+            </div>
+            <div class="mt-[16px] flex items-center justify-between">
+              <p class="text-[10px] font-bold uppercase tracking-[0.24em] text-white/30">
+                {isLast ? 'Jadwal lengkap' : 'Geser →'}
+              </p>
+              <p class="text-[10px] font-bold uppercase tracking-[0.24em] text-white/30">
+                {String(month.rows[month.rows.length - 1].no).padStart(2, '0')} / {total}
+              </p>
+            </div>
+          </div>
+        </div>
+      );
+    })}
+  </body>
+</html>
