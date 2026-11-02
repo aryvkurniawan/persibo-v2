@@ -104,7 +104,7 @@ const rivals = [...new Map(rows.map((row) => [row.opponent, row.logo])).entries(
       </div>
 
       <div class="absolute left-[72px] top-[64px]">
-        <p class="flex items-center gap-[10px] text-[12px] font-bold uppercase tracking-[0.3em] text-white/55">
+        <p class="flex items-center gap-[10px] text-[20px] font-bold uppercase tracking-[0.26em] text-white/60">
           <span class="inline-block h-[8px] w-[8px] bg-primary"></span>
           Liga Nusantara · Grup B
         </p>
@@ -134,8 +134,8 @@ const rivals = [...new Map(rows.map((row) => [row.opponent, row.logo])).entries(
         <div class="flex items-end gap-[26px]">
           <p class="font-cond text-[168px] font-bold leading-[0.72] text-primary">{total}</p>
           <div class="pb-[24px]">
-            <p class="text-[13px] font-bold uppercase tracking-[0.34em] text-white/70">Laga</p>
-            <p class="mt-[6px] text-[13px] font-medium uppercase tracking-[0.16em] text-white/40">{span}</p>
+            <p class="text-[26px] font-bold uppercase tracking-[0.28em] text-white/75">Laga</p>
+            <p class="mt-[10px] text-[22px] font-semibold uppercase tracking-[0.14em] text-white/45">{span}</p>
           </div>
         </div>
       </div>
@@ -144,9 +144,9 @@ const rivals = [...new Map(rows.map((row) => [row.opponent, row.logo])).entries(
       <div class="absolute left-[72px] right-[72px] top-[660px]">
         <div class="flex items-center justify-between border-y border-white/12 py-[26px]">
           {rivals.map(([name, logo]) => (
-            <div class="flex w-[122px] flex-col items-center gap-[10px]">
-              <img src={logo} alt={name} class="h-[58px] w-[58px] object-contain" loading="eager" />
-              <p class="w-full text-center text-[8px] font-bold uppercase leading-[1.35] tracking-[0.09em] text-white/35">
+            <div class="flex w-[126px] flex-col items-center gap-[10px]">
+              <img src={logo} alt={name} class="h-[62px] w-[62px] object-contain" loading="eager" />
+              <p class="w-full text-center text-[18px] font-semibold uppercase leading-[1.2] text-white/55">
                 {name}
               </p>
             </div>
@@ -155,32 +155,32 @@ const rivals = [...new Map(rows.map((row) => [row.opponent, row.logo])).entries(
       </div>
 
       <!-- The run as a calendar: two rows of seven, orange for home. -->
-      <div class="absolute left-[72px] right-[72px] top-[886px]">
-        <div class="grid grid-cols-7 gap-y-[26px]">
+      <div class="absolute left-[72px] right-[72px] top-[856px]">
+        <div class="grid grid-cols-7 gap-y-[14px]">
           {rows.map((row) => (
             <div class="border-l-2 pl-[12px]" style={`border-color:${row.isHome ? 'rgb(249 115 22)' : 'rgba(245,242,236,0.16)'}`}>
-              <p class="font-cond text-[58px] font-bold leading-[0.82] text-white">{row.day}</p>
-              <p class="mt-[6px] text-[9px] font-bold uppercase tracking-[0.16em] text-white/40">
+              <p class="font-cond text-[62px] font-bold leading-[0.82] text-white">{row.day}</p>
+              <p class="mt-[8px] text-[18px] font-bold uppercase tracking-[0.12em] text-white/50">
                 {MONTH_NAMES[row.month].slice(0, 3)}
               </p>
-              <p class="mt-[1px] text-[8px] uppercase tracking-[0.14em] text-white/20">{row.weekday}</p>
+              <p class="mt-[2px] text-[18px] uppercase tracking-[0.08em] text-white/35">{row.weekday}</p>
             </div>
           ))}
         </div>
       </div>
 
       <!-- Closes the frame: the two facts a supporter asks first, one line each. -->
-      <div class="absolute left-[72px] right-[72px] bottom-[152px] border-t border-white/12 pt-[26px]">
+      <div class="absolute left-[72px] right-[72px] bottom-[136px] border-t border-white/12 pt-[22px]">
         <div class="flex items-start justify-between gap-[40px]">
           <div>
-            <p class="text-[9px] font-bold uppercase tracking-[0.28em] text-primary">Kandang</p>
-            <p class="mt-[8px] text-[12px] uppercase leading-[1.6] tracking-[0.1em] text-white/70">
+            <p class="text-[20px] font-bold uppercase tracking-[0.18em] text-primary">Kandang</p>
+            <p class="mt-[8px] text-[22px] uppercase leading-[1.35] text-white/75">
               Stadion Letjen H. Soedirman
             </p>
           </div>
           <div class="text-right">
-            <p class="text-[9px] font-bold uppercase tracking-[0.28em] text-white/40">Format</p>
-            <p class="mt-[8px] text-[12px] uppercase leading-[1.6] tracking-[0.1em] text-white/70">
+            <p class="text-[20px] font-bold uppercase tracking-[0.18em] text-white/45">Format</p>
+            <p class="mt-[8px] text-[22px] uppercase leading-[1.35] text-white/75">
               Grup B · 8 klub<br />kandang-tandang
             </p>
           </div>
@@ -188,12 +188,12 @@ const rivals = [...new Map(rows.map((row) => [row.opponent, row.logo])).entries(
       </div>
 
       <div class="absolute bottom-[58px] left-[72px] right-[72px] flex items-end justify-between">
-        <p class="font-cond text-[34px] font-bold uppercase leading-none text-white">
+        <p class="font-cond text-[42px] font-bold uppercase leading-none text-white">
           Persibo<span class="text-primary">.</span>
         </p>
         <div class="flex items-center gap-[26px]">
-          <p class="text-[10px] uppercase tracking-[0.24em] text-white/30">01 — {slideCount}</p>
-          <p class="text-[10px] uppercase tracking-[0.24em] text-white/30">Geser →</p>
+          <p class="text-[18px] uppercase tracking-[0.2em] text-white/35">01 — {slideCount}</p>
+          <p class="text-[18px] uppercase tracking-[0.2em] text-white/35">Geser →</p>
         </div>
       </div>
     </div>
@@ -215,37 +215,37 @@ const rivals = [...new Map(rows.map((row) => [row.opponent, row.logo])).entries(
           </div>
 
           <div class="absolute left-[72px] right-[72px] top-[62px] flex items-center justify-between">
-            <p class="flex items-center gap-[10px] text-[12px] font-bold uppercase tracking-[0.3em] text-white/55">
+            <p class="flex items-center gap-[10px] text-[20px] font-bold uppercase tracking-[0.26em] text-white/60">
               <span class="inline-block h-[8px] w-[8px] bg-primary"></span>
               Jadwal grup B
             </p>
-            <p class="text-[11px] uppercase tracking-[0.26em] text-white/30">
+            <p class="text-[18px] uppercase tracking-[0.2em] text-white/35">
               {String(monthIndex + 2).padStart(2, '0')} — {slideCount}
             </p>
           </div>
 
           <div class="absolute left-[72px] right-[72px] top-[104px] flex items-end justify-between">
-            <p class="font-cond text-[76px] font-extrabold uppercase leading-[0.8] tracking-[-0.01em] text-white">
+            <p class="font-cond text-[92px] font-extrabold uppercase leading-[0.78] tracking-[-0.01em] text-white">
               {month.name}
             </p>
-            <p class="pb-[10px] text-[12px] font-bold uppercase tracking-[0.2em] text-primary">
+            <p class="pb-[12px] text-[22px] font-bold uppercase tracking-[0.18em] text-primary">
               {month.rows.length} laga
             </p>
           </div>
           <div class="absolute left-[72px] right-[72px] top-[196px] h-px bg-white/15"></div>
 
-          <div class="absolute left-[72px] right-[72px] top-[224px] flex h-[1006px] flex-col justify-center gap-[16px]">
+          <div class="absolute left-[72px] right-[72px] top-[240px] flex flex-col gap-[16px]">
             {month.rows.map((row) => (
               <div class="relative flex h-[178px] items-center overflow-hidden rounded-[14px] bg-white/[0.035] ring-1 ring-white/[0.07]">
                 <!-- Home games are marked by the edge, not by a word. -->
                 <span class={`absolute left-0 top-0 h-full w-[5px] ${row.isHome ? 'bg-primary' : 'bg-white/15'}`}></span>
 
-                <div class="w-[150px] shrink-0 pl-[30px]">
-                  <p class="text-[10px] font-bold uppercase tracking-[0.22em] text-white/30">
+                <div class="w-[142px] shrink-0 pl-[28px]">
+                  <p class="text-[18px] font-bold uppercase tracking-[0.16em] text-white/35">
                     {String(row.no).padStart(2, '0')}
                   </p>
-                  <p class="font-cond mt-[2px] text-[68px] font-bold leading-[0.82] text-white">{row.day}</p>
-                  <p class="mt-[4px] text-[10px] font-semibold uppercase tracking-[0.2em] text-white/40">
+                  <p class="font-cond mt-[2px] text-[78px] font-bold leading-[0.8] text-white">{row.day}</p>
+                  <p class="mt-[6px] text-[19px] font-semibold uppercase tracking-[0.14em] text-white/50">
                     {row.weekday}
                   </p>
                 </div>
@@ -254,24 +254,24 @@ const rivals = [...new Map(rows.map((row) => [row.opponent, row.logo])).entries(
                   <img src={row.logo} alt="" class="h-[64px] w-[64px] object-contain" loading="eager" />
                 </div>
 
-                <div class="min-w-0 flex-1 px-[26px]">
-                  <p class="font-cond truncate text-[44px] font-bold uppercase leading-[1.02] text-white">
+                <div class="min-w-0 flex-1 px-[22px]">
+                  <p class="font-cond text-[50px] font-bold uppercase leading-[0.98] text-white">
                     {row.opponent}
                   </p>
-                  <p class="mt-[6px] truncate text-[11px] uppercase tracking-[0.16em] text-white/35">
+                  <p class="mt-[8px] text-[21px] uppercase tracking-[0.12em] text-white/45">
                     {row.venue}
                   </p>
                 </div>
 
-                <div class="w-[152px] shrink-0 pr-[28px] text-right">
+                <div class="w-[168px] shrink-0 pr-[26px] text-right">
                   <span
-                    class={`inline-block px-[12px] py-[5px] text-[10px] font-bold uppercase tracking-[0.16em] ${
+                    class={`inline-block px-[14px] py-[7px] text-[20px] font-bold uppercase tracking-[0.12em] ${
                       row.isHome ? 'bg-primary text-[#0b0910]' : 'text-white/55 ring-1 ring-white/25'
                     }`}
                   >
                     {row.isHome ? 'Kandang' : 'Tandang'}
                   </span>
-                  <p class="font-cond mt-[10px] text-[28px] font-semibold leading-none text-white/75">
+                  <p class="font-cond mt-[12px] text-[38px] font-semibold leading-none text-white/80">
                     {row.kickoff}
                   </p>
                 </div>
@@ -287,10 +287,10 @@ const rivals = [...new Map(rows.map((row) => [row.opponent, row.logo])).entries(
               ))}
             </div>
             <div class="mt-[16px] flex items-center justify-between">
-              <p class="text-[10px] font-bold uppercase tracking-[0.24em] text-white/30">
+              <p class="text-[18px] font-bold uppercase tracking-[0.2em] text-white/35">
                 {isLast ? 'Jadwal lengkap' : 'Geser →'}
               </p>
-              <p class="text-[10px] font-bold uppercase tracking-[0.24em] text-white/30">
+              <p class="text-[18px] font-bold uppercase tracking-[0.2em] text-white/35">
                 {String(month.rows[month.rows.length - 1].no).padStart(2, '0')} / {total}
               </p>
             </div>
