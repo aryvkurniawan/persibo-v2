@@ -12,6 +12,13 @@ dan proyek ini mengikuti [Semantic Versioning](https://semver.org/lang/id/).
 - `npm run derive-player-stats` (`scripts/derive-player-stats.js`): menurunkan statistik pemain dari `matchDetails.json` 2024-25 + 2025-26, bukan dari tabel iLeague. Penampilan = XI awal + pengganti yang benar-benar masuk (punya `substitution_minutes`), gol dan kartu dari linimasa. Jembatan nama pendek → lengkap ada di `scripts/player-alias.json`, dicocokkan lewat nomor punggung karena pencocokan nama samar gagal pada 12 dari 30 pemain. Skrip idempoten: boleh dijalankan ulang setelah data pertandingan bertambah.
 
 - Tautan media sosial resmi di footer: Instagram, Threads, dan Facebook (`@persibocom`), ikon SVG sebaris dengan deskripsi situs, terbuka di tab baru.
+- Halaman `/arsip/sejarah`: prestasi (8 gelar, termasuk Juara Divisi Utama 2009-10, Juara Piala Indonesia 2012, dan promosi 2023-24) serta tiga musim lama dengan hasil pertandingan. Sumbernya RSSSF, diambil `.scratch/scrape_history_rsssf.py` → `src/data/history.json`.
+  - 2009-10: 20 laga liga (12-1-7, 31-17, 37 poin) plus semifinal dan final yang dimenangkan lewat penalti 3-1 atas Deltras. Rekor dihitung ulang dari hasil pertandingan dan cocok persis dengan tabel RSSSF.
+  - 2011-12 (Liga Prima Indonesia, peringkat 4) dan 2013 (didiskualifikasi) hanya menyimpan sebagian laga; halaman menyebut berapa yang bertahan, bukan menampilkannya seolah lengkap.
+  - Musim sebelum 2024-25 tidak punya susunan pemain, pencetak gol, kartu, atau wasit di sumber mana pun, jadi halaman tidak merendernya sebagai kosong. Hanya skor yang ditampilkan.
+  - iLeague tidak dipakai untuk ini: `/fixtures/index/PEGADAIAN_LIGA_2_2018` mengembalikan jadwal 2026, sehingga scrape per nama musim akan menulis jadwal tahun ini ke dalam file 2018.
+  - Penamaan musim dijelaskan di halaman: "2009-10" berarti kompetisi dua tahun yang mulai pertengahan tahun, "2013" berarti satu tahun kalender yang mulai awal tahun. Tiap musim juga menyebut jendela waktunya sendiri, karena periode 2011-2014 terganggu dualisme federasi dan sanksi.
+  - Kredit penulis RSSSF diambil dari footer dokumen dan ditampilkan per musim (Feri Istanto, Novan Herfiyana, Karel Stokkermans untuk 2009-10; Karel Stokkermans untuk 2011-12 dan 2013), sesuai syarat RSSSF yang mewajibkan pencantuman penulis.
 
 ### Fixed
 - Laga kandang-tandang PERSIBANGGA (18 November 2026) semula tercatat 17 November di `src/data/seasons/2026-27/fixtures.json`. Halaman jadwal iLeague (`/fixtures/index/LIGA_NUSANTARA_2026-27/2`) dan halaman detailnya sama-sama menyebut Rabu, 18 November; `kickoff_iso` dan `match_url` ikut dikoreksi.
