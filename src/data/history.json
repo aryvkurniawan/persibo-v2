@@ -44,6 +44,150 @@
   "seasons": [
     {
       "credit": [
+        "Karel Stokkermans"
+      ],
+      "season": "2003",
+      "window": "",
+      "label": "Divisi Satu 2003",
+      "competition": "Divisi Satu",
+      "result": "Peringkat 5",
+      "note": "Relegated",
+      "detail": false,
+      "record": {
+        "played": 10,
+        "won": 4,
+        "drawn": 1,
+        "lost": 5,
+        "goals_for": 11,
+        "goals_against": 12,
+        "points": 13
+      },
+      "matches": [],
+      "source": "https://rsssf.org/tablesi/indo03.html"
+    },
+    {
+      "credit": [
+        "Karel Stokkermans"
+      ],
+      "season": "2004",
+      "window": "",
+      "label": "Divisi Dua 2004",
+      "competition": "Divisi Dua",
+      "result": "Peringkat 2",
+      "note": "Qualified",
+      "detail": false,
+      "record": {
+        "played": 4,
+        "won": 2,
+        "drawn": 1,
+        "lost": 1,
+        "goals_for": 9,
+        "goals_against": 2,
+        "points": 7
+      },
+      "matches": [],
+      "source": "https://rsssf.org/tablesi/indo04.html"
+    },
+    {
+      "credit": [
+        "Feri Istanto",
+        "Novan Herfiyana",
+        "Karel Stokkermans"
+      ],
+      "season": "2005",
+      "window": "",
+      "label": "Piala Indonesia 2005",
+      "competition": "Piala Indonesia",
+      "result": "Peringkat 2",
+      "note": "Qualified",
+      "detail": false,
+      "record": {
+        "played": 16,
+        "won": 8,
+        "drawn": 3,
+        "lost": 5,
+        "goals_for": 19,
+        "goals_against": 15,
+        "points": 27
+      },
+      "matches": [],
+      "source": "https://rsssf.org/tablesi/indo05.html"
+    },
+    {
+      "credit": [
+        "Karel Stokkermans",
+        "Novan Herfiyana",
+        "Feri Istanto"
+      ],
+      "season": "2006",
+      "window": "",
+      "label": "Divisi Satu 2006",
+      "competition": "Divisi Satu",
+      "result": "Peringkat 6",
+      "note": "",
+      "detail": false,
+      "record": {
+        "played": 16,
+        "won": 5,
+        "drawn": 3,
+        "lost": 8,
+        "goals_for": 21,
+        "goals_against": 17,
+        "points": 18
+      },
+      "matches": [],
+      "source": "https://rsssf.org/tablesi/indo06.html"
+    },
+    {
+      "credit": [
+        "Karel Stokkermans",
+        "Novan Herfiyana",
+        "Feri Istanto"
+      ],
+      "season": "2007",
+      "window": "",
+      "label": "Divisi Satu 2007",
+      "competition": "Divisi Satu",
+      "result": "Peringkat 1",
+      "note": "",
+      "detail": false,
+      "record": {
+        "played": 18,
+        "won": 11,
+        "drawn": 4,
+        "lost": 3,
+        "goals_for": 25,
+        "goals_against": 11,
+        "points": 37
+      },
+      "matches": [],
+      "source": "https://rsssf.org/tablesi/indo07.html"
+    },
+    {
+      "credit": [
+        "Karel Stokkermans"
+      ],
+      "season": "2008-09",
+      "window": "",
+      "label": "Liga Esia II 2008-09",
+      "competition": "Liga Esia II",
+      "result": "Peringkat 6",
+      "note": "",
+      "detail": false,
+      "record": {
+        "played": 26,
+        "won": 12,
+        "drawn": 5,
+        "lost": 9,
+        "goals_for": 35,
+        "goals_against": 31,
+        "points": 41
+      },
+      "matches": [],
+      "source": "https://rsssf.org/tablesi/indo08.html"
+    },
+    {
+      "credit": [
         "Feri Istanto",
         "Novan Herfiyana",
         "Karel Stokkermans"
@@ -243,6 +387,29 @@
         }
       ],
       "source": "https://rsssf.org/tablesi/indo2010.html"
+    },
+    {
+      "credit": [
+        "Karel Stokkermans"
+      ],
+      "season": "2010-11",
+      "window": "",
+      "label": "Liga Primer Indonesia 2010-11",
+      "competition": "Liga Primer Indonesia",
+      "result": "Peringkat 8",
+      "note": "",
+      "detail": false,
+      "record": {
+        "played": 18,
+        "won": 8,
+        "drawn": 5,
+        "lost": 5,
+        "goals_for": 25,
+        "goals_against": 22,
+        "points": 29
+      },
+      "matches": [],
+      "source": "https://rsssf.org/tablesi/indo2011.html"
     },
     {
       "credit": [

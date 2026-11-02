@@ -2,11 +2,18 @@
 import Layout from '../../layouts/Layout.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import history from '../../data/history.json';
+import standingsHistory from '../../data/historyStandings.json';
 
 // Seasons before 2024-25 exist only as text archives (RSSSF). They carry scores
 // but no lineups, cards or referees, so this page shows what is real and says
 // plainly what is not, rather than rendering empty stat blocks.
 const { honours, seasons } = history;
+
+// Historical tables come straight from RSSSF and carry no logos or club metadata,
+// so they are rendered with the season block instead of the season-aware
+// StandingsTable component (which needs a teams.json per season).
+const tablesFor = (season: string) =>
+  standingsHistory.tables.filter((t) => t.season === season);
 
 const tierTone: Record<string, string> = {
   'Divisi Utama': 'text-primary',
@@ -121,6 +128,55 @@ const detailedSeasons = [
                   </div>
                 ))}
               </dl>
+
+              {tablesFor(season.season).map((table) => (
+                <div class="mt-5">
+                  <div class="flex items-end justify-between">
+                    <h4 class="text-[10px] font-bold uppercase tracking-[0.18em] text-white/40">
+                      Klasemen
+                    </h4>
+                    <span class="text-[10px] uppercase tracking-[0.16em] text-white/25">
+                      {table.competition}{table.stage ? ` · ${table.stage}` : ''}
+                    </span>
+                  </div>
+                  <div class="mt-3 w-full overflow-x-auto border border-white/12 bg-[#0c0b0f]">
+                    <table class="w-full">
+                      <thead>
+                        <tr class="border-b border-white/10 text-[10px] uppercase tracking-[0.14em] text-white/30">
+                          <th class="w-8 px-2 py-2 text-left font-bold">#</th>
+                          <th class="px-2 py-2 text-left font-bold">Klub</th>
+                          <th class="w-9 px-2 py-2 text-right font-bold">Mn</th>
+                          <th class="hidden w-9 px-2 py-2 text-right font-bold sm:table-cell">M</th>
+                          <th class="hidden w-9 px-2 py-2 text-right font-bold sm:table-cell">S</th>
+                          <th class="hidden w-9 px-2 py-2 text-right font-bold sm:table-cell">K</th>
+                          <th class="hidden w-12 px-2 py-2 text-right font-bold sm:table-cell">Gol</th>
+                          <th class="w-10 px-2 py-2 text-right font-bold">Pts</th>
+                        </tr>
+                      </thead>
+                      <tbody class="divide-y divide-white/5">
+                        {table.rows.map((row) => {
+                          const own = row.club.toUpperCase() === 'PERSIBO';
+                          return (
+                            <tr class={own ? 'bg-primary/10' : ''}>
+                              <td class={`px-2 py-2 text-[11px] tnum ${own ? 'text-primary' : 'text-white/35'}`}>{row.pos}</td>
+                              <td class={`px-2 py-2 text-[12px] ${own ? 'font-semibold text-white' : 'text-white/60'}`}>
+                                {row.club}
+                                {row.note && <span class="ml-2 text-[10px] uppercase tracking-[0.1em] text-white/25">{row.note}</span>}
+                              </td>
+                              <td class="px-2 py-2 text-right text-[11px] tnum text-white/45">{row.p}</td>
+                              <td class="hidden px-2 py-2 text-right text-[11px] tnum text-white/45 sm:table-cell">{row.w}</td>
+                              <td class="hidden px-2 py-2 text-right text-[11px] tnum text-white/45 sm:table-cell">{row.d}</td>
+                              <td class="hidden px-2 py-2 text-right text-[11px] tnum text-white/45 sm:table-cell">{row.l}</td>
+                              <td class="hidden px-2 py-2 text-right text-[11px] tnum text-white/45 sm:table-cell">{row.gf}-{row.ga}</td>
+                              <td class={`px-2 py-2 text-right text-[11px] tnum ${own ? 'font-bold text-primary' : 'text-white/55'}`}>{row.pts}</td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              ))}
 
               {season.matches.length > 0 ? (
                 <>
