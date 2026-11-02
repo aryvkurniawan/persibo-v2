@@ -29,9 +29,9 @@ const clean = lineup.starting_xi.filter((player) => {
   return true;
 });
 
-// The 2025-26 scrape captured the whole squad in the starting_xi field (65 names,
-// with duplicated shirt numbers). A pitch cannot represent that honestly, so those
-// matches fall back to a squad grid below.
+// iLeague's responsive copies repeat rows, and a squad-list page can leave more
+// than eleven names in the XI field. A pitch cannot represent that honestly, so
+// anything other than a clean eleven falls back to a squad grid below.
 const isRealEleven = clean.length > 0 && clean.length <= 11;
 
 // Rows follow how many players the scrape actually lists, not a fixed formation:

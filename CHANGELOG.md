@@ -11,6 +11,7 @@ dan proyek ini mengikuti [Semantic Versioning](https://semver.org/lang/id/).
 - `npm run sosmed`: poster media sosial 1080×1080 dari halaman Astro `src/pages/sosmed/[poster].astro`, di-screenshot headless Chrome (`scripts/sosmed.mjs`) ke `social/out/`. Resep per gambar di `social/posts.json`; mode `jadwal` dan `hasil` (skor besar, badge MENANG/KALAH/SERI, pencetak gol dari field `scorers`), plus blok tiga laga berikutnya. Logo lawan pakai varian `/h/200/` agar tidak blur, footer poster bercap hak cipta.
 
 ### Changed
+- Arsip 2025-26 dilengkapi: 12 dari 12 pertandingan punya detail (sebelumnya 3), masing-masing dengan XI + cadangan + pelatih kedua tim, daftar gol/kartu, wasit lengkap (termasuk asisten 2 dan cadangan wasit), dan venue. Scraper-nya `.scratch/scrape_ileague_2025_26.py`, memakai parser 2024-25 ditambah pembaca blok hero untuk gol/kartu karena tab Linimasa 2025-26 kosong di sumber. Statistik pertandingan tidak diisi: iLeague tidak pernah menerbitkannya untuk musim ini.
 - Seluruh halaman memakai satu bahasa desain "broadcast" dari homepage: judul `font-cond` uppercase, panel kotak `bg-[#0c0b0f]` + `border-white/12`, aksen oranye, tanpa sudut membulat.
 - `PageHeader.astro` baru sebagai header halaman bersama (label, judul, meta, deskripsi).
 - `StandingsTable`, `MatchCard`, `PlayerCard`, `Lineup`, `FilterBar`, `SearchBar`, `Breadcrumb`, `ShareButtons`, `TopPerformers`, `PlayerStatsChart` dirombak mengikuti token tersebut.

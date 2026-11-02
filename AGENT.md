@@ -72,6 +72,12 @@ Kalau arsip terlanjur tertimpa, pulihkan dengan:
 git checkout archive/2025-26-final -- src/data/seasons/2025-26
 ```
 
+Detail pertandingan 2025-26 punya scraper sendiri, `.scratch/scrape_ileague_2025_26.py`
+(menolak menimpa tanpa `--force`). Ia memakai parser 2024-25 untuk lineup/pelatih/wasit,
+lalu menambal tiga hal yang beda di musim itu: gol & kartu dibaca dari blok hero karena
+tab Linimasa kosong, label wasit "Cadangan Wasit"/"Asisten Wasit 2" ikut dipetakan, dan
+statistik yang tidak pernah terbit dibuang (bukan ditulis nol).
+
 Endpoint iLeague yang dipakai scraper (`/embed/klasemen/...`, `/table/index/...`,
 `/clubs/single/...`) tetap sama antar musim; halaman `/table/embed/<KOMPETISI>`
 hanya membungkus endpoint tersebut lewat `<iframe>`.

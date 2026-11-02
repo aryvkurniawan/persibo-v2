@@ -77,8 +77,9 @@ export function buildTimeline(
     return null;
   };
 
-  // The 2025-26 scrape never captured an event's team. Those events still belong
-  // on the timeline; attribute them by looking the scorer up in the lineups.
+  // Events keep their side when the source names the club, but spellings differ
+  // ("PERSIBO Bojonegoro" vs "PERSIBO BOJONEGORO"), so fall back to looking the
+  // player up in the lineups before leaving an event side-less.
   const lineupSide = new Map<string, EventSide>();
   for (const [key, side] of [
     ['home_team', 'home'],
