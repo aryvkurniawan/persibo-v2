@@ -4,7 +4,7 @@
     "date_label": "6 November 2026",
     "competition": "Uji Coba",
     "home_team": "PERSIBO Bojonegoro",
-    "away_team": "PS Ngada",
+    "away_team": "PSN Ngada",
     "home_score": null,
     "away_score": null,
     "time": "15:30 WIB",
@@ -12,8 +12,14 @@
     "venue": "Stadion Letjen H. Soedirman, Bojonegoro",
     "ticket_url": "https://tiketbisa.com/event/persibo-bojonegoro-vs-ps-ngada",
     "ticket_tiers": [
-      { "name": "Ekonomi", "price": 25000 },
-      { "name": "VIP", "price": 90000 }
+      {
+        "name": "Ekonomi",
+        "price": 25000
+      },
+      {
+        "name": "VIP",
+        "price": 90000
+      }
     ],
     "opponent_logo": "/img/teams/psn-ngada.png",
     "scorers": [],
