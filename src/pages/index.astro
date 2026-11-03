@@ -28,6 +28,8 @@ const nextOpponent = next ? (nextIsHome ? next.away_team : next.home_team) : '';
 const homeCount = fixtures.filter((fixture) => fixture.home_team.toUpperCase().includes('PERSIBO')).length;
 const awayCount = fixtures.length - homeCount;
 const friendlies = await loadFriendlies();
+const nextFriendly = friendlies.find((match) => match.home_score === null) ?? null;
+const eventSource = nextFriendly?.kickoff_iso ? nextFriendly : next?.kickoff_iso ? next : null;
 
 const [nextDay, nextMonth, nextYear] = next ? next.date.replace(/^[^,]+,\s*/, '').split(' ') : ['--', '---', '----'];
 const nextWeekday = next ? getWeekday(next.date) : '';
@@ -418,4 +420,27 @@ const news = [
       })();
     </script>
   )}
+  {eventSource?.kickoff_iso && (
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": eventSource.home_team + " vs " + eventSource.away_team,
+    "startDate": eventSource.kickoff_iso,
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": eventSource.venue,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bojonegoro",
+        "addressRegion": "Jawa Timur",
+        "addressCountry": "ID"
+      }
+    },
+    "homeTeam": { "@type": "SportsTeam", "name": eventSource.home_team },
+    "awayTeam": { "@type": "SportsTeam", "name": eventSource.away_team },
+    "url": "https://persibo.com/"
+  })} />
+)}
 </Layout>

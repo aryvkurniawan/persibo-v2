@@ -5,7 +5,7 @@ import LineupPitch from '../../components/LineupPitch.astro';
 import MatchTimeline from '../../components/MatchTimeline.astro';
 import ShareButtons from '../../components/ShareButtons.astro';
 import { loadFixtures, getMatchDetailSlug, loadMatchDetails, getMatchDetailByUrl, loadTeams, getTeamLogo, CURRENT_SEASON, ARCHIVE_SEASON, type Season } from '../../utils/dataLoader';
-import { formatDateLong } from '../../utils/dates';
+import { formatDateLong, parseFixtureDate } from '../../utils/dates';
 import { buildTimeline } from '../../utils/matchTimeline';
 
 export async function getStaticPaths() {
@@ -29,6 +29,8 @@ export async function getStaticPaths() {
 }
 
 const { fixture, matchDetail, season } = Astro.props;
+// Older seasons never had kickoff_iso; schema.org still needs an ISO date.
+const eventStart = fixture.kickoff_iso || parseFixtureDate(fixture.date)?.toISOString().slice(0, 10) || fixture.date;
 const teams = await loadTeams(season);
 const seasonLabel = season;
 // Liga 2 ran until 2024-25; the competition was renamed Liga Nusantara after that.
@@ -355,7 +357,7 @@ const breadcrumbItems = [
   "@context": "https://schema.org",
   "@type": "SportsEvent",
   "name": `${fixture.home_team} vs ${fixture.away_team}`,
-  "startDate": fixture.date,
+  "startDate": eventStart,
   "location": {
     "@type": "Place",
     "name": fixture.venue

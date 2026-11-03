@@ -226,7 +226,7 @@ Implementasi di berbagai halaman:
 - **SportsTeam** - Di tim/profil.astro
 - **Person** - Di pemain/[slug].astro
 - **NewsArticle** - Di artikel berita
-- **SportsEvent** - Di pertandingan/[slug].astro
+- **SportsEvent** - Di pertandingan/[slug].astro (semua laga) dan beranda (laga terjadwal terdekat, termasuk uji coba)
 - **FAQPage** - Di tim/profil.astro
 - **BreadcrumbList** - Di Breadcrumb.astro
 

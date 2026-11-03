@@ -173,6 +173,8 @@ export interface Friendly {
   venue: string;
   /** Kickoff local time, e.g. 15:30 WIB. Scheduled friendlies only. */
   time?: string;
+  /** ISO kickoff; schema.org needs it, "15:30 WIB" is not machine readable. */
+  kickoff_iso?: string;
   /** Where to buy tickets, for scheduled friendlies. */
   ticket_url?: string;
   /** Local logo for opponents iLeague does not carry (friendlies only). */
