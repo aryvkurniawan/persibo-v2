@@ -13,19 +13,24 @@ const { match, size = 'small' } = Astro.props;
 
 const teams = await loadTeams();
 const isPersiboHome = match.home_team.toUpperCase().includes('PERSIBO');
-const persiboScore = isPersiboHome ? match.home_score : match.away_score;
-const opponentScore = isPersiboHome ? match.away_score : match.home_score;
+const played = match.home_score !== null && match.away_score !== null;
+const persiboScore = (isPersiboHome ? match.home_score : match.away_score) ?? 0;
+const opponentScore = (isPersiboHome ? match.away_score : match.home_score) ?? 0;
 const opponent = isPersiboHome ? match.away_team : match.home_team;
-const opponentLogo = match.opponent_logo || getTeamLogo(teams, opponent) || '/logo-64.png';
+const opponentLogo = match.opponent_logo || getTeamLogo(teams, opponent) || 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
-const outcome = persiboScore > opponentScore ? 'MENANG' : persiboScore < opponentScore ? 'KALAH' : 'SERI';
+const outcome = !played ? 'AKAN DATANG' : persiboScore > opponentScore ? 'MENANG' : persiboScore < opponentScore ? 'KALAH' : 'SERI';
 const outcomeClass =
-  outcome === 'MENANG'
+  !played
+    ? 'border-primary/40 text-primary'
+    : outcome === 'MENANG'
     ? 'border-green-500/40 text-green-400'
     : outcome === 'KALAH'
       ? 'border-red-500/40 text-red-400'
       : 'border-yellow-500/40 text-yellow-400';
 
+const persiboText = played ? persiboScore : '-';
+const oppText = played ? opponentScore : '-';
 const dateText = match.date ? formatDateLong(match.date_label) : match.date_label;
 const dateShort = match.date ? formatDateShort(match.date_label) : match.date_label;
 ---
@@ -57,9 +62,9 @@ const dateShort = match.date ? formatDateShort(match.date_label) : match.date_la
 
           <div class="flex flex-col items-center gap-1">
             <p class="font-cond text-4xl font-bold leading-none text-white tnum">
-              {persiboScore}<span class="px-1 text-white/25">:</span>{opponentScore}
+              {played ? persiboScore + ' : ' + opponentScore : match.time ?? 'vs'}
             </p>
-            <p class="text-[10px] font-bold uppercase tracking-[0.16em] text-white/25">Selesai</p>
+            <p class="text-[10px] font-bold uppercase tracking-[0.16em] text-white/25">{played ? 'Selesai' : 'Kickoff'}</p>
           </div>
 
           <div class="flex flex-col items-center gap-1.5 text-center">
@@ -69,7 +74,7 @@ const dateShort = match.date ? formatDateShort(match.date_label) : match.date_la
           </div>
         </div>
 
-        {match.scorers.length > 0 && (
+        {played && match.scorers.length > 0 && (
           <ul class="mt-3.5 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-white/10 pt-3">
             {match.scorers.map((scorer) => (
               <li class="flex items-baseline gap-1.5 text-[10px] leading-snug text-white/45">
@@ -84,6 +89,7 @@ const dateShort = match.date ? formatDateShort(match.date_label) : match.date_la
           <span class="material-symbols-outlined text-[13px] leading-none">location_on</span>
           <span class="min-w-0">{match.venue}</span>
         </p>
+        {match.ticket_url && <a href={match.ticket_url} target="_blank" rel="noopener" class="mt-3 block bg-primary py-2 text-center text-[11px] font-bold uppercase tracking-[0.16em] text-[#08070a]">Beli tiket</a>}
       </div>
     </article>
   ) : (
@@ -99,12 +105,12 @@ const dateShort = match.date ? formatDateShort(match.date_label) : match.date_la
         <li class="flex items-center gap-2.5">
           <img src="/logo-64.png" alt="" width="30" height="30" class="h-[30px] w-[30px] shrink-0 object-contain" loading="lazy" />
           <p class="min-w-0 flex-1 truncate font-cond text-xl font-semibold uppercase leading-none text-white">PERSIBO</p>
-          <p class="font-cond text-2xl font-bold leading-none text-white tnum">{persiboScore}</p>
+          <p class="font-cond text-2xl font-bold leading-none text-white tnum">{persiboText}</p>
         </li>
         <li class="flex items-center gap-2.5">
           <img src={opponentLogo} alt="" width="30" height="30" class="h-[30px] w-[30px] shrink-0 object-contain" loading="lazy" />
           <p class="min-w-0 flex-1 font-cond text-xl font-semibold uppercase leading-[1.05] text-white/70">{opponent}</p>
-          <p class="font-cond text-2xl font-bold leading-none text-white/70 tnum">{opponentScore}</p>
+          <p class="font-cond text-2xl font-bold leading-none text-white/70 tnum">{oppText}</p>
         </li>
       </ul>
 

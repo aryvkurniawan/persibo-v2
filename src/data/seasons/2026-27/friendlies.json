@@ -1,5 +1,30 @@
 [
   {
+    "date": "2026-11-06",
+    "date_label": "6 November 2026",
+    "competition": "Uji Coba",
+    "home_team": "PERSIBO Bojonegoro",
+    "away_team": "PS Ngada",
+    "home_score": null,
+    "away_score": null,
+    "time": "15:30 WIB",
+    "venue": "Stadion Letjen H. Soedirman, Bojonegoro",
+    "ticket_url": "https://tiketbisa.com/event/persibo-bojonegoro-vs-ps-ngada",
+    "opponent_logo": "/img/teams/psn-ngada.png",
+    "scorers": [],
+    "note": "Uji coba pengganti laga kontra Persekabpas Pasuruan yang batal. Tiket dijual lewat tiketbisa.com.",
+    "sources": [
+      {
+        "label": "Radar Bojonegoro",
+        "url": "https://radarbojonegoro.jawapos.com/sportainment/2611030001/batal-uji-coba-dengan-persekabpas-persibo-ganti-kontra-ps-ngada"
+      },
+      {
+        "label": "Tiketbisa",
+        "url": "https://tiketbisa.com/event/persibo-bojonegoro-vs-ps-ngada"
+      }
+    ]
+  },
+  {
     "date": "2026-10-25",
     "date_label": "25 Oktober 2026",
     "competition": "Uji Coba",

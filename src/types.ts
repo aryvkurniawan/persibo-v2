@@ -167,9 +167,14 @@ export interface Friendly {
   competition: string;
   home_team: string;
   away_team: string;
-  home_score: number;
-  away_score: number;
+  /** Null while the friendly is still scheduled. */
+  home_score: number | null;
+  away_score: number | null;
   venue: string;
+  /** Kickoff local time, e.g. 15:30 WIB. Scheduled friendlies only. */
+  time?: string;
+  /** Where to buy tickets, for scheduled friendlies. */
+  ticket_url?: string;
   /** Local logo for opponents iLeague does not carry (friendlies only). */
   opponent_logo?: string;
   scorers: FriendlyScorer[];
