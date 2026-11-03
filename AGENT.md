@@ -162,8 +162,8 @@ hanya membungkus endpoint tersebut lewat `<iframe>`.
 ### Poster Media Sosial (`npm run sosmed`)
 
 Poster dibuat sebagai halaman Astro biasa (Tailwind + font situs), lalu di-screenshot headless Chrome
-lewat `scripts/sosmed.mjs` → `social/out/<out>.png`. Resolusi default 1080×1080; isi resep poster
-ada di `social/posts.json` (satu entry = satu PNG).
+lewat `scripts/sosmed.mjs` → `social/out/<out>.png`. Resolusi 1080×1350 (portrait, sama dengan
+carousel jadwal grup); isi resep poster ada di `social/posts.json` (satu entry = satu PNG).
 
 ```json
 { "out": "laga-persipa", "md": 1 }
@@ -171,7 +171,12 @@ ada di `social/posts.json` (satu entry = satu PNG).
 
 Field opsional: `mode` (`jadwal`|`hasil`), `date`, `time`, `home`, `away`, `venue`, `grup`, `md`,
 `hs`/`as` (skor), `scorers` (`[{ minute, player, team }]`). Yang tidak diisi diambil dari laga
-berikutnya di `fixtures.json` musim aktif. Kanvas tetap 1080×1080.
+berikutnya di `fixtures.json` musim aktif. Kanvas 1080×1350.
+
+Laga non-liga (uji coba) memakai empat field tambahan: `competition` (label header, mis. "Uji
+Coba"), `tag` (chip kanan atas, default `Grup B`), `ticket` (satu baris harga tiket di panel
+tanggal; CTA oranye tetap `persibo.com`), dan `captions: { home, away }` karena laga uji coba tidak
+punya grup untuk dijadikan keterangan lawan.
 
 Mode `hasil` menampilkan skor besar, badge MENANG/KALAH/SERI, dan daftar pencetak gol. Blok
 pencetak gol hanya muncul kalau `scorers` diisi; kalau tidak, poster jatuh ke blok jadwal
@@ -183,7 +188,7 @@ berikutnya. `matchDetails.events` sengaja tidak dipakai: isinya tidak cocok deng
 - Hasil render di `social/out/` ikut di-commit: itu bahan yang diposting, bukan artefak build. Render ulang boleh menimpa berkas yang sama.
 - Script memakai dev server yang sudah jalan di port 4321; kalau belum ada, ia menyalakannya sendiri.
 - Logo lawan diambil dari URL musim aktif dengan varian `/h/200/` (830px), bukan crest mirror
-  50–105px yang dipakai situs — kalau digambar di 160px hasilnya blur. Mirror tetap jadi fallback
+  50–105px yang dipakai situs — kalau digambar di 184px hasilnya blur. Mirror tetap jadi fallback
   lewat `onerror`.
 - Job boleh menunjuk halaman lain: `{ "out", "url": "/sosmed/identitas", "selector": "#art-wordmark", "transparent": true }`. Tanpa `url`/ `selector`, dipakai `/sosmed/<out>` dan `#poster`.
 - Artboard identitas (logotype, post pengumuman) ada di `src/pages/sosmed/identitas.astro`; filosofi mark di `brand/FILOSOFI.md`.

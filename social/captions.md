@@ -74,6 +74,20 @@ Situs penggemar, bukan akun resmi. Jadwal dan klasemen tiap hari di persibo.com.
 
 ---
 
+## 6. Poster uji coba (`uji-coba-ps-ngada.png`)
+
+Jumat, 6 November. Persibo nglawan PS Ngada ing Stadion Letjen H. Soedirman, kick-off 15.30 WIB.
+
+Tiket: Ekonomi Rp25.000, VIP Rp90.000. Tuku ing tiketbisa.com.
+
+Iki persiapan pungkasan sadurunge Liga Nusantara dibuka 13 November nang kandang dhewe.
+
+Situs penggemar, dudu akun resmi. Jadwal lan klasemen saben dina ing persibo.com.
+
+#Persibo #PersiboBojonegoro #LaskarAnglingDharma #Bojonegoro #LigaNusantara #UjiCoba
+
+---
+
 ## Catatan
 
 - Jangan pakai kata "resmi", "official", atau "rebranding" — situs ini penggemar.

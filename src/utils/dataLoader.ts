@@ -217,6 +217,7 @@ const LOGO_ALIASES: Record<string, string> = {
   PERSIKU: '/img/teams/persikutim-united.png',
   PERSEWAR9: '/img/teams/persewar.png',
   PERSELALAMONGAN: '/img/teams/persela.png',
+  PSNGADA: '/img/teams/psn-ngada.png',
 };
 
 export function localLogoFor(teamName: string): string | null {

@@ -9,6 +9,14 @@ import '../../styles/global.css';
 type Post = {
   out: string;
   mode?: 'jadwal' | 'hasil';
+  /** Header + date-panel label; set it for friendlies, which have no group or matchday. */
+  competition?: string;
+  /** Top-right chip; defaults to the group. */
+  tag?: string;
+  /** Ticket note, e.g. "Ekonomi Rp25.000 · VIP Rp90.000". Never the CTA. */
+  ticket?: string;
+  /** Side captions; friendlies have no group, so the away side needs one. */
+  captions?: { home?: string; away?: string };
   date?: string;
   time?: string;
   home?: string;
@@ -93,11 +101,11 @@ const rightLogo = logoFor(awayTeam);
 // A friendly or archive fixture is not in this group table, so it gets no group caption.
 const sideCaption = (team: string) =>
   isPersibo(team) ? 'Bojonegoro' : derivedMatchday > 0 ? `Grup ${group}` : '';
-const leftCaption = sideCaption(homeTeam);
-const rightCaption = sideCaption(awayTeam);
+const leftCaption = post.captions?.home ?? sideCaption(homeTeam);
+const rightCaption = post.captions?.away ?? sideCaption(awayTeam);
 // Long club names would otherwise run into the centre column.
 const nameClass = (name: string) =>
-  `font-cond font-bold uppercase leading-[0.95] ${name.length > 13 ? 'text-[2.4rem]' : 'text-[3.2rem]'}`;
+  `font-cond font-bold uppercase leading-[0.95] ${name.length > 13 ? 'text-[3rem]' : 'text-[4.2rem]'}`;
 ---
 
 
@@ -126,7 +134,7 @@ const nameClass = (name: string) =>
     <div
       id="poster"
       class="relative overflow-hidden bg-[#0b0910] text-[#f5f2ec]"
-      style="width:1080px;height:1080px;font-family:'Lexend',sans-serif"
+      style="width:1080px;height:1350px;font-family:'Lexend',sans-serif"
     >
       <!-- Backdrop: orange glow plus a tilted crest watermark. -->
       <div
@@ -137,12 +145,12 @@ const nameClass = (name: string) =>
 
       <div class="relative flex h-full flex-col px-[3rem] py-[2.8rem]">
         <!-- Header -->
-        <div class="flex items-center justify-between text-[0.62rem] font-bold uppercase tracking-[0.3em]">
+        <div class="flex items-center justify-between text-[20px] font-bold uppercase tracking-[0.26em]">
           <p class="flex items-center gap-[0.6rem] text-white/55">
             <span class="inline-block h-[0.5rem] w-[0.5rem] bg-primary"></span>
-            Liga Nusantara 2026-27
+            {post.competition ?? 'Liga Nusantara 2026-27'}
           </p>
-          <p class="text-white/35">Grup {group}</p>
+          <p class="text-white/35">{post.tag ?? `Grup ${group}`}</p>
         </div>
         <div class="mt-[0.9rem] h-px w-full bg-white/15"></div>
 
@@ -150,35 +158,41 @@ const nameClass = (name: string) =>
         <div class="mt-[1.8rem] border border-white/12 bg-[#0c0b0f] px-[2rem] py-[2rem]">
           <div class="flex items-start justify-between gap-[1rem]">
             <div>
-              <p class="flex items-center gap-[0.7rem] text-[0.62rem] font-bold uppercase tracking-[0.32em] text-white/45">
+              <p class="flex items-center gap-[0.7rem] text-[18px] font-bold uppercase tracking-[0.28em] text-white/45">
                 <span class="inline-block h-px w-[1.6rem] bg-primary"></span>
                 {[mode === 'hasil' ? 'Hasil' : matchday ? `Matchday ${matchday}` : 'Jadwal', weekday].filter(Boolean).join(' · ')}
               </p>
               <div class="mt-[1rem] flex items-end gap-[1.1rem]">
-                <p class="font-cond text-[12rem] font-bold leading-[0.66] text-primary">{day ?? '--'}</p>
+                <p class="font-cond text-[14rem] font-bold leading-[0.66] text-primary">{day ?? '--'}</p>
                 <div class="pb-[0.5rem]">
-                  <p class="font-cond text-[3.4rem] font-semibold uppercase leading-none">{(month ?? '').slice(0, 3)}</p>
-                  <p class="mt-[0.35rem] text-[0.68rem] font-semibold tracking-[0.34em] text-white/45">{year ?? ''}</p>
+                  <p class="font-cond text-[4.6rem] font-semibold uppercase leading-none">{(month ?? '').slice(0, 3)}</p>
+                  <p class="mt-[0.35rem] text-[18px] font-semibold tracking-[0.3em] text-white/45">{year ?? ''}</p>
                 </div>
               </div>
+              {post.ticket && (
+                <p class="mt-[1.3rem] flex items-center gap-[0.7rem] text-[17px] font-bold uppercase tracking-[0.18em] text-white/55">
+                  <span class="inline-block h-[0.5rem] w-[0.5rem] bg-primary"></span>
+                  Tiket · <span class="font-semibold text-white/75">{post.ticket}</span>
+                </p>
+              )}
             </div>
 
             <div class="shrink-0 border-l border-white/15 pl-[1.3rem] text-right">
               {mode === 'jadwal' && kickoff && (
                 <>
-                  <p class="text-[0.55rem] uppercase tracking-[0.26em] text-white/40">Kick-off</p>
-                  <p class="font-cond mt-[0.3rem] text-[3.2rem] font-semibold leading-none">{time}</p>
-                  <p class="mt-[0.25rem] text-[0.62rem] uppercase tracking-[0.2em] text-white/40">WIB</p>
+                  <p class="text-[16px] uppercase tracking-[0.24em] text-white/40">Kick-off</p>
+                  <p class="font-cond mt-[0.3rem] text-[4.6rem] font-semibold leading-none">{time}</p>
+                  <p class="mt-[0.25rem] text-[17px] uppercase tracking-[0.2em] text-white/40">WIB</p>
                 </>
               )}
               {mode === 'hasil' && outcome && (
                 <>
-                  <p class="text-[0.55rem] uppercase tracking-[0.26em] text-white/40">Hasil</p>
+                  <p class="text-[16px] uppercase tracking-[0.24em] text-white/40">Hasil</p>
                   <p class="font-cond mt-[0.2rem] text-[2.2rem] font-bold uppercase leading-none text-primary">{outcome}</p>
                 </>
               )}
-              <p class="mt-[0.9rem] text-[0.55rem] uppercase tracking-[0.26em] text-white/40">Stadion</p>
-              <p class="mt-[0.3rem] max-w-[11rem] text-[0.72rem] font-semibold uppercase leading-[1.35] tracking-[0.06em] text-white/80">{venue}</p>
+              <p class="mt-[0.9rem] text-[16px] uppercase tracking-[0.24em] text-white/40">Stadion</p>
+              <p class="mt-[0.3rem] max-w-[15rem] text-[19px] font-semibold uppercase leading-[1.35] tracking-[0.06em] text-white/80">{venue}</p>
             </div>
           </div>
         </div>
@@ -189,22 +203,22 @@ const nameClass = (name: string) =>
             <img
               src={leftLogo.src}
               alt=""
-              class="h-[10rem] w-[10rem] object-contain"
+              class="h-[11.5rem] w-[11.5rem] object-contain"
               onerror={`this.onerror=null;this.src='${leftLogo.fallback}'`}
             />
             <div class="min-w-0">
               <p class={nameClass(leftName)}>{leftName}</p>
-              <p class="mt-[0.3rem] text-[0.62rem] uppercase tracking-[0.22em] text-white/45">{leftCaption}</p>
+              <p class="mt-[0.3rem] text-[17px] uppercase tracking-[0.22em] text-white/45">{leftCaption}</p>
             </div>
           </div>
 
           <div class="flex flex-col items-center justify-center px-[0.4rem]">
             {mode === 'hasil' ? (
-              <p class="font-cond text-[7.5rem] font-bold leading-none text-primary">{score}</p>
+              <p class="font-cond text-[9rem] font-bold leading-none text-primary">{score}</p>
             ) : (
-              <p class="font-cond text-[4.5rem] leading-none text-white/22">VS</p>
+              <p class="font-cond text-[7rem] leading-none text-white/22">VS</p>
             )}
-            <p class="mt-[0.5rem] text-[0.58rem] uppercase tracking-[0.22em] text-white/25">
+            <p class="mt-[0.5rem] text-[17px] uppercase tracking-[0.22em] text-white/25">
               {isHome ? 'Kandang' : 'Tandang'}
             </p>
           </div>
@@ -213,12 +227,12 @@ const nameClass = (name: string) =>
             <img
               src={rightLogo.src}
               alt=""
-              class="h-[10rem] w-[10rem] object-contain"
+              class="h-[11.5rem] w-[11.5rem] object-contain"
               onerror={`this.onerror=null;this.src='${rightLogo.fallback}'`}
             />
             <div class="min-w-0">
               <p class={nameClass(rightName)}>{rightName}</p>
-              <p class="mt-[0.3rem] text-[0.62rem] uppercase tracking-[0.22em] text-white/45">{rightCaption}</p>
+              <p class="mt-[0.3rem] text-[17px] uppercase tracking-[0.22em] text-white/45">{rightCaption}</p>
             </div>
           </div>
         </div>
@@ -226,17 +240,17 @@ const nameClass = (name: string) =>
         <!-- Results get the scorers; fixtures get what comes next. -->
         {mode === 'hasil' && scorers.length > 0 ? (
           <div class="mt-[1.8rem]">
-            <p class="text-[0.58rem] font-bold uppercase tracking-[0.28em] text-white/40">Pencetak gol</p>
+            <p class="text-[18px] font-bold uppercase tracking-[0.26em] text-white/40">Pencetak gol</p>
             <div class="mt-[0.7rem] border-t border-white/12">
               {scorers.map((goal) => (
                 <div class="flex items-center gap-[1rem] border-b border-white/12 py-[1.15rem]">
-                  <p class="font-cond w-[3.5rem] shrink-0 text-[1.15rem] font-bold uppercase leading-none text-primary">
+                  <p class="font-cond w-[4.5rem] shrink-0 text-[1.7rem] font-bold uppercase leading-none text-primary">
                     {goal.minute}
                   </p>
-                  <p class="font-cond min-w-0 flex-1 truncate text-[1.35rem] font-semibold uppercase leading-none text-white/85">
+                  <p class="font-cond min-w-0 flex-1 truncate text-[2.1rem] font-semibold uppercase leading-none text-white/85">
                     {goal.player}
                   </p>
-                  <p class="w-[5rem] shrink-0 text-right text-[0.55rem] uppercase tracking-[0.2em] text-white/35">
+                  <p class="w-[6.5rem] shrink-0 text-right text-[16px] uppercase tracking-[0.2em] text-white/35">
                     {(goal.team ?? '').toUpperCase()}
                   </p>
                 </div>
@@ -245,20 +259,20 @@ const nameClass = (name: string) =>
           </div>
         ) : (
           <div class="mt-[1.8rem]">
-            <p class="text-[0.58rem] font-bold uppercase tracking-[0.28em] text-white/40">Jadwal berikutnya</p>
+            <p class="text-[18px] font-bold uppercase tracking-[0.26em] text-white/40">Jadwal berikutnya</p>
             <div class="mt-[0.7rem] border-t border-white/12">
               {upcoming.map((fixture) => {
                 const [d, m] = fixture.date.split(' ');
                 const opponentName = (isPersibo(fixture.home_team) ? fixture.away_team : fixture.home_team);
                 return (
                   <div class="flex items-center gap-[1rem] border-b border-white/12 py-[0.62rem]">
-                    <p class="font-cond w-[5.5rem] shrink-0 text-[1.1rem] font-bold uppercase leading-none text-primary">
+                    <p class="font-cond w-[7rem] shrink-0 text-[1.8rem] font-bold uppercase leading-none text-primary">
                       {d} {m.slice(0, 3)}
                     </p>
-                    <p class="font-cond min-w-0 flex-1 truncate text-[1.35rem] font-semibold uppercase leading-none text-white/85">
+                    <p class="font-cond min-w-0 flex-1 truncate text-[2.1rem] font-semibold uppercase leading-none text-white/85">
                       {shortName(opponentName)}
                     </p>
-                    <p class="w-[5rem] shrink-0 text-right text-[0.55rem] uppercase tracking-[0.2em] text-white/35">
+                    <p class="w-[6.5rem] shrink-0 text-right text-[16px] uppercase tracking-[0.2em] text-white/35">
                       {isPersibo(fixture.home_team) ? 'Kandang' : 'Tandang'}
                     </p>
                   </div>
@@ -270,19 +284,19 @@ const nameClass = (name: string) =>
 
         <!-- Call to action -->
         <div class="mt-[1.6rem] flex items-center justify-between bg-primary px-[1.5rem] py-[1.35rem] text-[#08070a]">
-          <p class="text-[0.68rem] font-extrabold uppercase tracking-[0.22em]">Jadwal &amp; klasemen lengkap</p>
-          <p class="font-cond text-[1.1rem] font-bold uppercase tracking-[0.12em]">persibo.com →</p>
+          <p class="text-[19px] font-extrabold uppercase tracking-[0.2em]">Jadwal &amp; klasemen lengkap</p>
+          <p class="font-cond text-[1.7rem] font-bold uppercase tracking-[0.12em]">persibo.com →</p>
         </div>
 
         <!-- Footer -->
         <div class="mt-[1.2rem] flex items-end justify-between">
           <div>
-            <p class="font-cond text-[2rem] font-bold uppercase leading-none text-white">
+            <p class="font-cond text-[2.6rem] font-bold uppercase leading-none text-white">
               Persibo<span class="text-primary">.</span>
             </p>
-            <p class="mt-[0.35rem] text-[0.55rem] uppercase tracking-[0.24em] text-white/35">Laskar Angling Dharma</p>
+            <p class="mt-[0.35rem] text-[16px] uppercase tracking-[0.22em] text-white/35">Laskar Angling Dharma</p>
           </div>
-          <p class="text-[0.52rem] uppercase tracking-[0.2em] text-white/25">© 2026 Persibo Bojonegoro</p>
+          <p class="text-[15px] uppercase tracking-[0.18em] text-white/25">© 2026 Persibo Bojonegoro</p>
         </div>
 
       </div>
