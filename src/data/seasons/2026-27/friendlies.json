@@ -11,6 +11,10 @@
     "kickoff_iso": "2026-11-06T15:30:00+07:00",
     "venue": "Stadion Letjen H. Soedirman, Bojonegoro",
     "ticket_url": "https://tiketbisa.com/event/persibo-bojonegoro-vs-ps-ngada",
+    "ticket_tiers": [
+      { "name": "Ekonomi", "price": 25000 },
+      { "name": "VIP", "price": 90000 }
+    ],
     "opponent_logo": "/img/teams/psn-ngada.png",
     "scorers": [],
     "note": "Uji coba pengganti laga kontra Persekabpas Pasuruan yang batal. Tiket dijual lewat tiketbisa.com.",

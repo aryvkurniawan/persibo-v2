@@ -89,6 +89,13 @@ const dateShort = match.date ? formatDateShort(match.date_label) : match.date_la
           <span class="material-symbols-outlined text-[13px] leading-none">location_on</span>
           <span class="min-w-0">{match.venue}</span>
         </p>
+        {(match.ticket_tiers?.length ?? 0) > 0 && (
+          <p class="mt-3 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[10px] font-bold uppercase tracking-[0.14em] text-white/45">
+            {match.ticket_tiers.map((tier) => (
+              <span>{tier.name} <span class="text-white/80">Rp{tier.price.toLocaleString('id-ID')}</span></span>
+            ))}
+          </p>
+        )}
         {match.ticket_url && <a href={match.ticket_url} target="_blank" rel="noopener" class="mt-3 block bg-primary py-2 text-center text-[11px] font-bold uppercase tracking-[0.16em] text-[#08070a]">Beli tiket</a>}
       </div>
     </article>

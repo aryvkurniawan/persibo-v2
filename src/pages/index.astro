@@ -30,6 +30,14 @@ const awayCount = fixtures.length - homeCount;
 const friendlies = await loadFriendlies();
 const nextFriendly = friendlies.find((match) => match.home_score === null) ?? null;
 const eventSource = nextFriendly?.kickoff_iso ? nextFriendly : next?.kickoff_iso ? next : null;
+const ticketOffers = nextFriendly?.ticket_tiers?.map((tier) => ({
+  '@type': 'Offer',
+  name: tier.name,
+  price: String(tier.price),
+  priceCurrency: 'IDR',
+  availability: 'https://schema.org/InStock',
+  url: nextFriendly?.ticket_url,
+}));
 
 const [nextDay, nextMonth, nextYear] = next ? next.date.replace(/^[^,]+,\s*/, '').split(' ') : ['--', '---', '----'];
 const nextWeekday = next ? getWeekday(next.date) : '';
@@ -440,6 +448,7 @@ const news = [
     },
     "homeTeam": { "@type": "SportsTeam", "name": eventSource.home_team },
     "awayTeam": { "@type": "SportsTeam", "name": eventSource.away_team },
+    ...(ticketOffers?.length ? { "offers": ticketOffers } : {}),
     "url": "https://persibo.com/"
   })} />
 )}

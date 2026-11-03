@@ -177,6 +177,8 @@ export interface Friendly {
   kickoff_iso?: string;
   /** Where to buy tickets, for scheduled friendlies. */
   ticket_url?: string;
+  /** Ticket categories and prices in rupiah, when published. */
+  ticket_tiers?: Array<{ name: string; price: number }>;
   /** Local logo for opponents iLeague does not carry (friendlies only). */
   opponent_logo?: string;
   scorers: FriendlyScorer[];
