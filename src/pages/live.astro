@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const VIDEO_ID = 'g3KkqdxfhwI';
+const TITLE = 'LAUNCHING TEAM & JERSEY PERSIBO BOJONEGORO TAHUN 2026/2027';
+
+const breadcrumbItems = [
+  { label: 'Beranda', href: '/' },
+  { label: 'Live', href: '/live' },
+];
+---
+
+<Layout
+  title="Live - PERSIBO Bojonegoro (Unofficial)"
+  description={`Tonton ${TITLE} dari kanal YouTube resmi PERSIBO Bojonegoro.`}
+  ogImage={`https://i.ytimg.com/vi/${VIDEO_ID}/maxresdefault.jpg`}
+>
+  <div class="mx-auto max-w-7xl px-4 py-8 lg:px-8 lg:py-12">
+    <Breadcrumb items={breadcrumbItems} />
+
+    <PageHeader label="Kanal YouTube" title="Live" description={TITLE} meta="YouTube ↗" />
+
+    <!-- ponytail: one fixed video. When there are several, move the id + title into a small array. -->
+    <div class="mt-8 border border-white/12 bg-[#0c0b0f]">
+      <div class="relative aspect-video">
+        <iframe
+          src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}`}
+          title={TITLE}
+          class="absolute inset-0 h-full w-full border-0"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        />
+      </div>
+      <div class="flex flex-wrap items-center justify-between gap-3 border-t border-white/12 px-4 py-3">
+        <p class="text-[11px] uppercase tracking-[0.18em] text-white/40">Sumber: YouTube resmi</p>
+        <a
+          href={`https://www.youtube.com/watch?v=${VIDEO_ID}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 border border-primary px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-primary transition-colors hover:bg-primary hover:text-[#08070a]"
+        >
+          Buka di YouTube
+          <span class="material-symbols-outlined text-base">open_in_new</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>

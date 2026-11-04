@@ -201,6 +201,7 @@ const currentPath = Astro.url.pathname.replace(/\/+$/, '') || '/';
           <nav class="hidden items-center gap-6 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/60 lg:flex">
             <a href="/" class={`pb-1 transition-colors ${currentPath === '/' ? 'border-b-2 border-primary text-white' : 'hover:text-white'}`}>Beranda</a>
             <a href="/pertandingan" class={`pb-1 transition-colors ${currentPath.startsWith('/pertandingan') ? 'border-b-2 border-primary text-white' : 'hover:text-white'}`}>Jadwal</a>
+            <a href="/live" class={`pb-1 transition-colors ${currentPath.startsWith('/live') ? 'border-b-2 border-primary text-white' : 'hover:text-white'}`}>Live</a>
             <a href="/klasemen" class={`pb-1 transition-colors ${currentPath.startsWith('/klasemen') ? 'border-b-2 border-primary text-white' : 'hover:text-white'}`}>Klasemen</a>
             <a href="/pemain" class={`pb-1 transition-colors ${currentPath.startsWith('/pemain') ? 'border-b-2 border-primary text-white' : 'hover:text-white'}`}>Pemain</a>
             <a href="/tim" class={`pb-1 transition-colors ${currentPath.startsWith('/tim') ? 'border-b-2 border-primary text-white' : 'hover:text-white'}`}>Tim</a>
@@ -229,6 +230,7 @@ const currentPath = Astro.url.pathname.replace(/\/+$/, '') || '/';
         <nav class="flex items-center justify-between gap-2 border-t border-white/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.12em] text-white/45 sm:gap-4 sm:tracking-[0.16em] lg:hidden">
           <a href="/" class={`whitespace-nowrap border-b border-transparent pb-1 ${currentPath === '/' ? 'border-primary text-primary' : 'hover:text-white'}`}>Beranda</a>
           <a href="/pertandingan" class={`whitespace-nowrap border-b border-transparent pb-1 ${currentPath.startsWith('/pertandingan') ? 'border-primary text-primary' : 'hover:text-white'}`}>Jadwal</a>
+          <a href="/live" class={`whitespace-nowrap border-b border-transparent pb-1 ${currentPath.startsWith('/live') ? 'border-primary text-primary' : 'hover:text-white'}`}>Live</a>
           <a href="/klasemen" class={`whitespace-nowrap border-b border-transparent pb-1 ${currentPath.startsWith('/klasemen') ? 'border-primary text-primary' : 'hover:text-white'}`}>Klasemen</a>
           <a href="/pemain" class={`whitespace-nowrap border-b border-transparent pb-1 ${currentPath.startsWith('/pemain') ? 'border-primary text-primary' : 'hover:text-white'}`}>Pemain</a>
           <a href="/tim" class={`whitespace-nowrap border-b border-transparent pb-1 ${currentPath.startsWith('/tim') ? 'border-primary text-primary' : 'hover:text-white'}`}>Tim</a>
@@ -314,6 +316,7 @@ const currentPath = Astro.url.pathname.replace(/\/+$/, '') || '/';
                 <ul class="space-y-2 text-white/45">
                   <li><a href="/" class="transition-colors hover:text-primary">Beranda</a></li>
                   <li><a href="/pertandingan" class="transition-colors hover:text-primary">Jadwal</a></li>
+                  <li><a href="/live" class="transition-colors hover:text-primary">Live</a></li>
                   <li><a href="/klasemen" class="transition-colors hover:text-primary">Klasemen</a></li>
                   <li><a href="/pemain" class="transition-colors hover:text-primary">Pemain</a></li>
                   <li><a href="/tim" class="transition-colors hover:text-primary">Tim</a></li>
