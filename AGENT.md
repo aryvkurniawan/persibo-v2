@@ -8,6 +8,8 @@ Dokumentasi ini dibuat untuk membantu AI agent memahami konteks, struktur, dan k
 **Teknologi:** Astro 7.4.1 + Tailwind CSS + TypeScript  
 **Tujuan:** Website unofficial untuk menyediakan informasi lengkap tentang tim sepak bola PERSIBO Bojonegoro yang berlaga di Liga Nusantara 2026-27  
 **Target Audience:** Penggemar dan masyarakat Bojonegoro (mobile-first design)  
+**Domain:** https://persibo.com
+**Musim:** aktif `2026-27` (`CURRENT_SEASON`); beku `2025-26` (`ARCHIVE_SEASON`) dan `2024-25`
 **Status:** Website UNOFFICIAL - tidak berafiliasi dengan manajemen resmi
 
 ## 🏗️ Arsitektur Proyek
@@ -15,19 +17,20 @@ Dokumentasi ini dibuat untuk membantu AI agent memahami konteks, struktur, dan k
 ### Struktur Folder
 
 ```
-persibo-astro/
-├── public/              # Static assets (images, videos, favicon)
-│   ├── img/            # Gambar artikel dan assets
-│   ├── video/          # Video artikel
-│   ├── hero.jpg        # Hero image homepage
-│   └── logo.png        # Logo PERSIBO
+persibo/
+├── public/              # img/, video/, search-index.json, logo, favicon
+├── scripts/             # Tooling: build, optimize-images, sosmed, fetch-assets
+├── social/              # posts.json + out/*.png (bahan poster, di-commit)
+├── docs/agents/         # Konfigurasi skill engineering
+├── .scratch/            # Scraper Python + dump HTML/JSON (bukan sumber data)
 ├── src/
 │   ├── components/     # Komponen Astro reusable
 │   ├── data/           # Data JSON (players, fixtures, standings, dll)
 │   ├── layouts/        # Layout templates
 │   ├── pages/          # Halaman website (file-based routing)
+│   ├── styles/         # global.css (Tailwind + font)
 │   ├── types.ts        # TypeScript type definitions
-│   └── utils/          # Utility functions
+│   └── utils/          # dataLoader, dates, matchTimeline, slugify
 ├── astro.config.mjs    # Konfigurasi Astro
 ├── postcss.config.mjs  # Tailwind + autoprefixer
 ├── package.json
@@ -42,6 +45,9 @@ persibo-astro/
 - **TypeScript** - Type safety
 - **@astrojs/sitemap 3.7.4** - Sitemap generation
 - **autoprefixer** - CSS vendor prefixes
+- **sharp** image service Astro + `scripts/optimize-images.js`
+- **terser** - minify JS produksi
+- **playwright-core** - screenshot poster sosmed
 
 ## 📊 Data Structure
 
@@ -54,15 +60,21 @@ Data per musim ada di `src/data/seasons/<musim>/`:
 1. **standings.json** - Klasemen
 2. **fixtures.json** - Jadwal & hasil pertandingan
 3. **teams.json** - Informasi tim dengan logo
-4. **matchDetails.json** - Detail pertandingan (lineup, events, statistics)
+4. **matchDetails.json** - Detail pertandingan (lineup, events, statistics); laga uji coba ada di `friendlies.json`, hanya musim 2026-27.
 
 Data skuad (berlaku untuk skuad terakhir, 2025-26):
 
 5. **players.json** - Daftar pemain (basic info)
 6. **playerDetails.json** - Detail lengkap pemain (statistik, club history, foto)
 7. **officials.json** - Official & staff tim
+8. **players/faces.json** - Wajah pemain per musim (halaman arsip)
+9. **history.json** / **historyStandings.json** - Arsip pra-2024-25 (RSSSF)
+10. **social.json** - Link sosmed footer; **assets-manifest.json** - asal gambar hasil `fetch-assets`
 
-`2025-26` adalah arsip beku; `2026-27` adalah musim aktif. Jangan timpa arsip saat scraping.
+`src/data/fixtures.json`, `standings.json`, `teams.json`, `matchDetails.json`, `matches.json`
+adalah sisa struktur lama: tidak diimpor siapa pun lagi. Jangan dipakai atau diperbarui.
+
+`2025-26` dan `2024-25` adalah arsip beku; `2026-27` aktif. Jangan timpa arsip saat scraping.
 
 Scraper (`.scratch/scrape_ileague.py`) menolak menulis ke musim yang filenya sudah ada
 kecuali dijalankan dengan `--force`. Arsip juga di-tag git: `archive/2025-26-final`.
@@ -73,7 +85,8 @@ git checkout archive/2025-26-final -- src/data/seasons/2025-26
 ```
 
 Detail pertandingan 2025-26 punya scraper sendiri, `.scratch/scrape_ileague_2025_26.py`
-(menolak menimpa tanpa `--force`). Ia memakai parser 2024-25 untuk lineup/pelatih/wasit,
+(menolak menimpa tanpa `--force`). Arsip 2024-25 punya `scrape_ileague_2024_25.py` (detail) dan
+`scrape_ileague_2024_25_players.py` (skuad); arsip pra-2024-25 dari `scrape_history_rsssf.py`. Scraper 2025-26 memakai parser 2024-25 untuk lineup/pelatih/wasit,
 lalu menambal tiga hal yang beda di musim itu: gol & kartu dibaca dari blok hero karena
 tab Linimasa kosong, label wasit "Cadangan Wasit"/"Asisten Wasit 2" ikut dipetakan, dan
 statistik yang tidak pernah terbit dibuang (bukan ditulis nol).
@@ -92,6 +105,8 @@ hanya membungkus endpoint tersebut lewat `<iframe>`.
 - `MatchDetail` - Detailed match info (lineup, events, stats)
 - `Standing` - League standings
 - `Team` - Team information dengan logo
+- `MatchDetailPlayer`, `MatchDetailLineup`, `MatchDetailEvent` - Bagian `MatchDetail`
+- `Friendly`, `FriendlyScorer`, `FriendlySource` - Laga uji coba (`friendlies.json`)
 
 **Penting:** Selalu gunakan types dari `src/types.ts` untuk type safety.
 
@@ -105,9 +120,12 @@ hanya membungkus endpoint tersebut lewat `<iframe>`.
 - `loadFixtures(season?)` - Load fixtures
 - `loadMatchDetails(season?)` - Load match details
 - `loadTeams(season?)` - Load teams
+- `loadFriendlies(season?)` - Load laga uji coba (`friendlies.json`, hanya `2026-27`)
 
 ### Helper Functions
 - `getPlayerBySlug()` - Find player by slug
+- `getPlayerPhoto()` - Foto pemain dari `players/faces.json`
+- `localLogoFor()` - Logo tim dari `public/img` (fallback hotlink iLeague)
 - `getPlayerDetailWithPhoto()` - Merge player detail dengan photo dari players.json
 - `getPersiboStanding()` - Get PERSIBO standing
 - `getStandingsByGroup()` - Filter standings by group
@@ -117,20 +135,20 @@ hanya membungkus endpoint tersebut lewat `<iframe>`.
 - `getMatchDetailByUrl()` - Find match detail by match_url
 - `getMatchDetailSlug()` - Generate slug untuk match detail page
 
-**Catatan:** Loader memakai static import JSON per musim di `dataLoader.ts` (bukan dynamic import). Tambah musim baru dengan menambah import dan entri di objek `SEASONS`.
+**Catatan:** Loader memakai static import JSON per musim di `dataLoader.ts` (bukan dynamic import). Tambah musim baru dengan menambah import dan entri di objek `SEASONS`, plus perluas tipe `Season`. Konstanta: `CURRENT_SEASON` = `'2026-27'`, `ARCHIVE_SEASON` = `'2025-26'`.
+
+Utility lain: `dates.ts` (format tanggal/waktu), `matchTimeline.ts` (normalisasi event laga), `slugify.ts` (slug pemain/laga).
 
 ## 🎨 Komponen (src/components/)
 
 ### Komponen yang Tersedia
 
-1. **PageHeader.astro** - Header halaman bersama (label, judul `font-cond`, meta, deskripsi)
-2. **Breadcrumb.astro** - Breadcrumb navigation dengan JSON-LD schema
-3. **Lineup.astro** - Display match lineup (Starting XI & Cadangan)
-4. **MatchCard.astro** - Card untuk menampilkan pertandingan
-5. **PlayerCard.astro** - Card untuk menampilkan pemain
-6. **StandingsTable.astro** - Tabel klasemen responsive
-7. **FilterBar.astro / SearchBar.astro** - Filter dan pencarian pemain
-8. **ShareButtons.astro** - Tombol bagikan (native, WhatsApp, Facebook, X, Telegram, salin link)
+- **Kerangka:** `PageHeader` (judul halaman), `Breadcrumb` (+ JSON-LD BreadcrumbList)
+- **Laga:** `MatchCard`, `LastMatchCard`, `MatchPreviewPanel`, `MatchTimeline`, `Lineup`, `LineupPitch`, `FriendlyMatches`
+- **Pemain:** `PlayerTable`, `PlayerDetail`, `PlayerStatsChart`, `TopPerformers`
+- **Klasemen:** `StandingsTable`
+- **Navigasi/filter:** `GlobalSearch`, `SearchBar`, `FilterBar`
+- **Lain:** `ShareButtons` (native, WhatsApp, Facebook, X, Telegram, salin link)
 
 ### Konvensi Komponen
 
@@ -151,11 +169,18 @@ hanya membungkus endpoint tersebut lewat `<iframe>`.
 - `tim/berita.astro` - Daftar berita
 - `pemain/index.astro` - Daftar pemain dengan search & filter
 - `pertandingan/index.astro` - Jadwal & hasil pertandingan
+- `arsip/2024-25.astro` - Arsip Liga 2 2024-25 (tahap Penyisihan / Play-off / 8 Besar)
+- `arsip/2025-26.astro` - Arsip Liga Nusantara 2025-26 (`ARCHIVE_SEASON`)
+- `arsip/pemain.astro` - Wajah pemain per musim
+- `arsip/sejarah.astro` - Sejarah & honours pra-2024-25 (`history.json`)
+- `privasi.astro` - Kebijakan privasi
+- `tim/berita/*.astro` - Satu file per artikel berita
 
 ### Dynamic Routes
 - `pemain/[slug].astro` - Detail pemain (generate dari playerDetails)
 - `pertandingan/[slug].astro` - Detail pertandingan (generate dari fixtures COMPLETED)
 - `sosmed/[poster].astro` - Poster media sosial (dev-only, lihat bagian di bawah)
+- `sosmed/jadwal/[bagian].astro`, `sosmed/artboard/[art].astro` - Poster jadwal & artboard identitas (dev-only)
 
 **Penting:** Semua dynamic routes HARUS memiliki `getStaticPaths()` function untuk pre-render.
 
@@ -210,7 +235,7 @@ berikutnya. `matchDetails.events` sengaja tidak dipakai: isinya tidak cocok deng
 - Page title block: `PageHeader.astro`; section header: `border-b border-white/15 pb-3` + `font-cond text-2xl uppercase`
 
 ### Typography
-- Font: Lexend (Google Fonts)
+- Font: Lexend (`font-display`); judul condensed memakai kelas `font-cond`
 - Icons: Material Symbols Outlined
 - Sizes: Responsive dengan Tailwind text sizes
 
@@ -259,11 +284,11 @@ Implementasi di berbagai halaman:
 
 ### 2. JSON Import Error
 **Problem:** `Failed to load url /src/data/file.json`  
-**Solution:** Gunakan pattern:
+**Solution:** Pakai static import:
 ```typescript
-const module = await import('../data/file.json');
-return (module.default || module) as Type[];
+import data from '../data/file.json';
 ```
+Pola `await import()` lama tidak diperlukan lagi di Astro/Vite.
 
 ### 3. Player Detail Not Found
 **Problem:** Beberapa pemain tidak memiliki halaman detail  
@@ -292,7 +317,7 @@ return (module.default || module) as Type[];
 
 ### Naming Conventions
 - **Files:** kebab-case (e.g., `player-detail.astro`)
-- **Components:** PascalCase (e.g., `PlayerCard.astro`)
+- **Components:** PascalCase (e.g., `StandingsTable.astro`)
 - **Functions:** camelCase (e.g., `getPlayerBySlug()`)
 - **Types/Interfaces:** PascalCase (e.g., `PlayerDetail`)
 
@@ -327,14 +352,14 @@ const players = await loadPlayers();
 ```
 
 ### Data Loading Pattern
-```typescript
-// ✅ CORRECT
-const module = await import('../data/file.json');
-const data = (module.default || module) as Type[];
+Static import JSON didukung Astro/Vite dan dipakai `dataLoader.ts`:
 
-// ❌ WRONG
-import data from '../data/file.json';
+```typescript
+import fixtures from '../data/seasons/2026-27/fixtures.json';
+const data = fixtures as Fixture[];
 ```
+
+Untuk data per musim, pakai `loadFixtures(season)` dsb. dari `dataLoader.ts`, jangan import langsung.
 
 ## 🎨 Styling Guidelines
 
@@ -362,10 +387,11 @@ import data from '../data/file.json';
 Data berasal dari scraping iLeague dan disimpan per musim di `src/data/seasons/<musim>/`.
 
 ### Update Process
-1. Jalankan `.scratch/scrape_ileague.py` (hanya menulis musim aktif; `2025-26` dibekukan)
+1. Jalankan `.scratch/scrape_ileague.py` (hanya menulis musim aktif; `2025-26`/`2024-25` beku)
 2. Pastikan `src/data/seasons/2026-27/` terisi dan format JSON valid
-3. Rebuild: `npm run build`
-4. Commit juga folder `src/data/seasons/` agar arsip ikut tersimpan di git
+3. Jalankan `npm run derive-player-stats` bila `matchDetails` berubah (statistik pemain dihitung dari situ)
+4. Rebuild: `npm run build`
+5. Commit juga folder `src/data/seasons/` agar arsip ikut tersimpan di git
 
 ## ⚠️ Important Notes
 
@@ -397,10 +423,26 @@ npm run build    # Build untuk production
 npm run preview  # Preview production build
 ```
 
+Script lain (`scripts/`, dipanggil lewat npm):
+
+| Script | Fungsi |
+|---|---|
+| `prebuild` | Otomatis: `optimize-images` + `generate-search-index` |
+| `npm run optimize-images` | Kompres/konversi gambar `public/img` |
+| `npm run generate-search-index` | Tulis `public/search-index.json` untuk `GlobalSearch` |
+| `npm run derive-player-stats` | Hitung statistik pemain dari `seasons/*/matchDetails.json` |
+| `npm run fetch-assets` | Rescue gambar iLeague ke `public/img` + catat di `assets-manifest.json` (idempoten) |
+| `npm run sosmed` | Render poster ke `social/out/` |
+| `node scripts/resize-logo.js` | Turunan ukuran logo |
+
+Catatan `derive-player-stats`: kolom "Penampilan" iLeague menghitung listing skuad (21 per laga),
+bukan menit main, dan kolom saves/cards kosong — semua angka dihitung dari `matchDetails`.
+
 ### Git Workflow
 - Main branch: `main`
-- Remote: `https://github.com/monitorin/persibo-astro-v2.git`
-- `.gitignore` sudah dikonfigurasi untuk exclude `dist/`, `node_modules/`, dll
+- Remote: `https://github.com/aryvkurniawan/persibo-v2.git`
+- Tag arsip: `archive/2025-26-final`
+- `.gitignore`: `dist/`, `node_modules/`, `.astro/`, `.env*`, log
 
 ## 📚 Resources
 
@@ -408,18 +450,32 @@ npm run preview  # Preview production build
 - **Tailwind Docs:** https://tailwindcss.com/docs
 - **Design Reference:** `C:\Repository\persibo-scrape\stitch_beranda_tim`
 - **Data Source:** `C:\Repository\persibo-scrape\py-final\output\`
+- **Dokumen repo:** `README.md` (fitur), `CHANGELOG.md`, `IDEAS.md`, `REPO_DESCRIPTION.md`, `brand/FILOSOFI.md`
+- **Konfigurasi skill:** `docs/agents/issue-tracker.md`, `docs/agents/triage-labels.md`, `docs/agents/domain.md`
 
 ## 🎯 Future Enhancements
 
 Ide untuk pengembangan selanjutnya:
-- [ ] Statistik lebih detail
-- [ ] Grafik statistik
-- [ ] Share buttons
-- [ ] PWA support
+- [ ] PWA offline (manifest & icon sudah ada, service worker belum)
 - [ ] Multi-language support
+- [ ] Hapus file data flat mati di `src/data/` (fixtures/…/matches.json)
 
 ---
 
-**Last Updated:** 2026-10-30  
-**Version:** 1.0.0  
+**Last Updated:** 2026-11-04
+**Version:** 1.1.0
 **Maintainer:** Jengker
+
+## Agent skills
+
+### Issue tracker
+
+Issues live as GitHub issues on `aryvkurniawan/persibo-v2`, driven by the `gh` CLI. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Default canonical vocabulary: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context: `CONTEXT.md` + `docs/adr/` at the repo root. See `docs/agents/domain.md`.
