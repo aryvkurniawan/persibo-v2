@@ -30,6 +30,8 @@ const awayCount = fixtures.length - homeCount;
 const friendlies = await loadFriendlies();
 const nextFriendly = friendlies.find((match) => match.home_score === null) ?? null;
 const eventSource = nextFriendly?.kickoff_iso ? nextFriendly : next?.kickoff_iso ? next : null;
+const siteOrigin = (Astro.site || Astro.url.origin).toString().replace(/\/+$/, '');
+const eventEnd = eventSource ? new Date(Date.parse(eventSource.kickoff_iso) + 7200000).toISOString() : '';
 const ticketOffers = nextFriendly?.ticket_tiers?.map((tier) => ({
   '@type': 'Offer',
   name: tier.name,
@@ -434,6 +436,9 @@ const news = [
     "@type": "SportsEvent",
     "name": eventSource.home_team + " vs " + eventSource.away_team,
     "startDate": eventSource.kickoff_iso,
+    "endDate": eventEnd,
+    "image": siteOrigin + "/logo.png",
+    "description": eventSource.home_team + " vs " + eventSource.away_team + " di " + eventSource.venue,
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "location": {
@@ -448,6 +453,16 @@ const news = [
     },
     "homeTeam": { "@type": "SportsTeam", "name": eventSource.home_team },
     "awayTeam": { "@type": "SportsTeam", "name": eventSource.away_team },
+    "performer": [
+      { "@type": "SportsTeam", "name": eventSource.home_team },
+      { "@type": "SportsTeam", "name": eventSource.away_team }
+    ],
+    "organizer": {
+      "@type": "SportsOrganization",
+      "name": nextFriendly ? "PERSIBO Bojonegoro" : "Liga Nusantara",
+      "url": nextFriendly ? siteOrigin : "https://www.ileague.id"
+   
+    },
     ...(ticketOffers?.length ? { "offers": ticketOffers } : {}),
     "url": "https://persibo.com/"
   })} />
