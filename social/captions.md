@@ -1,7 +1,6 @@
 # Caption siap pakai
 
-Bahasa: Indonesia campur Jawa ngoko/Jonegoroan. Semua sebut akun ini **bukan** akun resmi — jangan
-dihapus, itu satu-satunya pengaman supaya tidak dikira rebranding klub.
+Bahasa: Indonesia campur Jawa ngoko/Jonegoroan.
 
 ---
 
@@ -16,7 +15,7 @@ liyane. Luwih lugas, luwih tenang, nanging tetep Bojonegoro.
 
 Isih urip. Dudu mung nalika menang.
 
-Situs penggemar, dudu akun resmi. Data lan jadwal saben dina ing persibo.com.
+Data lan jadwal saben dina ing persibo.com.
 
 #Persibo #PersiboBojonegoro #LaskarAnglingDharma #Bojonegoro #LigaNusantara
 
@@ -49,7 +48,7 @@ ada kalimat baru.
 Batang gada, cangkang tribun, satu titik oranye. Sesederhana itu, karena yang kami bawa cuma data
 dan kabar, bukan janji.
 
-Situs penggemar, bukan akun resmi. persibo.com
+persibo.com
 
 #Persibo #PersiboBojonegoro #LaskarAnglingDharma #Bojonegoro #LigaNusantara
 
@@ -68,7 +67,7 @@ masih kosong, jadi saya tulis TBC. Nanti saya perbarui kalau sudah keluar.
 
 Jadwal bisa berubah. Yang resmi tetap dari iLeague dan panitia.
 
-Situs penggemar, bukan akun resmi. Jadwal dan klasemen tiap hari di persibo.com.
+Jadwal dan klasemen tiap hari di persibo.com.
 
 #Persibo #PersiboBojonegoro #LaskarAnglingDharma #Bojonegoro #LigaNusantara
 
@@ -80,15 +79,15 @@ Jumat, 6 November. Persibo menjamu PSN Ngada di Stadion Letjen H. Soedirman, Boj
 
 PSN Ngada datang dari NTT. Laga ini jadi pemanasan kandang sebelum Liga Nusantara mulai 13 November, seminggu setelahnya.
 
-Tiket: Ekonomi Rp25.000, VIP Rp90.000. Beli online di tiketbisa.com.
+Tiket diskon 30%: Ekonomi Rp17.500 (dari Rp25.000), VIP Rp63.000 (dari Rp90.000). Beli online di tiketbisa.com.
 
-Situs penggemar, bukan akun resmi. Jadwal dan klasemen tiap hari di persibo.com.
+Jadwal dan klasemen tiap hari di persibo.com.
 
 #Persibo #PersiboBojonegoro #LaskarAnglingDharma #Bojonegoro #LigaNusantara #UjiCoba
 
 ### Versi pendek (story / X)
 
-6 November. Persibo vs PSN Ngada, kick-off 15.30 WIB, Stadion Letjen H. Soedirman. Tiket Ekonomi 25rb, VIP 90rb — tiketbisa.com. Situs penggemar, bukan akun resmi.
+6 November. Persibo vs PSN Ngada, kick-off 15.30 WIB, Stadion Letjen H. Soedirman. Tiket diskon 30% — Ekonomi 17,5rb, VIP 63rb. tiketbisa.com.
 
 ---
 

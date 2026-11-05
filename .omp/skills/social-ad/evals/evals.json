@@ -1,0 +1,26 @@
+{
+  "skill_name": "social-ad",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "write Facebook and Instagram ad variants for our time-tracking app — free 14-day trial, aimed at agency owners",
+      "expected_output": "3–5 ad variants for the Meta placement, each with primary text, headline, and a CTA sized to the placement's limits, plus a one-line creative brief per variant.",
+      "assertions": [
+        "Produces at least 3 distinct variants",
+        "Each variant has primary text, a headline, and a call to action",
+        "Each variant includes a one-line creative brief for the designer",
+        "No fabricated statistics, reviews, or scarcity claims"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "need a LinkedIn ad for our B2B onboarding platform, targeting heads of HR",
+      "expected_output": "3–5 LinkedIn-placement ad variants built from distinct angles (pain, aspiration, objection-flip, etc.), each within LinkedIn ad character limits.",
+      "assertions": [
+        "Variants use more than one distinct angle",
+        "Copy respects LinkedIn ad character limits",
+        "Does not call out sensitive personal attributes of the audience"
+      ]
+    }
+  ]
+}

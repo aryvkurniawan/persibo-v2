@@ -1,0 +1,26 @@
+{
+  "skill_name": "social-carousel",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "make an Instagram carousel about 5 pricing-page mistakes SaaS founders make",
+      "expected_output": "A slide-by-slide script: a hook cover, one-idea content slides, a recap slide, and a CTA slide — each with copy, a design note, and an image-generation prompt.",
+      "assertions": [
+        "Includes a hook cover slide",
+        "Each content slide carries a single idea",
+        "Ends with a recap slide and a CTA slide",
+        "Every slide has an image-generation prompt a designer or model could run"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "turn this into a LinkedIn document post: our team cut meeting time 40% by killing standups",
+      "expected_output": "A LinkedIn document-post carousel adapted to LinkedIn's cover and density conventions, one idea per slide, with design notes and image prompts.",
+      "assertions": [
+        "Slides follow LinkedIn document-post conventions, not Instagram's",
+        "One idea per slide",
+        "Cover slide states a clear hook"
+      ]
+    }
+  ]
+}

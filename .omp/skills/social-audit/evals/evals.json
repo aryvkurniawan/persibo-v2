@@ -1,0 +1,25 @@
+{
+  "skill_name": "social-audit",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "audit my LinkedIn — here are my last 10 posts: [pasted posts]",
+      "expected_output": "A scored audit of consistency, pillar balance, hook quality (with verbatim rewrites), and format mix, ending in a prioritized gap list and a 3-move action plan, biggest lever first.",
+      "assertions": [
+        "Scores posting consistency, pillar balance, and hook quality",
+        "Includes verbatim rewrites of weak hooks",
+        "States plainly what it cannot know without analytics exports",
+        "Ends with a prioritized 3-move action plan"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "why isn't my content growing?",
+      "expected_output": "The skill works from whatever data the user pastes, names its blind spots, and returns the biggest lever first rather than generic growth advice.",
+      "assertions": [
+        "Asks for or works from concrete pasted data",
+        "Measures against the user's stated goals, not generic benchmarks"
+      ]
+    }
+  ]
+}

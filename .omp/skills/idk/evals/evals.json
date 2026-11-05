@@ -1,0 +1,45 @@
+{
+  "skill_name": "idk",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "which skill should I use to turn my blog post into a week of content?",
+      "expected_output": "A recommendation of social-repurpose (one source into a week of many posts), distinguished from social-crosspost, with the trigger phrase to invoke it.",
+      "assertions": [
+        "Recommends social-repurpose, not social-crosspost",
+        "Explains the difference in one line",
+        "Gives a trigger phrase to invoke the skill"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "what can you do for my social media? where do I start?",
+      "expected_output": "Points a first-time user to social-context first (since social-context.md drives every other skill), then maps the family by what the user wants to do.",
+      "assertions": [
+        "Points to social-context as the starting point",
+        "Maps multiple skills by job",
+        "Routes rather than performing a task itself"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "should I use social-post or social-crosspost to share my launch on LinkedIn and X?",
+      "expected_output": "Disambiguates the pair: social-crosspost for the same message adapted across several platforms at once; social-post for one platform crafted deeply. Recommends social-crosspost for this case and names the trigger.",
+      "assertions": [
+        "Distinguishes social-post (one platform, deeply) from social-crosspost (many platforms at once)",
+        "Recommends social-crosspost for posting to LinkedIn and X together",
+        "Gives the trigger phrase"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "write a LinkedIn post about our launch",
+      "expected_output": "Recognizes this is a direct task, not a routing question — points to social-post as the skill to use and hands off, rather than drafting the post itself.",
+      "assertions": [
+        "Routes to social-post",
+        "Does not write the post itself",
+        "Hands off with the trigger phrase"
+      ]
+    }
+  ]
+}

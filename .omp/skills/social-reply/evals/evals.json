@@ -1,0 +1,24 @@
+{
+  "skill_name": "social-reply",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "help me reply to these comments: 1) 'Does this integrate with Slack?' 2) 'This is amazing, huge fan!' 3) 'Overpriced tbh' 4) 'We might buy 50 seats, who do I talk to?'",
+      "expected_output": "Each item bucketed (question / praise / objection / lead / spam) with a recommended action and, where warranted, an on-voice draft reply — with the lead flagged prominently.",
+      "assertions": [
+        "Every comment is assigned a bucket",
+        "The 50-seat comment is flagged as a lead with a suggested next step",
+        "Reply drafts do not invent product facts that weren't provided"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "triage my mentions: 'your tool deleted my data, calling my lawyer'",
+      "expected_output": "The item is escalated as legally/PR-sensitive with a reason rather than an off-the-cuff drafted reply.",
+      "assertions": [
+        "The sensitive item is escalated, not answered with a casual draft",
+        "A reason for escalation is given"
+      ]
+    }
+  ]
+}

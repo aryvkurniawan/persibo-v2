@@ -1,0 +1,26 @@
+{
+  "skill_name": "social-calendar",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "plan my next two weeks of LinkedIn and X content — I post about 3 times a week",
+      "expected_output": "A markdown table (Date | Platform | Pillar | Format | Working title / hook | Status) covering two weeks, volume at or under the stated cadence, with reactive slack and real hooks.",
+      "assertions": [
+        "Output is a markdown table with the columns Date, Platform, Pillar, Format, Working title / hook, Status",
+        "Every row's Status is 'idea'",
+        "Total posts per platform per week do not exceed the stated cadence",
+        "At least two slots are marked 'reactive'",
+        "Every non-reactive slot has a concrete hook, not a topic label"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "what should I post this month?",
+      "expected_output": "The skill asks for pillars, platforms, and honest cadence (or reads social-context.md), then returns a realistic dated plan rather than an unrealistic daily firehose.",
+      "assertions": [
+        "Establishes cadence and pillars before planning",
+        "Does not exceed a realistic sustainable cadence"
+      ]
+    }
+  ]
+}
