@@ -1757,6 +1757,45 @@
       "seasons": [
         "2025-26"
       ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/official/OF181514.jpg",
+      "path": "/img/officials/i-putu-gede-swi-santoso.jpg",
+      "bytes": 13215,
+      "width": 300,
+      "sha256": "34de8ffafab00b32",
+      "fetched_at": "2026-11-05T18:30:46.425077+07:00",
+      "kind": "official-photo",
+      "name": "I PUTU GEDE SWI SANTOSO",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/official/OF210400.jpeg",
+      "path": "/img/officials/rian-ikrawansyah.jpg",
+      "bytes": 56513,
+      "width": 480,
+      "sha256": "e5e5ee3d5c32fe6e",
+      "fetched_at": "2026-11-05T18:30:46.425077+07:00",
+      "kind": "official-photo",
+      "name": "RIAN IKRAWANSYAH",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://liasfiles.ileague.id:8443/liasfile/official/OF240769.jpg",
+      "path": "/img/officials/tisna-wijaya.jpg",
+      "bytes": 34529,
+      "width": 300,
+      "sha256": "b4cea082009a3ea8",
+      "fetched_at": "2026-11-05T18:30:46.425077+07:00",
+      "kind": "official-photo",
+      "name": "TISNA WIJAYA",
+      "seasons": [
+        "2026-27"
+      ]
     }
   ]
 }

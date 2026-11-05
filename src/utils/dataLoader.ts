@@ -46,8 +46,9 @@ const SEASONS = {
   },
 } satisfies Record<Season, { standings: Standing[]; fixtures: Fixture[]; teams: Team[]; matchDetails: MatchDetail[] }>;
 
-// Players and officials remain the last published squad (2025-26); iLeague has
-// not published a 2026-27 squad yet.
+// Officials mix both seasons: iLeague published a 3-person official list for
+// 2026-27 (head coach, team secretary, masseur); the remaining entries are the
+// 2025-26 squad. No squad list has been published for 2026-27 yet.
 export async function loadOfficials(): Promise<Official[]> {
   return officials as Official[];
 }
