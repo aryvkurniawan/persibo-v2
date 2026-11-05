@@ -42,7 +42,7 @@ const detailedSeasons = [
       label="Arsip"
       title="Sejarah"
       meta={`${honours.length} gelar`}
-      description="Gelar dan hasil pertandingan PERSIBO Bojonegoro sebelum Liga Nusantara. Hanya skor yang tersimpan — tanpa susunan pemain, kartu, atau wasit."
+      description="Gelar dan hasil pertandingan PERSIBO Bojonegoro sebelum Liga Nusantara. Hanya skor yang tersimpan, tanpa susunan pemain, kartu, atau wasit."
     />
 
     <!-- Honours -->
@@ -236,7 +236,7 @@ const detailedSeasons = [
                 Sumber:{' '}
                 <a href={season.source} target="_blank" rel="noopener noreferrer" class="text-white/45 underline decoration-white/20 hover:text-primary">RSSSF</a>
                 {season.credit && season.credit.length > 0 && (
-                  <> — {season.credit.join(', ')}</>
+                  <> · {season.credit.join(', ')}</>
                 )}
               </p>
             </article>

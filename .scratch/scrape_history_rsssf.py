@@ -178,9 +178,9 @@ HONOURS = [
     {"year": "2009-10", "title": "Juara Divisi Utama Liga Indonesia", "tier": "Divisi Utama"},
     {"year": "2012", "title": "Juara Piala Indonesia", "tier": "Piala"},
     {"year": "2013", "title": "Peserta Piala AFC (fase grup)", "tier": "AFC"},
-    {"year": "2013", "title": "Runner-up Community Shield", "tier": "Piala"},
+    {"year": "2013", "title": "Juara kedua Community Shield", "tier": "Piala"},
     {"year": "2023-24", "title": "Juara Liga 3 Jawa Timur", "tier": "Liga 3"},
-    {"year": "2023-24", "title": "Runner-up Liga 3 Nasional", "tier": "Liga 3"},
+    {"year": "2023-24", "title": "Juara kedua Liga 3 Nasional", "tier": "Liga 3"},
 ]
 
 
