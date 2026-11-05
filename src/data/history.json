@@ -62,7 +62,40 @@
         "goals_against": 12,
         "points": 13
       },
-      "matches": [],
+      "matches": [
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "Persema",
+          "home_score": 1,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "Persela",
+          "home_score": 0,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "Persijap",
+          "home_score": 3,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persela",
+          "away": "Persibo",
+          "home_score": 5,
+          "away_score": 0,
+          "note": ""
+        }
+      ],
       "source": "https://rsssf.org/tablesi/indo03.html"
     },
     {
@@ -85,7 +118,96 @@
         "goals_against": 2,
         "points": 7
       },
-      "matches": [],
+      "matches": [
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "Persikab",
+          "home_score": 0,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persikabo",
+          "away": "Persibo",
+          "home_score": 0,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "Perserang",
+          "home_score": 5,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "G. Tunggal",
+          "away": "Persibo",
+          "home_score": 0,
+          "away_score": 4,
+          "note": ""
+        },
+        {
+          "round": "Babak 16 Besar",
+          "home": "Persibo",
+          "away": "Persemai",
+          "home_score": 3,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": "Babak 16 Besar",
+          "home": "Persibo",
+          "away": "PS Palembang",
+          "home_score": 3,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": "Babak 16 Besar",
+          "home": "Persibo",
+          "away": "Persiba",
+          "home_score": 2,
+          "away_score": 2,
+          "note": ""
+        },
+        {
+          "round": "Babak Final",
+          "home": "Persibo",
+          "away": "Persikabo",
+          "home_score": 2,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": "Babak Final",
+          "home": "Persibo",
+          "away": "Persedikab",
+          "home_score": 2,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": "Babak Final",
+          "home": "Persibo",
+          "away": "Persiwa",
+          "home_score": 1,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": "Final [Aug 27, Gelora Gajahmada, Mojosari, Mojokerto]",
+          "home": "Persibo",
+          "away": "Persipur",
+          "home_score": 1,
+          "away_score": 0,
+          "note": "aet"
+        }
+      ],
       "source": "https://rsssf.org/tablesi/indo04.html"
     },
     {
@@ -110,7 +232,168 @@
         "goals_against": 15,
         "points": 27
       },
-      "matches": [],
+      "matches": [
+        {
+          "round": "Piala Indonesia 2005 (Copa Dji Sam Soe Indonesia 2005)",
+          "home": "Persema",
+          "away": "Persibo",
+          "home_score": 3,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": "Piala Indonesia 2005 (Copa Dji Sam Soe Indonesia 2005)",
+          "home": "Persibo",
+          "away": "Persema",
+          "home_score": 1,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persid",
+          "away": "Persibo",
+          "home_score": 2,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persipur",
+          "away": "Persibo",
+          "home_score": 2,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "Persiba",
+          "home_score": 3,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "Persedikab",
+          "home_score": 1,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Barito Putra",
+          "away": "Persibo",
+          "home_score": 0,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Mitra Kukar",
+          "away": "Persibo",
+          "home_score": 2,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "PS Mojokerto",
+          "home_score": 2,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "Persekaba",
+          "home_score": 2,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "Persid",
+          "home_score": 3,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "Persipur",
+          "home_score": 1,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persiba",
+          "away": "Persibo",
+          "home_score": 1,
+          "away_score": 2,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persedikab",
+          "away": "Persibo",
+          "home_score": 0,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "Barito Putra",
+          "home_score": 0,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "Mitra Kukar",
+          "home_score": 4,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "PS Mojokerto",
+          "away": "Persibo",
+          "home_score": 1,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persekaba",
+          "away": "Persibo",
+          "home_score": 3,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persiter",
+          "away": "Persibo",
+          "home_score": 2,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "PSIM",
+          "home_score": 2,
+          "away_score": 3,
+          "note": ""
+        }
+      ],
       "source": "https://rsssf.org/tablesi/indo05.html"
     },
     {
@@ -135,7 +418,160 @@
         "goals_against": 17,
         "points": 18
       },
-      "matches": [],
+      "matches": [
+        {
+          "round": "Wilayah III",
+          "home": "Persedikab Kediri",
+          "away": "Persibo Bojonegoro",
+          "home_score": 0,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": "Wilayah III",
+          "home": "Persibo Bojonegoro",
+          "away": "Persedikab Kediri",
+          "home_score": 2,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": "Wilayah IV",
+          "home": "Persik Kediri",
+          "away": "Persibo Bojonegoro",
+          "home_score": 4,
+          "away_score": 2,
+          "note": ""
+        },
+        {
+          "round": "Wilayah IV",
+          "home": "Persibo Bojonegoro",
+          "away": "Persik Kediri",
+          "home_score": 2,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "Persebaya",
+          "home_score": 1,
+          "away_score": 2,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Mojokerto P",
+          "away": "Persibo",
+          "home_score": 1,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "Persedikab",
+          "home_score": 3,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persis",
+          "away": "Persibo",
+          "home_score": 1,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persiba",
+          "away": "Persibo",
+          "home_score": 3,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "Persipro",
+          "home_score": 5,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "Persid",
+          "home_score": 1,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "Gresik United",
+          "home_score": 1,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persebaya",
+          "away": "Persibo",
+          "home_score": 1,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "Mojokerto P",
+          "home_score": 2,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persedikab",
+          "away": "Persibo",
+          "home_score": 2,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "Persis",
+          "home_score": 1,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persipro",
+          "away": "Persibo",
+          "home_score": 3,
+          "away_score": 2,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persid",
+          "away": "Persibo",
+          "home_score": 1,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Gresik United",
+          "away": "Persibo",
+          "home_score": 1,
+          "away_score": 1,
+          "note": ""
+        }
+      ],
       "source": "https://rsssf.org/tablesi/indo06.html"
     },
     {
@@ -160,7 +596,208 @@
         "goals_against": 11,
         "points": 37
       },
-      "matches": [],
+      "matches": [
+        {
+          "round": "Piala Indonesia 2007",
+          "home": "Persedikab Kediri",
+          "away": "Persibo Bojonegoro",
+          "home_score": 0,
+          "away_score": 0,
+          "note": "aet (15') , 2-4 pen"
+        },
+        {
+          "round": "Piala Indonesia 2007",
+          "home": "Persik Kediri",
+          "away": "Persibo Bojonegoro",
+          "home_score": 2,
+          "away_score": 2,
+          "note": ""
+        },
+        {
+          "round": "Piala Indonesia 2007",
+          "home": "Persibo Bojonegoro",
+          "away": "Persik Kediri",
+          "home_score": 1,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": "Piala Indonesia 2007",
+          "home": "Persibo Bojonegoro",
+          "away": "Gresik United",
+          "home_score": 1,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": "Piala Indonesia 2007",
+          "home": "Gresik United",
+          "away": "Persibo Bojonegoro",
+          "home_score": 3,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "PSMP",
+          "home_score": 1,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Gresik United",
+          "away": "Persibo",
+          "home_score": 0,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persedikab",
+          "away": "Persibo",
+          "home_score": 2,
+          "away_score": 2,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "Persepar",
+          "home_score": 2,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "Persipon",
+          "home_score": 3,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persiba",
+          "away": "Persibo",
+          "home_score": 0,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "PSIR",
+          "away": "Persibo",
+          "home_score": 3,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "Persipro",
+          "home_score": 1,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "Persid",
+          "home_score": 1,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persipro",
+          "away": "Persibo",
+          "home_score": 0,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persid",
+          "away": "Persibo",
+          "home_score": 1,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "PSIR",
+          "home_score": 3,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "Persiba",
+          "home_score": 3,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persipon",
+          "away": "Persibo",
+          "home_score": 1,
+          "away_score": 3,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persepar",
+          "away": "Persibo",
+          "home_score": 2,
+          "away_score": 2,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "Persedikab",
+          "home_score": 1,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "Persibo",
+          "away": "Gresik United",
+          "home_score": 2,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "PSMP",
+          "away": "Persibo",
+          "home_score": 2,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": "Semifinals [Sep 7, Stadion Manahan, Solo]",
+          "home": "PSP",
+          "away": "Persibo",
+          "home_score": 1,
+          "away_score": 2,
+          "note": ""
+        },
+        {
+          "round": "Final [Sep 10, Stadion Manahan, Solo]",
+          "home": "Persibo",
+          "away": "Persikad",
+          "home_score": 1,
+          "away_score": 0,
+          "note": ""
+        }
+      ],
       "source": "https://rsssf.org/tablesi/indo07.html"
     },
     {
@@ -183,7 +820,208 @@
         "goals_against": 31,
         "points": 41
       },
-      "matches": [],
+      "matches": [
+        {
+          "round": "Liga Esia II",
+          "home": "Persebaya",
+          "away": "Persibo",
+          "home_score": 1,
+          "away_score": 2,
+          "note": ""
+        },
+        {
+          "round": "Liga Esia II",
+          "home": "Perseman",
+          "away": "Persibo",
+          "home_score": 1,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": "Liga Esia II",
+          "home": "Persibo",
+          "away": "PSIM",
+          "home_score": 1,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": "Liga Esia II",
+          "home": "Persibo",
+          "away": "Persiba",
+          "home_score": 0,
+          "away_score": 2,
+          "note": ""
+        },
+        {
+          "round": "Liga Esia II",
+          "home": "PSIR",
+          "away": "Persibo",
+          "home_score": 1,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": "Liga Esia II",
+          "home": "Persiku",
+          "away": "Persibo",
+          "home_score": 1,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": "Liga Esia II",
+          "home": "Persibo",
+          "away": "Persibom",
+          "home_score": 0,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": "Liga Esia II",
+          "home": "Persibo",
+          "away": "Persigo",
+          "home_score": 0,
+          "away_score": 2,
+          "note": ""
+        },
+        {
+          "round": "Liga Esia II",
+          "home": "Persibo",
+          "away": "Gresik United",
+          "home_score": 2,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": "Liga Esia II",
+          "home": "Persema",
+          "away": "Persibo",
+          "home_score": 2,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": "Liga Esia II",
+          "home": "Persekabpas",
+          "away": "Persibo",
+          "home_score": 2,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": "Liga Esia II",
+          "home": "Persibo",
+          "away": "Persis",
+          "home_score": 1,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": "Liga Esia II",
+          "home": "Persibo",
+          "away": "PSS",
+          "home_score": 3,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": "Liga Esia II",
+          "home": "Persibo",
+          "away": "Persiku",
+          "home_score": 4,
+          "away_score": 2,
+          "note": ""
+        },
+        {
+          "round": "Liga Esia II",
+          "home": "Persibo",
+          "away": "PSIR",
+          "home_score": 1,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": "Liga Esia II",
+          "home": "PSS",
+          "away": "Persibo",
+          "home_score": 1,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": "Liga Esia II",
+          "home": "Persis",
+          "away": "Persibo",
+          "home_score": 1,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": "Liga Esia II",
+          "home": "Persibo",
+          "away": "Persekabpas",
+          "home_score": 1,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": "Liga Esia II",
+          "home": "Persibo",
+          "away": "Persema",
+          "home_score": 2,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": "Liga Esia II",
+          "home": "Persigo",
+          "away": "Persibo",
+          "home_score": 3,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": "Liga Esia II",
+          "home": "Gresik United",
+          "away": "Persibo",
+          "home_score": 3,
+          "away_score": 4,
+          "note": ""
+        },
+        {
+          "round": "Liga Esia II",
+          "home": "Persiba",
+          "away": "Persibo",
+          "home_score": 2,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": "Liga Esia II",
+          "home": "PSIM",
+          "away": "Persibo",
+          "home_score": 1,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": "Liga Esia II",
+          "home": "Persibo",
+          "away": "Perseman",
+          "home_score": 2,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": "Liga Esia II",
+          "home": "Persibo",
+          "away": "Persebaya",
+          "home_score": 3,
+          "away_score": 2,
+          "note": ""
+        }
+      ],
       "source": "https://rsssf.org/tablesi/indo08.html"
     },
     {
@@ -209,6 +1047,54 @@
         "points": 37
       },
       "matches": [
+        {
+          "round": null,
+          "home": "Persitara",
+          "away": "Persibo",
+          "home_score": 1,
+          "away_score": 2,
+          "note": "Stadion Soeprijadi, Blitar"
+        },
+        {
+          "round": null,
+          "home": "Persik",
+          "away": "Persibo",
+          "home_score": 1,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": null,
+          "home": "PSBI",
+          "away": "Persibo",
+          "home_score": 1,
+          "away_score": 0,
+          "note": "Stadion Soeprijadi, Blitar"
+        },
+        {
+          "round": "Babak 16 Besar",
+          "home": "Persebaya",
+          "away": "Persibo",
+          "home_score": 2,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": "Babak 16 Besar",
+          "home": "Persibo",
+          "away": "Persib",
+          "home_score": 1,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": "Babak 16 Besar",
+          "home": "Persibo",
+          "away": "Bontang FC",
+          "home_score": 2,
+          "away_score": 1,
+          "note": ""
+        },
         {
           "round": "Grup III",
           "home": "Persibo",
@@ -367,6 +1253,30 @@
           "away": "Persibo",
           "home_score": 2,
           "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": "Grup B",
+          "home": "Persibo",
+          "away": "Persipasi",
+          "home_score": 1,
+          "away_score": 0,
+          "note": ""
+        },
+        {
+          "round": "Grup B",
+          "home": "Persidafon",
+          "away": "Persibo",
+          "home_score": 0,
+          "away_score": 1,
+          "note": ""
+        },
+        {
+          "round": "Grup B",
+          "home": "Deltras",
+          "away": "Persibo",
+          "home_score": 2,
+          "away_score": 1,
           "note": ""
         },
         {
