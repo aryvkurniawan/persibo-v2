@@ -10,12 +10,16 @@ const { matches } = Astro.props;
 
 const [latest, ...earlier] = matches;
 const played = matches.filter((m) => m.home_score !== null && m.away_score !== null);
-const wins = played.filter((m) => {
+const results = played.map((m) => {
   const persiboHome = m.home_team.toUpperCase().includes('PERSIBO');
-  const own = persiboHome ? m.home_score : m.away_score;
-  const opp = persiboHome ? m.away_score : m.home_score;
-  return (own ?? 0) > (opp ?? 0);
-}).length;
+  const own = (persiboHome ? m.home_score : m.away_score) ?? 0;
+  const opp = (persiboHome ? m.away_score : m.home_score) ?? 0;
+  return own > opp ? 'menang' : own < opp ? 'kalah' : 'seri';
+});
+const wins = results.filter((r) => r === 'menang').length;
+const draws = results.filter((r) => r === 'seri').length;
+const losses = results.filter((r) => r === 'kalah').length;
+const summary = [`${wins} menang`, draws ? `${draws} seri` : '', `${losses} kalah`].filter(Boolean).join(' · ');
 ---
 
 {
@@ -30,7 +34,7 @@ const wins = played.filter((m) => {
             <h2 class="font-cond text-2xl font-bold uppercase leading-none tracking-wide">Uji coba</h2>
           </div>
           <span class="text-[11px] uppercase tracking-[0.18em] text-white/30">
-            {wins} menang · {played.length - wins} kalah
+            {summary}
           </span>
         </div>
 

@@ -91,6 +91,22 @@ Jadwal dan klasemen tiap hari di persibo.com.
 
 ---
 
+## 7. Poster hasil uji coba (`hasil-psn-ngada.png`)
+
+Seri di laga pemanasan terakhir. Persibo 1-1 PSN Ngada di Stadion Letjen H. Soedirman, Jumat 6 November.
+
+Gol Persibo dicetak Wiraja menit 10.
+
+Liga Nusantara mulai 13 November. Jadwal dan klasemen tiap hari di persibo.com.
+
+#Persibo #PersiboBojonegoro #LaskarAnglingDharma #Bojonegoro #LigaNusantara #UjiCoba
+
+### Versi pendek (story / X)
+
+Persibo 1-1 PSN Ngada. Gol Wiraja menit 10. Uji coba terakhir sebelum Liga Nusantara mulai 13 November.
+
+---
+
 ## Catatan
 
 - Jangan pakai kata "resmi", "official", atau "rebranding" — situs ini penggemar.

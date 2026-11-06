@@ -5,25 +5,18 @@
     "competition": "Uji Coba",
     "home_team": "PERSIBO Bojonegoro",
     "away_team": "PSN Ngada",
-    "home_score": null,
-    "away_score": null,
-    "time": "15:30 WIB",
-    "kickoff_iso": "2026-11-06T15:30:00+07:00",
+    "home_score": 1,
+    "away_score": 1,
     "venue": "Stadion Letjen H. Soedirman, Bojonegoro",
-    "ticket_url": "https://tiketbisa.com/event/persibo-bojonegoro-vs-ps-ngada",
-    "ticket_tiers": [
+    "opponent_logo": "/img/teams/psn-ngada.png",
+    "scorers": [
       {
-        "name": "Ekonomi",
-        "price": 25000
-      },
-      {
-        "name": "VIP",
-        "price": 90000
+        "player": "Wiraja",
+        "minute": 10,
+        "team": "PERSIBO Bojonegoro"
       }
     ],
-    "opponent_logo": "/img/teams/psn-ngada.png",
-    "scorers": [],
-    "note": "Uji coba pengganti laga kontra Persekabpas Pasuruan yang batal. Tiket dijual lewat tiketbisa.com.",
+    "note": "Uji coba pengganti laga kontra Persekabpas Pasuruan yang batal. Berakhir 1-1; gol Persibo dicetak Wiraja.",
     "sources": [
       {
         "label": "Radar Bojonegoro",

@@ -26,7 +26,7 @@ type Post = {
   md?: number;
   hs?: string;
   as?: string;
-  scorers?: { minute: string; player: string; team?: string }[];
+  scorers?: { minute?: string; player: string; team?: string }[];
 };
 
 // One static page per entry in social/posts.json; the render script screenshots each one.
@@ -198,7 +198,7 @@ const nameClass = (name: string) =>
         </div>
 
         <!-- Teams: left is always the home side, so the poster never flips the fixture order. -->
-        <div class="mt-[2rem] grid grid-cols-[1fr_auto_1fr] items-center gap-[1.2rem] border-y border-white/15 py-[2.6rem]">
+        <div class={`mt-[2rem] grid grid-cols-[1fr_auto_1fr] items-center gap-[1.2rem] border-y border-white/15 py-[2.6rem] ${mode === 'hasil' ? 'flex-1 content-center' : ''}`}>
           <div class="flex min-w-0 flex-col items-start gap-[0.9rem]">
             <img
               src={leftLogo.src}
@@ -244,9 +244,11 @@ const nameClass = (name: string) =>
             <div class="mt-[0.7rem] border-t border-white/12">
               {scorers.map((goal) => (
                 <div class="flex items-center gap-[1rem] border-b border-white/12 py-[1.15rem]">
-                  <p class="font-cond w-[4.5rem] shrink-0 text-[1.7rem] font-bold uppercase leading-none text-primary">
-                    {goal.minute}
-                  </p>
+                  {goal.minute && (
+                    <p class="font-cond w-[4.5rem] shrink-0 text-[1.7rem] font-bold uppercase leading-none text-primary">
+                      {goal.minute}
+                    </p>
+                  )}
                   <p class="font-cond min-w-0 flex-1 truncate text-[2.1rem] font-semibold uppercase leading-none text-white/85">
                     {goal.player}
                   </p>

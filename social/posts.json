@@ -26,6 +26,28 @@
     }
   },
   {
+    "out": "hasil-psn-ngada",
+    "mode": "hasil",
+    "competition": "Uji Coba",
+    "tag": "Pramusim",
+    "date": "6 November 2026",
+    "home": "PERSIBO Bojonegoro",
+    "away": "PSN Ngada",
+    "venue": "Stadion Letjen H. Soedirman",
+    "hs": "1",
+    "as": "1",
+    "scorers": [
+      {
+        "minute": "10'",
+        "player": "WIRAJA",
+        "team": "Persibo"
+      }
+    ],
+    "captions": {
+      "away": "NTT"
+    }
+  },
+  {
     "out": "hasil-persitara",
     "mode": "hasil",
     "date": "25 Oktober 2026",

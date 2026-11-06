@@ -149,7 +149,8 @@ export interface MatchDetail {
 
 export interface FriendlyScorer {
   player: string;
-  minute: number;
+  /** Absent when the report names the scorer without a minute. */
+  minute?: number;
   team: string;
 }
 
