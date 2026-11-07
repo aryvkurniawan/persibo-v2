@@ -5,8 +5,44 @@
     "team": "PERSIBO Bojonegoro",
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro#official",
     "photo_url": "https://assets.ileague.id/uploads/images/official/OF181514.jpg",
-    "scraped_at": "2026-11-05T18:33:11.729254+07:00",
+    "scraped_at": "2026-11-07T14:11:33+07:00",
     "photo_local": "/img/officials/i-putu-gede-swi-santoso.jpg"
+  },
+  {
+    "name": "BIJAHIL CHALWA",
+    "position": "Analis",
+    "team": "PERSIBO Bojonegoro",
+    "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro#official",
+    "photo_url": "https://assets.ileague.id/uploads/images/official/OF240764.png",
+    "scraped_at": "2026-11-07T14:11:33+07:00",
+    "photo_local": "/img/officials/bijahil-chalwa.jpg"
+  },
+  {
+    "name": "DIO KEVIN ALIEF UTAMA",
+    "position": "Masseur",
+    "team": "PERSIBO Bojonegoro",
+    "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro#official",
+    "photo_url": "https://assets.ileague.id/uploads/images/official/OF230641.jpg",
+    "scraped_at": "2026-11-07T14:11:33+07:00",
+    "photo_local": "/img/officials/dio-kevin-alief-utama.jpg"
+  },
+  {
+    "name": "FERDIANSYAH",
+    "position": "Pelatih Kiper",
+    "team": "PERSIBO Bojonegoro",
+    "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro#official",
+    "photo_url": "https://assets.ileague.id/uploads/images/official/OF242834.png",
+    "scraped_at": "2026-11-07T14:11:33+07:00",
+    "photo_local": "/img/officials/ferdiansyah.jpg"
+  },
+  {
+    "name": "M  FARID BES",
+    "position": "Fotografer",
+    "team": "PERSIBO Bojonegoro",
+    "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro#official",
+    "photo_url": "https://assets.ileague.id/uploads/images/official/OF240715.png",
+    "scraped_at": "2026-11-07T14:11:33+07:00",
+    "photo_local": "/img/officials/m-farid-bes.jpg"
   },
   {
     "name": "RIAN IKRAWANSYAH",
@@ -14,8 +50,17 @@
     "team": "PERSIBO Bojonegoro",
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro#official",
     "photo_url": "https://assets.ileague.id/uploads/images/official/OF210400.jpeg",
-    "scraped_at": "2026-11-05T18:33:11.729254+07:00",
+    "scraped_at": "2026-11-07T14:11:33+07:00",
     "photo_local": "/img/officials/rian-ikrawansyah.jpg"
+  },
+  {
+    "name": "SULTONY ALFIN APRIZAL",
+    "position": "Dokter Tim",
+    "team": "PERSIBO Bojonegoro",
+    "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro#official",
+    "photo_url": "https://assets.ileague.id/uploads/images/official/OF240673.jpg",
+    "scraped_at": "2026-11-07T14:11:33+07:00",
+    "photo_local": "/img/officials/sultony-alfin-aprizal.jpg"
   },
   {
     "name": "TISNA WIJAYA",
@@ -23,7 +68,7 @@
     "team": "PERSIBO Bojonegoro",
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro#official",
     "photo_url": "https://liasfiles.ileague.id:8443/liasfile/official/OF240769.jpg",
-    "scraped_at": "2026-11-05T18:33:11.729254+07:00",
+    "scraped_at": "2026-11-07T14:11:33+07:00",
     "photo_local": "/img/officials/tisna-wijaya.jpg"
   }
 ]

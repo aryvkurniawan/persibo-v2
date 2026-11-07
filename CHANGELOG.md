@@ -7,6 +7,7 @@ dan proyek ini mengikuti [Semantic Versioning](https://semver.org/lang/id/).
 
 ## [Unreleased]
 ### Added
+- Berita hasil uji coba terakhir: Persibo 1-1 PSN Ngada, 6 November 2026. Artikel `/tim/berita/persibo-ditahan-imbang-psn-ngada-1-1-uji-coba` memuat gol Wiraja menit 10, rekor pramusim 5-2-2 dari sembilan laga, konteks PSN Ngada sebagai pengganti Persekabpas, target promosi, dan laga pembuka 13 November. Gambar pakai poster hasil yang sudah ada (`/img/persibo-psn-ngada.png`), bukan foto laga lain.
 - Poster hasil uji coba PSN Ngada (`hasil-psn-ngada.png`): skor 1-1, badge Seri, gol Wiraja menit 10. Laga 6 November di `friendlies.json` kini berisi skor dan pencetak gol, jadi beranda menampilkan kartu hasil dan tawaran tiket hilang. `FriendlyScorer.minute` opsional; blok skor mode `hasil` menyerap sisa ruang agar tidak ada pita kosong di atas CTA.
 - Uji coba terjadwal: PERSIBO vs PSN Ngada, Jumat 6 November 2026, 15.30 WIB, Stadion Letjen H. Soedirman. Masuk `friendlies.json` dengan skor `null` (kini 1-1): kartu menampilkan jam kickoff, badge AKAN DATANG, dan tombol Beli tiket ke tiketbisa.com. Rekor menang/kalah hanya menghitung laga yang sudah selesai.
 - `SportsEvent` JSON-LD di beranda untuk laga terjadwal terdekat. Laga terdekat yang belum dimainkan jadi event pertama yang dibaca crawler, kini 13 November. `startDate` ISO, venue + alamat Bojonegoro, homeTeam/awayTeam. `startDate` halaman pertandingan juga diperbaiki: `kickoff_iso` untuk 2026-27, tanggal ISO untuk arsip tanpa jam kickoff (sebelumnya string kosong). Harga tiket uji coba (Ekonomi Rp25.000, VIP Rp90.000) tampil di kartu dan dikirim sebagai dua `Offer`.
@@ -53,6 +54,7 @@ dan proyek ini mengikuti [Semantic Versioning](https://semver.org/lang/id/).
 - Posisi dan musim di tabel menempel tanpa spasi di mobile ("P. GAWANG2025-26") karena keduanya sebaris flex; sekarang bertumpuk.
 
 ### Changed
+- Ofisial 2026-27 diperbarui dari iLeague: 8 orang (sebelumnya 3). Tambahan pelatih kiper, analis, dokter tim, dan fotografer; Rian Ikrawansyah tetap sekretaris, Tisna Wijaya kini berbagi posisi masseur dengan Dio Kevin Alief Utama. Semua portrait dicerminkan ke `public/img/officials/` dan tercatat di `assets-manifest.json`. `fetch-assets` menandai foto ofisial sebagai musim 2026-27 (sebelumnya hardcode 2025-26).
 - Arsip 2025-26 dilengkapi: 12 dari 12 pertandingan punya detail (sebelumnya 3), masing-masing dengan XI + cadangan + pelatih kedua tim, daftar gol/kartu, wasit lengkap (termasuk asisten 2 dan cadangan wasit), dan venue. Scraper-nya `.scratch/scrape_ileague_2025_26.py`, memakai parser 2024-25 ditambah pembaca blok hero untuk gol/kartu karena tab Linimasa 2025-26 kosong di sumber. Statistik pertandingan tidak diisi: iLeague tidak pernah menerbitkannya untuk musim ini.
 - Seluruh halaman memakai satu bahasa desain "broadcast" dari homepage: judul `font-cond` uppercase, panel kotak `bg-[#0c0b0f]` + `border-white/12`, aksen oranye, tanpa sudut membulat.
 - `PageHeader.astro` baru sebagai header halaman bersama (label, judul, meta, deskripsi).

@@ -1,8 +1,112 @@
 {
-  "generated_at": "2026-10-30T12:24:42.081Z",
+  "generated_at": "2026-11-07T07:18:30.929Z",
   "note": "Images mirrored from assets.ileague.id so past seasons survive the source going away.",
-  "count": 118,
+  "count": 117,
   "assets": [
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/official/OF240764.png",
+      "path": "/img/officials/bijahil-chalwa.jpg",
+      "bytes": 16135,
+      "width": 240,
+      "sha256": "9de2850664f954a5",
+      "fetched_at": "2026-11-07T07:13:12.432Z",
+      "kind": "official-photo",
+      "name": "BIJAHIL CHALWA",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/official/OF230641.jpg",
+      "path": "/img/officials/dio-kevin-alief-utama.jpg",
+      "bytes": 13386,
+      "width": 240,
+      "sha256": "5d793975552ee710",
+      "fetched_at": "2026-11-07T07:13:12.467Z",
+      "kind": "official-photo",
+      "name": "DIO KEVIN ALIEF UTAMA",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/official/OF242834.png",
+      "path": "/img/officials/ferdiansyah.jpg",
+      "bytes": 19628,
+      "width": 240,
+      "sha256": "2ad2872d80796932",
+      "fetched_at": "2026-11-07T07:13:12.501Z",
+      "kind": "official-photo",
+      "name": "FERDIANSYAH",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/official/OF181514.jpg",
+      "path": "/img/officials/i-putu-gede-swi-santoso.jpg",
+      "bytes": 10469,
+      "width": 240,
+      "sha256": "34de8ffafab00b32",
+      "fetched_at": "2026-11-07T07:13:12.419Z",
+      "kind": "official-photo",
+      "name": "I PUTU GEDE SWI SANTOSO",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/official/OF240715.png",
+      "path": "/img/officials/m-farid-bes.jpg",
+      "bytes": 14362,
+      "width": 240,
+      "sha256": "37e1e1717d4afa85",
+      "fetched_at": "2026-11-07T07:13:12.429Z",
+      "kind": "official-photo",
+      "name": "M  FARID BES",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/official/OF210400.jpeg",
+      "path": "/img/officials/rian-ikrawansyah.jpg",
+      "bytes": 16857,
+      "width": 240,
+      "sha256": "2441c32e1d14ed6e",
+      "fetched_at": "2026-11-07T07:13:12.439Z",
+      "kind": "official-photo",
+      "name": "RIAN IKRAWANSYAH",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/official/OF240673.jpg",
+      "path": "/img/officials/sultony-alfin-aprizal.jpg",
+      "bytes": 9171,
+      "width": 240,
+      "sha256": "296cd9a5240d34a8",
+      "fetched_at": "2026-11-07T07:13:12.600Z",
+      "kind": "official-photo",
+      "name": "SULTONY ALFIN APRIZAL",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://liasfiles.ileague.id:8443/liasfile/official/OF240769.jpg",
+      "path": "/img/officials/tisna-wijaya.jpg",
+      "bytes": 14573,
+      "width": 240,
+      "sha256": "b4cea082009a3ea8",
+      "fetched_at": "2026-11-07T07:13:23.808Z",
+      "kind": "official-photo",
+      "name": "TISNA WIJAYA",
+      "seasons": [
+        "2026-27"
+      ]
+    },
     {
       "source_url": "https://assets.ileague.id/uploads/images/player/PE22082144.jpeg",
       "path": "/img/players/adre-arido-geovani.jpg",
@@ -676,19 +780,6 @@
       ],
       "player_ids": [
         1618524475
-      ]
-    },
-    {
-      "source_url": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE25179390.jpg",
-      "path": "/img/players/nono.jpg",
-      "bytes": 21467,
-      "width": 300,
-      "sha256": "3d609aa70fcfc9af",
-      "fetched_at": "2026-10-30T12:24:42.061Z",
-      "kind": "player-photo",
-      "name": "NONO",
-      "seasons": [
-        "2025-26"
       ]
     },
     {
@@ -1652,45 +1743,6 @@
       "name": "Waanal Brothers",
       "seasons": [
         "2025-26"
-      ]
-    },
-    {
-      "source_url": "https://assets.ileague.id/uploads/images/official/OF181514.jpg",
-      "path": "/img/officials/i-putu-gede-swi-santoso.jpg",
-      "bytes": 13215,
-      "width": 300,
-      "sha256": "34de8ffafab00b32",
-      "fetched_at": "2026-11-05T18:30:46.425077+07:00",
-      "kind": "official-photo",
-      "name": "I PUTU GEDE SWI SANTOSO",
-      "seasons": [
-        "2026-27"
-      ]
-    },
-    {
-      "source_url": "https://assets.ileague.id/uploads/images/official/OF210400.jpeg",
-      "path": "/img/officials/rian-ikrawansyah.jpg",
-      "bytes": 56513,
-      "width": 480,
-      "sha256": "e5e5ee3d5c32fe6e",
-      "fetched_at": "2026-11-05T18:30:46.425077+07:00",
-      "kind": "official-photo",
-      "name": "RIAN IKRAWANSYAH",
-      "seasons": [
-        "2026-27"
-      ]
-    },
-    {
-      "source_url": "https://liasfiles.ileague.id:8443/liasfile/official/OF240769.jpg",
-      "path": "/img/officials/tisna-wijaya.jpg",
-      "bytes": 34529,
-      "width": 300,
-      "sha256": "b4cea082009a3ea8",
-      "fetched_at": "2026-11-05T18:30:46.425077+07:00",
-      "kind": "official-photo",
-      "name": "TISNA WIJAYA",
-      "seasons": [
-        "2026-27"
       ]
     }
   ]

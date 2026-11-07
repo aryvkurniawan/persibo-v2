@@ -28,6 +28,20 @@ function matchSlug(fixture) {
 // News articles (static pages)
 const newsArticles = [
   {
+    title: 'Persibo ditahan imbang PSN Ngada 1-1 di uji coba terakhir',
+    description: 'Gol Wiraja pada menit ke-10 dibalas PSN Ngada. Hasil 1-1 menutup rangkaian sembilan uji coba Persibo sebelum Liga Nusantara 2026-27 bergulir 13 November.',
+    url: '/tim/berita/persibo-ditahan-imbang-psn-ngada-1-1-uji-coba',
+    category: 'Berita',
+    date: '2026-11-07'
+  },
+  {
+    title: 'Persibo Tundukkan Persitara 2-0 di Laga Uji Coba Perdana di Stadion Letjen H. Soedirman',
+    description: 'Dua gol Sehabudin Ahmad dan Putra Chaniago membawa Persibo Bojonegoro menang 2-0 atas Persitara Jakarta Utara di laga uji coba jelang Liga Nusantara 2026-27.',
+    url: '/tim/berita/persibo-tundukkan-persitara-2-0-uji-coba',
+    category: 'Berita',
+    date: '2026-10-25'
+  },
+  {
     title: 'Persibo Bojonegoro Lawan Persika Karanganyar Jumat 12 Desember',
     description: 'Persibo Bojonegoro akan melanjutkan petualangannya di Liga 3 Nusantara 2025-2026 dengan menghadapi Persika Karanganyar pada Jumat, 12 Desember 2025 sore.',
     url: '/tim/berita/persibo-lawan-persika-karanganyar-jumat-12-desember',

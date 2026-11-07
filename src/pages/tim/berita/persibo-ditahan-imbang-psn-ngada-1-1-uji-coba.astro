@@ -1,0 +1,236 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import ShareButtons from '../../../components/ShareButtons.astro';
+
+const siteUrl = (Astro.site || Astro.url.origin).toString().replace(/\/+$/, '');
+
+const breadcrumbItems = [
+  { label: 'Beranda', href: '/' },
+  { label: 'Tim', href: '/tim' },
+  { label: 'Berita', href: '/tim/berita' },
+  { label: 'Persibo Ditahan Imbang PSN Ngada 1-1', href: '/tim/berita/persibo-ditahan-imbang-psn-ngada-1-1-uji-coba' }
+];
+
+const headline = 'Persibo ditahan imbang PSN Ngada 1-1 di uji coba terakhir';
+const summary = 'Persibo Bojonegoro menutup rangkaian uji coba pramusim dengan hasil imbang 1-1 melawan PSN Ngada di Stadion Letjen H. Soedirman, Bojonegoro, Jumat (6/11/2026). Gol Persibo dicetak Wiraja pada menit ke-10.';
+
+const publishedDate = '2026-11-07T08:30:00+07:00';
+const modifiedDate = '2026-11-07T08:30:00+07:00';
+const author = 'persibo.com';
+const authorUrl = 'https://persibo.com';
+---
+
+<Layout
+  title={`${headline} - PERSIBO Bojonegoro (Unofficial)`}
+  description={summary}
+  ogImage="/img/persibo-psn-ngada.png"
+>
+  <div class="mx-auto max-w-3xl px-4 py-8 lg:px-6 lg:py-12">
+    <Breadcrumb items={breadcrumbItems} />
+
+    <!-- Article Header -->
+    <article>
+      <div class="mb-6">
+        <div class="flex items-center gap-2 mb-4 flex-wrap">
+          <span class="bg-primary px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[#08070a]">Uji Coba</span>
+          <span class="text-xs text-white/40">7 November 2026</span>
+          <span class="text-xs text-white/30">•</span>
+          <span class="text-xs text-white/40">persibo.com</span>
+        </div>
+
+        <h1 class="mt-4 font-cond text-3xl font-bold uppercase leading-[0.95] text-white sm:text-4xl md:text-5xl">
+          {headline}
+        </h1>
+
+        <div class="mt-3 flex items-center gap-3 text-[11px] uppercase tracking-[0.12em] text-white/40 mb-4">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-base">location_on</span>
+            <span>BOJONEGORO</span>
+          </div>
+          <span class="text-white/30">•</span>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-base">stadium</span>
+            <span>Stadion Letjen H. Soedirman</span>
+          </div>
+        </div>
+
+        <!-- Share Buttons -->
+        <div class="mb-6 border-y border-white/10 py-4">
+          <ShareButtons
+            title={headline}
+            description={summary}
+            type="article"
+          />
+        </div>
+      </div>
+
+      <!-- Featured Image -->
+      <div class="mb-6 overflow-hidden border border-white/12">
+        <img
+          src="/img/persibo-psn-ngada.png"
+          alt="Poster hasil uji coba Persibo Bojonegoro vs PSN Ngada, skor 1-1"
+          class="mx-auto block h-auto w-full max-w-md"
+          loading="lazy"
+          width="1080"
+          height="1350"
+        />
+        <p class="border-t border-white/10 px-3 py-2 text-center text-[11px] uppercase tracking-[0.14em] text-white/30">Poster hasil laga Persibo Bojonegoro vs PSN Ngada (persibo.com)</p>
+      </div>
+
+      <!-- Article Content -->
+      <div class="max-w-none">
+        <div class="space-y-4 text-white/60 leading-relaxed">
+          <p class="text-lg font-medium text-white">
+            <strong>BOJONEGORO, persibo.com</strong> – Persibo Bojonegoro menutup rangkaian uji coba pramusim dengan hasil imbang. Menjamu <strong class="text-white">PSN Ngada</strong> di <strong class="text-white">Stadion Letjen H. Soedirman, Bojonegoro</strong>, Jumat <strong class="text-primary">(6/11/2026)</strong> sore, Laskar Angling Dharma bermain <strong class="text-primary">1-1</strong>.
+          </p>
+
+          <p>
+            Gol Persibo dicetak <strong class="text-primary">Wiraja</strong> pada <strong class="text-white">menit ke-10</strong>. Satu gol PSN Ngada membuat kedudukan bertahan 1-1 sampai pertandingan selesai. Laga digelar terbuka untuk penonton dan dijual bertiket, dengan kick-off pukul 15.30 WIB.
+          </p>
+
+          <p>
+            Ini uji coba kesembilan Persibo sekaligus yang terakhir sebelum Liga Nusantara 2026-27 bergulir. Lawan semula adalah Persekabpas Pasuruan, tetapi laga itu batal karena agenda internal klub lawan. PSN Ngada, sesama peserta Liga Nusantara dari Nusa Tenggara Timur, mengisi kekosongan jadwal.
+          </p>
+
+          <h2 class="font-cond text-2xl font-bold uppercase tracking-wide text-white mt-8 mb-3">Ujian terakhir</h2>
+
+          <p>
+            Manajer Persibo <strong class="text-white">Ali Mahmud</strong> menyebut uji coba ini sebagai cara mengukur kedalaman skuad. Semua pemain yang diperkenalkan pada peluncuran tim 4 November malam tersedia untuk tampil.
+          </p>
+
+          <div class="my-6 border-l-2 border-primary bg-white/[0.02] px-4 py-3">
+            <p class="text-white/70">
+              <strong class="text-white">"Pemain yang diumumkan dalam launching dipastikan memperkuat Persibo,"</strong><br/>
+              kata Ali Mahmud sebelum laga.
+            </p>
+          </div>
+
+          <p>
+            PSN Ngada juga sedang menyiapkan diri untuk kompetisi. Pada 3 November, tim asal NTT itu kalah 0-2 dari Gresik United di Stadion Gelora Joko Samudro. Menurut Ali, menghadapi tim dengan level setara membantu pelatih membaca kekuatan dan kekurangan skuad.
+          </p>
+
+          <h2 class="font-cond text-2xl font-bold uppercase tracking-wide text-white mt-8 mb-3">Rekor pramusim</h2>
+
+          <p>
+            Dari delapan laga sebelumnya, Persibo mencatat lima kemenangan, satu imbang, dan dua kekalahan. Tim asuhan <strong class="text-white">I Putu Gede</strong> mencetak 14 gol dan kebobolan 7. Hasil 1-1 melawan PSN Ngada membuat rekor pramusim menjadi lima menang, dua imbang, dua kalah.
+          </p>
+
+          <h2 class="font-cond text-2xl font-bold uppercase tracking-wide text-white mt-8 mb-3">Modal menuju 13 November</h2>
+
+          <p>
+            Peluncuran 4 November memperkenalkan 30 pemain, termasuk 10 pemain senior, dengan target promosi ke Liga 2. "Semangat kami semua, ingin Persibo naik ke Liga 2," kata Presiden Klub <strong class="text-white">Wihadi Wiyanto</strong>.
+          </p>
+
+          <p>
+            Perjalanan di Liga Nusantara 2026-27 dimulai <strong class="text-primary">13 November 2026</strong>. Persibo menjamu <strong class="text-white">Persipa</strong> di Stadion Letjen H. Soedirman pada laga pembuka Grup B.
+          </p>
+
+          <!-- Match Summary Box -->
+          <div class="my-6 border border-white/12 bg-[#0c0b0f] p-5">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary">sports_soccer</span>
+              Ringkasan Pertandingan
+            </h3>
+            <div class="grid grid-cols-2 gap-4 text-sm">
+              <div>
+                <p class="text-white/40 mb-1">Tanggal</p>
+                <p class="text-white font-medium">6 November 2026</p>
+              </div>
+              <div>
+                <p class="text-white/40 mb-1">Venue</p>
+                <p class="text-white font-medium">Stadion Letjen H. Soedirman, Bojonegoro</p>
+              </div>
+              <div>
+                <p class="text-white/40 mb-1">Skor</p>
+                <p class="text-white font-bold text-lg">1 - 1</p>
+              </div>
+              <div>
+                <p class="text-white/40 mb-1">Pencetak Gol</p>
+                <p class="text-white font-medium">Wiraja (10')</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sources -->
+          <div class="mt-8 border-t border-white/10 pt-6">
+            <h3 class="text-lg font-bold text-white mb-3">Sumber:</h3>
+            <ul class="space-y-2 text-sm text-white/40">
+              <li>
+                <span class="text-white/30">[1]</span>{' '}
+                <a href="https://radarbojonegoro.jawapos.com/sportainment/2611050007/persibo-hadapi-psn-dengan-kekuatan-penuh-besok-uji-coba-lawan-sesama-klub-liga-3-nusantara" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary/80 underline">
+                  Radar Bojonegoro - Persibo Hadapi PSN dengan Kekuatan Penuh, Besok Uji Coba Lawan Sesama Klub Liga 3 Nusantara
+                </a>
+              </li>
+              <li>
+                <span class="text-white/30">[2]</span>{' '}
+                <a href="https://radarbojonegoro.jawapos.com/sportainment/2611030001/batal-uji-coba-dengan-persekabpas-persibo-ganti-kontra-ps-ngada" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary/80 underline">
+                  Radar Bojonegoro - Batal Uji Coba dengan Persekabpas, Persibo Ganti Kontra PS Ngada
+                </a>
+              </li>
+              <li>
+                <span class="text-white/30">[3]</span>{' '}
+                <a href="https://radargresik.jawapos.com/kebo-giras/2611030009/matangkan-persiapan-liga-nusantara-2026-gresik-united-tekuk-psn-ngada-2-0-di-gejos" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary/80 underline">
+                  Radar Gresik - Matangkan Persiapan Liga Nusantara 2026, Gresik United Tekuk PSN Ngada 2-0 di Gejos
+                </a>
+              </li>
+              <li>
+                <span class="text-white/30">[4]</span>{' '}
+                <a href="https://radarbojonegoro.jawapos.com/sportainment/2611020006/persibo-lakukan-banyak-evaluasi-jelang-kickoff-liga-3-nusantara" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary/80 underline">
+                  Radar Bojonegoro - Persibo Lakukan Banyak Evaluasi Jelang Kickoff Liga 3 Nusantara
+                </a>
+              </li>
+              <li>
+                <span class="text-white/30">[5]</span>{' '}
+                <a href="https://radarbojonegoro.jawapos.com/sportainment/2611060002/persibo-targetkan-liga-2-championship-diperkuat-30-pemain-untuk-liga-3-nusantara" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary/80 underline">
+                  Radar Bojonegoro - Persibo Targetkan Liga 2 Championship, Diperkuat 30 Pemain untuk Liga 3 Nusantara
+                </a>
+              </li>
+              <li>
+                <span class="text-white/30">[6]</span>{' '}
+                <a href="https://tiketbisa.com/event/persibo-bojonegoro-vs-ps-ngada" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary/80 underline">
+                  Tiketbisa - Persibo Bojonegoro vs PS. Ngada
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Related Articles / Back to News -->
+    <div class="mt-10 border-t border-white/10 pt-6">
+      <a href="/tim/berita" class="text-[10px] font-bold uppercase tracking-[0.18em] text-primary hover:text-primary/80">
+        <span class="material-symbols-outlined">arrow_back</span>
+        <span>Kembali ke Daftar Berita</span>
+      </a>
+    </div>
+  </div>
+</Layout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": headline,
+  "image": `${siteUrl}/img/persibo-psn-ngada.png`,
+  "datePublished": publishedDate,
+  "dateModified": modifiedDate,
+  "author": {
+    "@type": "Organization",
+    "name": author,
+    "url": authorUrl
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "PERSIBO Bojonegoro",
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${siteUrl}/logo-128.png`
+    }
+  },
+  "description": summary,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/tim/berita/persibo-ditahan-imbang-psn-ngada-1-1-uji-coba`
+  }
+})} />

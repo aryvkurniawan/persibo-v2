@@ -97,7 +97,7 @@ async function collectStragglers() {
     const url = person.photo_url || '';
     if (!url.startsWith('http')) continue;
     if (!wanted.has(url)) {
-      wanted.set(url, { kind: 'official-photo', name: person.name, seasons: new Set(['2025-26']) });
+      wanted.set(url, { kind: 'official-photo', name: person.name, seasons: new Set(['2026-27']) });
     }
   }
 
