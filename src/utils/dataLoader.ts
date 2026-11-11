@@ -46,8 +46,6 @@ const SEASONS = {
   },
 } satisfies Record<Season, { standings: Standing[]; fixtures: Fixture[]; teams: Team[]; matchDetails: MatchDetail[] }>;
 
-// iLeague has published the 2026-27 official list (coaching staff, medical,
-// secretary, media); no squad list has been published for 2026-27 yet.
 export async function loadOfficials(): Promise<Official[]> {
   return officials as Official[];
 }

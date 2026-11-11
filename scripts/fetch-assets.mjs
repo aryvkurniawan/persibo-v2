@@ -106,7 +106,7 @@ async function collectStragglers() {
     const url = player.photo_url || '';
     if (!url.startsWith('http') || player.photo_local) continue;
     if (!wanted.has(url)) {
-      wanted.set(url, { kind: 'player-photo', name: player.name, seasons: new Set(['2025-26']) });
+      wanted.set(url, { kind: 'player-photo', name: player.name, seasons: new Set(['2026-27']) });
     }
   }
 

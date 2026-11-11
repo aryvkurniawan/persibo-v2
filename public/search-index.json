@@ -1,304 +1,584 @@
 {
   "players": [
     {
-      "id": "ikhsan",
-      "title": "NUR IKHSAN",
-      "subtitle": "P. GAWANG • 27 tahun • INDONESIA",
-      "description": "Pemain P. GAWANG PERSIBO Bojonegoro",
-      "url": "/pemain/ikhsan",
+      "id": "angger",
+      "title": "ANGGER",
+      "subtitle": " • 33 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/angger",
       "category": "Pemain",
-      "searchText": "ikhsan nur ikhsan p. gawang indonesia 27",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE1715849914.jpg"
+      "searchText": "angger angger  indonesia 33",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE7612.jpg"
     },
     {
-      "id": "rizky-d",
-      "title": "RIZKY DWI NUGRAHA ASYARI",
-      "subtitle": "BELAKANG • 22 tahun • INDONESIA",
-      "description": "Pemain BELAKANG PERSIBO Bojonegoro",
-      "url": "/pemain/rizky-d",
+      "id": "didik-s",
+      "title": "DIDIK. S",
+      "subtitle": " • 27 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/didik-s",
       "category": "Pemain",
-      "searchText": "rizky d rizky dwi nugraha asyari belakang indonesia 22",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE24091211.jpg"
-    },
-    {
-      "id": "joko-s",
-      "title": "JOKO SUPRIYANTO",
-      "subtitle": "BELAKANG • 29 tahun • INDONESIA",
-      "description": "Pemain BELAKANG PERSIBO Bojonegoro",
-      "url": "/pemain/joko-s",
-      "category": "Pemain",
-      "searchText": "joko s joko supriyanto belakang indonesia 29",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE22250896.jpg"
-    },
-    {
-      "id": "romy",
-      "title": "M. ROMY ARIF SETIAWAN",
-      "subtitle": "BELAKANG • 19 tahun • INDONESIA",
-      "description": "Pemain BELAKANG PERSIBO Bojonegoro",
-      "url": "/pemain/romy",
-      "category": "Pemain",
-      "searchText": "romy m. romy arif setiawan belakang indonesia 19",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE25178307.jpg"
+      "searchText": "didik. s didik. s  indonesia 27",
+      "image": null
     },
     {
       "id": "shevanton",
       "title": "TEGAR ANDRIE SHEVANTON",
-      "subtitle": "BELAKANG • 21 tahun • INDONESIA",
+      "subtitle": "BELAKANG • 22 tahun • INDONESIA",
       "description": "Pemain BELAKANG PERSIBO Bojonegoro",
       "url": "/pemain/shevanton",
       "category": "Pemain",
-      "searchText": "shevanton tegar andrie shevanton belakang indonesia 21",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE21129780.jpg"
+      "searchText": "shevanton tegar andrie shevanton belakang indonesia 22",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE21129780.jpg"
+    },
+    {
+      "id": "sehabudin",
+      "title": "SEHABUDIN",
+      "subtitle": " • 33 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/sehabudin",
+      "category": "Pemain",
+      "searchText": "sehabudin sehabudin  indonesia 33",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE24298263.jpg"
+    },
+    {
+      "id": "marvin",
+      "title": "MARVIN",
+      "subtitle": " • 22 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/marvin",
+      "category": "Pemain",
+      "searchText": "marvin marvin  indonesia 22",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE24079956.jpg"
+    },
+    {
+      "id": "kaka",
+      "title": "KAKA",
+      "subtitle": " • 18 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/kaka",
+      "category": "Pemain",
+      "searchText": "kaka kaka  indonesia 18",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE26035887.jpg"
+    },
+    {
+      "id": "iqbal",
+      "title": "IQBAL",
+      "subtitle": " • 25 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/iqbal",
+      "category": "Pemain",
+      "searchText": "iqbal iqbal  indonesia 25",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE25229604.jpg"
+    },
+    {
+      "id": "rifaldi",
+      "title": "RIFALDI",
+      "subtitle": " • 33 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/rifaldi",
+      "category": "Pemain",
+      "searchText": "rifaldi rifaldi  indonesia 33",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE1716245422.jpg"
+    },
+    {
+      "id": "fuad",
+      "title": "FUAD",
+      "subtitle": " • 21 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/fuad",
+      "category": "Pemain",
+      "searchText": "fuad fuad  indonesia 21",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE26033593.jpg"
+    },
+    {
+      "id": "rangga",
+      "title": "RANGGA",
+      "subtitle": " • 22 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/rangga",
+      "category": "Pemain",
+      "searchText": "rangga rangga  indonesia 22",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE23293081.jpg"
+    },
+    {
+      "id": "a-fernandi",
+      "title": "A. FERNANDI",
+      "subtitle": " • 22 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/a-fernandi",
+      "category": "Pemain",
+      "searchText": "a. fernandi a. fernandi  indonesia 22",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE23295942.jpg"
+    },
+    {
+      "id": "zulkifli",
+      "title": "ZULKIFLI",
+      "subtitle": " • 21 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/zulkifli",
+      "category": "Pemain",
+      "searchText": "zulkifli zulkifli  indonesia 21",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE24234894.jpg"
+    },
+    {
+      "id": "msyahril",
+      "title": "M.SYAHRIL",
+      "subtitle": " • 21 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/msyahril",
+      "category": "Pemain",
+      "searchText": "m.syahril m.syahril  indonesia 21",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE23147319.jpg"
+    },
+    {
+      "id": "revaldo",
+      "title": "REVALDO",
+      "subtitle": " • 20 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/revaldo",
+      "category": "Pemain",
+      "searchText": "revaldo revaldo  indonesia 20",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE22301916.jpg"
+    },
+    {
+      "id": "diaz",
+      "title": "DIAZ",
+      "subtitle": " • 27 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/diaz",
+      "category": "Pemain",
+      "searchText": "diaz diaz  indonesia 27",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE1716960144.jpg"
+    },
+    {
+      "id": "dios-d-a",
+      "title": "DIOS D. A",
+      "subtitle": " • 20 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/dios-d-a",
+      "category": "Pemain",
+      "searchText": "dios d. a dios d. a  indonesia 20",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE22102637.jpg"
+    },
+    {
+      "id": "aaron-y",
+      "title": "AARON Y",
+      "subtitle": " • 21 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/aaron-y",
+      "category": "Pemain",
+      "searchText": "aaron y aaron y  indonesia 21",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE23093421.jpg"
+    },
+    {
+      "id": "rio-valentino",
+      "title": "RIO VALENTINO",
+      "subtitle": " • 31 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/rio-valentino",
+      "category": "Pemain",
+      "searchText": "rio valentino rio valentino  indonesia 31",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE1616364746.jpg"
+    },
+    {
+      "id": "romeo",
+      "title": "ROMEO",
+      "subtitle": " • 19 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/romeo",
+      "category": "Pemain",
+      "searchText": "romeo romeo  indonesia 19",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE21173954.jpg"
+    },
+    {
+      "id": "j-latuconsina",
+      "title": "J LATUCONSINA",
+      "subtitle": " • 21 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/j-latuconsina",
+      "category": "Pemain",
+      "searchText": "j latuconsina j latuconsina  indonesia 21",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE22092662.jpg"
+    },
+    {
+      "id": "o-chanigio",
+      "title": "O. CHANIGIO",
+      "subtitle": " • 27 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/o-chanigio",
+      "category": "Pemain",
+      "searchText": "o. chanigio o. chanigio  indonesia 27",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE1613612366.jpg"
+    },
+    {
+      "id": "kafka",
+      "title": "KAFKA",
+      "subtitle": " • 19 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/kafka",
+      "category": "Pemain",
+      "searchText": "kafka kafka  indonesia 19",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE21155111.jpg"
+    },
+    {
+      "id": "wiraja",
+      "title": "WIRAJA",
+      "subtitle": " • 24 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/wiraja",
+      "category": "Pemain",
+      "searchText": "wiraja wiraja  indonesia 24",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE24132552.jpg"
+    },
+    {
+      "id": "deco",
+      "title": "DECO",
+      "subtitle": " • 19 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/deco",
+      "category": "Pemain",
+      "searchText": "deco deco  indonesia 19",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE24164087.jpg"
+    },
+    {
+      "id": "adi-purnama",
+      "title": "ADI PURNAMA",
+      "subtitle": " • 21 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/adi-purnama",
+      "category": "Pemain",
+      "searchText": "adi purnama adi purnama  indonesia 21",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE22145593.jpg"
+    },
+    {
+      "id": "fahad",
+      "title": "FAHAD",
+      "subtitle": " • 21 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/fahad",
+      "category": "Pemain",
+      "searchText": "fahad fahad  indonesia 21",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE26030272.jpg"
+    },
+    {
+      "id": "odhi",
+      "title": "ODHI",
+      "subtitle": " • 19 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/odhi",
+      "category": "Pemain",
+      "searchText": "odhi odhi  indonesia 19",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE23283822.jpg"
+    },
+    {
+      "id": "jojo",
+      "title": "JOJO",
+      "subtitle": " • 20 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/jojo",
+      "category": "Pemain",
+      "searchText": "jojo jojo  indonesia 20",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE24225298.jpg"
+    },
+    {
+      "id": "putra-chaniago",
+      "title": "PUTRA CHANIAGO",
+      "subtitle": " • 28 tahun • INDONESIA",
+      "description": "Pemain  PERSIBO Bojonegoro",
+      "url": "/pemain/putra-chaniago",
+      "category": "Pemain",
+      "searchText": "putra chaniago putra chaniago  indonesia 28",
+      "image": "https://assets.ileague.id/uploads/images/player/101/29/PE1714360962.jpg"
+    },
+    {
+      "id": "ikhsan",
+      "title": "NUR IKHSAN",
+      "subtitle": "P. GAWANG • 27 tahun • Indonesia",
+      "description": "Pemain P. GAWANG PERSIBO Bojonegoro",
+      "url": "/pemain/ikhsan",
+      "category": "Pemain",
+      "searchText": "ikhsan nur ikhsan p. gawang indonesia 27",
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
+    },
+    {
+      "id": "rizky-d",
+      "title": "RIZKY DWI NUGRAHA ASYARI",
+      "subtitle": "BELAKANG • 22 tahun • Indonesia",
+      "description": "Pemain BELAKANG PERSIBO Bojonegoro",
+      "url": "/pemain/rizky-d",
+      "category": "Pemain",
+      "searchText": "rizky d rizky dwi nugraha asyari belakang indonesia 22",
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
+    },
+    {
+      "id": "joko-s",
+      "title": "JOKO SUPRIYANTO",
+      "subtitle": "BELAKANG • 29 tahun • Indonesia",
+      "description": "Pemain BELAKANG PERSIBO Bojonegoro",
+      "url": "/pemain/joko-s",
+      "category": "Pemain",
+      "searchText": "joko s joko supriyanto belakang indonesia 29",
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
+    },
+    {
+      "id": "romy",
+      "title": "M. ROMY ARIF SETIAWAN",
+      "subtitle": "BELAKANG • 19 tahun • Indonesia",
+      "description": "Pemain BELAKANG PERSIBO Bojonegoro",
+      "url": "/pemain/romy",
+      "category": "Pemain",
+      "searchText": "romy m. romy arif setiawan belakang indonesia 19",
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
     },
     {
       "id": "revan",
       "title": "M REVAN JONI NURIANTO",
-      "subtitle": "DEPAN • 23 tahun • INDONESIA",
+      "subtitle": "DEPAN • 23 tahun • Indonesia",
       "description": "Pemain DEPAN PERSIBO Bojonegoro",
       "url": "/pemain/revan",
       "category": "Pemain",
       "searchText": "revan m revan joni nurianto depan indonesia 23",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE2018145752.jpg"
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
     },
     {
       "id": "ilham",
       "title": "Ilham Maulana",
-      "subtitle": "TENGAH • 20 tahun • INDONESIA",
+      "subtitle": "TENGAH • 20 tahun • Indonesia",
       "description": "Pemain TENGAH PERSIBO Bojonegoro",
       "url": "/pemain/ilham",
       "category": "Pemain",
       "searchText": "ilham ilham maulana tengah indonesia 20",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE24318109.jpg"
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
     },
     {
       "id": "samsul",
       "title": "SAMSUL ARIF",
-      "subtitle": "DEPAN • 40 tahun • INDONESIA",
+      "subtitle": "DEPAN • 40 tahun • Indonesia",
       "description": "Pemain DEPAN PERSIBO Bojonegoro",
       "url": "/pemain/samsul",
       "category": "Pemain",
       "searchText": "samsul samsul arif depan indonesia 40",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE1109.jpg"
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
     },
     {
       "id": "oby",
       "title": "ICHLASUL AMAL ZARDAN AROBY",
-      "subtitle": "TENGAH • 22 tahun • INDONESIA",
+      "subtitle": "TENGAH • 22 tahun • Indonesia",
       "description": "Pemain TENGAH PERSIBO Bojonegoro",
       "url": "/pemain/oby",
       "category": "Pemain",
       "searchText": "oby ichlasul amal zardan aroby tengah indonesia 22",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE24053031.jpg"
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
     },
     {
       "id": "rangga-dwi",
       "title": "RANGGA DWI LESMANA",
-      "subtitle": "TENGAH • 19 tahun • INDONESIA",
+      "subtitle": "TENGAH • 19 tahun • Indonesia",
       "description": "Pemain TENGAH PERSIBO Bojonegoro",
       "url": "/pemain/rangga-dwi",
       "category": "Pemain",
       "searchText": "rangga dwi rangga dwi lesmana tengah indonesia 19",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE22168789.jpg"
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
     },
     {
       "id": "fadil-s",
       "title": "FADIL",
-      "subtitle": "TENGAH • 41 tahun • INDONESIA",
+      "subtitle": "TENGAH • 41 tahun • Indonesia",
       "description": "Pemain TENGAH PERSIBO Bojonegoro",
       "url": "/pemain/fadil-s",
       "category": "Pemain",
       "searchText": "fadil s fadil tengah indonesia 41",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE3338.jpg"
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
     },
     {
       "id": "bagus",
       "title": "ANANDA DHEA BAGUS SAPUTRA",
-      "subtitle": "TENGAH • 24 tahun • INDONESIA",
+      "subtitle": "TENGAH • 24 tahun • Indonesia",
       "description": "Pemain TENGAH PERSIBO Bojonegoro",
       "url": "/pemain/bagus",
       "category": "Pemain",
       "searchText": "bagus ananda dhea bagus saputra tengah indonesia 24",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE25179901.jpg"
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
     },
     {
       "id": "j-wutoy",
       "title": "JHON EDWARD JOSUA WUTOY",
-      "subtitle": "DEPAN • 22 tahun • INDONESIA",
+      "subtitle": "DEPAN • 22 tahun • Indonesia",
       "description": "Pemain DEPAN PERSIBO Bojonegoro",
       "url": "/pemain/j-wutoy",
       "category": "Pemain",
       "searchText": "j. wutoy jhon edward josua wutoy depan indonesia 22",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE24221723.jpg"
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
     },
     {
       "id": "gilang",
       "title": "GILANG PRATAMA",
-      "subtitle": "TENGAH • 21 tahun • INDONESIA",
+      "subtitle": "TENGAH • 21 tahun • Indonesia",
       "description": "Pemain TENGAH PERSIBO Bojonegoro",
       "url": "/pemain/gilang",
       "category": "Pemain",
       "searchText": "gilang gilang pratama tengah indonesia 21",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE23062143.jpg"
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
     },
     {
       "id": "azka-fauzi",
       "title": "IKHWAN AZKA FAUZI WIBOWO",
-      "subtitle": "DEPAN • 29 tahun • INDONESIA",
+      "subtitle": "DEPAN • 29 tahun • Indonesia",
       "description": "Pemain DEPAN PERSIBO Bojonegoro",
       "url": "/pemain/azka-fauzi",
       "category": "Pemain",
       "searchText": "azka fauzi ikhwan azka fauzi wibowo depan indonesia 29",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE1617857055.jpg"
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
     },
     {
       "id": "zegga",
       "title": "MUCHAMAD ZEGGA NOVEMBRIAN",
-      "subtitle": "DEPAN • 19 tahun • INDONESIA",
+      "subtitle": "DEPAN • 19 tahun • Indonesia",
       "description": "Pemain DEPAN PERSIBO Bojonegoro",
       "url": "/pemain/zegga",
       "category": "Pemain",
       "searchText": "zegga muchamad zegga novembrian depan indonesia 19",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE23283816.jpg"
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
     },
     {
       "id": "jovan",
       "title": "Jovan Jordantian Syahwa Maulana",
-      "subtitle": "BELAKANG • 19 tahun • INDONESIA",
+      "subtitle": "BELAKANG • 19 tahun • Indonesia",
       "description": "Pemain BELAKANG PERSIBO Bojonegoro",
       "url": "/pemain/jovan",
       "category": "Pemain",
       "searchText": "jovan jovan jordantian syahwa maulana belakang indonesia 19",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE24225298.jpg"
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
     },
     {
       "id": "fajar-i",
       "title": "FAJAR IHSANUDIN",
-      "subtitle": "TENGAH • 21 tahun • INDONESIA",
+      "subtitle": "TENGAH • 21 tahun • Indonesia",
       "description": "Pemain TENGAH PERSIBO Bojonegoro",
       "url": "/pemain/fajar-i",
       "category": "Pemain",
       "searchText": "fajar. i fajar ihsanudin tengah indonesia 21",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE21140253.jpg"
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
     },
     {
       "id": "rio",
       "title": "RIO PRATAMA VALENTINO",
-      "subtitle": "BELAKANG • 30 tahun • INDONESIA",
+      "subtitle": "BELAKANG • 30 tahun • Indonesia",
       "description": "Pemain BELAKANG PERSIBO Bojonegoro",
       "url": "/pemain/rio",
       "category": "Pemain",
       "searchText": "rio rio pratama valentino belakang indonesia 30",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE1616364746.jpg"
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
     },
     {
       "id": "f-febrian",
       "title": "FIQY FEBRIAN",
-      "subtitle": "P. GAWANG • 20 tahun • INDONESIA",
+      "subtitle": "P. GAWANG • 20 tahun • Indonesia",
       "description": "Pemain P. GAWANG PERSIBO Bojonegoro",
       "url": "/pemain/f-febrian",
       "category": "Pemain",
       "searchText": "f. febrian fiqy febrian p. gawang indonesia 20",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE23293219.jpg"
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
     },
     {
       "id": "nono",
       "title": "FRANSISKUS XAVERIUS NONO",
-      "subtitle": "BELAKANG • 19 tahun • INDONESIA",
+      "subtitle": "BELAKANG • 19 tahun • Indonesia",
       "description": "Pemain BELAKANG PERSIBO Bojonegoro",
       "url": "/pemain/nono",
       "category": "Pemain",
       "searchText": "nono fransiskus xaverius nono belakang indonesia 19",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE25179390.jpg"
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
     },
     {
       "id": "y-rejauw",
       "title": "YONAS TERIANUAS REJAUW",
-      "subtitle": "BELAKANG • 22 tahun • INDONESIA",
+      "subtitle": "BELAKANG • 22 tahun • Indonesia",
       "description": "Pemain BELAKANG PERSIBO Bojonegoro",
       "url": "/pemain/y-rejauw",
       "category": "Pemain",
       "searchText": "y. rejauw yonas terianuas rejauw belakang indonesia 22",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE25175334.jpg"
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
     },
     {
       "id": "fahmi",
       "title": "Fahmi Arma Ardianshya",
-      "subtitle": "BELAKANG • 20 tahun • INDONESIA",
+      "subtitle": "BELAKANG • 20 tahun • Indonesia",
       "description": "Pemain BELAKANG PERSIBO Bojonegoro",
       "url": "/pemain/fahmi",
       "category": "Pemain",
       "searchText": "fahmi fahmi arma ardianshya belakang indonesia 20",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE23256619.jpg"
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
     },
     {
       "id": "yoga-p",
       "title": "yoga prasetya",
-      "subtitle": "BELAKANG • 22 tahun • INDONESIA",
+      "subtitle": "BELAKANG • 22 tahun • Indonesia",
       "description": "Pemain BELAKANG PERSIBO Bojonegoro",
       "url": "/pemain/yoga-p",
       "category": "Pemain",
       "searchText": "yoga p yoga prasetya belakang indonesia 22",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE25179646.jpg"
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
     },
     {
       "id": "tirta-bayu",
       "title": "TIRTA BAYU NUGROHO",
-      "subtitle": "DEPAN • 22 tahun • INDONESIA",
+      "subtitle": "DEPAN • 22 tahun • Indonesia",
       "description": "Pemain DEPAN PERSIBO Bojonegoro",
       "url": "/pemain/tirta-bayu",
       "category": "Pemain",
       "searchText": "tirta bayu tirta bayu nugroho depan indonesia 22",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE21219852.jpg"
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
     },
     {
       "id": "radiansyah",
       "title": "RADIANSYAH",
-      "subtitle": "DEPAN • 34 tahun • INDONESIA",
+      "subtitle": "DEPAN • 34 tahun • Indonesia",
       "description": "Pemain DEPAN PERSIBO Bojonegoro",
       "url": "/pemain/radiansyah",
       "category": "Pemain",
       "searchText": "radiansyah radiansyah depan indonesia 34",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE4118.jpg"
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
     },
     {
       "id": "m-febryansyah-rs",
       "title": "MOHAMMAD FEBRYANSYAH REFYAN SANUSI",
-      "subtitle": "P. GAWANG • 20 tahun • INDONESIA",
+      "subtitle": "P. GAWANG • 20 tahun • Indonesia",
       "description": "Pemain P. GAWANG PERSIBO Bojonegoro",
       "url": "/pemain/m-febryansyah-rs",
       "category": "Pemain",
       "searchText": "m febryansyah r.s mohammad febryansyah refyan sanusi p. gawang indonesia 20",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE24108909.jpg"
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
     },
     {
       "id": "adre-arido",
       "title": "ADRE ARIDO GEOVANI",
-      "subtitle": "P. GAWANG • 21 tahun • INDONESIA",
+      "subtitle": "P. GAWANG • 21 tahun • Indonesia",
       "description": "Pemain P. GAWANG PERSIBO Bojonegoro",
       "url": "/pemain/adre-arido",
       "category": "Pemain",
       "searchText": "adre arido adre arido geovani p. gawang indonesia 21",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE22082144.jpg"
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
     },
     {
       "id": "bayu-nu",
       "title": "BAYU NUGROHO",
-      "subtitle": "TENGAH • 33 tahun • INDONESIA",
+      "subtitle": "TENGAH • 33 tahun • Indonesia",
       "description": "Pemain TENGAH PERSIBO Bojonegoro",
       "url": "/pemain/bayu-nu",
       "category": "Pemain",
       "searchText": "bayu nu bayu nugroho tengah indonesia 33",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE5067.jpg"
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
     },
     {
       "id": "oscar",
       "title": "OSCAR NOVANGGA",
-      "subtitle": "TENGAH • 21 tahun • INDONESIA",
+      "subtitle": "TENGAH • 21 tahun • Indonesia",
       "description": "Pemain TENGAH PERSIBO Bojonegoro",
       "url": "/pemain/oscar",
       "category": "Pemain",
       "searchText": "oscar oscar novangga tengah indonesia 21",
-      "image": "https://assets.ligaindonesiabaru.com/uploads/images/player/PE23294644.jpg"
+      "image": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png"
     },
     {
       "id": "gerri-martin-millian-mandagi",

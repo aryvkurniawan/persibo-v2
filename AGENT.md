@@ -62,7 +62,7 @@ Data per musim ada di `src/data/seasons/<musim>/`:
 3. **teams.json** - Informasi tim dengan logo
 4. **matchDetails.json** - Detail pertandingan (lineup, events, statistics); laga uji coba ada di `friendlies.json`, hanya musim 2026-27.
 
-Data skuad (berlaku untuk skuad terakhir, 2025-26):
+Data skuad (players.json & officials.json = musim aktif 2026-27; playerDetails/faces = lintas musim):
 
 5. **players.json** - Daftar pemain (basic info)
 6. **playerDetails.json** - Detail lengkap pemain (statistik, club history, foto)

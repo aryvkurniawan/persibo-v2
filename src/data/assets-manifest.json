@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-07T08:20:18.649Z",
+  "generated_at": "2026-11-11T07:13:01.265Z",
   "note": "Images mirrored from assets.ileague.id so past seasons survive the source going away.",
-  "count": 117,
+  "count": 145,
   "assets": [
     {
       "source_url": "https://liasfiles.ileague.id:8443/liasfile/official/101/29/OF240764.jpg",
@@ -108,6 +108,45 @@
       ]
     },
     {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE23295942.jpg",
+      "path": "/img/players/a-fernandi.jpg",
+      "bytes": 18086,
+      "width": 300,
+      "sha256": "e574ce0785d54fd7",
+      "fetched_at": "2026-11-11T07:13:00.748Z",
+      "kind": "player-photo",
+      "name": "A. FERNANDI",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE23093421.jpg",
+      "path": "/img/players/aaron-y.jpg",
+      "bytes": 21087,
+      "width": 300,
+      "sha256": "582c46d79f5034f7",
+      "fetched_at": "2026-11-11T07:13:00.890Z",
+      "kind": "player-photo",
+      "name": "AARON Y",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE22145593.jpg",
+      "path": "/img/players/adi-purnama.jpg",
+      "bytes": 22080,
+      "width": 300,
+      "sha256": "45c93b54aa4c549d",
+      "fetched_at": "2026-11-11T07:13:01.211Z",
+      "kind": "player-photo",
+      "name": "ADI PURNAMA",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
       "source_url": "https://assets.ileague.id/uploads/images/player/PE22082144.jpeg",
       "path": "/img/players/adre-arido-geovani.jpg",
       "bytes": 15318,
@@ -204,6 +243,19 @@
       ]
     },
     {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE7612.jpg",
+      "path": "/img/players/angger.jpg",
+      "bytes": 18509,
+      "width": 300,
+      "sha256": "ecdb873c3fd34077",
+      "fetched_at": "2026-11-11T07:13:00.604Z",
+      "kind": "player-photo",
+      "name": "ANGGER",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
       "source_url": "https://assets.ileague.id/uploads/images/player/PE2012161866.jpeg",
       "path": "/img/players/ardi-maulana.jpg",
       "bytes": 43722,
@@ -268,6 +320,19 @@
       ]
     },
     {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE24164087.jpg",
+      "path": "/img/players/deco.jpg",
+      "bytes": 19942,
+      "width": 300,
+      "sha256": "d0e290b931336809",
+      "fetched_at": "2026-11-11T07:13:01.058Z",
+      "kind": "player-photo",
+      "name": "DECO",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
       "source_url": "https://assets.ileague.id/uploads/images/player/PE6899.jpeg",
       "path": "/img/players/derry-rachman-noor.jpg",
       "bytes": 22851,
@@ -297,6 +362,32 @@
       ],
       "player_ids": [
         21145242
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE1716960144.jpg",
+      "path": "/img/players/diaz.jpg",
+      "bytes": 22209,
+      "width": 300,
+      "sha256": "56ff896d4fbdaf02",
+      "fetched_at": "2026-11-11T07:13:00.863Z",
+      "kind": "player-photo",
+      "name": "DIAZ",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE22102637.jpg",
+      "path": "/img/players/dios-d-a.jpg",
+      "bytes": 22416,
+      "width": 300,
+      "sha256": "3ed6f728c4c1fa79",
+      "fetched_at": "2026-11-11T07:13:00.921Z",
+      "kind": "player-photo",
+      "name": "DIOS D. A",
+      "seasons": [
+        "2026-27"
       ]
     },
     {
@@ -332,6 +423,19 @@
       ]
     },
     {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE26030272.jpg",
+      "path": "/img/players/fahad.jpg",
+      "bytes": 20801,
+      "width": 300,
+      "sha256": "13d17e5ff1a8da6c",
+      "fetched_at": "2026-11-11T07:13:01.212Z",
+      "kind": "player-photo",
+      "name": "FAHAD",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
       "source_url": "https://assets.ileague.id/uploads/images/player/PE23256619.jpg",
       "path": "/img/players/fahmi-arma-ardianshya.jpg",
       "bytes": 19941,
@@ -362,6 +466,19 @@
       ],
       "player_ids": [
         21140253
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE26033593.jpg",
+      "path": "/img/players/fuad.jpg",
+      "bytes": 22359,
+      "width": 300,
+      "sha256": "e54fdcbd22552b64",
+      "fetched_at": "2026-11-11T07:13:00.767Z",
+      "kind": "player-photo",
+      "name": "FUAD",
+      "seasons": [
+        "2026-27"
       ]
     },
     {
@@ -495,6 +612,19 @@
       ]
     },
     {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE25229604.jpg",
+      "path": "/img/players/iqbal.jpg",
+      "bytes": 21949,
+      "width": 300,
+      "sha256": "01511bc0de2368d5",
+      "fetched_at": "2026-11-11T07:13:00.718Z",
+      "kind": "player-photo",
+      "name": "IQBAL",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
       "source_url": "https://assets.ileague.id/uploads/images/player/PE1619998185.jpeg",
       "path": "/img/players/israel-wamiau.jpg",
       "bytes": 23430,
@@ -508,6 +638,19 @@
       ],
       "player_ids": [
         1619998185
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE22092662.jpg",
+      "path": "/img/players/j-latuconsina.jpg",
+      "bytes": 23076,
+      "width": 300,
+      "sha256": "cb8bd6657ca0a238",
+      "fetched_at": "2026-11-11T07:13:01.001Z",
+      "kind": "player-photo",
+      "name": "J LATUCONSINA",
+      "seasons": [
+        "2026-27"
       ]
     },
     {
@@ -559,6 +702,19 @@
       ]
     },
     {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE24225298.jpg",
+      "path": "/img/players/jojo.jpg",
+      "bytes": 18209,
+      "width": 300,
+      "sha256": "1ecf0f080aa32970",
+      "fetched_at": "2026-11-11T07:13:01.228Z",
+      "kind": "player-photo",
+      "name": "JOJO",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
       "source_url": "https://assets.ileague.id/uploads/images/player/PE22250896.jpg",
       "path": "/img/players/joko-supriyanto.jpg",
       "bytes": 19016,
@@ -588,6 +744,32 @@
       ],
       "player_ids": [
         24225298
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE21155111.jpg",
+      "path": "/img/players/kafka.jpg",
+      "bytes": 22425,
+      "width": 300,
+      "sha256": "c58f83ce0dff61f7",
+      "fetched_at": "2026-11-11T07:13:01.022Z",
+      "kind": "player-photo",
+      "name": "KAFKA",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE26035887.jpg",
+      "path": "/img/players/kaka.jpg",
+      "bytes": 21639,
+      "width": 300,
+      "sha256": "ed46171f56b250e9",
+      "fetched_at": "2026-11-11T07:13:00.616Z",
+      "kind": "player-photo",
+      "name": "KAKA",
+      "seasons": [
+        "2026-27"
       ]
     },
     {
@@ -671,6 +853,19 @@
       ]
     },
     {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE23147319.jpg",
+      "path": "/img/players/m-syahril.jpg",
+      "bytes": 22017,
+      "width": 300,
+      "sha256": "41c248d06c2c3841",
+      "fetched_at": "2026-11-11T07:13:00.833Z",
+      "kind": "player-photo",
+      "name": "M.SYAHRIL",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
       "source_url": "https://assets.ileague.id/uploads/images/player/PE23087785.png",
       "path": "/img/players/marthinus-isir.jpg",
       "bytes": 21999,
@@ -684,6 +879,19 @@
       ],
       "player_ids": [
         23087785
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE24079956.jpg",
+      "path": "/img/players/marvin.jpg",
+      "bytes": 20896,
+      "width": 300,
+      "sha256": "24e233970698a7c9",
+      "fetched_at": "2026-11-11T07:13:00.619Z",
+      "kind": "player-photo",
+      "name": "MARVIN",
+      "seasons": [
+        "2026-27"
       ]
     },
     {
@@ -831,6 +1039,32 @@
       ]
     },
     {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE1613612366.jpg",
+      "path": "/img/players/o-chanigio.jpg",
+      "bytes": 20922,
+      "width": 300,
+      "sha256": "ca16b6a3365af57f",
+      "fetched_at": "2026-11-11T07:13:00.996Z",
+      "kind": "player-photo",
+      "name": "O. CHANIGIO",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE23283822.jpg",
+      "path": "/img/players/odhi.jpg",
+      "bytes": 19388,
+      "width": 300,
+      "sha256": "32814d665ed0e0c1",
+      "fetched_at": "2026-11-11T07:13:01.211Z",
+      "kind": "player-photo",
+      "name": "ODHI",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
       "source_url": "https://assets.ileague.id/uploads/images/player/PE2305.jpeg",
       "path": "/img/players/osas-marvellous-ikpefua.jpg",
       "bytes": 34168,
@@ -876,6 +1110,19 @@
       ],
       "player_ids": [
         1891
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE1714360962.jpg",
+      "path": "/img/players/putra-chaniago.jpg",
+      "bytes": 21224,
+      "width": 300,
+      "sha256": "a057231f9c09f520",
+      "fetched_at": "2026-11-11T07:13:01.237Z",
+      "kind": "player-photo",
+      "name": "PUTRA CHANIAGO",
+      "seasons": [
+        "2026-27"
       ]
     },
     {
@@ -928,6 +1175,19 @@
       ]
     },
     {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE23293081.jpg",
+      "path": "/img/players/rangga.jpg",
+      "bytes": 21134,
+      "width": 300,
+      "sha256": "ce60cc8ca7b9bd75",
+      "fetched_at": "2026-11-11T07:13:00.783Z",
+      "kind": "player-photo",
+      "name": "RANGGA",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
       "source_url": "https://assets.ileague.id/uploads/images/player/PE22301916.jpg",
       "path": "/img/players/revaldo-agusto.jpg",
       "bytes": 18024,
@@ -941,6 +1201,19 @@
       ],
       "player_ids": [
         22301916
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE22301916.jpg",
+      "path": "/img/players/revaldo.jpg",
+      "bytes": 22756,
+      "width": 300,
+      "sha256": "fc3e5e1731f4bf34",
+      "fetched_at": "2026-11-11T07:13:00.856Z",
+      "kind": "player-photo",
+      "name": "REVALDO",
+      "seasons": [
+        "2026-27"
       ]
     },
     {
@@ -960,6 +1233,19 @@
       ]
     },
     {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE1716245422.jpg",
+      "path": "/img/players/rifaldi.jpg",
+      "bytes": 21570,
+      "width": 300,
+      "sha256": "2ee6756727c5b72c",
+      "fetched_at": "2026-11-11T07:13:00.750Z",
+      "kind": "player-photo",
+      "name": "RIFALDI",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
       "source_url": "https://assets.ileague.id/uploads/images/player/PE1616364746.jpeg",
       "path": "/img/players/rio-pratama-valentino.jpg",
       "bytes": 41730,
@@ -973,6 +1259,19 @@
       ],
       "player_ids": [
         1616364746
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE1616364746.jpg",
+      "path": "/img/players/rio-valentino.jpg",
+      "bytes": 20510,
+      "width": 300,
+      "sha256": "cfcb3f8734828600",
+      "fetched_at": "2026-11-11T07:13:00.897Z",
+      "kind": "player-photo",
+      "name": "RIO VALENTINO",
+      "seasons": [
+        "2026-27"
       ]
     },
     {
@@ -992,6 +1291,19 @@
       ]
     },
     {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE21173954.jpg",
+      "path": "/img/players/romeo.jpg",
+      "bytes": 21146,
+      "width": 300,
+      "sha256": "7a82394695aa1454",
+      "fetched_at": "2026-11-11T07:13:00.961Z",
+      "kind": "player-photo",
+      "name": "ROMEO",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
       "source_url": "https://assets.ileague.id/uploads/images/player/PE1109.jpeg",
       "path": "/img/players/samsul-arif.jpg",
       "bytes": 44437,
@@ -1008,6 +1320,19 @@
       ]
     },
     {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE24298263.jpg",
+      "path": "/img/players/sehabudin.jpg",
+      "bytes": 22466,
+      "width": 300,
+      "sha256": "ae80050815589f3d",
+      "fetched_at": "2026-11-11T07:13:00.613Z",
+      "kind": "player-photo",
+      "name": "SEHABUDIN",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
       "source_url": "https://assets.ileague.id/uploads/images/player/PE1616452331.jpeg",
       "path": "/img/players/selamet-budiono.jpg",
       "bytes": 26788,
@@ -1021,6 +1346,19 @@
       ],
       "player_ids": [
         1616452331
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE21129780.jpg",
+      "path": "/img/players/shevanton.jpg",
+      "bytes": 21350,
+      "width": 300,
+      "sha256": "4c7a9619e09c5e04",
+      "fetched_at": "2026-11-11T07:13:00.630Z",
+      "kind": "player-photo",
+      "name": "SHEVANTON",
+      "seasons": [
+        "2026-27"
       ]
     },
     {
@@ -1088,6 +1426,19 @@
       ]
     },
     {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE24132552.jpg",
+      "path": "/img/players/wiraja.jpg",
+      "bytes": 23155,
+      "width": 300,
+      "sha256": "3dcc127abf8e67e9",
+      "fetched_at": "2026-11-11T07:13:01.042Z",
+      "kind": "player-photo",
+      "name": "WIRAJA",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
       "source_url": "https://assets.ileague.id/uploads/images/player/PE25179646.jpg",
       "path": "/img/players/yoga-prasetya.jpg",
       "bytes": 19329,
@@ -1133,6 +1484,19 @@
       ],
       "player_ids": [
         25175334
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE24234894.jpg",
+      "path": "/img/players/zulkifli.jpg",
+      "bytes": 21464,
+      "width": 300,
+      "sha256": "6484e510b63652c9",
+      "fetched_at": "2026-11-11T07:13:00.779Z",
+      "kind": "player-photo",
+      "name": "ZULKIFLI",
+      "seasons": [
+        "2026-27"
       ]
     },
     {
