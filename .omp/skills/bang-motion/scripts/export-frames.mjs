@@ -29,8 +29,10 @@ const browser = await puppeteer.launch({
   args: ['--enable-gpu', '--use-gl=angle', '--enable-webgl', '--ignore-gpu-blocklist'],
 });
 const page = await browser.newPage();
-await page.setViewport({ width: 1920, height: 1080, deviceScaleFactor: SCALE });
+await page.setViewport({ width: 1920, height: 1920, deviceScaleFactor: SCALE });
 await page.goto(URL, { waitUntil: 'networkidle0' });
+const pageDims = await page.evaluate(() => ({ w: window.OPENER?.W || 1920, h: window.OPENER?.H || 1080 }));
+if (pageDims.w !== 1920 || pageDims.h !== 1920) await page.setViewport({ width: pageDims.w, height: pageDims.h, deviceScaleFactor: SCALE });
 
 // tunggu sampai modul selesai dimuat dan timeline terpasang
 await page.waitForFunction('window.OPENER && window.OPENER.ready && (!window.OPENER.clipsReady || window.OPENER.clipsReady())', { timeout: 120000 });
@@ -54,7 +56,7 @@ for(let i = 0; i < total; i++){
 
   await page.screenshot({
     path: `${OUT}/f${String(i).padStart(5, '0')}.png`,
-    clip: { x: 0, y: 0, width: 1920, height: 1080 },
+    clip: { x: 0, y: 0, width: pageDims.w, height: pageDims.h },
     optimizeForSpeed: true,
   });
 
