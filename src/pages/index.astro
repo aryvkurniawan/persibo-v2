@@ -10,9 +10,7 @@ import {
   getCompletedFixtures,
   getTeamLogo,
   getMatchDetailSlug,
-  loadFriendlies,
 } from '../utils/dataLoader';
-import FriendlyMatches from '../components/FriendlyMatches.astro';
 import LastMatchCard from '../components/LastMatchCard.astro';
 import MatchPreviewPanel from '../components/MatchPreviewPanel.astro';
 import { getWeekday, formatDateShort, formatDateLong } from '../utils/dates';
@@ -46,21 +44,12 @@ const lastAsFriendly: Friendly | null = last ? {
 } : null;
 const nextIsHome = next?.home_team.toUpperCase().includes('PERSIBO') ?? true;
 const nextOpponent = next ? (nextIsHome ? next.away_team : next.home_team) : '';
+const nextMatchday = next ? fixtures.findIndex((f) => f.match_url === next.match_url) + 1 : 0;
 const homeCount = fixtures.filter((fixture) => fixture.home_team.toUpperCase().includes('PERSIBO')).length;
 const awayCount = fixtures.length - homeCount;
-const friendlies = await loadFriendlies();
-const nextFriendly = friendlies.find((match) => match.home_score === null) ?? null;
-const eventSource = nextFriendly?.kickoff_iso ? nextFriendly : next?.kickoff_iso ? next : null;
+const eventSource = next?.kickoff_iso ? next : null;
 const siteOrigin = (Astro.site || Astro.url.origin).toString().replace(/\/+$/, '');
 const eventEnd = eventSource ? new Date(Date.parse(eventSource.kickoff_iso) + 7200000).toISOString() : '';
-const ticketOffers = nextFriendly?.ticket_tiers?.map((tier) => ({
-  '@type': 'Offer',
-  name: tier.name,
-  price: String(tier.price),
-  priceCurrency: 'IDR',
-  availability: 'https://schema.org/InStock',
-  url: nextFriendly?.ticket_url,
-}));
 
 const [nextDay, nextMonth, nextYear] = next ? next.date.replace(/^[^,]+,\s*/, '').split(' ') : ['--', '---', '----'];
 const nextWeekday = next ? getWeekday(next.date) : '';
@@ -136,12 +125,12 @@ const news = [
     <div class="ticker-marquee flex w-max items-center py-2 text-[10px] font-extrabold uppercase tracking-[0.24em]">
       <span class="flex items-center gap-6 whitespace-nowrap px-3">
         Liga Nusantara 2026-27 <span aria-hidden="true">✦</span> Grup {group} <span aria-hidden="true">✦</span>
-        {fixtures.length} laga <span aria-hidden="true">✦</span> Matchday 01 · {next ? formatDateLong(next.date) : 'segera'} <span aria-hidden="true">✦</span>
+        {fixtures.length} laga <span aria-hidden="true">✦</span> Matchday {String(nextMatchday).padStart(2, '0')} · {next ? formatDateLong(next.date) : 'segera'} <span aria-hidden="true">✦</span>
         {next?.venue ?? 'Bojonegoro'} <span aria-hidden="true">✦</span> Bojonegoro <span aria-hidden="true">✦</span>
       </span>
       <span class="flex items-center gap-6 whitespace-nowrap px-3" aria-hidden="true">
         Liga Nusantara 2026-27 <span aria-hidden="true">✦</span> Grup {group} <span aria-hidden="true">✦</span>
-        {fixtures.length} laga <span aria-hidden="true">✦</span> Matchday 01 · {next ? formatDateLong(next.date) : 'segera'} <span aria-hidden="true">✦</span>
+        {fixtures.length} laga <span aria-hidden="true">✦</span> Matchday {String(nextMatchday).padStart(2, '0')} · {next ? formatDateLong(next.date) : 'segera'} <span aria-hidden="true">✦</span>
         {next?.venue ?? 'Bojonegoro'} <span aria-hidden="true">✦</span> Bojonegoro <span aria-hidden="true">✦</span>
       </span>
     </div>
@@ -168,7 +157,7 @@ const news = [
         <div class="flex items-center justify-between gap-3 border-b border-white/10 pb-4 text-[11px] font-bold uppercase tracking-[0.16em] sm:text-[10px] sm:tracking-[0.24em]">
           <p class="flex items-center gap-2 text-white/55 sm:gap-3">
             <span class="inline-block h-2 w-2 shrink-0 bg-primary"></span>
-            Matchday 01 · Grup {group}
+            Matchday {String(nextMatchday).padStart(2, '0')} · Grup {group}
           </p>
           <p class="hidden shrink-0 text-white/30 sm:block">Liga Nusantara 2026-27</p>
         </div>
@@ -318,8 +307,6 @@ const news = [
       </div>
     </div>
   </section>
-
-  {friendlies.length > 0 && <FriendlyMatches matches={friendlies} />}
 
   {lastAsFriendly && (
     <section class="border-b border-white/15">
@@ -510,11 +497,9 @@ const news = [
     ],
     "organizer": {
       "@type": "SportsOrganization",
-      "name": nextFriendly ? "PERSIBO Bojonegoro" : "Liga Nusantara",
-      "url": nextFriendly ? siteOrigin : "https://www.ileague.id"
-   
+      "name": "Liga Nusantara",
+      "url": "https://www.ileague.id"
     },
-    ...(ticketOffers?.length ? { "offers": ticketOffers } : {}),
     "url": "https://persibo.com/"
   })} />
 )}
