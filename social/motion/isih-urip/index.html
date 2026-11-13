@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>PERSIBO. — Isih urip</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Lexend:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Palet 100% dari brand persibo.com (captions.md: Geni/Bengi/Kapur) */
+  --accent:#f97316;        /* Geni */
+  --accent-lit:#fb923c;    /* Geni terang (turunan 200 orange) */
+  --base:#0b0910;          /* Bengi */
+  --paper:#f5f2ec;         /* Kapur */
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;background:#000}
+body{display:flex;align-items:center;justify-content:center}
+
+/* Panggung 9:16 — 1080x1920, discale agar muat viewport */
+#stage{position:absolute;left:50%;top:50%;width:1080px;height:1920px;
+  transform-origin:50% 50%;overflow:hidden;background:var(--base);
+  font-family:'Lexend',sans-serif}
+#world{position:absolute;inset:0;will-change:transform}
+
+/* Latar: glow horizon 2 lapis dari palet — tidak flat (Hukum #4) */
+.bgfx{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(72% 34% at 50% 112%,
+      rgba(249,115,22,.30),rgba(249,115,22,.10) 46%,transparent 72%),
+    linear-gradient(180deg,#0e0a14 0%,var(--base) 52%,#120a08 100%)}
+/* grain halus supaya gradien tidak banding */
+.grain{position:absolute;inset:-50%;pointer-events:none;opacity:.05;z-index:5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grainShift 1.2s steps(4) infinite}
+@keyframes grainShift{0%{transform:translate(0,0)}25%{transform:translate(-12px,8px)}
+  50%{transform:translate(8px,-10px)}75%{transform:translate(-6px,-6px)}100%{transform:translate(0,0)}}
+
+#dom{position:absolute;inset:0}
+.scene{position:absolute;inset:0;visibility:hidden;opacity:0}
+
+/* --- Adegan 1: titik Geni --- */
+#sc-dot .dot{position:absolute;left:50%;top:46%;width:64px;height:64px;margin:-32px 0 0 -32px;
+  border-radius:50%;background:radial-gradient(circle at 38% 32%,var(--accent-lit),var(--accent) 62%);
+  box-shadow:0 0 90px 26px rgba(249,115,22,.45),0 0 260px 80px rgba(249,115,22,.18)}
+
+/* --- Adegan 2: di dalam titik (medan Geni) --- */
+#sc-urip .bg-oranye{position:absolute;inset:0;opacity:0;
+  background:radial-gradient(85% 60% at 50% 30%,var(--accent-lit) 0%,var(--accent) 42%,#c2410c 88%)}
+.hero{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.01em;
+  color:#fff;font-size:190px;line-height:.92;text-transform:uppercase;
+  white-space:nowrap;text-shadow:0 6px 40px rgba(0,0,0,.35)}
+.hero.small{font-size:96px;white-space:normal;width:82%;text-align:center;line-height:1.06;text-transform:none;font-weight:600}
+.sub{position:absolute;left:50%;top:58%;transform:translateX(-50%);
+  font-family:'Lexend',sans-serif;font-weight:500;font-size:44px;color:#fff;
+  opacity:0;white-space:nowrap}
+.wd{display:inline-block;white-space:nowrap}
+.ch{display:inline-block;will-change:transform,opacity,filter;opacity:0}
+
+/* --- Adegan 3: dunia Kapur --- */
+#sc-kapur .bg-kapur{position:absolute;inset:0;opacity:0;background:var(--paper)}
+#sc-kapur .hero{color:var(--base);text-shadow:none}
+/* teks hantu: wordmark raksasa bergerak sangat pelan di latar (gerak latar §7c) */
+.ghost{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:560px;
+  color:transparent;-webkit-text-stroke:2px rgba(11,9,16,.07);
+  letter-spacing:-.01em;white-space:nowrap;pointer-events:none}
+
+/* --- Adegan 4: wordmark --- */
+#sc-mark .wm{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:230px;
+  letter-spacing:-.01em;color:var(--paper);white-space:nowrap;line-height:1}
+#sc-mark .wm .dotm{display:inline-block;width:.16em;height:.16em;margin-left:.06em;
+  border-radius:50%;background:var(--accent);
+  box-shadow:0 0 .5em rgba(249,115,22,.6)}
+#sc-mark .tag{position:absolute;left:50%;top:57%;transform:translateX(-50%);
+  font-family:'Lexend',sans-serif;font-weight:500;font-size:40px;letter-spacing:.32em;
+  text-transform:uppercase;color:rgba(245,242,236,.55);opacity:0;white-space:nowrap}
+
+/* kantong gelap di bawah teks (Hukum #4) */
+.pocket{position:absolute;inset:0;pointer-events:none;opacity:0;
+  background:radial-gradient(62% 40% at 50% 50%,rgba(0,0,0,.5),transparent 74%)}
+
+/* light leak: sekali, di momen titik mekar (momen istimewa) */
+.leak{position:absolute;left:50%;top:50%;width:2600px;height:2600px;
+  margin:-1300px 0 0 -1300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(251,146,60,.9),rgba(249,115,22,.5) 34%,transparent 72%);
+  filter:blur(70px);mix-blend-mode:screen;opacity:0;pointer-events:none;z-index:40}
+.vignette{position:absolute;inset:0;pointer-events:none;z-index:10;
+  background:linear-gradient(180deg,rgba(0,0,0,.42),transparent 26%),
+    radial-gradient(ellipse 80% 66% at 50% 50%,transparent 42%,rgba(0,0,0,.55) 88%,rgba(0,0,0,.9) 100%)}
+
+/* panel developer hanya di ?debug=1 */
+#ui{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);
+  display:none;align-items:center;gap:14px;padding:11px 18px;border-radius:16px;
+  background:rgba(14,16,22,.9);border:1px solid rgba(255,255,255,.1);
+  font-size:13px;color:#A0A6B4;z-index:50}
+#ui.on{display:flex}
+#ui button{background:#262A34;color:#fff;border:none;padding:8px 16px;border-radius:9px;font:inherit;cursor:pointer}
+#scrub{width:340px;accent-color:var(--accent)}
+#clock{font-variant-numeric:tabular-nums;min-width:5.2ch;text-align:right}
+</style>
+</head>
+<body>
+
+<svg id="filters" style="position:absolute;width:0;height:0"><defs></defs></svg>
+
+<div id="stage">
+  <div id="world">
+    <div id="dom">
+      <!-- Adegan 1: titik berdenyut -->
+      <section class="scene" id="sc-dot"><div class="dot" id="dot"></div></section>
+
+      <!-- Adegan 2: di dalam titik — medan Geni, ISIH URIP -->
+      <section class="scene" id="sc-urip">
+        <div class="bg-oranye" id="bgOranye"></div>
+        <h1 class="hero" id="lineUrip"><span class="txt">Isih urip</span></h1>
+        <div class="pocket" id="pocket1"></div>
+      </section>
+
+      <!-- Adegan 3: dunia Kapur — dudu mung nalika menang; teks hantu di belakang -->
+      <section class="scene" id="sc-kapur">
+        <div class="bg-kapur" id="bgKapur"></div>
+        <div class="ghost" id="ghost">PERSIBO.</div>
+        <h1 class="hero small" id="lineKapur"><span class="txt">dudu mung nalika menang</span></h1>
+        <div class="pocket" id="pocket2"></div>
+      </section>
+
+      <!-- Adegan 4: wordmark PERSIBO. -->
+      <section class="scene" id="sc-mark">
+        <p class="wm" id="wm"><span class="txt">PERSIBO</span><span class="dotm" id="dotm"></span></p>
+        <p class="tag" id="tag">Laskar Angling Dharma</p>
+      </section>
+    </div>
+  </div>
+  <div class="leak" id="leak"></div>
+  <div class="vignette"></div>
+  <div id="fade" style="position:absolute;inset:0;background:var(--base);opacity:0;pointer-events:none;z-index:30"></div>
+  <div class="grain"></div>
+</div>
+
+<div id="ui">
+  <button id="btn-play">Pause</button><button id="btn-restart">Restart</button>
+  <input id="scrub" type="range" min="0" max="1000" value="0">
+  <span id="clock">0.00s</span>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+/* ===== UTIL: split per huruf + motion blur berarah (dari starter) ===== */
+const $=(s,r=document)=>r.querySelector(s);
+const defs=$('#filters defs'); let fc=0;
+function makeBlur(){
+  const id='mb'+(fc++), NS='http://www.w3.org/2000/svg';
+  const f=document.createElementNS(NS,'filter'); f.id=id;
+  f.setAttribute('x','-70%');f.setAttribute('y','-70%');
+  f.setAttribute('width','240%');f.setAttribute('height','240%');
+  const g=document.createElementNS(NS,'feGaussianBlur');
+  g.setAttribute('stdDeviation','0 0'); f.appendChild(g); defs.appendChild(f);
+  return {url:`url(#${id})`,node:g};
+}
+function blurTween(tl,targets,at,from,to,dur,{ease='power3.out',ax=1,ay=.08}={}){
+  const b=makeBlur(),o={v:from};
+  tl.set(targets,{filter:b.url},at);
+  tl.to(o,{v:to,duration:dur,ease,onUpdate(){
+    b.node.setAttribute('stdDeviation',`${(o.v*ax).toFixed(2)} ${(o.v*ay).toFixed(2)}`);}},at);
+  tl.set(targets,{filter:'none'},at+dur);
+}
+const VERT={ax:.1,ay:1};
+function splitChars(el){
+  const words=(el.textContent||'').split(' '); el.textContent=''; const out=[];
+  words.forEach((w,i)=>{
+    const wr=document.createElement('span'); wr.className='wd';
+    for(const c of w){const s=document.createElement('span');s.className='ch';
+      s.textContent=c;wr.appendChild(s);out.push(s);}
+    el.appendChild(wr);
+    if(i<words.length-1){const sp=document.createElement('span');sp.className='ch';
+      sp.innerHTML='&nbsp;';el.appendChild(sp);out.push(sp);}
+  });
+  return out;
+}
+
+/* ===== TIMELINE — satu-satunya sumber waktu (deterministik) ===== */
+const Q=new URLSearchParams(location.search);
+const DURATION=10.0;
+const tl=gsap.timeline({paused:true});
+const world=$('#world'), leak=$('#leak');
+
+/* pintu teks yang dipakai konsep ini */
+const inUp   =(ch,el,at,{dur=.8,st=.024}={})=>{tl.fromTo(ch,{opacity:0,yPercent:60,scaleY:1.45},{opacity:1,yPercent:0,scaleY:1,duration:dur,ease:'power4.out',stagger:st,immediateRender:false},at);blurTween(tl,el,at,30,0,dur,VERT);};
+const inDepth=(ch,el,at,{dur=1,st=.018}={})=>{tl.fromTo(ch,{opacity:0,scale:2.4},{opacity:1,scale:1,duration:dur,ease:'expo.out',stagger:{each:st,from:'center'},immediateRender:false},at);blurTween(tl,el,at,22,0,dur,{ease:'expo.out',ax:1,ay:1});};
+const outUp  =(ch,el,at,{dur=.4,st=.01}={})=>{tl.to(ch,{opacity:0,yPercent:-70,duration:dur,ease:'power2.in',stagger:st},at);blurTween(tl,el,at,0,45,dur+.1,{ease:'power2.in',...VERT});};
+const outDepth=(ch,el,at,{dur=.5,st=.008}={})=>{tl.to(ch,{opacity:0,scale:2.6,duration:dur,ease:'power2.in',stagger:{each:st,from:'center'}},at);blurTween(tl,el,at,0,30,dur+.1,{ease:'power2.in',ax:1,ay:1});};
+
+/* kamera bernapas (fondasi) */
+const breathe=(from,to,{z0=1,z1=1.045,origin='50% 50%'}={})=>{
+  tl.set(world,{transformOrigin:origin},from);
+  tl.fromTo(world,{scale:z0},{scale:z1,duration:to-from,ease:'sine.inOut',immediateRender:false},from); };
+
+/* ===== RUNDOWN — konsep 12: logo sebagai panggung =====
+   konsep · 4 adegan · objek: titik / teks di medan Geni / teks di Kapur / wordmark ·
+   pembuka: titik berdenyut · penutup: titik kembali → loop mulus */
+
+/* --- Adegan 1 (0–2): Bengi, titik Geni berdenyut pelan --- */
+tl.set('#sc-dot',{autoAlpha:1},0);
+tl.set('#sc-mark',{opacity:0},0);
+tl.set(world,{scale:1},0);
+breathe(0,10,{z0:1.02,z1:1.08});                 // napas menyeluruh, nyaris tak terlihat
+tl.fromTo('#dot',{scale:.6,opacity:0},{scale:1,opacity:1,duration:.7,ease:'power2.out'},0.15);
+/* denyut jantung: sinus lewat dua tween yoyo — deterministik */
+tl.to('#dot',{scale:1.14,duration:.55,ease:'sine.inOut',yoyo:true,repeat:1},1.0);
+
+/* --- Transisi 1→2 (1.8–2.6): kamera menembus titik (momen istimewa ✦) --- */
+tl.set(world,{transformOrigin:'50% 46%'},1.8);
+tl.to(world,{scale:26,duration:.8,ease:'power3.in'},1.8);        // dorong masuk ke titik
+tl.set('#sc-urip',{autoAlpha:1},2.0);
+tl.fromTo('#bgOranye',{opacity:0},{opacity:1,duration:.3,ease:'none'},2.0);
+tl.set('#sc-dot',{autoAlpha:0},2.35);
+tl.set('#leak',{x:0,y:0,scale:1.4},2.3);
+tl.fromTo('#leak',{opacity:0},{opacity:.9,duration:.22,ease:'sine.in'},2.3);
+tl.to('#leak',{opacity:0,duration:.5,ease:'sine.out'},2.52);
+tl.set(world,{scale:1.12,transformOrigin:'50% 50%'},2.6);
+tl.to(world,{scale:1,duration:.9,ease:'power3.out'},2.6);        // tarik mundur di dunia baru
+
+/* --- Adegan 2 (2.6–5.2): ISIH URIP di medan Geni --- */
+const chU=splitChars($('#lineUrip .txt'));
+tl.set('#lineUrip',{autoAlpha:1},2.8);
+inDepth(chU,'#lineUrip',2.8,{dur:.9});
+tl.fromTo('#pocket1',{opacity:0},{opacity:.4,duration:.5},2.8);
+breathe(2.8,5.2,{z0:1.03,z1:1.0});
+outUp(chU,'#lineUrip',4.8,{dur:.45});
+tl.to('#pocket1',{opacity:0,duration:.3},4.8);
+
+/* --- Transisi 2→3 (5.0–5.6): dunia berbalik Kapur — blok menyapu naik --- */
+tl.set('#sc-kapur',{autoAlpha:1},5.1);
+tl.set('#bgKapur',{opacity:1},5.1);
+tl.fromTo('#bgKapur',{yPercent:100},{yPercent:0,duration:.55,ease:'power4.inOut'},5.1);
+tl.fromTo('#ghost',{xPercent:-4,opacity:0},{xPercent:0,opacity:1,duration:4,ease:'sine.out'},5.3);
+tl.set('#sc-urip',{autoAlpha:0},5.55);
+tl.to('.vignette',{opacity:.25,duration:.4},5.3);
+
+/* --- Adegan 3 (5.6–8.2): dudu mung nalika menang, di dunia Kapur --- */
+const chK=splitChars($('#lineKapur .txt'));
+tl.set('#lineKapur',{autoAlpha:1},5.9);
+inUp(chK,'#lineKapur',5.9,{dur:.85,st:.02});
+tl.fromTo('#pocket2',{opacity:0},{opacity:.32,duration:.5},5.9);
+breathe(6.0,8.2,{z0:1.0,z1:1.04,origin:'50% 48%'});
+outDepth(chK,'#lineKapur',7.9,{dur:.5});
+tl.to('#pocket2',{opacity:0,duration:.3},7.9);
+
+/* --- Transisi 3→4 (8.0–8.6): Kapur turun, kembali Bengi --- */
+tl.to('#sc-kapur',{yPercent:-100,duration:.5,ease:'power4.inOut'},8.05);
+tl.set('#sc-mark',{autoAlpha:1},8.3);
+tl.to('.vignette',{opacity:1,duration:.4},8.3);
+tl.set('#sc-kapur',{autoAlpha:0},8.6);
+
+/* --- Adegan 4 (8.3–10): wordmark PERSIBO. lalu menyusut jadi titik → loop --- */
+const chM=splitChars($('#wm .txt'));
+tl.set('#wm',{autoAlpha:1},8.5);
+inUp(chM,'#wm',8.5,{dur:.7,st:.028});
+tl.fromTo('#dotm',{scale:0,opacity:0},{scale:1,opacity:1,duration:.45,ease:'back.out(2.2)'},9.15);
+tl.fromTo('#tag',{opacity:0,y:18},{opacity:1,y:0,duration:.6,ease:'power3.out'},9.3);
+breathe(8.6,10,{z0:1.04,z1:1.0});
+
+/* penutup loop: dunia menyusut jadi titik, gelap, terulang mulus */
+tl.to(world,{scale:34,duration:.7,ease:'power3.in',transformOrigin:'50% 50%'},9.35);
+tl.to(['#wm','#tag'],{opacity:0,duration:.4},9.5);
+tl.fromTo('#leak',{opacity:0},{opacity:.75,duration:.25,ease:'sine.in'},9.5);
+tl.to('#leak',{opacity:0,duration:.15,ease:'sine.out'},9.75);
+/* jahitan loop: layar gelap penuh sebelum kembali ke titik (adegan 1) */
+tl.fromTo('#fade',{opacity:0},{opacity:1,duration:.3,ease:'none'},9.68);
+tl.to({},{duration:.01},DURATION);
+
+/* ===== PEREKAT: fit panggung 9:16 ===== */
+const stage=$('#stage');
+const fit=()=>{const s=Math.min(innerWidth/1080,innerHeight/1920);
+  stage.style.transform=`translate(-50%,-50%) scale(${s})`;};
+addEventListener('resize',fit); fit();
+
+const clock=$('#clock'),scrub=$('#scrub'),btn=$('#btn-play');
+let scrubbing=false;
+(function frame(){ const t=tl.time();
+  clock.textContent=t.toFixed(2)+'s';
+  if(!scrubbing)scrub.value=String(t/DURATION*1000);
+  requestAnimationFrame(frame); })();
+
+const toggle=()=>{ if(tl.paused()||tl.progress()>=1){
+    if(tl.progress()>=1)tl.progress(0); tl.play(); btn.textContent='Pause';}
+  else{tl.pause();btn.textContent='Play';} };
+btn.onclick=toggle;
+$('#btn-restart').onclick=()=>{tl.pause(0);tl.play();btn.textContent='Pause';};
+scrub.addEventListener('pointerdown',()=>{scrubbing=true;tl.pause();btn.textContent='Play';});
+addEventListener('pointerup',()=>scrubbing=false);
+scrub.addEventListener('input',()=>{tl.pause();tl.time(scrub.value/1000*DURATION);});
+addEventListener('keydown',e=>{ if(e.code==='Space'){e.preventDefault();toggle();}
+  if(/^[rR]$/.test(e.key)){tl.pause(0);tl.play();}
+  if(/^[hH]$/.test(e.key))$('#ui').classList.toggle('on'); });
+if(Q.has('debug'))$('#ui').classList.add('on');
+tl.eventCallback('onComplete',()=>{tl.play(0);});
+
+/* seek sinkron untuk snap/export */
+const seek=t=>{tl.pause();tl.time(t,false);if(gsap.ticker.tick)gsap.ticker.tick();};
+window.OPENER={tl,DURATION,seek,ready:false,W:1080,H:1920};
+document.fonts.ready.then(()=>{window.OPENER.ready=true;if(!Q.has('clean'))tl.play(0);});
+</script>
+</body>
+</html>
