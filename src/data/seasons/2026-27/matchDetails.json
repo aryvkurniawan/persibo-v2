@@ -1,1 +1,82 @@
-[]
+[
+  {
+    "match_url": "https://www.ileague.id/result/detail/LIGA_NUSANTARA_2026-27/2026-11-13/PERSIBO_Bojonegoro/PERSIPA",
+    "scraped_at": "2026-11-13 09:14:33.000000",
+    "date": "13 November 2026",
+    "venue": "LETJEN H. SOEDIRMAN",
+    "home_team": "PERSIBO Bojonegoro",
+    "away_team": "PERSIPA",
+    "score": "",
+    "home_score": 0,
+    "away_score": 0,
+    "lineups": {
+      "home_team": {
+        "starting_xi": [
+          { "name": "A. FERNANDI", "jersey_number": 14, "position": "Penjaga Gawang" },
+          { "name": "ANGGER", "jersey_number": 3, "position": "Belakang" },
+          { "name": "SHEVANTON", "jersey_number": 6, "position": "Belakang" },
+          { "name": "SEHABUDIN", "jersey_number": 7, "position": "Penyerang" },
+          { "name": "RIFALDI", "jersey_number": 11, "position": "Penyerang" },
+          { "name": "RANGGA", "jersey_number": 13, "position": "Belakang" },
+          { "name": "M.SYAHRIL", "jersey_number": 18, "position": "Gelandang" },
+          { "name": "RIO VALENTINO", "jersey_number": 26, "position": "Belakang" },
+          { "name": "ROMEO", "jersey_number": 27, "position": "Gelandang" },
+          { "name": "ADI PURNAMA", "jersey_number": 58, "position": "Gelandang" },
+          { "name": "PUTRA CHANIAGO", "jersey_number": 77, "position": "Penyerang" }
+        ],
+        "substitutes": [
+          { "name": "FAHAD", "jersey_number": 59, "position": null },
+          { "name": "MARVIN", "jersey_number": 8, "position": null },
+          { "name": "FUAD", "jersey_number": 12, "position": null },
+          { "name": "ZULKIFLI", "jersey_number": 15, "position": null },
+          { "name": "AARON Y", "jersey_number": 25, "position": null },
+          { "name": "J LATUCONSINA", "jersey_number": 29, "position": null },
+          { "name": "O. CHANIGIO", "jersey_number": 33, "position": null },
+          { "name": "KAFKA", "jersey_number": 34, "position": null },
+          { "name": "WIRAJA", "jersey_number": 37, "position": null },
+          { "name": "DECO", "jersey_number": 38, "position": null }
+        ],
+        "coach": "I Putu Gede Swi Santoso"
+      },
+      "away_team": {
+        "starting_xi": [
+          { "name": "ARIFIN S.", "jersey_number": 88, "position": "Penjaga Gawang" },
+          { "name": "MAHMUD", "jersey_number": 5, "position": "Belakang" },
+          { "name": "RIYADI", "jersey_number": 8, "position": "Gelandang" },
+          { "name": "ARMAN", "jersey_number": 10, "position": "Penyerang" },
+          { "name": "DANYL TUKA", "jersey_number": 16, "position": "Penyerang" },
+          { "name": "AL GHUZAT", "jersey_number": 17, "position": "Belakang" },
+          { "name": "EDGARDA", "jersey_number": 36, "position": "Gelandang" },
+          { "name": "RHAGA", "jersey_number": 44, "position": "Belakang" },
+          { "name": "SCIFO", "jersey_number": 47, "position": "Gelandang" },
+          { "name": "AL QADRI", "jersey_number": 71, "position": "Belakang" },
+          { "name": "M. RISAL", "jersey_number": 99, "position": "Penyerang" }
+        ],
+        "substitutes": [
+          { "name": "ADHIEL", "jersey_number": 1, "position": null },
+          { "name": "RICO N.C", "jersey_number": 2, "position": null },
+          { "name": "LESTALUHU .P", "jersey_number": 7, "position": null },
+          { "name": "QIS", "jersey_number": 9, "position": null },
+          { "name": "YOLTUWU", "jersey_number": 14, "position": null },
+          { "name": "WIBOWO", "jersey_number": 15, "position": null },
+          { "name": "R. MEHRAN", "jersey_number": 28, "position": null },
+          { "name": "R. JAMIL", "jersey_number": 67, "position": null },
+          { "name": "YAPAGAIMU", "jersey_number": 86, "position": null },
+          { "name": "DIMAS", "jersey_number": 94, "position": null }
+        ],
+        "coach": "Salahuddin"
+      }
+    },
+    "events": [],
+    "statistics": {},
+    "officials": {
+      "referee": "HUSAIN",
+      "assistant_referee_1": "TRI WIJAYA KUSUMA",
+      "assistant_referee_2": "MUHAMMAD FARIZWAN",
+      "fourth_official": "NENDI PIRMANSYAH",
+      "match_commissioner": "BHESI PANJI PRAWIRA"
+    },
+    "kickoff_time": "15:30",
+    "base_team": "PERSIBO Bojonegoro"
+  }
+]
