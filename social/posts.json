@@ -70,6 +70,17 @@
     ]
   },
   {
+    "out": "hasil-persipa",
+    "mode": "hasil",
+    "date": "13 November 2026",
+    "home": "PERSIBO Bojonegoro",
+    "away": "PERSIPA",
+    "venue": "LETJEN H. SOEDIRMAN",
+    "hs": "0",
+    "as": "0",
+    "md": 1
+  },
+  {
     "out": "identitas-wordmark",
     "url": "/sosmed/artboard/wordmark",
     "selector": "#art-wordmark",
@@ -104,5 +115,10 @@
     "out": "jadwal-grup-4",
     "url": "/sosmed/jadwal/1",
     "selector": "#slide-4"
+  },
+  {
+    "out": "klasemen-grup-b",
+    "url": "/sosmed/klasemen/b",
+    "selector": "#klasemen"
   }
 ]

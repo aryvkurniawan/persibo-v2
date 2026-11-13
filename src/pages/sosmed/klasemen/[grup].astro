@@ -1,0 +1,150 @@
+---
+// Poster klasemen sementara Grup B. Dev-only seperti poster lain:
+// scripts/sosmed.mjs screenshots #klasemen via social/posts.json.
+import type { GetStaticPaths } from 'astro';
+import { loadStandings, loadTeams, getTeamLogo } from '../../../utils/dataLoader';
+import '../../../styles/global.css';
+
+export const getStaticPaths: GetStaticPaths = () =>
+  import.meta.env.DEV ? [{ params: { grup: 'b' } }] : [];
+
+const all = await loadStandings('2026-27');
+const teams = await loadTeams('2026-27');
+const group = 'B';
+const rows = all
+  .filter((row) => row.group === group)
+  .sort((a, b) => a.position - b.position);
+
+const played = rows.reduce((sum, row) => sum + row.played, 0) / 2;
+const persibo = rows.find((row) => row.club.toUpperCase().includes('PERSIBO'))!;
+
+const shortName = (club: string) =>
+  club === 'Persibangga' ? 'PERSIBANGGA' : club.replace(/\s+(BOJONEGORO|FC|UNITED)$/i, '').toUpperCase();
+const logoFor = (club: string) =>
+  club.toUpperCase().includes('PERSIBO') ? '/logo-64.png' : (getTeamLogo(teams, club) ?? '/logo-64.png');
+const isPersibo = (club: string) => club.toUpperCase().includes('PERSIBO');
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <title>Klasemen grup — PERSIBO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Lexend:wght@400;500;600;700;800&display=swap"
+    />
+    <style is:global>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #0b0910;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="klasemen"
+      class="relative overflow-hidden bg-[#0b0910] text-[#f5f2ec]"
+      style="width:1080px;height:1350px;font-family:'Lexend',sans-serif"
+    >
+      <div
+        class="pointer-events-none absolute inset-0"
+        style="background:radial-gradient(circle at 84% -6%, rgba(249,115,22,0.16), transparent 44%)"
+      >
+      </div>
+      <div
+        class="pointer-events-none absolute inset-0 opacity-[0.05]"
+        style="background-image:linear-gradient(#f5f2ec 1px, transparent 1px);background-size:100% 60px"
+      >
+      </div>
+
+      <div class="absolute left-[72px] right-[72px] top-[62px] flex items-center justify-between">
+        <p class="flex items-center gap-[10px] text-[20px] font-bold uppercase tracking-[0.26em] text-white/60">
+          <span class="inline-block h-[8px] w-[8px] bg-primary"></span>
+          Liga Nusantara 2026-27
+        </p>
+        <p class="text-[18px] uppercase tracking-[0.2em] text-white/35">
+          {played} laga berlalu
+        </p>
+      </div>
+
+      <div class="absolute left-[72px] right-[72px] top-[104px] flex items-end justify-between">
+        <p class="font-cond text-[92px] font-extrabold uppercase leading-[0.78] tracking-[-0.01em] text-white">
+          Klasemen<br />Grup {group}<span class="text-primary">.</span>
+        </p>
+        <div class="pb-[14px] text-right">
+          <p class="font-cond text-[64px] font-bold leading-none text-primary">{persibo.position}</p>
+          <p class="mt-[6px] text-[20px] font-bold uppercase tracking-[0.2em] text-white/55">
+            PERSIBO · {persibo.points} poin
+          </p>
+        </div>
+      </div>
+      <div class="absolute left-[72px] right-[72px] top-[332px] h-px bg-white/15"></div>
+
+      <!-- Same card geometry as the jadwal slides, so the carousel reads as one series. -->
+      <div class="absolute left-[72px] right-[72px] top-[368px] flex flex-col gap-[8px]">
+        <div class="flex items-center gap-[16px] px-[26px] text-[17px] font-bold uppercase tracking-[0.2em] text-white/35">
+          <span class="w-[44px] shrink-0">#</span>
+          <span class="flex-1">Klub</span>
+          <span class="w-[46px] text-center">M</span>
+          <span class="w-[46px] text-center">S</span>
+          <span class="w-[46px] text-center">K</span>
+          <span class="w-[62px] text-center">SG</span>
+          <span class="w-[52px] text-center">Poin</span>
+        </div>
+        {rows.map((row) => (
+          <div
+            class={`relative flex h-[80px] items-center overflow-hidden rounded-[12px] ring-1 ${
+              isPersibo(row.club) ? 'bg-primary/15 ring-primary/60' : 'bg-white/[0.035] ring-white/[0.07]'
+            }`}
+          >
+            <span class={`absolute left-0 top-0 h-full w-[5px] ${isPersibo(row.club) ? 'bg-primary' : 'bg-transparent'}`}></span>
+
+            <p class={`w-[44px] shrink-0 pl-[26px] text-left font-cond text-[36px] font-bold leading-none ${isPersibo(row.club) ? 'text-primary' : 'text-white/35'}`}>
+              {row.position}
+            </p>
+
+            <img src={logoFor(row.club)} alt="" class="mx-[16px] h-[44px] w-[44px] shrink-0 object-contain" loading="eager" />
+
+            <p class={`min-w-0 flex-1 truncate font-cond text-[38px] font-bold uppercase leading-none ${isPersibo(row.club) ? 'text-primary' : 'text-white'}`}>
+              {shortName(row.club)}
+            </p>
+
+            <p class="w-[46px] shrink-0 text-center font-cond text-[32px] font-semibold leading-none text-white/75 tnum">{row.played}</p>
+            <p class="w-[46px] shrink-0 text-center font-cond text-[32px] font-semibold leading-none text-white/60 tnum">{row.won}</p>
+            <p class="w-[46px] shrink-0 text-center font-cond text-[32px] font-semibold leading-none text-white/60 tnum">{row.drawn}</p>
+            <p class="w-[46px] shrink-0 text-center font-cond text-[32px] font-semibold leading-none text-white/60 tnum">{row.lost}</p>
+            <p class="w-[62px] shrink-0 text-center font-cond text-[32px] font-semibold leading-none text-white/60 tnum">
+              {row.goal_diff > 0 ? `+${row.goal_diff}` : row.goal_diff}
+            </p>
+            <p class={`w-[52px] shrink-0 pr-[26px] text-right font-cond text-[38px] font-bold leading-none tnum ${isPersibo(row.club) ? 'text-primary' : 'text-white'}`}>
+              {row.points}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <div class="absolute bottom-[150px] left-[72px] right-[72px]">
+        <div class="flex items-center justify-between bg-primary px-[26px] py-[22px] text-[#0b0910]">
+          <p class="text-[22px] font-extrabold uppercase tracking-[0.18em]">Klasemen lengkap</p>
+          <p class="font-cond text-[30px] font-bold uppercase tracking-[0.1em]">persibo.com →</p>
+        </div>
+      </div>
+
+      <div class="absolute bottom-[52px] left-[72px] right-[72px] flex items-end justify-between">
+        <div>
+          <p class="font-cond text-[42px] font-bold uppercase leading-none text-white">
+            Persibo<span class="text-primary">.</span>
+          </p>
+          <p class="mt-[8px] text-[17px] uppercase tracking-[0.22em] text-white/35">Laskar Angling Dharma</p>
+        </div>
+        <p class="text-[16px] uppercase tracking-[0.2em] text-white/30">Sementara · {played} laga main</p>
+      </div>
+    </div>
+  </body>
+</html>
