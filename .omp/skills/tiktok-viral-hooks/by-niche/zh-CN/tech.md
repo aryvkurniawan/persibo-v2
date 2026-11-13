@@ -1,0 +1,32 @@
+# tech Breakdowns
+
+> 13 viral TikTok videos in this niche, with hook analysis and mind maps.
+
+[← Back to README](../../README.md).zh-CN.md
+
+
+- [Powerful Rechargeable Torch for 90 Rupees](../../breakdowns/zh-CN/2026-09/tiktok-transcript-powerful-rechargeable-torch-92f2.md) — 7.7M views · `Price Shock + Product Reveal` · 2026-09-11
+
+- [Smallest Mini CCTV Camera With Phone Live View](../../breakdowns/zh-CN/2026-09/tiktok-transcript-powerful-mini-cctv-camera-d842.md) — 3.4M views · `Superlative Product Reveal` · 2026-09-11
+
+- [RGB Monitor Mount Stack, Spin and Shine](../../breakdowns/zh-CN/2026-07/tiktok-transcript-stack-spin-shine-rgb-monitor-mount-does-it-all-odyssey-ole-b4d9.md) — 1.7M views · `List-based promise` · 2026-07-09
+
+- [Car Battery Drain Fix With Circuit Tester](../../breakdowns/zh-CN/2026-09/tiktok-transcript-tired-of-a-dead-battery-every-morning-watch-this-the-2026-ca-f6fb.md) — 1.6M views · `Frustration Resolution` · 2026-09-17
+
+- [Pocket-Sized Emergency Phone Charger on Shark Tank US](../../breakdowns/zh-CN/2026-05/tiktok-transcript-sharks-loved-this-tiny-charger-shark-tank-us-5681.md) — 1.4M views · `Question-Answer Surprise` · 2026-05-23
+
+- [Build AI Agent That Handles Emails and Meetings](../../breakdowns/zh-CN/2026-06/tiktok-transcript-most-people-overcomplicate-ai-agents-i-built-one-that-handle-0ccc.md) — 1.3M views · `What if + aspirational promise` · 2026-06-09
+
+- [18-in-1 Snowflake Multi Tool EDC Wrench Review](../../breakdowns/zh-CN/2026-10/tiktok-transcript-be-sure-to-carry-this-snowflake-wrench-with-you-when-you-re-aeab.md) — 1.2M views · `Praise + Problem Agitation` · 2026-10-16
+
+- [How to Use a Multimeter: Check Continuity and Measure DC...](../../breakdowns/zh-CN/2026-08/tiktok-transcript-how-to-use-a-multimeter-tik-knowledge-science-multimeter-aab0.md) — 1.2M views · `Direct question + invitation` · 2026-08-07
+
+- [Flexible Bike Indicator That Won't Break When Dropped](../../breakdowns/zh-CN/2026-09/tiktok-transcript-viral-bike-indicator-9fa8.md) — 959.9K views · `Problem-Solution with Price Hook` · 2026-09-15
+
+- [Phone Store Owner's Water Damage Phone Hacks](../../breakdowns/zh-CN/2026-07/tiktok-transcript-fyp-lifehack-lifestyle-lifetips-diy-4053.md) — 882.3K views · `Authority/Insider Knowledge` · 2026-07-05
+
+- [How to Fix Car Hard Start, Power Loss, High Fuel Consumption](../../breakdowns/zh-CN/2026-06/tiktok-transcript-the-car-is-difficult-to-start-the-power-decreases-and-the-fu-6292.md) — 734.4K views · `Challenge question` · 2026-06-20
+
+- [Keo Optimized vs Star Optimized Modpack FPS Comparison](../../breakdowns/zh-CN/2026-10/tiktok-transcript-comparando-mi-modpack-de-optimizaci-n-keo-optimized-ec5e.md) — 666.7K views · `Comparison Challenge` · 2026-10-16
+
+- [Dashcam App Explained in 30 Seconds](../../breakdowns/zh-CN/2026-10/tiktok-transcript-gib-mir-30-sekunden-link-in-der-bio-5ae1.md) — 175.9K views · `Time-bound promise + feature reveal` · 2026-10-20

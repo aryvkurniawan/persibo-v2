@@ -1,0 +1,84 @@
+# finance Breakdowns
+
+> 39 viral TikTok videos in this niche, with hook analysis and mind maps.
+
+[← Back to README](../../README.md)
+
+
+- [No Money, Big Problem: Work Hard and Be Smart](../../breakdowns/en/2026-06/tiktok-transcript-no-boy-friend-no-problem-no-girl-friend-no-problem-no-money-b0e9.md) — 76.3M views · `contrast escalation` · 2026-06-02
+
+- [Rich Dad Market Lesson with iPhone Analogy](../../breakdowns/en/2026-07/tiktok-transcript-rich-dad-lesson-on-the-market-using-an-iphone-analogy-person-7e7f.md) — 18.0M views · `Curiosity Gap` · 2026-07-22
+
+- [How to Beat Evil Credit Cards](../../breakdowns/en/2026-07/tiktok-transcript-how-to-beat-evil-credit-cards-learnontiktok-personalfinance-4b51.md) — 17.7M views · `Unexpected Generosity` · 2026-07-28
+
+- [Carrot Worker Receives Triple Monthly Pay](../../breakdowns/en/2026-10/tiktok-transcript-drame-fruitstory-aifruits-a4d6.md) — 13.7M views · `Problem-Solution Hook` · 2026-10-09
+
+- [Carrot Worker Receives Triple Monthly Pay](../../breakdowns/en/2026-10/tiktok-transcript-drame-fruitstory-aifruits-3423.md) — 13.7M views · `Problem-Solution Setup` · 2026-10-09
+
+- [The 3 Worst Businesses to Buy According to an Expert](../../breakdowns/en/2026-07/tiktok-transcript-here-are-the-3-worst-businesses-you-could-ever-buy-because-i-b7ad.md) — 12.4M views · `Listicle with contrarian premise` · 2026-07-01
+
+- [This Simple Trick Saves Thousands in Mortgage Interest](../../breakdowns/en/2026-07/tiktok-transcript-this-simple-trick-can-save-you-tens-of-thousands-of-dollars-a43a.md) — 12.2M views · `Congratulatory surprise` · 2026-07-20
+
+- [House Hacking Explained: Pay $100 a Month to Live Here](../../breakdowns/en/2026-05/tiktok-transcript-house-hacking-explained-realestate-househacking-wealth-inves-15af.md) — 8.4M views · `Surprising reveal` · 2026-05-31
+
+- [Buying Your Kid a House Funds Their College](../../breakdowns/en/2026-07/tiktok-transcript-how-buying-your-kid-a-house-will-pay-for-their-college-glenn-63b3.md) — 5.7M views · `Future Shock + Emotional Stake` · 2026-07-20
+
+- [Don't Let This Mistake Cost You Your Credit Score](../../breakdowns/en/2026-07/tiktok-transcript-dont-let-this-mistake-cost-you-personalfinance-interest-cred-104b.md) — 5.2M views · `Hypothetical scenario with immediate stakes` · 2026-07-16
+
+- [Average New Car Payment Hits $750 Monthly](../../breakdowns/en/2026-07/tiktok-transcript-the-average-new-car-payment-nearly-750-dollars-a-month-now-o-e2b6.md) — 3.9M views · `Shocking Statistic` · 2026-07-08
+
+- [Dave Ramsey Refuses Billion Dollar Zero-Interest Loan](../../breakdowns/en/2026-07/tiktok-transcript-dave-ramsey-is-crazy-for-this-businesscoach-daveramsey-finan-ce5d.md) — 3.3M views · `Authority challenge` · 2026-07-01
+
+- [House Affordability on a $20/Hour Salary](../../breakdowns/en/2026-05/tiktok-transcript-here-s-how-much-you-can-afford-for-a-house-if-you-make-20-ho-32a7.md) — 2.9M views · `Curiosity Gap + Specificity` · 2026-05-31
+
+- [School Doesn't Create Winners, It Creates Obedient Employees](../../breakdowns/en/2026-06/tiktok-transcript-la-escuela-no-forma-ganadores-forma-empleados-obedientes-y-e-77d8.md) — 2.8M views · `Rhetorical question + contrarian statement` · 2026-06-07
+
+- [Avoid Being House Poor: Real Estate Upkeep Costs](../../breakdowns/en/2026-07/tiktok-transcript-don-t-be-house-poor-glenndabaker-realestate-atlantarealestat-077f.md) — 2.8M views · `Myth vs. Reality` · 2026-07-10
+
+- [Feng Shui Tip: Write 8423 on Paper to Improve Finances](../../breakdowns/en/2026-06/tiktok-transcript-always-feel-like-money-s-tight-let-me-share-a-feng-shui-tip-eb25.md) — 2.7M views · `Problem-Agitate-Solution` · 2026-06-30
+
+- [Make Money in 24 Hours Using ChatGPT](../../breakdowns/en/2026-07/tiktok-transcript-makemoneyonline-digitalproducts-chatgpt-digitalmarketingforb-b958.md) — 2.5M views · `Immediate Value Promise` · 2026-07-19
+
+- [Want a Million Dollars? Follow These Rules](../../breakdowns/en/2026-06/tiktok-transcript-4-2m-views-102k-reactions-millionbanknote-7bb1.md) — 2.0M views · `Aspirational Challenge` · 2026-06-27
+
+- [How to Achieve Financial Freedom Through House Hacking](../../breakdowns/en/2026-06/tiktok-transcript-earn-financial-freedom-by-house-hacking-realestate-wealth-hu-e7bf.md) — 1.7M views · `Direct Promise` · 2026-06-09
+
+- [Indian Citizens Can Get Rs 3,000 Monthly via Labour Card](../../breakdowns/en/2026-09/tiktok-transcript-307k-views-32k-reactions-labourregistration-labour-labourcar-87e8.md) — 1.7M views · `Direct Benefit Announcement` · 2026-09-18
+
+- [Waiting on Market Drop to Buy? You Lost Buying Power](../../breakdowns/en/2026-07/tiktok-transcript-if-you-re-waiting-on-the-market-to-go-down-to-buy-you-may-be-a80b.md) — 1.6M views · `Direct Address + Contrarian Question` · 2026-07-12
+
+- [3 Types of People Who Should Never Start a Business](../../breakdowns/en/2026-09/tiktok-transcript-video-bcdc.md) — 1.5M views · `Direct warning with list promise` · 2026-09-08
+
+- [Wealthy People Don’t Need to Show Off](../../breakdowns/en/2026-06/tiktok-transcript-you-ever-notice-how-the-loudest-people-in-the-room-are-usual-4cd4.md) — 1.5M views · `Cautionary reversal` · 2026-06-03
+
+- [Top 3 AI Stocks to Buy for the Next Decade](../../breakdowns/en/2026-06/tiktok-transcript-here-are-the-top-3-a-i-stocks-to-buy-for-the-next-decade-acc-cbda.md) — 1.5M views · `List-based promise with authority` · 2026-06-12
+
+- [3 Best Stocks to Buy for Wealth Building](../../breakdowns/en/2026-06/tiktok-transcript-the-best-stocks-to-buy-to-get-rich-9632.md) — 1.4M views · `Unexpected twist` · 2026-06-12
+
+- [Turn Your 30-Year Mortgage Into a 1-Year Payoff](../../breakdowns/en/2026-08/tiktok-transcript-most-banks-won-t-tell-you-this-but-you-can-turn-your-30-year-5446.md) — 1.4M views · `Forbidden Knowledge / Insider Secret` · 2026-08-02
+
+- [Video ni agak panjang tapi please tengok sampai habis sebelum korang ...](../../breakdowns/en/2026-07/tiktok-transcript-video-ni-agak-panjang-tapi-please-tengok-sampai-habis-sebelu-6446.md) — 1.3M views · `Value Promise` · 2026-07-24
+
+- [France Changes From October 1, 2026: Benefits and Fuel](../../breakdowns/en/2026-10/tiktok-transcript-tout-ce-qui-change-en-octobre-2026-en-france-d-s-le-1er-octo-fbb9.md) — 862.8K views · `Date-triggered benefit increase announcement` · 2026-10-14
+
+- [4 Years of Financial Education in 60 Seconds](../../breakdowns/en/2026-06/tiktok-transcript-4-a-os-de-educaci-n-financiera-en-60-segundos-finanzas-diner-053f.md) — 745.4K views · `Counterintuitive statement` · 2026-06-06
+
+- [AI's Broken Business Model Loses Billions](../../breakdowns/en/2026-07/tiktok-transcript-ai-s-broken-business-model-why-it-s-losing-billions-viral-ne-5bf9.md) — 559.6K views · `Problem-Statement Hook` · 2026-07-27
+
+- [Renting Isn't a Failure: Why Buying a House Isn't for Eve...](../../breakdowns/en/2026-08/tiktok-transcript-a-mortgage-is-not-a-milestone-for-most-people-it-s-a-financi-0ecf.md) — 429.0K views · `Contrarian command` · 2026-08-01
+
+- [Couple Builds House in 8 Months on Salary Alone](../../breakdowns/en/2026-10/tiktok-transcript-se-voc-quer-ver-se-ela-consegue-segue-a-grazi-e-o-time-do-ti-7093.md) — 420.5K views · `Character Introduction with Bold Claim` · 2026-10-03
+
+- [Why a $40K Car Is Unaffordable on $50K Income](../../breakdowns/en/2026-08/tiktok-transcript-most-people-don-t-ask-can-i-afford-this-car-they-ask-can-i-a-4fd6.md) — 402.5K views · `Contrarian statement` · 2026-08-01
+
+- [Gold Trading Technique Feels Like a Market Glitch](../../breakdowns/en/2026-09/tiktok-transcript-53k-views-6-1k-reactions-any-idea-quant-can-build-refine-lux-2c35.md) — 214.7K views · `Impossible promise` · 2026-09-03
+
+- [My Top 5 Trader Toolkit Apps](../../breakdowns/en/2026-09/tiktok-transcript-my-top-5-trader-toolkit-apps-43c4.md) — 211.9K views · `Listicle teaser` · 2026-09-02
+
+- [Abandoned Storage Unit Auctions: Real Profit](../../breakdowns/en/2026-09/tiktok-transcript-392k-views-11k-reactions-everyone-watches-those-storage-show-d8ff.md) — 195.1K views · `Controversial Curiosity Hook` · 2026-09-27
+
+- [Trump's 1933 Gold Playbook for Bitcoin Confiscation](../../breakdowns/en/2026-08/tiktok-transcript-the-1933-gold-playbook-how-trump-may-take-your-bitcoin-df3e.md) — 183.6K views · `Fear-based prediction` · 2026-08-12
+
+- [Trump's 1933 Gold Playbook for Bitcoin Seizure](../../breakdowns/en/2026-08/tiktok-transcript-the-1933-gold-playbook-how-trump-may-take-your-bitcoin-4b06.md) — 183.6K views · `Fear-based prediction` · 2026-08-12
+
+- [How Bankruptcy Protects Wealthy People Like Trump](../../breakdowns/en/2026-08/tiktok-transcript-8k-reactions-1-1k-shares-how-bankruptcy-protects-wealthy-peo-95bc.md) — 161.3K views · `Curiosity Gap + Contradiction` · 2026-08-20

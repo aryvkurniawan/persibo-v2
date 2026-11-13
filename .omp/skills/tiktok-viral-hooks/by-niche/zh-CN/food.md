@@ -1,0 +1,46 @@
+# food Breakdowns
+
+> 20 viral TikTok videos in this niche, with hook analysis and mind maps.
+
+[← Back to README](../../README.md).zh-CN.md
+
+
+- [Water Vapor Squeezes Fruit Into Pure Juice Instantly](../../breakdowns/zh-CN/2026-05/tiktok-transcript-goodthing-tiktok-goodthings-93ee.md) — 29.4M views · `Unexpected twist` · 2026-05-24
+
+- [My Favorite Dinner for Type 2 Diabetes](../../breakdowns/zh-CN/2026-07/tiktok-transcript-mejora-tus-niveles-de-glucosa-obt-n-tu-libro-en-el-enlace-de-8700.md) — 18.0M views · `Identity + Benefit` · 2026-07-03
+
+- [Carrot Beetroot Cabbage Lemon Juice Detox Benefits by Dr....](../../breakdowns/zh-CN/2026-06/tiktok-transcript-esse-suco-um-potente-detox-para-o-corpo-dr-dayan-siebra-no-01fe.md) — 17.3M views · `Bold Claim` · 2026-06-28
+
+- [Easy Chicken Alfredo Recipe With Chipotle Seasoning](../../breakdowns/zh-CN/2026-06/tiktok-transcript-my-new-chicken-alfredo-recipe-2595.md) — 14.1M views · `Direct invitation with sensory payoff` · 2026-06-27
+
+- [3 Easy Indian Mithai Recipes: Malpua and Moong Dal Halwa](../../breakdowns/zh-CN/2026-09/tiktok-transcript-9-5m-views-91k-reactions-viralreels-fbreels-trendingreels-in-e802.md) — 4.2M views · `Listicle Hook` · 2026-09-26
+
+- [Body Pain Relief Remedy with Milk and Spices](../../breakdowns/zh-CN/2026-06/tiktok-transcript-dekhein-21fe.md) — 3.6M views · `Conditional promise` · 2026-06-29
+
+- [3-Ingredient Snack Recipe](../../breakdowns/zh-CN/2026-05/tiktok-transcript-salgadinho-de-s-3-ingredientes-salgadinho-receita-facil-004b.md) — 3.3M views · `Curiosity gap + promise` · 2026-05-31
+
+- [Family Kitchen Chat About Cooking and Onions](../../breakdowns/zh-CN/2026-10/tiktok-transcript-tiktok-video-7668736763153632532-f168.md) — 2.6M views · `Direct Question + Urgency` · 2026-10-18
+
+- [Stainless Steel Meatball Maker Spoon Hack](../../breakdowns/zh-CN/2026-09/tiktok-transcript-chega-de-fazer-alm-ndegas-com-as-m-os-e-ficar-com-tudo-gruda-5663.md) — 2.2M views · `Problem-Agitation-Solution` · 2026-09-14
+
+- [Tasty Burger Production: Marinade to Meat Grinder](../../breakdowns/zh-CN/2026-06/tiktok-transcript-movie-usa-foryou-film-tiktok-d95e.md) — 2.2M views · `Curiosity Gap` · 2026-06-13
+
+- [Food Dilemma: Beef vs Chicken, Carbonara vs Bolognese](../../breakdowns/zh-CN/2026-06/tiktok-transcript-part-340-tu-pr-f-res-tupreferes-tupreferesquoi-dilemme-375f.md) — 1.8M views · `Interactive choice hook` · 2026-06-29
+
+- [Name These 10 Seafood in English Vocabulary Quiz](../../breakdowns/zh-CN/2026-10/tiktok-transcript-3-9m-views-41k-reactions-can-you-name-all-these-seafood-corr-14a7.md) — 1.6M views · `Rapid-fire Seafood Enumeration` · 2026-10-10
+
+- [Unlimited Steak and Sides for 90 Minutes in Sydney](../../breakdowns/zh-CN/2026-05/tiktok-transcript-unlimited-steak-run-follow-for-best-sydney-guide-get-10-off-a4a9.md) — 1.5M views · `Scarcity + Abundance` · 2026-05-22
+
+- [Story Time: My Cake Business Secret Part 1](../../breakdowns/zh-CN/2026-06/tiktok-transcript-story-time-part-1-story-fyp-diy-foryoupage-viral-tiktok-7513.md) — 1.4M views · `Rhetorical question + shocking reveal` · 2026-06-02
+
+- [Frozen Banana Business: How She Earns $5 Per Treat](../../breakdowns/zh-CN/2026-06/tiktok-transcript-creatorsearchinsights-she-turned-a-simple-frozen-banana-into-aec0.md) — 1.3M views · `Transformation/Before-After` · 2026-06-25
+
+- [Salty vs Sweet Food Choices](../../breakdowns/zh-CN/2026-08/tiktok-transcript-choix-tupreferes-food-nourriture-d574.md) — 734.8K views · `Rapid-fire dilemma` · 2026-08-09
+
+- [Strawberries Grown in Small Spaces for Big Harvests](../../breakdowns/zh-CN/2026-07/tiktok-transcript-1-7m-views-11k-reactions-des-fraises-cultiv-es-avec-cette-m-9fab.md) — 592.6K views · `Emotional Gratitude` · 2026-07-28
+
+- [Beef Burger or Veggie Burger? Food Preference Quiz](../../breakdowns/zh-CN/2026-06/tiktok-transcript-tu-pr-f-res-quoi-tupreferes-quiz-tiktokfrance-nourriture-fr-3d22.md) — 481.9K views · `Challenge/Test` · 2026-06-03
+
+- [Slow French: Cooking Mexican Pancakes the French Way](../../breakdowns/zh-CN/2026-06/tiktok-transcript-slow-french-tu-cuisines-avec-moi-comprehensibleinput-frenchc-c3cf.md) — 304.4K views · `Invitation to participate` · 2026-06-04
+
+- [Smooth Vanilla Matcha Review: Ceremonial Japan Blend](../../breakdowns/zh-CN/2026-10/tiktok-transcript-el-matcha-m-s-suave-y-delicioso-que-he-probado-matcha-co-unb-44ce.md) — 188.2K views · `Problem-Solution` · 2026-10-05
