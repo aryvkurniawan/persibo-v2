@@ -1,6 +1,7 @@
 ---
 import type { MatchDetailLineup, MatchDetailPlayer } from '../types';
 import faces from '../data/players/faces.json';
+import players from '../data/players.json';
 
 interface Props {
   lineup: MatchDetailLineup;
@@ -10,10 +11,13 @@ interface Props {
 
 const { lineup, teamName, side } = Astro.props;
 
-type Face = { name: string; photo_local?: string };
+type Photo = { name?: string; photo_local?: string; photo_url?: string };
 const photoByName = new Map<string, string>();
-for (const face of faces as Face[]) {
-  if (face.photo_local) photoByName.set(face.name.toUpperCase(), face.photo_local);
+// faces.json indexes older seasons by full name; players.json carries the
+// current squad's short names — the same form the lineup uses. Merge both.
+for (const entry of [...(faces as Photo[]), ...(players as Photo[])]) {
+  const src = entry.photo_local || entry.photo_url;
+  if (entry.name && src) photoByName.set(entry.name.toUpperCase(), src);
 }
 
 // Scraped lineups carry noise: rows that are actually shirt-number strings, and
@@ -108,12 +112,12 @@ const cardIcon = (cards?: MatchDetailPlayer['cards']) => {
       {rows.map((row) => (
         <div>
           <p class="mb-2 text-center text-[10px] font-bold uppercase tracking-[0.2em] text-white/20">{row.position}</p>
-          <div class="flex flex-wrap items-start justify-center gap-x-1 gap-y-2">
+          <div class="flex flex-wrap items-start justify-center gap-x-2 gap-y-2">
             {row.players.map((player) => {
               const photo = photoByName.get(player.name.toUpperCase());
               const card = cardIcon(player.cards);
               return (
-                <div class="flex w-[56px] flex-col items-center gap-1">
+                <div class="flex w-[72px] flex-col items-center gap-1">
                   <div class="relative">
                     <div class="h-11 w-11 overflow-hidden rounded-full border border-white/20 bg-[#161318]">
                       {photo ? (
@@ -138,7 +142,7 @@ const cardIcon = (cards?: MatchDetailPlayer['cards']) => {
                       <span class={`absolute -left-1 -top-1 h-2.5 w-3 border border-[#0a1410] ${card === 'red' ? 'bg-red-500' : 'bg-yellow-400'}`}></span>
                     )}
                   </div>
-                  <span class="line-clamp-2 w-full break-words text-center text-[10px] font-semibold uppercase leading-tight tracking-tight text-white/60">
+                  <span class="line-clamp-1 w-full break-words text-center text-[10px] font-semibold uppercase leading-tight tracking-tight text-white/60">
                     {shortName(player.name)}
                   </span>
                 </div>
@@ -149,13 +153,13 @@ const cardIcon = (cards?: MatchDetailPlayer['cards']) => {
       ))}
 
       {unplaced.length > 0 && (
-        <div class="flex flex-wrap items-start justify-center gap-x-1 gap-y-2 border-t border-white/10 pt-3">
+        <div class="flex flex-wrap items-start justify-center gap-x-2 gap-y-2 border-t border-white/10 pt-3">
           {unplaced.map((player) => (
-            <div class="flex w-[56px] flex-col items-center gap-1">
+            <div class="flex w-[72px] flex-col items-center gap-1">
               <div class="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-[#161318] font-cond text-sm font-bold text-white/50">
                 {player.jersey_number}
               </div>
-              <span class="line-clamp-2 w-full break-words text-center text-[10px] font-semibold uppercase leading-tight tracking-tight text-white/60">
+              <span class="line-clamp-1 w-full break-words text-center text-[10px] font-semibold uppercase leading-tight tracking-tight text-white/60">
                 {shortName(player.name)}
               </span>
             </div>
