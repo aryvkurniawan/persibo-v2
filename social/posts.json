@@ -4,6 +4,75 @@
     "md": 1
   },
   {
+    "out": "lineup-persipa",
+    "mode": "lineup",
+    "date": "13 November 2026",
+    "home": "PERSIBO Bojonegoro",
+    "away": "PERSIPA",
+    "venue": "Stadion Letjen H. Soedirman",
+    "md": 1,
+    "formation": "4-3-3",
+    "coach": "I Putu Gede Swi Santoso",
+    "xi": [
+      { "no": 14, "name": "A. Fernandi", "pos": "KIP" },
+      { "no": 3, "name": "Angger", "pos": "BEK" },
+      { "no": 6, "name": "Shevanton", "pos": "BEK" },
+      { "no": 13, "name": "Rangga", "pos": "BEK" },
+      { "no": 26, "name": "Rio Valentino", "pos": "BEK" },
+      { "no": 18, "name": "M. Syahril", "pos": "GEL" },
+      { "no": 27, "name": "Romeo", "pos": "GEL" },
+      { "no": 58, "name": "Adi Purnama", "pos": "GEL" },
+      { "no": 7, "name": "Sehabudin", "pos": "PEN" },
+      { "no": 11, "name": "Rifaldi", "pos": "PEN" },
+      { "no": 77, "name": "Putra Chaniago", "pos": "PEN" }
+    ],
+    "subs": [
+      { "no": 59, "name": "Fahad" },
+      { "no": 8, "name": "Marvin" },
+      { "no": 12, "name": "Fuad" },
+      { "no": 15, "name": "Zulkifli" },
+      { "no": 25, "name": "Aaron Y" },
+      { "no": 29, "name": "J. Latuconsina" },
+      { "no": 33, "name": "O. Chanigio" },
+      { "no": 34, "name": "Kafka" },
+      { "no": 37, "name": "Wiraja" },
+      { "no": 38, "name": "Deco" }
+    ]
+  },
+  {
+    "out": "stats-persipa",
+    "mode": "stats",
+    "date": "13 November 2026",
+    "home": "PERSIBO Bojonegoro",
+    "away": "PERSIPA",
+    "md": 1,
+    "hs": "0",
+    "as": "0",
+    "stats": {
+      "possessionHome": 41.3,
+      "possessionAway": 58.7,
+      "home": {
+        "title": "Blok tengah",
+        "lanes": [16.0, 42.6, 41.4]
+      },
+      "away": {
+        "title": "Pressing tinggi",
+        "lanes": [16.6, 39.8, 43.6]
+      }
+    }
+  },
+  {
+    "out": "momentum-persipa",
+    "mode": "momentum",
+    "date": "13 November 2026",
+    "home": "PERSIBO Bojonegoro",
+    "away": "PERSIPA",
+    "md": 1,
+    "hs": "0",
+    "as": "0",
+    "momentumWave": [[0, 60.2], [1, 56.4], [2, 53.9], [3, 54.9], [4, 48.9], [5, 52.4], [6, 47.9], [7, 50.7], [8, 46.4], [9, 44.2], [10, 45.4], [11, 45.5], [12, 42.3], [13, 38.6], [14, 34.6], [15, 30.1], [16, 35.4], [17, 29.0], [18, 34.5], [19, 37.2], [20, 38.6], [21, 34.1], [22, 34.1], [23, 31.1], [24, 35.7], [25, 32.5], [26, 31.8], [27, 33.7], [28, 41.6], [29, 37.1], [30, 40.6], [31, 41.9], [32, 45.3], [33, 36.9], [34, 36.2], [35, 41.9], [36, 43.4], [37, 38.9], [38, 36.7], [39, 37.9], [40, 31.7], [41, 30.5], [42, 33.6], [43, 48.5], [44, 52.6], [45, 53.1], [46, 57.2], [47, 61.7], [48, 49.8], [49, 36.0], [50, 34.0], [51, 32.3], [52, 30.8], [53, 29.3], [54, 30.3], [55, 42.8], [56, 44.2], [57, 35.8], [58, 38.0], [59, 42.4], [60, 34.3], [61, 36.8], [62, 44.1], [63, 41.7], [64, 44.6], [65, 42.5], [66, 47.3], [67, 47.0], [68, 45.8], [69, 43.5], [70, 44.7], [71, 35.0], [72, 34.7], [73, 33.6], [74, 47.3], [75, 44.9], [76, 55.4], [77, 64.0], [78, 63.8], [79, 52.9], [80, 55.4], [81, 46.3], [82, 37.1], [83, 24.9], [84, 34.9], [85, 36.7], [86, 39.7], [87, 38.9], [88, 52.3], [89, 31.7]]
+  },
+  {
     "out": "laga-persibangga-tandang",
     "date": "18 November 2026",
     "home": "PERSIBANGGA PURBALINGGA",

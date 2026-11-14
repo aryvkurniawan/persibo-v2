@@ -107,6 +107,46 @@ Persibo 1-1 PSN Ngada. Gol Wiraja menit 10. Uji coba terakhir sebelum Liga Nusan
 
 ---
 
+## 8. Poster stats laga (`stats-persipa.png`)
+
+0:0, tapi laganya nggak kosong.
+
+Persipa datang ke Soedirman dengan pressing tinggi dan bawa pulang 58,7% penguasaan bola. Persibo menjawab dengan blok tengah kompak: 90 menit gawangnya tidak tersentuh.
+
+Sebaran permainan Persibo menumpuk di tengah dan kanan (42,6% dan 41,4%); sisi kiri cuma 16%.
+
+Angka dari pelacakan data pertandingan, dudu statistik liga.
+
+Klasemen dan jadwal tiap hari di persibo.com.
+
+#Persibo #PersiboBojonegoro #LaskarAnglingDharma #Bojonegoro #LigaNusantara
+
+### Versi pendek (story / X)
+
+0:0 di kandang. Persipa pegang 58,7% bola, Persibo jawab dengan blok kompak 90 menit. Data pelacakan, dudu statistik liga.
+
+---
+
+## 9. Poster momentum (`momentum-persipa.png`)
+
+Dua kali naik, dua kali ditahan.
+
+Gunung di poster: porsi bola Persibo sepanjang laga. Menit 45 dan 77, Persibo sempat menembus garis keseimbangan. Sisanya, Persipa yang pegang (58,7% total).
+
+Persipa menguasai porsi tengah laga, Persibo menutupnya lebih berani.
+
+Angka dari pelacakan data pertandingan, dudu statistik liga.
+
+Klasemen dan jadwal tiap hari di persibo.com.
+
+#Persibo #PersiboBojonegoro #LaskarAnglingDharma #Bojonegoro #LigaNusantara
+
+### Versi pendek (story / X)
+
+Pasang surut bola: Persibo dua kali tembus garis 50%, menit 45 dan 77. Sisanya milik Persipa (58,7%).
+
+---
+
 ## Catatan
 
 - Jangan pakai kata "resmi", "official", atau "rebranding" — situs ini penggemar.
