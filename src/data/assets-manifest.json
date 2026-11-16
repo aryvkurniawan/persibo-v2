@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-11T07:13:01.265Z",
+  "generated_at": "2026-11-16T09:25:46.172Z",
   "note": "Images mirrored from assets.ileague.id so past seasons survive the source going away.",
-  "count": 145,
+  "count": 147,
   "assets": [
     {
       "source_url": "https://liasfiles.ileague.id:8443/liasfile/official/101/29/OF240764.jpg",
@@ -195,6 +195,19 @@
       ]
     },
     {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE26095099.jpg",
+      "path": "/img/players/alfath.jpg",
+      "bytes": 21307,
+      "width": 300,
+      "sha256": "dfca57c885b1f5e5",
+      "fetched_at": "2026-11-16T09:25:46.144Z",
+      "kind": "player-photo",
+      "name": "ALFATH",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
       "source_url": "https://assets.ileague.id/uploads/images/player/PE6407.jpeg",
       "path": "/img/players/alfin-ismail-tuasalamony.jpg",
       "bytes": 45028,
@@ -373,6 +386,19 @@
       "fetched_at": "2026-11-11T07:13:00.863Z",
       "kind": "player-photo",
       "name": "DIAZ",
+      "seasons": [
+        "2026-27"
+      ]
+    },
+    {
+      "source_url": "https://assets.ileague.id/uploads/images/player/101/29/PE1619997602.jpg",
+      "path": "/img/players/didik-s.jpg",
+      "bytes": 21396,
+      "width": 300,
+      "sha256": "58d81f978830625e",
+      "fetched_at": "2026-11-16T09:25:46.139Z",
+      "kind": "player-photo",
+      "name": "DIDIK. S",
       "seasons": [
         "2026-27"
       ]

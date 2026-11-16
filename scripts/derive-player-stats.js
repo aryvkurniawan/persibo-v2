@@ -17,7 +17,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA = join(__dirname, '../src/data');
-const SEASONS = ['2024-25', '2025-26'];
+const SEASONS = ['2024-25', '2025-26', '2026-27'];
 
 // Squad listing spells players short; the match data spells them out. Jersey
 // numbers are the reliable bridge — fuzzy name matching misses 12 of 30.
@@ -118,15 +118,20 @@ for (const player of details) {
 
   // The headline stats describe the newest season the player actually played.
   // Falling back keeps archive players, who left after 2024-25, from showing 0.
-  const played = seasons.filter((s) => s.players.has(key(fullName))).sort((a, b) => (a.season < b.season ? 1 : -1));
-  const stats = played.find((s) => s.players.get(key(fullName)).appearances > 0)?.players.get(key(fullName));
+  // Archive lineups spell full names; 2026-27 still spells squad short names.
+  const find = (players) => players.get(key(fullName)) ?? players.get(key(player.name));
+  const latest = seasons
+    .filter((s) => find(s.players))
+    .sort((a, b) => (a.season < b.season ? 1 : -1))
+    .map((s) => find(s.players))
+    .find((p) => p.appearances > 0);
 
-  if (stats) {
+  if (latest) {
     player.statistics = {
-      appearances: stats.appearances,
-      goals: stats.goals,
-      yellow_cards: stats.yellow,
-      red_cards: stats.red,
+      appearances: latest.appearances,
+      goals: latest.goals,
+      yellow_cards: latest.yellow,
+      red_cards: latest.red,
     };
     updated += 1;
   } else {
@@ -135,7 +140,7 @@ for (const player of details) {
   }
 
   for (const { season, players } of seasons) {
-    const playerStats = players.get(key(fullName));
+    const playerStats = find(players);
     if (playerStats && player.club_history?.length) {
       patchHistory(player.club_history, season, playerStats);
     }

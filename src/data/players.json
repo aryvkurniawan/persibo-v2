@@ -1,16 +1,30 @@
 [
   {
+    "name": "ALFATH",
+    "jersey_number": "1",
+    "country": "INDONESIA",
+    "appearances": "0",
+    "age": "18",
+    "position": "",
+    "team": "PERSIBO Bojonegoro",
+    "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
+    "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/al_fathkhan_choirenan_kamil?token=UDk5MDU5MDYy",
+    "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE26095099.jpg",
+    "scraped_at": "2026-11-16T16:25:21.258382+07:00",
+    "photo_local": "/img/players/alfath.jpg"
+  },
+  {
     "name": "ANGGER",
     "jersey_number": "3",
     "country": "INDONESIA",
-    "appearances": "0",
+    "appearances": "1",
     "age": "33",
     "position": "",
     "team": "PERSIBO Bojonegoro",
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/crah_eka_angger_iswanto?token=UDIxNjc=",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE7612.jpg",
-    "scraped_at": "2026-11-11T14:12:34.129973+07:00",
+    "scraped_at": "2026-11-16T16:25:21.259400+07:00",
     "photo_local": "/img/players/angger.jpg"
   },
   {
@@ -23,35 +37,36 @@
     "team": "PERSIBO Bojonegoro",
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/didik_setyawan?token=UDIwNjc5OTkxNjE=",
-    "photo_url": "",
-    "scraped_at": "2026-11-11T14:12:34.130949+07:00"
+    "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE1619997602.jpg",
+    "scraped_at": "2026-11-16T16:25:21.260441+07:00",
+    "photo_local": "/img/players/didik-s.jpg"
   },
   {
     "name": "SHEVANTON",
     "jersey_number": "6",
     "country": "INDONESIA",
-    "appearances": "0",
+    "appearances": "1",
     "age": "22",
     "position": "",
     "team": "PERSIBO Bojonegoro",
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/tegar_andrie_shevanton?token=UDA4NzkyMTEy",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE21129780.jpg",
-    "scraped_at": "2026-11-11T14:12:34.131843+07:00",
+    "scraped_at": "2026-11-16T16:25:21.262004+07:00",
     "photo_local": "/img/players/shevanton.jpg"
   },
   {
     "name": "SEHABUDIN",
     "jersey_number": "7",
     "country": "INDONESIA",
-    "appearances": "0",
+    "appearances": "1",
     "age": "33",
     "position": "",
     "team": "PERSIBO Bojonegoro",
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/sehabudin_ahmad?token=UDM2Mjg5MjQy",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE24298263.jpg",
-    "scraped_at": "2026-11-11T14:12:34.132779+07:00",
+    "scraped_at": "2026-11-16T16:25:21.263464+07:00",
     "photo_local": "/img/players/sehabudin.jpg"
   },
   {
@@ -65,7 +80,7 @@
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/marvin_nugraha_hilmansyah?token=UDY1OTk3MDQy",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE24079956.jpg",
-    "scraped_at": "2026-11-11T14:12:34.133783+07:00",
+    "scraped_at": "2026-11-16T16:25:21.264921+07:00",
     "photo_local": "/img/players/marvin.jpg"
   },
   {
@@ -79,7 +94,7 @@
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/kaka_putra_pramana?token=UDc4ODUzMDYy",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE26035887.jpg",
-    "scraped_at": "2026-11-11T14:12:34.134661+07:00",
+    "scraped_at": "2026-11-16T16:25:21.266417+07:00",
     "photo_local": "/img/players/kaka.jpg"
   },
   {
@@ -93,21 +108,21 @@
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/iqbal_tri_saputra?token=UDQwNjkyMjUy",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE25229604.jpg",
-    "scraped_at": "2026-11-11T14:12:34.135541+07:00",
+    "scraped_at": "2026-11-16T16:25:21.267803+07:00",
     "photo_local": "/img/players/iqbal.jpg"
   },
   {
     "name": "RIFALDI",
     "jersey_number": "11",
     "country": "INDONESIA",
-    "appearances": "0",
+    "appearances": "1",
     "age": "33",
     "position": "",
     "team": "PERSIBO Bojonegoro",
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/rifaldi_bawuo?token=UDIyNDU0MjYxNzE=",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE1716245422.jpg",
-    "scraped_at": "2026-11-11T14:12:34.136461+07:00",
+    "scraped_at": "2026-11-16T16:25:21.269102+07:00",
     "photo_local": "/img/players/rifaldi.jpg"
   },
   {
@@ -121,35 +136,35 @@
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/m._nurul_fuadi?token=UDM5NTMzMDYy",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE26033593.jpg",
-    "scraped_at": "2026-11-11T14:12:34.137700+07:00",
+    "scraped_at": "2026-11-16T16:25:21.270001+07:00",
     "photo_local": "/img/players/fuad.jpg"
   },
   {
     "name": "RANGGA",
     "jersey_number": "13",
     "country": "INDONESIA",
-    "appearances": "0",
+    "appearances": "1",
     "age": "22",
     "position": "",
     "team": "PERSIBO Bojonegoro",
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/mochamad_aditya_rangga_saputra?token=UDE4MDM5MjMy",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE23293081.jpg",
-    "scraped_at": "2026-11-11T14:12:34.139783+07:00",
+    "scraped_at": "2026-11-16T16:25:21.270934+07:00",
     "photo_local": "/img/players/rangga.jpg"
   },
   {
     "name": "A. FERNANDI",
     "jersey_number": "14",
     "country": "INDONESIA",
-    "appearances": "0",
+    "appearances": "1",
     "age": "22",
     "position": "",
     "team": "PERSIBO Bojonegoro",
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/aldo_fernandi?token=UDI0OTU5MjMy",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE23295942.jpg",
-    "scraped_at": "2026-11-11T14:12:34.141839+07:00",
+    "scraped_at": "2026-11-16T16:25:21.272079+07:00",
     "photo_local": "/img/players/a-fernandi.jpg"
   },
   {
@@ -163,21 +178,21 @@
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/zulkifli_yahya?token=UDQ5ODQzMjQy",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE24234894.jpg",
-    "scraped_at": "2026-11-11T14:12:34.143947+07:00",
+    "scraped_at": "2026-11-16T16:25:21.273143+07:00",
     "photo_local": "/img/players/zulkifli.jpg"
   },
   {
     "name": "M.SYAHRIL",
     "jersey_number": "18",
     "country": "INDONESIA",
-    "appearances": "0",
+    "appearances": "1",
     "age": "21",
     "position": "",
     "team": "PERSIBO Bojonegoro",
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/mohamad_syahril_afrizal?token=UDkxMzc0MTMy",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE23147319.jpg",
-    "scraped_at": "2026-11-11T14:12:34.145819+07:00",
+    "scraped_at": "2026-11-16T16:25:21.274087+07:00",
     "photo_local": "/img/players/m-syahril.jpg"
   },
   {
@@ -191,7 +206,7 @@
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/revaldo_agusto?token=UDYxOTEwMzIy",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE22301916.jpg",
-    "scraped_at": "2026-11-11T14:12:34.146958+07:00",
+    "scraped_at": "2026-11-16T16:25:21.275555+07:00",
     "photo_local": "/img/players/revaldo.jpg"
   },
   {
@@ -205,7 +220,7 @@
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/muhammad_diaz_priambodo?token=UDQ0MTA2OTYxNzE=",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE1716960144.jpg",
-    "scraped_at": "2026-11-11T14:12:34.147912+07:00",
+    "scraped_at": "2026-11-16T16:25:21.277024+07:00",
     "photo_local": "/img/players/diaz.jpg"
   },
   {
@@ -219,77 +234,77 @@
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/dios_dosi_armanu?token=UDczNjIwMTIy",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE22102637.jpg",
-    "scraped_at": "2026-11-11T14:12:34.148885+07:00",
+    "scraped_at": "2026-11-16T16:25:21.278538+07:00",
     "photo_local": "/img/players/dios-d-a.jpg"
   },
   {
     "name": "AARON Y",
     "jersey_number": "25",
     "country": "INDONESIA",
-    "appearances": "0",
+    "appearances": "1",
     "age": "21",
     "position": "",
     "team": "PERSIBO Bojonegoro",
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/aaron_yekti?token=UDEyNDM5MDMy",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE23093421.jpg",
-    "scraped_at": "2026-11-11T14:12:34.149854+07:00",
+    "scraped_at": "2026-11-16T16:25:21.279768+07:00",
     "photo_local": "/img/players/aaron-y.jpg"
   },
   {
     "name": "RIO VALENTINO",
     "jersey_number": "26",
     "country": "INDONESIA",
-    "appearances": "0",
+    "appearances": "1",
     "age": "31",
     "position": "",
     "team": "PERSIBO Bojonegoro",
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/rio_pratama_valentino?token=UDY0NzQ2MzYxNjE=",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE1616364746.jpg",
-    "scraped_at": "2026-11-11T14:12:34.150777+07:00",
+    "scraped_at": "2026-11-16T16:25:21.281389+07:00",
     "photo_local": "/img/players/rio-valentino.jpg"
   },
   {
     "name": "ROMEO",
     "jersey_number": "27",
     "country": "INDONESIA",
-    "appearances": "0",
+    "appearances": "1",
     "age": "19",
     "position": "",
     "team": "PERSIBO Bojonegoro",
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/romeo_nizam_abisha?token=UDQ1OTM3MTEy",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE21173954.jpg",
-    "scraped_at": "2026-11-11T14:12:34.151660+07:00",
+    "scraped_at": "2026-11-16T16:25:21.282557+07:00",
     "photo_local": "/img/players/romeo.jpg"
   },
   {
     "name": "J LATUCONSINA",
     "jersey_number": "29",
     "country": "INDONESIA",
-    "appearances": "0",
+    "appearances": "1",
     "age": "21",
     "position": "",
     "team": "PERSIBO Bojonegoro",
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/basajump_latuconsina?token=UDI2NjI5MDIy",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE22092662.jpg",
-    "scraped_at": "2026-11-11T14:12:34.152590+07:00",
+    "scraped_at": "2026-11-16T16:25:21.283544+07:00",
     "photo_local": "/img/players/j-latuconsina.jpg"
   },
   {
     "name": "O. CHANIGIO",
     "jersey_number": "33",
     "country": "INDONESIA",
-    "appearances": "0",
+    "appearances": "1",
     "age": "27",
     "position": "",
     "team": "PERSIBO Bojonegoro",
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/ocvian_chanigio?token=UDY2MzIxNjMxNjE=",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE1613612366.jpg",
-    "scraped_at": "2026-11-11T14:12:34.153469+07:00",
+    "scraped_at": "2026-11-16T16:25:21.284615+07:00",
     "photo_local": "/img/players/o-chanigio.jpg"
   },
   {
@@ -303,49 +318,49 @@
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/kafka_khayla_azwa?token=UDExMTU1MTEy",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE21155111.jpg",
-    "scraped_at": "2026-11-11T14:12:34.154379+07:00",
+    "scraped_at": "2026-11-16T16:25:21.285618+07:00",
     "photo_local": "/img/players/kafka.jpg"
   },
   {
     "name": "WIRAJA",
     "jersey_number": "37",
     "country": "INDONESIA",
-    "appearances": "0",
+    "appearances": "1",
     "age": "24",
     "position": "",
     "team": "PERSIBO Bojonegoro",
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/wiraja_aria_fadhil_aulia?token=UDI1NTIzMTQy",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE24132552.jpg",
-    "scraped_at": "2026-11-11T14:12:34.155263+07:00",
+    "scraped_at": "2026-11-16T16:25:21.287137+07:00",
     "photo_local": "/img/players/wiraja.jpg"
   },
   {
     "name": "DECO",
     "jersey_number": "38",
     "country": "INDONESIA",
-    "appearances": "0",
+    "appearances": "1",
     "age": "19",
     "position": "",
     "team": "PERSIBO Bojonegoro",
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/azril_deco_normadhany?token=UDc4MDQ2MTQy",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE24164087.jpg",
-    "scraped_at": "2026-11-11T14:12:34.156112+07:00",
+    "scraped_at": "2026-11-16T16:25:21.288877+07:00",
     "photo_local": "/img/players/deco.jpg"
   },
   {
     "name": "ADI PURNAMA",
     "jersey_number": "58",
     "country": "INDONESIA",
-    "appearances": "0",
+    "appearances": "1",
     "age": "21",
     "position": "",
     "team": "PERSIBO Bojonegoro",
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/adi_purnama_s._suaib?token=UDM5NTU0MTIy",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE22145593.jpg",
-    "scraped_at": "2026-11-11T14:12:34.157026+07:00",
+    "scraped_at": "2026-11-16T16:25:21.289929+07:00",
     "photo_local": "/img/players/adi-purnama.jpg"
   },
   {
@@ -359,7 +374,7 @@
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/fahad_ahmad_awazi?token=UDI3MjAzMDYy",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE26030272.jpg",
-    "scraped_at": "2026-11-11T14:12:34.157886+07:00",
+    "scraped_at": "2026-11-16T16:25:21.291140+07:00",
     "photo_local": "/img/players/fahad.jpg"
   },
   {
@@ -373,7 +388,7 @@
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/odhi_syah_lamuda?token=UDIyODM4MjMy",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE23283822.jpg",
-    "scraped_at": "2026-11-11T14:12:34.158773+07:00",
+    "scraped_at": "2026-11-16T16:25:21.292515+07:00",
     "photo_local": "/img/players/odhi.jpg"
   },
   {
@@ -387,21 +402,21 @@
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/jovan_jordantian_syahwa_maulana?token=UDg5MjUyMjQy",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE24225298.jpg",
-    "scraped_at": "2026-11-11T14:12:34.159675+07:00",
+    "scraped_at": "2026-11-16T16:25:21.293516+07:00",
     "photo_local": "/img/players/jojo.jpg"
   },
   {
     "name": "PUTRA CHANIAGO",
     "jersey_number": "77",
     "country": "INDONESIA",
-    "appearances": "0",
+    "appearances": "1",
     "age": "28",
     "position": "",
     "team": "PERSIBO Bojonegoro",
     "team_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
     "detail_url": "https://www.ileague.id/clubs/singleplayer/liga_nusantara_2026-27/nurdian_syaputra_chaniago?token=UDI2OTA2MzQxNzE=",
     "photo_url": "https://assets.ileague.id/uploads/images/player/101/29/PE1714360962.jpg",
-    "scraped_at": "2026-11-11T14:12:34.160612+07:00",
+    "scraped_at": "2026-11-16T16:25:21.294509+07:00",
     "photo_local": "/img/players/putra-chaniago.jpg"
   }
 ]
