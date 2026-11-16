@@ -26,6 +26,15 @@ const STATS_ALIAS = JSON.parse(readFileSync(join(__dirname, 'player-alias.json')
 const key = (name) => String(name).toUpperCase().replace(/[^A-Z0-9]/g, '');
 const ALIAS_BY_KEY = new Map(Object.entries(STATS_ALIAS).map(([short, full]) => [key(short), full]));
 
+// iLeague comments out the Posisi field on player pages, so team sheets are the
+// only source; translate them to the labels the squad table groups by.
+const POSITION_LABEL = {
+  PENJAGAGAWANG: 'P. GAWANG',
+  BELAKANG: 'BELAKANG',
+  GELANDANG: 'TENGAH',
+  PENYERANG: 'DEPAN',
+};
+
 function readJson(path) {
   return JSON.parse(readFileSync(path, 'utf-8'));
 }
@@ -41,7 +50,7 @@ function deriveSeason(season) {
   const bucket = (name) => {
     const id = key(name);
     if (!players.has(id)) {
-      players.set(id, { name, appearances: 0, goals: 0, yellow: 0, red: 0 });
+      players.set(id, { name, appearances: 0, goals: 0, yellow: 0, red: 0, position: '' });
     }
     return players.get(id);
   };
@@ -53,7 +62,9 @@ function deriveSeason(season) {
       if (!lineup) continue;
 
       for (const player of lineup.starting_xi || []) {
-        bucket(player.name).appearances += 1;
+        const row = bucket(player.name);
+        row.appearances += 1;
+        if (player.position) row.position = player.position;
       }
 
       // A substitute with no logged minutes never came on, but still needs a row:
@@ -61,6 +72,7 @@ function deriveSeason(season) {
       // (OBY read 3 for a season he did not play).
       for (const player of lineup.substitutes || []) {
         const row = bucket(player.name);
+        if (player.position) row.position = player.position;
         if (player.substitution_minutes?.length) row.appearances += 1;
       }
 
@@ -120,6 +132,12 @@ for (const player of details) {
   // Falling back keeps archive players, who left after 2024-25, from showing 0.
   // Archive lineups spell full names; 2026-27 still spells squad short names.
   const find = (players) => players.get(key(fullName)) ?? players.get(key(player.name));
+
+  if (!player.position) {
+    const sheet = [...seasons].reverse().map((s) => find(s.players)?.position).find(Boolean);
+    player.position = POSITION_LABEL[key(sheet || '')] ?? '';
+  }
+
   const latest = seasons
     .filter((s) => find(s.players))
     .sort((a, b) => (a.season < b.season ? 1 : -1))
