@@ -35,6 +35,7 @@ dan proyek ini mengikuti [Semantic Versioning](https://semver.org/lang/id/).
   - Kredit penulis RSSSF diambil dari footer dokumen dan ditampilkan per musim (Feri Istanto, Novan Herfiyana, Karel Stokkermans untuk 2009-10; Karel Stokkermans untuk 2011-12 dan 2013), sesuai syarat RSSSF yang mewajibkan pencantuman penulis.
 
 ### Fixed
+- Kartu "Pertandingan terakhir" di beranda kini bisa diklik ke halaman detail laga. `LastMatchCard` merender elemen `<a>` saat prop `href` diisi, dengan border hover seperti kartu jadwal; kartu laga uji coba tidak berubah karena tidak diberi `href`.
 - Laga kandang-tandang PERSIBANGGA (18 November 2026) semula tercatat 17 November di `src/data/seasons/2026-27/fixtures.json`. Halaman jadwal iLeague (`/fixtures/index/LIGA_NUSANTARA_2026-27/2`) dan halaman detailnya sama-sama menyebut Rabu, 18 November; `kickoff_iso` dan `match_url` ikut dikoreksi.
 - Carousel sempat menyebut "putaran 1" untuk 14 laga. Yang benar: 14 laga itu seluruh fase grup Grup B (8 klub, kandang-tandang), jadi labelnya "Jadwal Grup".
 - Statistik pemain salah di sumbernya: kolom "Penampilan" iLeague menghitung pemain yang masuk daftar pertandingan, bukan yang bermain — totalnya 21 per laga, jadi kiper cadangan terbaca 12 dan SAMSUL terbaca 79 main. Sekarang IKHSAN 3, SAMSUL 9, OSCAR 12, BAYU NUGROHO 11.
@@ -58,6 +59,7 @@ dan proyek ini mengikuti [Semantic Versioning](https://semver.org/lang/id/).
 - Posisi dan musim di tabel menempel tanpa spasi di mobile ("P. GAWANG2025-26") karena keduanya sebaris flex; sekarang bertumpuk.
 
 ### Changed
+- `/live` memutar PERSIBANGGA Purbalingga vs PERSIBO Bojonegoro (Liga Nusantara 2026/27), video `UOjP1O_0qHc`. Judul, embed, tautan YouTube, dan gambar OG ikut memakai id baru.
 - Portrait ofisial diganti versi terbaru iLeague. Halaman klub menunjuk path `official/101/29/`, yang berisi foto musim 2026-27 (jersey putih/ungu); path lama `official/OF...` masih menyimpan foto musim sebelumnya. File di `assets.ileague.id` untuk path baru balas 404, jadi `officials.json` memakai URL `liasfiles.ileague.id:8443` yang benar-benar melayani gambarnya (ekstensi `.jpg`). Delapan portrait dicerminkan ulang ke `public/img/officials/`.
 - Ofisial 2026-27 diperbarui dari iLeague: 8 orang (sebelumnya 3). Tambahan pelatih kiper, analis, dokter tim, dan fotografer; Rian Ikrawansyah tetap sekretaris, Tisna Wijaya kini berbagi posisi masseur dengan Dio Kevin Alief Utama. Semua portrait dicerminkan ke `public/img/officials/` dan tercatat di `assets-manifest.json`. `fetch-assets` menandai foto ofisial sebagai musim 2026-27 (sebelumnya hardcode 2025-26).
 - Arsip 2025-26 dilengkapi: 12 dari 12 pertandingan punya detail (sebelumnya 3), masing-masing dengan XI + cadangan + pelatih kedua tim, daftar gol/kartu, wasit lengkap (termasuk asisten 2 dan cadangan wasit), dan venue. Scraper-nya `.scratch/scrape_ileague_2025_26.py`, memakai parser 2024-25 ditambah pembaca blok hero untuk gol/kartu karena tab Linimasa 2025-26 kosong di sumber. Statistik pertandingan tidak diisi: iLeague tidak pernah menerbitkannya untuk musim ini.

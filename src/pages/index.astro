@@ -332,7 +332,7 @@ const news = [
         </div>
 
         <div class="proto-scroll flex snap-x items-stretch gap-3 overflow-x-auto pb-2">
-          <LastMatchCard match={lastAsFriendly} size="large" />
+          <LastMatchCard match={lastAsFriendly} size="large" href={`/pertandingan/${getMatchDetailSlug(last!)}`} />
         </div>
       </div>
     </section>

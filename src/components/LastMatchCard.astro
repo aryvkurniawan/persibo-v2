@@ -7,9 +7,11 @@ interface Props {
   match: Friendly;
   /** `large` = the highlighted newest match, `small` = the rest of the scroll row. */
   size?: 'large' | 'small';
+  /** When set, the whole card becomes a link to the match detail page. */
+  href?: string;
 }
 
-const { match, size = 'small' } = Astro.props;
+const { match, size = 'small', href } = Astro.props;
 
 const teams = await loadTeams();
 const isPersiboHome = match.home_team.toUpperCase().includes('PERSIBO');
@@ -33,11 +35,13 @@ const persiboText = played ? persiboScore : '-';
 const oppText = played ? opponentScore : '-';
 const dateText = match.date ? formatDateLong(match.date_label) : match.date_label;
 const dateShort = match.date ? formatDateShort(match.date_label) : match.date_label;
+// Same card, different element: an anchor only when there is somewhere to go.
+const Tag = href ? 'a' : 'article';
 ---
 
 {
   size === 'large' ? (
-    <article class="relative w-[80vw] shrink-0 snap-start border border-white/12 bg-[#0c0b0f] sm:w-[420px]">
+    <Tag href={href} class="relative block w-[80vw] shrink-0 snap-start border border-white/12 bg-[#0c0b0f] transition-colors hover:border-primary/50 sm:w-[420px]">
       <span class="absolute left-0 top-0 h-0.5 w-full bg-primary" />
 
       <div class="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-2.5">
@@ -98,9 +102,9 @@ const dateShort = match.date ? formatDateShort(match.date_label) : match.date_la
         )}
         {match.ticket_url && <a href={match.ticket_url} target="_blank" rel="noopener" class="mt-3 block bg-primary py-2 text-center text-[11px] font-bold uppercase tracking-[0.16em] text-[#08070a]">Beli tiket</a>}
       </div>
-    </article>
+    </Tag>
   ) : (
-    <article class="flex w-[64vw] shrink-0 snap-start flex-col border border-white/12 bg-[#0c0b0f] p-4 transition-colors hover:border-primary/50 sm:w-[200px]">
+    <Tag href={href} class="flex w-[64vw] shrink-0 snap-start flex-col border border-white/12 bg-[#0c0b0f] p-4 transition-colors hover:border-primary/50 sm:w-[200px]">
       <div class="flex items-start justify-between gap-2">
         <p class="text-[10px] font-bold uppercase tracking-[0.14em] text-primary">{dateShort}</p>
         <span class={`border px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] ${outcomeClass}`}>
@@ -124,6 +128,6 @@ const dateShort = match.date ? formatDateShort(match.date_label) : match.date_la
       <div class="border-t border-white/10 pt-2.5">
         <p class="line-clamp-2 text-[10px] uppercase leading-snug tracking-[0.12em] text-white/25">{match.venue}</p>
       </div>
-    </article>
+    </Tag>
   )
 }
