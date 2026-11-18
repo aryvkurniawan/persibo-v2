@@ -193,7 +193,12 @@
     "away": "PERSIBO Bojonegoro",
     "venue": "TRISANJA",
     "babak": "1",
-    "md": 2
+    "md": 2,
+    "hs": "1",
+    "as": "0",
+    "scorers": [
+      { "minute": "31'", "player": "USAMA", "team": "Persibangga" }
+    ]
   },
   {
     "out": "identitas-wordmark",

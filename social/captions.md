@@ -165,6 +165,22 @@ Tandang pertama: Persibangga vs Persibo, Rabu 18 November, 15.30 WIB, Trisanja, 
 
 ---
 
+## 11. Poster hasil babak 1 (`hasil-babak-1-persibangga.png`)
+
+Babak pertama usai: Persibangga 1-0 Persibo.
+
+Gol USAMA menit 31 jadi satu-satunya gol sampai turun minum. Persibo tertinggal satu gol di Trisanja, Tegal.
+
+Babak kedua masih 45 menit. Skor dan klasemen di persibo.com.
+
+#Persibo #PersiboBojonegoro #LaskarAnglingDharma #Bojonegoro #LigaNusantara
+
+### Versi pendek (story / X)
+
+Babak pertama: Persibangga 1-0 Persibo. Gol USAMA menit 31.
+
+---
+
 ## Catatan
 
 - Jangan pakai kata "resmi", "official", atau "rebranding" — situs ini penggemar.
