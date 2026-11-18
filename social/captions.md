@@ -167,17 +167,17 @@ Tandang pertama: Persibangga vs Persibo, Rabu 18 November, 15.30 WIB, Trisanja, 
 
 ## 11. Poster hasil tandang Persibangga (`hasil-persibangga.png`)
 
-Persibangga 1-1 Persibo.
+Persibangga 2-1 Persibo.
 
-USAMA membuka skor menit 31. SEHABUDIN menyamakan menit 47.
+USAMA membuka skor menit 31. SEHABUDIN menyamakan menit 47. F. ARYA memastikan kemenangan tuan rumah di menit 90+5.
 
-Satu poin dari laga tandang. Skor dan klasemen di persibo.com.
+Persibo pulang tanpa poin. Skor dan klasemen di persibo.com.
 
 #Persibo #PersiboBojonegoro #LaskarAnglingDharma #Bojonegoro #LigaNusantara
 
 ### Versi pendek (story / X)
 
-Hasil akhir: Persibangga 1-1 Persibo. USAMA menit 31, SEHABUDIN menit 47.
+Hasil akhir: Persibangga 2-1 Persibo. USAMA menit 31, SEHABUDIN menit 47, F. ARYA menit 90+5.
 
 ---
 
