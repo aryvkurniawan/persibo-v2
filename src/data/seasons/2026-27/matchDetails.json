@@ -101,27 +101,27 @@
       "home_team": {
         "starting_xi": [
           { "name": "HUSEIN A", "jersey_number": 76, "position": "Penjaga Gawang" },
-          { "name": "FATHUR YAN", "jersey_number": 4, "position": "Belakang" },
-          { "name": "TUASALAMONY", "jersey_number": 25, "position": "Belakang" },
+          { "name": "FATHUR YAN", "jersey_number": 4, "position": "Belakang", "cards": ["yellow"] },
+          { "name": "TUASALAMONY", "jersey_number": 25, "position": "Belakang", "cards": ["yellow"] },
           { "name": "LU'AY ABIYU", "jersey_number": 6, "position": "Belakang" },
-          { "name": "AZHRIL S.F", "jersey_number": 16, "position": "Belakang" },
+          { "name": "AZHRIL S.F", "jersey_number": 16, "position": "Belakang", "substitution_minutes": [76] },
           { "name": "E. ADHYAKSA", "jersey_number": 7, "position": "Gelandang" },
-          { "name": "AFIF", "jersey_number": 17, "position": "Gelandang" },
+          { "name": "AFIF", "jersey_number": 17, "position": "Gelandang", "substitution_minutes": [76] },
           { "name": "THEO", "jersey_number": 30, "position": "Gelandang" },
           { "name": "ILHAM IRHAZ", "jersey_number": 87, "position": "Gelandang", "captain": true },
           { "name": "USAMA", "jersey_number": 18, "position": "Penyerang" },
-          { "name": "JORRY", "jersey_number": 79, "position": "Penyerang" }
+          { "name": "JORRY", "jersey_number": 79, "position": "Penyerang", "substitution_minutes": [79] }
         ],
         "substitutes": [
           { "name": "NOVIAN", "jersey_number": 28, "position": null },
           { "name": "KHOIRUL", "jersey_number": 2, "position": null },
-          { "name": "ALFANDI", "jersey_number": 11, "position": null },
+          { "name": "ALFANDI", "jersey_number": 11, "position": null, "substitution_minutes": [76] },
           { "name": "ARDYA MALIK", "jersey_number": 12, "position": null },
           { "name": "RIZKY WP", "jersey_number": 14, "position": null },
           { "name": "MADE OTO", "jersey_number": 15, "position": null },
           { "name": "NAJA NAUFAL", "jersey_number": 22, "position": null },
-          { "name": "F. ARYA", "jersey_number": 32, "position": null },
-          { "name": "RESTU SETYA", "jersey_number": 44, "position": null },
+          { "name": "F. ARYA", "jersey_number": 32, "position": null, "substitution_minutes": [79] },
+          { "name": "RESTU SETYA", "jersey_number": 44, "position": null, "substitution_minutes": [76] },
           { "name": "ALIYYU", "jersey_number": 47, "position": null }
         ],
         "coach": "MOHAMAD IRFAN"
@@ -131,23 +131,23 @@
           { "name": "A. FERNANDI", "jersey_number": 14, "position": "Penjaga Gawang" },
           { "name": "ANGGER", "jersey_number": 3, "position": "Belakang", "captain": true },
           { "name": "SHEVANTON", "jersey_number": 6, "position": "Belakang" },
-          { "name": "RIO VALENTINO", "jersey_number": 26, "position": "Belakang" },
+          { "name": "RIO VALENTINO", "jersey_number": 26, "position": "Belakang", "cards": ["yellow"] },
           { "name": "RANGGA", "jersey_number": 13, "position": "Belakang" },
-          { "name": "MARVIN", "jersey_number": 8, "position": "Gelandang" },
-          { "name": "M.SYAHRIL", "jersey_number": 18, "position": "Gelandang" },
-          { "name": "O. CHANIGIO", "jersey_number": 33, "position": "Gelandang" },
-          { "name": "ROMEO", "jersey_number": 27, "position": "Penyerang" },
-          { "name": "SEHABUDIN", "jersey_number": 7, "position": "Penyerang" },
-          { "name": "PUTRA CHANIAGO", "jersey_number": 77, "position": "Penyerang" }
+          { "name": "MARVIN", "jersey_number": 8, "position": "Gelandang", "cards": ["yellow"] },
+          { "name": "M.SYAHRIL", "jersey_number": 18, "position": "Gelandang", "substitution_minutes": [55] },
+          { "name": "O. CHANIGIO", "jersey_number": 33, "position": "Gelandang", "substitution_minutes": [46] },
+          { "name": "ROMEO", "jersey_number": 27, "position": "Penyerang", "substitution_minutes": [68] },
+          { "name": "SEHABUDIN", "jersey_number": 7, "position": "Penyerang", "substitution_minutes": [68] },
+          { "name": "PUTRA CHANIAGO", "jersey_number": 77, "position": "Penyerang", "substitution_minutes": [87] }
         ],
         "substitutes": [
           { "name": "FAHAD", "jersey_number": 59, "position": null },
-          { "name": "KAKA", "jersey_number": 9, "position": null },
-          { "name": "IQBAL", "jersey_number": 10, "position": null },
-          { "name": "RIFALDI", "jersey_number": 11, "position": null },
+          { "name": "KAKA", "jersey_number": 9, "position": null, "substitution_minutes": [68] },
+          { "name": "IQBAL", "jersey_number": 10, "position": null, "substitution_minutes": [68] },
+          { "name": "RIFALDI", "jersey_number": 11, "position": null, "substitution_minutes": [87] },
           { "name": "ZULKIFLI", "jersey_number": 15, "position": null },
-          { "name": "AARON Y", "jersey_number": 25, "position": null },
-          { "name": "J LATUCONSINA", "jersey_number": 29, "position": null },
+          { "name": "AARON Y", "jersey_number": 25, "position": null, "substitution_minutes": [55] },
+          { "name": "J LATUCONSINA", "jersey_number": 29, "position": null, "substitution_minutes": [46], "cards": ["yellow"] },
           { "name": "KAFKA", "jersey_number": 34, "position": null },
           { "name": "DECO", "jersey_number": 38, "position": null },
           { "name": "JOJO", "jersey_number": 76, "position": null }
@@ -156,9 +156,22 @@
       }
     },
     "events": [
-      { "minute": "31'", "player": "USAMA", "type": "goal", "team": "PERSIBANGGA PURBALINGGA" },
-      { "minute": "47'", "player": "SEHABUDIN", "type": "goal", "team": "PERSIBO BOJONEGORO" },
-      { "minute": "90+5'", "player": "F. ARYA", "type": "goal", "team": "PERSIBANGGA PURBALINGGA" }
+      { "minute": "7'", "player": "MARVIN", "type": "yellow_card", "team": "PERSIBO BOJONEGORO" },
+      { "minute": "32'", "player": "USAMA", "type": "goal", "team": "PERSIBANGGA PURBALINGGA" },
+      { "minute": "46'", "player": "O. CHANIGIO -> J LATUCONSINA", "type": "substitution", "team": "PERSIBO BOJONEGORO" },
+      { "minute": "48'", "player": "SEHABUDIN", "type": "goal", "team": "PERSIBO BOJONEGORO" },
+      { "minute": "55'", "player": "M.SYAHRIL -> AARON Y", "type": "substitution", "team": "PERSIBO BOJONEGORO" },
+      { "minute": "64'", "player": "TUASALAMONY", "type": "yellow_card", "team": "PERSIBANGGA PURBALINGGA" },
+      { "minute": "64'", "player": "J LATUCONSINA", "type": "yellow_card", "team": "PERSIBO BOJONEGORO" },
+      { "minute": "68'", "player": "SEHABUDIN -> IQBAL", "type": "substitution", "team": "PERSIBO BOJONEGORO" },
+      { "minute": "68'", "player": "ROMEO -> KAKA", "type": "substitution", "team": "PERSIBO BOJONEGORO" },
+      { "minute": "74'", "player": "FATHUR YAN", "type": "yellow_card", "team": "PERSIBANGGA PURBALINGGA" },
+      { "minute": "76'", "player": "AFIF -> RESTU SETYA", "type": "substitution", "team": "PERSIBANGGA PURBALINGGA" },
+      { "minute": "76'", "player": "AZHRIL S.F -> ALFANDI", "type": "substitution", "team": "PERSIBANGGA PURBALINGGA" },
+      { "minute": "79'", "player": "JORRY -> F. ARYA", "type": "substitution", "team": "PERSIBANGGA PURBALINGGA" },
+      { "minute": "87'", "player": "PUTRA CHANIAGO -> RIFALDI", "type": "substitution", "team": "PERSIBO BOJONEGORO" },
+      { "minute": "88'", "player": "RIO VALENTINO", "type": "yellow_card", "team": "PERSIBO BOJONEGORO" },
+      { "minute": "90+4'", "player": "F. ARYA", "type": "goal", "team": "PERSIBANGGA PURBALINGGA" }
     ],
     "statistics": {},
     "officials": {
@@ -169,6 +182,7 @@
       "match_commissioner": "ARI FATAH HIDAYAT"
     },
     "kickoff_time": "15:30",
+    "attendance": 277,
     "base_team": "PERSIBO Bojonegoro"
   }
 ]

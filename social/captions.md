@@ -169,7 +169,7 @@ Tandang pertama: Persibangga vs Persibo, Rabu 18 November, 15.30 WIB, Trisanja, 
 
 Persibangga 2-1 Persibo.
 
-USAMA membuka skor menit 31. SEHABUDIN menyamakan menit 47. F. ARYA memastikan kemenangan tuan rumah di menit 90+5.
+USAMA membuka skor menit 32. SEHABUDIN menyamakan menit 48. F. ARYA memastikan kemenangan tuan rumah di menit 90+4.
 
 Persibo pulang tanpa poin. Skor dan klasemen di persibo.com.
 
@@ -177,7 +177,7 @@ Persibo pulang tanpa poin. Skor dan klasemen di persibo.com.
 
 ### Versi pendek (story / X)
 
-Hasil akhir: Persibangga 2-1 Persibo. USAMA menit 31, SEHABUDIN menit 47, F. ARYA menit 90+5.
+Hasil akhir: Persibangga 2-1 Persibo. USAMA menit 32, SEHABUDIN menit 48, F. ARYA menit 90+4.
 
 ---
 
