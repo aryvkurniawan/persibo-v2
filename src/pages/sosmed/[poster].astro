@@ -27,7 +27,7 @@ type Post = {
   md?: number;
   hs?: string;
   as?: string;
-  /** Intermediate result, e.g. "1" → header "Hasil Babak 1"; empty score renders as "–". */
+  /** Intermediate result, e.g. "1" → header "Hasil Babak 1"; empty score renders as "-". */
   babak?: string;
   scorers?: { minute?: string; player: string; team?: string }[];
   /** Lineup poster; rows render Penyerang → Kiper top to bottom on the pitch. */

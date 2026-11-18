@@ -186,18 +186,18 @@
     "md": 1
   },
   {
-    "out": "hasil-babak-1-persibangga",
+    "out": "hasil-persibangga",
     "mode": "hasil",
     "date": "18 November 2026",
     "home": "PERSIBANGGA PURBALINGGA",
     "away": "PERSIBO Bojonegoro",
     "venue": "TRISANJA",
-    "babak": "1",
     "md": 2,
     "hs": "1",
-    "as": "0",
+    "as": "1",
     "scorers": [
-      { "minute": "31'", "player": "USAMA", "team": "Persibangga" }
+      { "minute": "31'", "player": "USAMA", "team": "Persibangga" },
+      { "minute": "47'", "player": "SEHABUDIN", "team": "Persibo" }
     ]
   },
   {
