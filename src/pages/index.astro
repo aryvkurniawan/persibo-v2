@@ -14,7 +14,7 @@ import {
 import LastMatchCard from '../components/LastMatchCard.astro';
 import MatchPreviewPanel from '../components/MatchPreviewPanel.astro';
 import { getWeekday, formatDateShort, formatDateLong } from '../utils/dates';
-import type { Friendly } from '../types';
+import type { Fixture, Friendly } from '../types';
 
 const standings = await loadStandings();
 const fixtures = await loadFixtures();
@@ -26,22 +26,29 @@ const scheduled = getScheduledFixtures(fixtures);
 const next = scheduled[0] ?? null;
 const completed = getCompletedFixtures(fixtures);
 const last = [...completed].sort((a, b) => (a.kickoff_iso ?? a.date).localeCompare(b.kickoff_iso ?? b.date)).pop() ?? null;
-// LastMatchCard consumes Friendly-shaped data; adapt the official fixture to it.
-const lastAsFriendly: Friendly | null = last ? {
+// LastMatchCard consumes Friendly-shaped data; adapt the official fixtures to it.
+// Two most recent results stay on the homepage so the previous match does not vanish
+// the moment a new one finishes.
+const toFriendly = (fixture: Fixture): Friendly => ({
   date: null,
-  date_label: last.date,
+  date_label: fixture.date,
   competition: 'Liga Nusantara',
-  home_team: last.home_team,
-  away_team: last.away_team,
-  home_score: last.score ? Number(last.score.split(':')[0]) : null,
-  away_score: last.score ? Number(last.score.split(':')[1]) : null,
-  venue: last.venue,
-  time: last.time,
-  kickoff_iso: last.kickoff_iso,
+  home_team: fixture.home_team,
+  away_team: fixture.away_team,
+  home_score: fixture.score ? Number(fixture.score.split(':')[0]) : null,
+  away_score: fixture.score ? Number(fixture.score.split(':')[1]) : null,
+  venue: fixture.venue,
+  time: fixture.time,
+  kickoff_iso: fixture.kickoff_iso,
   scorers: [],
   note: '',
   sources: [],
-} : null;
+});
+const recentResults = [...completed]
+  .sort((a, b) => (a.kickoff_iso ?? a.date).localeCompare(b.kickoff_iso ?? b.date))
+  .slice(-2)
+  .reverse()
+  .map((fixture) => ({ fixture, card: toFriendly(fixture) }));
 const nextIsHome = next?.home_team.toUpperCase().includes('PERSIBO') ?? true;
 const nextOpponent = next ? (nextIsHome ? next.away_team : next.home_team) : '';
 const nextMatchday = next ? fixtures.findIndex((f) => f.match_url === next.match_url) + 1 : 0;
@@ -316,7 +323,7 @@ const news = [
     </div>
   </section>
 
-  {lastAsFriendly && (
+  {recentResults.length > 0 && (
     <section class="border-b border-white/15">
       <div class="mx-auto max-w-7xl px-4 py-6 lg:px-8">
         <div class="mb-4 flex items-end justify-between border-b border-white/10 pb-3">
@@ -332,7 +339,13 @@ const news = [
         </div>
 
         <div class="proto-scroll flex snap-x items-stretch gap-3 overflow-x-auto pb-2">
-          <LastMatchCard match={lastAsFriendly} size="large" href={`/pertandingan/${getMatchDetailSlug(last!)}`} />
+          {recentResults.map(({ fixture, card }, index) => (
+            <LastMatchCard
+              match={card}
+              size={index === 0 ? 'large' : 'small'}
+              href={`/pertandingan/${getMatchDetailSlug(fixture)}`}
+            />
+          ))}
         </div>
       </div>
     </section>

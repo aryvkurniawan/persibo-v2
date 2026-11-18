@@ -94,9 +94,9 @@
     "venue": "TRISANJA",
     "home_team": "PERSIBANGGA PURBALINGGA",
     "away_team": "PERSIBO Bojonegoro",
-    "score": "",
-    "home_score": 0,
-    "away_score": 0,
+    "score": "2:1",
+    "home_score": 2,
+    "away_score": 1,
     "lineups": {
       "home_team": {
         "starting_xi": [
@@ -155,7 +155,11 @@
         "coach": "I Putu Gede Swi Santoso"
       }
     },
-    "events": [],
+    "events": [
+      { "minute": "31'", "player": "USAMA", "type": "goal", "team": "PERSIBANGGA PURBALINGGA" },
+      { "minute": "47'", "player": "SEHABUDIN", "type": "goal", "team": "PERSIBO BOJONEGORO" },
+      { "minute": "90+5'", "player": "F. ARYA", "type": "goal", "team": "PERSIBANGGA PURBALINGGA" }
+    ],
     "statistics": {},
     "officials": {
       "referee": "UDINRIFAY",

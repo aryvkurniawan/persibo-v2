@@ -1,194 +1,163 @@
 [
   {
-    "name": "Sriwijaya FC",
+    "name": "Pekanbaru FC",
     "url": null,
-    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/9.png",
-    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/SRIWIJAYA_FC",
-    "scraped_at": "2026-10-30T16:33:52.642927",
-    "logo_local": "/img/teams/sriwijaya-fc.png"
-  },
-  {
-    "name": "PERSITARA Jakarta Utara",
-    "url": null,
-    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/13.png",
-    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSITARA_Jakarta_Utara",
-    "scraped_at": "2026-10-30T16:33:52.642927",
-    "logo_local": "/img/teams/persitara-jakarta-utara.png"
-  },
-  {
-    "name": "PERSIKOTA Kota Tangerang",
-    "url": null,
-    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/17.png",
-    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIKOTA_Kota_Tangerang",
-    "scraped_at": "2026-10-30T16:33:52.642927",
-    "logo_local": "/img/teams/persikota-kota-tangerang.png"
+    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/2517284.png",
+    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/pekanbaru_fc",
+    "scraped_at": "2026-11-18T18:04:48.249874"
   },
   {
     "name": "Pesik",
     "url": null,
     "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/74.png",
-    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PESIK",
-    "scraped_at": "2026-10-30T16:33:52.642927",
-    "logo_local": "/img/teams/pesik.png"
-  },
-  {
-    "name": "Pekanbaru FC",
-    "url": null,
-    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/2517284.png",
-    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/Pekanbaru_FC",
-    "scraped_at": "2026-10-30T16:33:52.642927",
-    "logo_local": "/img/teams/pekanbaru-fc.png"
+    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/pesik_kuningan",
+    "scraped_at": "2026-11-18T18:04:48.249874"
   },
   {
     "name": "Batavia FC",
     "url": null,
     "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/2517965.png",
-    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/Batavia_FC",
-    "scraped_at": "2026-10-30T16:33:52.642927",
-    "logo_local": "/img/teams/batavia-fc.png"
+    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/batavia_fc",
+    "scraped_at": "2026-11-18T18:04:48.249874"
   },
   {
     "name": "Persekat Tegal",
     "url": null,
     "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/1819851408.png",
-    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSEKAT_TEGAL",
-    "scraped_at": "2026-10-30T16:33:52.642927",
-    "logo_local": "/img/teams/persekat-tegal.png"
+    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/persekat_",
+    "scraped_at": "2026-11-18T18:04:48.249874"
+  },
+  {
+    "name": "PERSIKOTA Kota Tangerang",
+    "url": null,
+    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/17.png",
+    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/persikota_kota_tangerang",
+    "scraped_at": "2026-11-18T18:04:48.249874"
   },
   {
     "name": "Persikotas Nusantara",
     "url": null,
     "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/1819851417.png",
-    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIKOTAS_NUSANTARA",
-    "scraped_at": "2026-10-30T16:33:52.642927",
-    "logo_local": "/img/teams/persikotas-nusantara.png"
+    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/persikotas_nusantara",
+    "scraped_at": "2026-11-18T18:04:48.249874"
   },
   {
-    "name": "PERSIBO Bojonegoro",
+    "name": "PERSITARA Jakarta Utara",
     "url": null,
-    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/29.png",
-    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBO_Bojonegoro",
-    "scraped_at": "2026-10-30T16:33:52.642927",
-    "logo_local": "/img/teams/persibo-bojonegoro.png"
-  },
-  {
-    "name": "PERSIBA Bantul",
-    "url": null,
-    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/68.png",
-    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBA_Bantul",
-    "scraped_at": "2026-10-30T16:33:52.642927",
-    "logo_local": "/img/teams/persiba-bantul.png"
-  },
-  {
-    "name": "Gresik United FC",
-    "url": null,
-    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/69.png",
-    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/Gresik_United_FC",
-    "scraped_at": "2026-10-30T16:33:52.642927",
-    "logo_local": "/img/teams/gresik-united-fc.png"
-  },
-  {
-    "name": "Persibangga",
-    "url": null,
-    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/200.png",
-    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIBANGGA",
-    "scraped_at": "2026-10-30T16:33:52.642927",
-    "logo_local": "/img/teams/persibangga.png"
-  },
-  {
-    "name": "Persinga Ngawi",
-    "url": null,
-    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/208.png",
-    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSINGA_NGAWI",
-    "scraped_at": "2026-10-30T16:33:52.642927",
-    "logo_local": "/img/teams/persinga-ngawi.png"
-  },
-  {
-    "name": "PERSIKA Karanganyar",
-    "url": null,
-    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/2517773.png",
-    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIKA_Karanganyar",
-    "scraped_at": "2026-10-30T16:33:52.642927",
-    "logo_local": "/img/teams/persika-karanganyar.png"
+    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/13.png",
+    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/persitara_jakarta_utara",
+    "scraped_at": "2026-11-18T18:04:48.249874"
   },
   {
     "name": "Putra Sang Fajar FC",
     "url": null,
     "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/2518516.png",
-    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PUTRA_SANG_FAJAR_FC",
-    "scraped_at": "2026-10-30T16:33:52.642927",
-    "logo_local": "/img/teams/putra-sang-fajar-fc.png"
+    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/putra_sang_fajar_fc",
+    "scraped_at": "2026-11-18T18:04:48.249874"
+  },
+  {
+    "name": "PERSIKA Karanganyar",
+    "url": null,
+    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/2517773.png",
+    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/ppersika_karanganyar",
+    "scraped_at": "2026-11-18T18:04:48.249874"
+  },
+  {
+    "name": "Persibangga",
+    "url": null,
+    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/200.png",
+    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/persibangga_purbalingga",
+    "scraped_at": "2026-11-18T18:04:48.249874"
+  },
+  {
+    "name": "PERSIBA Bantul",
+    "url": null,
+    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/68.png",
+    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/persiba_bantul",
+    "scraped_at": "2026-11-18T18:04:48.249874"
   },
   {
     "name": "PERSIPA",
     "url": null,
     "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/1813607788.png",
-    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIPA",
-    "scraped_at": "2026-10-30T16:33:52.642927",
-    "logo_local": "/img/teams/persipa.png"
+    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/persipa",
+    "scraped_at": "2026-11-18T18:04:48.249874"
+  },
+  {
+    "name": "Gresik United FC",
+    "url": null,
+    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/69.png",
+    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/gresik_united_fc",
+    "scraped_at": "2026-11-18T18:04:48.249874"
+  },
+  {
+    "name": "PERSIBO Bojonegoro",
+    "url": null,
+    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/29.png",
+    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/persibo_bojonegoro",
+    "scraped_at": "2026-11-18T18:04:48.249874"
+  },
+  {
+    "name": "Persinga Ngawi",
+    "url": null,
+    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/208.png",
+    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/persinga_ngawi",
+    "scraped_at": "2026-11-18T18:04:48.249874"
   },
   {
     "name": "PERSEKABPAS",
     "url": null,
     "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/39.png",
-    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSEKABPAS",
-    "scraped_at": "2026-10-30T16:33:52.642927",
-    "logo_local": "/img/teams/persekabpas.png"
+    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/persekabpas",
+    "scraped_at": "2026-11-18T18:04:48.249874"
   },
   {
     "name": "PERSEDEN Denpasar",
     "url": null,
     "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/246.png",
-    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSEDEN_Denpasar",
-    "scraped_at": "2026-10-30T16:33:52.642927",
-    "logo_local": "/img/teams/perseden-denpasar.png"
-  },
-  {
-    "name": "Psn Ngada",
-    "url": null,
-    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/248.png",
-    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PSN_NGADA",
-    "scraped_at": "2026-10-30T16:33:52.642927",
-    "logo_local": "/img/teams/psn-ngada.png"
-  },
-  {
-    "name": "Donggala FC",
-    "url": null,
-    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/301.png",
-    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/DONGGALA_FC",
-    "scraped_at": "2026-10-30T16:33:52.642927",
-    "logo_local": "/img/teams/donggala-fc.png"
-  },
-  {
-    "name": "PERSIKUTIM United",
-    "url": null,
-    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/2408207.png",
-    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIKUTIM_United",
-    "scraped_at": "2026-10-30T16:33:52.642927",
-    "logo_local": "/img/teams/persikutim-united.png"
-  },
-  {
-    "name": "Persipani",
-    "url": null,
-    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/2408341.png",
-    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSIPANI",
-    "scraped_at": "2026-10-30T16:33:52.642927",
-    "logo_local": "/img/teams/persipani.png"
-  },
-  {
-    "name": "Persinab FC",
-    "url": null,
-    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/2517664.png",
-    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/PERSINAB_FC",
-    "scraped_at": "2026-10-30T16:33:52.642927",
-    "logo_local": "/img/teams/persinab-fc.png"
+    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/perseden_denpasar",
+    "scraped_at": "2026-11-18T18:04:48.249874"
   },
   {
     "name": "Pasuruan United",
     "url": null,
     "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/1819299011.png",
-    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/Pasuruan_United",
-    "scraped_at": "2026-10-30T16:33:52.642927",
-    "logo_local": "/img/teams/pasuruan-united.png"
+    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/pasuruan_united",
+    "scraped_at": "2026-11-18T18:04:48.249874"
+  },
+  {
+    "name": "Psn Ngada",
+    "url": null,
+    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/248.png",
+    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/ps._ngada",
+    "scraped_at": "2026-11-18T18:04:48.249874"
+  },
+  {
+    "name": "Persipani",
+    "url": null,
+    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/2408341.png",
+    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/persipani_paniai",
+    "scraped_at": "2026-11-18T18:04:48.249874"
+  },
+  {
+    "name": "PERSIKUTIM United",
+    "url": null,
+    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/2408207.png",
+    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/persikutim_patriot_united",
+    "scraped_at": "2026-11-18T18:04:48.249874"
+  },
+  {
+    "name": "Donggala FC",
+    "url": null,
+    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/301.png",
+    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/donggala_fc",
+    "scraped_at": "2026-11-18T18:04:48.249874"
+  },
+  {
+    "name": "Persinab FC",
+    "url": null,
+    "logo_url": "https://assets.ileague.id/uploads/images/logo/101/h/50/2517664.png",
+    "ileague_url": "https://www.ileague.id/clubs/single/liga_nusantara_2026-27/persinab_fc",
+    "scraped_at": "2026-11-18T18:04:48.249874"
   }
 ]
