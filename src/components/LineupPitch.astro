@@ -141,6 +141,9 @@ const cardIcon = (cards?: MatchDetailPlayer['cards']) => {
                     {card && (
                       <span class={`absolute -left-1 -top-1 h-2.5 w-3 border border-[#0a1410] ${card === 'red' ? 'bg-red-500' : 'bg-yellow-400'}`}></span>
                     )}
+                    {player.captain && (
+                      <span class="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center border border-[#0a1410] bg-white font-cond text-[10px] font-bold leading-none text-black">C</span>
+                    )}
                   </div>
                   <span class="line-clamp-1 w-full break-words text-center text-[10px] font-semibold uppercase leading-tight tracking-tight text-white/60">
                     {shortName(player.name)}

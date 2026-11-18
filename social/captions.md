@@ -147,6 +147,24 @@ Pasang surut bola: Persibo dua kali tembus garis 50%, menit 45 dan 77. Sisanya m
 
 ---
 
+## 10. Poster lineup tandang Persibangga (`lineup-persibangga.png`)
+
+Dua nama naik dari bangku cadangan buat laga tandang pertama musim ini.
+
+Marvin dan O. Chanigio masuk XI. Rifaldi pindah ke bangku. Formasi masih 4-3-3, ban kapten di lengan Angger.
+
+Persibangga jadi tuan rumah di Trisanja, Tegal, Rabu 18 November, kick-off 15.30 WIB.
+
+Susunan lengkap dan perangkat laga ada di persibo.com.
+
+#Persibo #PersiboBojonegoro #LaskarAnglingDharma #Bojonegoro #LigaNusantara
+
+### Versi pendek (story / X)
+
+Tandang pertama: Persibangga vs Persibo, Rabu 18 November, 15.30 WIB, Trisanja, Tegal. Marvin dan O. Chanigio masuk XI, Angger kapten.
+
+---
+
 ## Catatan
 
 - Jangan pakai kata "resmi", "official", atau "rebranding" — situs ini penggemar.

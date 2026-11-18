@@ -40,6 +40,42 @@
     ]
   },
   {
+    "out": "lineup-persibangga",
+    "mode": "lineup",
+    "date": "18 November 2026",
+    "home": "PERSIBANGGA PURBALINGGA",
+    "away": "PERSIBO Bojonegoro",
+    "venue": "TRISANJA",
+    "md": 2,
+    "formation": "4-3-3",
+    "coach": "I Putu Gede Swi Santoso",
+    "xi": [
+      { "no": 14, "name": "A. Fernandi", "pos": "KIP" },
+      { "no": 3, "name": "Angger (C)", "pos": "BEK" },
+      { "no": 6, "name": "Shevanton", "pos": "BEK" },
+      { "no": 26, "name": "Rio Valentino", "pos": "BEK" },
+      { "no": 13, "name": "Rangga", "pos": "BEK" },
+      { "no": 8, "name": "Marvin", "pos": "GEL" },
+      { "no": 18, "name": "M. Syahril", "pos": "GEL" },
+      { "no": 33, "name": "O. Chanigio", "pos": "GEL" },
+      { "no": 27, "name": "Romeo", "pos": "PEN" },
+      { "no": 7, "name": "Sehabudin", "pos": "PEN" },
+      { "no": 77, "name": "Putra Chaniago", "pos": "PEN" }
+    ],
+    "subs": [
+      { "no": 59, "name": "Fahad" },
+      { "no": 9, "name": "Kaka" },
+      { "no": 10, "name": "Iqbal" },
+      { "no": 11, "name": "Rifaldi" },
+      { "no": 15, "name": "Zulkifli" },
+      { "no": 25, "name": "Aaron Y" },
+      { "no": 29, "name": "J. Latuconsina" },
+      { "no": 34, "name": "Kafka" },
+      { "no": 38, "name": "Deco" },
+      { "no": 76, "name": "Jojo" }
+    ]
+  },
+  {
     "out": "stats-persipa",
     "mode": "stats",
     "date": "13 November 2026",
@@ -148,6 +184,16 @@
     "hs": "0",
     "as": "0",
     "md": 1
+  },
+  {
+    "out": "hasil-babak-1-persibangga",
+    "mode": "hasil",
+    "date": "18 November 2026",
+    "home": "PERSIBANGGA PURBALINGGA",
+    "away": "PERSIBO Bojonegoro",
+    "venue": "TRISANJA",
+    "babak": "1",
+    "md": 2
   },
   {
     "out": "identitas-wordmark",

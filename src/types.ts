@@ -103,6 +103,8 @@ export interface MatchDetailPlayer {
   name: string;
   jersey_number: number;
   position: string | null;
+  /** Armband. Sources almost never publish it, so it is entered by hand. */
+  captain?: boolean;
   /** Minutes this player was involved in a substitution, as scraped ("'90"). */
   substitution_minutes?: number[];
   /** Cards shown to this player during the match. */

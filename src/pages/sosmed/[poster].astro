@@ -27,6 +27,8 @@ type Post = {
   md?: number;
   hs?: string;
   as?: string;
+  /** Intermediate result, e.g. "1" → header "Hasil Babak 1"; empty score renders as "–". */
+  babak?: string;
   scorers?: { minute?: string; player: string; team?: string }[];
   /** Lineup poster; rows render Penyerang → Kiper top to bottom on the pitch. */
   formation?: string;
@@ -92,7 +94,9 @@ const xiRows = posOrder
   .filter((row) => row.players.length > 0);
 const photoByNumber = new Map(playersJson.map((p) => [Number(p.jersey_number), p.photo_local || p.photo_url || '']));
 const photoFor = (no: number) => photoByNumber.get(no) || '';
-const score = mode === 'hasil' ? `${post.hs ?? ''}:${post.as ?? ''}` : 'VS';
+const scoreSide = (value?: string) => value || '-';
+const scoreFilled = Boolean(post.hs && post.as);
+const score = mode === 'hasil' ? `${scoreSide(post.hs)}:${scoreSide(post.as)}` : 'VS';
 const isPersibo = (team: string) => team.toUpperCase().includes('PERSIBO');
 // Mirrored crests are 50-105px wide, and the manifest points at last season's CDN path whose
 // /h/200/ variant is gone. The current season's teams.json URL does have an 830px file, so
@@ -108,7 +112,7 @@ const logoFor = (team: string) => {
   const remote = (club && remoteByName.get(club.toUpperCase())) || '';
   return { src: remote ? remote.replace('/h/50/', '/h/200/') : local, fallback: local };
 };
-const shortName = (team: string) => team.replace(/\s+(BOJONEGORO|FC|UNITED)$/i, '').toUpperCase();
+const shortName = (team: string) => team.replace(/\s+(BOJONEGORO|PURBALINGGA|FC|UNITED)$/i, '').toUpperCase();
 
 const persiboGoals = Number(isPersibo(homeTeam) ? post.hs : post.as);
 const rivalGoals = Number(isPersibo(homeTeam) ? post.as : post.hs);
@@ -198,7 +202,7 @@ const nameClass = (name: string) =>
             <div>
               <p class="flex items-center gap-[0.7rem] text-[18px] font-bold uppercase tracking-[0.28em] text-white/45">
                 <span class="inline-block h-px w-[1.6rem] bg-primary"></span>
-                {[mode === 'hasil' ? 'Hasil' : matchday ? `Matchday ${matchday}` : 'Jadwal', weekday].filter(Boolean).join(' · ')}
+                {[mode === 'hasil' ? (post.babak ? `Hasil Babak ${post.babak}` : 'Hasil') : matchday ? `Matchday ${matchday}` : 'Jadwal', weekday].filter(Boolean).join(' · ')}
               </p>
               <div class="mt-[1rem] flex items-end gap-[1.1rem]">
                 <p class="font-cond text-[14rem] font-bold leading-[0.66] text-primary">{day ?? '--'}</p>
@@ -223,7 +227,13 @@ const nameClass = (name: string) =>
                   <p class="mt-[0.25rem] text-[17px] uppercase tracking-[0.2em] text-white/40">WIB</p>
                 </>
               )}
-              {mode === 'hasil' && outcome && (
+              {mode === 'hasil' && post.babak && (
+                <>
+                  <p class="text-[16px] uppercase tracking-[0.24em] text-white/40">Skor</p>
+                  <p class="font-cond mt-[0.2rem] text-[2.2rem] font-bold uppercase leading-none text-primary">Sementara</p>
+                </>
+              )}
+              {mode === 'hasil' && !post.babak && outcome && (
                 <>
                   <p class="text-[16px] uppercase tracking-[0.24em] text-white/40">Hasil</p>
                   <p class="font-cond mt-[0.2rem] text-[2.2rem] font-bold uppercase leading-none text-primary">{outcome}</p>
@@ -252,7 +262,7 @@ const nameClass = (name: string) =>
 
           <div class="flex flex-col items-center justify-center px-[0.4rem]">
             {mode === 'hasil' ? (
-              <p class="font-cond text-[9rem] font-bold leading-none text-primary">{score}</p>
+              <p class={`font-cond text-[9rem] font-bold leading-none ${scoreFilled ? 'text-primary' : 'text-white/30'}`}>{score}</p>
             ) : (
               <p class="font-cond text-[7rem] leading-none text-white/22">VS</p>
             )}
