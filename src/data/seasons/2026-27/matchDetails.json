@@ -75,7 +75,17 @@
       { "minute": "87'", "player": "YAPAGAIMU", "type": "yellow_card", "team": "PERSIPA" },
       { "minute": "90'", "player": "ADI PURNAMA", "type": "red_card", "team": "PERSIBO Bojonegoro" }
     ],
-    "statistics": {},
+    "statistics": {
+      "attacks": { "home": 86, "away": 98 },
+      "dangerous_attacks": { "home": 47, "away": 42 },
+      "possession": { "home": 54, "away": 46 },
+      "shots": { "home": 12, "away": 17 },
+      "shots_on_target": { "home": 2, "away": 5 },
+      "off_target": { "home": 10, "away": 12 },
+      "corners": { "home": 3, "away": 5 },
+      "yellow_cards": { "home": 2, "away": 3 },
+      "red_cards": { "home": 1, "away": 0 }
+    },
     "officials": {
       "referee": "HUSAIN",
       "assistant_referee_1": "TRI WIJAYA KUSUMA",
@@ -173,7 +183,17 @@
       { "minute": "88'", "player": "RIO VALENTINO", "type": "yellow_card", "team": "PERSIBO BOJONEGORO" },
       { "minute": "90+4'", "player": "F. ARYA", "type": "goal", "team": "PERSIBANGGA PURBALINGGA" }
     ],
-    "statistics": {},
+    "statistics": {
+      "attacks": { "home": 119, "away": 120 },
+      "dangerous_attacks": { "home": 59, "away": 88 },
+      "possession": { "home": 42, "away": 58 },
+      "shots": { "home": 15, "away": 10 },
+      "shots_on_target": { "home": 8, "away": 4 },
+      "off_target": { "home": 7, "away": 6 },
+      "corners": { "home": 1, "away": 5 },
+      "yellow_cards": { "home": 2, "away": 3 },
+      "red_cards": { "home": 0, "away": 0 }
+    },
     "officials": {
       "referee": "UDINRIFAY",
       "assistant_referee_1": "TAMRIN",

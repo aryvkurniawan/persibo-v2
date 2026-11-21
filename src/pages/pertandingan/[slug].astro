@@ -57,9 +57,12 @@ const awayLineup = hasPlayers(matchDetail?.lineups?.away_team) ? matchDetail!.li
 
 // Scraped keys are English snake_case; the page speaks Indonesian.
 const STAT_LABELS: Record<string, string> = {
+  attacks: 'Serangan',
+  dangerous_attacks: 'Serangan berbahaya',
   possession: 'Penguasaan bola',
   shots: 'Total tembakan',
   shots_on_target: 'Tembakan ke gawang',
+  off_target: 'Tembakan meleset',
   shot_accuracy: 'Akurasi tembakan',
   passes_completed: 'Umpan sukses',
   passes_failed: 'Umpan gagal',
