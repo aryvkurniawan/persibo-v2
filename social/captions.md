@@ -181,6 +181,28 @@ Hasil akhir: Persibangga 2-1 Persibo. USAMA menit 32, SEHABUDIN menit 48, F. ARY
 
 ---
 
+## 12. Carousel prediksi Persibo vs Gresik United (`prediksi-gresik-1.png` … `prediksi-gresik-3.png`)
+
+Tiga slide, urutannya jangan diacak: prediksi skor, perbandingan statistik, kunci kemenangan.
+
+Minggu ini Persibo menjamu Gresik United di Stadion Letjen H. Soedirman. Kick-off 15.30 WIB.
+
+Kedua tim belum menang di Grup B. Persibo baru satu poin, Gresik dua poin dari dua kali seri.
+
+Di carousel ini kami bedah angkanya. Gresik melepas 18 tembakan tepat sasaran dari dua laga dan cuma mencetak satu gol. Persibo butuh enam tembakan untuk satu gol yang sama. Prediksi kami 1-0 untuk Persibo, dengan 1-1 dan 2-0 sebagai alternatif.
+
+Tiga kuncinya: tekan lini tengah, perbanyak tembakan tepat, dan jaga fokus sampai peluit terakhir.
+
+Ini analisis, bukan hasil pertandingan. Skor dan klasemen tiap hari di persibo.com.
+
+#Persibo #PersiboBojonegoro #LaskarAnglingDharma #Bojonegoro #LigaNusantara #GresikUnited
+
+### Versi pendek (story / X)
+
+Persibo vs Gresik United, Minggu 22 November, kick-off 15.30 WIB. Prediksi kami 1-0. Kuncinya: tekan tengah, perbanyak tembakan tepat, jaga fokus sampai akhir. persibo.com
+
+---
+
 ## Catatan
 
 - Jangan pakai kata "resmi", "official", atau "rebranding" — situs ini penggemar.
