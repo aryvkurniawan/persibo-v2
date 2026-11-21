@@ -189,7 +189,7 @@ Minggu ini Persibo menjamu Gresik United di Stadion Letjen H. Soedirman. Kick-of
 
 Kedua tim belum menang di Grup B. Persibo baru satu poin, Gresik dua poin dari dua kali seri.
 
-Di carousel ini kami bedah angkanya. Gresik melepas 18 tembakan tepat sasaran dari dua laga dan cuma mencetak satu gol. Persibo butuh enam tembakan untuk satu gol yang sama. Prediksi kami 1-0 untuk Persibo, dengan 1-1 dan 2-0 sebagai alternatif.
+Di carousel ini kami bedah angkanya. Gresik melepas 18 tembakan tepat sasaran dari dua laga dan cuma mencetak satu gol. Persibo butuh enam tembakan untuk satu gol yang sama. Prediksi skor: Persibo 1-0 Gresik. Skor 1-1 dan 2-0 juga mungkin.
 
 Tiga kuncinya: tekan lini tengah, perbanyak tembakan tepat, dan jaga fokus sampai peluit terakhir.
 
