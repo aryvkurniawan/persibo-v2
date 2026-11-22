@@ -203,6 +203,24 @@ Persibo vs Gresik United, Minggu 22 November, kick-off 15.30 WIB. Prediksi kami 
 
 ---
 
+## 13. Poster lineup kandang Gresik United (`lineup-gresik-united.png`)
+
+Satu nama baru di XI Persibo.
+
+J. Latuconsina masuk di sayap kiri. Romeo bergeser ke lini tengah, O. Chanigio pindah ke bangku cadangan. Formasi tetap 4-3-3, ban kapten masih di lengan Angger.
+
+Persibo menjamu Gresik United di Stadion Letjen H. Soedirman, Minggu 22 November, kick-off 15.30 WIB. Kedua tim belum menang di Grup B.
+
+Susunan lengkap dan perangkat laga ada di persibo.com.
+
+#Persibo #PersiboBojonegoro #LaskarAnglingDharma #Bojonegoro #LigaNusantara #GresikUnited
+
+### Versi pendek (story / X)
+
+Persibo vs Gresik United, Minggu 22 November, 15.30 WIB. Latuconsina masuk XI, Romeo ke tengah, O. Chanigio ke bangku. Formasi 4-3-3, Angger kapten.
+
+---
+
 ## Catatan
 
 - Jangan pakai kata "resmi", "official", atau "rebranding" — situs ini penggemar.

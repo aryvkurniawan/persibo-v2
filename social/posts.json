@@ -101,6 +101,42 @@
     ]
   },
   {
+    "out": "lineup-gresik-united",
+    "mode": "lineup",
+    "date": "22 November 2026",
+    "home": "PERSIBO Bojonegoro",
+    "away": "GRESIK UNITED FC",
+    "venue": "Stadion Letjen H. Soedirman",
+    "md": 3,
+    "formation": "4-3-3",
+    "coach": "I Putu Gede Swi Santoso",
+    "xi": [
+      { "no": 14, "name": "A. Fernandi", "pos": "KIP" },
+      { "no": 3, "name": "Angger (C)", "pos": "BEK" },
+      { "no": 6, "name": "Shevanton", "pos": "BEK" },
+      { "no": 26, "name": "Rio Valentino", "pos": "BEK" },
+      { "no": 13, "name": "Rangga", "pos": "BEK" },
+      { "no": 8, "name": "Marvin", "pos": "GEL" },
+      { "no": 18, "name": "M. Syahril", "pos": "GEL" },
+      { "no": 27, "name": "Romeo", "pos": "GEL" },
+      { "no": 29, "name": "J. Latuconsina", "pos": "PEN" },
+      { "no": 7, "name": "Sehabudin", "pos": "PEN" },
+      { "no": 77, "name": "Putra Chaniago", "pos": "PEN" }
+    ],
+    "subs": [
+      { "no": 59, "name": "Fahad" },
+      { "no": 9, "name": "Kaka" },
+      { "no": 10, "name": "Iqbal" },
+      { "no": 11, "name": "Rifaldi" },
+      { "no": 12, "name": "Fuad" },
+      { "no": 15, "name": "Zulkifli" },
+      { "no": 25, "name": "Aaron Y" },
+      { "no": 33, "name": "O. Chanigio" },
+      { "no": 34, "name": "Kafka" },
+      { "no": 76, "name": "Jojo" }
+    ]
+  },
+  {
     "out": "stats-persipa",
     "mode": "stats",
     "date": "13 November 2026",
