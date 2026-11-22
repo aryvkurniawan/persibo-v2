@@ -278,6 +278,26 @@
     ]
   },
   {
+    "out": "stats-gresik-united",
+    "mode": "stats",
+    "date": "22 November 2026",
+    "home": "PERSIBO Bojonegoro",
+    "away": "GRESIK UNITED FC",
+    "md": 3,
+    "hs": "1",
+    "as": "1",
+    "stats": {
+      "rows": [
+        { "label": "Serangan", "home": 110, "away": 105 },
+        { "label": "Serangan berbahaya", "home": 64, "away": 97 },
+        { "label": "Penguasaan bola", "home": 47, "away": 53, "suffix": "%" },
+        { "label": "Tembakan ke gawang", "home": 4, "away": 5 },
+        { "label": "Tembakan meleset", "home": 6, "away": 10 },
+        { "label": "Kartu kuning", "home": 1, "away": 3 }
+      ]
+    }
+  },
+  {
     "out": "identitas-wordmark",
     "url": "/sosmed/artboard/wordmark",
     "selector": "#art-wordmark",

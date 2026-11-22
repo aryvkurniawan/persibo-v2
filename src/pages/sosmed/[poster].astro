@@ -42,6 +42,8 @@ type Post = {
   /** Serangan per kanal [kiri, tengah, kanan], % aktivitas pemain. */
   home: { title: string; lanes: [number, number, number] };
   away: { title: string; lanes: [number, number, number] };
+  /** Match-report figures: when present these replace the lane breakdown. */
+  rows?: { label: string; home: number; away: number; suffix?: string }[];
   };
   /** Kurva momentum: [menit laga, % kepemilikan Persibo], jeda istirahat sudah dipangkas. */
   momentumWave?: [number, number][];
@@ -413,18 +415,40 @@ const nameClass = (name: string) =>
         <div class="mt-[1.4rem] flex items-center justify-between border-b border-white/15 pb-[1.5rem]">
           <div class="flex min-w-0 items-center gap-[1.1rem]">
             <img src={leftLogo.src} alt="" class="h-[6rem] w-[6rem] shrink-0 object-contain" onerror={`this.onerror=null;this.src='${leftLogo.fallback}'`} />
-            <p class="font-cond truncate text-[3.4rem] font-bold uppercase leading-none">{leftName}</p>
+            <p class="font-cond text-[2.6rem] font-bold uppercase leading-none">{leftName}</p>
           </div>
           <div class="shrink-0 text-center">
             <p class="font-cond text-[6.4rem] font-bold uppercase leading-none text-primary">{post.hs ?? '0'}:{post.as ?? '0'}</p>
             <p class="mt-[0.6rem] text-[16px] uppercase tracking-[0.22em] text-white/40">{longDate}{matchday ? ` · Matchday ${matchday}` : ''}</p>
           </div>
           <div class="flex min-w-0 items-center gap-[1.1rem] text-right">
-            <p class="font-cond truncate text-[3.4rem] font-bold uppercase leading-none">{rightName}</p>
+            <p class="font-cond text-[2.6rem] font-bold uppercase leading-none">{rightName}</p>
             <img src={rightLogo.src} alt="" class="h-[6rem] w-[6rem] shrink-0 object-contain" onerror={`this.onerror=null;this.src='${rightLogo.fallback}'`} />
           </div>
         </div>
 
+        {post.stats?.rows ? (
+        <div class="flex min-h-0 flex-1 flex-col justify-center">
+          {post.stats.rows.map((row) => {
+            const total = row.home + row.away;
+            const share = total > 0 ? (row.home / total) * 100 : 50;
+            return (
+              <div class="border-b border-white/12 py-[1.5rem]">
+                <div class="flex items-baseline justify-between gap-[1.2rem]">
+                  <p class="font-cond w-[12rem] text-[3.4rem] font-bold leading-none text-primary">{row.home}<span class="text-[1.8rem]">{row.suffix ?? ''}</span></p>
+                  <p class="text-center text-[1.7rem] uppercase tracking-[0.16em] text-white/45">{row.label}</p>
+                  <p class="font-cond w-[12rem] text-right text-[3.4rem] font-bold leading-none text-white/85">{row.away}<span class="text-[1.8rem]">{row.suffix ?? ''}</span></p>
+                </div>
+                <div class="mt-[0.7rem] flex h-[0.6rem] overflow-hidden rounded-full border border-white/10">
+                  <div class="bg-primary" style={`width:${share}%`}></div>
+                  <div class="flex-1 bg-white/20"></div>
+                </div>
+              </div>
+            );
+          })}
+          <p class="mt-[1.2rem] text-center text-[1.5rem] uppercase tracking-[0.16em] text-white/30">Kiri {leftName} · kanan {rightName}</p>
+        </div>
+        ) : (
         <div class="flex min-h-0 flex-1 flex-col justify-evenly">
           <!-- Possession as typographic hero: giant numbers, thin split bar. -->
           <div>
@@ -476,6 +500,7 @@ const nameClass = (name: string) =>
             </div>
           </div>
         </div>
+        )}
         </>
         )}
 
@@ -485,14 +510,14 @@ const nameClass = (name: string) =>
         <div class="mt-[1.4rem] flex items-center justify-between border-b border-white/15 pb-[1.5rem]">
           <div class="flex min-w-0 items-center gap-[1.1rem]">
             <img src={leftLogo.src} alt="" class="h-[6rem] w-[6rem] shrink-0 object-contain" onerror={`this.onerror=null;this.src='${leftLogo.fallback}'`} />
-            <p class="font-cond truncate text-[3.4rem] font-bold uppercase leading-none">{leftName}</p>
+            <p class="font-cond text-[2.6rem] font-bold uppercase leading-none">{leftName}</p>
           </div>
           <div class="shrink-0 text-center">
             <p class="font-cond text-[6.4rem] font-bold uppercase leading-none text-primary">{post.hs ?? '0'}:{post.as ?? '0'}</p>
             <p class="mt-[0.6rem] text-[16px] uppercase tracking-[0.22em] text-white/40">{longDate}{matchday ? ` · Matchday ${matchday}` : ''}</p>
           </div>
           <div class="flex min-w-0 items-center gap-[1.1rem] text-right">
-            <p class="font-cond truncate text-[3.4rem] font-bold uppercase leading-none">{rightName}</p>
+            <p class="font-cond text-[2.6rem] font-bold uppercase leading-none">{rightName}</p>
             <img src={rightLogo.src} alt="" class="h-[6rem] w-[6rem] shrink-0 object-contain" onerror={`this.onerror=null;this.src='${rightLogo.fallback}'`} />
           </div>
         </div>

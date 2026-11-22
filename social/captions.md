@@ -239,6 +239,26 @@ Persibo 1-1 Gresik United, Minggu 22 November. IQBAL menit 79, M. DZAKI menyamak
 
 ---
 
+## 15. Poster statistik kandang Gresik United (`stats-gresik-united.png`)
+
+Angka di balik skor 1-1 itu.
+
+Persibo mencatat 110 serangan lawan 105. Gresik United lebih banyak masuk ke area berbahaya, 64 berbanding 97, dan menguasai bola 53 persen lawan 47 persen.
+
+Tembakan ke gawang 4-5. Tembakan meleset 6-10. Kartu kuning 1-3.
+
+IQBAL TRI SAPUTRA membawa Persibo unggul pada menit 79, lalu M. DZAKI ALAMSYAH menyamakan pada menit 88. Satu poin tetap di Bojonegoro.
+
+Angka pertandingan: AiScore. Skor dan klasemen tiap hari di persibo.com.
+
+#Persibo #PersiboBojonegoro #LaskarAnglingDharma #Bojonegoro #LigaNusantara #GresikUnited
+
+### Versi pendek (story / X)
+
+Persibo 1-1 Gresik United. Serangan 110-105, penguasaan bola 47-53, tembakan ke gawang 4-5. Statistik lengkap ada di persibo.com
+
+---
+
 ## Catatan
 
 - Jangan pakai kata "resmi", "official", atau "rebranding" — situs ini penggemar.
