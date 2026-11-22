@@ -56,6 +56,9 @@ function deriveSeason(season) {
   };
 
   for (const match of matches) {
+    // Scheduled fixtures carry the published XI but no result yet; counting
+    // them would credit an appearance before kickoff.
+    if (!match.score) continue;
     for (const side of ['home_team', 'away_team']) {
       if (!key(match[side] || '').includes('PERSIBO')) continue;
       const lineup = match.lineups?.[side];
