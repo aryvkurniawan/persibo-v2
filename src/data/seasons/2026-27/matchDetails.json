@@ -212,9 +212,9 @@
     "venue": "LETJEN H. SOEDIRMAN",
     "home_team": "PERSIBO BOJONEGORO",
     "away_team": "GRESIK UNITED FC",
-    "score": "",
-    "home_score": 0,
-    "away_score": 0,
+    "score": "1:1",
+    "home_score": 1,
+    "away_score": 1,
     "lineups": {
       "home_team": {
         "starting_xi": [
@@ -225,19 +225,19 @@
           { "name": "RANGGA", "jersey_number": 13, "position": "Belakang" },
           { "name": "MARVIN", "jersey_number": 8, "position": "Gelandang" },
           { "name": "M. SYAHRIL", "jersey_number": 18, "position": "Gelandang" },
-          { "name": "ROMEO", "jersey_number": 27, "position": "Gelandang" },
-          { "name": "J LATUCONSINA", "jersey_number": 29, "position": "Penyerang" },
+          { "name": "ROMEO", "jersey_number": 27, "position": "Gelandang", "substitution_minutes": [92] },
+          { "name": "J LATUCONSINA", "jersey_number": 29, "position": "Penyerang", "substitution_minutes": [71], "cards": ["yellow"] },
           { "name": "SEHABUDIN", "jersey_number": 7, "position": "Penyerang" },
-          { "name": "PUTRA CHANIAGO", "jersey_number": 77, "position": "Penyerang" }
+          { "name": "PUTRA CHANIAGO", "jersey_number": 77, "position": "Penyerang", "substitution_minutes": [92] }
         ],
         "substitutes": [
           { "name": "FAHAD", "jersey_number": 59, "position": null },
-          { "name": "KAKA", "jersey_number": 9, "position": null },
-          { "name": "IQBAL", "jersey_number": 10, "position": null },
+          { "name": "KAKA", "jersey_number": 9, "position": null, "substitution_minutes": [92] },
+          { "name": "IQBAL", "jersey_number": 10, "position": null, "substitution_minutes": [71], "goals": 1 },
           { "name": "RIFALDI", "jersey_number": 11, "position": null },
           { "name": "FUAD", "jersey_number": 12, "position": null },
           { "name": "ZULKIFLI", "jersey_number": 15, "position": null },
-          { "name": "AARON Y", "jersey_number": 25, "position": null },
+          { "name": "AARON Y", "jersey_number": 25, "position": null, "substitution_minutes": [92] },
           { "name": "O. CHANIGIO", "jersey_number": 33, "position": null },
           { "name": "KAFKA", "jersey_number": 34, "position": null },
           { "name": "JOJO", "jersey_number": 76, "position": null }
@@ -248,32 +248,47 @@
         "starting_xi": [
           { "name": "SYAMIL B.", "jersey_number": 77, "position": "Penjaga Gawang" },
           { "name": "ALIF JAELANI R", "jersey_number": 7, "position": "Gelandang" },
-          { "name": "ALWI FURQON", "jersey_number": 8, "position": "Gelandang" },
-          { "name": "DECO", "jersey_number": 9, "position": "Penyerang" },
-          { "name": "SYAIFULLAH", "jersey_number": 13, "position": "Gelandang" },
-          { "name": "F. AKBAR", "jersey_number": 15, "position": "Gelandang" },
+          { "name": "ALWI FURQON", "jersey_number": 8, "position": "Gelandang", "substitution_minutes": [80] },
+          { "name": "DECO", "jersey_number": 9, "position": "Penyerang", "substitution_minutes": [45] },
+          { "name": "SYAIFULLAH", "jersey_number": 13, "position": "Gelandang", "substitution_minutes": [45] },
+          { "name": "F. AKBAR", "jersey_number": 15, "position": "Gelandang", "substitution_minutes": [70] },
           { "name": "SAIHITUAH", "jersey_number": 16, "position": "Belakang" },
-          { "name": "ALDI", "jersey_number": 18, "position": "Belakang" },
-          { "name": "ZAMORANO", "jersey_number": 24, "position": "Gelandang" },
+          { "name": "ALDI", "jersey_number": 18, "position": "Belakang", "cards": ["yellow"] },
+          { "name": "ZAMORANO", "jersey_number": 24, "position": "Gelandang", "substitution_minutes": [93], "cards": ["yellow"] },
           { "name": "SHANDY", "jersey_number": 28, "position": "Penyerang" },
-          { "name": "JOKO S.", "jersey_number": 33, "position": "Belakang", "captain": true }
+          { "name": "JOKO S.", "jersey_number": 33, "position": "Belakang", "captain": true, "cards": ["yellow"] }
         ],
         "substitutes": [
           { "name": "LALU RIZKI", "jersey_number": 23, "position": null },
           { "name": "RAFLI", "jersey_number": 6, "position": null },
-          { "name": "RAFI HERLIAN", "jersey_number": 10, "position": null },
-          { "name": "ILHAM JAYA", "jersey_number": 17, "position": null },
+          { "name": "RAFI HERLIAN", "jersey_number": 10, "position": null, "substitution_minutes": [45] },
+          { "name": "ILHAM JAYA", "jersey_number": 17, "position": null, "substitution_minutes": [93] },
           { "name": "ABANDA", "jersey_number": 21, "position": null },
-          { "name": "M. DZAKI", "jersey_number": 22, "position": null },
+          { "name": "M. DZAKI", "jersey_number": 22, "position": null, "substitution_minutes": [80], "goals": 1 },
           { "name": "BAIHAQI RIFAI", "jersey_number": 29, "position": null },
-          { "name": "WAHYU A", "jersey_number": 46, "position": null },
+          { "name": "WAHYU A", "jersey_number": 46, "position": null, "substitution_minutes": [70] },
           { "name": "N. WANDIK", "jersey_number": 47, "position": null },
-          { "name": "OSCAR", "jersey_number": 99, "position": null }
+          { "name": "OSCAR", "jersey_number": 99, "position": null, "substitution_minutes": [45] }
         ],
         "coach": "JOKO SUSILO"
       }
     },
-    "events": [],
+    "events": [
+      { "minute": "27'", "player": "ALDI TRI NUGROHO", "type": "yellow_card", "team": "GRESIK UNITED FC" },
+      { "minute": "46'", "player": "J LATUCONSINA", "type": "yellow_card", "team": "PERSIBO BOJONEGORO" },
+      { "minute": "59'", "player": "JOKO S.", "type": "yellow_card", "team": "GRESIK UNITED FC" },
+      { "minute": "70'", "player": "MUHAMAD FADILLA AKBAR -> WAHYU A", "type": "substitution", "team": "GRESIK UNITED FC" },
+      { "minute": "71'", "player": "J LATUCONSINA -> IQBAL", "type": "substitution", "team": "PERSIBO BOJONEGORO" },
+      { "minute": "79'", "player": "IQBAL", "type": "goal", "team": "PERSIBO BOJONEGORO" },
+      { "minute": "80'", "player": "ALWI FURQON -> M. DZAKI", "type": "substitution", "team": "GRESIK UNITED FC" },
+      { "minute": "88'", "player": "M. DZAKI", "type": "goal", "team": "GRESIK UNITED FC" },
+      { "minute": "90'", "player": "ZAMORANO", "type": "yellow_card", "team": "GRESIK UNITED FC" },
+      { "minute": "90+2'", "player": "ROMEO -> KAKA", "type": "substitution", "team": "PERSIBO BOJONEGORO" },
+      { "minute": "90+2(1)'", "player": "PUTRA CHANIAGO -> AARON Y", "type": "substitution", "team": "PERSIBO BOJONEGORO" },
+      { "minute": "90+3'", "player": "ZAMORANO -> ILHAM JAYA", "type": "substitution", "team": "GRESIK UNITED FC" },
+      { "minute": "HT", "player": "DECO -> RAFI HERLIAN", "type": "substitution", "team": "GRESIK UNITED FC" },
+      { "minute": "HT", "player": "SYAIFULLAH -> OSCAR", "type": "substitution", "team": "GRESIK UNITED FC" }
+    ],
     "statistics": {},
     "officials": {
       "referee": "SULIS ANDRI ASMAWAN",
@@ -284,6 +299,7 @@
       "referee_assessor": "ALIL RINENGGO"
     },
     "kickoff_time": "15:30",
+    "attendance": 3360,
     "base_team": "PERSIBO Bojonegoro"
   }
 ]

@@ -221,6 +221,24 @@ Persibo vs Gresik United, Minggu 22 November, 15.30 WIB. Latuconsina masuk XI, R
 
 ---
 
+## 14. Poster hasil kandang Gresik United (`hasil-gresik-united.png`)
+
+Imbang 1-1 di Stadion Letjen H. Soedirman, Minggu 22 November.
+
+IQBAL TRI SAPUTRA membawa Persibo unggul pada menit 79. M. DZAKI ALAMSYAH menyamakan skor untuk Gresik United pada menit 88. Itu hasil akhirnya.
+
+Satu poin untuk Persibo dari laga kandang ini. Wasit SULIS ANDRI ASMAWAN memimpin pertandingan di depan 3.360 penonton.
+
+Skor dan klasemen tiap hari di persibo.com.
+
+#Persibo #PersiboBojonegoro #LaskarAnglingDharma #Bojonegoro #LigaNusantara #GresikUnited
+
+### Versi pendek (story / X)
+
+Persibo 1-1 Gresik United, Minggu 22 November. IQBAL menit 79, M. DZAKI menyamakan pada menit 88. persibo.com
+
+---
+
 ## Catatan
 
 - Jangan pakai kata "resmi", "official", atau "rebranding" — situs ini penggemar.

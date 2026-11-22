@@ -184,7 +184,7 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 1,
+      "appearances": 3,
       "goals": 0,
       "yellow_cards": 0,
       "red_cards": 0
@@ -1011,9 +1011,9 @@
     "country": "Indonesia",
     "photo_url": "https://assets.ligaindonesiabaru.com/assets/img/clubs-logos/29.png",
     "statistics": {
-      "appearances": 1,
+      "appearances": 3,
       "goals": 0,
-      "yellow_cards": 0,
+      "yellow_cards": 1,
       "red_cards": 0
     },
     "club_history": [
@@ -4865,7 +4865,7 @@
     "country": "Indonesia",
     "photo_url": "/img/players/angger.jpg",
     "statistics": {
-      "appearances": 1,
+      "appearances": 3,
       "goals": 0,
       "yellow_cards": 0,
       "red_cards": 0
@@ -4876,7 +4876,7 @@
         "year": "2026",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "1",
+        "appearances": "3",
         "goals": "0",
         "saves": "",
         "cards": "/",
@@ -5106,8 +5106,8 @@
     "country": "Indonesia",
     "photo_url": "/img/players/sehabudin.jpg",
     "statistics": {
-      "appearances": 1,
-      "goals": 0,
+      "appearances": 3,
+      "goals": 1,
       "yellow_cards": 0,
       "red_cards": 0
     },
@@ -5117,8 +5117,8 @@
         "year": "2026",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "1",
-        "goals": "0",
+        "appearances": "3",
+        "goals": "1",
         "saves": "",
         "cards": "/",
         "source": "derived:matchDetails"
@@ -5167,9 +5167,9 @@
     "country": "Indonesia",
     "photo_url": "/img/players/marvin.jpg",
     "statistics": {
-      "appearances": 0,
+      "appearances": 2,
       "goals": 0,
-      "yellow_cards": 0,
+      "yellow_cards": 1,
       "red_cards": 0
     },
     "club_history": [
@@ -5188,10 +5188,10 @@
         "year": "2026",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "0",
+        "appearances": "2",
         "goals": "0",
         "saves": "",
-        "cards": "/",
+        "cards": "1/0",
         "source": "derived:matchDetails"
       },
       {
@@ -5218,7 +5218,7 @@
     "country": "Indonesia",
     "photo_url": "/img/players/kaka.jpg",
     "statistics": {
-      "appearances": 0,
+      "appearances": 2,
       "goals": 0,
       "yellow_cards": 0,
       "red_cards": 0
@@ -5229,10 +5229,11 @@
         "year": "2026",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "0",
+        "appearances": "2",
         "goals": "0",
         "saves": "",
-        "cards": "/"
+        "cards": "/",
+        "source": "derived:matchDetails"
       }
     ],
     "base_team": "PERSIBO Bojonegoro"
@@ -5248,8 +5249,8 @@
     "country": "Indonesia",
     "photo_url": "/img/players/iqbal.jpg",
     "statistics": {
-      "appearances": 0,
-      "goals": 0,
+      "appearances": 2,
+      "goals": 1,
       "yellow_cards": 0,
       "red_cards": 0
     },
@@ -5259,10 +5260,11 @@
         "year": "2026",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "0",
-        "goals": "0",
+        "appearances": "2",
+        "goals": "1",
         "saves": "",
-        "cards": "/"
+        "cards": "/",
+        "source": "derived:matchDetails"
       },
       {
         "competition": "LIGA NUSANTARA 2025-26",
@@ -5288,7 +5290,7 @@
     "country": "Indonesia",
     "photo_url": "/img/players/rifaldi.jpg",
     "statistics": {
-      "appearances": 1,
+      "appearances": 2,
       "goals": 0,
       "yellow_cards": 0,
       "red_cards": 0
@@ -5299,7 +5301,7 @@
         "year": "2026",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "1",
+        "appearances": "2",
         "goals": "0",
         "saves": "",
         "cards": "/",
@@ -5450,7 +5452,7 @@
     "country": "Indonesia",
     "photo_url": "/img/players/rangga.jpg",
     "statistics": {
-      "appearances": 1,
+      "appearances": 3,
       "goals": 0,
       "yellow_cards": 0,
       "red_cards": 0
@@ -5461,7 +5463,7 @@
         "year": "2026",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "1",
+        "appearances": "3",
         "goals": "0",
         "saves": "",
         "cards": "/",
@@ -5521,7 +5523,7 @@
     "country": "Indonesia",
     "photo_url": "/img/players/a-fernandi.jpg",
     "statistics": {
-      "appearances": 1,
+      "appearances": 3,
       "goals": 0,
       "yellow_cards": 0,
       "red_cards": 0
@@ -5542,7 +5544,7 @@
         "year": "2026",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "1",
+        "appearances": "3",
         "goals": "0",
         "saves": "",
         "cards": "/",
@@ -5653,7 +5655,7 @@
     "country": "Indonesia",
     "photo_url": "/img/players/m-syahril.jpg",
     "statistics": {
-      "appearances": 1,
+      "appearances": 3,
       "goals": 0,
       "yellow_cards": 1,
       "red_cards": 0
@@ -5664,7 +5666,7 @@
         "year": "2026",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "1",
+        "appearances": "3",
         "goals": "0",
         "saves": "",
         "cards": "1/0",
@@ -5804,7 +5806,7 @@
     "country": "Indonesia",
     "photo_url": "/img/players/aaron-y.jpg",
     "statistics": {
-      "appearances": 1,
+      "appearances": 3,
       "goals": 0,
       "yellow_cards": 0,
       "red_cards": 0
@@ -5815,7 +5817,7 @@
         "year": "2026",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "1",
+        "appearances": "3",
         "goals": "0",
         "saves": "",
         "cards": "/",
@@ -5875,7 +5877,7 @@
     "country": "Indonesia",
     "photo_url": "/img/players/romeo.jpg",
     "statistics": {
-      "appearances": 1,
+      "appearances": 3,
       "goals": 0,
       "yellow_cards": 0,
       "red_cards": 0
@@ -5886,7 +5888,7 @@
         "year": "2026",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "1",
+        "appearances": "3",
         "goals": "0",
         "saves": "",
         "cards": "/",
@@ -5926,9 +5928,9 @@
     "country": "Indonesia",
     "photo_url": "/img/players/j-latuconsina.jpg",
     "statistics": {
-      "appearances": 1,
+      "appearances": 3,
       "goals": 0,
-      "yellow_cards": 0,
+      "yellow_cards": 2,
       "red_cards": 0
     },
     "club_history": [
@@ -5937,10 +5939,10 @@
         "year": "2026",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "1",
+        "appearances": "3",
         "goals": "0",
         "saves": "",
-        "cards": "/",
+        "cards": "2/0",
         "source": "derived:matchDetails"
       },
       {
@@ -6037,7 +6039,7 @@
     "country": "Indonesia",
     "photo_url": "/img/players/o-chanigio.jpg",
     "statistics": {
-      "appearances": 1,
+      "appearances": 2,
       "goals": 0,
       "yellow_cards": 0,
       "red_cards": 0
@@ -6048,7 +6050,7 @@
         "year": "2026",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "1",
+        "appearances": "2",
         "goals": "0",
         "saves": "",
         "cards": "/",
@@ -6513,7 +6515,7 @@
     "country": "Indonesia",
     "photo_url": "/img/players/putra-chaniago.jpg",
     "statistics": {
-      "appearances": 1,
+      "appearances": 3,
       "goals": 0,
       "yellow_cards": 0,
       "red_cards": 0
@@ -6524,7 +6526,7 @@
         "year": "2026",
         "klub_url": "https://www.ileague.id",
         "club": "PERSIBO Bojonegoro",
-        "appearances": "1",
+        "appearances": "3",
         "goals": "0",
         "saves": "",
         "cards": "/",

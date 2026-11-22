@@ -263,6 +263,21 @@
     ]
   },
   {
+    "out": "hasil-gresik-united",
+    "mode": "hasil",
+    "date": "22 November 2026",
+    "home": "PERSIBO Bojonegoro",
+    "away": "GRESIK UNITED FC",
+    "venue": "LETJEN H. SOEDIRMAN",
+    "md": 3,
+    "hs": "1",
+    "as": "1",
+    "scorers": [
+      { "minute": "79'", "player": "IQBAL TRI SAPUTRA", "team": "Persibo" },
+      { "minute": "88'", "player": "M. DZAKI ALAMSYAH", "team": "Gresik United" }
+    ]
+  },
+  {
     "out": "identitas-wordmark",
     "url": "/sosmed/artboard/wordmark",
     "selector": "#art-wordmark",
