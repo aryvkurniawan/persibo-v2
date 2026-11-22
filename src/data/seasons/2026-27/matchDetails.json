@@ -289,7 +289,15 @@
       { "minute": "HT", "player": "DECO -> RAFI HERLIAN", "type": "substitution", "team": "GRESIK UNITED FC" },
       { "minute": "HT", "player": "SYAIFULLAH -> OSCAR", "type": "substitution", "team": "GRESIK UNITED FC" }
     ],
-    "statistics": {},
+    "statistics": {
+      "attacks": { "home": 110, "away": 105 },
+      "dangerous_attacks": { "home": 64, "away": 97 },
+      "possession": { "home": 47, "away": 53 },
+      "shots_on_target": { "home": 4, "away": 5 },
+      "off_target": { "home": 6, "away": 10 },
+      "yellow_cards": { "home": 1, "away": 3 },
+      "red_cards": { "home": 0, "away": 0 }
+    },
     "officials": {
       "referee": "SULIS ANDRI ASMAWAN",
       "assistant_referee_1": "YOYOK SUWARDOYO",
