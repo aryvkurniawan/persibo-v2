@@ -12,13 +12,27 @@ interface Props {
 const { lineup, teamName, side } = Astro.props;
 
 type Photo = { name?: string; photo_local?: string; photo_url?: string };
-const photoByName = new Map<string, string>();
-// faces.json indexes older seasons by full name; players.json carries the
-// current squad's short names — the same form the lineup uses. Merge both.
-for (const entry of [...(faces as Photo[]), ...(players as Photo[])]) {
+// The squad spells "M.SYAHRIL" while match reports write "M. SYAHRIL", so strip
+// punctuation and spaces before looking a photo up.
+const nameKey = (name: string) => name.toUpperCase().replace(/[^A-Z0-9]/g, '');
+const squadPhotos = new Map<string, string>();
+const legacyPhotos = new Map<string, string>();
+for (const entry of players as Photo[]) {
   const src = entry.photo_local || entry.photo_url;
-  if (entry.name && src) photoByName.set(entry.name.toUpperCase(), src);
+  if (entry.name && src) squadPhotos.set(nameKey(entry.name), src);
 }
+// faces.json is keyed by the full names of past seasons. Only use it for
+// opponents and by full name: the current squad's "DECO" must not lend his face
+// to Gresik's DECO NOVERO PALANDI.
+for (const entry of faces as Photo[]) {
+  const src = entry.photo_local || entry.photo_url;
+  if (entry.name && src) legacyPhotos.set(nameKey(entry.name), src);
+}
+const isPersibo = teamName.toUpperCase().includes('PERSIBO');
+const photoFor = (name: string) => {
+  const key = nameKey(name);
+  return (isPersibo ? squadPhotos.get(key) ?? legacyPhotos.get(key) : legacyPhotos.get(key)) ?? '';
+};
 
 // Scraped lineups carry noise: rows that are actually shirt-number strings, and
 // duplicates from the three responsive copies iLeague renders.
@@ -114,7 +128,7 @@ const cardIcon = (cards?: MatchDetailPlayer['cards']) => {
           <p class="mb-2 text-center text-[10px] font-bold uppercase tracking-[0.2em] text-white/20">{row.position}</p>
           <div class="flex flex-wrap items-start justify-center gap-x-2 gap-y-2">
             {row.players.map((player) => {
-              const photo = photoByName.get(player.name.toUpperCase());
+              const photo = photoFor(player.name);
               const card = cardIcon(player.cards);
               return (
                 <div class="flex w-[72px] flex-col items-center gap-1">
