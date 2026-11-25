@@ -259,6 +259,32 @@ Persibo 1-1 Gresik United. Serangan 110-105, penguasaan bola 47-53, tembakan ke 
 
 ---
 
+## 16. Carousel prediksi Putra Sang Fajar vs Persibo (`prediksi-psf-1.png` ... `prediksi-psf-3.png`)
+
+Tiga slide, urutannya jangan diacak: prediksi skor, perbandingan tiga laga, kunci pertandingan.
+
+Sembilan poin dari sembilan. Tiga kemenangan, satu kebobolan.
+
+Itu rekor Putra Sang Fajar, pemuncak Grup B yang menjamu Persibo, Kamis 26 November, kick-off 15.30 WIB di Stadion Gelora Soepriadi.
+
+Persibo datang dengan dua poin dari tiga laga dan belum menang.
+
+Angka PSF: lima gol masuk, empat di antaranya milik Johan Yoga Utama dan dua lewat penalti. Lima kartu kuning di laga pertama, tiga di laga kedua. Di tiga laga itu mereka belum pernah tertinggal.
+
+Di situlah peluang Persibo: jaga Johan di dalam kotak, cetak lebih dulu, tekan pemain yang sudah berkartu. Waspada juga sampai peluit akhir, karena dua kebobolan Persibo lahir di menit 88 dan 90+4.
+
+Prediksi kami 1-1. Skor 1-0 untuk PSF dan 1-2 untuk Persibo juga mungkin.
+
+Ini analisis, bukan hasil pertandingan. Jadwal dan klasemen tiap hari di persibo.com.
+
+#Persibo #PersiboBojonegoro #LaskarAnglingDharma #Bojonegoro #LigaNusantara
+
+### Versi pendek (story / X)
+
+Putra Sang Fajar vs Persibo, Kamis 26 November, 15.30 WIB. Tuan rumah 9 poin dari 3 laga, Persibo 2 poin. Prediksi kami 1-1. persibo.com
+
+---
+
 ## Catatan
 
 - Jangan pakai kata "resmi", "official", atau "rebranding" — situs ini penggemar.

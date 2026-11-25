@@ -39,6 +39,21 @@
     "selector": "#slide-3"
   },
   {
+    "out": "prediksi-psf-1",
+    "url": "/sosmed/prediksi/psf",
+    "selector": "#slide-1"
+  },
+  {
+    "out": "prediksi-psf-2",
+    "url": "/sosmed/prediksi/psf",
+    "selector": "#slide-2"
+  },
+  {
+    "out": "prediksi-psf-3",
+    "url": "/sosmed/prediksi/psf",
+    "selector": "#slide-3"
+  },
+  {
     "out": "lineup-persipa",
     "mode": "lineup",
     "date": "13 November 2026",
