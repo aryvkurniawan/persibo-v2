@@ -162,6 +162,49 @@
     ]
   },
   {
+    "out": "lineup-putra-sang-fajar",
+    "mode": "lineup",
+    "date": "26 November 2026",
+    "home": "PUTRA SANG FAJAR FC",
+    "away": "PERSIBO Bojonegoro",
+    "venue": "Stadion Gelora Soepriadi",
+    "md": 4,
+    "formation": "4-2-3-1",
+    "coach": "I Putu Gede Swi Santoso",
+    "xi": [
+      { "no": 14, "name": "A. Fernandi", "pos": "KIP" },
+      { "no": 3, "name": "Angger (C)", "pos": "BEK" },
+      { "no": 6, "name": "Shevanton", "pos": "BEK" },
+      { "no": 26, "name": "Rio Valentino", "pos": "BEK" },
+      { "no": 76, "name": "Jojo", "pos": "BEK" },
+      { "no": 8, "name": "Marvin", "pos": "GEL" },
+      { "no": 18, "name": "M. Syahril", "pos": "GEL" },
+      { "no": 77, "name": "Putra Chaniago", "pos": "GEL" },
+      { "no": 11, "name": "Rifaldi", "pos": "PEN" },
+      { "no": 27, "name": "Romeo", "pos": "PEN" },
+      { "no": 25, "name": "Aaron Y", "pos": "PEN" }
+    ],
+    "lines": [
+      { "label": "Penyerang", "players": [27] },
+      { "label": "Gelandang", "players": [11, 77, 25] },
+      { "label": "Gelandang", "players": [8, 18] },
+      { "label": "Bek", "players": [3, 6, 26, 76] },
+      { "label": "Kiper", "players": [14] }
+    ],
+    "subs": [
+      { "no": 59, "name": "Fahad" },
+      { "no": 7, "name": "Sehabudin" },
+      { "no": 10, "name": "Iqbal" },
+      { "no": 12, "name": "Fuad" },
+      { "no": 13, "name": "Rangga" },
+      { "no": 15, "name": "Zulkifli" },
+      { "no": 23, "name": "Dios D. A" },
+      { "no": 33, "name": "O. Chanigio" },
+      { "no": 34, "name": "Kafka" },
+      { "no": 38, "name": "Deco" }
+    ]
+  },
+  {
     "out": "stats-persipa",
     "mode": "stats",
     "date": "13 November 2026",

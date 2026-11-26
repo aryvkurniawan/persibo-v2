@@ -285,6 +285,24 @@ Putra Sang Fajar vs Persibo, Kamis 26 November, 15.30 WIB. Tuan rumah 9 poin dar
 
 ---
 
+## 17. Poster lineup tandang Putra Sang Fajar (`lineup-putra-sang-fajar.png`)
+
+Tiga nama kembali ke starting eleven.
+
+Rifaldi, Aaron Yekti, dan Jojo masuk XI untuk laga tandang di Blitar. Rangga, J. Latuconsina, dan Sehabudin pindah ke bangku cadangan. Formasi bergeser ke 4-2-3-1 dengan Putra Chaniago sebagai gelandang serang, ban kapten tetap di Angger.
+
+Putra Sang Fajar vs Persibo, Kamis 26 November, kick-off 15.30 WIB di Stadion Gelora Soepriadi. Tuan rumah memuncaki Grup B dengan sembilan poin dari tiga laga.
+
+Susunan lengkap dan perangkat laga ada di persibo.com.
+
+#Persibo #PersiboBojonegoro #LaskarAnglingDharma #Bojonegoro #LigaNusantara #PutraSangFajar
+
+### Versi pendek (story / X)
+
+Putra Sang Fajar vs Persibo, Kamis 26 November, 15.30 WIB, Stadion Gelora Soepriadi. Rifaldi, Aaron Y, dan Jojo masuk XI. Formasi 4-2-3-1, Angger kapten.
+
+---
+
 ## Catatan
 
 - Jangan pakai kata "resmi", "official", atau "rebranding" — situs ini penggemar.

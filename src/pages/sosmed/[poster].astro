@@ -34,6 +34,8 @@ type Post = {
   formation?: string;
   coach?: string;
   xi?: { no: number; name: string; pos: 'KIP' | 'BEK' | 'GEL' | 'PEN' }[];
+  /** Explicit pitch rows, attack first, for shapes the four pos groups cannot draw (4-2-3-1). */
+  lines?: { label: string; players: number[] }[];
   subs?: { no: number; name: string }[];
   /** Stats poster; numbers sourced from persibo-analytics outputs. */
   stats?: {
@@ -94,6 +96,23 @@ const posOrder = [
 const xiRows = posOrder
   .map(([pos, label]) => ({ label, players: (post.xi ?? []).filter((p) => p.pos === pos) }))
   .filter((row) => row.players.length > 0);
+const xiByNumber = new Map((post.xi ?? []).map((player) => [player.no, player]));
+const lineRows = (post.lines ?? [])
+  .map((line) => ({
+    label: line.label,
+    players: line.players.flatMap((no) => {
+      const player = xiByNumber.get(no);
+      return player ? [player] : [];
+    }),
+  }))
+  .filter((row) => row.players.length > 0);
+const rows = lineRows.length ? lineRows : xiRows;
+// Five lines need tighter cards or the keeper row clips off the fixed 1080×1350 canvas.
+const compact = rows.length > 4;
+const avatarClass = compact ? 'h-[4.2rem] w-[4.2rem]' : 'h-[5.1rem] w-[5.1rem]';
+const badgeClass = compact ? 'h-[2rem] w-[2rem] text-[1.2rem]' : 'h-[2.3rem] w-[2.3rem] text-[1.4rem]';
+const playerNameClass = compact ? 'text-[1.3rem]' : 'text-[1.5rem]';
+const rowLabelClass = compact ? 'text-[1.1rem] tracking-[0.1em]' : 'text-[1.35rem] tracking-[0.18em]';
 const photoByNumber = new Map(playersJson.map((p) => [Number(p.jersey_number), p.photo_local || p.photo_url || '']));
 const photoFor = (no: number) => photoByNumber.get(no) || '';
 const scoreSide = (value?: string) => value || '-';
@@ -367,19 +386,19 @@ const nameClass = (name: string) =>
             <div class="absolute inset-x-0 top-0 h-[2px] bg-white/10"></div>
           </div>
           <div class="relative flex h-full flex-col justify-between py-[0.4rem]">
-            {xiRows.map((row) => (
+            {rows.map((row) => (
               <div class="flex items-start gap-[0.9rem]">
-                <p class="w-[1.6rem] shrink-0 self-stretch font-cond text-[1.35rem] font-bold uppercase leading-none tracking-[0.18em] text-white/30" style="writing-mode:vertical-rl;transform:rotate(180deg)">{row.label}</p>
+                <p class={`w-[1.6rem] shrink-0 self-stretch font-cond font-bold uppercase leading-none text-white/30 ${rowLabelClass}`} style="writing-mode:vertical-rl;transform:rotate(180deg)">{row.label}</p>
                 <div class="flex flex-1 justify-evenly">
                   {row.players.map((player) => (
                     <div class="flex w-[11rem] flex-col items-center gap-[0.4rem]">
-                      <div class="relative h-[5.1rem] w-[5.1rem] shrink-0">
+                      <div class={`relative shrink-0 ${avatarClass}`}>
                         <div class="h-full w-full overflow-hidden rounded-full border border-white/25 bg-white/10">
                           {photoFor(player.no) && <img src={photoFor(player.no)} alt="" class="h-full w-full object-cover object-top" />}
                         </div>
-                        <span class="absolute -bottom-1 -right-1 flex h-[2.3rem] w-[2.3rem] items-center justify-center rounded-full bg-primary font-cond text-[1.4rem] font-bold leading-none text-[#08070a]">{player.no}</span>
+                        <span class={`absolute -bottom-1 -right-1 flex items-center justify-center rounded-full bg-primary font-cond font-bold leading-none text-[#08070a] ${badgeClass}`}>{player.no}</span>
                       </div>
-                      <p class="max-w-[11rem] text-center text-[1.5rem] font-semibold uppercase leading-[1.1] text-white/85">{player.name}</p>
+                      <p class={`max-w-[11rem] text-center font-semibold uppercase leading-[1.1] text-white/85 ${playerNameClass}`}>{player.name}</p>
                     </div>
                   ))}
                 </div>
