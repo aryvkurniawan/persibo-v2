@@ -205,6 +205,20 @@
     ]
   },
   {
+    "out": "hasil-putra-sang-fajar",
+    "mode": "hasil",
+    "date": "26 November 2026",
+    "home": "PUTRA SANG FAJAR FC",
+    "away": "PERSIBO Bojonegoro",
+    "venue": "GELORA SOEPRIADI",
+    "md": 4,
+    "hs": "1",
+    "as": "0",
+    "scorers": [
+      { "minute": "49'", "player": "KOMAR", "team": "Putra Sang Fajar" }
+    ]
+  },
+  {
     "out": "stats-persipa",
     "mode": "stats",
     "date": "13 November 2026",
