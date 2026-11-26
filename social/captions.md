@@ -307,7 +307,7 @@ Putra Sang Fajar vs Persibo, Kamis 26 November, 15.30 WIB, Stadion Gelora Soepri
 
 Putra Sang Fajar 1-0 Persibo.
 
-KOMAR mencetak satu-satunya gol di menit 49. Persibo tidak bisa membalas sampai peluit akhir.
+KOMAR mencetak satu-satunya gol di menit 50. Persibo tidak bisa membalas sampai peluit akhir.
 
 Empat laga Grup B, belum ada kemenangan. Dua poin Persibo datang dari seri melawan Persipa dan Gresik United.
 
@@ -317,7 +317,7 @@ Skor dan klasemen tiap hari di persibo.com.
 
 ### Versi pendek (story / X)
 
-Hasil akhir: Putra Sang Fajar 1-0 Persibo. Gol KOMAR menit 49. Persibo belum menang dalam empat laga Grup B. persibo.com
+Hasil akhir: Putra Sang Fajar 1-0 Persibo. Gol KOMAR menit 50. Persibo belum menang dalam empat laga Grup B. persibo.com
 
 ---
 
