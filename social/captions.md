@@ -321,6 +321,24 @@ Hasil akhir: Putra Sang Fajar 1-0 Persibo. Gol KOMAR menit 50. Persibo belum men
 
 ---
 
+## 19. Poster klasemen Grup B (`klasemen-grup-b.png`)
+
+Empat laga, belum ada kemenangan. Persibo mengumpulkan dua poin dan turun ke peringkat 6 Grup B.
+
+Puncak masih milik Putra Sang Fajar: 12 poin dari empat laga, baru kebobolan sekali. Persika Karanganyar naik ke 10 poin setelah menang 3-1 pada laga keempatnya.
+
+Peringkat 4 sampai 8 ditentukan selisih gol. Persinga dan Persibangga sama-sama 4 poin. Di bawahnya Persibo, Persiba Bantul, dan Persipa masing-masing 2 poin; Persipa paling bawah karena selisih gol minus 3.
+
+Laga kelima: Persinga Ngawi vs Persibo, 30 November, kick-off 15.00 WIB. Klasemen lengkap tiap hari di persibo.com.
+
+#Persibo #PersiboBojonegoro #LaskarAnglingDharma #Bojonegoro #LigaNusantara
+
+### Versi pendek (story / X)
+
+Dua poin dari empat laga, Persibo di peringkat 6 Grup B. Putra Sang Fajar memimpin dengan 12 poin. Berikutnya Persinga Ngawi, 30 November, 15.00 WIB. persibo.com
+
+---
+
 ## Catatan
 
 - Jangan pakai kata "resmi", "official", atau "rebranding" — situs ini penggemar.
